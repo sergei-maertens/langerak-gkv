@@ -26,7 +26,9 @@ def setupenv():
     # we add currently directory to path and change to it
     mydir = os.path.dirname(os.path.abspath(__file__))
 
-    pwd = os.path.join(mydir, os.path.join('..', '..', '..', 'env'))
+    pwd = os.getenv('VIRTUAL_ENV', None)
+    if pwd is None:
+        pwd = os.path.join(mydir, os.path.join('..', '..', '..', 'env'))
     os.chdir(pwd)
     sys.path = [pwd, os.path.join(mydir, '..', '..')] + sys.path
 

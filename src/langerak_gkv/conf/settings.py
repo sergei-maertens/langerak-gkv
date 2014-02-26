@@ -152,6 +152,8 @@ INSTALLED_APPS = [
     'compressor',
 
     # Project applications.
+    'langerak_gkv.users',
+    'langerak_gkv.worklog',
 ]
 
 LOGGING_DIR = os.path.join(ROOT_DIR, 'log')
@@ -247,3 +249,9 @@ LOGGING = {
 AXES_LOGIN_FAILURE_LIMIT = 3  # Default: 3
 AXES_LOCK_OUT_AT_FAILURE = True  # Default: True
 AXES_USE_USER_AGENT = False  # Default: False
+
+#
+# Auth
+#
+
+AUTH_USER_MODEL = 'users.User'
