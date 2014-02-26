@@ -1,0 +1,1637 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"date",
+				"date_of_birth"
+			],
+			[
+				"se",
+				"search_fields"
+			],
+			[
+				"ve",
+				"veterinarian"
+			],
+			[
+				"verbo",
+				"verbose_name"
+			],
+			[
+				"verb",
+				"verbose_name"
+			],
+			[
+				"help",
+				"help_text"
+			],
+			[
+				"Pos",
+				"PositiveSmallIntegerField"
+			],
+			[
+				"no_term",
+				"no_terms_file"
+			],
+			[
+				"clean",
+				"cleaned_data"
+			],
+			[
+				"list-sty",
+				"list-style-type"
+			],
+			[
+				"extra",
+				"extra_exclusion_rules"
+			],
+			[
+				"form",
+				"form-group"
+			],
+			[
+				"sr",
+				"surchargePrice"
+			],
+			[
+				"check",
+				"checkbox_required"
+			],
+			[
+				"needs_",
+				"needs_pet_passport"
+			],
+			[
+				"Iban",
+				"IBANField"
+			],
+			[
+				"closure",
+				"closure_days"
+			],
+			[
+				"Open",
+				"OpeningHoursForm"
+			],
+			[
+				"closu",
+				"closure_days"
+			],
+			[
+				"Clos",
+				"ClosureDay"
+			],
+			[
+				"get",
+				"get_closure_days"
+			],
+			[
+				"Clo",
+				"ClosureDay"
+			],
+			[
+				"openinghou",
+				"opening_hours"
+			],
+			[
+				"cleae",
+				"cleaned_data"
+			],
+			[
+				"admin",
+				"admin_register	admin_register"
+			],
+			[
+				"Close",
+				"ClosurePeriodFormSet"
+			],
+			[
+				"Ex",
+				"ExclusionForm"
+			],
+			[
+				"exc",
+				"exclusions"
+			],
+			[
+				"FoodA",
+				"FoodAndServicesContainer"
+			],
+			[
+				"FoodAn",
+				"FoodAndServicesForm"
+			],
+			[
+				"formset",
+				"formset_queryset"
+			],
+			[
+				"existi",
+				"existing_pet_class_prices"
+			],
+			[
+				"pet_cl",
+				"pet_class_prices"
+			],
+			[
+				"Wi",
+				"IntakeWizard"
+			],
+			[
+				"Intaprica",
+				"IntakeFormPriceModelCatContainer"
+			],
+			[
+				"IntakeFormPrimod",
+				"IntakeFormPriceModelDog"
+			],
+			[
+				"PriceModel",
+				"PensionPetTypePriceModel"
+			],
+			[
+				"modelfor",
+				"modelformset_factory"
+			],
+			[
+				"capa",
+				"capacity_dog"
+			],
+			[
+				"species",
+				"species_name"
+			],
+			[
+				"Inta",
+				"IntakeFormCapacitySPECIES"
+			],
+			[
+				"max_",
+				"max_capacity_summer"
+			],
+			[
+				"Int",
+				"IntakeFormCapacity"
+			],
+			[
+				"discount",
+				"discount_2_pets"
+			],
+			[
+				"from_1",
+				"from_10_to_11"
+			],
+			[
+				"pricemod",
+				"price_model"
+			],
+			[
+				"uniqu",
+				"unique_together"
+			],
+			[
+				"decima",
+				"decimal_places"
+			],
+			[
+				"high",
+				"highseason"
+			],
+			[
+				"mean",
+				"mean_capacity_utilization"
+			],
+			[
+				"ut",
+				"utilization"
+			],
+			[
+				"per",
+				"percent_validator"
+			],
+			[
+				"default",
+				"default_formdata"
+			],
+			[
+				"status",
+				"status_code"
+			],
+			[
+				"context",
+				"context_data"
+			],
+			[
+				"Sea",
+				"SearchToolView"
+			],
+			[
+				"get_",
+				"get_context_data"
+			],
+			[
+				"search",
+				"search_tool_options"
+			],
+			[
+				"password_reset_co",
+				"password_reset_confirm"
+			],
+			[
+				"password_rese",
+				"password_reset_complete"
+			],
+			[
+				"response",
+				"response_data"
+			],
+			[
+				"requ",
+				"request"
+			],
+			[
+				"TEMPLATE",
+				"TEMPLATE_CONTEXT_PROCESSORS"
+			],
+			[
+				"error_me",
+				"error_messages"
+			],
+			[
+				"from",
+				"from django.utils.translation	ugettext_lazy"
+			],
+			[
+				"fr",
+				"from"
+			],
+			[
+				"m_po",
+				"m_processed_files"
+			],
+			[
+				"hashed",
+				"hashed_filename"
+			],
+			[
+				"md",
+				"md5_file"
+			],
+			[
+				"project",
+				"project_organization"
+			],
+			[
+				"typof",
+				"typeof"
+			],
+			[
+				"mysqlnum",
+				"mysql_num_rows"
+			],
+			[
+				"FWse",
+				"FWSecurityGroupIDs"
+			],
+			[
+				"FW_tr",
+				"FW_trace_array	Trace array"
+			],
+			[
+				"FWSuG",
+				"FWSecurityGroupID"
+			],
+			[
+				"tempfw",
+				"TempFWSecurityGroupID"
+			],
+			[
+				"TempFW",
+				"TempFWSecurityGroupID"
+			],
+			[
+				"File",
+				"FileName"
+			],
+			[
+				"FWAccoun",
+				"FWAccountID"
+			],
+			[
+				"Recht",
+				"RechtNiveauID"
+			],
+			[
+				"Activ",
+				"ActiveFolderID"
+			],
+			[
+				"LeerlingLinkou",
+				"LeerlingLinkOuderLeerlingID"
+			],
+			[
+				"utf",
+				"utf8_encode"
+			],
+			[
+				"retva",
+				"retval"
+			],
+			[
+				"Dosslijnbest",
+				"DossierLijnBestandName"
+			],
+			[
+				"creele",
+				"CreateElementWitchContentForPublish"
+			],
+			[
+				"BC",
+				"BCActiviteitHoekID"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 92.0,
+		"selected_items":
+		[
+			[
+				"projec",
+				"Project: Close"
+			],
+			[
+				"pdb",
+				"Snippet: pdb debug tool"
+			],
+			[
+				"var",
+				"Snippet: context variable (var)"
+			],
+			[
+				"for",
+				"Snippet: for"
+			],
+			[
+				"trans",
+				"Snippet: trans"
+			],
+			[
+				"filter",
+				"Snippet: filter"
+			],
+			[
+				"lower",
+				"Convert Case: Lower Case"
+			],
+			[
+				"blocktran",
+				"Snippet: blocktrans"
+			],
+			[
+				"block",
+				"Snippet: block"
+			],
+			[
+				"shower",
+				"SublimeLinter: Show Error List"
+			],
+			[
+				"blocktrans",
+				"Snippet: blocktrans"
+			],
+			[
+				"if",
+				"Snippet: if"
+			],
+			[
+				"url",
+				"Snippet: url"
+			],
+			[
+				"adminre",
+				"Snippet: admin_register"
+			],
+			[
+				"clas",
+				"Snippet: New Class"
+			],
+			[
+				"model",
+				"Snippet: Model"
+			],
+			[
+				"error",
+				"SublimeLinter: Show Error List"
+			],
+			[
+				"fk",
+				"Snippet: ForeignKey (fk)"
+			],
+			[
+				"m2m",
+				"Snippet: ManyToManyField (m2m)"
+			],
+			[
+				"mdate",
+				"Snippet: DateField (mdate)"
+			],
+			[
+				"mchar",
+				"Snippet: CharField (mchar)"
+			],
+			[
+				"mtext",
+				"Snippet: TextField (mtext)"
+			],
+			[
+				"mbool",
+				"Snippet: BooleanField (mbool)"
+			],
+			[
+				"integm",
+				"Snippet: IntegerField (mint)"
+			],
+			[
+				"else",
+				"Snippet: else"
+			],
+			[
+				"charfi",
+				"Snippet: CharField (mchar)"
+			],
+			[
+				"adminreg",
+				"Snippet: admin_register"
+			],
+			[
+				"imagefi",
+				"Snippet: ImageField (mimg)"
+			],
+			[
+				"slugfi",
+				"Snippet: SlugField (mslug)"
+			],
+			[
+				"load",
+				"Snippet: load"
+			],
+			[
+				"extends",
+				"Snippet: extends"
+			],
+			[
+				"fboo",
+				"Snippet: BooleanField (fbool)"
+			],
+			[
+				"sshtmdj",
+				"Set Syntax: HTML (Django)"
+			],
+			[
+				"tag",
+				"Snippet: tag braces"
+			],
+			[
+				"static",
+				"Snippet: static"
+			],
+			[
+				"tags",
+				"Snippet: tag braces"
+			],
+			[
+				"boolean",
+				"Snippet: BooleanField (fbool)"
+			],
+			[
+				"show",
+				"SublimeLinter: Show Error List"
+			],
+			[
+				"proj",
+				"Project: Close"
+			],
+			[
+				"ssjavasc",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"doc",
+				"Set Syntax: JavaDoc"
+			],
+			[
+				"peb",
+				"Preferences: Browse Packages"
+			],
+			[
+				"upperca",
+				"Convert Case: Upper Case"
+			],
+			[
+				"with",
+				"Snippet: with"
+			],
+			[
+				"fdate",
+				"Snippet: DateField (fdate)"
+			],
+			[
+				"clss",
+				"Snippet: New Class"
+			],
+			[
+				"extens",
+				"Snippet: extends"
+			],
+			[
+				"fbool",
+				"Snippet: BooleanField (fbool)"
+			],
+			[
+				"use",
+				"User: Python PEP8 Autoformat"
+			],
+			[
+				"bool",
+				"Snippet: BooleanField (fbool)"
+			],
+			[
+				"csr",
+				"Snippet: csrf_token"
+			],
+			[
+				"showe",
+				"SublimeLinter: Show Error List"
+			],
+			[
+				"snipcomm",
+				"Snippet: comment"
+			],
+			[
+				"upper",
+				"Convert Case: Upper Case"
+			],
+			[
+				"showerr",
+				"SublimeLinter: Show Error List"
+			],
+			[
+				"widt",
+				"Snippet: widthratio"
+			],
+			[
+				"wid",
+				"Snippet: widthratio"
+			],
+			[
+				"comment",
+				"Snippet: comment"
+			],
+			[
+				"reind",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"shoe",
+				"SublimeLinter: Show Error List"
+			],
+			[
+				"sshtdj",
+				"Set Syntax: HTML (Django)"
+			],
+			[
+				"projectcl",
+				"Project: Close"
+			],
+			[
+				"snipcom",
+				"Snippet: comment"
+			],
+			[
+				"sshtmldj",
+				"Set Syntax: HTML (Django)"
+			],
+			[
+				"admins",
+				"Snippet: admin_register"
+			],
+			[
+				"exten",
+				"Snippet: extends"
+			],
+			[
+				"email",
+				"Snippet: EmailField (memail)"
+			],
+			[
+				"filefiel",
+				"Snippet: FileField (mfile)"
+			],
+			[
+				"mtex",
+				"Snippet: TextField (mtext)"
+			],
+			[
+				"uppercase",
+				"Convert Case: Upper Case"
+			],
+			[
+				"class",
+				"Snippet: New Class"
+			],
+			[
+				"mdecim",
+				"Snippet: DecimalField (mdecimal)"
+			],
+			[
+				"mde",
+				"Snippet: DecimalField (mdecimal)"
+			],
+			[
+				"mdec",
+				"Snippet: DecimalField (mdecimal)"
+			],
+			[
+				"boomboo",
+				"Snippet: BooleanField (mbool)"
+			],
+			[
+				"mdecimal",
+				"Snippet: DecimalField (mdecimal)"
+			],
+			[
+				"decimal",
+				"Snippet: DecimalField (mdecimal)"
+			],
+			[
+				"boole",
+				"Snippet: BooleanField (mbool)"
+			],
+			[
+				"mcha",
+				"Snippet: CharField (mchar)"
+			],
+			[
+				"mchoi",
+				"Snippet: MultipleChoiceField (fmuchoice)"
+			],
+			[
+				"psosmal",
+				"Snippet: PositiveSmallIntegerField (mpossmallint)"
+			],
+			[
+				"smalpo",
+				"Snippet: PositiveSmallIntegerField (mpossmallint)"
+			],
+			[
+				"csrf",
+				"Snippet: csrf_token"
+			],
+			[
+				"block.s",
+				"Snippet: block.super"
+			],
+			[
+				"datef",
+				"Snippet: DateField (fdate)"
+			],
+			[
+				"uge",
+				"Snippet: ugettext_lazy"
+			],
+			[
+				"charfiel",
+				"Snippet: CharField (fchar)"
+			],
+			[
+				"sspyd",
+				"Set Syntax: Python Django"
+			],
+			[
+				"snippuge",
+				"Snippet: ugettext_lazy"
+			],
+			[
+				"include",
+				"Snippet: include"
+			],
+			[
+				"stati",
+				"Snippet: static"
+			],
+			[
+				"ug",
+				"Snippet: ugettext_lazy"
+			],
+			[
+				"proe",
+				"Project: Close"
+			],
+			[
+				"docbl",
+				"Snippet: Start Docblock"
+			],
+			[
+				"docblo",
+				"Snippet: Start Docblock"
+			],
+			[
+				"docb",
+				"Snippet: Start Docblock"
+			],
+			[
+				"php",
+				"Set Syntax: PHP"
+			],
+			[
+				"projcl",
+				"Project: Close"
+			],
+			[
+				"spaces",
+				"Indentation: Convert to Spaces"
+			],
+			[
+				"sshbs",
+				"Set Syntax: Handlebars"
+			],
+			[
+				"projclo",
+				"Project: Close"
+			],
+			[
+				"fwq",
+				"Snippet: FW query"
+			],
+			[
+				"fwtr",
+				"Snippet: FW_trace_sql"
+			],
+			[
+				"fwes",
+				"Snippet: FW_Escape snippet"
+			],
+			[
+				"tracear",
+				"Snippet: Trace array"
+			],
+			[
+				"trace",
+				"Snippet: Trace array"
+			],
+			[
+				"fwec",
+				"Snippet: FW_echo snippet"
+			],
+			[
+				"tracar",
+				"Snippet: Trace array"
+			],
+			[
+				"traca",
+				"Snippet: Trace array"
+			],
+			[
+				"contab",
+				"Indentation: Convert to Tabs"
+			],
+			[
+				"toggtab",
+				"View: Toggle Tabs"
+			],
+			[
+				"tabs",
+				"View: Toggle Tabs"
+			],
+			[
+				"fwe",
+				"Snippet: FW_echo snippet"
+			],
+			[
+				"fwech",
+				"Snippet: FW_echo snippet"
+			],
+			[
+				"clos",
+				"Project: Close"
+			],
+			[
+				"ssphp",
+				"Set Syntax: PHP"
+			],
+			[
+				"fwtra",
+				"Snippet: FW_trace_sql"
+			],
+			[
+				"sqlse",
+				"Snippet: SQLSelect"
+			],
+			[
+				"sssql",
+				"Set Syntax: SQL"
+			]
+		],
+		"width": 247.0
+	},
+	"console":
+	{
+		"height": 0.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/home/bbt/coding/maykin/laika-hdov/src/hdov/pets/templates/my_pets.html",
+		"/home/bbt/coding/maykin/laika-hdov/src/hdov/pensions/models.py",
+		"/home/bbt/coding/maykin/laika-hdov/src/hdov/intake/templates/intake/terms.html",
+		"/home/bbt/coding/maykin/laika-hdov/src/hdov/intake/templates/intake/intake_form.html",
+		"/home/bbt/coding/maykin/laika-hdov/src/hdov/sass/screen.scss",
+		"/home/bbt/coding/maykin/laika-hdov/src/hdov/pets/migrations/0005_auto__add_antiparasitictreatment__add_vaccination__add_petvaccination_.py",
+		"/home/bbt/coding/maykin/laika-hdov/src/hdov/pets/migrations/0003_auto__add_field_species_code_label.py",
+		"/home/bbt/coding/maykin/laika-hdov/src/hdov/pets/migrations/0004_remove_old_data.py",
+		"/home/bbt/coding/maykin/laika-hdov/src/hdov/pets/migrations/0003_auto__add_field_species_code_label.pyc",
+		"/home/bbt/coding/maykin/laika-hdov/src/hdov/conf/settings.py",
+		"/home/bbt/coding/maykin/laika-hdov/src/hdov/pensions/migrations/0016_auto__add_field_pension_min_weeks_vaccination__add_field_pension_max_m.py",
+		"/home/bbt/coding/maykin/laika-hdov/src/hdov/templates/default.form",
+		"/home/bbt/coding/maykin/laika-hdov/src/hdov/intake/templates/intake/intake.form",
+		"/home/bbt/coding/maykin/laika-hdov/src/hdov/intake/views.py",
+		"/home/bbt/coding/maykin/laika-hdov/src/hdov/intake/forms.py",
+		"/home/bbt/coding/maykin/laika-hdov/src/hdov/intake/templates/intake/food_services.html",
+		"/home/bbt/coding/maykin/laika-hdov/src/hdov/intake/static/hdov/intake/js/intake.js",
+		"/home/bbt/coding/.virtualenvs/hdov/lib/python2.7/site-packages/django/contrib/formtools/wizard/views.py",
+		"/home/bbt/coding/maykin/laika-hdov/src/hdov/sass/intake.scss",
+		"/home/bbt/coding/.virtualenvs/hdov/lib/python2.7/site-packages/django/contrib/formtools/wizard/forms.py",
+		"/home/bbt/coding/maykin/laika-hdov/src/hdov/faq/admin.py",
+		"/home/bbt/coding/maykin/laika-hdov/src/hdov/pensions/admin.py",
+		"/home/bbt/coding/maykin/laika-hdov/src/hdov/faq/models.py",
+		"/home/bbt/coding/maykin/laika-hdov/src/hdov/urls.py",
+		"/home/bbt/coding/.virtualenvs/hdov/lib/python2.7/site-packages/django/contrib/auth/views.py",
+		"/home/bbt/coding/maykin/laika-hdov/src/hdov/intake/urls.py",
+		"/home/bbt/coding/maykin/laika-hdov/src/hdov/sass/pension_admin.scss",
+		"/home/bbt/coding/maykin/laika-hdov/src/hdov/sass/partials/_colors.scss",
+		"/home/bbt/coding/maykin/laika-hdov/src/hdov/sass/partials/_forms.scss",
+		"/home/bbt/coding/maykin/laika-hdov/requirements/base.txt",
+		"/home/bbt/coding/maykin/laika-hdov/src/hdov/users/forms.py",
+		"/home/bbt/coding/maykin/laika-hdov/src/hdov/pensions/templates/admin/pensions/pension/inline_pricemodel.html",
+		"/home/bbt/coding/.virtualenvs/hdov/lib/python2.7/site-packages/django/contrib/admin/templates/admin/base_site.html",
+		"/home/bbt/coding/.virtualenvs/hdov/lib/python2.7/site-packages/django/contrib/admin/templates/admin/index.html",
+		"/home/bbt/coding/maykin/laika-hdov/src/hdov/templates/admin/index.html",
+		"/home/bbt/coding/maykin/laika-hdov/src/hdov/sass/partials/_base.scss",
+		"/home/bbt/coding/maykin/laika-hdov/src/hdov/sass/partials/_login.scss",
+		"/home/bbt/coding/maykin/laika-hdov/src/hdov/sass/partials/_fonts.scss",
+		"/home/bbt/coding/maykin/laika-hdov/src/hdov/sass/partials/_utils.scss",
+		"/home/bbt/coding/maykin/laika-hdov/src/hdov/templates/master.html",
+		"/home/bbt/coding/maykin/laika-hdov/src/hdov/users/static/users/js/login.js",
+		"/home/bbt/coding/maykin/laika-hdov/src/hdov/users/templates/users/login_popup.html",
+		"/home/bbt/coding/maykin/laika-hdov/src/hdov/users/views.py",
+		"/home/bbt/coding/maykin/laika-hdov/src/hdov/users/templates/users/login.html",
+		"/home/bbt/coding/maykin/laika-hdov/src/hdov/static/hdov/lib/purl.js",
+		"/home/bbt/coding/.virtualenvs/hdov/lib/python2.7/site-packages/django/contrib/auth/__init__.py",
+		"/home/bbt/coding/maykin/laika-hdov/src/hdov/intake/templates/intake/opening_hours.html",
+		"/home/bbt/coding/maykin/laika-hdov/src/hdov/intake/templates/intake/capacity.html",
+		"/home/bbt/coding/maykin/laika-hdov/src/hdov/intake/templates/intake/exclusions.html",
+		"/home/bbt/coding/maykin/laika-hdov/src/hdov/intake/templates/intake/price_model.html",
+		"/home/bbt/coding/.virtualenvs/hdov/lib/python2.7/site-packages/django/conf/urls/static.py",
+		"/home/bbt/coding/.virtualenvs/hdov/lib/python2.7/site-packages/django/views/static.py",
+		"/home/bbt/coding/.virtualenvs/hdov/lib/python2.7/site-packages/django_iban/forms.py",
+		"/home/bbt/coding/.virtualenvs/hdov/lib/python2.7/site-packages/django_iban/validators.py",
+		"/home/bbt/coding/maykin/laika-hdov/src/hdov/pensions/migrations/0009_set_uuid.py",
+		"/home/bbt/coding/maykin/laika-hdov/src/hdov/pensions/migrations/0008_auto__del_field_pension_hash__add_field_pension_uuid.py",
+		"/home/bbt/coding/maykin/laika-hdov/src/hdov/static/hdov/js/formsets.js",
+		"/home/bbt/coding/maykin/laika-hdov/src/hdov/users/models.py",
+		"/home/bbt/coding/maykin/laika-hdov/src/hdov/utils/forms.py",
+		"/home/bbt/coding/maykin/laika-hdov/src/hdov/static/hdov/lib/bootstrap-datetimepicker/bootstrap-datetimepicker.min.css",
+		"/home/bbt/coding/maykin/laika-hdov/src/hdov/static/hdov/lib/bootstrap-datetimepicker/bootstrap-datetimepicker.css",
+		"/home/bbt/coding/maykin/laika-hdov/src/hdov/static/hdov/lib/bootstrap-datetimepicker/bootstrap-datetimepicker.min.js",
+		"/home/bbt/coding/.virtualenvs/hdov/lib/python2.7/site-packages/django/views/i18n.py",
+		"/home/bbt/coding/.virtualenvs/hdov/lib/python2.7/site-packages/django/contrib/admin/static/admin/js/admin/DateTimeShortcuts.js",
+		"/home/bbt/coding/.virtualenvs/hdov/lib/python2.7/site-packages/django/views/generic/detail.py",
+		"/home/bbt/.ssh/id_rsa.pub",
+		"/run/user/1000/gvfs/smb-share:server=192.168.42.12,share=team/sergei_pub_key",
+		"/home/bbt/coding/maykin/laika-hdov/src/hdov/utils/templatetags/form_fields.py",
+		"/home/bbt/coding/maykin/laika-hdov/src/hdov/pensions/fields.py",
+		"/home/bbt/coding/maykin/laika-hdov/src/hdov/pets/admin.py",
+		"/home/bbt/coding/maykin/laika-hdov/src/hdov/pets/fixtures/initial_data.json",
+		"/home/bbt/coding/maykin/laika-hdov/src/hdov/pets/models.py",
+		"/home/bbt/coding/maykin/laika-hdov/src/hdov/intake/templates/intake/thanks.html",
+		"/home/bbt/coding/.virtualenvs/hdov/lib/python2.7/site-packages/django/forms/widgets.py",
+		"/home/bbt/coding/maykin/laika-hdov/src/hdov/pensions/forms.py",
+		"/home/bbt/coding/maykin/laika-hdov/src/hdov/pensions/views.py",
+		"/home/bbt/coding/.virtualenvs/hdov/lib/python2.7/site-packages/django/forms/fields.py",
+		"/home/bbt/coding/maykin/laika-hdov/src/hdov/utils/templatetags/__init__.py",
+		"/home/bbt/coding/maykin/laika-hdov/src/hdov/intake/templates/intake.form",
+		"/home/bbt/coding/maykin/laika-hdov/src/hdov/utils/templatetags/forms.py",
+		"/home/bbt/coding/.virtualenvs/hdov/lib/python2.7/site-packages/django/contrib/admin/templates/admin/change_form.html",
+		"/home/bbt/coding/maykin/laika-hdov/src/hdov/pensions/urls.py",
+		"/home/bbt/coding/maykin/laika-hdov/src/hdov/pensions/templates/admin/pensions/pension/fieldset.html",
+		"/home/bbt/coding/.virtualenvs/hdov/lib/python2.7/site-packages/django/contrib/admin/templates/admin/edit_inline/stacked.html",
+		"/home/bbt/coding/maykin/laika-hdov/src/hdov/templates/admin/pensions/pension/change_form.html",
+		"/home/bbt/coding/maykin/laika-hdov/src/hdov/templates/admin/pensions/pension/inline_pricemodel.html",
+		"/home/bbt/coding/maykin/laika-hdov/src/hdov/pensions/migrations/0004_auto__chg_field_pension_revenue_2013__chg_field_pensionservice_price__.py",
+		"/home/bbt/coding/maykin/laika-hdov/src/hdov/templates/test.html",
+		"/home/bbt/coding/.virtualenvs/hdov/lib/python2.7/site-packages/django/forms/models.py",
+		"/home/bbt/coding/maykin/laika-hdov/src/hdov/pensions/migrations/0001_initial.py",
+		"/home/bbt/coding/maykin/laika-hdov/src/hdov/pensions/validators.py",
+		"/home/bbt/coding/maykin/laika-hdov/src/hdov/users/context_processors.py",
+		"/home/bbt/coding/maykin/laika-hdov/src/hdov/pensions/tests/test_search_tool.py",
+		"/home/bbt/coding/maykin/laika-hdov/src/hdov/pensions/templates/pensions/search_results.html",
+		"/home/bbt/coding/maykin/laika-hdov/src/hdov/users/urls.py",
+		"/home/bbt/coding/maykin/laika-hdov/src/hdov/users/tests/test_login.py",
+		"/home/bbt/coding/maykin/laika-hdov/src/hdov/pensions/tests/__init__.py",
+		"/home/bbt/coding/maykin/laika-hdov/src/hdov/pets/migrations/0001_initial.py",
+		"/home/bbt/coding/maykin/laika-hdov/src/hdov/users/tests/factory_models.py",
+		"/home/bbt/coding/maykin/laika-hdov/src/hdov/users/tests/__init__.py",
+		"/home/bbt/coding/maykin/laika-hdov/src/hdov/tests",
+		"/home/bbt/coding/maykin/laika-hdov/src/hdov/users/templates/users/password_reset_email.html",
+		"/home/bbt/coding/maykin/laika-hdov/src/hdov/static/hdov/js/global.js",
+		"/home/bbt/coding/maykin/laika-hdov/src/hdov/users/mails.py",
+		"/home/bbt/coding/maykin/laika-hdov/src/hdov/users/templates/users/password_change_done.html",
+		"/home/bbt/coding/.virtualenvs/hdov/lib/python2.7/site-packages/django/contrib/auth/urls.py",
+		"/home/bbt/coding/.virtualenvs/hdov/lib/python2.7/site-packages/django/contrib/auth/forms.py",
+		"/home/bbt/coding/maykin/laika-hdov/src/hdov/users/templates/users/password_reset_done.html",
+		"/home/bbt/coding/maykin/laika-hdov/src/hdov/users/templates/users/password_reset.html",
+		"/home/bbt/coding/.virtualenvs/hdov/lib/python2.7/site-packages/django/contrib/admin/templates/registration/password_reset_complete.html",
+		"/home/bbt/coding/maykin/laika-hdov/src/hdov/users/templates/users/password_reset_confirm.html",
+		"/home/bbt/coding/.virtualenvs/hdov/lib/python2.7/site-packages/django/contrib/admin/templates/registration/password_reset_done.html",
+		"/home/bbt/coding/.virtualenvs/hdov/lib/python2.7/site-packages/django/contrib/auth/templates/registration/password_reset_subject.txt",
+		"/home/bbt/coding/.virtualenvs/hdov/lib/python2.7/site-packages/django/contrib/admin/templates/registration/password_change_form.html",
+		"/home/bbt/coding/.virtualenvs/hdov/lib/python2.7/site-packages/django/contrib/admin/templates/registration/password_reset_form.html",
+		"/home/bbt/coding/maykin/laika-hdov/src/hdov/users/static/foo.txt",
+		"/home/bbt/coding/maykin/laika-hdov/src/hdov/users/admin.py",
+		"/home/bbt/coding/maykin/laika-hdov/src/hdov/wsgi/wsgi_development.py",
+		"/home/bbt/coding/.virtualenvs/hdov/lib/python2.7/site-packages/django/contrib/auth/models.py",
+		"/home/bbt/coding/.virtualenvs/hdov/lib/python2.7/site-packages/django/contrib/auth/management/commands/createsuperuser.py",
+		"/home/bbt/samba",
+		"/home/bbt/coding/.virtualenvs/hdov/lib/python2.7/site-packages/django/contrib/auth/admin.py",
+		"/home/bbt/coding/.virtualenvs/hdov/bin/activate",
+		"/home/bbt/.config/sublime-text-2/Packages/User/ugettext_lazy.sublime-snippet",
+		"/home/bbt/coding/.virtualenvs/hdov/lib/python2.7/site-packages/django/contrib/admin/templates/admin/auth/user/add_form.html",
+		"/home/bbt/coding/maykin/laika-hdov/src/hdov/templates/admin/auth/user/add_form.html",
+		"/home/bbt/.config/sublime-text-2/Packages/User/admin_register.sublime-snippet",
+		"/home/bbt/coding/maykin/laika-hdov/src/hdov/conf/settings_development.py"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			"/home/bbt/coding/.virtualenvs/hdov/lib/python2.7/site-packages/django",
+			"/home/bbt/coding/.virtualenvs/booking/lib/python2.7/site-packages/django",
+			"/home/bbt/coding/.virtualenvs/booking/lib/python2.7/site-packages/south",
+			"/home/bbt/coding/maykin/booking.com",
+			"/home/bbt/coding/pronoia/SODevelopment"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"vaccination",
+			"born",
+			"\"",
+			"100",
+			"neutered",
+			"modelformset_factory",
+			"class Meta",
+			"moneyinput",
+			"feincms",
+			"capacity",
+			";\n",
+			"login",
+			"?",
+			"closed on ",
+			"closure_days",
+			"\\w+_closed",
+			"surchargePrice",
+			"form_prefix",
+			".js",
+			"general",
+			"needs_pet_passport",
+			"field_type",
+			"results",
+			"self.pension",
+			"'),",
+			"old",
+			"handlecalendarquicklink",
+			"format_type",
+			"django\\.formats",
+			"get_format",
+			"function get_format",
+			"get_format",
+			"class=.*calendar.*",
+			"javascript:void\\(function\\(y, m, d\\)",
+			"self.done\\(",
+			"self.done",
+			"FileInput",
+			"FILE_INPUT",
+			"FileInput",
+			"formset",
+			"{% if errors %}<span class=\"glyphicon glyphicon-remove form-control-feedback\"></span>{% endif %}",
+			"span",
+			"species__name__iexact",
+			"p.name.lower()",
+			"Field",
+			"textarea",
+			"textinput",
+			"food_services",
+			"service",
+			"species__name",
+			"pet_class",
+			"pet_classes",
+			"form_field.field.widget.",
+			"%}\n",
+			"default=Decimal('0.0')",
+			"FormContainer",
+			"self.price_model",
+			"blockname",
+			"price_model",
+			"Dog",
+			"  ",
+			"^(\\d+)",
+			"2",
+			"inlineformset_factory",
+			"Pension",
+			"cat",
+			"capacity",
+			"boolean_check",
+			"type.*checkbox",
+			"checkbox",
+			"cat",
+			"forms.ModelForm",
+			"cat",
+			"Cat",
+			"cat",
+			"label",
+			"winter",
+			"If known, s",
+			"get_form_instance",
+			"capacityDog",
+			"form_field",
+			"field\\.",
+			"checkbox",
+			"CheckboxFieldRenderer",
+			"p",
+			"input type=",
+			"type",
+			"numberinput",
+			"change_view",
+			"default=Decimal('0.0'),",
+			"MoneyField",
+			"validators=[MinValueValidator(Decimal('0.0'))]",
+			"models.Decimal",
+			"max_digits=5, decimal_places=2,",
+			"raise",
+			"attrs",
+			"fields_for_model",
+			"widgets",
+			"am",
+			"to",
+			"2",
+			"dog",
+			"summer",
+			"session",
+			"\"",
+			"Use_https",
+			"default_token_genera",
+			"password_reset_confirm",
+			"login",
+			"redirect_field_name",
+			"context",
+			"myModal",
+			"      ",
+			"     ",
+			"    ",
+			"   ",
+			"  ",
+			"content",
+			"{%",
+			"{{ STATIC_URL }}",
+			"=\"{{ STATIC_URL }}hdov",
+			"{{ STATIC_URL }}",
+			"username",
+			"email",
+			"username,",
+			"manager",
+			".db",
+			"src"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 34.0
+	},
+	"input":
+	{
+		"height": 29.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 62.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"pensionmoels",
+				"hdov/pensions/models.py"
+			],
+			[
+				"intakeforms",
+				"hdov/intake/forms.py"
+			],
+			[
+				"screenscss",
+				"hdov/sass/screen.scss"
+			],
+			[
+				"settin",
+				"hdov/conf/settings.py"
+			],
+			[
+				"default",
+				"hdov/templates/default.form"
+			],
+			[
+				"intake.form",
+				"hdov/intake/templates/intake/intake.form"
+			],
+			[
+				"intakeforms.py",
+				"hdov/intake/forms.py"
+			],
+			[
+				"pensionsmodel",
+				"hdov/pensions/models.py"
+			],
+			[
+				"screen",
+				"hdov/sass/screen.scss"
+			],
+			[
+				"formtools/wa",
+				"django/contrib/formtools/wizard/forms.py"
+			],
+			[
+				"templates/intakefor",
+				"hdov/intake/templates/intake/intake_form.html"
+			],
+			[
+				"settings",
+				"hdov/conf/settings.py"
+			],
+			[
+				"admin/index.html",
+				"django/contrib/admin/templates/admin/index.html"
+			],
+			[
+				"authviews",
+				"django/contrib/auth/views.py"
+			],
+			[
+				"master",
+				"hdov/templates/master.html"
+			],
+			[
+				"pensionadmin",
+				"hdov/pensions/admin.py"
+			],
+			[
+				"static",
+				"django/conf/urls/static.py"
+			],
+			[
+				"templates/intake",
+				"hdov/intake/templates/intake/intake_form.html"
+			],
+			[
+				"pensionmigra",
+				"hdov/pensions/migrations/0008_auto__del_field_pension_hash__add_field_pension_uuid.py"
+			],
+			[
+				"intakeview",
+				"hdov/intake/views.py"
+			],
+			[
+				"usersmodels",
+				"hdov/users/models.py"
+			],
+			[
+				"utilsforms",
+				"hdov/utils/forms.py"
+			],
+			[
+				"settings.",
+				"hdov/conf/settings.py"
+			],
+			[
+				"viewsdetail",
+				"django/views/generic/detail.py"
+			],
+			[
+				"formwizardview",
+				"django/contrib/formtools/wizard/views.py"
+			],
+			[
+				"widgets.py",
+				"django/forms/widgets.py"
+			],
+			[
+				"djangoformsfields",
+				"django/forms/fields.py"
+			],
+			[
+				"widgets",
+				"django/forms/widgets.py"
+			],
+			[
+				"formsfields",
+				"django/forms/fields.py"
+			],
+			[
+				"formtoolswizardview",
+				"django/contrib/formtools/wizard/views.py"
+			],
+			[
+				"settings.py",
+				"hdov/conf/settings.py"
+			],
+			[
+				"formswidget",
+				"django/forms/widgets.py"
+			],
+			[
+				"inline_price",
+				"hdov/pensions/templates/admin/pensions/pension/inline_pricemodel.html"
+			],
+			[
+				"adminincludesfiel",
+				"django/contrib/admin/templates/admin/includes/fieldset.html"
+			],
+			[
+				"sett",
+				"hdov/conf/settings.py"
+			],
+			[
+				"settings.p",
+				"hdov/conf/settings.py"
+			],
+			[
+				"urls",
+				"urls.py"
+			],
+			[
+				"overal_he",
+				"phpBB3/styles/subsilver2_dead_topics/template/overall_header.html"
+			],
+			[
+				"membersmigr0001",
+				"booking_cares/members/migrations/0001_initial.py"
+			],
+			[
+				"tasksmigrations",
+				"bluebottle/tasks/migrations/0001_initial.py"
+			],
+			[
+				"projectsmigrations0002",
+				"bluebottle/projects/migrations/0002_auto__add_field_project_favorite.py"
+			],
+			[
+				"task_previe",
+				"bluebottle/tasks/templates/tasks/task_preview.hbs"
+			],
+			[
+				"tasks/staticmodels.js",
+				"bluebottle/tasks/static/js/bluebottle/tasks/models.js"
+			],
+			[
+				"booking_projectsmodels.js",
+				"booking_cares/booking_projects/static/js/booking_projects/models.js"
+			],
+			[
+				"tasks/modelsjs",
+				"bluebottle/tasks/static/js/bluebottle/tasks/models.js"
+			],
+			[
+				"projecttemplates",
+				"bluebottle/projects/templates/project_detail.html"
+			],
+			[
+				"tasksmodels.js",
+				"booking_cares/static/assets/js/bluebottle/tasks/models.js"
+			],
+			[
+				"tasksstatic",
+				"bluebottle/tasks/static/js/bluebottle/tasks/controllers.js"
+			],
+			[
+				"organizations/migrations",
+				"bluebottle/organizations/migrations/0001_initial.py"
+			],
+			[
+				"projectstemplatesproject.hbs",
+				"bluebottle/projects/templates/projects/project.hbs"
+			],
+			[
+				"djangocontrib/admin/",
+				"django/contrib/admin/__init__.py"
+			],
+			[
+				"bluebottleprojectsadmin",
+				"bluebottle/projects/admin.py"
+			],
+			[
+				"base.html",
+				"booking_cares/templates/base.html"
+			],
+			[
+				"base",
+				"booking_cares/booking_cares/settings/base.py"
+			],
+			[
+				"projectsmigrationini",
+				"bluebottle/projects/migrations/0001_initial.py"
+			],
+			[
+				"bluebottle",
+				"bluebottle/utils/email_backend.py"
+			],
+			[
+				"bookingcaressettingsbase",
+				"booking_cares/booking_cares/settings/base.py"
+			],
+			[
+				"task_new.hb",
+				"bluebottle/tasks/templates/tasks/task_new.hbs"
+			],
+			[
+				"taskstemplates/base.h",
+				"bluebottle/tasks/templates/tasks/base.hbs"
+			],
+			[
+				"drf2",
+				"booking_cares/static/assets/js/vendor/ember-data-drf2-adapter.js"
+			],
+			[
+				"bluebottleprojectsmodels",
+				"bluebottle/projects/models.py"
+			],
+			[
+				"core.py",
+				"bluebottle/urls/core.py"
+			],
+			[
+				"bookin_projects/ser",
+				"booking_cares/booking_projects/serializers.py"
+			],
+			[
+				"stylev20",
+				"FWStyles/StyleV20General.css"
+			],
+			[
+				"md5.js",
+				"FWJS/md5.js"
+			],
+			[
+				"fwstart",
+				"FWLogin/FWStart.php"
+			],
+			[
+				"fwglobals",
+				"FWModules/FWGlobals.php"
+			],
+			[
+				"fwrequestpass",
+				"FWLogin/FWRequestPass.php"
+			],
+			[
+				"lesfichev",
+				"LesFiche/LesFiche.v40.php"
+			],
+			[
+				"leerlingklinkbev",
+				"LeerlingLinkBeveiligingGroep/LeerlingLinkBeveiligingGroep.php"
+			],
+			[
+				"schoolonlineform",
+				"Modules/SchoolonlineFormBasicClass.php"
+			],
+			[
+				"fwformbasi",
+				"FWModules/FWFormBasicClassCommon.php"
+			],
+			[
+				"dossierlijn",
+				"DossierLijn/DossierLijn.php"
+			],
+			[
+				"belancss",
+				"BelangstellingsCentrum/BelangstellingsCentrum.v43.css"
+			],
+			[
+				"belajs",
+				"BelangstellingsCentrum/BelangstellingsCentrum.v43.js"
+			],
+			[
+				"belang",
+				"BelangstellingsCentrum/BelangstellingsCentrum.v43.php"
+			],
+			[
+				"dossierlijn.php",
+				"DossierLijn/DossierLijn.php"
+			],
+			[
+				"schoolonlinformba",
+				"Modules/SchoolonlineFormBasicClass.php"
+			],
+			[
+				"documentma",
+				"DocumentManagement/DocumentManagement.php"
+			],
+			[
+				"documentman",
+				"DocumentManagement/DocumentManagement.php"
+			],
+			[
+				"myfolderv34",
+				"MyFolder/MyFolder.v34.php"
+			],
+			[
+				"fwformbasic",
+				"FWModules/FWFormBasicClassCommon.php"
+			],
+			[
+				"conne",
+				"_Connection/Connect.php"
+			],
+			[
+				"enqueteuit",
+				"EnqueteUitvoering/EnqueteUitvoering.php"
+			],
+			[
+				"schoolon",
+				"Modules/SchoolonlineFormBasicClass.php"
+			],
+			[
+				"agendaitemv43",
+				"AgendaItem/AgendaItem.v43.php"
+			],
+			[
+				"connec",
+				"_Connection/Connect.php"
+			],
+			[
+				"agendaitemv43.php",
+				"AgendaItem/AgendaItem.v43.php"
+			],
+			[
+				"fwglobal",
+				"FWModules/FWGlobals.php"
+			],
+			[
+				"conn",
+				"_Connection/Connect.php"
+			],
+			[
+				"connect",
+				"_Connection/Connect.php"
+			],
+			[
+				"agendaitemv43php",
+				"AgendaItem/AgendaItem.v43.php"
+			],
+			[
+				"fwformbas",
+				"FWModules/FWFormBasicClassCommon.php"
+			],
+			[
+				"schoolonlineformbas",
+				"Modules/SchoolonlineFormBasicClass.php"
+			],
+			[
+				"agendaitem.v43",
+				"AgendaItem/AgendaItem.v43.php"
+			],
+			[
+				"overdrachtni",
+				"OverdrachtNieuwSchooljaar/OverdrachtNieuwSchooljaar.php"
+			],
+			[
+				"modulesversion",
+				"Modules/AppVersioning.php"
+			],
+			[
+				"fwmodulesfwformbasic",
+				"FWModules/FWFormBasicClassCommon.php"
+			],
+			[
+				"fwsuppo",
+				"FWSupport/FWSupport.php"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+			[
+				"hkser",
+				"/home/bbt/coding/ugent/hkserv.sublime-project"
+			],
+			[
+				"scho",
+				"/home/bbt/coding/pronoia/schoolonline.sublime-project"
+			],
+			[
+				"brouwers",
+				"/home/bbt/coding/modelbrouwers/brouwers.sublime-project"
+			],
+			[
+				"",
+				"/home/bbt/coding/pronoia/schoolonline.sublime-project"
+			],
+			[
+				"schol",
+				"/home/bbt/coding/pronoia/schoolonline.sublime-project"
+			],
+			[
+				"bookin",
+				"/home/bbt/coding/maykin/booking.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 135.0,
+	"status_bar_visible": true
+}
