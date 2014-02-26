@@ -1,0 +1,18 @@
+# Developers
+.hg
+.git
+.hgignore
+.hg_archival.txt
+.svn
+.idea/
+.sass-cache/
+*.db
+*.pyc
+*~
+
+# Environment
+settings_local.py
+/env/
+/media/
+/static/
+/log
