@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"verbo",
+				"verbose_name_plural"
+			],
+			[
+				"mdate",
+				"mdatetime	DateTimeField (mdatetime)"
+			],
+			[
 				"date",
 				"date_of_birth"
 			],
@@ -14,10 +22,6 @@
 			[
 				"ve",
 				"veterinarian"
-			],
-			[
-				"verbo",
-				"verbose_name"
 			],
 			[
 				"verb",
@@ -355,13 +359,46 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "src/langerak_gkv/conf/settings_local.py",
+			"settings":
+			{
+				"buffer_size": 644,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/langerak_gkv/conf/serverconfig",
+			"settings":
+			{
+				"buffer_size": 1000,
+				"line_ending": "Unix",
+				"name": "RewriteEngine  on"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 92.0,
+		"height": 52.0,
 		"selected_items":
 		[
+			[
+				"adminre",
+				"Snippet: admin_register"
+			],
+			[
+				"fk",
+				"Snippet: ForeignKey (fk)"
+			],
+			[
+				"mchar",
+				"Snippet: CharField (mchar)"
+			],
+			[
+				"mdatetim",
+				"Snippet: DateTimeField (mdatetime)"
+			],
 			[
 				"projec",
 				"Project: Close"
@@ -415,10 +452,6 @@
 				"Snippet: url"
 			],
 			[
-				"adminre",
-				"Snippet: admin_register"
-			],
-			[
 				"clas",
 				"Snippet: New Class"
 			],
@@ -431,20 +464,12 @@
 				"SublimeLinter: Show Error List"
 			],
 			[
-				"fk",
-				"Snippet: ForeignKey (fk)"
-			],
-			[
 				"m2m",
 				"Snippet: ManyToManyField (m2m)"
 			],
 			[
 				"mdate",
 				"Snippet: DateField (mdate)"
-			],
-			[
-				"mchar",
-				"Snippet: CharField (mchar)"
 			],
 			[
 				"mtext",
@@ -839,7 +864,7 @@
 				"Set Syntax: SQL"
 			]
 		],
-		"width": 247.0
+		"width": 494.0
 	},
 	"console":
 	{
@@ -856,6 +881,23 @@
 	},
 	"file_history":
 	[
+		"/home/bbt/coding/langerak/src/langerak_gkv/conf/settings.py",
+		"/home/bbt/coding/langerak/src/langerak_gkv/worklog/models.py",
+		"/home/bbt/coding/langerak/src/langerak_gkv/worklog/admin.py",
+		"/home/bbt/coding/langerak/src/langerak_gkv/users/models.py",
+		"/home/bbt/coding/maykin/laika-hdov/src/hdov/wsgi/wsgi_development.py",
+		"/home/bbt/coding/langerak/src/langerak_gkv/wsgi/wsgi_development.py",
+		"/home/bbt/coding/langerak/src/manage.py",
+		"/home/bbt/coding/langerak/src/langerak_gkv/worklog/migrations/0001_initial.py",
+		"/home/bbt/coding/langerak/src/langerak_gkv/conf/settings_development.py",
+		"/home/bbt/coding/langerak/src/langerak_gkv/conf/settings_local.py",
+		"/home/bbt/coding/langerak/src/langerak_gkv/users/__init__.py",
+		"/home/bbt/coding/maykin/laika-hdov/src/manage.py",
+		"/home/bbt/coding/.virtualenvs/langerak/bin/activate",
+		"/home/bbt/coding/.virtualenvs/hdov/bin/activate",
+		"/home/bbt/coding/maykin/laika-hdov/src/__init__.py",
+		"/home/bbt/coding/langerak/src/langerak_gkv/__init__.py",
+		"/home/bbt/coding/langerak/src/__init__.py",
 		"/home/bbt/coding/maykin/laika-hdov/src/hdov/pets/templates/my_pets.html",
 		"/home/bbt/coding/maykin/laika-hdov/src/hdov/pensions/models.py",
 		"/home/bbt/coding/maykin/laika-hdov/src/hdov/intake/templates/intake/terms.html",
@@ -966,24 +1008,7 @@
 		"/home/bbt/coding/maykin/laika-hdov/src/hdov/users/templates/users/password_reset_done.html",
 		"/home/bbt/coding/maykin/laika-hdov/src/hdov/users/templates/users/password_reset.html",
 		"/home/bbt/coding/.virtualenvs/hdov/lib/python2.7/site-packages/django/contrib/admin/templates/registration/password_reset_complete.html",
-		"/home/bbt/coding/maykin/laika-hdov/src/hdov/users/templates/users/password_reset_confirm.html",
-		"/home/bbt/coding/.virtualenvs/hdov/lib/python2.7/site-packages/django/contrib/admin/templates/registration/password_reset_done.html",
-		"/home/bbt/coding/.virtualenvs/hdov/lib/python2.7/site-packages/django/contrib/auth/templates/registration/password_reset_subject.txt",
-		"/home/bbt/coding/.virtualenvs/hdov/lib/python2.7/site-packages/django/contrib/admin/templates/registration/password_change_form.html",
-		"/home/bbt/coding/.virtualenvs/hdov/lib/python2.7/site-packages/django/contrib/admin/templates/registration/password_reset_form.html",
-		"/home/bbt/coding/maykin/laika-hdov/src/hdov/users/static/foo.txt",
-		"/home/bbt/coding/maykin/laika-hdov/src/hdov/users/admin.py",
-		"/home/bbt/coding/maykin/laika-hdov/src/hdov/wsgi/wsgi_development.py",
-		"/home/bbt/coding/.virtualenvs/hdov/lib/python2.7/site-packages/django/contrib/auth/models.py",
-		"/home/bbt/coding/.virtualenvs/hdov/lib/python2.7/site-packages/django/contrib/auth/management/commands/createsuperuser.py",
-		"/home/bbt/samba",
-		"/home/bbt/coding/.virtualenvs/hdov/lib/python2.7/site-packages/django/contrib/auth/admin.py",
-		"/home/bbt/coding/.virtualenvs/hdov/bin/activate",
-		"/home/bbt/.config/sublime-text-2/Packages/User/ugettext_lazy.sublime-snippet",
-		"/home/bbt/coding/.virtualenvs/hdov/lib/python2.7/site-packages/django/contrib/admin/templates/admin/auth/user/add_form.html",
-		"/home/bbt/coding/maykin/laika-hdov/src/hdov/templates/admin/auth/user/add_form.html",
-		"/home/bbt/.config/sublime-text-2/Packages/User/admin_register.sublime-snippet",
-		"/home/bbt/coding/maykin/laika-hdov/src/hdov/conf/settings_development.py"
+		"/home/bbt/coding/maykin/laika-hdov/src/hdov/users/templates/users/password_reset_confirm.html"
 	],
 	"find":
 	{
@@ -1006,6 +1031,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"WorkLog",
 			"vaccination",
 			"born",
 			"\"",
@@ -1132,8 +1158,7 @@
 			"email",
 			"username,",
 			"manager",
-			".db",
-			"src"
+			".db"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1151,8 +1176,242 @@
 	"groups":
 	[
 		{
+			"selected": 1,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "src/langerak_gkv/conf/settings_local.py",
+					"settings":
+					{
+						"buffer_size": 644,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								644,
+								644
+							]
+						],
+						"settings":
+						{
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"csslint_options":
+							{
+								"adjoining-classes": "warning",
+								"box-model": true,
+								"box-sizing": "warning",
+								"compatible-vendor-prefixes": "warning",
+								"display-property-grouping": true,
+								"duplicate-background-images": "warning",
+								"duplicate-properties": true,
+								"empty-rules": true,
+								"errors": true,
+								"fallback-colors": "warning",
+								"floats": "warning",
+								"font-faces": "warning",
+								"font-sizes": "warning",
+								"gradients": "warning",
+								"ids": "warning",
+								"import": "warning",
+								"important": "warning",
+								"known-properties": true,
+								"outline-none": "warning",
+								"overqualified-elements": "warning",
+								"qualified-headings": "warning",
+								"regex-selectors": "warning",
+								"rules-count": "warning",
+								"shorthand": "warning",
+								"star-property-hack": "warning",
+								"text-indent": "warning",
+								"underscore-property-hack": "warning",
+								"unique-headings": "warning",
+								"universal-selector": "warning",
+								"vendor-prefix": true,
+								"zero-units": "warning"
+							},
+							"gjslint_ignore":
+							[
+								110
+							],
+							"gjslint_options":
+							[
+							],
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"browser": true,
+								"evil": true,
+								"regexdash": true,
+								"sub": true,
+								"trailing": true,
+								"wsh": true
+							},
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublimelinter": true,
+							"sublimelinter_delay": 2,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": true,
+							"sublimelinter_gutter_marks_theme": "simple",
+							"sublimelinter_mark_style": "none",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"C++": "c",
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "src/langerak_gkv/conf/serverconfig",
+					"settings":
+					{
+						"buffer_size": 1000,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1000,
+								1000
+							]
+						],
+						"settings":
+						{
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"auto_name": "RewriteEngine  on",
+							"csslint_options":
+							{
+								"adjoining-classes": "warning",
+								"box-model": true,
+								"box-sizing": "warning",
+								"compatible-vendor-prefixes": "warning",
+								"display-property-grouping": true,
+								"duplicate-background-images": "warning",
+								"duplicate-properties": true,
+								"empty-rules": true,
+								"errors": true,
+								"fallback-colors": "warning",
+								"floats": "warning",
+								"font-faces": "warning",
+								"font-sizes": "warning",
+								"gradients": "warning",
+								"ids": "warning",
+								"import": "warning",
+								"important": "warning",
+								"known-properties": true,
+								"outline-none": "warning",
+								"overqualified-elements": "warning",
+								"qualified-headings": "warning",
+								"regex-selectors": "warning",
+								"rules-count": "warning",
+								"shorthand": "warning",
+								"star-property-hack": "warning",
+								"text-indent": "warning",
+								"underscore-property-hack": "warning",
+								"unique-headings": "warning",
+								"universal-selector": "warning",
+								"vendor-prefix": true,
+								"zero-units": "warning"
+							},
+							"gjslint_ignore":
+							[
+								110
+							],
+							"gjslint_options":
+							[
+							],
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"browser": true,
+								"evil": true,
+								"regexdash": true,
+								"sub": true,
+								"trailing": true,
+								"wsh": true
+							},
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublimelinter": true,
+							"sublimelinter_delay": 2,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": true,
+							"sublimelinter_gutter_marks_theme": "simple",
+							"sublimelinter_mark_style": "none",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"C++": "c",
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_size": 8,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -1197,6 +1456,10 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"wsgide",
+				"src/langerak_gkv/wsgi/wsgi_development.py"
+			],
 			[
 				"pensionmoels",
 				"hdov/pensions/models.py"
@@ -1602,12 +1865,16 @@
 		"selected_items":
 		[
 			[
-				"hkser",
-				"/home/bbt/coding/ugent/hkserv.sublime-project"
-			],
-			[
 				"scho",
 				"/home/bbt/coding/pronoia/schoolonline.sublime-project"
+			],
+			[
+				"hdo",
+				"/home/bbt/coding/maykin/hdov.sublime-project"
+			],
+			[
+				"hkser",
+				"/home/bbt/coding/ugent/hkserv.sublime-project"
 			],
 			[
 				"brouwers",
@@ -1632,6 +1899,6 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 135.0,
+	"side_bar_width": 215.0,
 	"status_bar_visible": true
 }
