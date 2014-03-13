@@ -1,0 +1,21 @@
+|*if SUB=""|
+        Alias /media/ /home/lang/django/staging.langerak-gkv.nl/media/
+        <Directory /home/lang/django/staging.langerak-gkv.nl/media>
+                Order deny,allow
+                Allow from all
+        </Directory>
+        Alias /static/ /home/lang/django/staging.langerak-gkv.nl/static/
+        <Directory /home/lang/django/staging.langerak-gkv.nl/static/>
+                Order deny,allow
+                Allow from all
+        </Directory>
+        #DJANGO config
+        WSGIDaemonProcess staging.langerak-gkv.nl processes=1 threads=2 maximum-requests=100 display-name=%{GROUP} inactivity-timeout=300
+        WSGIProcessGroup staging.langerak-gkv.nl
+        WSGIScriptAlias /staging/ /home/lang/django/staging.langerak-gkv.nl/src/langerak_gkv/wsgi/wsgi_staging.py
+        WSGIPassAuthorization On
+        <Directory /home/lang/django/staging.langerak-gkv.nl/src/langerak_gkv/wsgi/>
+                Order deny,allow
+                Allow from all
+        </Directory>
+|*endif|
