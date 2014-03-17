@@ -16,3 +16,6 @@ settings_local.py
 /media/
 /static/
 /log
+
+# Sublime
+/langerak.sublime-workspace
