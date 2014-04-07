@@ -39,6 +39,15 @@ class User(AbstractBaseUser, PermissionsMixin):
         male = ChoiceItem('male', _('male'))
         female = ChoiceItem('female', _('female'))
 
+    def get_image_path(instance, filename):
+        """
+        Keep the pictures in folders directly relate to the user:
+        /media/images/users/<user_id>/example.jpg
+        """
+        name, extension = os.path.splitext(filename)
+        filename = name + extension
+        return os.path.join('images/users', str(instance.id), filename)
+
     email = models.EmailField(_('email address'), max_length=254, unique=True)
 
     first_name = models.CharField(_('first name'), max_length=50, blank=True)
@@ -65,25 +74,16 @@ class User(AbstractBaseUser, PermissionsMixin):
         help_text=_('Mobile phone number'))
 
     birthdate = models.DateField(_('birth_date'), blank=True, null=True)
+    picture = models.ImageField(_('picture'), upload_to=get_image_path,
+        blank=True, null=True, help_text=_('Profile picture'))
 
     # district/family information
     district = models.ForeignKey('users.District', verbose_name=_(u'district'),
         blank=True, null=True)
-    disctrict_function = models.ForeignKey('users.DistrictFunction', blank=True, null=True)
+    district_function = models.ForeignKey('users.DistrictFunction', blank=True, null=True)
     family = models.ForeignKey('users.Family', verbose_name=_('family'), blank=True, null=True)
     relations = models.ManyToManyField('self', blank=True, null=True,
         through='users.UserRelation', symmetrical=False)
-
-    def get_image_path(instance, filename):
-        """
-        Keep the pictures in folders directly relate to the user:
-        /media/images/users/<user_id>/example.jpg
-        """
-        name, extension = os.path.splitext(filename)
-        filename = name + extension
-        return os.path.join('images/users', str(instance.id), filename)
-    picture = models.ImageField(_('picture'), upload_to=get_image_path,
-        blank=True, null=True, help_text=_('Profile picture'))
 
     objects = UserManager()
 
@@ -122,8 +122,7 @@ class UserRelation(models.Model):
     user1 = models.ForeignKey('users.User', related_name='user1_set')
     user2 = models.ForeignKey('users.User', related_name='user2_set')
     relation_type = models.ForeignKey('users.RelationType',
-        help_text=_('User 2 is <relation type> of user 1.'))
-
+        help_text=_('User 2 is `relation type` of user 1.'))
 
     class Meta:
         verbose_name = _(u'user relation')
@@ -131,6 +130,7 @@ class UserRelation(models.Model):
 
 
 class RelationType(models.Model):
+    name = models.CharField(_('name (generic)'), max_length=100)
     name_male = models.CharField(_('name (male)'), max_length=100)
     name_female = models.CharField(_('name (female)'), max_length=100)
     name_reverse_male = models.CharField(_('name reverse (male)'), max_length=100,
@@ -140,7 +140,7 @@ class RelationType(models.Model):
 
     class Meta:
         verbose_name = _(u'relation type')
-        verbose_name = _(u'relation types')
+        verbose_name_plural = _(u'relation types')
 
     def __unicode__(self):
         return self.name
