@@ -1,4 +1,4 @@
-{% load compress staticfiles %}<!DOCTYPE html>
+{% load compress staticfiles i18n %}<!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="utf-8">
@@ -13,7 +13,11 @@
             <link href="{% static 'langerak_gkv/css/screen.css' %}" media="screen, projection" rel="stylesheet" type="text/css" />
             <link href="{% static 'langerak_gkv/css/print.css' %}" media="print" rel="stylesheet" type="text/css" />
 
-            {% block extra_css %}{% endblock %}
+            {% block extra_css %}
+            <style>
+                .border { border:solid 1px black;}
+            </style>
+            {% endblock %}
         {% endcompress %}
         <!--[if IE]>
             <link href="{% static 'langerak_gkv/css/ie.css' %}" media="screen, projection" rel="stylesheet" type="text/css" />
@@ -33,24 +37,26 @@
     </head>
     <body class="{% block body-class %}{% endblock %}">
 
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8">
-                    <h1>Welcome!</h1>
-                    <p>This is the default project page for Langerak_Gkv.</p>
+        {% block header %}{% include "header.html" %}{% endblock %}
+
+        <section class="container border" id="content" style="height: 500px;">
+            {% block content %}Override block `content`{% endblock %}
+        </section>
+
+        {% block footer %}
+            <footer class="container">
+                <div class="row border">
+                    <div class="col-xs-12 col-md-6">{% trans "Signup for the newsletter" %}</div>
+                    <div class="col-xs-12 col-md-6"><input class="form-control" placeholder="{% trans "Enter your e-mail address here" %}"></div>
                 </div>
-                <div class="col-md-4">
-                    <h2>What now?</h2>
-                    <p>How about:</p>
-                    <ul>
-                        <li>Looking around <a href='/admin/'>the admin</a></li>
-                        <li>Adding your apps for <em>Langerak_Gkv</em></li>
-                        <li>Hooking them up to your <em>urls.py</em></li>
-                        <li>Styling this page using Bootstrap!</li>
-                    </ul>
+
+                <div class="row border">
+                    <div class="col-xs-6 col-lg-3">{% trans "Footer links" %}</div>
+                    <div class="col-xs-6 col-lg-3">{% trans "Footer links" %}</div>
+                    <div class="col-xs-12 col-lg-6">{% trans "Map + contact" %}
                 </div>
-            </div>
-        </div>
+            </footer>
+        {% endblock %}
 
         <script src="{% static 'langerak_gkv/lib/bootstrap-3.1.0/js/bootstrap.min.js' %}"></script>
 

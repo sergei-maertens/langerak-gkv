@@ -1,0 +1,46 @@
+{% load i18n %}
+<header class="container border">
+    <div class="row">
+        <div class="logo col-xs-5 col-xs-offset-3" id="main-logo">{% trans "logo" %}</div>
+        <div class="col-xs-4">
+            <input class="form-control" placeholder="{% trans "Search the entire website" %}">
+        </div>
+    </div>
+
+    <figure id="header-image">
+        <img src="http://placehold.it/1200x200" width="100%" height="200px">
+    </figure>
+
+    <div id="header-overlay"></div>
+
+
+    <!-- navbar -->
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav">
+                    <span class="sr-only">{% trans "Toggle navigation" %}</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+
+            <div class="collapse navbar-collapse" id="main-nav">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">{% trans "News" %}</a></li>
+                    <li><a href="#">{% trans "Church services" %}</a></li>
+                    <li><a href="#">{% trans "Koningskerk" %}</a></li>
+                    <li><a href="#">{% trans "Neighbourhood" %}</a></li>
+                    <li><a href="#">{% trans "Calendar" %}</a></li>
+                    <li><a href="#">{% trans "Contact" %}</a></li>
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="/admin/">{% trans "Admin/login" %}</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- end navbar -->
+</header>
