@@ -40,3 +40,45 @@
 }
 
 /* ie8, chrome, etc */
+/* line 3, ../../../sass/partials/_header.scss */
+body > header {
+  position: relative;
+}
+
+/* line 7, ../../../sass/partials/_header.scss */
+#header-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  width: 100%;
+  z-index: 3;
+  height: 450px;
+  width: 100%;
+}
+
+/* line 17, ../../../sass/partials/_header.scss */
+#header-image {
+  max-height: 450px;
+}
+
+/* line 21, ../../../sass/partials/_header.scss */
+#header-overlay-left,
+#header-overlay-right {
+  width: 100%;
+  height: 450px;
+  position: absolute;
+  top: 0;
+}
+
+/* line 27, ../../../sass/partials/_header.scss */
+#header-overlay-left {
+  background: url("../../img/header_overlay_left.png") no-repeat center left;
+  left: 15px;
+}
+
+/* line 31, ../../../sass/partials/_header.scss */
+#header-overlay-right {
+  background: url("../../img/header_overlay_right.png") no-repeat center right;
+  right: 15px;
+}

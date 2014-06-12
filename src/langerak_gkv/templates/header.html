@@ -1,20 +1,26 @@
-{% load i18n %}
+{% load i18n static %}
 <header class="container border">
-    <div class="row">
-        <div class="logo col-xs-5 col-xs-offset-3" id="main-logo">{% trans "logo" %}</div>
-        <div class="col-xs-4">
-            <input class="form-control" placeholder="{% trans "Search the entire website" %}">
-        </div>
-    </div>
-
     <figure id="header-image">
-        <img src="http://placehold.it/1200x200" width="100%" height="200px">
+        <img src="{% static "img/header_img1.png" %}" width="100%" height="100%">
     </figure>
 
-    <div id="header-overlay"></div>
+    <div id="header-overlay">
+        <div id="header-overlay-left"></div>
+        <div id="header-overlay-right"></div>
+
+        {# <div> #}
+            {# <div class="logo col-xs-5 col-xs-offset-3" id="main-logo">{% trans "logo" %}</div> #}
+            {# <div class="col-xs-4"> #}
+                {# <input class="form-control" placeholder="{% trans "Search the entire website" %}"> #}
+            {# </div> #}
+        {# </div> #}
+    </div>
+
+</header>
 
 
     <!-- navbar -->
+<div class="container">
     <nav class="navbar navbar-default" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -43,4 +49,4 @@
         </div>
     </nav>
     <!-- end navbar -->
-</header>
+</div>
