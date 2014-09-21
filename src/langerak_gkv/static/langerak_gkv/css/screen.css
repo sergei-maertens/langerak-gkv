@@ -20,6 +20,9 @@
 }
 
 /*
+ * color palette
+ */
+/*
 * Hide the dotted lines around an element when it receives focus.
 */
 /* line 5, ../../../sass/partials/_utils.scss */
@@ -40,12 +43,81 @@
 }
 
 /* ie8, chrome, etc */
+/* line 2, ../../../sass/partials/_social.scss */
+.fa-facebook,
+.fa-twitter {
+  font-size: 200%;
+  color: white;
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  text-align: center;
+  line-height: 35px;
+}
+
+/* line 12, ../../../sass/partials/_social.scss */
+.fa-facebook {
+  background-color: #32528F;
+  position: relative;
+}
+
+/* line 17, ../../../sass/partials/_social.scss */
+.fa-twitter {
+  background-color: #2EA8DB;
+}
+
+/* line 1, ../../../sass/partials/_base.scss */
+#content {
+  padding-left: 65px;
+  padding-right: 65px;
+  background-color: #e9e9e9;
+  padding-top: 25px;
+}
+
+/* line 11, ../../../sass/partials/_base.scss */
+article {
+  background-color: white;
+  padding: 15px;
+  margin-bottom: 15px;
+}
+/* line 16, ../../../sass/partials/_base.scss */
+article h1 {
+  color: #d9e12e;
+}
+
+/* line 22, ../../../sass/partials/_base.scss */
+figure img {
+  width: 100%;
+}
+
+/*
+ * Buttons
+ */
+/* line 32, ../../../sass/partials/_base.scss */
+.btn {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+  border-radius: 0;
+}
+/* line 35, ../../../sass/partials/_base.scss */
+.btn, .btn:hover, .btn:active, .btn.active, .btn:focus {
+  background-image: none;
+  border: none;
+}
+/* line 40, ../../../sass/partials/_base.scss */
+.btn.btn-default {
+  background-color: #d9e12e;
+  color: #584c40;
+}
+
 /* line 3, ../../../sass/partials/_header.scss */
 body > header {
   position: relative;
 }
 
-/* line 7, ../../../sass/partials/_header.scss */
+/* line 8, ../../../sass/partials/_header.scss */
 #header-overlay {
   position: absolute;
   top: 0;
@@ -53,31 +125,31 @@ body > header {
   z-index: 0;
   width: 100%;
   z-index: 3;
-  height: 450px;
+  height: 375px;
   width: 100%;
 }
 
-/* line 17, ../../../sass/partials/_header.scss */
+/* line 18, ../../../sass/partials/_header.scss */
 #header-image {
-  max-height: 450px;
+  max-height: 375px;
 }
 
-/* line 21, ../../../sass/partials/_header.scss */
+/* line 22, ../../../sass/partials/_header.scss */
 #header-overlay-left,
 #header-overlay-right {
   width: 100%;
-  height: 450px;
+  height: 375px;
   position: absolute;
   top: 0;
 }
 
-/* line 27, ../../../sass/partials/_header.scss */
+/* line 28, ../../../sass/partials/_header.scss */
 #header-overlay-left {
   background: url("../../img/header_overlay_left.png") no-repeat center left;
   left: 15px;
 }
 
-/* line 31, ../../../sass/partials/_header.scss */
+/* line 32, ../../../sass/partials/_header.scss */
 #header-overlay-right {
   background: url("../../img/header_overlay_right.png") no-repeat center right;
   right: 15px;

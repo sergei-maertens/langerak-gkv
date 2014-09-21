@@ -12,7 +12,7 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
 
     # Simply show the master template.
-    (r'^$', TemplateView.as_view(template_name='master.html')),
+    (r'^$', TemplateView.as_view(template_name='home.html')),
 )
 
 

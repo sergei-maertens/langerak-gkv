@@ -1,0 +1,44 @@
+#content {
+  padding-left: 65px;
+  padding-right: 65px;
+
+  background-color: $color-background;
+  padding-top: 25px;
+
+
+}
+
+article {
+  background-color: $white;
+  padding: 15px;
+  margin-bottom: 15px;
+
+  h1 {
+    color: $main-color-green;
+  }
+}
+
+figure {
+  img {
+    width: 100%;
+  }
+}
+
+
+
+/*
+ * Buttons
+ */
+.btn {
+  @include border-radius(0);
+
+  &, &:hover, &:active, &.active, &:focus {
+    background-image: none;
+    border: none;
+  }
+
+  &.btn-default {
+    background-color: $main-color-green;
+    color: $text-dark;
+  }
+}
