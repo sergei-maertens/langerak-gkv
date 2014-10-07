@@ -17,7 +17,7 @@
                             <figure>
                                 <img src="/media/1.png">
                             </figure>
-                            <h1>{% trans "Activity 1" %}</h1>
+                            <h2>{% trans "Activity 1" %}</h2>
                         </header>
 
                         <p class="description">
@@ -30,12 +30,20 @@
                         </p>
 
                         <footer>
-                            <a href="#"><span class="fa fa-facebook"></span></a>
-                            <a href="#"><span class="fa fa-twitter"></span></a>
-                            <a href="#" class="btn btn-default read-more">
-                                {% trans "Read more" %}
-                                <span class="glyphicon glyphicon-play"></span>
-                            </a>
+                            <ul class="list-inline">
+                                <li class="social facebook">
+                                    <a href="#"><span class="fa fa-facebook"></span></a>
+                                </li>
+                                <li class="social twitter">
+                                    <a href="#"><span class="fa fa-twitter"></span></a>
+                                </li>
+                                <li>
+                                    <a href="#" class="btn btn-default read-more">
+                                        {% trans "Read more" %}
+                                        <span class="glyphicon glyphicon-play"></span>
+                                    </a>
+                                </li>
+                            </ul>
                         </footer>
                     </article>
                 </div>
@@ -47,7 +55,7 @@
                             <figure>
                                 <img src="/media/1.png">
                             </figure>
-                            <h1>{% trans "Activity 1" %}</h1>
+                            <h2>{% trans "Activity 1" %}</h2>
                         </header>
 
                         <p class="description">
@@ -60,8 +68,8 @@
                         </p>
 
                         <footer>
-                            <a href="#"><span class="fa fa-facebook"></span></a>
-                            <a href="#"><span class="fa fa-twitter"></span></a>
+                            <a href="#" class="social"><span class="fa fa-facebook"></span></a>
+                            <a href="#" class="social"><span class="fa fa-twitter"></span></a>
                             <a href="#" class="btn btn-default read-more">
                                 {% trans "Read more" %}
                                 <span class="glyphicon glyphicon-play"></span>
@@ -92,8 +100,8 @@
                         </p>
 
                         <footer>
-                            <a href="#"><span class="fa fa-facebook"></span></a>
-                            <a href="#"><span class="fa fa-twitter"></span></a>
+                            <a href="#" class="social"><span class="fa fa-facebook"></span></a>
+                            <a href="#" class="social"><span class="fa fa-twitter"></span></a>
                             <a href="#" class="btn btn-default read-more">
                                 {% trans "Read more" %}
                                 <span class="glyphicon glyphicon-play"></span>
@@ -108,7 +116,7 @@
                             <figure>
                                 <img src="/media/1.png">
                             </figure>
-                            <h1>{% trans "Activity 1" %}</h1>
+                            <h2>{% trans "Activity 1" %}</h2>
                         </header>
 
                         <p class="description">
@@ -121,8 +129,8 @@
                         </p>
 
                         <footer>
-                            <a href="#"><span class="fa fa-facebook"></span></a>
-                            <a href="#"><span class="fa fa-twitter"></span></a>
+                            <a href="#" class="social"><span class="fa fa-facebook"></span></a>
+                            <a href="#" class="social"><span class="fa fa-twitter"></span></a>
                             <a href="#" class="btn btn-default read-more">
                                 {% trans "Read more" %}
                                 <span class="glyphicon glyphicon-play"></span>
@@ -136,7 +144,7 @@
         <section class="news">
             <article class="news-item">
                 <header>
-                    <h1>{% trans "Koningskerk Langerak" %}</h1>
+                    <h2>{% trans "Koningskerk Langerak" %}</h2>
                     <p>Hartelijk welkom ...</p>
                 </header>
                 <p>

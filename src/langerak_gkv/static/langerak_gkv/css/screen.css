@@ -43,27 +43,43 @@
 }
 
 /* ie8, chrome, etc */
-/* line 2, ../../../sass/partials/_social.scss */
-.fa-facebook,
-.fa-twitter {
-  font-size: 200%;
-  color: white;
-  display: inline-block;
-  width: 35px;
-  height: 35px;
+/* line 1, ../../../sass/partials/_social.scss */
+li.social {
+  height: 32px;
+  padding-left: 0;
+  padding-right: 0;
   text-align: center;
-  line-height: 35px;
-}
-
-/* line 12, ../../../sass/partials/_social.scss */
-.fa-facebook {
-  background-color: #32528F;
   position: relative;
+  top: 3px;
+}
+/* line 9, ../../../sass/partials/_social.scss */
+li.social + li {
+  padding-left: 0;
+}
+/* line 13, ../../../sass/partials/_social.scss */
+li.social.facebook {
+  background-color: #32528F;
+}
+/* line 17, ../../../sass/partials/_social.scss */
+li.social.twitter {
+  background-color: #2EA8DB;
+}
+/* line 21, ../../../sass/partials/_social.scss */
+li.social a {
+  display: block;
+  width: 32px;
+  height: 32px;
+  line-height: 32px;
+  color: white;
+  font-size: 24px;
 }
 
-/* line 17, ../../../sass/partials/_social.scss */
-.fa-twitter {
-  background-color: #2EA8DB;
+/* line 31, ../../../sass/partials/_social.scss */
+.fa-facebook {
+  position: relative;
+  font-size: 28px;
+  left: 3px;
+  top: 7px;
 }
 
 /* line 1, ../../../sass/partials/_base.scss */
@@ -81,11 +97,16 @@ article {
   margin-bottom: 15px;
 }
 /* line 16, ../../../sass/partials/_base.scss */
-article h1 {
+article h1, article h2 {
   color: #d9e12e;
+  font-weight: bold;
+}
+/* line 21, ../../../sass/partials/_base.scss */
+article footer {
+  text-align: right;
 }
 
-/* line 22, ../../../sass/partials/_base.scss */
+/* line 27, ../../../sass/partials/_base.scss */
 figure img {
   width: 100%;
 }
@@ -93,7 +114,7 @@ figure img {
 /*
  * Buttons
  */
-/* line 32, ../../../sass/partials/_base.scss */
+/* line 37, ../../../sass/partials/_base.scss */
 .btn {
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
@@ -101,12 +122,12 @@ figure img {
   -o-border-radius: 0;
   border-radius: 0;
 }
-/* line 35, ../../../sass/partials/_base.scss */
+/* line 40, ../../../sass/partials/_base.scss */
 .btn, .btn:hover, .btn:active, .btn.active, .btn:focus {
   background-image: none;
   border: none;
 }
-/* line 40, ../../../sass/partials/_base.scss */
+/* line 45, ../../../sass/partials/_base.scss */
 .btn.btn-default {
   background-color: #d9e12e;
   color: #584c40;
