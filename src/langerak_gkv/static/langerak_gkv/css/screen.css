@@ -83,30 +83,39 @@ li.social a {
 }
 
 /* line 1, ../../../sass/partials/_base.scss */
-#content {
+.narrow {
   padding-left: 65px;
   padding-right: 65px;
+}
+/* line 6, ../../../sass/partials/_base.scss */
+.narrow .narrow {
+  margin-left: -65px;
+  margin-right: -65px;
+}
+
+/* line 12, ../../../sass/partials/_base.scss */
+#content {
   background-color: #e9e9e9;
   padding-top: 25px;
 }
 
-/* line 11, ../../../sass/partials/_base.scss */
+/* line 17, ../../../sass/partials/_base.scss */
 article {
   background-color: white;
   padding: 15px;
   margin-bottom: 15px;
 }
-/* line 16, ../../../sass/partials/_base.scss */
+/* line 22, ../../../sass/partials/_base.scss */
 article h1, article h2 {
   color: #d9e12e;
   font-weight: bold;
 }
-/* line 21, ../../../sass/partials/_base.scss */
+/* line 27, ../../../sass/partials/_base.scss */
 article footer {
   text-align: right;
 }
 
-/* line 27, ../../../sass/partials/_base.scss */
+/* line 33, ../../../sass/partials/_base.scss */
 figure img {
   width: 100%;
 }
@@ -114,7 +123,7 @@ figure img {
 /*
  * Buttons
  */
-/* line 37, ../../../sass/partials/_base.scss */
+/* line 43, ../../../sass/partials/_base.scss */
 .btn {
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
@@ -122,12 +131,12 @@ figure img {
   -o-border-radius: 0;
   border-radius: 0;
 }
-/* line 40, ../../../sass/partials/_base.scss */
+/* line 46, ../../../sass/partials/_base.scss */
 .btn, .btn:hover, .btn:active, .btn.active, .btn:focus {
   background-image: none;
   border: none;
 }
-/* line 45, ../../../sass/partials/_base.scss */
+/* line 51, ../../../sass/partials/_base.scss */
 .btn.btn-default {
   background-color: #d9e12e;
   color: #584c40;
@@ -174,4 +183,32 @@ body > header {
 #header-overlay-right {
   background: url("../../img/header_overlay_right.png") no-repeat center right;
   right: 15px;
+}
+
+/* line 1, ../../../sass/partials/_footer.scss */
+body > footer {
+  background-color: #a23854;
+  color: white;
+}
+/* line 5, ../../../sass/partials/_footer.scss */
+body > footer #newsletter {
+  background-color: #d9e12e;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+/* line 10, ../../../sass/partials/_footer.scss */
+body > footer #newsletter h2 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+/* line 16, ../../../sass/partials/_footer.scss */
+body > footer #main-footer {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+/* line 21, ../../../sass/partials/_footer.scss */
+body > footer #copyright {
+  background-color: #6d095e;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }

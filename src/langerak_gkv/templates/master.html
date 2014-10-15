@@ -36,22 +36,44 @@
 
         {% block header %}{% include "header.html" %}{% endblock %}
 
-        <section class="container" id="content">
+        <section class="container narrow" id="content">
             {% block content %}Override block `content`{% endblock %}
         </section>
 
         {% block footer %}
-            <footer class="container">
-                <div class="row border">
-                    <div class="col-xs-12 col-md-6">{% trans "Signup for the newsletter" %}</div>
-                    <div class="col-xs-12 col-md-6"><input class="form-control" placeholder="{% trans "Enter your e-mail address here" %}"></div>
+            <footer class="container narrow">
+                <div class="narrow" id="newsletter">
+                    <div class="row">
+                        <h2 class="col-xs-12 col-md-6">{% trans "Signup for the newsletter" %}</h2>
+                        <div class="col-xs-12 col-md-6"><input class="form-control" placeholder="{% trans "Enter your e-mail address here" %}"></div>
+                    </div>
                 </div>
 
-                <div class="row border">
-                    <div class="col-xs-6 col-lg-3">{% trans "Footer links" %}</div>
-                    <div class="col-xs-6 col-lg-3">{% trans "Footer links" %}</div>
-                    <div class="col-xs-12 col-lg-6">{% trans "Map + contact" %}
+                <div class="row" id="main-footer">
+                    <div class="col-xs-6 col-lg-3">
+                        {% trans "Footer links" %}
+                        <ul>
+                            <li><a href="#">Lorem ipsum</a></li>
+                            <li><a href="#">Lorem ipsum</a></li>
+                            <li><a href="#">Lorem ipsum</a></li>
+                            <li><a href="#">Lorem ipsum</a></li>
+                            <li><a href="#">Lorem ipsum</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-6 col-lg-3">
+                        {% trans "Footer links" %}
+                        <ul>
+                            <li><a href="#">Lorem ipsum</a></li>
+                            <li><a href="#">Lorem ipsum</a></li>
+                            <li><a href="#">Lorem ipsum</a></li>
+                            <li><a href="#">Lorem ipsum</a></li>
+                            <li><a href="#">Lorem ipsum</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-12 col-lg-6">{% trans "Map + contact" %}</div>
                 </div>
+
+                <div id="copyright" class="narrow">&copy; Copyright Koningskerk 2014</div>
             </footer>
         {% endblock %}
 

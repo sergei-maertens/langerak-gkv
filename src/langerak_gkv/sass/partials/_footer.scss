@@ -1,0 +1,27 @@
+body > footer {
+  background-color: $main-color-light-purple;
+  color: $white;
+
+  #newsletter {
+    background-color: $main-color-green;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    h2 {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+
+  #main-footer {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  #copyright {
+    background-color: $main-color-purple;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+}
+

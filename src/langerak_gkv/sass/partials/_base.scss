@@ -1,11 +1,17 @@
-#content {
-  padding-left: 65px;
-  padding-right: 65px;
+.narrow {
+  $spacing: 65px;
+  padding-left: $spacing;
+  padding-right: $spacing;
 
+  .narrow {
+    margin-left: -$spacing;
+    margin-right: -$spacing;
+  }
+}
+
+#content {
   background-color: $color-background;
   padding-top: 25px;
-
-
 }
 
 article {
