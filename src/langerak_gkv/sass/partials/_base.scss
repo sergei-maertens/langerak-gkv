@@ -52,4 +52,13 @@ figure {
     background-color: $main-color-green;
     color: $text-dark;
   }
+
+  &.read-more {
+    text-transform: uppercase;
+    font-weight: bold;
+
+    .glyphicon {
+      color: $white;
+    }
+  }
 }

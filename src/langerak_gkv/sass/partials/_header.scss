@@ -1,35 +1,61 @@
 @import "compass";
 
 body > header {
-    position: relative;
+  position: relative;
 }
 
 $header-height: 375px;
 #header-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 0;
-    width: 100%;
-    z-index: 3;
-    height: $header-height;
-    width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  width: 100%;
+  z-index: 3;
+  height: $header-height;
+  width: 100%;
 }
 #header-image {
-    max-height: $header-height;
+  max-height: $header-height;
 }
 #header-overlay-left,
 #header-overlay-right {
-    width: 100%;
-    height: $header-height;
-    position: absolute;
-    top: 0;
+  width: 100%;
+  height: $header-height;
+  position: absolute;
+  top: 0;
 }
 #header-overlay-left {
-    @include background(url('../../img/header_overlay_left.png') no-repeat center left);
-    left: 15px;
+  @include background(url('../../img/header_overlay_left.png') no-repeat center left);
+  left: 15px;
 }
 #header-overlay-right {
-    @include background(url('../../img/header_overlay_right.png') no-repeat center right);
-    right: 15px;
+  @include background(url('../../img/header_overlay_right.png') no-repeat center right);
+  right: 15px;
+}
+
+#main-nav {
+  margin-bottom: 0;
+  border: none;
+  min-height: 30px;
+
+  .navbar-nav {
+    li {
+      &.active a {
+        background: $color-background;
+        color: $main-color-purple;
+      }
+
+      a {
+        text-transform: uppercase;
+        color: $text-dark;
+        font-weight: bold;
+        padding: 7px 10px;
+
+        &:hover, &:focus, &:active {
+          background: $color-background;
+        }
+      }
+    }
+  }
 }

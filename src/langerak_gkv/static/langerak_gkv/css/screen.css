@@ -141,6 +141,15 @@ figure img {
   background-color: #d9e12e;
   color: #584c40;
 }
+/* line 56, ../../../sass/partials/_base.scss */
+.btn.read-more {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+/* line 60, ../../../sass/partials/_base.scss */
+.btn.read-more .glyphicon {
+  color: white;
+}
 
 /* line 3, ../../../sass/partials/_header.scss */
 body > header {
@@ -183,6 +192,29 @@ body > header {
 #header-overlay-right {
   background: url("../../img/header_overlay_right.png") no-repeat center right;
   right: 15px;
+}
+
+/* line 37, ../../../sass/partials/_header.scss */
+#main-nav {
+  margin-bottom: 0;
+  border: none;
+  min-height: 30px;
+}
+/* line 44, ../../../sass/partials/_header.scss */
+#main-nav .navbar-nav li.active a {
+  background: #e9e9e9;
+  color: #6d095e;
+}
+/* line 49, ../../../sass/partials/_header.scss */
+#main-nav .navbar-nav li a {
+  text-transform: uppercase;
+  color: #584c40;
+  font-weight: bold;
+  padding: 7px 10px;
+}
+/* line 55, ../../../sass/partials/_header.scss */
+#main-nav .navbar-nav li a:hover, #main-nav .navbar-nav li a:focus, #main-nav .navbar-nav li a:active {
+  background: #e9e9e9;
 }
 
 /* line 1, ../../../sass/partials/_footer.scss */
