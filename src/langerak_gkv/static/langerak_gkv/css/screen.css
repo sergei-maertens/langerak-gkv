@@ -261,3 +261,15 @@ body > footer #copyright {
   padding-top: 5px;
   padding-bottom: 5px;
 }
+
+/* line 2, ../../../sass/partials/_calendars.scss */
+body.home .calendar {
+  background-color: #70bdbd;
+  padding: 15px;
+}
+
+/* line 1, ../../../sass/partials/_homepage.scss */
+.home-wrapper {
+  padding: 15px;
+  background-color: white;
+}

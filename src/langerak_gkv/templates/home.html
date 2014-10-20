@@ -1,11 +1,9 @@
 {% extends "master.html" %}{% load i18n static %}
 
-
-
+{% block body-class %}home{% endblock body-class %}
 
 {% block content %}
 <div class="row">
-
 
     <div class="col-md-8">
 
@@ -203,22 +201,24 @@
             Bekijk de laatste overdenking <span class="glyphicon glyphicon-play"></span>
         </div>
 
-        <section class="calendar">
-            <h2>Kalender Koningskerk</h2>
-            {% for i in '01234' %}
-                <article class="calendar-item">
-                    <span class="date">
-                        <span class="day">27</span>
-                        <span class="month">april</span>
-                    </span>
+        <section class="home-wrapper">
+            <div class="calendar">
+                <h2>Kalender Koningskerk</h2>
+                {% for i in '01234' %}
+                    <article class="calendar-item">
+                        <span class="date">
+                            <span class="day">27</span>
+                            <span class="month">april</span>
+                        </span>
 
-                    <span class="description">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit...
-                        <span class="glyphicon glyphicon-play"></span>
-                    </span>
+                        <span class="description">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit...
+                            <span class="glyphicon glyphicon-play"></span>
+                        </span>
 
-                </article>
-            {% endfor %}
+                    </article>
+                {% endfor %}
+            </div>
         </section>
 
         <div id="pod">
