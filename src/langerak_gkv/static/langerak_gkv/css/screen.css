@@ -265,7 +265,50 @@ body > footer #copyright {
 /* line 2, ../../../sass/partials/_calendars.scss */
 body.home .calendar {
   background-color: #70bdbd;
-  padding: 15px;
+  padding: 10px;
+}
+/* line 6, ../../../sass/partials/_calendars.scss */
+body.home .calendar > h3 {
+  margin-top: 5px;
+  color: white;
+}
+/* line 12, ../../../sass/partials/_calendars.scss */
+body.home .calendar-item {
+  padding: 0;
+  background-color: transparent;
+}
+/* line 17, ../../../sass/partials/_calendars.scss */
+body.home .calendar-item .date {
+  display: block;
+  margin-right: 10px;
+  background: url("../../img/calendar-date.png") no-repeat center center;
+  background-size: 64px 64px;
+  width: 64px;
+  height: 64px;
+  text-align: center;
+}
+/* line 26, ../../../sass/partials/_calendars.scss */
+body.home .calendar-item .date > * {
+  display: block;
+  color: #454946;
+}
+/* line 31, ../../../sass/partials/_calendars.scss */
+body.home .calendar-item .date > .day {
+  margin-top: 19px;
+  font-size: 34px;
+  line-height: 30px;
+  font-weight: bold;
+}
+/* line 38, ../../../sass/partials/_calendars.scss */
+body.home .calendar-item .date > .month {
+  line-height: 12px;
+}
+/* line 43, ../../../sass/partials/_calendars.scss */
+body.home .calendar-item .description {
+  display: block;
+  padding-top: 10px;
+  color: white;
+  height: 64px;
 }
 
 /* line 1, ../../../sass/partials/_homepage.scss */

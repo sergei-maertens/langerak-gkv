@@ -1,6 +1,50 @@
 body.home {
   .calendar {
     background-color: $main-color-blue;
-    padding: 15px;
+    padding: 10px;
+
+    > h3 {
+      margin-top: 5px;
+      color: $white;
+    }
+  }
+
+  .calendar-item {
+    $size: 64px;
+    padding: 0;
+    background-color: transparent;
+
+    .date {
+      display: block;
+      margin-right: 10px;
+      background: url('../../img/calendar-date.png') no-repeat center center;
+      background-size: $size $size;
+      width: $size;
+      height: $size;
+      text-align: center;
+
+      > * {
+        display: block;
+        color: darken(#4C514E, 3);
+      }
+
+      > .day {
+        margin-top: 19px;
+        font-size: 34px;
+        line-height: 30px;
+        font-weight: bold;
+      }
+
+      > .month {
+        line-height: 12px;
+      }
+    }
+
+    .description {
+      display: block;
+      padding-top: 10px;
+      color: $white;
+      height: $size;
+    }
   }
 }
