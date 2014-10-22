@@ -152,6 +152,7 @@ INSTALLED_APPS = [
     'compressor',
 
     # Project applications.
+    'langerak_gkv.homepage',
     'langerak_gkv.users',
     'langerak_gkv.worklog',
 ]
