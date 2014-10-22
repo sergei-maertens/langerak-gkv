@@ -267,17 +267,12 @@ body.home .calendar {
   background-color: #70bdbd;
   padding: 10px;
 }
-/* line 6, ../../../sass/partials/_calendars.scss */
-body.home .calendar > h3 {
-  margin-top: 5px;
-  color: white;
-}
-/* line 12, ../../../sass/partials/_calendars.scss */
+/* line 7, ../../../sass/partials/_calendars.scss */
 body.home .calendar-item {
   padding: 0;
   background-color: transparent;
 }
-/* line 17, ../../../sass/partials/_calendars.scss */
+/* line 12, ../../../sass/partials/_calendars.scss */
 body.home .calendar-item .date {
   display: block;
   margin-right: 10px;
@@ -287,23 +282,23 @@ body.home .calendar-item .date {
   height: 64px;
   text-align: center;
 }
-/* line 26, ../../../sass/partials/_calendars.scss */
+/* line 21, ../../../sass/partials/_calendars.scss */
 body.home .calendar-item .date > * {
   display: block;
   color: #454946;
 }
-/* line 31, ../../../sass/partials/_calendars.scss */
+/* line 26, ../../../sass/partials/_calendars.scss */
 body.home .calendar-item .date > .day {
   margin-top: 19px;
   font-size: 34px;
   line-height: 30px;
   font-weight: bold;
 }
-/* line 38, ../../../sass/partials/_calendars.scss */
+/* line 33, ../../../sass/partials/_calendars.scss */
 body.home .calendar-item .date > .month {
   line-height: 12px;
 }
-/* line 43, ../../../sass/partials/_calendars.scss */
+/* line 38, ../../../sass/partials/_calendars.scss */
 body.home .calendar-item .description {
   display: block;
   padding-top: 10px;
@@ -315,4 +310,24 @@ body.home .calendar-item .description {
 .home-wrapper {
   padding: 15px;
   background-color: white;
+}
+/* line 5, ../../../sass/partials/_homepage.scss */
+.home-wrapper h3 {
+  margin-top: 5px;
+  color: white;
+}
+
+/* line 11, ../../../sass/partials/_homepage.scss */
+#pod {
+  margin-top: 15px;
+}
+/* line 14, ../../../sass/partials/_homepage.scss */
+#pod > div {
+  background-color: #ec7537;
+  padding: 10px;
+}
+/* line 19, ../../../sass/partials/_homepage.scss */
+#pod input, #pod textarea {
+  background-color: #584c40;
+  color: white;
 }

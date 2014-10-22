@@ -1,4 +1,23 @@
 .home-wrapper {
   padding: 15px;
   background-color: $white;
+
+  h3 {
+    margin-top: 5px;
+    color: $white;
+  }
+}
+
+#pod {
+  margin-top: 15px;
+
+  > div {
+    background-color: $main-color-orange;
+    padding: 10px;
+  }
+
+  input, textarea {
+    background-color: $text-dark;
+    color: $white;
+  }
 }
