@@ -150,6 +150,7 @@ INSTALLED_APPS = [
     'axes',
     'south',
     'compressor',
+    'formulation',
 
     # Project applications.
     'langerak_gkv.homepage',

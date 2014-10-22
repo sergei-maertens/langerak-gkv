@@ -4,7 +4,7 @@ from .forms import PrayerOnDemandForm
 
 
 class HomepageView(TemplateView):
-    template_name = 'home.html'
+    template_name = 'homepage/home.html'
 
     def get_context_data(self, **kwargs):
         initial = {}

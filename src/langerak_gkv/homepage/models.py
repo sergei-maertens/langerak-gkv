@@ -5,7 +5,7 @@ from django.utils.translation import ugettext_lazy as _
 class PrayerOnDemand(models.Model):
     name = models.CharField(_('name'), max_length=100)
     email = models.EmailField(_('email'))
-    body = models.TextField()
+    body = models.TextField(_('What should we pray for?'))
     replied = models.BooleanField(_('replied'), default=False)
 
     created = models.DateTimeField(auto_now_add=True)

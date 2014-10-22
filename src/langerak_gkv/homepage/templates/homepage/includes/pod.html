@@ -1,0 +1,12 @@
+{% load i18n formulation %}
+
+<section class="home-wrapper" id="pod">
+    <div>
+        <h3>{% trans "Prayer on demand" %}</h3>
+        <form action="." method="post">{% csrf_token %}
+            {% form 'homepage/pod.form' %}
+            {% for field in form %}{% field field %}{% endfor %}
+            {% endform %}
+        </form>
+    </div>
+</section>
