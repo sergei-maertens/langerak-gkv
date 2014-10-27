@@ -1,6 +1,8 @@
-from django.views.generic import TemplateView
+from django.core.urlresolvers import reverse_lazy
+from django.views.generic import TemplateView, CreateView
 
 from .forms import PrayerOnDemandForm
+from .models import PrayerOnDemand
 
 
 class HomepageView(TemplateView):
@@ -13,3 +15,9 @@ class HomepageView(TemplateView):
         kwargs['form'] = PrayerOnDemandForm(initial=initial)
 
         return super(HomepageView, self).get_context_data(**kwargs)
+
+
+class PODView(CreateView):
+    model = PrayerOnDemand
+    form_class = PrayerOnDemandForm
+    success_url = reverse_lazy('home')
