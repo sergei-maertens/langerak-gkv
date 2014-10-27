@@ -11,13 +11,25 @@
 #pod {
   margin-top: 15px;
 
+  h3 {
+    margin-right: 50px;
+    font-weight: bolder;
+
+    small {
+      color: $white;
+      font-size: 14px;
+      line-height: 12px;
+    }
+  }
+
   > div {
     background-color: $main-color-orange;
     padding: 10px;
+    background: $main-color-orange url('../../homepage/pod.png') no-repeat top 10px right 5px;
+    background-size: 80px 77px;
   }
 
-  input, textarea {
-    background-color: $text-dark;
-    color: $white;
+  textarea {
+    height: 100px;
   }
 }

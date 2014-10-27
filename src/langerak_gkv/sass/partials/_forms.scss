@@ -1,6 +1,43 @@
+.form-group {
+  margin-bottom: 10px;
+}
+
 .form-control {
-  &:focus {
-    border-color: $main-color-light-purple;
-    @include box-shadow(inset 0 1px 1px rgba($white, 0.75), 0 0 8px rgba($main-color-light-purple, 0.6));
+  border: none;
+  @include border-radius(0);
+
+  // &:focus {
+  //   border-color: $main-color-light-purple;
+  //   @include box-shadow(inset 0 1px 1px rgba($white, 0.75), 0 0 8px rgba($main-color-light-purple, 0.6));
+  // }
+}
+
+
+.dark {
+  input, textarea {
+    background-color: $text-dark;
+    color: $white;
+  }
+}
+
+form {
+  .btn {
+    text-transform: uppercase;
+    color: $white;
+    font-size: 18px;
+    padding: 6px 6px;
+
+    @include transition(background-color, 0.5s);
+
+    &:hover, &:focus, &:active {
+      color: $white;
+      background-color: rgba($black, .075);
+      position: relative;
+      top: 2px;
+    }
+  }
+
+  .btn-transparent {
+    background-color: transparent;
   }
 }
