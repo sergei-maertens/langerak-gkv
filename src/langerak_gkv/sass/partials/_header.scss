@@ -24,6 +24,7 @@ $header-height: 375px;
   height: $header-height;
   position: absolute;
   top: 0;
+  overflow: hidden;
 }
 #header-overlay-left {
   @include background(url('../../img/header_overlay_left.png') no-repeat center left);
@@ -32,6 +33,28 @@ $header-height: 375px;
 #header-overlay-right {
   @include background(url('../../img/header_overlay_right.png') no-repeat center right);
   right: 15px;
+}
+#bid-ontvangt {
+  display: block;
+  @include background(url('../../img/bid-ontvangt.png') no-repeat center center);
+  background-size: 305px 180px;
+  width: 305px;
+  height: 180px;
+  position: absolute;
+  bottom: -5px;
+  right: 65px;
+}
+
+#logo {
+  text-indent: -9999px;
+  @include background(url('../../logo/logo.png') no-repeat center center);
+  background-size: 100% 100%;
+  position: absolute;
+  top: 15px;
+  left: 15%;
+  width: 107px;
+  height: 35px;
+  z-index: 100;
 }
 
 #main-nav {
