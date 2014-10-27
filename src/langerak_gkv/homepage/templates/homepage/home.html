@@ -195,10 +195,18 @@
 
     <aside class="col-md-4">
 
-        <div id="luisterkerk">
-            <figure></figure>
-            <h2>ds H.J. Lopers preekt</h2>
-            Bekijk de laatste overdenking <span class="glyphicon glyphicon-play"></span>
+        <div class="home-wrapper" id="luisterkerk">
+            <div>
+                <a href="http://www.luisterkerk.nl/gkvlangerak/direct.php">
+                    <figure>
+                        <img src="{% static "homepage/predikant.png" %}">
+                    </figure>
+                </a>
+                <div>
+                    <h3>{% blocktrans %}{{ preacher }} preaches{% endblocktrans %}</h3>
+                    <a href="http://www.luisterkerk.nl/gkvlangerak/direct.php">Watch the latest thoughts <span class="fa fa-youtube-play"></span></a>
+                </div>
+            </div>
         </div>
 
         <section class="home-wrapper">

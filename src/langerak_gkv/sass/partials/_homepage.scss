@@ -33,3 +33,32 @@
     height: 100px;
   }
 }
+
+#luisterkerk{
+  margin-bottom: 15px;
+
+  > div {
+    background-color: $main-color-purple;
+
+    h3 {
+      margin-bottom: 0;
+    }
+
+    a {
+      color: $white;
+      text-decoration: none;
+      font-size: 16px;
+      line-height: 28px;
+    }
+
+    & > div {
+      padding: 10px;
+    }
+
+    .fa-youtube-play {
+      font-size: 28px;
+      vertical-align: bottom;
+      color: $dark-blue;
+    }
+  }
+}
