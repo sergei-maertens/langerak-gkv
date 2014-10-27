@@ -1,4 +1,6 @@
 from django.core.urlresolvers import reverse_lazy
+from django.contrib import messages
+from django.utils.translation import ugettext_lazy as _
 from django.views.generic import TemplateView, CreateView
 
 from .forms import PrayerOnDemandForm
@@ -17,7 +19,12 @@ class HomepageView(TemplateView):
         return super(HomepageView, self).get_context_data(**kwargs)
 
 
-class PODView(CreateView):
+class PODCreateView(CreateView):
     model = PrayerOnDemand
     form_class = PrayerOnDemandForm
     success_url = reverse_lazy('home')
+
+    def form_valid(self, form):
+        response = super(PODCreateView, self).form_valid(form)
+        messages.success(self.request, _('Your request was received, we will pray for you.'))
+        return response

@@ -37,6 +37,7 @@
         {% block header %}{% include "header.html" %}{% endblock %}
 
         <section class="container narrow" id="content">
+            {% block messages %}{% include "includes/messages.html" %}{% endblock %}
             {% block content %}Override block `content`{% endblock %}
         </section>
 

@@ -37,4 +37,6 @@ class HomepageTests(WebTest):
         self.assertEquals(pod.replied, False)
 
         # test message
-        self.assertIn(_('Your request was received, we will pray for you.'), homepage)
+        self.assertContains(homepage, _('Your request was received, we will pray for you.'))
+
+        # TODO: test that an e-mail was sent
