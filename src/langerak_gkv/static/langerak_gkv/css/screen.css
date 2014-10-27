@@ -281,24 +281,49 @@ body > header {
 }
 
 /* line 60, ../../../sass/partials/_header.scss */
+form#search {
+  position: absolute;
+  top: 15px;
+  right: 10%;
+  z-index: 100;
+}
+/* line 66, ../../../sass/partials/_header.scss */
+form#search input {
+  padding: 0 12px;
+  height: 25px;
+  width: 250px;
+}
+/* line 72, ../../../sass/partials/_header.scss */
+form#search .btn-search {
+  background: transparent;
+  border: none;
+  font-size: 18px;
+  padding: 0;
+}
+/* line 78, ../../../sass/partials/_header.scss */
+form#search .btn-search > .fa {
+  vertical-align: bottom;
+}
+
+/* line 84, ../../../sass/partials/_header.scss */
 #main-nav {
   margin-bottom: 0;
   border: none;
   min-height: 30px;
 }
-/* line 67, ../../../sass/partials/_header.scss */
+/* line 91, ../../../sass/partials/_header.scss */
 #main-nav .navbar-nav li.active a {
   background: #e9e9e9;
   color: #6d095e;
 }
-/* line 72, ../../../sass/partials/_header.scss */
+/* line 96, ../../../sass/partials/_header.scss */
 #main-nav .navbar-nav li a {
   text-transform: uppercase;
   color: #584c40;
   font-weight: bold;
   padding: 7px 10px;
 }
-/* line 78, ../../../sass/partials/_header.scss */
+/* line 102, ../../../sass/partials/_header.scss */
 #main-nav .navbar-nav li a:hover, #main-nav .navbar-nav li a:focus, #main-nav .navbar-nav li a:active {
   background: #e9e9e9;
 }

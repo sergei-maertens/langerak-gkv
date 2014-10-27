@@ -57,6 +57,30 @@ $header-height: 375px;
   z-index: 100;
 }
 
+form#search {
+  position: absolute;
+  top: 15px;
+  right: 10%;
+  z-index: 100;
+
+  input {
+    padding: 0 12px;
+    height: 25px;
+    width: 250px;
+  }
+
+  .btn-search {
+    background: transparent;
+    border: none;
+    font-size: 18px;
+    padding: 0;
+
+    > .fa {
+      vertical-align: bottom;
+    }
+  }
+}
+
 #main-nav {
   margin-bottom: 0;
   border: none;
