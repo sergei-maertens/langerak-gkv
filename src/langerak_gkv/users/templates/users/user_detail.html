@@ -1,0 +1,30 @@
+{% extends "master.html" %}
+
+
+{% block content %}
+
+    <div class="row">
+        <div class="col-md-4">
+            {{ user.get_full_name }}
+        </div>
+
+        <div class="col-md-8">
+            {{ user.email }}
+        </div>
+    </div>
+
+    <p></p>
+
+    <div class="row">
+        {% for relation in user.relations %}
+            <div class="related-user col-md-3">
+                {{ relation.user1 }} | {{ relation.user2 }}
+                <br />
+                {{ relation.relation_type }}
+                <br />
+                "{{ relation }}"
+            </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}

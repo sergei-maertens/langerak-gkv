@@ -114,6 +114,13 @@ class User(AbstractBaseUser, PermissionsMixin):
             bits = [bits[:4], bits[4:]]
         return "{0} {1}".format(bits[0], bits[1])
 
+    @property
+    def relations(self):
+        sr = ('user1', 'user2', 'relation_type')
+        qs1 = self.user1_set.select_related(*sr).all()
+        qs2 = self.user2_set.select_related(*sr).all()
+        return qs1 | qs2
+
 
 class UserRelation(models.Model):
     """
@@ -127,6 +134,21 @@ class UserRelation(models.Model):
     class Meta:
         verbose_name = _(u'user relation')
         verbose_name_plural = _(u'user relations')
+
+    def __unicode__(self):
+        return u"{user2} ({user2_relation} of {user1})".format(**self.get_textual_repr())
+
+    def get_textual_repr(self):
+        """ Does the logic in checking the sexes and displaying the correct relation """
+        s1_attr = 'name_%s' % self.user1.sex
+        s2_attr = 'name_%s' % self.user2.sex
+
+        return {
+            'user1': self.user1.get_full_name(),
+            'user2': self.user2.get_full_name(),
+            'user1_relation': getattr(self.relation_type, s1_attr),
+            'user2_relation': getattr(self.relation_type, s2_attr),
+        }
 
 
 class RelationType(models.Model):

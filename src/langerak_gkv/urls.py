@@ -9,6 +9,7 @@ admin.autodiscover()
 urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
 
+    url(r'^users/', include('langerak_gkv.users.urls', namespace='users')),
     url(r'^', include('langerak_gkv.homepage.urls')),
 )
 
