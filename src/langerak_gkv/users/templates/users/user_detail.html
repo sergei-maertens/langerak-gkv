@@ -1,19 +1,159 @@
-{% extends "master.html" %}
+{% extends "master.html" %}{% load i18n %}
 
 
 {% block content %}
 
-    <div class="row">
-        <div class="col-md-4">
-            {{ user.get_full_name }}
+<div class="row">
+    <div class="col-md-10">
+
+        <h1 class="text-center">
+            <a class="pull-left" href="#TODO">{% trans "Back to overview" %}</a>
+            {% trans "Profile" %}
+        </h1>
+
+        <div class="row">
+            {# Images #}
+            <div class="col-md-5">
+                <p>
+                    <img src="/static/homepage/predikant.png" title="dummy" width="100%">
+                </p>
+
+                <p>
+                    {% trans "Partner of" %}:
+                    <img src="/static/homepage/predikant.png" title="dummy" width="100%" class="relation">
+                </p>
+
+                <p>
+                    {% trans "Children" %}:
+                    <img src="/static/homepage/predikant.png" title="dummy" width="100%" class="relation">
+                    <img src="/static/homepage/predikant.png" title="dummy" width="100%" class="relation">
+                    <img src="/static/homepage/predikant.png" title="dummy" width="100%" class="relation">
+                </p>
+            </div>
+
+            {# Profile content #}
+            <div class="col-md-7">
+                <h2 class="name">
+                    {{ user.first_name }}
+                    <br>
+                    <small>{{ user.last_name }}</small>
+                </h2>
+
+
+
+                <div class="row margin-top">
+                    <span class="col-md-4">{% trans "Date of birth" %}</span>
+                    <span class="col-md-4">{{ user.birtdate }}</span>
+                </div>
+
+
+
+                <div class="row margin-top">
+                    <span class="col-md-4">{% trans "Address" %}</span>
+                    <span class="col-md-4">{{ user.address }}</span>
+                </div>
+
+                <div class="row">
+                    <span class="col-md-4">{% trans "Postal code" %}</span>
+                    <span class="col-md-4">{{ user.postal_code }}</span>
+                </div>
+
+                <div class="row">
+                    <span class="col-md-4">{% trans "Location" %}</span>
+                    <span class="col-md-4">{{ user.city }}</span>
+                </div>
+
+
+                <div class="row margin-top">
+                    <span class="col-md-4">{% trans "Telephone" %}</span>
+                    <span class="col-md-4">{{ user.phone }}</span>
+                </div>
+
+                <div class="row">
+                    <span class="col-md-4">{% trans "Mobile phone" %}</span>
+                    <span class="col-md-4">{{ user.mobile }}</span>
+                </div>
+
+                <div class="row">
+                    <span class="col-md-4">{% trans "Email" %}</span>
+                    <span class="col-md-4">{{ user.email }}</span>
+                </div>
+
+
+                <div class="row margin-top">
+                    <span class="col-md-4">{% trans "District function" %}</span>
+                    <span class="col-md-4">{{ user.district_function }}</span>
+                </div>
+
+                <div class="row margin-top">
+                    <span class="col-md-4">{% trans "About me" %}</span>
+                    <span class="col-md-4">{{ user.about_me }} TODO</span>
+                </div>
+
+
+                TODO: map
+            </div>
         </div>
 
-        <div class="col-md-8">
-            {{ user.email }}
+
+        <div class="">
+            {% trans "1st degree connections" %}
         </div>
+
+        <div class="row">
+            {% for i in '123456' %}
+                <div class="col-sm-4 col-md-2 connection">
+                    <figure>
+                        <img src="/static/homepage/predikant.png" width="100%">
+                        <figcaption>Hanjo<br>van Houwelingen</figcaption>
+                    </figure>
+
+                    <p>
+                        <i class="fa fa-phone"></i>
+                        0123-456789
+                    </p>
+
+                    <a href="mailto:TODO" class="btn">{% trans "Email me" %}</a>
+
+                    <a href="{% url 'users:profile' pk=1 %}"><i class="fa fa-play"></i></a>
+
+                </div>
+            {% endfor %}
+        </div>
+
     </div>
 
-    <p></p>
+
+    <aside class="col-md-2">
+        <div id="current-user">
+            <p>{% trans "Welcome" %}</p>
+            <p>{{ request.user.get_full_name }}</p>
+
+            <p>
+                <a href="{% url 'users:profile' pk=request.user.pk %}">
+                    <i class="fa fa-eye"></i>
+                    {% trans "View profile" %}
+                </a>
+            </p>
+
+            <p>
+                <a href="#TODO">
+                    <i class="fa fa-pencil"></i>
+                    {% trans "Edit profile" %}
+                </a>
+            </p>
+        </div>
+
+        {% include "users/user_search_form.html" %}
+
+    </aside>
+
+
+</div>
+
+
+
+
 
     <div class="row">
         {% for relation in user.relations %}
