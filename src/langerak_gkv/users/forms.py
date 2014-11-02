@@ -6,6 +6,7 @@ from .models import User
 
 
 class UserCreationForm(forms.ModelForm):
+
     """
     A form that creates a user, with no privileges, from the given username and
     password.
@@ -15,10 +16,10 @@ class UserCreationForm(forms.ModelForm):
         'password_mismatch': _("The two password fields didn't match."),
     }
     password1 = forms.CharField(label=_("Password"),
-        widget=forms.PasswordInput)
+                                widget=forms.PasswordInput)
     password2 = forms.CharField(label=_("Password confirmation"),
-        widget=forms.PasswordInput,
-        help_text=_("Enter the same password as above, for verification."))
+                                widget=forms.PasswordInput,
+                                help_text=_("Enter the same password as above, for verification."))
 
     class Meta:
         model = User
@@ -58,9 +59,9 @@ class UserCreationForm(forms.ModelForm):
 class UserChangeForm(forms.ModelForm):
     email = forms.EmailField(label=_("Email"), max_length=254)
     password = ReadOnlyPasswordHashField(label=_("Password"),
-        help_text=_("Raw passwords are not stored, so there is no way to see "
-                    "this user's password, but you can change the password "
-                    "using <a href=\"password/\">this form</a>."))
+                                         help_text=_("Raw passwords are not stored, so there is no way to see "
+                                                     "this user's password, but you can change the password "
+                                                     "using <a href=\"password/\">this form</a>."))
 
     class Meta:
         model = User
@@ -77,3 +78,15 @@ class UserChangeForm(forms.ModelForm):
         # This is done here, rather than on the field, because the
         # field does not have access to the initial value
         return self.initial["password"]
+
+
+class UserSearchForm(forms.ModelForm):
+    full_name = forms.CharField(label=_('name'), required=False)
+    query = forms.CharField(label=_('search terms'), required=False)
+
+    class Meta:
+        model = User
+        fields = ('sex', 'first_name', 'last_name', 'address', 'district_function')
+        widgets = {
+            'sex': forms.RadioSelect
+        }

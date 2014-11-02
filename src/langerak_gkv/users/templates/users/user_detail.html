@@ -4,7 +4,7 @@
 {% block content %}
 
 <div class="row">
-    <div class="col-md-10">
+    <div class="col-md-9 col-xl-10">
 
         <h1 class="text-center">
             <a class="pull-left" href="#TODO">{% trans "Back to overview" %}</a>
@@ -124,7 +124,7 @@
     </div>
 
 
-    <aside class="col-md-2">
+    <aside class="col-md-3 col-xl-2">
         <div id="current-user">
             <p>{% trans "Welcome" %}</p>
             <p>{{ request.user.get_full_name }}</p>
