@@ -115,8 +115,7 @@ class User(AbstractBaseUser, PermissionsMixin):
             bits = [bits[:4], bits[4:]]
         return "{0} {1}".format(bits[0], bits[1])
 
-    @property
-    def relations(self):
+    def get_relations(self):
         sr = ('user1', 'user2', 'relation_type')
         qs1 = self.user1_set.select_related(*sr).all()
         qs2 = self.user2_set.select_related(*sr).all()
@@ -124,7 +123,7 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     @cached_property
     def partner(self):
-        qs = self.relations.filter(relation_type__is_partner=True)
+        qs = self.get_relations().filter(relation_type__is_partner=True)
         if qs.exists():
             relation = qs.get()
             # check the side of the relation

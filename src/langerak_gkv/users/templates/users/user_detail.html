@@ -1,5 +1,6 @@
 {% extends "master.html" %}{% load i18n thumbnail %}
 
+{% block body-class %}profile{% endblock %}
 
 {% block content %}
 
@@ -16,31 +17,45 @@
             <div class="col-md-5">
                 <figure class="big">
                     {% if user.picture %}
-                        <img src="{{ user.picture.url }}">
+                        <img src="{{ user.picture|thumbnail_url:'default' }}">
                     {% else %}
                         <i class="fa fa-user"></i>
                     {% endif %}
                 </figure>
 
                 {% if user.partner %}
-                    {% trans "Partner of" %}:
+                {% trans "Partner of" %}:
+                <div>
                     <a href="{% url 'users:profile' pk=user.partner.pk %}">
                         <figure class="small">
                             {% if user.partner.picture %}
-                                <img src="{{ user.partner.picture.url }}" class="relation">
+                                <img src="{{ user.partner.picture|thumbnail_url:'small' }}" class="relation">
                             {% else %}
                                 <i class="fa fa-user"></i>
                             {% endif %}
                         </figure>
                     </a>
+                </div>
                 {% endif %}
 
-                <p>
-                    {% trans "Children" %}:
-                    <img src="/static/homepage/predikant.png" title="dummy" width="100%" class="relation">
-                    <img src="/static/homepage/predikant.png" title="dummy" width="100%" class="relation">
-                    <img src="/static/homepage/predikant.png" title="dummy" width="100%" class="relation">
-                </p>
+                {% trans "Children" %}:
+                <ul class="list-inline">
+                    <li>
+                        <figure class="small">
+                            <img src="/static/homepage/predikant.png" class="relation">
+                        </figure>
+                    </li>
+                    <li>
+                        <figure class="small">
+                            <img src="/static/homepage/predikant.png" class="relation">
+                        </figure>
+                    </li>
+                    <li>
+                        <figure class="small">
+                            <img src="/static/homepage/predikant.png" class="relation">
+                        </figure>
+                    </li>
+                </ul>
             </div>
 
             {# Profile content #}
@@ -113,11 +128,11 @@
         </div>
 
         <div class="row">
-            {% for i in '123456' %}
+            {% for relation in user.relations.all %}
                 <div class="col-sm-4 col-md-2 connection">
-                    <figure>
-                        <img src="/static/homepage/predikant.png" width="100%">
-                        <figcaption>Hanjo<br>van Houwelingen</figcaption>
+                    <figure class="small">
+                        <img src="{{ relation.picture.url }}" width="100%">
+                        <figcaption>{{ relation.first_name }}<br>{{ relation.last_name }}</figcaption>
                     </figure>
 
                     <p>
@@ -162,21 +177,5 @@
 
 
 </div>
-
-
-
-
-
-    <div class="row">
-        {% for relation in user.relations %}
-            <div class="related-user col-md-3">
-                {{ relation.user1 }} | {{ relation.user2 }}
-                <br />
-                {{ relation.relation_type }}
-                <br />
-                "{{ relation }}"
-            </div>
-        {% endfor %}
-    </div>
 
 {% endblock %}
