@@ -123,7 +123,7 @@ MIDDLEWARE_CLASSES = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 
     # External middleware.
-    'axes.middleware.FailedLoginMiddleware'
+    # 'axes.middleware.FailedLoginMiddleware'
 ]
 
 ROOT_URLCONF = 'langerak_gkv.urls'
@@ -161,6 +161,7 @@ INSTALLED_APPS = [
     'axes',
     'south',
     'compressor',
+    'easy_thumbnails',
     'formulation',
 
     # Project applications.
@@ -268,3 +269,30 @@ AXES_USE_USER_AGENT = False  # Default: False
 #
 
 AUTH_USER_MODEL = 'users.User'
+
+
+#
+# South
+#
+SOUTH_MIGRATION_MODULES = {
+    'easy_thumbnails': 'easy_thumbnails.south_migrations',
+}
+
+
+#
+# Easy thumbnails
+#
+THUMBNAIL_HIGH_RESOLUTION = True
+# THUMBNAIL_PROCESSORS = (
+    # 'filer.thumbnail_processors.scale_and_crop_with_subject_location',
+    # 'easy_thumbnails.processors.background',
+# )
+THUMBNAIL_ALIASES = {
+    '': {
+        'default': {
+            'size': (400, 400),
+            'crop': True,
+            'upscale': True,
+        },
+    }
+}

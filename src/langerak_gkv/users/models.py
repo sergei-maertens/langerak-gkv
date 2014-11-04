@@ -4,6 +4,7 @@ from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
 from django.utils import timezone
 from django.utils.translation import ugettext_lazy as _
+from django.utils.functional import cached_property
 
 from djchoices import DjangoChoices, ChoiceItem
 
@@ -121,6 +122,17 @@ class User(AbstractBaseUser, PermissionsMixin):
         qs2 = self.user2_set.select_related(*sr).all()
         return qs1 | qs2
 
+    @cached_property
+    def partner(self):
+        qs = self.relations.filter(relation_type__is_partner=True)
+        if qs.exists():
+            relation = qs.get()
+            # check the side of the relation
+            if relation.user1 == self:
+                return relation.user2
+            return relation.user1
+        return None
+
 
 class UserRelation(models.Model):
     """
@@ -159,6 +171,7 @@ class RelationType(models.Model):
         help_text=_('Name for the reverse relation, e.g. Father and daugther.'))
     name_reverse_female = models.CharField(_('name reverse (female)'), max_length=100,
         help_text=_('Name for the reverse relation, e.g. parent and child.'))
+    is_partner = models.BooleanField(_('is partner?'), default=False)
 
     class Meta:
         verbose_name = _(u'relation type')
