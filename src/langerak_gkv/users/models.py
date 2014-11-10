@@ -10,6 +10,7 @@ from djchoices import DjangoChoices, ChoiceItem
 
 
 class UserManager(BaseUserManager):
+    use_for_related_fields = True
 
     def _create_user(self, email, password,
                      is_staff, is_superuser, **extra_fields):
@@ -123,9 +124,8 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     @cached_property
     def partner(self):
-        qs = self.get_relations().filter(relation_type__is_partner=True)
-        if qs.exists():
-            relation = qs.get()
+        relation = self.get_relations().filter(relation_type__is_partner=True).first()
+        if relation is not None:
             # check the side of the relation
             if relation.user1 == self:
                 return relation.user2
@@ -141,6 +141,10 @@ class UserRelation(models.Model):
     user2 = models.ForeignKey('users.User', related_name='user2_set')
     relation_type = models.ForeignKey('users.RelationType',
         help_text=_('User 2 is `relation type` of user 1.'))
+
+    # children can be found by: querying the relations of a user for those that have
+    # child/parent relationship. to find the children, limit it to users that have
+    # more recent birth date
 
     class Meta:
         verbose_name = _(u'user relation')
@@ -170,7 +174,10 @@ class RelationType(models.Model):
         help_text=_('Name for the reverse relation, e.g. Father and daugther.'))
     name_reverse_female = models.CharField(_('name reverse (female)'), max_length=100,
         help_text=_('Name for the reverse relation, e.g. parent and child.'))
+
+    # 2 extra fields to be able to show the children of a user
     is_partner = models.BooleanField(_('is partner?'), default=False)
+    is_child_parent = models.BooleanField(_('is child/parent?'), default=False)
 
     class Meta:
         verbose_name = _(u'relation type')
@@ -226,3 +233,4 @@ class Family(models.Model):
 # -Persoonlijke pagina met volgende gegevens:
 # Eerstegraads connecties (in kleine thumbnails)
 
+from .signals import *

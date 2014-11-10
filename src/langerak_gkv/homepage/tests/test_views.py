@@ -22,7 +22,7 @@ class HomepageTests(WebTest):
         homepage = self.app.get(reverse('home'))
         self.assertEquals(homepage.status_code, 200)
 
-        pod_form = homepage.forms[0]
+        pod_form = homepage.forms[1]
         pod_form['email'] = 'test@test.com'
         pod_form['name'] = 'test name'
         pod_form['body'] = 'Pray for me'

@@ -16,20 +16,20 @@
             {# Images #}
             <div class="col-md-5">
                 <figure class="big">
-                    {% if user.picture %}
-                        <img src="{{ user.picture|thumbnail_url:'default' }}">
+                    {% if profile.picture %}
+                        <img src="{{ profile.picture|thumbnail_url:'default' }}">
                     {% else %}
                         <i class="fa fa-user"></i>
                     {% endif %}
                 </figure>
 
-                {% if user.partner %}
+                {% if profile.partner %}
                 {% trans "Partner of" %}:
                 <div>
-                    <a href="{% url 'users:profile' pk=user.partner.pk %}">
+                    <a href="{% url 'users:profile' pk=profile.partner.pk %}">
                         <figure class="small">
-                            {% if user.partner.picture %}
-                                <img src="{{ user.partner.picture|thumbnail_url:'small' }}" class="relation">
+                            {% if profile.partner.picture %}
+                                <img src="{{ profile.partner.picture|thumbnail_url:'small' }}" class="relation">
                             {% else %}
                                 <i class="fa fa-user"></i>
                             {% endif %}
@@ -61,60 +61,60 @@
             {# Profile content #}
             <div class="col-md-7">
                 <h2 class="name">
-                    {{ user.first_name }}
+                    {{ profile.first_name }}
                     <br>
-                    <small>{{ user.last_name }}</small>
+                    <small>{{ profile.last_name }}</small>
                 </h2>
 
 
 
                 <div class="row margin-top">
                     <span class="col-md-4">{% trans "Date of birth" %}</span>
-                    <span class="col-md-4">{{ user.birtdate }}</span>
+                    <span class="col-md-4">{{ profile.birtdate }}</span>
                 </div>
 
 
 
                 <div class="row margin-top">
                     <span class="col-md-4">{% trans "Address" %}</span>
-                    <span class="col-md-4">{{ user.address }}</span>
+                    <span class="col-md-4">{{ profile.address }}</span>
                 </div>
 
                 <div class="row">
                     <span class="col-md-4">{% trans "Postal code" %}</span>
-                    <span class="col-md-4">{{ user.postal_code }}</span>
+                    <span class="col-md-4">{{ profile.postal_code }}</span>
                 </div>
 
                 <div class="row">
                     <span class="col-md-4">{% trans "Location" %}</span>
-                    <span class="col-md-4">{{ user.city }}</span>
+                    <span class="col-md-4">{{ profile.city }}</span>
                 </div>
 
 
                 <div class="row margin-top">
                     <span class="col-md-4">{% trans "Telephone" %}</span>
-                    <span class="col-md-4">{{ user.phone }}</span>
+                    <span class="col-md-4">{{ profile.phone }}</span>
                 </div>
 
                 <div class="row">
                     <span class="col-md-4">{% trans "Mobile phone" %}</span>
-                    <span class="col-md-4">{{ user.mobile }}</span>
+                    <span class="col-md-4">{{ profile.mobile }}</span>
                 </div>
 
                 <div class="row">
                     <span class="col-md-4">{% trans "Email" %}</span>
-                    <span class="col-md-4">{{ user.email }}</span>
+                    <span class="col-md-4">{{ profile.email }}</span>
                 </div>
 
 
                 <div class="row margin-top">
                     <span class="col-md-4">{% trans "District function" %}</span>
-                    <span class="col-md-4">{{ user.district_function }}</span>
+                    <span class="col-md-4">{{ profile.district_function }}</span>
                 </div>
 
                 <div class="row margin-top">
                     <span class="col-md-4">{% trans "About me" %}</span>
-                    <span class="col-md-4">{{ user.about_me }} TODO</span>
+                    <span class="col-md-4">{{ profile.about_me }} TODO</span>
                 </div>
 
 
@@ -128,7 +128,7 @@
         </div>
 
         <div class="row">
-            {% for relation in user.relations.all %}
+            {% for relation in profile.relations.all %}
                 <div class="col-sm-4 col-md-2 connection">
                     <figure class="small">
                         <img src="{{ relation.picture.url }}" width="100%">
@@ -154,10 +154,10 @@
     <aside class="col-md-3 col-xl-2">
         <div id="current-user">
             <p>{% trans "Welcome" %}</p>
-            <p>{{ request.user.get_full_name }}</p>
+            <p>{{ user.get_full_name }}</p>
 
             <p>
-                <a href="{% url 'users:profile' pk=request.user.pk %}">
+                <a href="{% url 'users:profile' pk=user.pk %}">
                     <i class="fa fa-eye"></i>
                     {% trans "View profile" %}
                 </a>

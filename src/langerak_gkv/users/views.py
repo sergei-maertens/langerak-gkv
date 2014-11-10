@@ -7,7 +7,7 @@ from .forms import UserSearchForm
 
 class UserProfileView(LoginRequiredMixin, DetailView):
     model = User
-    context_object_name = 'user'
+    context_object_name = 'profile'
 
     def get_context_data(self, **kwargs):
         kwargs['form'] = UserSearchForm()

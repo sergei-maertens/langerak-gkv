@@ -1,5 +1,6 @@
 -r base.txt
 
 django-debug-toolbar
+factory-boy==2.4.1
 webtest
 django-webtest
