@@ -79,7 +79,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     picture = models.ImageField(_('picture'), upload_to=get_image_path,
         blank=True, null=True, help_text=_('Profile picture'))
 
-    # district/family information
+    # district/family information, from district we find the people with district functions
     district = models.ForeignKey('users.District', verbose_name=_(u'district'),
         blank=True, null=True)
     district_function = models.ForeignKey('users.DistrictFunction', blank=True, null=True)
@@ -140,7 +140,7 @@ class UserRelation(models.Model):
     user1 = models.ForeignKey('users.User', related_name='user1_set')
     user2 = models.ForeignKey('users.User', related_name='user2_set')
     relation_type = models.ForeignKey('users.RelationType',
-        help_text=_('User 2 is `relation type` of user 1.'))
+        help_text=_('User 2 is `relation type` of user 1.'), related_name='+')
 
     # children can be found by: querying the relations of a user for those that have
     # child/parent relationship. to find the children, limit it to users that have
@@ -167,13 +167,12 @@ class UserRelation(models.Model):
 
 
 class RelationType(models.Model):
-    name = models.CharField(_('name (generic)'), max_length=100)
     name_male = models.CharField(_('name (male)'), max_length=100)
     name_female = models.CharField(_('name (female)'), max_length=100)
-    name_reverse_male = models.CharField(_('name reverse (male)'), max_length=100,
-        help_text=_('Name for the reverse relation, e.g. Father and daugther.'))
-    name_reverse_female = models.CharField(_('name reverse (female)'), max_length=100,
-        help_text=_('Name for the reverse relation, e.g. parent and child.'))
+
+    reverse_name_male = models.CharField(_('name (male)'), max_length=100)
+    reverse_name_female = models.CharField(_('name (female)'), max_length=100)
+    reverse = models.ForeignKey('self', null=True, help_text=_('Reverse direction of the relation'))
 
     # 2 extra fields to be able to show the children of a user
     is_partner = models.BooleanField(_('is partner?'), default=False)
@@ -184,7 +183,9 @@ class RelationType(models.Model):
         verbose_name_plural = _(u'relation types')
 
     def __unicode__(self):
-        return self.name
+        formatter_args = (self.name_male, self.name_female,
+            self.reverse_name_male. self.reverse_name_female)
+        return _(u'{0}/{1} ({2}/{3})').format(*formatter_args)
 
 
 class District(models.Model):

@@ -19,11 +19,11 @@ class RelationTypeFactory(factory.django.DjangoModelFactory):
     class Meta:
         model = RelationType
 
-    name = factory.fuzzy.FuzzyChoice(['Ouder/kind', 'Vriend/vriendin'])
     name_male = factory.fuzzy.FuzzyChoice(['Vader', 'Vriend'])
     name_female = factory.fuzzy.FuzzyChoice(['Moeder', 'Vriendin'])
-    name_reverse_male = factory.fuzzy.FuzzyChoice(['Zoon', 'Vriend'])
-    name_reverse_female = factory.fuzzy.FuzzyChoice(['Dochter', 'Vriendin'])
+
+    reverse_name_male = factory.fuzzy.FuzzyChoice(['Zoon', 'Vriend'])
+    reverse_name_female = factory.fuzzy.FuzzyChoice(['Dochter', 'Vriendin'])
 
     is_partner = factory.fuzzy.FuzzyChoice([False, True])
     is_child_parent = factory.fuzzy.FuzzyChoice([True, False])

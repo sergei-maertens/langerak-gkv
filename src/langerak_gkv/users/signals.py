@@ -1,7 +1,7 @@
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 
-from .models import UserRelation
+from .models import UserRelation, RelationType
 
 
 @receiver(post_save, sender=UserRelation)
@@ -22,10 +22,33 @@ def sync_user_relations(sender, **kwargs):
     symm_relation, created = UserRelation.objects.get_or_create(
         user1=relation.user2, user2=relation.user1,
         defaults={
-            'relation_type': relation.relation_type
+            'relation_type': relation.relation_type.reverse
         }
     )
-    if not created and symm_relation.relation_type != relation.relation_type:
-        symm_relation.relation_type = relation.relation_type
+    if not created and symm_relation.relation_type != relation.relation_type.reverse:
+        symm_relation.relation_type = relation.relation_type.reverse
         symm_relation.skip_sync = True
         symm_relation.save()
+
+
+@receiver(post_save, sender=RelationType)
+def sync_reverse(sender, **kwargs):
+    instance, created = kwargs.get('instance'), kwargs.get('created')
+    fields = {
+        'name_male': instance.reverse_name_male,
+        'name_female': instance.reverse_name_female,
+        'reverse_name_male': instance.name_male,
+        'reverse_name_female': instance.name_female,
+        'is_partner': instance.is_partner,
+    }
+    if created and not instance.reverse:
+        instance.reverse = sender.objects.create(reverse=instance, **fields)
+        instance.save()
+    else:
+        reverse, needs_save = instance.reverse, False
+        for field_name, value in fields.items():
+            if getattr(reverse, field_name) != value:
+                setattr(reverse, field_name, value)
+                needs_save = True
+        if needs_save:
+            reverse.save()

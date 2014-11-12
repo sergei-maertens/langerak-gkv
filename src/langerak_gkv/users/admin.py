@@ -73,11 +73,11 @@ class DistrictFunctionAdmin(admin.ModelAdmin):
 
 
 class RelationTypeAdmin(admin.ModelAdmin):
-    list_display = ('__unicode__', 'name', 'name_male', 'name_female',
-                    'name_reverse_male', 'name_reverse_female', 'is_partner',
-                    'is_child_parent')
+    list_display = ('__unicode__', 'name_male', 'name_female', 'reverse_name_male',
+                    'reverse_name_female', 'is_partner', 'is_child_parent')
     list_editable = list_display[1:]
     search_fields = list_display[1:-2]
+    readonly_fields = ('reverse',)
 
 
 class FamilyAdmin(admin.ModelAdmin):
