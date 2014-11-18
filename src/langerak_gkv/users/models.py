@@ -184,7 +184,7 @@ class RelationType(models.Model):
 
     def __unicode__(self):
         formatter_args = (self.name_male, self.name_female,
-            self.reverse_name_male. self.reverse_name_female)
+            self.reverse_name_male, self.reverse_name_female)
         return _(u'{0}/{1} ({2}/{3})').format(*formatter_args)
 
 

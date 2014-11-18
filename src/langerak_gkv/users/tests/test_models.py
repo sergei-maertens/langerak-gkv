@@ -44,10 +44,9 @@ class UserRelationTests(TestCase):
         self.assertEqual(relation2.relation_type, relation1.relation_type.reverse)
         self.assertEqual(relation2.relation_type.reverse, relation1.relation_type)
 
-    @unittest.skip('Rework this')
     def test_symmetrical_relation_updated(self):
         """ Test that updating one end syncs the other end """
-        rel1 = UserRelationFactory.create(user1=self.users[0], user2=self.users[1], )
+        rel1 = UserRelationFactory.create(user1=self.users[0], user2=self.users[1])
         # rel2 is automatically created
 
         # set a new relation type
@@ -61,7 +60,6 @@ class UserRelationTests(TestCase):
 
 
 class AdminTests(WebTest):
-    @unittest.skip('Rework this')
     def test_admin(self):
         """ Test that the symmetrical relation is created when adding relations through the admin """
         superuser = UserFactory.create(is_superuser=True, is_staff=True)
