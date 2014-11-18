@@ -116,29 +116,26 @@ class User(AbstractBaseUser, PermissionsMixin):
             bits = [bits[:4], bits[4:]]
         return "{0} {1}".format(bits[0], bits[1])
 
-    def get_relations(self):
-        sr = ('user1', 'user2', 'relation_type')
-        qs1 = self.user1_set.select_related(*sr).all()
-        qs2 = self.user2_set.select_related(*sr).all()
-        return qs1 | qs2
-
     @cached_property
     def partner(self):
-        relation = self.get_relations().filter(relation_type__is_partner=True).first()
+        relation = self.related_users.filter(relation_type__is_partner=True).first()
         if relation is not None:
-            # check the side of the relation
-            if relation.user1 == self:
-                return relation.user2
-            return relation.user1
+            return relation.user2
         return None
+
+    @cached_property
+    def children(self):
+        relations = self.related_users.filter(relation_type__is_child_parent=True).values('user2')
+        return User.objects.filter(pk__in=relations).order_by('birthdate')  # oldest first
+
 
 
 class UserRelation(models.Model):
     """
     E.g. user2 is daughter, user1 is father, relation type is 'daughter'
     """
-    user1 = models.ForeignKey('users.User', related_name='user1_set')
-    user2 = models.ForeignKey('users.User', related_name='user2_set')
+    user1 = models.ForeignKey('users.User', related_name='related_users')
+    user2 = models.ForeignKey('users.User', related_name='+')
     relation_type = models.ForeignKey('users.RelationType',
         help_text=_('User 2 is `relation type` of user 1.'), related_name='+')
 
@@ -185,7 +182,7 @@ class RelationType(models.Model):
     def __unicode__(self):
         formatter_args = (self.name_male, self.name_female,
             self.reverse_name_male, self.reverse_name_female)
-        return _(u'{0}/{1} ({2}/{3})').format(*formatter_args)
+        return _(u'{0}/{1} (reverse: {2}/{3})').format(*formatter_args)
 
 
 class District(models.Model):

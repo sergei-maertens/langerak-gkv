@@ -14,8 +14,8 @@
 
         <div class="row">
             {# Images #}
-            <div class="col-md-5">
-                <figure class="big">
+            <aside class="col-md-5 avatars">
+                <figure>
                     {% if profile.picture %}
                         <img src="{{ profile.picture|thumbnail_url:'default' }}">
                     {% else %}
@@ -25,38 +25,18 @@
 
                 {% if profile.partner %}
                 {% trans "Partner of" %}:
-                <div>
-                    <a href="{% url 'users:profile' pk=profile.partner.pk %}">
-                        <figure class="small">
-                            {% if profile.partner.picture %}
-                                <img src="{{ profile.partner.picture|thumbnail_url:'small' }}" class="relation">
-                            {% else %}
-                                <i class="fa fa-user"></i>
-                            {% endif %}
-                        </figure>
-                    </a>
+                <div class="row small">
+                    {% with profile=profile.partner %} {% include "users/user_avatar.html" %} {% endwith %}
                 </div>
                 {% endif %}
 
                 {% trans "Children" %}:
-                <ul class="list-inline">
-                    <li>
-                        <figure class="small">
-                            <img src="/static/homepage/predikant.png" class="relation">
-                        </figure>
-                    </li>
-                    <li>
-                        <figure class="small">
-                            <img src="/static/homepage/predikant.png" class="relation">
-                        </figure>
-                    </li>
-                    <li>
-                        <figure class="small">
-                            <img src="/static/homepage/predikant.png" class="relation">
-                        </figure>
-                    </li>
-                </ul>
-            </div>
+                <div class="row small">
+                    {% for profile in profile.children %}
+                        {% include "users/user_avatar.html" %}
+                    {% endfor %}
+                </div>
+            </aside>
 
             {# Profile content #}
             <div class="col-md-7">
@@ -123,14 +103,19 @@
         </div>
 
 
-        <div class="">
-            {% trans "1st degree connections" %}
-        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <div>{% trans "1st degree connections" %}</div>
 
         <div class="row">
             {% for relation in profile.relations.all %}
                 <div class="col-sm-4 col-md-2 connection">
-                    <figure class="small">
+                    <figure>
                         <img src="{{ relation.picture.url }}" width="100%">
                         <figcaption>{{ relation.first_name }}<br>{{ relation.last_name }}</figcaption>
                     </figure>

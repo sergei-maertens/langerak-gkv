@@ -290,12 +290,12 @@ THUMBNAIL_HIGH_RESOLUTION = True
 THUMBNAIL_ALIASES = {
     '': {
         'default': {
-            'size': (200, 150),
+            'size': (400, 300),
             'crop': True,
             'upscale': True,
         },
         'small': {
-            'size': (100, 75),
+            'size': (120, 90),
             'crop': True,
             'upscale': True,
         }
