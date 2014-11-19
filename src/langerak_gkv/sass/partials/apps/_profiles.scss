@@ -1,5 +1,11 @@
 body.profile {
+  .block {
+    padding: 10px;
+    background-color: $white;
+  }
+
   .avatars {
+
     .row.small {
       $padding: 2px;
       margin-left: -$padding;
@@ -10,5 +16,11 @@ body.profile {
         padding-right: $padding;
       }
     }
+  }
+
+  #current-user {
+    background-color: $main-color-orange;
+    color: $white;
+    margin-bottom: 15px;
   }
 }

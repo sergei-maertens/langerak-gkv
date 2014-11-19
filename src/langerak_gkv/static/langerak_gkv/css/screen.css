@@ -153,6 +153,17 @@ img {
   color: #FFFFFF;
 }
 
+/* line 72, ../../../sass/partials/_base.scss */
+.gutter-small, .gutter-small .row {
+  margin-left: -5px;
+  margin-right: -5px;
+}
+/* line 77, ../../../sass/partials/_base.scss */
+.gutter-small > *, .gutter-small .row > * {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
 /* line 1, ../../../sass/partials/_forms.scss */
 .form-group {
   margin-bottom: 10px;
@@ -327,6 +338,29 @@ form#search .btn-search > .fa {
   background: #E9E9E9;
 }
 
+/* line 111, ../../../sass/partials/_header.scss */
+.page-header {
+  margin-top: 0;
+  margin-bottom: 10px;
+  border-bottom: none;
+  background-color: #A23854;
+  position: relative;
+  padding: 5px;
+  color: #FFFFFF;
+}
+/* line 120, ../../../sass/partials/_header.scss */
+.page-header a.abs-left {
+  position: absolute;
+  left: 10px;
+  top: 5px;
+  color: #FFFFFF;
+}
+/* line 127, ../../../sass/partials/_header.scss */
+.page-header .title {
+  line-height: 20px;
+  font-size: 120%;
+}
+
 /* line 1, ../../../sass/partials/_footer.scss */
 body > footer {
   background-color: #A23854;
@@ -476,13 +510,24 @@ body.home .calendar-item .description {
   color: #41575D;
 }
 
-/* line 3, ../../../sass/partials/apps/_profiles.scss */
+/* line 2, ../../../sass/partials/apps/_profiles.scss */
+body.profile .block {
+  padding: 10px;
+  background-color: #FFFFFF;
+}
+/* line 9, ../../../sass/partials/apps/_profiles.scss */
 body.profile .avatars .row.small {
   margin-left: -2px;
   margin-right: -2px;
 }
-/* line 8, ../../../sass/partials/apps/_profiles.scss */
+/* line 14, ../../../sass/partials/apps/_profiles.scss */
 body.profile .avatars .row.small > * {
   padding-left: 2px;
   padding-right: 2px;
+}
+/* line 21, ../../../sass/partials/apps/_profiles.scss */
+body.profile #current-user {
+  background-color: #EC7537;
+  color: #FFFFFF;
+  margin-bottom: 15px;
 }

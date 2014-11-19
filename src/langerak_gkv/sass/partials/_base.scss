@@ -65,3 +65,17 @@ img {
     }
   }
 }
+
+.gutter-small {
+  $padding: 5px;
+
+  &, .row {
+    margin-left: -$padding;
+    margin-right: -$padding;
+  }
+
+  > *, .row > * {
+    padding-left: $padding;
+    padding-right: $padding;
+  }
+}

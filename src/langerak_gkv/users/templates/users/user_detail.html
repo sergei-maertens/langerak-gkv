@@ -7,98 +7,104 @@
 <div class="row">
     <div class="col-md-9 col-xl-10">
 
-        <h1 class="text-center">
-            <a class="pull-left" href="#TODO">{% trans "Back to overview" %}</a>
-            {% trans "Profile" %}
-        </h1>
+        <div class="text-center page-header">
+            <a class="abs-left" href="#TODO">
+                <i class="fa fa-play fa-rotate-180"></i>&nbsp;&nbsp;{% trans "Back to overview" %}
+            </a>
+            <span class="title"><strong>{% trans "Profile" %}</strong></span>
+        </div>
 
-        <div class="row">
+        <div class="row gutter-small">
             {# Images #}
-            <aside class="col-md-5 avatars">
-                <figure>
-                    {% if profile.picture %}
-                        <img src="{{ profile.picture|thumbnail_url:'default' }}">
-                    {% else %}
-                        <i class="fa fa-user"></i>
+            <aside class="col-md-5">
+                <div class="avatars block">
+                    <figure>
+                        {% if profile.picture %}
+                            <img src="{{ profile.picture|thumbnail_url:'default' }}">
+                        {% else %}
+                            <i class="fa fa-user"></i>
+                        {% endif %}
+                    </figure>
+
+                    {% if profile.partner %}
+                    {% trans "Partner of" %}:
+                    <div class="row small">
+                        {% with profile=profile.partner %} {% include "users/user_avatar.html" %} {% endwith %}
+                    </div>
                     {% endif %}
-                </figure>
 
-                {% if profile.partner %}
-                {% trans "Partner of" %}:
-                <div class="row small">
-                    {% with profile=profile.partner %} {% include "users/user_avatar.html" %} {% endwith %}
-                </div>
-                {% endif %}
-
-                {% trans "Children" %}:
-                <div class="row small">
-                    {% for profile in profile.children %}
-                        {% include "users/user_avatar.html" %}
-                    {% endfor %}
+                    {% trans "Children" %}:
+                    <div class="row small">
+                        {% for profile in profile.children %}
+                            {% include "users/user_avatar.html" %}
+                        {% endfor %}
+                    </div>
                 </div>
             </aside>
 
             {# Profile content #}
             <div class="col-md-7">
-                <h2 class="name">
-                    {{ profile.first_name }}
-                    <br>
-                    <small>{{ profile.last_name }}</small>
-                </h2>
+                <div class="block">
+                    <h2 class="name">
+                        {{ profile.first_name }}
+                        <br>
+                        <small>{{ profile.last_name }}</small>
+                    </h2>
 
 
 
-                <div class="row margin-top">
-                    <span class="col-md-4">{% trans "Date of birth" %}</span>
-                    <span class="col-md-4">{{ profile.birtdate }}</span>
+                    <div class="row margin-top">
+                        <span class="col-md-4">{% trans "Date of birth" %}</span>
+                        <span class="col-md-4">{{ profile.birtdate }}</span>
+                    </div>
+
+
+
+                    <div class="row margin-top">
+                        <span class="col-md-4">{% trans "Address" %}</span>
+                        <span class="col-md-4">{{ profile.address }}</span>
+                    </div>
+
+                    <div class="row">
+                        <span class="col-md-4">{% trans "Postal code" %}</span>
+                        <span class="col-md-4">{{ profile.postal_code }}</span>
+                    </div>
+
+                    <div class="row">
+                        <span class="col-md-4">{% trans "Location" %}</span>
+                        <span class="col-md-4">{{ profile.city }}</span>
+                    </div>
+
+
+                    <div class="row margin-top">
+                        <span class="col-md-4">{% trans "Telephone" %}</span>
+                        <span class="col-md-4">{{ profile.phone }}</span>
+                    </div>
+
+                    <div class="row">
+                        <span class="col-md-4">{% trans "Mobile phone" %}</span>
+                        <span class="col-md-4">{{ profile.mobile }}</span>
+                    </div>
+
+                    <div class="row">
+                        <span class="col-md-4">{% trans "Email" %}</span>
+                        <span class="col-md-4">{{ profile.email }}</span>
+                    </div>
+
+
+                    <div class="row margin-top">
+                        <span class="col-md-4">{% trans "District function" %}</span>
+                        <span class="col-md-4">{{ profile.district_function }}</span>
+                    </div>
+
+                    <div class="row margin-top">
+                        <span class="col-md-4">{% trans "About me" %}</span>
+                        <span class="col-md-4">{{ profile.about_me }} TODO</span>
+                    </div>
+
+
+                    TODO: map
                 </div>
-
-
-
-                <div class="row margin-top">
-                    <span class="col-md-4">{% trans "Address" %}</span>
-                    <span class="col-md-4">{{ profile.address }}</span>
-                </div>
-
-                <div class="row">
-                    <span class="col-md-4">{% trans "Postal code" %}</span>
-                    <span class="col-md-4">{{ profile.postal_code }}</span>
-                </div>
-
-                <div class="row">
-                    <span class="col-md-4">{% trans "Location" %}</span>
-                    <span class="col-md-4">{{ profile.city }}</span>
-                </div>
-
-
-                <div class="row margin-top">
-                    <span class="col-md-4">{% trans "Telephone" %}</span>
-                    <span class="col-md-4">{{ profile.phone }}</span>
-                </div>
-
-                <div class="row">
-                    <span class="col-md-4">{% trans "Mobile phone" %}</span>
-                    <span class="col-md-4">{{ profile.mobile }}</span>
-                </div>
-
-                <div class="row">
-                    <span class="col-md-4">{% trans "Email" %}</span>
-                    <span class="col-md-4">{{ profile.email }}</span>
-                </div>
-
-
-                <div class="row margin-top">
-                    <span class="col-md-4">{% trans "District function" %}</span>
-                    <span class="col-md-4">{{ profile.district_function }}</span>
-                </div>
-
-                <div class="row margin-top">
-                    <span class="col-md-4">{% trans "About me" %}</span>
-                    <span class="col-md-4">{{ profile.about_me }} TODO</span>
-                </div>
-
-
-                TODO: map
             </div>
         </div>
 
@@ -137,7 +143,7 @@
 
 
     <aside class="col-md-3 col-xl-2">
-        <div id="current-user">
+        <div id="current-user" class="block">
             <p>{% trans "Welcome" %}</p>
             <p>{{ user.get_full_name }}</p>
 

@@ -106,3 +106,26 @@ form#search {
     }
   }
 }
+
+
+.page-header {
+  margin-top: 0;
+  margin-bottom: 10px;
+  border-bottom: none;
+  background-color: $main-color-light-purple;
+  position: relative;
+  padding: 5px;
+  color: $white;
+
+  a.abs-left {
+    position: absolute;
+    left: 10px;
+    top: 5px;
+    color: $white;
+  }
+
+  .title {
+    line-height: 20px;
+    font-size: 120%;
+  }
+}
