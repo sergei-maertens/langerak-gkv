@@ -108,33 +108,32 @@
             </div>
         </div>
 
-
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
         <br>
 
-        <div>{% trans "1st degree connections" %}</div>
+        <div class="text-center page-header">
+            <span class="title">{% trans "1st degree connections" %}</span>
+        </div>
 
         <div class="row">
-            {% for relation in profile.relations.all %}
-                <div class="col-sm-4 col-md-2 connection">
-                    <figure>
-                        <img src="{{ relation.picture.url }}" width="100%">
-                        <figcaption>{{ relation.first_name }}<br>{{ relation.last_name }}</figcaption>
-                    </figure>
-
+            {% for relation in profile.connections %}
+                <div class="col-sm-4 col-md-2 relation">
+                    <a href="{{ relation.get_absolute_url }}" title="{{ relation.get_full_name }}">
+                        <figure>
+                            {% if relation.picture %}
+                                <img src="{{ relation.picture|thumbnail_url:'small' }}">
+                            {% else %}
+                                <i class="fa fa-user"></i>
+                            {% endif %}
+                            <figcaption>{{ relation.first_name }}<br>{{ relation.last_name }}</figcaption>
+                        </figure>
+                    </a>
                     <p>
                         <i class="fa fa-phone"></i>
-                        0123-456789
+                        {{ relation.phone }}
                     </p>
-
-                    <a href="mailto:TODO" class="btn">{% trans "Email me" %}</a>
-
-                    <a href="{% url 'users:profile' pk=1 %}"><i class="fa fa-play"></i></a>
-
+                    <a href="mailto:{{ relation.email }}" class="btn">
+                        {% trans "Email me" %} <i class="fa fa-play"></i>
+                    </a>
                 </div>
             {% endfor %}
         </div>
@@ -148,7 +147,7 @@
             <p>{{ user.get_full_name }}</p>
 
             <p>
-                <a href="{% url 'users:profile' pk=user.pk %}">
+                <a href="{{ user.get_absolute_url }}">
                     <i class="fa fa-eye"></i>
                     {% trans "View profile" %}
                 </a>

@@ -1,7 +1,8 @@
 import os
 
-from django.db import models
+from django.core.urlresolvers import reverse
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
+from django.db import models
 from django.utils import timezone
 from django.utils.translation import ugettext_lazy as _
 from django.utils.functional import cached_property
@@ -95,6 +96,9 @@ class User(AbstractBaseUser, PermissionsMixin):
         verbose_name = _('user')
         verbose_name_plural = _('users')
 
+    @models.permalink
+    def get_absolute_url(self):
+        return reverse('users:profile', kwargs={'pk': self.pk})
 
     def get_full_name(self):
         """
@@ -128,6 +132,14 @@ class User(AbstractBaseUser, PermissionsMixin):
         relations = self.related_users.filter(relation_type__is_child_parent=True).values('user2')
         return User.objects.filter(pk__in=relations).order_by('birthdate')  # oldest first
 
+    @cached_property
+    def connections(self):  # TODO: unittest
+        """ Return the first degree connections, excluding partner/children """
+        relations = self.related_users.filter(
+            relation_type__is_partner=False,
+            relation_type__is_child_parent=False
+        )
+        return User.objects.filter(pk__in=relations.values('user2')).order_by('?')
 
 
 class UserRelation(models.Model):
@@ -135,7 +147,7 @@ class UserRelation(models.Model):
     E.g. user2 is daughter, user1 is father, relation type is 'daughter'
     """
     user1 = models.ForeignKey('users.User', related_name='related_users')
-    user2 = models.ForeignKey('users.User', related_name='+')
+    user2 = models.ForeignKey('users.User', related_name='reverse_related_users')
     relation_type = models.ForeignKey('users.RelationType',
         help_text=_('User 2 is `relation type` of user 1.'), related_name='+')
 

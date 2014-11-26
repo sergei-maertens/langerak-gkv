@@ -221,12 +221,12 @@ form .btn-transparent {
   list-style-type: none;
 }
 
-/* line 3, ../../../sass/partials/_header.scss */
+/* line 1, ../../../sass/partials/_header.scss */
 body > header {
   position: relative;
 }
 
-/* line 8, ../../../sass/partials/_header.scss */
+/* line 6, ../../../sass/partials/_header.scss */
 #header-overlay {
   position: absolute;
   top: 0;
@@ -238,12 +238,12 @@ body > header {
   width: 100%;
 }
 
-/* line 18, ../../../sass/partials/_header.scss */
+/* line 16, ../../../sass/partials/_header.scss */
 #header-image {
   max-height: 375px;
 }
 
-/* line 21, ../../../sass/partials/_header.scss */
+/* line 19, ../../../sass/partials/_header.scss */
 #header-overlay-left,
 #header-overlay-right {
   width: 100%;
@@ -253,19 +253,19 @@ body > header {
   overflow: hidden;
 }
 
-/* line 29, ../../../sass/partials/_header.scss */
+/* line 27, ../../../sass/partials/_header.scss */
 #header-overlay-left {
   background: url("../../img/header_overlay_left.png") no-repeat center left;
   left: 15px;
 }
 
-/* line 33, ../../../sass/partials/_header.scss */
+/* line 31, ../../../sass/partials/_header.scss */
 #header-overlay-right {
   background: url("../../img/header_overlay_right.png") no-repeat center right;
   right: 15px;
 }
 
-/* line 37, ../../../sass/partials/_header.scss */
+/* line 35, ../../../sass/partials/_header.scss */
 #bid-ontvangt {
   display: block;
   background: url("../../img/bid-ontvangt.png") no-repeat center center;
@@ -277,7 +277,7 @@ body > header {
   right: 65px;
 }
 
-/* line 48, ../../../sass/partials/_header.scss */
+/* line 46, ../../../sass/partials/_header.scss */
 #logo {
   text-indent: -9999px;
   background: url("../../logo/logo.png") no-repeat center center;
@@ -290,55 +290,55 @@ body > header {
   z-index: 100;
 }
 
-/* line 60, ../../../sass/partials/_header.scss */
+/* line 58, ../../../sass/partials/_header.scss */
 form#search {
   position: absolute;
   top: 15px;
   right: 10%;
   z-index: 100;
 }
-/* line 66, ../../../sass/partials/_header.scss */
+/* line 64, ../../../sass/partials/_header.scss */
 form#search input {
   padding: 0 12px;
   height: 25px;
   width: 250px;
 }
-/* line 72, ../../../sass/partials/_header.scss */
+/* line 70, ../../../sass/partials/_header.scss */
 form#search .btn-search {
   background: transparent;
   border: none;
   font-size: 18px;
   padding: 0;
 }
-/* line 78, ../../../sass/partials/_header.scss */
+/* line 76, ../../../sass/partials/_header.scss */
 form#search .btn-search > .fa {
   vertical-align: bottom;
 }
 
-/* line 84, ../../../sass/partials/_header.scss */
+/* line 82, ../../../sass/partials/_header.scss */
 #main-nav {
   margin-bottom: 0;
   border: none;
   min-height: 30px;
 }
-/* line 91, ../../../sass/partials/_header.scss */
+/* line 89, ../../../sass/partials/_header.scss */
 #main-nav .navbar-nav li.active a {
   background: #E9E9E9;
   color: #6D095E;
 }
-/* line 96, ../../../sass/partials/_header.scss */
+/* line 94, ../../../sass/partials/_header.scss */
 #main-nav .navbar-nav li a {
   text-transform: uppercase;
   color: #584C40;
   font-weight: bold;
   padding: 7px 10px;
 }
-/* line 102, ../../../sass/partials/_header.scss */
+/* line 100, ../../../sass/partials/_header.scss */
 #main-nav .navbar-nav li a:hover, #main-nav .navbar-nav li a:focus, #main-nav .navbar-nav li a:active {
   background: #E9E9E9;
 }
 
-/* line 111, ../../../sass/partials/_header.scss */
+/* line 109, ../../../sass/partials/_header.scss */
 .page-header {
   margin-top: 0;
   margin-bottom: 10px;
@@ -348,14 +348,14 @@ form#search .btn-search > .fa {
   padding: 5px;
   color: #FFFFFF;
 }
-/* line 120, ../../../sass/partials/_header.scss */
+/* line 118, ../../../sass/partials/_header.scss */
 .page-header a.abs-left {
   position: absolute;
   left: 10px;
   top: 5px;
   color: #FFFFFF;
 }
-/* line 127, ../../../sass/partials/_header.scss */
+/* line 125, ../../../sass/partials/_header.scss */
 .page-header .title {
   line-height: 20px;
   font-size: 120%;
@@ -526,6 +526,16 @@ body.profile .avatars .row.small > * {
   padding-right: 2px;
 }
 /* line 21, ../../../sass/partials/apps/_profiles.scss */
+body.profile .relation {
+  text-align: center;
+}
+/* line 24, ../../../sass/partials/apps/_profiles.scss */
+body.profile .relation .fa-user {
+  font-size: 500%;
+  width: 100%;
+  color: #6D095E;
+}
+/* line 31, ../../../sass/partials/apps/_profiles.scss */
 body.profile #current-user {
   background-color: #EC7537;
   color: #FFFFFF;

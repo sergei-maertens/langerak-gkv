@@ -18,6 +18,16 @@ body.profile {
     }
   }
 
+  .relation {
+    text-align: center;
+
+    .fa-user {
+      font-size: 500%;
+      width: 100%;
+      color: $main-color-purple;
+    }
+  }
+
   #current-user {
     background-color: $main-color-orange;
     color: $white;
