@@ -69,8 +69,8 @@ class AdminTests(WebTest):
 
         admin = self.app.get(reverse('admin:users_user_change', args=[users[0].id]), user=superuser)
         form = admin.forms['user_form']
-        form['user1_set-0-user2'] = users[1].pk
-        form['user1_set-0-relation_type'] = relation_type.pk
+        form['related_users-0-user2'] = users[1].pk
+        form['related_users-0-relation_type'] = relation_type.pk
         save = form.submit()
         self.assertRedirects(save, reverse('admin:users_user_changelist'))
 
