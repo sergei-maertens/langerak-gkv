@@ -181,13 +181,13 @@ img {
   border: solid 1px red;
 }
 
-/* line 20, ../../../sass/partials/_forms.scss */
+/* line 16, ../../../sass/partials/_forms.scss */
 .dark input, .dark textarea {
   background-color: #584C40;
   color: #FFFFFF;
 }
 
-/* line 27, ../../../sass/partials/_forms.scss */
+/* line 23, ../../../sass/partials/_forms.scss */
 form .btn {
   text-transform: uppercase;
   color: #FFFFFF;
@@ -198,23 +198,26 @@ form .btn {
   -webkit-transition: background-color, 0.5s;
   transition: background-color, 0.5s;
 }
-/* line 35, ../../../sass/partials/_forms.scss */
+/* line 31, ../../../sass/partials/_forms.scss */
 form .btn:hover, form .btn:focus, form .btn:active {
-  color: #FFFFFF;
-  background-color: rgba(0, 0, 0, 0.075);
   position: relative;
   top: 2px;
 }
-/* line 43, ../../../sass/partials/_forms.scss */
+/* line 38, ../../../sass/partials/_forms.scss */
+form .btn-fade:hover, form .btn-fade:focus, form .btn-fade:active {
+  color: #FFFFFF;
+  background-color: rgba(0, 0, 0, 0.075);
+}
+/* line 44, ../../../sass/partials/_forms.scss */
 form .btn-transparent {
   background-color: transparent;
 }
 
-/* line 49, ../../../sass/partials/_forms.scss */
+/* line 50, ../../../sass/partials/_forms.scss */
 .errorlist {
   padding-left: 0;
 }
-/* line 52, ../../../sass/partials/_forms.scss */
+/* line 53, ../../../sass/partials/_forms.scss */
 .errorlist li {
   color: red;
   font-weight: bold;
@@ -327,18 +330,25 @@ form#search .btn-search > .fa {
   color: #6D095E;
 }
 /* line 94, ../../../sass/partials/_header.scss */
-#main-nav .navbar-nav li a {
+#main-nav .navbar-nav li a, #main-nav .navbar-nav li #btn-logout {
   text-transform: uppercase;
   color: #584C40;
   font-weight: bold;
   padding: 7px 10px;
 }
 /* line 100, ../../../sass/partials/_header.scss */
-#main-nav .navbar-nav li a:hover, #main-nav .navbar-nav li a:focus, #main-nav .navbar-nav li a:active {
+#main-nav .navbar-nav li a:hover, #main-nav .navbar-nav li a:focus, #main-nav .navbar-nav li a:active, #main-nav .navbar-nav li #btn-logout:hover, #main-nav .navbar-nav li #btn-logout:focus, #main-nav .navbar-nav li #btn-logout:active {
   background: #E9E9E9;
 }
+/* line 107, ../../../sass/partials/_header.scss */
+#main-nav #btn-logout {
+  text-decoration: none;
+  display: block;
+  width: 100%;
+  text-align: left;
+}
 
-/* line 109, ../../../sass/partials/_header.scss */
+/* line 116, ../../../sass/partials/_header.scss */
 .page-header {
   margin-top: 0;
   margin-bottom: 10px;
@@ -348,14 +358,14 @@ form#search .btn-search > .fa {
   padding: 5px;
   color: #FFFFFF;
 }
-/* line 118, ../../../sass/partials/_header.scss */
+/* line 125, ../../../sass/partials/_header.scss */
 .page-header a.abs-left {
   position: absolute;
   left: 10px;
   top: 5px;
   color: #FFFFFF;
 }
-/* line 125, ../../../sass/partials/_header.scss */
+/* line 132, ../../../sass/partials/_header.scss */
 .page-header .title {
   line-height: 20px;
   font-size: 120%;
@@ -540,4 +550,12 @@ body.profile #current-user {
   background-color: #EC7537;
   color: #FFFFFF;
   margin-bottom: 15px;
+}
+/* line 37, ../../../sass/partials/apps/_profiles.scss */
+body.profile #form-login {
+  margin-bottom: 25px;
+}
+/* line 39, ../../../sass/partials/apps/_profiles.scss */
+body.profile #form-login input {
+  border: solid 1px rgba(162, 56, 84, 0.3);
 }

@@ -9,10 +9,6 @@
   &.error {
     border: solid 1px red;
   }
-  // &:focus {
-  //   border-color: $main-color-light-purple;
-  //   @include box-shadow(inset 0 1px 1px rgba($white, 0.75), 0 0 8px rgba($main-color-light-purple, 0.6));
-  // }
 }
 
 
@@ -33,10 +29,15 @@ form {
     @include transition(background-color, 0.5s);
 
     &:hover, &:focus, &:active {
-      color: $white;
-      background-color: rgba($black, .075);
       position: relative;
       top: 2px;
+    }
+  }
+
+  .btn-fade {
+    &:hover, &:focus, &:active {
+      color: $white;
+      background-color: rgba($black, .075);
     }
   }
 

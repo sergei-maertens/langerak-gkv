@@ -1,5 +1,5 @@
 from django import forms
-from django.contrib.auth.forms import ReadOnlyPasswordHashField
+from django.contrib.auth.forms import ReadOnlyPasswordHashField, AuthenticationForm
 from django.utils.translation import ugettext_lazy as _
 
 from .models import User
@@ -89,6 +89,10 @@ class UserChangeForm(forms.ModelForm):
             if duplicates.exists():
                 raise forms.ValidationError(_('This username is taken, choose a different username.'))
         return username
+
+
+class LoginForm(AuthenticationForm):
+    username = forms.CharField(max_length=254, label=_('Email or username'))
 
 
 class UserSearchForm(forms.ModelForm):

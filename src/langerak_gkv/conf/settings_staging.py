@@ -35,3 +35,6 @@ LOGGING['loggers'].update({
         'propagate': True,
     },
 })
+
+
+LOGIN_REDIRECT_URL = '/staging/'

@@ -8,7 +8,7 @@
         <form action="{% url 'pod' %}" method="post" class="dark">{% csrf_token %}
             {% form 'homepage/pod.form' %}
             {% for field in form %}{% field field %}{% endfor %}
-            {% with btn_class='btn-transparent' %} {% use 'btn-submit' %} {% endwith %}
+                {% use 'btn-submit' btn_class='btn-transparent btn-fade' %}
             {% endform %}
         </form>
     </div>

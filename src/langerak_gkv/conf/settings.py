@@ -273,6 +273,8 @@ AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
     'langerak_gkv.users.backends.UsernameModelBackend',
 )
+LOGIN_URL = 'users:login'
+LOGIN_REDIRECT_URL = '/'
 
 
 #

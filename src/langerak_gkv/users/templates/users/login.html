@@ -1,0 +1,19 @@
+{% extends "master.html" %}{% load i18n formulation %}
+
+{% block body-class %}profile{% endblock %}
+
+{% block content %}
+<div class="row">
+<form action="." method="post" class="col-xs-12 col-md-6" id="form-login">{% csrf_token %}
+{% form 'default.form' %}
+
+    <p>{% trans "Enter your e-mail address and password or username and password to login." %}</p>
+
+    <input type="hidden" name="next" value="{{ request.REQUEST.next }}">
+    {% for field in form %}{% field field %}{% endfor %}
+
+    {% use 'btn-submit' btn_text=_('Login') %}
+{% endform %}
+</form>
+</div>
+{% endblock %}

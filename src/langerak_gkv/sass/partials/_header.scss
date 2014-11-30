@@ -91,7 +91,7 @@ form#search {
         color: $main-color-purple;
       }
 
-      a {
+      a, #btn-logout {
         text-transform: uppercase;
         color: $text-dark;
         font-weight: bold;
@@ -102,6 +102,13 @@ form#search {
         }
       }
     }
+  }
+
+  #btn-logout {
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    text-align: left;
   }
 }
 
