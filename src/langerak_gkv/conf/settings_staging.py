@@ -9,7 +9,7 @@ TEMPLATE_DEBUG = DEBUG
 WSGI_APPLICATION = 'langerak_gkv.wsgi.wsgi_staging.application'
 
 ADMINS = (
-    # ('Your Name', 'your_email@example.com'),
+    ('Sergei Maertens', 'sergeimaertens@gmail.com'),
 )
 
 DATABASES = {
@@ -38,3 +38,10 @@ LOGGING['loggers'].update({
 
 
 LOGIN_REDIRECT_URL = '/staging/'
+MEDIA_URL = '/staging/media/'
+STATIC_URL = '/staging/static/'
+
+try:
+    from .settings_local import *
+except ImportError:
+    pass
