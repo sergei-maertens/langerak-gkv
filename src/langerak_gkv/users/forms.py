@@ -20,10 +20,11 @@ class UserCreationForm(forms.ModelForm):
     password2 = forms.CharField(label=_("Password confirmation"),
                                 widget=forms.PasswordInput,
                                 help_text=_("Enter the same password as above, for verification."))
+    username = forms.CharField(label=_("Username"), required=False,
+                               help_text=_('Alternative to login.'))
 
     class Meta:
         model = User
-        fields = ("email",)
 
     def clean_email(self):
         # Since User.email is unique, this check is redundant,
@@ -78,6 +79,16 @@ class UserChangeForm(forms.ModelForm):
         # This is done here, rather than on the field, because the
         # field does not have access to the initial value
         return self.initial["password"]
+
+    def clean_username(self):
+        username = self.cleaned_data.get('username')
+        if username:
+            duplicates = User._default_manager.filter(
+                username=username
+            ).exclude(pk=self.instance.pk)
+            if duplicates.exists():
+                raise forms.ValidationError(_('This username is taken, choose a different username.'))
+        return username
 
 
 class UserSearchForm(forms.ModelForm):

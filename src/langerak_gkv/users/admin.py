@@ -14,7 +14,7 @@ class UserRelationInline(admin.TabularInline):
 
 class UserAdmin(_UserAdmin):
     fieldsets = (
-        (None, {'fields': ('email', 'password')}),
+        (None, {'fields': (('email', 'username'), 'password')}),
         (_('Personal info'), {
             'fields': (
                 ('first_name', 'last_name'),

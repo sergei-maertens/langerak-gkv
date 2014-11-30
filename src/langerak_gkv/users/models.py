@@ -52,6 +52,7 @@ class User(AbstractBaseUser, PermissionsMixin):
         return os.path.join('images/users', str(instance.id), filename)
 
     email = models.EmailField(_('email address'), max_length=254, unique=True)
+    username = models.CharField(_('username'), max_length=100, blank=True)
 
     first_name = models.CharField(_('first name'), max_length=50, blank=True)
     last_name = models.CharField(_('last name'), max_length=50, blank=True)

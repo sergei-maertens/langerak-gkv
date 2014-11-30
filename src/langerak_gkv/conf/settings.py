@@ -269,6 +269,10 @@ AXES_USE_USER_AGENT = False  # Default: False
 #
 
 AUTH_USER_MODEL = 'users.User'
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
+    'langerak_gkv.users.backends.UsernameModelBackend',
+)
 
 
 #
