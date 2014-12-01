@@ -16,7 +16,7 @@
 
         <div class="row gutter-small">
             {# Images #}
-            <aside class="col-md-5">
+            <aside class="col-md-5 link-height" data-linkid="1">
                 <div class="avatars block">
                     <figure>
                         {% if profile.picture %}
@@ -43,63 +43,60 @@
             </aside>
 
             {# Profile content #}
-            <div class="col-md-7">
+            <div class="col-md-7 link-height" data-linkid="1">
                 <div class="block">
                     <h2 class="name">
                         {{ profile.first_name }}
                         <br>
-                        <small>{{ profile.last_name }}</small>
+                        <span class="surname">{{ profile.last_name }}</span>
                     </h2>
 
-
-
-                    <div class="row margin-top">
+                    <div class="row">
                         <span class="col-md-4">{% trans "Date of birth" %}</span>
-                        <span class="col-md-4">{{ profile.birtdate }}</span>
+                        <span class="col-md-4"><strong>{{ profile.birthdate }}</strong></span>
                     </div>
-
 
 
                     <div class="row margin-top">
                         <span class="col-md-4">{% trans "Address" %}</span>
-                        <span class="col-md-4">{{ profile.address }}</span>
+                        <span class="col-md-4"><strong>{{ profile.address }}</strong></span>
                     </div>
 
                     <div class="row">
                         <span class="col-md-4">{% trans "Postal code" %}</span>
-                        <span class="col-md-4">{{ profile.postal_code }}</span>
+                        <span class="col-md-4"><strong>{{ profile.postal_code }}</strong></span>
                     </div>
 
                     <div class="row">
                         <span class="col-md-4">{% trans "Location" %}</span>
-                        <span class="col-md-4">{{ profile.city }}</span>
+                        <span class="col-md-4"><strong>{{ profile.city }}</strong></span>
                     </div>
 
 
                     <div class="row margin-top">
                         <span class="col-md-4">{% trans "Telephone" %}</span>
-                        <span class="col-md-4">{{ profile.phone }}</span>
+                        <span class="col-md-4"><strong>{{ profile.phone }}</strong></span>
                     </div>
 
                     <div class="row">
                         <span class="col-md-4">{% trans "Mobile phone" %}</span>
-                        <span class="col-md-4">{{ profile.mobile }}</span>
+                        <span class="col-md-4"><strong>{{ profile.mobile }}</strong></span>
                     </div>
 
                     <div class="row">
                         <span class="col-md-4">{% trans "Email" %}</span>
-                        <span class="col-md-4">{{ profile.email }}</span>
+                        <span class="col-md-4 email"><strong>{{ profile.email|urlize }}</strong></span>
                     </div>
 
 
                     <div class="row margin-top">
                         <span class="col-md-4">{% trans "District function" %}</span>
-                        <span class="col-md-4">{{ profile.district_function }}</span>
+                        <span class="col-md-4"><strong>{{ profile.district_function }}</strong></span>
                     </div>
 
                     <div class="row margin-top">
                         <span class="col-md-4">{% trans "About me" %}</span>
-                        <span class="col-md-4">{{ profile.about_me }} TODO</span>
+                        <span class="col-md-4"><strong>{{ profile.about_me }} TODO</strong></span>
                     </div>
 
 
@@ -169,3 +166,29 @@
 </div>
 
 {% endblock %}
+
+
+{% block extra_js %}
+<script>
+$(window).load(function() {
+    $('.link-height').each(function() {
+        if($(this).data('processed')) {
+            return;
+        }
+
+        var linkID = $(this).data('linkid');
+        var set  = $('.link-height[data-linkid="'+linkID+'"]');
+        set.data('processed', true);
+
+        var height = $.map(set, function(e) {
+            return $(e).height();
+        }).reduce(function(prevResult, element, index, input) {
+            return Math.max(prevResult, element);
+        });
+        set.each(function() {
+            $(this).find('> .block').height(height-20);
+        });
+    });
+});
+</script>
+{% endblock extra_js %}

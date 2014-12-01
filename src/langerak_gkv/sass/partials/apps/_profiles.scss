@@ -40,4 +40,19 @@ body.profile {
       border: solid 1px rgba($main-color-light-purple, 0.3);
     }
   }
+
+  h2.name {
+    margin-top: 0;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 24px;
+
+    .surname {
+      font-weight: normal;
+    }
+  }
+
+  .email a {
+    color: $main-color-orange;
+  }
 }
