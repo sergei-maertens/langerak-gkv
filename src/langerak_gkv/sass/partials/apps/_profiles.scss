@@ -20,11 +20,43 @@ body.profile {
 
   .relation {
     text-align: center;
+    background-color: $white;
+
+    &.padded {
+      padding: 10px;
+    }
 
     .fa-user {
       font-size: 500%;
       width: 100%;
       color: $main-color-purple;
+      border: solid 1px rgba($main-color-purple, 0.2);
+    }
+
+    figcaption {
+      text-align: left;
+      color: $text-dark;
+      margin-top: 5px;
+    }
+
+    a:hover {
+      text-decoration: none;
+    }
+
+    .phone {
+      margin-top: 5px;
+      color: $main-color-purple;
+      font-weight: bolder;
+
+      .fa-mobile-phone {
+        font-size: 18px;
+        vertical-align: middle;
+      }
+    }
+
+    .btn-action {
+      padding: 3px 6px;
+      font-size: 12px;
     }
   }
 

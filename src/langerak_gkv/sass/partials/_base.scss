@@ -13,6 +13,20 @@ body {
   }
 }
 
+.gutter-small {
+  $padding: 5px;
+
+  &, .row {
+    margin-left: -$padding;
+    margin-right: -$padding;
+  }
+
+  > *, .row > * {
+    padding-left: $padding;
+    padding-right: $padding;
+  }
+}
+
 #content {
   background-color: $color-background;
   padding-top: 25px;
@@ -41,12 +55,24 @@ img {
   margin-top: 25px;
 }
 
+.section {
+  margin-top: 10px;
+}
+
+.page-divider {
+  font-weight: bold;
+  background-color: $white;
+  padding: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
 
 /*
  * Buttons
  */
 .btn {
   @include border-radius(0);
+  text-transform: uppercase;
 
   &, &:hover, &:active, &.active, &:focus {
     background-image: none;
@@ -59,26 +85,17 @@ img {
     color: $text-dark;
   }
 
+  &.btn-action {
+    background-color: $main-color-orange;
+    color: $white;
+    font-weight: bold;
+  }
+
   &.read-more {
-    text-transform: uppercase;
     font-weight: bold;
 
     .glyphicon {
       color: $white;
     }
-  }
-}
-
-.gutter-small {
-  $padding: 5px;
-
-  &, .row {
-    margin-left: -$padding;
-    margin-right: -$padding;
-  }
-
-  > *, .row > * {
-    padding-left: $padding;
-    padding-right: $padding;
   }
 }

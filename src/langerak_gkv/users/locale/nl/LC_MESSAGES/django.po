@@ -1,0 +1,359 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-12-02 01:54-0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: admin.py:18
+msgid "Personal info"
+msgstr ""
+
+#: admin.py:30
+msgid "Family and location"
+msgstr ""
+
+#: admin.py:37
+msgid "Permissions"
+msgstr ""
+
+#: admin.py:43
+msgid "Important dates"
+msgstr ""
+
+#: forms.py:15
+msgid "A user with that email already exists."
+msgstr ""
+
+#: forms.py:16
+msgid "The two password fields didn't match."
+msgstr ""
+
+#: forms.py:18 forms.py:62
+msgid "Password"
+msgstr ""
+
+#: forms.py:20
+msgid "Password confirmation"
+msgstr ""
+
+#: forms.py:22
+msgid "Enter the same password as above, for verification."
+msgstr ""
+
+#: forms.py:23
+msgid "Username"
+msgstr ""
+
+#: forms.py:24
+msgid "Alternative to login."
+msgstr ""
+
+#: forms.py:61 templates/users/user_detail.html:87
+msgid "Email"
+msgstr ""
+
+#: forms.py:63
+msgid ""
+"Raw passwords are not stored, so there is no way to see this user's "
+"password, but you can change the password using <a href=\"password/\">this "
+"form</a>."
+msgstr ""
+
+#: forms.py:90
+msgid "This username is taken, choose a different username."
+msgstr ""
+
+#: forms.py:95
+msgid "Email or username"
+msgstr ""
+
+#: forms.py:99 models.py:202 models.py:213 models.py:227
+msgid "name"
+msgstr ""
+
+#: forms.py:100
+msgid "search terms"
+msgstr ""
+
+#: models.py:42
+msgid "male"
+msgstr ""
+
+#: models.py:43
+msgid "female"
+msgstr ""
+
+#: models.py:54
+msgid "email address"
+msgstr ""
+
+#: models.py:55
+msgid "username"
+msgstr ""
+
+#: models.py:57
+msgid "first name"
+msgstr ""
+
+#: models.py:58
+msgid "last name"
+msgstr ""
+
+#: models.py:60
+msgid "staff status"
+msgstr ""
+
+#: models.py:61
+msgid "Designates whether the user can log into this admin site."
+msgstr ""
+
+#: models.py:63
+msgid "active"
+msgstr ""
+
+#: models.py:64
+msgid ""
+"Designates whether this user should be treated as active. Unselect this "
+"instead of deleting accounts."
+msgstr ""
+
+#: models.py:66
+msgid "date joined"
+msgstr ""
+
+#: models.py:69
+msgid "sex"
+msgstr ""
+
+#: models.py:70
+msgid "street"
+msgstr ""
+
+#: models.py:71
+msgid "Street name and number."
+msgstr ""
+
+#: models.py:72
+msgid "postal code"
+msgstr ""
+
+#: models.py:73
+msgid "city"
+msgstr ""
+
+#: models.py:75
+msgid "phone"
+msgstr ""
+
+#: models.py:76
+msgid "Home phone number"
+msgstr ""
+
+#: models.py:77
+msgid "mobile phone number"
+msgstr ""
+
+#: models.py:78
+msgid "Mobile phone number"
+msgstr ""
+
+#: models.py:80
+msgid "birth_date"
+msgstr ""
+
+#: models.py:81
+msgid "picture"
+msgstr ""
+
+#: models.py:82
+msgid "Profile picture"
+msgstr ""
+
+#: models.py:85 models.py:205
+msgid "district"
+msgstr ""
+
+#: models.py:88 models.py:231
+msgid "family"
+msgstr ""
+
+#: models.py:97
+msgid "user"
+msgstr ""
+
+#: models.py:98
+msgid "users"
+msgstr ""
+
+#: models.py:153
+msgid "User 2 is `relation type` of user 1."
+msgstr ""
+
+#: models.py:160
+msgid "user relation"
+msgstr ""
+
+#: models.py:161
+msgid "user relations"
+msgstr ""
+
+#: models.py:180 models.py:183
+msgid "name (male)"
+msgstr ""
+
+#: models.py:181 models.py:184
+msgid "name (female)"
+msgstr ""
+
+#: models.py:185
+msgid "Reverse direction of the relation"
+msgstr ""
+
+#: models.py:188
+msgid "is partner?"
+msgstr ""
+
+#: models.py:189
+msgid "is child/parent?"
+msgstr ""
+
+#: models.py:192
+msgid "relation type"
+msgstr ""
+
+#: models.py:193
+msgid "relation types"
+msgstr ""
+
+#: models.py:198
+#, python-brace-format
+msgid "{0}/{1} (reverse: {2}/{3})"
+msgstr ""
+
+#: models.py:206
+msgid "districts"
+msgstr ""
+
+#: models.py:214
+msgid "description"
+msgstr ""
+
+#: models.py:215
+msgid "Describe what someone with this function does."
+msgstr ""
+
+#: models.py:218
+msgid "district function"
+msgstr ""
+
+#: models.py:219
+msgid "district functions"
+msgstr ""
+
+#: models.py:228
+msgid "Last name of the householder."
+msgstr ""
+
+#: models.py:232
+msgid "families"
+msgstr ""
+
+#: models.py:235
+#, python-brace-format
+msgid "Fam. {name}"
+msgstr ""
+
+#: templates/users/login.html:10
+msgid ""
+"Enter your e-mail address and password or username and password to login."
+msgstr ""
+
+#: templates/users/login.html:15
+msgid "Login"
+msgstr ""
+
+#: templates/users/logout.html:5
+msgid "See you on your next visit!"
+msgstr ""
+
+#: templates/users/user_detail.html:12
+msgid "Back to overview"
+msgstr ""
+
+#: templates/users/user_detail.html:14
+msgid "Profile"
+msgstr ""
+
+#: templates/users/user_detail.html:30
+msgid "Partner of"
+msgstr ""
+
+#: templates/users/user_detail.html:36
+msgid "Children"
+msgstr ""
+
+#: templates/users/user_detail.html:55
+msgid "Date of birth"
+msgstr ""
+
+#: templates/users/user_detail.html:61
+msgid "Address"
+msgstr ""
+
+#: templates/users/user_detail.html:66
+msgid "Postal code"
+msgstr ""
+
+#: templates/users/user_detail.html:71
+msgid "Location"
+msgstr ""
+
+#: templates/users/user_detail.html:77
+msgid "Telephone"
+msgstr ""
+
+#: templates/users/user_detail.html:82
+msgid "Mobile phone"
+msgstr ""
+
+#: templates/users/user_detail.html:93
+msgid "District function"
+msgstr ""
+
+#: templates/users/user_detail.html:98
+msgid "About me"
+msgstr ""
+
+#: templates/users/user_detail.html:111
+msgid "1st degree connections"
+msgstr ""
+
+#: templates/users/user_detail.html:132
+msgid "Email me"
+msgstr ""
+
+#: templates/users/user_detail.html:143
+msgid "Welcome"
+msgstr ""
+
+#: templates/users/user_detail.html:149
+msgid "View profile"
+msgstr ""
+
+#: templates/users/user_detail.html:156
+msgid "Edit profile"
+msgstr ""

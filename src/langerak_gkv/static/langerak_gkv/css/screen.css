@@ -96,77 +96,97 @@ body {
   margin-right: -65px;
 }
 
-/* line 16, ../../../sass/partials/_base.scss */
+/* line 19, ../../../sass/partials/_base.scss */
+.gutter-small, .gutter-small .row {
+  margin-left: -5px;
+  margin-right: -5px;
+}
+/* line 24, ../../../sass/partials/_base.scss */
+.gutter-small > *, .gutter-small .row > * {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+/* line 30, ../../../sass/partials/_base.scss */
 #content {
   background-color: #E9E9E9;
   padding-top: 25px;
 }
 
-/* line 21, ../../../sass/partials/_base.scss */
+/* line 35, ../../../sass/partials/_base.scss */
 article {
   background-color: #FFFFFF;
   padding: 15px;
   margin-bottom: 15px;
 }
-/* line 26, ../../../sass/partials/_base.scss */
+/* line 40, ../../../sass/partials/_base.scss */
 article h1, article h2 {
   color: #D9E12E;
   font-weight: bold;
 }
-/* line 31, ../../../sass/partials/_base.scss */
+/* line 45, ../../../sass/partials/_base.scss */
 article footer {
   text-align: right;
 }
 
-/* line 36, ../../../sass/partials/_base.scss */
+/* line 50, ../../../sass/partials/_base.scss */
 img {
   width: 100%;
 }
 
-/* line 40, ../../../sass/partials/_base.scss */
+/* line 54, ../../../sass/partials/_base.scss */
 .margin-top {
   margin-top: 25px;
+}
+
+/* line 58, ../../../sass/partials/_base.scss */
+.section {
+  margin-top: 10px;
+}
+
+/* line 62, ../../../sass/partials/_base.scss */
+.page-divider {
+  font-weight: bold;
+  background-color: #FFFFFF;
+  padding: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 /*
  * Buttons
  */
-/* line 48, ../../../sass/partials/_base.scss */
+/* line 73, ../../../sass/partials/_base.scss */
 .btn {
   -moz-border-radius: 0;
   -webkit-border-radius: 0;
   border-radius: 0;
+  text-transform: uppercase;
 }
-/* line 51, ../../../sass/partials/_base.scss */
+/* line 77, ../../../sass/partials/_base.scss */
 .btn, .btn:hover, .btn:active, .btn.active, .btn:focus {
   background-image: none;
   border: none;
   outline: none;
 }
-/* line 57, ../../../sass/partials/_base.scss */
+/* line 83, ../../../sass/partials/_base.scss */
 .btn.btn-default {
   background-color: #D9E12E;
   color: #584C40;
 }
-/* line 62, ../../../sass/partials/_base.scss */
-.btn.read-more {
-  text-transform: uppercase;
+/* line 88, ../../../sass/partials/_base.scss */
+.btn.btn-action {
+  background-color: #EC7537;
+  color: #FFFFFF;
   font-weight: bold;
 }
-/* line 66, ../../../sass/partials/_base.scss */
+/* line 94, ../../../sass/partials/_base.scss */
+.btn.read-more {
+  font-weight: bold;
+}
+/* line 97, ../../../sass/partials/_base.scss */
 .btn.read-more .glyphicon {
   color: #FFFFFF;
-}
-
-/* line 75, ../../../sass/partials/_base.scss */
-.gutter-small, .gutter-small .row {
-  margin-left: -5px;
-  margin-right: -5px;
-}
-/* line 80, ../../../sass/partials/_base.scss */
-.gutter-small > *, .gutter-small .row > * {
-  padding-left: 5px;
-  padding-right: 5px;
 }
 
 /* line 1, ../../../sass/partials/_forms.scss */
@@ -194,7 +214,6 @@ img {
 
 /* line 23, ../../../sass/partials/_forms.scss */
 form .btn {
-  text-transform: uppercase;
   color: #FFFFFF;
   font-size: 18px;
   padding: 6px 6px;
@@ -203,26 +222,26 @@ form .btn {
   -webkit-transition: background-color, 0.5s;
   transition: background-color, 0.5s;
 }
-/* line 31, ../../../sass/partials/_forms.scss */
+/* line 30, ../../../sass/partials/_forms.scss */
 form .btn:hover, form .btn:focus, form .btn:active {
   position: relative;
   top: 2px;
 }
-/* line 38, ../../../sass/partials/_forms.scss */
+/* line 37, ../../../sass/partials/_forms.scss */
 form .btn-fade:hover, form .btn-fade:focus, form .btn-fade:active {
   color: #FFFFFF;
   background-color: rgba(0, 0, 0, 0.075);
 }
-/* line 44, ../../../sass/partials/_forms.scss */
+/* line 43, ../../../sass/partials/_forms.scss */
 form .btn-transparent {
   background-color: transparent;
 }
 
-/* line 50, ../../../sass/partials/_forms.scss */
+/* line 49, ../../../sass/partials/_forms.scss */
 .errorlist {
   padding-left: 0;
 }
-/* line 53, ../../../sass/partials/_forms.scss */
+/* line 52, ../../../sass/partials/_forms.scss */
 .errorlist li {
   color: red;
   font-weight: bold;
@@ -543,39 +562,71 @@ body.profile .avatars .row.small > * {
 /* line 21, ../../../sass/partials/apps/_profiles.scss */
 body.profile .relation {
   text-align: center;
+  background-color: #FFFFFF;
 }
-/* line 24, ../../../sass/partials/apps/_profiles.scss */
+/* line 25, ../../../sass/partials/apps/_profiles.scss */
+body.profile .relation.padded {
+  padding: 10px;
+}
+/* line 29, ../../../sass/partials/apps/_profiles.scss */
 body.profile .relation .fa-user {
   font-size: 500%;
   width: 100%;
   color: #6D095E;
+  border: solid 1px rgba(109, 9, 94, 0.2);
 }
-/* line 31, ../../../sass/partials/apps/_profiles.scss */
+/* line 36, ../../../sass/partials/apps/_profiles.scss */
+body.profile .relation figcaption {
+  text-align: left;
+  color: #584C40;
+  margin-top: 5px;
+}
+/* line 42, ../../../sass/partials/apps/_profiles.scss */
+body.profile .relation a:hover {
+  text-decoration: none;
+}
+/* line 46, ../../../sass/partials/apps/_profiles.scss */
+body.profile .relation .phone {
+  margin-top: 5px;
+  color: #6D095E;
+  font-weight: bolder;
+}
+/* line 51, ../../../sass/partials/apps/_profiles.scss */
+body.profile .relation .phone .fa-mobile-phone {
+  font-size: 18px;
+  vertical-align: middle;
+}
+/* line 57, ../../../sass/partials/apps/_profiles.scss */
+body.profile .relation .btn-action {
+  padding: 3px 6px;
+  font-size: 12px;
+}
+/* line 63, ../../../sass/partials/apps/_profiles.scss */
 body.profile #current-user {
   background-color: #EC7537;
   color: #FFFFFF;
   margin-bottom: 15px;
 }
-/* line 37, ../../../sass/partials/apps/_profiles.scss */
+/* line 69, ../../../sass/partials/apps/_profiles.scss */
 body.profile #form-login {
   margin-bottom: 25px;
 }
-/* line 39, ../../../sass/partials/apps/_profiles.scss */
+/* line 71, ../../../sass/partials/apps/_profiles.scss */
 body.profile #form-login input {
   border: solid 1px rgba(162, 56, 84, 0.3);
 }
-/* line 44, ../../../sass/partials/apps/_profiles.scss */
+/* line 76, ../../../sass/partials/apps/_profiles.scss */
 body.profile h2.name {
   margin-top: 0;
   font-size: 18px;
   font-weight: bold;
   line-height: 24px;
 }
-/* line 50, ../../../sass/partials/apps/_profiles.scss */
+/* line 82, ../../../sass/partials/apps/_profiles.scss */
 body.profile h2.name .surname {
   font-weight: normal;
 }
-/* line 55, ../../../sass/partials/apps/_profiles.scss */
+/* line 87, ../../../sass/partials/apps/_profiles.scss */
 body.profile .email a {
   color: #EC7537;
 }

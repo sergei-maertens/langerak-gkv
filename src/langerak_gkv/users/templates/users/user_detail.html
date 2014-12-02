@@ -1,4 +1,4 @@
-{% extends "master.html" %}{% load i18n thumbnail %}
+{% extends "master.html" %}{% load i18n thumbnail formatting %}
 
 {% block body-class %}profile{% endblock %}
 
@@ -27,18 +27,24 @@
                     </figure>
 
                     {% if profile.partner %}
-                    {% trans "Partner of" %}:
-                    <div class="row small">
-                        {% with profile=profile.partner %} {% include "users/user_avatar.html" %} {% endwith %}
+                    <div class="section">
+                        <strong>{% trans "Partner of" %}:</strong>
+                        <div class="row small">
+                            {% with profile=profile.partner %} {% include "users/user_avatar.html" %} {% endwith %}
+                        </div>
                     </div>
                     {% endif %}
 
-                    {% trans "Children" %}:
-                    <div class="row small">
-                        {% for profile in profile.children %}
-                            {% include "users/user_avatar.html" %}
-                        {% endfor %}
+                    {% if profile.children %}
+                    <div class="section">
+                        <strong>{% trans "Children" %}:</strong>
+                        <div class="row small">
+                            {% for profile in profile.children %}
+                                {% include "users/user_avatar.html" %}
+                            {% endfor %}
+                        </div>
                     </div>
+                    {% endif %}
                 </div>
             </aside>
 
@@ -91,7 +97,7 @@
 
                     <div class="row margin-top">
                         <span class="col-md-4">{% trans "District function" %}</span>
-                        <span class="col-md-4"><strong>{{ profile.district_function }}</strong></span>
+                        <span class="col-md-4"><strong>{{ profile.district_function|default:'-' }}</strong></span>
                     </div>
 
                     <div class="row margin-top">
@@ -105,32 +111,34 @@
             </div>
         </div>
 
-        <br>
-
-        <div class="text-center page-header">
-            <span class="title">{% trans "1st degree connections" %}</span>
+        <div class="page-divider">
+            <span class="title">{% trans "1<sup>st</sup> degree connections" %}</span>
         </div>
 
-        <div class="row">
+        <div class="row gutter-small">
             {% for relation in profile.connections %}
-                <div class="col-sm-4 col-md-2 relation">
-                    <a href="{{ relation.get_absolute_url }}" title="{{ relation.get_full_name }}">
-                        <figure>
-                            {% if relation.picture %}
-                                <img src="{{ relation.picture|thumbnail_url:'small' }}">
-                            {% else %}
-                                <i class="fa fa-user"></i>
-                            {% endif %}
-                            <figcaption>{{ relation.first_name }}<br>{{ relation.last_name }}</figcaption>
-                        </figure>
-                    </a>
-                    <p>
-                        <i class="fa fa-phone"></i>
-                        {{ relation.phone }}
-                    </p>
-                    <a href="mailto:{{ relation.email }}" class="btn">
-                        {% trans "Email me" %} <i class="fa fa-play"></i>
-                    </a>
+                <div class="col-sm-4 col-lg-2">
+                    <div class="padded relation">
+                        <a href="{{ relation.get_absolute_url }}" title="{{ relation.get_full_name }}">
+                            <figure>
+                                {% if relation.picture %}
+                                    <img src="{{ relation.picture|thumbnail_url:'avatar_portrait' }}">
+                                {% else %}
+                                    <i class="fa fa-user"></i>
+                                {% endif %}
+                                <figcaption><strong>{{ relation.first_name }}</strong><br>{{ relation.last_name }}</figcaption>
+                            </figure>
+                        </a>
+                        <div class="text-left">
+                            <p class="phone">
+                                <i class="fa fa-mobile-phone"></i>
+                                {{ relation.phone|phone }}
+                            </p>
+                            <a href="mailto:{{ relation.email }}" class="btn btn-action">
+                                {% trans "Email me" %} <i class="fa fa-play"></i>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             {% endfor %}
         </div>
