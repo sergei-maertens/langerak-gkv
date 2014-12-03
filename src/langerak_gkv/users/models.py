@@ -97,7 +97,6 @@ class User(AbstractBaseUser, PermissionsMixin):
         verbose_name = _('user')
         verbose_name_plural = _('users')
 
-    @models.permalink
     def get_absolute_url(self):
         return reverse('users:profile', kwargs={'pk': self.pk})
 
