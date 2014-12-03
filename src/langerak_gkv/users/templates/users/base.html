@@ -1,0 +1,42 @@
+{% extends "master.html" %}{% load i18n %}
+
+
+{% block body-class %}profile{% endblock %}
+
+
+{% block content %}
+<div class="row">
+
+    <div class="col-md-9 col-xl-10">
+        {% block main-content %}{% endblock %}
+    </div>
+
+
+    <aside class="col-md-3 col-xl-2">
+        {% block aside %}
+            <div id="current-user" class="block">
+                <p>{% trans "Welcome" %}</p>
+                <p>{{ user.get_full_name }}</p>
+
+                <p>
+                    <a href="{{ user.get_absolute_url }}">
+                        <i class="fa fa-eye"></i>
+                        {% trans "View profile" %}
+                    </a>
+                </p>
+
+                <p>
+                    <a href="#TODO">
+                        <i class="fa fa-pencil"></i>
+                        {% trans "Edit profile" %}
+                    </a>
+                </p>
+            </div>
+
+            {% include "users/user_search_form.html" %}
+
+        {% endblock %}
+    </aside>
+
+</div>
+{% endblock content %}

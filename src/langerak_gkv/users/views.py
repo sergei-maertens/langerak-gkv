@@ -1,10 +1,14 @@
-from django.views.generic import DetailView, View
+from django.views.generic import DetailView, ListView
 
 from class_based_auth_views.views import LoginView, LogoutView
 
 from langerak_gkv.utils.view_mixins import LoginRequiredMixin
 from .models import User
 from .forms import UserSearchForm, LoginForm
+
+
+class UserListView(LoginRequiredMixin, ListView):
+    model = User
 
 
 class UserProfileView(LoginRequiredMixin, DetailView):
