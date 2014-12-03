@@ -44,7 +44,16 @@
 
 {% block extra_js %}
 <script>
-$(window).load(function() {
+$(window).load(syncHeights);
+
+$(function() {
+    $(window).resize(function() {
+        $('.link-height').data('processed', false).height('auto');
+        syncHeights();
+    });
+});
+
+function syncHeights() {
     $('.link-height').each(function() {
         if($(this).data('processed')) {
             return;
@@ -63,6 +72,6 @@ $(window).load(function() {
             $(this).height(height);
         });
     });
-});
+}
 </script>
 {% endblock extra_js %}

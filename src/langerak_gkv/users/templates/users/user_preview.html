@@ -2,13 +2,13 @@
 <div class="col-sm-3 col-lg-5ths">
     <div class="padded relation loose">
         <a href="{{ relation.get_absolute_url }}" title="{{ relation.get_full_name }}">
-            <figure class="link-height" data-linkid="2">
+            <figure>
                 {% if relation.picture %}
-                    <img src="{{ relation.picture|thumbnail_url:'avatar_portrait' }}">
+                    <img src="{{ relation.picture|thumbnail_url:'avatar_portrait' }}" class="link-height" data-linkid="2">
                 {% else %}
-                    <i class="fa fa-user"></i>
+                    <i class="fa fa-user link-height" data-linkid="2"></i>
                 {% endif %}
-                <figcaption><strong>{{ relation.first_name }}</strong><br>{{ relation.last_name }}</figcaption>
+                <figcaption><strong>{{ relation.first_name }}</strong><br>{{ relation.last_name|default:"&nbsp;" }}</figcaption>
             </figure>
         </a>
         <div class="text-left">
