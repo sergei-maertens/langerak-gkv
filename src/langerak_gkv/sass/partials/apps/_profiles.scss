@@ -22,6 +22,10 @@ body.profile {
     text-align: center;
     background-color: $white;
 
+    &.loose {
+      margin-bottom: 10px;
+    }
+
     &.padded {
       padding: 10px;
     }
@@ -45,7 +49,7 @@ body.profile {
 
     .phone {
       margin-top: 5px;
-      color: $main-color-purple;
+      color: $main-color-light-purple;
       font-weight: bolder;
 
       .fa-mobile-phone {
@@ -57,6 +61,21 @@ body.profile {
     .btn-action {
       padding: 3px 6px;
       font-size: 12px;
+    }
+
+    a.goto {
+      display: inline-block;
+      font-size: 10px;
+      line-height: 17px;
+      width: 23px;
+      color: $white;
+      background-color: $main-color-light-purple;
+      float: right;
+      text-align: center;
+      i.fa-play {
+        position: relative;
+        left: 1px;
+      }
     }
   }
 

@@ -16,8 +16,8 @@
 
         <div class="row gutter-small">
             {# Images #}
-            <aside class="col-md-5 link-height" data-linkid="1">
-                <div class="avatars block">
+            <aside class="col-md-5">
+                <div class="avatars block link-height" data-linkid="1">
                     <figure>
                         {% if profile.picture %}
                             <img src="{{ profile.picture|thumbnail_url:'default' }}">
@@ -49,8 +49,8 @@
             </aside>
 
             {# Profile content #}
-            <div class="col-md-7 link-height" data-linkid="1">
-                <div class="block">
+            <div class="col-md-7">
+                <div class="block link-height" data-linkid="1">
                     <h2 class="name">
                         {{ profile.first_name }}
                         <br>
@@ -117,10 +117,10 @@
 
         <div class="row gutter-small">
             {% for relation in profile.connections %}
-                <div class="col-sm-4 col-lg-2">
-                    <div class="padded relation">
+                <div class="col-sm-3 col-lg-5ths">
+                    <div class="padded relation loose">
                         <a href="{{ relation.get_absolute_url }}" title="{{ relation.get_full_name }}">
-                            <figure>
+                            <figure class="link-height" data-linkid="2">
                                 {% if relation.picture %}
                                     <img src="{{ relation.picture|thumbnail_url:'avatar_portrait' }}">
                                 {% else %}
@@ -135,8 +135,10 @@
                                 {{ relation.phone|phone }}
                             </p>
                             <a href="mailto:{{ relation.email }}" class="btn btn-action">
-                                {% trans "Email me" %} <i class="fa fa-play"></i>
+                                {% trans "Email me" %}
                             </a>
+
+                            <a href="{{ relation.get_absolute_url }}" class="goto btn-action"><i class="fa fa-play"></i></a>
                         </div>
                     </div>
                 </div>
@@ -194,7 +196,7 @@ $(window).load(function() {
             return Math.max(prevResult, element);
         });
         set.each(function() {
-            $(this).find('> .block').height(height-20);
+            $(this).height(height);
         });
     });
 });
