@@ -286,6 +286,39 @@ form .btn-transparent {
   list-style-type: none;
 }
 
+/* line 1, ../../../sass/partials/_pagination.scss */
+.pagination {
+  float: right;
+}
+/* line 6, ../../../sass/partials/_pagination.scss */
+.pagination > li:last-child > a, .pagination > li:first-child > a {
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+}
+/* line 11, ../../../sass/partials/_pagination.scss */
+.pagination > li > a {
+  border: none;
+  color: #584C40;
+  padding: 3px 9px;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+}
+/* line 17, ../../../sass/partials/_pagination.scss */
+.pagination > li > a:hover, .pagination > li > a:active, .pagination > li > a:focus {
+  color: #FFFFFF;
+  background-color: #A23854;
+}
+/* line 24, ../../../sass/partials/_pagination.scss */
+.pagination > li + li > a {
+  margin-left: 5px;
+}
+/* line 35, ../../../sass/partials/_pagination.scss */
+.pagination .active > a, .pagination .active > a:hover, .pagination .active > a:active, .pagination .active > a:focus {
+  background-color: #584C40;
+}
+
 /* line 1, ../../../sass/partials/_header.scss */
 body > header {
   position: relative;

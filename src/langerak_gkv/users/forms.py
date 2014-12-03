@@ -98,6 +98,7 @@ class LoginForm(AuthenticationForm):
 class UserSearchForm(forms.ModelForm):
     full_name = forms.CharField(label=_('name'), required=False)
     query = forms.CharField(label=_('search terms'), required=False)
+    # TODO: add field to search by age
 
     class Meta:
         model = User

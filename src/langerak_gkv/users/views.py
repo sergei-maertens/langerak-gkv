@@ -16,6 +16,7 @@ class UserSearchMixin(object):
 class UserListView(LoginRequiredMixin, UserSearchMixin, ListView):
     model = User
     context_object_name = 'profiles'
+    paginate_by = 15
 
 
 class UserProfileView(LoginRequiredMixin, UserSearchMixin, DetailView):

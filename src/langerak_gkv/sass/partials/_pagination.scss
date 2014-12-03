@@ -1,0 +1,39 @@
+.pagination {
+  float: right;
+
+    > li {
+
+      &:last-child > a,
+      &:first-child > a {
+        @include border-radius(0);
+      }
+
+      > a {
+        border: none;
+        color: $text-dark;
+        padding: 3px 9px;
+        @include border-radius(0);
+
+        &:hover, &:active, &:focus {
+          color: $white;
+          background-color: $main-color-light-purple;
+        }
+      }
+
+      + li {
+        > a {
+          margin-left: 5px;
+        }
+      }
+    }
+
+    // > li + li {
+    //     padding-left: 5px;
+    // }
+
+    .active > a {
+      &, &:hover, &:active, &:focus {
+        background-color: $text-dark;
+      }
+    }
+  }

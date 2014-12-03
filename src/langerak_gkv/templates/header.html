@@ -37,12 +37,15 @@
 
         <div class="collapse navbar-collapse" id="lang-main-menu">
             <ul class="nav navbar-nav navbar-left">
-                <li class="active"><a href="#">{% trans "News" %}</a></li>
+                <li class="active"><a href="{% url 'home' %}">{% trans "News" %}</a></li>
                 <li><a href="#">{% trans "Church services" %}</a></li>
                 <li><a href="#">{% trans "Koningskerk" %}</a></li>
                 <li><a href="#">{% trans "Neighbourhood" %}</a></li>
                 <li><a href="#">{% trans "Calendar" %}</a></li>
                 <li><a href="#">{% trans "Contact" %}</a></li>
+                {% if user.is_authenticated %}
+                    <li><a href="{% url 'users:list' %}">{% trans "Members" %}</a></li>
+                {% endif %}
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
