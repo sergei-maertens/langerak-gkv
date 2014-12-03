@@ -1,1 +1,10 @@
 {% extends "users/base.html" %}{% load i18n thumbnail formatting %}
+
+
+{% block main-content %}
+<div class="row gutter-small">
+    {% for relation in profiles %}
+        {% include "users/user_preview.html" %}
+    {% endfor %}
+</div>
+{% endblock main-content %}

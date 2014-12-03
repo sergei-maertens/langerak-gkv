@@ -7,17 +7,20 @@ from .models import User
 from .forms import UserSearchForm, LoginForm
 
 
-class UserListView(LoginRequiredMixin, ListView):
-    model = User
-
-
-class UserProfileView(LoginRequiredMixin, DetailView):
-    model = User
-    context_object_name = 'profile'
-
+class UserSearchMixin(object):
     def get_context_data(self, **kwargs):
         kwargs['form'] = UserSearchForm()
-        return super(UserProfileView, self).get_context_data(**kwargs)
+        return super(UserSearchMixin, self).get_context_data(**kwargs)
+
+
+class UserListView(LoginRequiredMixin, UserSearchMixin, ListView):
+    model = User
+    context_object_name = 'profiles'
+
+
+class UserProfileView(LoginRequiredMixin, UserSearchMixin, DetailView):
+    model = User
+    context_object_name = 'profile'
 
 
 class LoginView(LoginView):

@@ -2,7 +2,8 @@
 
 {% block main-content %}
     <div class="text-center page-header">
-        <a class="abs-left" href="#TODO">
+        {# TODO: remember search querystring? #}
+        <a class="abs-left" href="{% url 'users:list' %}">
             <i class="fa fa-play fa-rotate-180"></i>&nbsp;&nbsp;{% trans "Back to overview" %}
         </a>
         <span class="title"><strong>{% trans "Profile" %}</strong></span>
@@ -115,29 +116,3 @@
         {% endfor %}
     </div>
 {% endblock %}
-
-
-{% block extra_js %}
-<script>
-$(window).load(function() {
-    $('.link-height').each(function() {
-        if($(this).data('processed')) {
-            return;
-        }
-
-        var linkID = $(this).data('linkid');
-        var set  = $('.link-height[data-linkid="'+linkID+'"]');
-        set.data('processed', true);
-
-        var height = $.map(set, function(e) {
-            return $(e).height();
-        }).reduce(function(prevResult, element, index, input) {
-            return Math.max(prevResult, element);
-        });
-        set.each(function() {
-            $(this).height(height);
-        });
-    });
-});
-</script>
-{% endblock extra_js %}
