@@ -154,6 +154,7 @@ INSTALLED_APPS = [
     # Project applications.
     'langerak_gkv.users',
     'langerak_gkv.worklog',
+    'langerak_gkv.liturgies',
 ]
 
 LOGGING_DIR = os.path.join(ROOT_DIR, 'log')
