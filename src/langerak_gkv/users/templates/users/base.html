@@ -15,22 +15,17 @@
     <aside class="col-md-3 col-xl-2">
         {% block aside %}
             <div id="current-user" class="block">
-                <p>{% trans "Welcome" %}</p>
-                <p>{{ user.get_full_name }}</p>
+                <h4>{% trans "Welcome" %}<br>{{ user.get_full_name }}</h4>
 
-                <p>
-                    <a href="{{ user.get_absolute_url }}">
-                        <i class="fa fa-eye"></i>
-                        {% trans "View profile" %}
-                    </a>
-                </p>
+                <a href="{{ user.get_absolute_url }}">
+                    <i class="fa fa-eye"></i>
+                    {% trans "View profile" %}
+                </a>
 
-                <p>
-                    <a href="#TODO">
-                        <i class="fa fa-pencil"></i>
-                        {% trans "Edit profile" %}
-                    </a>
-                </p>
+                <a href="#TODO">
+                    <i class="fa fa-pencil"></i>
+                    {% trans "Edit profile" %}
+                </a>
             </div>
 
             {% include "users/user_search_form.html" %}
