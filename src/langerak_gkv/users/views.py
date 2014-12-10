@@ -9,7 +9,7 @@ from .forms import UserSearchForm, LoginForm
 
 class UserSearchMixin(object):
     def get_context_data(self, **kwargs):
-        kwargs['form'] = UserSearchForm()
+        kwargs['form'] = UserSearchForm(initial={'sex': None})
         return super(UserSearchMixin, self).get_context_data(**kwargs)
 
 

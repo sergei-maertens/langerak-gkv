@@ -33,7 +33,35 @@
 {% endblock %}
 
 
+{% block Select %}
+<div class="form-group {{ required|yesno:"required," }}">
+    {% use "_label" %}
+    <select name="{{ html_name }}" id="{{ id }}" {{ widget.attrs|flat_attrs }} class="form-control" >
+    {% for val, display in choices %}
+        <option value="{{ val }}" {% if val == value|default:None %}selected{% endif %}>{{ display }}</option>
+    {% endfor %}
+    </select>
+    {% use "_help" %}
+    {% use "_errors" %}
+</div>
+{% endblock %}
 
+
+{% block CheckboxSelectMultiple %}
+{% use "_label" %}
+<div id="{{ id }}">
+    {% for val, display in choices %}
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" id="{{ id}}_{{ forloop.counter0 }}" value="{{ val }}" {% if val in value %}checked{% endif %}>
+                {{ display|capfirst }}
+            </label>
+        </div>
+    {% endfor %}
+</div>
+{% use "_help" %}
+{% use "_errors" %}
+{% endblock %}
 
 
 

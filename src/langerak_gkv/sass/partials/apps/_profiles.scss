@@ -137,4 +137,15 @@ body.profile {
   .email a {
     color: $main-color-orange;
   }
+
+  form {
+    input, select {
+      @include box-shadow(inset 0 0 8px rgba($main-color-purple, 0.2));
+    }
+
+    .btn-action {
+      background-color: $main-color-light-purple;
+      font-size: 14px;
+    }
+  }
 }

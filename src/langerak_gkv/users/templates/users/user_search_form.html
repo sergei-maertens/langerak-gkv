@@ -1,7 +1,22 @@
 {% load i18n formulation %}
 <form action="/users/search/#TODO" method="post" class="block">{% csrf_token %}
+{% form 'default.form' %}
+    <fieldset>
+        {% field form.full_name %}
+        {% use 'btn-submit' btn_text=_('Search') btn_class='btn-action' %}
+    </fieldset>
 
-    {{ form }}
+    <fieldset>
+        <h4>{% trans "Advanced search" %}</h4>
+        {% field form.query %}
+        {% field form.sex %}
+        {% field form.first_name %}
+        {% field form.last_name %}
+        {% field form.address %}
+        {% field form.district_function %}
 
+        {% use 'btn-submit' btn_text=_('Search') btn_class='btn-action' %}
+    </fieldset>
 
+{% endform %}
 </form>

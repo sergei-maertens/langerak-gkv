@@ -96,13 +96,19 @@ class LoginForm(AuthenticationForm):
 
 
 class UserSearchForm(forms.ModelForm):
-    full_name = forms.CharField(label=_('name'), required=False)
-    query = forms.CharField(label=_('search terms'), required=False)
-    # TODO: add field to search by age
+    full_name = forms.CharField(label=_('Name'), required=False)
+    query = forms.CharField(label=_('Search terms'), required=False)
+
+    min_age = forms.IntegerField(label=_('Minimum age'), required=False)
+    max_age = forms.IntegerField(label=_('Maximum age'), required=False)
 
     class Meta:
         model = User
         fields = ('sex', 'first_name', 'last_name', 'address', 'district_function')
         widgets = {
-            'sex': forms.RadioSelect
+            'sex': forms.CheckboxSelectMultiple
         }
+
+    def __init__(self, *args, **kwargs):
+        super(UserSearchForm, self).__init__(*args, **kwargs)
+        del self.fields['sex'].choices[0]
