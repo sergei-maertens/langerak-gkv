@@ -62,4 +62,3 @@ class MailRecipient(models.Model):
 
     class Meta:
         ordering = ['function']
-
