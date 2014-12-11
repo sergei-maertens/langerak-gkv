@@ -40,6 +40,8 @@ class Service(models.Model):
     name = models.CharField(_('service name'), max_length=50)
     time = models.TimeField(_('service time'))
 
+    def __unicode__(self):
+        return self.name
 
 
 class MailRecipient(models.Model):
