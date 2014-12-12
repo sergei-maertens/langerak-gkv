@@ -1,5 +1,8 @@
+from datetime import date
+
 from django import forms
 from django.contrib.auth.forms import ReadOnlyPasswordHashField, AuthenticationForm
+from django.db.models import Q
 from django.utils.translation import ugettext_lazy as _
 
 from .models import User
@@ -101,14 +104,47 @@ class UserSearchForm(forms.ModelForm):
 
     min_age = forms.IntegerField(label=_('Minimum age'), required=False)
     max_age = forms.IntegerField(label=_('Maximum age'), required=False)
+    sex = forms.MultipleChoiceField(label=_('Gender'), required=False,
+                                    choices=User.Sex.choices, widget=forms.CheckboxSelectMultiple)
 
     class Meta:
         model = User
-        fields = ('sex', 'first_name', 'last_name', 'address', 'district_function')
-        widgets = {
-            'sex': forms.CheckboxSelectMultiple
-        }
+        fields = ('first_name', 'last_name', 'address', 'district_function')
 
-    def __init__(self, *args, **kwargs):
-        super(UserSearchForm, self).__init__(*args, **kwargs)
-        del self.fields['sex'].choices[0]
+    def as_filters(self):
+        """Convert the form data to a dict suitable for ``QuerySet.filter`` """
+        q_and, q_or = Q(), Q()
+
+        # check the birthdate
+        this_year = date.today().year
+        min_age = self.cleaned_data.pop('min_age')
+        if min_age > 0:
+            q_and &= Q(birthdate__lte=date(this_year-min_age, 1, 1))
+        max_age = self.cleaned_data.pop('max_age')
+        if max_age > 0:
+            q_and &= Q(birthdate__gte=date(this_year-max_age, 12, 31))
+
+        # full name
+        full_name = self.cleaned_data.pop('full_name')
+        if full_name:
+            bits = full_name.split()
+            for bit in bits:
+                q_or |= Q(Q(first_name__icontains=bit) | Q(last_name__icontains=bit))
+
+        query = self.cleaned_data.get('query')
+        if query:
+            pass # TODO
+            # q_and &= Q(description__icontains=query)
+
+        gender = self.cleaned_data.pop('sex')
+        if gender:
+            q_and &= Q(sex__in=gender)
+
+        for field in self.cleaned_data.items():
+            if not field[1]:
+                continue  # no value set (None or empty string or zero)
+            q_and &= Q(field)
+
+        if not len(q_and):
+            return q_or
+        return Q(q_or, q_and)
