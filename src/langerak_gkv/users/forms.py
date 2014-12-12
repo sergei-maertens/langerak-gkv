@@ -141,7 +141,7 @@ class UserSearchForm(forms.ModelForm):
             q_and &= Q(sex__in=gender)
 
         for field, value in self.cleaned_data.items():
-            if not field[1]:
+            if not value:
                 continue  # no value set (None or empty string or zero)
             q_and &= Q(**{'{}__iexact'.format(field): value})
 
