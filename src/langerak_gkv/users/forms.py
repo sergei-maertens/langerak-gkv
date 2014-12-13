@@ -143,7 +143,10 @@ class UserSearchForm(forms.ModelForm):
         for field, value in self.cleaned_data.items():
             if not value:
                 continue  # no value set (None or empty string or zero)
-            q_and &= Q(**{'{}__iexact'.format(field): value})
+            flter = '{}__iexact'.format(field)
+            if field == 'district_function':
+                flter = field
+            q_and &= Q(**{flter: value})
 
         if not len(q_and):
             return q_or
