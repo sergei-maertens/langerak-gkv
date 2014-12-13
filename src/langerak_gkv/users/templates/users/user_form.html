@@ -1,0 +1,45 @@
+{% extends "users/user_detail.html" %}{% load formulation i18n %}
+
+{% block aside %} {% with search_form as form %} {{ block.super }} {% endwith %} {% endblock %}
+
+
+{% block main-content %}
+<form action="." class="form-horizontal" method="post">{% csrf_token %}
+    {{ block.super }}
+</form>
+{% endblock %}
+
+
+{% block picture %}
+    {{ block.super }}
+    {# TODO #}
+{% endblock %}
+
+
+{% block mobile %}
+{% form 'users/profile.form' %}
+    {% field form.mobile %}
+{% endform %}
+{% endblock %}
+
+
+{% block email %}
+{% form 'users/profile.form' %}
+    {% field form.email %}
+    <br>
+    {% field form.username %}
+{% endform %}
+{% endblock %}
+
+
+{% block about_me %}
+{% form 'users/profile.form' %}
+    {{ block.super }}
+    {# TODO #}
+
+    <div class="clearfix">
+        {% trans "save" as save %}
+        {% use 'btn-submit' btn_class='btn-action pull-right' btn_text=save %}
+    </div>
+{% endform %}
+{% endblock %}

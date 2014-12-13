@@ -14,11 +14,13 @@
         <aside class="col-md-5">
             <div class="avatars block link-height" data-linkid="1">
                 <figure>
-                    {% if profile.picture %}
-                        <img src="{{ profile.picture|thumbnail_url:'default' }}">
-                    {% else %}
-                        <i class="fa fa-user"></i>
-                    {% endif %}
+                    {% block profile_pic %}
+                        {% if profile.picture %}
+                            <img src="{{ profile.picture|thumbnail_url:'default' }}">
+                        {% else %}
+                            <i class="fa fa-user"></i>
+                        {% endif %}
+                    {% endblock %}
                 </figure>
 
                 {% if profile.partner %}
@@ -79,15 +81,19 @@
                     <span class="col-md-4"><strong>{{ profile.phone|phone }}</strong></span>
                 </div>
 
+                {% block mobile %}
                 <div class="row">
                     <span class="col-md-4">{% trans "Mobile phone" %}</span>
                     <span class="col-md-4"><strong>{{ profile.mobile|phone }}</strong></span>
                 </div>
+                {% endblock %}
 
+                {% block email %}
                 <div class="row">
                     <span class="col-md-4">{% trans "Email" %}</span>
                     <span class="col-md-4 email"><strong>{{ profile.email|urlize }}</strong></span>
                 </div>
+                {% endblock %}
 
 
                 <div class="row margin-top">
@@ -95,10 +101,12 @@
                     <span class="col-md-4"><strong>{{ profile.district_function|default:'-' }}</strong></span>
                 </div>
 
+                {% block about_me %}
                 <div class="row margin-top">
                     <span class="col-md-4">{% trans "About me" %}</span>
                     <span class="col-md-4"><strong>{{ profile.about_me }} TODO</strong></span>
                 </div>
+                {% endblock %}
 
 
                 TODO: map

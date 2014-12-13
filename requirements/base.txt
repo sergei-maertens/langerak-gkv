@@ -11,3 +11,4 @@ django-cms>=3.0.6
 formulation>=2.0.10
 easy-thumbnails==2.2
 django-class-based-auth-views==0.2
+django-image-cropping

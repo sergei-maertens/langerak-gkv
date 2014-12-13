@@ -147,5 +147,18 @@ body.profile {
       background-color: $main-color-light-purple;
       font-size: 14px;
     }
+
+    &.form-horizontal {
+      .form-group {
+        margin-left: -5px;
+        margin-right: -5px;
+        margin-bottom: 5px;
+
+        .control-label {
+          text-align: left;
+          font-weight: normal;
+        }
+      }
+    }
   }
 }

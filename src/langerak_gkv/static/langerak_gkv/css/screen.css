@@ -135,12 +135,12 @@ body {
 }
 
 /* line 19, ../../../sass/partials/_base.scss */
-.gutter-small, .gutter-small .row {
+.gutter-small, .gutter-small .row, .gutter-small .form-horizontal .form-group {
   margin-left: -5px;
   margin-right: -5px;
 }
 /* line 24, ../../../sass/partials/_base.scss */
-.gutter-small > *, .gutter-small .row > * {
+.gutter-small > *, .gutter-small .row > *, .gutter-small .form-group > * {
   padding-left: 5px;
   padding-right: 5px;
 }
@@ -768,4 +768,15 @@ body.profile form input, body.profile form select {
 body.profile form .btn-action {
   background-color: #A23854;
   font-size: 14px;
+}
+/* line 152, ../../../sass/partials/apps/_profiles.scss */
+body.profile form.form-horizontal .form-group {
+  margin-left: -5px;
+  margin-right: -5px;
+  margin-bottom: 5px;
+}
+/* line 157, ../../../sass/partials/apps/_profiles.scss */
+body.profile form.form-horizontal .form-group .control-label {
+  text-align: left;
+  font-weight: normal;
 }

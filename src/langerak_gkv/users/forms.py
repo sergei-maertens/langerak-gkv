@@ -94,6 +94,22 @@ class UserChangeForm(forms.ModelForm):
         return username
 
 
+class ProfileUpdateForm(forms.ModelForm):
+    class Meta:
+        model = User
+        fields = ('email', 'username', 'mobile', 'picture')
+
+    def clean_username(self):
+        username = self.cleaned_data.get('username')
+        if username:
+            duplicates = User._default_manager.filter(
+                username=username
+            ).exclude(pk=self.instance.pk)
+            if duplicates.exists():
+                raise forms.ValidationError(_('This username is taken, choose a different username.'))
+        return username
+
+
 class LoginForm(AuthenticationForm):
     username = forms.CharField(max_length=254, label=_('Email or username'))
 

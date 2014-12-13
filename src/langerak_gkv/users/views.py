@@ -1,26 +1,27 @@
 from django.views.generic import DetailView, ListView
-from django.views.generic.edit import FormMixin
+from django.views.generic.edit import FormMixin, UpdateView
 
 from class_based_auth_views.views import LoginView, LogoutView
 
 from langerak_gkv.utils.view_mixins import LoginRequiredMixin
 from .models import User
-from .forms import UserSearchForm, LoginForm
+from .forms import UserSearchForm, LoginForm, ProfileUpdateForm
 
 
 class UserSearchMixin(FormMixin):
     form_class = UserSearchForm
     form = None
+    form_context_name = 'form'
     initial = {
         'sex': None
     }
 
-    def get_form(self):
+    def get_search_form(self):
         form_class = self.get_form_class()
         return super(UserSearchMixin, self).get_form(form_class)
 
     def get_context_data(self, **kwargs):
-        kwargs['form'] = self.form or self.get_form()
+        kwargs[self.form_context_name] = self.form or self.get_search_form()
         return super(UserSearchMixin, self).get_context_data(**kwargs)
 
 
@@ -38,7 +39,7 @@ class UserSearchView(UserListView):
         return qs.filter(self.form.as_filters())
 
     def post(self, request, *args, **kwargs):
-        self.form = self.get_form()
+        self.form = self.get_search_form()
         if self.form.is_valid():
             return self.get(request, *args, **kwargs)
         else:
@@ -48,6 +49,20 @@ class UserSearchView(UserListView):
 class UserProfileView(LoginRequiredMixin, UserSearchMixin, DetailView):
     model = User
     context_object_name = 'profile'
+
+
+class UpdateProfileView(LoginRequiredMixin, UserSearchMixin, UpdateView):
+    model = User
+    form_class = ProfileUpdateForm
+    form_context_name = 'search_form'
+
+    def get_object(self):
+        return User.objects.get(pk=self.request.user.pk)
+
+    def get_context_data(self, **kwargs):
+        context = super(UpdateProfileView, self).get_context_data(**kwargs)
+        context['profile'] = self.object
+        return context
 
 
 class LoginView(LoginView):

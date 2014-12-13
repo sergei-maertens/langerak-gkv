@@ -16,12 +16,12 @@ body {
 .gutter-small {
   $padding: 5px;
 
-  &, .row {
+  &, .row, .form-horizontal .form-group {
     margin-left: -$padding;
     margin-right: -$padding;
   }
 
-  > *, .row > * {
+  > *, .row > *, .form-group > * {
     padding-left: $padding;
     padding-right: $padding;
   }

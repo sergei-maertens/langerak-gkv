@@ -1,13 +1,14 @@
 from django.conf.urls import patterns, url
 
 from .views import (UserProfileView, UserListView, LoginView, LogoutView,
-                    UserSearchView)
+                    UserSearchView, UpdateProfileView)
 
 
 urlpatterns = patterns(
     '',
     url(r'^$', UserListView.as_view(), name='list'),
     url(r'^search/$', UserSearchView.as_view(), name='search'),
+    url(r'^me/$', UpdateProfileView.as_view(), name='profile-edit'),
     url(r'^(?P<pk>\d+)/$', UserProfileView.as_view(), name='profile'),
 
     url(r'^login/$', LoginView.as_view(), name='login'),
