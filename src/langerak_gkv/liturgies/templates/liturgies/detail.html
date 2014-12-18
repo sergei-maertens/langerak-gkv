@@ -1,0 +1,47 @@
+{% extends "master.html" %}
+
+{% block content %}
+    <div>
+        date: {{ liturgy.date }}
+    </div>
+
+    <div>
+        service: {{ liturgy.service }}
+    </div>
+
+    <div>
+        service theme: {{ liturgy.service_theme}}
+    </div>
+
+    <div>
+        preacher: {{ liturgy.preacher }}
+    </div>
+
+    <div>
+        collections:
+        <ul>
+            {% for collection in liturgy.get_collections %}
+            <li> {{ collection }} </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div>
+        liturgy: {{ liturgy.liturgy }}
+    </div>
+
+    <div>
+        aufiofile: <a href="{{ liturgy.audiofile.url }}">download</a>
+    </div>
+
+    <div>
+        extra information: {{ liturgy.extra_information }}
+    </div>
+
+{% endblock %}
+
+
+
+{# Visible for visitors: 'informatie' 'liturgie' #}
+{#  -datum -naam dienst -tijdstip dienst (Morgen, Avond)  #}
+{# -predikant -(tijdens de dienst)/extra info? -collecte  #}
