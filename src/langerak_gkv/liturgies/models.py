@@ -30,11 +30,24 @@ class Liturgy(models.Model):
     class Meta:
         verbose_name = _('liturgy')
         verbose_name_plural = _('liturgies')
-
-    # def __unicode__(self):
-    #     pass
+        ordering = ['date']
 
 
+    def __unicode__(self):
+        return u'{service} {date}'.format(
+            service=self.service.name,
+            date=self.date.strftime('%d-%m-%Y')
+            )
+
+    def get_collections(self):
+        collections = []
+        if self.collection_goal1:
+            collections.append(self.collection_goal1)
+        if self.collection_goal2:
+            collections.append(self.collection_goal2)
+        if self.collection_goal3:
+            collections.append(self.collection_goal3)
+        return collections
 
 class Service(models.Model):
     name = models.CharField(_('service name'), max_length=50)

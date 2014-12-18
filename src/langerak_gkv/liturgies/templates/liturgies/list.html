@@ -1,0 +1,12 @@
+{% extends "master.html" %}
+
+{% block content %}
+    Upcoming liturgies:
+    <ul>
+    {% for liturgy in liturgies %}
+        <li>
+            <a href="{% url 'liturgies:detail' liturgy_id=liturgy.id %}">{{ liturgy }}</a>
+        </li>
+    {% endfor %}
+    </ul>
+{% endblock %}

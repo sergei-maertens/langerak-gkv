@@ -1,8 +1,16 @@
 from django.contrib import admin
-from .models import Liturgy, Service
+from .models import Liturgy, Service, MailRecipient
+
+
+class MailRecipientInline(admin.TabularInline):
+    model = MailRecipient
+    can_delete = False
+
+
 
 class LiturgyAdmin(admin.ModelAdmin):
-    pass
+    inlines = [MailRecipientInline]
+
 #         list_display = ('',)
 #         list_filter = ('',)
 #         inlines = [
