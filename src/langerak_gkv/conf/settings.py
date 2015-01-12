@@ -30,6 +30,11 @@ DATABASES = {
     }
 }
 
+LANGUAGES = (
+    ('nl', 'Nederlands'),
+)
+LANGUAGE_CODE = 'nl'
+
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 # See https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts
 ALLOWED_HOSTS = []
@@ -39,10 +44,6 @@ ALLOWED_HOSTS = []
 # although not all choices may be available on all operating systems.
 # In a Windows environment this must be set to your system time zone.
 TIME_ZONE = 'America/Chicago'
-
-# Language code for this installation. All choices can be found here:
-# http://www.i18nguy.com/unicode/language-identifiers.html
-LANGUAGE_CODE = 'en-us'
 
 SITE_ID = 1
 
@@ -112,6 +113,9 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.tz',
     'django.core.context_processors.request',
     'django.contrib.messages.context_processors.messages',
+
+    'cms.context_processors.cms_settings',
+    'sekizai.context_processors.sekizai',
 )
 
 MIDDLEWARE_CLASSES = [
@@ -123,6 +127,10 @@ MIDDLEWARE_CLASSES = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 
     # External middleware.
+    'cms.middleware.page.CurrentPageMiddleware',
+    'cms.middleware.user.CurrentUserMiddleware',
+    'cms.middleware.toolbar.ToolbarMiddleware',
+    'cms.middleware.language.LanguageCookieMiddleware',
     # 'axes.middleware.FailedLoginMiddleware'
 ]
 
@@ -163,6 +171,19 @@ INSTALLED_APPS = [
     'compressor',
     'easy_thumbnails',
     'formulation',
+
+    # cms
+    'mptt',
+    'djangocms_text_ckeditor',
+    'filer',
+    'cmsplugin_filer_file',
+    'cmsplugin_filer_folder',
+    'cmsplugin_filer_image',
+    'cmsplugin_filer_video',
+    'cmsplugin_filer_link',
+    'cms',
+    'menus',
+    'sekizai',
 
     # Project applications.
     'langerak_gkv.homepage',
