@@ -11,6 +11,7 @@ formulation==2.0.12
 easy-thumbnails==2.2
 django-class-based-auth-views==0.2
 django-image-cropping
+BeautifulSoup # lxml & compressor
 
 # cms
 django-cms
