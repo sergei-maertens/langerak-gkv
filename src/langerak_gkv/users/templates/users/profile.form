@@ -28,3 +28,18 @@
 {% block TextInput_mobile %}{% use 'input' %}{% endblock %}
 {% block TextInput_username %}{% use 'input' %}{% endblock %}
 {% block EmailInput_email %}{% use 'input' field_type='email' %}{% endblock %}
+
+{% block Textarea_about_me %}
+<div class="form-group">
+    {% use "_label" %}
+    <span class="col-md-6">
+        <textarea name="{{ html_name }}" id="{{ id }}"
+            class="form-control {{ required|yesno:"required," }} {{ css_classes }} {{ errors|yesno:"error," }}"
+            {{ autofocus|yesno:"autofocus," }}
+            {% if placeholder %}placeholder="{{ placeholder }}"{% endif %}
+            {{ widget.attrs|flat_attrs }}
+        >{{ value|default:"" }}</textarea>
+        {% use "_errors" %}
+    </span>
+</div>
+{% endblock %}

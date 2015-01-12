@@ -80,6 +80,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     birthdate = models.DateField(_('birth_date'), blank=True, null=True)
     picture = models.ImageField(_('picture'), upload_to=get_image_path,
         blank=True, null=True, help_text=_('Profile picture'))
+    about_me = models.TextField(blank=True, help_text=_('Short \'about me\' text'))
 
     # district/family information, from district we find the people with district functions
     district = models.ForeignKey('users.District', verbose_name=_(u'district'),

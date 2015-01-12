@@ -34,8 +34,7 @@
 
 {% block about_me %}
 {% form 'users/profile.form' %}
-    {{ block.super }}
-    {# TODO #}
+    {% field form.about_me %}
 
     <div class="clearfix">
         {% trans "save" as save %}

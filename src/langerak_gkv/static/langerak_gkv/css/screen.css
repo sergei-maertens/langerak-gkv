@@ -759,23 +759,27 @@ body.profile .email a {
   color: #EC7537;
 }
 /* line 142, ../../../sass/partials/apps/_profiles.scss */
-body.profile form input, body.profile form select {
+body.profile form input, body.profile form select, body.profile form textarea {
   -moz-box-shadow: inset 0 0 8px rgba(109, 9, 94, 0.2);
   -webkit-box-shadow: inset 0 0 8px rgba(109, 9, 94, 0.2);
   box-shadow: inset 0 0 8px rgba(109, 9, 94, 0.2);
 }
 /* line 146, ../../../sass/partials/apps/_profiles.scss */
+body.profile form textarea {
+  height: 75px;
+}
+/* line 150, ../../../sass/partials/apps/_profiles.scss */
 body.profile form .btn-action {
   background-color: #A23854;
   font-size: 14px;
 }
-/* line 152, ../../../sass/partials/apps/_profiles.scss */
+/* line 156, ../../../sass/partials/apps/_profiles.scss */
 body.profile form.form-horizontal .form-group {
   margin-left: -5px;
   margin-right: -5px;
   margin-bottom: 5px;
 }
-/* line 157, ../../../sass/partials/apps/_profiles.scss */
+/* line 161, ../../../sass/partials/apps/_profiles.scss */
 body.profile form.form-horizontal .form-group .control-label {
   text-align: left;
   font-weight: normal;

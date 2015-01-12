@@ -24,6 +24,7 @@ class UserAdmin(_UserAdmin):
                 ('phone', 'mobile'),
                 'birthdate',
                 'picture',
+                'about_me',
                 ),
             }
         ),
