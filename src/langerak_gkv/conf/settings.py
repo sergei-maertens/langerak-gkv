@@ -1,6 +1,7 @@
 import os
 
 import django.conf.global_settings as DEFAULT_SETTINGS
+from django.utils.translation import ugettext_lazy as _
 
 # Automatically figure out the ROOT_DIR and PROJECT_DIR.
 DJANGO_PROJECT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), os.path.pardir))
@@ -334,3 +335,10 @@ THUMBNAIL_ALIASES = {
         }
     }
 }
+
+#
+# Django CMS
+#
+CMS_TEMPLATES = (
+    ('cms/default.html', _('Default')),
+)
