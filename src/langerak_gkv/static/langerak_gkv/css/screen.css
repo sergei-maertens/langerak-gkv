@@ -620,6 +620,12 @@ body.home .calendar-item .description {
   color: #41575D;
 }
 
+/* line 3, ../../../sass/partials/_cms.scss */
+body.cms-page .cms-content {
+  background-color: #FFFFFF;
+  padding: 15px;
+}
+
 /* line 2, ../../../sass/partials/apps/_profiles.scss */
 body.profile .block {
   padding: 10px;

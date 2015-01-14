@@ -185,6 +185,7 @@ INSTALLED_APPS = [
     'cms',
     'menus',
     'sekizai',
+    'djangocms_grid',
 
     # Project applications.
     'langerak_gkv.homepage',
@@ -341,4 +342,12 @@ THUMBNAIL_ALIASES = {
 #
 CMS_TEMPLATES = (
     ('cms/default.html', _('Default')),
+    ('cms/right_sidebar.html', _('Content left, sidebar right')),
+    ('cms/3_columns.html', _('3 Columns (responsive)')),
 )
+
+DJANGOCMS_GRID_CONFIG = {
+    'COLUMNS': 12,
+    'TOTAL_WIDTH': 1170,
+    'GUTTER': 30,
+}
