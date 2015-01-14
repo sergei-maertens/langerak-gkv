@@ -1,9 +1,8 @@
 {% extends "master.html" %}
 {% load cms_tags static %}
-{% cms_toolbar %}
 
 {% block body-class %} cms-page {% endblock %}
 
 {% block content %}
-    {% placeholder base_content %}
+    {% placeholder page_content %}
 {% endblock %}

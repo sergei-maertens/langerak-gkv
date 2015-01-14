@@ -35,8 +35,9 @@
         <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{% static 'langerak_gkv/ico/apple-touch-icon-72-precomposed.png' %}">
         <link rel="apple-touch-icon-precomposed" href="{% static 'langerak_gkv/ico/apple-touch-icon-57-precomposed.png' %}">
     </head>
-    <body class="{% block body-class %}{% endblock %}">
 
+    <body class="{% block body-class %}{% endblock %}">
+        {% cms_toolbar %}
         {% block header %}{% include "header.html" %}{% endblock %}
 
         <section class="container narrow" id="content">
