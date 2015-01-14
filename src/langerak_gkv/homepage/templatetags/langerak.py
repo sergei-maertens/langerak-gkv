@@ -19,7 +19,7 @@ def active(path, reverse_name, exact=False):
 
     if path == url and exact:
         return True
-    elif url.startswith(path) and not exact and path != reverse('home'):
+    elif path.startswith(url) and not exact and path != reverse('home'):
         return True
     return False
 
