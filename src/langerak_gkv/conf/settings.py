@@ -367,3 +367,8 @@ DJANGOCMS_GRID_CONFIG = {
     'TOTAL_WIDTH': 1170,
     'GUTTER': 30,
 }
+
+#
+# GEO
+#
+GOOGLE_API_KEY = os.getenv('GOOGLE_API_KEY')

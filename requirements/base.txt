@@ -13,6 +13,9 @@ django-class-based-auth-views==0.2
 django-image-cropping
 BeautifulSoup # lxml & compressor
 
+# api/http
+requests
+
 # cms
 django-cms
 djangocms-text-ckeditor
@@ -23,3 +26,8 @@ djangocms-column
 djangocms-oembed
 djangocms-grid
 djangocms-table
+
+# geo
+django-leaflet
+django-geojson
+jsonfield
