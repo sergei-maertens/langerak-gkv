@@ -1,7 +1,9 @@
-{% load i18n static menu_tags langerak %}
+{% load i18n static menu_tags cms_tags langerak %}
 <header class="container">
     <figure id="header-image">
-        <img src="{% static "img/header_img1.png" %}">
+        {% placeholder header_image or %}
+            <img src="{% static "img/header_img1.png" %}">
+        {% endplaceholder %}
     </figure>
 
     <div id="header-overlay">

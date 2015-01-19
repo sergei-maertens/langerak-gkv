@@ -313,10 +313,7 @@ SOUTH_MIGRATION_MODULES = {
 # Easy thumbnails
 #
 THUMBNAIL_HIGH_RESOLUTION = True
-# THUMBNAIL_PROCESSORS = (
-    # 'filer.thumbnail_processors.scale_and_crop_with_subject_location',
-    # 'easy_thumbnails.processors.background',
-# )
+
 THUMBNAIL_ALIASES = {
     '': {
         'default': {
@@ -333,9 +330,18 @@ THUMBNAIL_ALIASES = {
             'size': (300, 320),
             'crop': True,
             'upscale': True,
+        },
+        'header': {
+            'size': (1140, 375),
+            'crop': True,
+            'upscale': True
         }
     }
 }
+
+THUMBNAIL_PROCESSORS = (
+    'filer.thumbnail_processors.scale_and_crop_with_subject_location',
+)
 
 #
 # Django CMS
@@ -344,6 +350,16 @@ CMS_TEMPLATES = (
     ('cms/default.html', _('Default')),
     ('cms/right_sidebar.html', _('Content left, sidebar right')),
     ('cms/3_columns.html', _('3 Columns (responsive)')),
+)
+
+CMS_PLACEHOLDER_CONF = {
+    'header_image': {
+        'plugins': ['FilerImagePlugin'],
+    }
+}
+
+CMSPLUGIN_FILER_IMAGE_STYLE_CHOICES = (
+    ('header', _('header top image')),
 )
 
 DJANGOCMS_GRID_CONFIG = {
