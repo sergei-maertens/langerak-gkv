@@ -6,7 +6,7 @@ from .models import Activity, IntendedPublic, ActivityType
 
 
 class ActivityAdmin(PlaceholderAdminMixin, admin.ModelAdmin):
-    list_fields = ('name', 'start_date', 'start_time', 'end_date', 'end_time')
+    list_display = ('name', 'start_date', 'start_time', 'end_date', 'end_time')
     list_filter = ('start_date', 'end_date', 'type')
     search_fields = ('name', 'description', 'location')
 
