@@ -188,6 +188,7 @@ INSTALLED_APPS = [
     'djangocms_grid',
 
     # Project applications.
+    'langerak_gkv.activities',
     'langerak_gkv.homepage',
     'langerak_gkv.users',
     'langerak_gkv.worklog',

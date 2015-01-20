@@ -22,3 +22,6 @@ settings_local.py
 
 # Sublime
 /langerak.sublime-workspace
+
+# dependencies
+src/langerak_gkv/static/vendor/

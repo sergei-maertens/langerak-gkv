@@ -15,6 +15,7 @@ BeautifulSoup # lxml & compressor
 
 # api/http
 requests
+djangorestframework
 
 # cms
 django-cms
@@ -28,6 +29,6 @@ djangocms-grid
 djangocms-table
 
 # geo
+# django-geojson
 django-leaflet
-django-geojson
 jsonfield
