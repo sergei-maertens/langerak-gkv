@@ -1,6 +1,9 @@
+from datetime import datetime, time
+
 from django.core.exceptions import ValidationError
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
+from django.utils import timezone
 
 from cms.models.fields import PlaceholderField
 
@@ -38,6 +41,16 @@ class Activity(models.Model):
 
         if self.start_date == self.end_date and self.end_time < self.start_time:
             raise ValidationError(_('The end time cannot come before the start time.'))
+
+    @property
+    def start(self):
+        start_time = self.start_time or time().replace(tzinfo=timezone.utc)
+        return datetime.combine(self.start_date, start_time)
+
+    @property
+    def end(self):
+        end_time = self.end_time or time().replace(tzinfo=timezone.utc)
+        return datetime.combine(self.end_date, end_time)
 
 
 class IntendedPublic(models.Model):
