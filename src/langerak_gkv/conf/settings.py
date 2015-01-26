@@ -172,6 +172,7 @@ INSTALLED_APPS = [
     'compressor',
     'easy_thumbnails',
     'formulation',
+    'rest_framework',
 
     # cms
     'mptt',
