@@ -1,5 +1,6 @@
 from django.conf import settings
 from django.conf.urls import patterns, include, url
+from django.conf.urls.static import static
 from django.contrib import admin
 
 
@@ -16,7 +17,7 @@ urlpatterns = patterns(
     url(r'^', include('langerak_gkv.homepage.urls')),
 
     url(r'^', include('cms.urls')),
-)
+) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 
 # If settings.DEBUG is set to True, some URLs can be handled by Django.

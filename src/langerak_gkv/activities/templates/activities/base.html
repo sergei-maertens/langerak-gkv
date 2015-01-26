@@ -1,0 +1,43 @@
+{% extends "master.html" %}{% load i18n static %}
+
+
+{% block content %}
+<div class="row">
+    <section id="calendar" class="col-md-11"></section>
+
+    <aside class="col-md-1">
+        Today
+        <br>
+        3 activities
+        <br>
+        Foo
+        <br>
+        Bar
+        <br>
+        Baz
+    </aside>
+</div>
+{% endblock %}
+
+
+{% block extra_css %}
+    {{ block.super }}
+    <link href="{% static 'vendor/fullcalendar/dist/fullcalendar.min.css' %}" rel="stylesheet">
+{% endblock %}
+
+
+{% block extra_js %}
+    {{ block.super }}
+    <script src="{% static 'vendor/moment/min/moment-with-locales.min.js' %}"></script>
+    <script src="{% static 'vendor/fullcalendar/dist/fullcalendar.min.js' %}"></script>
+    {% with 'vendor/fullcalendar/dist/lang/'|add:LANGUAGE_CODE|add:'.js' as lang_file %}
+        <script src="{% static lang_file %}"></script>
+    {% endwith %}
+    <script>
+        var calendarConf = {
+            lang: '{{ LANGUAGE_CODE }}',
+            feedURL: '{% url "api:activities:list" %}'
+        };
+    </script>
+    <script src="{% static 'activities/activities.js' %}"></script>
+{% endblock %}
