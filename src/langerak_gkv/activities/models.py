@@ -1,3 +1,4 @@
+from django.core.exceptions import ValidationError
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
@@ -30,6 +31,13 @@ class Activity(models.Model):
 
     def __unicode__(self):
         return self.name
+
+    def clean(self):
+        if self.start_date > self.end_date:
+            raise ValidationError(_('The start date cannot come before the end date.'))
+
+        if self.start_date == self.end_date and self.end_time < self.start_time:
+            raise ValidationError(_('The end time cannot come before the start time.'))
 
 
 class IntendedPublic(models.Model):
