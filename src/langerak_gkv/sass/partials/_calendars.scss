@@ -43,3 +43,31 @@ body.home {
     }
   }
 }
+
+body.calendar {
+  form {
+    @include style-form-elements();
+  }
+
+  #calendar-search {
+
+    margin-bottom: 15px;
+    padding: 5px;
+
+    .form-group {
+      margin-bottom: 0;
+    }
+
+    .input-group {
+      max-width: 250px;
+
+      .input-group-addon {
+        background-color: transparent;
+        border: none;
+        font-size: 20px;
+        padding-left: 6px;
+        @include opacity(0.8);
+      }
+    }
+  }
+}

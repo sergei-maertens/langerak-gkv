@@ -168,21 +168,26 @@ article footer {
 }
 
 /* line 50, ../../../sass/partials/_base.scss */
+.page-block {
+  background-color: #FFFFFF;
+}
+
+/* line 54, ../../../sass/partials/_base.scss */
 img {
   width: 100%;
 }
 
-/* line 54, ../../../sass/partials/_base.scss */
+/* line 58, ../../../sass/partials/_base.scss */
 .margin-top {
   margin-top: 25px;
 }
 
-/* line 58, ../../../sass/partials/_base.scss */
+/* line 62, ../../../sass/partials/_base.scss */
 .section {
   margin-top: 10px;
 }
 
-/* line 62, ../../../sass/partials/_base.scss */
+/* line 66, ../../../sass/partials/_base.scss */
 .page-divider {
   font-weight: bold;
   background-color: #FFFFFF;
@@ -194,35 +199,35 @@ img {
 /*
  * Buttons
  */
-/* line 73, ../../../sass/partials/_base.scss */
+/* line 77, ../../../sass/partials/_base.scss */
 .btn {
   -moz-border-radius: 0;
   -webkit-border-radius: 0;
   border-radius: 0;
   text-transform: uppercase;
 }
-/* line 77, ../../../sass/partials/_base.scss */
+/* line 81, ../../../sass/partials/_base.scss */
 .btn, .btn:hover, .btn:active, .btn.active, .btn:focus {
   background-image: none;
   border: none;
   outline: none;
 }
-/* line 83, ../../../sass/partials/_base.scss */
+/* line 87, ../../../sass/partials/_base.scss */
 .btn.btn-default {
   background-color: #D9E12E;
   color: #584C40;
 }
-/* line 88, ../../../sass/partials/_base.scss */
+/* line 92, ../../../sass/partials/_base.scss */
 .btn.btn-action {
   background-color: #EC7537;
   color: #FFFFFF;
   font-weight: bold;
 }
-/* line 94, ../../../sass/partials/_base.scss */
+/* line 98, ../../../sass/partials/_base.scss */
 .btn.read-more {
   font-weight: bold;
 }
-/* line 97, ../../../sass/partials/_base.scss */
+/* line 101, ../../../sass/partials/_base.scss */
 .btn.read-more .glyphicon {
   color: #FFFFFF;
 }
@@ -552,6 +557,35 @@ body.home .calendar-item .description {
   height: 64px;
 }
 
+/* line 10, ../../../sass/partials/_utils.scss */
+body.calendar form input, body.calendar form select, body.calendar form textarea {
+  -moz-box-shadow: inset 0 0 8px rgba(109, 9, 94, 0.2);
+  -webkit-box-shadow: inset 0 0 8px rgba(109, 9, 94, 0.2);
+  box-shadow: inset 0 0 8px rgba(109, 9, 94, 0.2);
+}
+/* line 52, ../../../sass/partials/_calendars.scss */
+body.calendar #calendar-search {
+  margin-bottom: 15px;
+  padding: 5px;
+}
+/* line 57, ../../../sass/partials/_calendars.scss */
+body.calendar #calendar-search .form-group {
+  margin-bottom: 0;
+}
+/* line 61, ../../../sass/partials/_calendars.scss */
+body.calendar #calendar-search .input-group {
+  max-width: 250px;
+}
+/* line 64, ../../../sass/partials/_calendars.scss */
+body.calendar #calendar-search .input-group .input-group-addon {
+  background-color: transparent;
+  border: none;
+  font-size: 20px;
+  padding-left: 6px;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+  opacity: 0.8;
+}
+
 /* line 1, ../../../sass/partials/_homepage.scss */
 .home-wrapper {
   padding: 15px;
@@ -764,28 +798,28 @@ body.profile h2.name .surname {
 body.profile .email a {
   color: #EC7537;
 }
-/* line 142, ../../../sass/partials/apps/_profiles.scss */
+/* line 10, ../../../sass/partials/_utils.scss */
 body.profile form input, body.profile form select, body.profile form textarea {
   -moz-box-shadow: inset 0 0 8px rgba(109, 9, 94, 0.2);
   -webkit-box-shadow: inset 0 0 8px rgba(109, 9, 94, 0.2);
   box-shadow: inset 0 0 8px rgba(109, 9, 94, 0.2);
 }
-/* line 146, ../../../sass/partials/apps/_profiles.scss */
+/* line 144, ../../../sass/partials/apps/_profiles.scss */
 body.profile form textarea {
   height: 75px;
 }
-/* line 150, ../../../sass/partials/apps/_profiles.scss */
+/* line 148, ../../../sass/partials/apps/_profiles.scss */
 body.profile form .btn-action {
   background-color: #A23854;
   font-size: 14px;
 }
-/* line 156, ../../../sass/partials/apps/_profiles.scss */
+/* line 154, ../../../sass/partials/apps/_profiles.scss */
 body.profile form.form-horizontal .form-group {
   margin-left: -5px;
   margin-right: -5px;
   margin-bottom: 5px;
 }
-/* line 161, ../../../sass/partials/apps/_profiles.scss */
+/* line 159, ../../../sass/partials/apps/_profiles.scss */
 body.profile form.form-horizontal .form-group .control-label {
   text-align: left;
   font-weight: normal;

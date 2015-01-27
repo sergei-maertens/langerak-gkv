@@ -1,21 +1,40 @@
 {% extends "master.html" %}{% load i18n static %}
 
+{% block body-class %}{{ block.super }} calendar{% endblock %}
+
 
 {% block content %}
-<div class="row">
-    <section id="calendar" class="col-md-11"></section>
 
-    <aside class="col-md-1">
-        Today
-        <br>
-        3 activities
-        <br>
-        Foo
-        <br>
-        Bar
-        <br>
-        Baz
-    </aside>
+<form class="page-block clearfix" id="calendar-search">
+    <div class="form-group pull-right">
+        <div class="input-group">
+            <input type="text" placeholder="{% trans "Find in calendar" %}"
+                name="q" class="form-control">
+            <span class="input-group-addon"><i class="fa fa-search fa-flip-horizontal"></i></span>
+        </div>
+    </div>
+
+</form>
+
+<div class="row">
+    <section class="col-md-10">
+        <div class="page-block" id="calendar"></div>
+    </section>
+
+    <div class="col-md-2">
+        <aside class="page-block">
+
+            Today
+            <br>
+            3 activities
+            <br>
+            Foo
+            <br>
+            Bar
+            <br>
+            Baz
+        </aside>
+    </div>
 </div>
 {% endblock %}
 
