@@ -11,7 +11,7 @@
 <div class="form-group">
     {% use "_label" %}
     <span class="col-md-6">
-        <input type="{{ field_type|default:"text" }}"
+        <input type="{{ widget.input_type|default:"text" }}"
             name="{{ html_name }}"
             id="{{ id }}"
             value="{{ value|default:"" }}"
@@ -27,7 +27,7 @@
 
 {% block TextInput_mobile %}{% use 'input' %}{% endblock %}
 {% block TextInput_username %}{% use 'input' %}{% endblock %}
-{% block EmailInput_email %}{% use 'input' field_type='email' %}{% endblock %}
+{% block EmailInput_email %}{% use 'input' %}{% endblock %}
 
 {% block Textarea_about_me %}
 <div class="form-group">
