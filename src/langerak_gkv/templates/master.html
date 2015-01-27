@@ -1,4 +1,4 @@
-{% load compress staticfiles i18n sekizai_tags cms_tags %}<!DOCTYPE html>
+{% load compress staticfiles i18n sekizai_tags cms_tags menu_tags %}<!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="utf-8">
@@ -46,6 +46,10 @@
         </section>
 
         {% block footer %}
+            <ul class="container">
+                {% show_menu 0 100 100 100 %}
+            </ul>
+
             <footer class="container narrow">
                 <div class="narrow" id="newsletter">
                     <div class="row">

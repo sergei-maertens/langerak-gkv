@@ -149,7 +149,7 @@ class UserSearchForm(forms.ModelForm):
 
         query = self.cleaned_data.get('query')
         if query:
-            pass # TODO
+            pass  # TODO
             # q_and &= Q(description__icontains=query)
 
         gender = self.cleaned_data.pop('sex')
