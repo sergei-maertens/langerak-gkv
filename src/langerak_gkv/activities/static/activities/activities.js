@@ -4,12 +4,17 @@
         $('#calendar').fullCalendar({
             events: feedURL,
             header: {
-                left: 'prev,next today',
+                left: 'prev',
                 center: 'title',
-                right: 'month,agendaWeek,agendaDay'
+                right: 'next'
             },
             lang: lang,
-            buttonIcons: false,
+            buttonIcons: {
+                prev: ' fa fa-play fa-flip-horizontal',
+                next: ' fa fa-play',
+                prevYear: 'left-double-arrow',
+                nextYear: 'right-double-arrow'
+            },
             editable: true
         });
     }

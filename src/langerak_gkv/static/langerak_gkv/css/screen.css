@@ -585,6 +585,27 @@ body.calendar #calendar-search .input-group .input-group-addon {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
   opacity: 0.8;
 }
+/* line 74, ../../../sass/partials/_calendars.scss */
+body.calendar .fc-toolbar {
+  background-color: #70BDBD;
+  color: #FFFFFF;
+  padding: 5px 10px;
+}
+/* line 79, ../../../sass/partials/_calendars.scss */
+body.calendar .fc-toolbar h2 {
+  font-size: 18px;
+}
+/* line 83, ../../../sass/partials/_calendars.scss */
+body.calendar .fc-toolbar .fc-icon {
+  font-family: FontAwesome;
+}
+/* line 87, ../../../sass/partials/_calendars.scss */
+body.calendar .fc-toolbar .fc-prev-button, body.calendar .fc-toolbar .fc-next-button {
+  background: transparent;
+  padding: 0;
+  border: none;
+  color: #FFFFFF;
+}
 
 /* line 1, ../../../sass/partials/_homepage.scss */
 .home-wrapper {

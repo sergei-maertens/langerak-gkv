@@ -70,4 +70,25 @@ body.calendar {
       }
     }
   }
+
+  .fc-toolbar {
+    background-color: $main-color-blue;
+    color: $white;
+    padding: 5px 10px;
+
+    h2 {
+      font-size: 18px;
+    }
+
+    .fc-icon {
+      font-family: FontAwesome;
+    }
+
+    .fc-prev-button, .fc-next-button {
+      background: transparent;
+      padding: 0;
+      border: none;
+      color: $white;
+    }
+  }
 }
