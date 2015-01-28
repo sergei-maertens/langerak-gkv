@@ -6,7 +6,7 @@ from .forms import CalendarRangeForm
 
 
 class ActivityListApiView(generics.ListAPIView):
-    model = Activity
+    queryset = Activity.objects.all()
     serializer_class = ActivitySerializer
 
     def get_queryset(self):

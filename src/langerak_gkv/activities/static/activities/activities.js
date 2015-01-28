@@ -15,7 +15,14 @@
                 prevYear: 'left-double-arrow',
                 nextYear: 'right-double-arrow'
             },
-            editable: true
+            editable: false,
+            // *** use long day names by using 'dddd' ***
+            columnFormat: {
+                month: 'dddd',    // Monday, Wednesday, etc
+                week: 'dddd, MMM dS', // Monday 9/7
+                day: 'dddd, MMM dS'  // Monday 9/7
+            },
+            timeFormat: ' '
         });
     }
 
