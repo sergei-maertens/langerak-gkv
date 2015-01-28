@@ -7,7 +7,8 @@ django_compressor==1.3
 django-axes==1.3.6
 # raven
 django-choices==1.3
-formulation==2.0.12
+# formulation==2.0.12
+git+https://github.com/sergei-maertens/formulation.git
 easy-thumbnails==2.2
 django-class-based-auth-views==0.2
 django-image-cropping
