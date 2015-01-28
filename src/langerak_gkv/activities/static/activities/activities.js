@@ -9,8 +9,7 @@
                 right: 'month,agendaWeek,agendaDay'
             },
             lang: lang,
-            buttonIcons: true,
-            weekNumbers: true,
+            buttonIcons: false,
             editable: true
         });
     }
