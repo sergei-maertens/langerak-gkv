@@ -160,17 +160,14 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
-    # Optional applications.
     'django.contrib.admin',
-    #'django.contrib.humanize',
-    #'django.contrib.sitemaps',
 
     # External applications.
     'axes',
     'south',
     'compressor',
     'easy_thumbnails',
+    'leaflet',
     'formulation',
     'rest_framework',
 
@@ -375,3 +372,7 @@ DJANGOCMS_GRID_CONFIG = {
 # GEO
 #
 GOOGLE_API_KEY = os.getenv('GOOGLE_API_KEY')
+LEAFLET_CONFIG = {
+    'DEFAULT_CENTER': (51.93, 4.876),
+    'DEFAULT_ZOOM': 9,
+}

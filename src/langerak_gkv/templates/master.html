@@ -1,4 +1,4 @@
-{% load compress staticfiles i18n sekizai_tags cms_tags menu_tags %}<!DOCTYPE html>
+{% load compress staticfiles i18n sekizai_tags cms_tags menu_tags leaflet_tags %}<!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="utf-8">
@@ -13,7 +13,7 @@
         {% compress css %}
             <link href="{% static 'langerak_gkv/css/screen.css' %}" media="screen, projection" rel="stylesheet" type="text/css" />
             <link href="{% static 'langerak_gkv/css/print.css' %}" media="print" rel="stylesheet" type="text/css" />
-
+            {% leaflet_css %}
             {% block extra_css %}{% endblock %}
         {% endcompress %}
 
@@ -66,7 +66,22 @@
                             {% show_menu 1 100 100 100 'menu/footer_menu_right.html' %}
                         </ul>
                     </div>
-                    <div class="col-xs-12 col-lg-6">{% trans "Map + contact" %}</div>
+                    <div class="col-xs-12 col-lg-6">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                {% leaflet_map "footer-map" %}
+                            </div>
+
+                            <div class="col-sm-6">
+                                <p>{% static_placeholder 'footer_logo' %}</p>
+                                <p>
+                                    <address>
+                                        {% static_placeholder 'footer_address' %}
+                                    </address>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <div id="copyright" class="narrow">&copy; Copyright Koningskerk 2014</div>
@@ -76,6 +91,7 @@
         <script src="{% static 'langerak_gkv/lib/bootstrap-3.1.0/js/bootstrap.min.js' %}"></script>
 
         {% compress js %}
+            {% leaflet_js %}
             <script src="{% static 'langerak_gkv/js/global.js' %}"></script>
         {% endcompress %}
 

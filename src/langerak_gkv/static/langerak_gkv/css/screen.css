@@ -731,6 +731,23 @@ body.cms-page .cms-content {
   padding: 15px;
 }
 
+/* line 1, ../../../sass/partials/_maps.scss */
+#footer-map {
+  min-height: 200px;
+}
+@media (min-width: 768px) {
+  /* line 1, ../../../sass/partials/_maps.scss */
+  #footer-map {
+    height: 200px;
+  }
+}
+@media (max-width: 1200px) {
+  /* line 1, ../../../sass/partials/_maps.scss */
+  #footer-map {
+    height: 300px;
+  }
+}
+
 /* line 2, ../../../sass/partials/apps/_profiles.scss */
 body.profile .block {
   padding: 10px;
