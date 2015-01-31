@@ -17,8 +17,8 @@ class ActivityManager(models.Manager):
         """
         date = timezone.now().date()
         return self.filter(
-            Q(start_date__lte=date) | Q(end_date__gte=date, start_date__lt=date)
-        ).order_by('start_date', 'end_date')
+            Q(start_date__gte=date) | Q(end_date__gte=date, start_date__lt=date)
+        ).order_by('start_date', 'end_date')[:n]
 
 
 class Activity(models.Model):
