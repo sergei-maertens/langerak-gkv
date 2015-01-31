@@ -3,6 +3,8 @@ from django.contrib import messages
 from django.utils.translation import ugettext_lazy as _
 from django.views.generic import TemplateView, CreateView
 
+from langerak_gkv.activities.models import Activity
+
 from .forms import PrayerOnDemandForm
 from .models import PrayerOnDemand
 
@@ -11,6 +13,7 @@ class HomepageContextMixin(object):
     def get_context_data(self, **kwargs):
         # TODO: get the current/last preacher
         kwargs['preacher'] = 'ds H.J. Lopers'
+        kwargs['upcoming_activities'] = Activity.objects.upcoming(n=5)
         return kwargs
 
 
@@ -24,7 +27,6 @@ class HomepageView(HomepageContextMixin, TemplateView):
         if self.request.user.is_authenticated() and self.request.user.email:
             initial['email'] = self.request.user.email
         kwargs['form'] = PrayerOnDemandForm(initial=initial)
-
         return super(HomepageView, self).get_context_data(**kwargs)
 
 

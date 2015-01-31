@@ -212,15 +212,15 @@
         <section class="home-wrapper">
             <div class="calendar">
                 <h3>Kalender Koningskerk</h3>
-                {% for i in '01234' %}
+                {% for item in upcoming_activities %}
                     <article class="calendar-item clearfix">
                         <span class="date pull-left">
-                            <span class="day">27</span>
-                            <span class="month">april</span>
+                            <span class="day">{{ item.start_date|date:"D" }}</span>
+                            <span class="month">{{ item.start_date|date:"j" }}</span>
                         </span>
 
                         <span class="description">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit...
+                            {{ item.name }}
                             <span class="glyphicon glyphicon-play"></span>
                         </span>
                     </article>

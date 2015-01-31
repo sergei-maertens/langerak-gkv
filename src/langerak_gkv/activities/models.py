@@ -2,10 +2,23 @@ from datetime import datetime, time
 
 from django.core.exceptions import ValidationError
 from django.db import models
+from django.db.models import Q
 from django.utils.translation import ugettext_lazy as _
 from django.utils import timezone
 
 from cms.models.fields import PlaceholderField
+
+
+class ActivityManager(models.Manager):
+
+    def upcoming(self, n=5):
+        """
+        Fetch the queryset for at most n upcoming activities
+        """
+        date = timezone.now().date()
+        return self.filter(
+            Q(start_date__lte=date) | Q(end_date__gte=date, start_date__lt=date)
+        ).order_by('start_date', 'end_date')
 
 
 class Activity(models.Model):
@@ -26,6 +39,8 @@ class Activity(models.Model):
     url = models.URLField(_('external url'), blank=True)
     liturgy = models.ForeignKey('liturgies.Liturgy', null=True, editable=False)
     fb_event_id = models.CharField(_('facebook event id'), max_length=50, blank=True)
+
+    objects = ActivityManager()
 
     class Meta:
         verbose_name = _(u'activity')
