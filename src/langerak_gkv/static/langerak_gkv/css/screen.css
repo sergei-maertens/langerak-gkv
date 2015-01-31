@@ -502,11 +502,22 @@ body > footer #main-footer ul {
   padding-left: 0;
   list-style-type: none;
 }
-/* line 30, ../../../sass/partials/_footer.scss */
+/* line 28, ../../../sass/partials/_footer.scss */
+body > footer #main-footer ul.children {
+  padding-left: 1em;
+}
+/* line 31, ../../../sass/partials/_footer.scss */
+body > footer #main-footer ul.children li.child:before {
+  display: inline-block;
+  content: "-";
+  width: 0.5em;
+  margin-left: -1em;
+}
+/* line 41, ../../../sass/partials/_footer.scss */
 body > footer #main-footer li a {
   color: #FFFFFF;
 }
-/* line 36, ../../../sass/partials/_footer.scss */
+/* line 47, ../../../sass/partials/_footer.scss */
 body > footer #copyright {
   background-color: #6D095E;
   padding-top: 5px;

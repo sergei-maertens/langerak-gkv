@@ -46,10 +46,6 @@
         </section>
 
         {% block footer %}
-            <ul class="container">
-                {% show_menu 0 100 100 100 %}
-            </ul>
-
             <footer class="container narrow">
                 <div class="narrow" id="newsletter">
                     <div class="row">
@@ -60,23 +56,14 @@
 
                 <div class="row" id="main-footer">
                     <div class="col-xs-6 col-lg-3">
-                        {% trans "Footer links" %}
                         <ul>
-                            <li><a href="#">Lorem ipsum</a></li>
-                            <li><a href="#">Lorem ipsum</a></li>
-                            <li><a href="#">Lorem ipsum</a></li>
-                            <li><a href="#">Lorem ipsum</a></li>
-                            <li><a href="#">Lorem ipsum</a></li>
+                            <li><a href="{% url 'home' %}">{% trans "Home" %}</a></li>
+                            {% show_menu 1 100 100 100 'menu/footer_menu_left.html' %}
                         </ul>
                     </div>
                     <div class="col-xs-6 col-lg-3">
-                        {% trans "Footer links" %}
                         <ul>
-                            <li><a href="#">Lorem ipsum</a></li>
-                            <li><a href="#">Lorem ipsum</a></li>
-                            <li><a href="#">Lorem ipsum</a></li>
-                            <li><a href="#">Lorem ipsum</a></li>
-                            <li><a href="#">Lorem ipsum</a></li>
+                            {% show_menu 1 100 100 100 'menu/footer_menu_right.html' %}
                         </ul>
                     </div>
                     <div class="col-xs-12 col-lg-6">{% trans "Map + contact" %}</div>

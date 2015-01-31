@@ -24,6 +24,17 @@ body > footer {
     ul {
       padding-left: 0;
       list-style-type: none;
+
+      &.children {
+        padding-left: 1em;
+
+        li.child:before {
+          display: inline-block;
+          content: "-";
+          width: 0.5em;
+          margin-left: -1em;
+        }
+      }
     }
 
     li {
