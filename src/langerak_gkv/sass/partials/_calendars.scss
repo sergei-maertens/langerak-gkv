@@ -49,6 +49,8 @@ body.calendar {
     @include style-form-elements();
   }
 
+  // div.page-block.
+
   #calendar-search {
 
     margin-bottom: 15px;
@@ -90,5 +92,43 @@ body.calendar {
       border: none;
       color: $white;
     }
+  }
+
+  // month view
+  div.fc-bg,
+  div.fc-widget-header,
+  div.fc-content-skeleton {
+    margin-left: -5px;
+    margin-right: -5px;
+
+    table {
+      border-collapse: separate;
+      border-spacing: 5px 3px;
+    }
+  }
+
+  th.fc-day-header {
+    border: none;
+    background-color: $main-color-green;
+    text-transform: capitalize;
+    color: $white;
+    padding: 5px 10px;
+  }
+
+  td.fc-widget-header,
+  td.fc-widget-content {
+    border: none;
+  }
+
+  td.fc-day {
+    background-color: $white;
+
+    &.fc-other-month {
+      background-color: darken($color-background, 5);
+    }
+  }
+
+  .fc-ltr .fc-basic-view .fc-day-number {
+    text-align: left;
   }
 }
