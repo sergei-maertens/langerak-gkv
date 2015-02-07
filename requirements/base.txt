@@ -1,4 +1,4 @@
-Django>=1.6,<1.7
+Django==1.6.10
 South==0.8.4
 
 Sphinx==1.2
@@ -13,6 +13,7 @@ easy-thumbnails==2.2
 django-class-based-auth-views==0.2
 django-image-cropping
 BeautifulSoup # lxml & compressor
+django-autoslug==1.7.2
 
 # api/http
 requests

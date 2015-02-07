@@ -1,11 +1,13 @@
 from datetime import datetime, time
 
 from django.core.exceptions import ValidationError
+from django.core.urlresolvers import reverse
 from django.db import models
 from django.db.models import Q
 from django.utils.translation import ugettext_lazy as _
 from django.utils import timezone
 
+from autoslug import AutoSlugField
 from cms.models.fields import PlaceholderField
 
 
@@ -23,6 +25,7 @@ class ActivityManager(models.Manager):
 
 class Activity(models.Model):
     name = models.CharField(_('name'), max_length=100)
+    slug = AutoSlugField(populate_from='name', unique=True, null=True)
 
     start_date = models.DateField(_('start date'))
     end_date = models.DateField(_('end date'))
@@ -35,6 +38,10 @@ class Activity(models.Model):
 
     description = models.TextField(_('short description/intro'))
     content = PlaceholderField('content')
+    show_on_homepage = models.BooleanField(
+        default=False,
+        help_text=_('If checked, this activity can appear on the homepage.')
+    )
 
     url = models.URLField(_('external url'), blank=True)
     liturgy = models.ForeignKey('liturgies.Liturgy', null=True, editable=False)
@@ -49,6 +56,9 @@ class Activity(models.Model):
 
     def __unicode__(self):
         return self.name
+
+    def get_absolute_url(self):
+        return reverse('activities:detail', kwargs={'slug': self.slug})
 
     def clean(self):
         if self.start_date > self.end_date:

@@ -1,0 +1,8 @@
+{% extends "activities/base.html" %}{% load i18n cms_tags %}
+
+
+{% block content %}
+    <h1>{{ activity.name }}</h1>
+
+    {% render_placeholder activity.content %}
+{% endblock %}
