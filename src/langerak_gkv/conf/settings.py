@@ -338,6 +338,7 @@ THUMBNAIL_ALIASES = {
         }
     }
 }
+THUMBNAIL_ALIASES['']['homepage'] = THUMBNAIL_ALIASES['']['default']
 
 THUMBNAIL_PROCESSORS = (
     'filer.thumbnail_processors.scale_and_crop_with_subject_location',

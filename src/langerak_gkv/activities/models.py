@@ -9,18 +9,26 @@ from django.utils import timezone
 
 from autoslug import AutoSlugField
 from cms.models.fields import PlaceholderField
+from filer.fields.image import FilerImageField
 
 
 class ActivityManager(models.Manager):
 
-    def upcoming(self, n=5):
+    def _upcoming(self, **filters):
+        date = timezone.now().date()
+        return self.get_queryset().filter(
+            Q(start_date__gte=date) | Q(end_date__gte=date, start_date__lt=date),
+            **filters
+        )
+
+    def homepage(self):
+        return self._upcoming(show_on_homepage=True)
+
+    def upcoming(self, n=5, **filters):
         """
         Fetch the queryset for at most n upcoming activities
         """
-        date = timezone.now().date()
-        return self.filter(
-            Q(start_date__gte=date) | Q(end_date__gte=date, start_date__lt=date)
-        ).order_by('start_date', 'end_date')[:n]
+        return self._upcoming(**filters).order_by('start_date', 'end_date')[:n]
 
 
 class Activity(models.Model):
@@ -36,6 +44,7 @@ class Activity(models.Model):
     type = models.ForeignKey('ActivityType')
     location = models.CharField(_('location'), max_length=255, blank=True)
 
+    image = FilerImageField(blank=True, null=True)
     description = models.TextField(_('short description/intro'))
     content = PlaceholderField('content')
     show_on_homepage = models.BooleanField(
@@ -66,6 +75,9 @@ class Activity(models.Model):
 
         if self.start_date == self.end_date and self.end_time < self.start_time:
             raise ValidationError(_('The end time cannot come before the start time.'))
+
+        if self.show_on_homepage and not self.image:
+            raise ValidationError(_('Homepage activities must have an image'))
 
     @property
     def start(self):

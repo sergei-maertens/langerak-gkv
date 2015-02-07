@@ -1,4 +1,4 @@
-{% extends "master.html" %}{% load i18n static %}
+{% extends "master.html" %}{% load i18n static thumbnail %}
 
 {% block body-class %}home{% endblock body-class %}
 
@@ -9,22 +9,18 @@
 
         <section class="activities">
             <div class="row">
+                {% for activity in activities %}
                 <div class="col-md-6">
                     <article class="activity">
                         <header>
                             <figure>
-                                <img src="/media/1.png">
+                                <img src="{{ activity.image|thumbnail_url:'homepage' }}">
                             </figure>
-                            <h2>{% trans "Activity 1" %}</h2>
+                            <h2>{{ activity.name }}</h2>
                         </header>
 
                         <p class="description">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            {{ activity.description }}
                         </p>
 
                         <footer>
@@ -36,7 +32,7 @@
                                     <a href="#"><span class="fa fa-twitter"></span></a>
                                 </li>
                                 <li>
-                                    <a href="#" class="btn btn-default read-more">
+                                    <a href="{{ activity.get_absolute_url }}" class="btn btn-default read-more">
                                         {% trans "Read more" %}
                                         <span class="glyphicon glyphicon-play"></span>
                                     </a>
@@ -45,6 +41,7 @@
                         </footer>
                     </article>
                 </div>
+                {% endfor %}
 
                 {# Dummy, remove later TODO #}
                 <div class="col-md-6">
