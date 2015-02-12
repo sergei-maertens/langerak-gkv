@@ -7,8 +7,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <link href="{% static 'langerak_gkv/lib/bootstrap-3.1.0/css/bootstrap.min.css' %}" rel="stylesheet">
-        <link href="{% static 'langerak_gkv/lib/bootstrap-3.1.0/css/bootstrap-theme.min.css' %}" rel="stylesheet">
+        <link href="{% static 'vendor/bootstrap/dist/css/bootstrap.min.css' %}" rel="stylesheet">
         <link href="{% static 'langerak_gkv/lib/fa/font-awesome-4.2.0/css/font-awesome.min.css' %}" rel="stylesheet">
         {% compress css %}
             <link href="{% static 'langerak_gkv/css/screen.css' %}" media="screen, projection" rel="stylesheet" type="text/css" />
@@ -88,7 +87,7 @@
             </footer>
         {% endblock %}
 
-        <script src="{% static 'langerak_gkv/lib/bootstrap-3.1.0/js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'vendor/bootstrap/dist/js/bootstrap.min.js' %}"></script>
 
         {% compress js %}
             {% leaflet_js %}

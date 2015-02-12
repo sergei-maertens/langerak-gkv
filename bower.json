@@ -17,6 +17,7 @@
     "tests"
   ],
   "dependencies": {
-    "fullcalendar": "~2.2.6"
+    "fullcalendar": "~2.2.6",
+    "bootstrap": "~3.3.2"
   }
 }
