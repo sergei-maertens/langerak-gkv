@@ -424,31 +424,42 @@ form#search .btn-search > .fa {
   border: none;
   min-height: 30px;
 }
-/* line 87, ../../../sass/partials/_header.scss */
+/* line 89, ../../../sass/partials/_header.scss */
+#main-nav .navbar-header .navbar-brand {
+  max-height: 40px;
+  padding-top: 0;
+  margin-top: 5px;
+}
+/* line 94, ../../../sass/partials/_header.scss */
+#main-nav .navbar-header .navbar-brand img {
+  width: 82px;
+  height: 40px;
+}
+/* line 100, ../../../sass/partials/_header.scss */
 #main-nav .navbar-header .navbar-toggle {
   border: solid 1px #6D095E;
 }
-/* line 90, ../../../sass/partials/_header.scss */
-#main-nav .navbar-header .navbar-toggle .icon-bar {
+/* line 104, ../../../sass/partials/_header.scss */
+#main-nav .navbar-header .icon-bar {
   background-color: #6D095E;
 }
-/* line 97, ../../../sass/partials/_header.scss */
+/* line 111, ../../../sass/partials/_header.scss */
 #main-nav .navbar-nav li.active a {
   background: #E9E9E9;
   color: #6D095E;
 }
-/* line 102, ../../../sass/partials/_header.scss */
+/* line 116, ../../../sass/partials/_header.scss */
 #main-nav .navbar-nav li a, #main-nav .navbar-nav li #btn-logout {
   text-transform: uppercase;
   color: #584C40;
   font-weight: bold;
   padding: 7px 10px;
 }
-/* line 108, ../../../sass/partials/_header.scss */
+/* line 122, ../../../sass/partials/_header.scss */
 #main-nav .navbar-nav li a:hover, #main-nav .navbar-nav li a:focus, #main-nav .navbar-nav li a:active, #main-nav .navbar-nav li #btn-logout:hover, #main-nav .navbar-nav li #btn-logout:focus, #main-nav .navbar-nav li #btn-logout:active {
   background: #E9E9E9;
 }
-/* line 115, ../../../sass/partials/_header.scss */
+/* line 129, ../../../sass/partials/_header.scss */
 #main-nav #btn-logout {
   text-decoration: none;
   display: block;
@@ -456,7 +467,7 @@ form#search .btn-search > .fa {
   text-align: left;
 }
 
-/* line 124, ../../../sass/partials/_header.scss */
+/* line 138, ../../../sass/partials/_header.scss */
 .page-header {
   margin-top: 0;
   margin-bottom: 10px;
@@ -466,14 +477,14 @@ form#search .btn-search > .fa {
   padding: 5px;
   color: #FFFFFF;
 }
-/* line 133, ../../../sass/partials/_header.scss */
+/* line 147, ../../../sass/partials/_header.scss */
 .page-header a.abs-left {
   position: absolute;
   left: 10px;
   top: 5px;
   color: #FFFFFF;
 }
-/* line 140, ../../../sass/partials/_header.scss */
+/* line 154, ../../../sass/partials/_header.scss */
 .page-header .title {
   line-height: 20px;
   font-size: 120%;

@@ -84,8 +84,22 @@ form#search {
   border: none;
   min-height: 30px;
 
-  .navbar-header .navbar-toggle {
-    border: solid 1px $main-color-purple;
+  .navbar-header {
+
+    .navbar-brand {
+      max-height: 40px;
+      padding-top: 0;
+      margin-top: 5px;
+
+      img {
+        width: 82px;
+        height: 40px;
+      }
+    }
+
+    .navbar-toggle {
+      border: solid 1px $main-color-purple;
+    }
 
     .icon-bar {
       background-color: $main-color-purple;
