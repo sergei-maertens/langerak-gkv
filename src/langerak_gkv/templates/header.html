@@ -1,21 +1,21 @@
 {% load i18n static menu_tags cms_tags langerak %}
-<header class="container hidden-xs">
+<header class="header-container container hidden-xs">
     <figure id="header-image">
         {% placeholder header_image or %}
             <img src="{% static "img/header_img1.png" %}">
         {% endplaceholder %}
     </figure>
 
-    <div id="header-overlay" class="visible-lg-block">
+    <div id="header-overlay">
         <div id="header-overlay-left"></div>
         <div id="header-overlay-right">
-            <span id="bid-ontvangt"></span>
+            <span id="bid-ontvangt" class="visible-lg-block visible-xl-block"></span>
         </div>
     </div>
 
     <a href="{% url 'home' %}" id="logo">Koningskerk</a>
 
-    <form id="search" action="#TODO" class="dark form-inline">
+    <form id="search" action="#TODO" class="form-inline">
         <input name="q" placeholder="{% trans "Search" %}" class="form-control">
         <button type="submit" class="btn-search"><i class="fa fa-search"></i></button>
     </form>

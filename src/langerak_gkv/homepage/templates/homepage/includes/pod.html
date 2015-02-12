@@ -5,7 +5,7 @@
         <h3>{% trans "Prayer on demand" %}<br />
             <small>{% trans "Fill the form and our prayer group will pray for you." %}</small>
         </h3>
-        <form action="{% url 'pod' %}" method="post" class="dark">{% csrf_token %}
+        <form action="{% url 'pod' %}" method="post">{% csrf_token %}
             {% form 'homepage/pod.form' %}
             {% for field in form %}{% field field %}{% endfor %}
                 {% use 'btn-submit' btn_class='btn-transparent btn-fade' %}

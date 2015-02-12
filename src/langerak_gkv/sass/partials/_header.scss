@@ -1,5 +1,9 @@
 body > header {
   position: relative;
+
+  &.header-container {
+    overflow: hidden;
+  }
 }
 
 $header-height: 375px;
@@ -15,6 +19,14 @@ $header-height: 375px;
 }
 #header-image {
   max-height: $header-height;
+  margin-left: -15px;
+  margin-right: -15px;
+
+  > img {
+    $margin-top: 60px;
+    max-height: $header-height - $margin-top;
+    margin-top: $margin-top;
+  }
 }
 #header-overlay-left,
 #header-overlay-right {
@@ -23,14 +35,19 @@ $header-height: 375px;
   position: absolute;
   top: 0;
   overflow: hidden;
+  background-size: contain!important;
+  @media (max-width: 992px) {
+    height: 262px;
+  }
 }
 #header-overlay-left {
   @include background(url('../../img/header_overlay_left.png') no-repeat center left);
-  left: 15px;
+  left: 0;
+  top: 60px;
 }
 #header-overlay-right {
   @include background(url('../../img/header_overlay_right.png') no-repeat center right);
-  right: 15px;
+  right: 0;
 }
 #bid-ontvangt {
   display: block;

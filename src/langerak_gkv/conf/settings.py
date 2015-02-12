@@ -332,7 +332,7 @@ THUMBNAIL_ALIASES = {
             'upscale': True,
         },
         'header': {
-            'size': (1140, 375),
+            'size': (1170, 315),
             'crop': True,
             'upscale': True
         }
