@@ -16,6 +16,9 @@ $header-height: 375px;
   z-index: 3;
   height: $header-height;
   width: 100%;
+  @media (max-width: 992px) {
+    height: 267px;
+  }
 }
 #header-image {
   max-height: $header-height;
@@ -37,7 +40,7 @@ $header-height: 375px;
   overflow: hidden;
   background-size: contain!important;
   @media (max-width: 992px) {
-    height: 262px;
+    height: 267px;
   }
 }
 #header-overlay-left {
