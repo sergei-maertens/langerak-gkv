@@ -2,6 +2,7 @@ import os
 
 import django.conf.global_settings as DEFAULT_SETTINGS
 from django.utils.translation import ugettext_lazy as _
+from djchoices import DjangoChoices, ChoiceItem
 
 # Automatically figure out the ROOT_DIR and PROJECT_DIR.
 DJANGO_PROJECT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), os.path.pardir))
@@ -373,6 +374,21 @@ DJANGOCMS_GRID_CONFIG = {
     'TOTAL_WIDTH': 1170,
     'GUTTER': 30,
 }
+
+
+class FilerStyles(DjangoChoices):
+    default = ChoiceItem(' ', _('Default'))
+    orange = ChoiceItem('orange', _('Orange'))
+    blue = ChoiceItem('blue', _('Blue'))
+    green = ChoiceItem('green', _('Green'))
+    purple = ChoiceItem('purple', _('Purple'))
+    orange_rm = ChoiceItem('orange read-more', _('Read-more orange'))
+    blue_rm = ChoiceItem('blue read-more', _('Read-more blue'))
+    green_rm = ChoiceItem('green read-more', _('Read-more green'))
+    purple_rm = ChoiceItem('purple read-more', _('Read-more purple'))
+
+FILER_LINK_STYLES = FilerStyles.choices
+
 
 #
 # GEO

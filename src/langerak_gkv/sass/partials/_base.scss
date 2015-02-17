@@ -103,3 +103,40 @@ img {
     }
   }
 }
+
+a {
+  &.orange,
+  &.green,
+  &.blue,
+  &.purple {
+    color: $white;
+    text-transform: uppercase;
+    padding: 6px 12px;
+    font-weight: bolder;
+
+    &.read-more {
+      padding-right: 0;
+      .glyphicon-play {
+        margin-right: 12px;
+        color: $white;
+      }
+    }
+  }
+
+  &.orange {
+    background-color: $main-color-orange;
+  }
+
+  &.purple {
+    background-color: $main-color-purple;
+  }
+
+  &.green {
+    background-color: $main-color-green;
+    color: $text-dark;
+  }
+
+  &.blue {
+    background-color: $main-color-blue;
+  }
+}

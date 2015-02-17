@@ -232,6 +232,40 @@ img {
   color: #FFFFFF;
 }
 
+/* line 108, ../../../sass/partials/_base.scss */
+a.orange, a.green, a.blue, a.purple {
+  color: #FFFFFF;
+  text-transform: uppercase;
+  padding: 6px 12px;
+  font-weight: bolder;
+}
+/* line 117, ../../../sass/partials/_base.scss */
+a.orange.read-more, a.green.read-more, a.blue.read-more, a.purple.read-more {
+  padding-right: 0;
+}
+/* line 119, ../../../sass/partials/_base.scss */
+a.orange.read-more .glyphicon-play, a.green.read-more .glyphicon-play, a.blue.read-more .glyphicon-play, a.purple.read-more .glyphicon-play {
+  margin-right: 12px;
+  color: #FFFFFF;
+}
+/* line 126, ../../../sass/partials/_base.scss */
+a.orange {
+  background-color: #EC7537;
+}
+/* line 130, ../../../sass/partials/_base.scss */
+a.purple {
+  background-color: #6D095E;
+}
+/* line 134, ../../../sass/partials/_base.scss */
+a.green {
+  background-color: #D9E12E;
+  color: #584C40;
+}
+/* line 139, ../../../sass/partials/_base.scss */
+a.blue {
+  background-color: #70BDBD;
+}
+
 /* line 1, ../../../sass/partials/_forms.scss */
 .form-group {
   margin-bottom: 10px;
