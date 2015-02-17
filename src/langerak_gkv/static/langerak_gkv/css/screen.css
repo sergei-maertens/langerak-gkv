@@ -812,6 +812,10 @@ body.home article.link-block footer {
   right: 10px;
   height: 35px;
 }
+/* line 81, ../../../sass/partials/_homepage.scss */
+body.home section.news h1, body.home section.news h2 {
+  color: #6D095E;
+}
 
 /* line 3, ../../../sass/partials/_cms.scss */
 body.cms-page .cms-content {

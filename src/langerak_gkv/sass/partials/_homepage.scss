@@ -76,4 +76,10 @@ body.home {
       height: 35px;
     }
   }
+
+  section.news {
+    h1, h2 {
+      color: $main-color-purple;
+    }
+  }
 }
