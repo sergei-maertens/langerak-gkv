@@ -764,6 +764,21 @@ body.calendar .fc-ltr .fc-basic-view .fc-day-number {
   color: #41575D;
 }
 
+/* line 67, ../../../sass/partials/_homepage.scss */
+body.home article.activity,
+body.home article.link-block {
+  position: relative;
+  padding-bottom: 45px;
+}
+/* line 72, ../../../sass/partials/_homepage.scss */
+body.home article.activity footer,
+body.home article.link-block footer {
+  position: absolute;
+  bottom: 15px;
+  right: 10px;
+  height: 35px;
+}
+
 /* line 3, ../../../sass/partials/_cms.scss */
 body.cms-page .cms-content {
   background-color: #FFFFFF;

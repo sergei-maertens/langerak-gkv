@@ -349,6 +349,7 @@ THUMBNAIL_PROCESSORS = (
 #
 CMS_TEMPLATES = (
     ('cms/default.html', _('Default')),
+    ('homepage/home.html', _('Homepage')),
     ('cms/right_sidebar.html', _('Content left, sidebar right')),
     ('cms/3_columns.html', _('3 Columns (responsive)')),
 )
@@ -356,7 +357,11 @@ CMS_TEMPLATES = (
 CMS_PLACEHOLDER_CONF = {
     'header_image': {
         'plugins': ['FilerImagePlugin'],
-    }
+    },
+    'slot1': {'plugins': ['HomepageLinkPlugin']},
+    'slot2': {'plugins': ['HomepageLinkPlugin']},
+    'slot3': {'plugins': ['HomepageLinkPlugin']},
+    'slot4': {'plugins': ['HomepageLinkPlugin']},
 }
 
 CMSPLUGIN_FILER_IMAGE_STYLE_CHOICES = (

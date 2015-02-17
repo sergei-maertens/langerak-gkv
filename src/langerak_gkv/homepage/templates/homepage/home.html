@@ -12,19 +12,23 @@
             <div class="row">
 
                 <div class="col-md-6">
-                    {% placeholder home_slot_1 or %}
-                        {% with activity=activities|pop linkid='1' %}
-                            {% include "homepage/includes/activity.html" %}
-                        {% endwith %}
-                    {% endplaceholder %}
+                    {% with linkid='1' %}
+                        {% placeholder slot1 or %}
+                            {% with activity=activities|pop %}
+                                {% include "homepage/includes/activity.html" %}
+                            {% endwith %}
+                        {% endplaceholder %}
+                    {% endwith %}
                 </div>
 
                 <div class="col-md-6">
-                    {% placeholder home_slot_2 or %}
-                        {% with activity=activities|pop linkid='1' %}
-                            {% include "homepage/includes/activity.html" %}
-                        {% endwith %}
-                    {% endplaceholder %}
+                    {% with linkid='1' %}
+                        {% placeholder slot2 or %}
+                            {% with activity=activities|pop %}
+                                {% include "homepage/includes/activity.html" %}
+                            {% endwith %}
+                        {% endplaceholder %}
+                    {% endwith %}
                 </div>
 
             </div>
@@ -32,25 +36,30 @@
             <div class="row">
 
                 <div class="col-md-6">
-                    {% placeholder home_slot_3 or %}
-                        {% with activity=activities|pop linkid='2' %}
-                            {% include "homepage/includes/activity.html" %}
-                        {% endwith %}
-                    {% endplaceholder %}
+                    {% with linkid='2' %}
+                        {% placeholder slot3 or %}
+                            {% with activity=activities|pop %}
+                                {% include "homepage/includes/activity.html" %}
+                            {% endwith %}
+                        {% endplaceholder %}
+                    {% endwith %}
                 </div>
 
                 <div class="col-md-6">
-                    {% placeholder home_slot_4 or %}
-                        {% with activity=activities|pop linkid='2' %}
-                            {% include "homepage/includes/activity.html" %}
-                        {% endwith %}
-                    {% endplaceholder %}
+                    {% with linkid='2' %}
+                        {% placeholder slot4 or %}
+                            {% with activity=activities|pop %}
+                                {% include "homepage/includes/activity.html" %}
+                            {% endwith %}
+                        {% endplaceholder %}
+                    {% endwith %}
                 </div>
 
             </div>
         </section>
 
         <section class="news">
+
             <article class="news-item">
                 <header>
                     <h2>{% trans "Koningskerk Langerak" %}</h2>

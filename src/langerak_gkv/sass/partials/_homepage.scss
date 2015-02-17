@@ -62,3 +62,18 @@
     }
   }
 }
+
+body.home {
+  article.activity,
+  article.link-block {
+    position: relative;
+    padding-bottom: 45px;
+
+    footer {
+      position: absolute;
+      bottom: 15px;
+      right: 10px;
+      height: 35px;
+    }
+  }
+}

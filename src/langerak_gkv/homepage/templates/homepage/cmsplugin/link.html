@@ -1,32 +1,34 @@
 {% load i18n thumbnail %}
-{% if activity %}
-<article class="activity link-height" data-linkid="{{ linkid }}">
+<article class="link-block link-height" data-linkid="{{ linkid }}">
     <header>
         <figure>
-            <img src="{{ activity.image|thumbnail_url:'homepage' }}">
+            <img src="{{ plugin.instance.image|thumbnail_url:'homepage' }}">
         </figure>
-        <h2>{{ activity.name }}</h2>
+        <h2>{{ plugin.instance.title }}</h2>
     </header>
 
     <p class="description">
-        {{ activity.description|linebreaksbr }}
+        {{ plugin.instance.description|linebreaksbr }}
     </p>
 
     <footer>
         <ul class="list-inline">
+            {% if plugin.instance.enable_sharing %}
             <li class="social facebook">
                 <a href="#"><span class="fa fa-facebook"></span></a>
             </li>
             <li class="social twitter">
                 <a href="#"><span class="fa fa-twitter"></span></a>
             </li>
+            {% endif %}
+            {% if plugin.instance.page_link_id %}
             <li>
-                <a href="{{ activity.get_absolute_url }}" class="btn btn-default read-more">
+                <a href="{{ plugin.instance.page_link.get_absolute_url }}" class="btn btn-default read-more">
                     {% trans "Read more" %}
                     <span class="glyphicon glyphicon-play"></span>
                 </a>
             </li>
+            {% endif %}
         </ul>
     </footer>
 </article>
-{% endif %}
