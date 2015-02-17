@@ -1,0 +1,32 @@
+{% load i18n thumbnail %}
+<article class="activity link-height" data-linkid="{{ linkid }}">
+{% if activity %}
+    <header>
+        <figure>
+            <img src="{{ activity.image|thumbnail_url:'homepage' }}">
+        </figure>
+        <h2>{{ activity.name }}</h2>
+    </header>
+
+    <p class="description">
+        {{ activity.description }}
+    </p>
+
+    <footer>
+        <ul class="list-inline">
+            <li class="social facebook">
+                <a href="#"><span class="fa fa-facebook"></span></a>
+            </li>
+            <li class="social twitter">
+                <a href="#"><span class="fa fa-twitter"></span></a>
+            </li>
+            <li>
+                <a href="{{ activity.get_absolute_url }}" class="btn btn-default read-more">
+                    {% trans "Read more" %}
+                    <span class="glyphicon glyphicon-play"></span>
+                </a>
+            </li>
+        </ul>
+    </footer>
+{% endif %}
+</article>

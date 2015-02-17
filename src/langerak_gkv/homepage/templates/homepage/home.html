@@ -1,6 +1,7 @@
-{% extends "master.html" %}{% load i18n static thumbnail %}
+{% extends "cms/base.html" %}{% load i18n static thumbnail koningskerk_tags cms_tags %}
 
-{% block body-class %}home{% endblock body-class %}
+{% block body-class %}{{ block.super }} home{% endblock body-class %}
+
 
 {% block content %}
 <div class="row">
@@ -9,154 +10,43 @@
 
         <section class="activities">
             <div class="row">
-                {% for activity in activities %}
+
                 <div class="col-md-6">
-                    <article class="activity">
-                        <header>
-                            <figure>
-                                <img src="{{ activity.image|thumbnail_url:'homepage' }}">
-                            </figure>
-                            <h2>{{ activity.name }}</h2>
-                        </header>
-
-                        <p class="description">
-                            {{ activity.description }}
-                        </p>
-
-                        <footer>
-                            <ul class="list-inline">
-                                <li class="social facebook">
-                                    <a href="#"><span class="fa fa-facebook"></span></a>
-                                </li>
-                                <li class="social twitter">
-                                    <a href="#"><span class="fa fa-twitter"></span></a>
-                                </li>
-                                <li>
-                                    <a href="{{ activity.get_absolute_url }}" class="btn btn-default read-more">
-                                        {% trans "Read more" %}
-                                        <span class="glyphicon glyphicon-play"></span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </footer>
-                    </article>
+                    {% placeholder home_slot_1 or %}
+                        {% with activity=activities|pop linkid='1' %}
+                            {% include "homepage/includes/activity.html" %}
+                        {% endwith %}
+                    {% endplaceholder %}
                 </div>
-                {% endfor %}
 
-                {# Dummy, remove later TODO #}
                 <div class="col-md-6">
-                    <article class="activity">
-                        <header>
-                            <figure>
-                                <img src="/media/1.png">
-                            </figure>
-                            <h2>{% trans "Activity 1" %}</h2>
-                        </header>
-
-                        <p class="description">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                        </p>
-
-                        <footer>
-                            <ul class="list-inline">
-                                <li class="social facebook">
-                                    <a href="#"><span class="fa fa-facebook"></span></a>
-                                </li>
-                                <li class="social twitter">
-                                    <a href="#"><span class="fa fa-twitter"></span></a>
-                                </li>
-                                <li>
-                                    <a href="#" class="btn btn-default read-more">
-                                        {% trans "Read more" %}
-                                        <span class="glyphicon glyphicon-play"></span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </footer>
-                    </article>
+                    {% placeholder home_slot_2 or %}
+                        {% with activity=activities|pop linkid='1' %}
+                            {% include "homepage/includes/activity.html" %}
+                        {% endwith %}
+                    {% endplaceholder %}
                 </div>
+
             </div>
 
-            {# Dummy, remove later TODO #}
             <div class="row">
+
                 <div class="col-md-6">
-                    <article class="activity">
-                        <header>
-                            <figure>
-                                <img src="/media/1.png">
-                            </figure>
-                            <h1>{% trans "Activity 1" %}</h1>
-                        </header>
-
-                        <p class="description">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                        </p>
-
-                        <footer>
-                            <ul class="list-inline">
-                                <li class="social facebook">
-                                    <a href="#"><span class="fa fa-facebook"></span></a>
-                                </li>
-                                <li class="social twitter">
-                                    <a href="#"><span class="fa fa-twitter"></span></a>
-                                </li>
-                                <li>
-                                    <a href="#" class="btn btn-default read-more">
-                                        {% trans "Read more" %}
-                                        <span class="glyphicon glyphicon-play"></span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </footer>
-                    </article>
+                    {% placeholder home_slot_3 or %}
+                        {% with activity=activities|pop linkid='2' %}
+                            {% include "homepage/includes/activity.html" %}
+                        {% endwith %}
+                    {% endplaceholder %}
                 </div>
 
                 <div class="col-md-6">
-                    <article class="activity">
-                        <header>
-                            <figure>
-                                <img src="/media/1.png">
-                            </figure>
-                            <h2>{% trans "Activity 1" %}</h2>
-                        </header>
-
-                        <p class="description">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                        </p>
-
-                        <footer>
-                            <ul class="list-inline">
-                                <li class="social facebook">
-                                    <a href="#"><span class="fa fa-facebook"></span></a>
-                                </li>
-                                <li class="social twitter">
-                                    <a href="#"><span class="fa fa-twitter"></span></a>
-                                </li>
-                                <li>
-                                    <a href="#" class="btn btn-default read-more">
-                                        {% trans "Read more" %}
-                                        <span class="glyphicon glyphicon-play"></span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </footer>
-                    </article>
+                    {% placeholder home_slot_4 or %}
+                        {% with activity=activities|pop linkid='2' %}
+                            {% include "homepage/includes/activity.html" %}
+                        {% endwith %}
+                    {% endplaceholder %}
                 </div>
+
             </div>
         </section>
 

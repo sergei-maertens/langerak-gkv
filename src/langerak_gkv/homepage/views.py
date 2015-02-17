@@ -27,7 +27,7 @@ class HomepageView(HomepageContextMixin, TemplateView):
         if self.request.user.is_authenticated() and self.request.user.email:
             initial['email'] = self.request.user.email
         kwargs['form'] = PrayerOnDemandForm(initial=initial)
-        kwargs['activities'] = Activity.objects.homepage().order_by('?')[:4]
+        kwargs['activities'] = list(Activity.objects.homepage().order_by('?')[:4])
         return super(HomepageView, self).get_context_data(**kwargs)
 
 

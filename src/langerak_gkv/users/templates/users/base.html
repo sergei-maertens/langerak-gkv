@@ -35,38 +35,3 @@
 
 </div>
 {% endblock content %}
-
-
-{% block extra_js %}
-<script>
-$(window).load(syncHeights);
-
-$(function() {
-    $(window).resize(function() {
-        $('.link-height').data('processed', false).height('auto');
-        syncHeights();
-    });
-});
-
-function syncHeights() {
-    $('.link-height').each(function() {
-        if($(this).data('processed')) {
-            return;
-        }
-
-        var linkID = $(this).data('linkid');
-        var set  = $('.link-height[data-linkid="'+linkID+'"]');
-        set.data('processed', true);
-
-        var height = $.map(set, function(e) {
-            return $(e).height();
-        }).reduce(function(prevResult, element, index, input) {
-            return Math.max(prevResult, element);
-        });
-        set.each(function() {
-            $(this).height(height);
-        });
-    });
-}
-</script>
-{% endblock extra_js %}
