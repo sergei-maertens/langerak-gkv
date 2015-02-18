@@ -42,10 +42,6 @@
             <ul class="nav navbar-nav navbar-left">
                 <li class="{% if request.path|active_exact:'home' %}active{% endif %}"><a href="{% url 'home' %}">{% trans "News" %}</a></li>
                 {% show_menu 1 0 0 1 %}
-                {% if user.is_authenticated %}
-
-                    <li class="{% if request.path|active:'users:list' %}active{% endif %}"><a href="{% url 'users:list' %}">{% trans "Members" %}</a></li>
-                {% endif %}
             </ul>
 
             <ul class="nav navbar-nav navbar-right">

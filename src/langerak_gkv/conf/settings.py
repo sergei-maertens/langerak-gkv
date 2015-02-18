@@ -348,6 +348,8 @@ THUMBNAIL_PROCESSORS = (
 #
 # Django CMS
 #
+CMS_PERMISSION = True
+
 CMS_TEMPLATES = (
     ('cms/default.html', _('Default')),
     ('homepage/home.html', _('Homepage')),
