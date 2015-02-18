@@ -5,4 +5,17 @@ body.cms-page {
     padding: 15px;
   }
 
+  .cmsplugin-text {
+    @media (max-width: 768px) {
+      a {
+        display: inline-block;
+        margin-top: 10px;
+      }
+
+      .pull-right {
+        float: none!important;
+      }
+    }
+  }
+
 }

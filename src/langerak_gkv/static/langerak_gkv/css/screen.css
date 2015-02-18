@@ -828,6 +828,17 @@ body.cms-page .cms-content {
   background-color: #FFFFFF;
   padding: 15px;
 }
+@media (max-width: 768px) {
+  /* line 10, ../../../sass/partials/_cms.scss */
+  body.cms-page .cmsplugin-text a {
+    display: inline-block;
+    margin-top: 10px;
+  }
+  /* line 15, ../../../sass/partials/_cms.scss */
+  body.cms-page .cmsplugin-text .pull-right {
+    float: none !important;
+  }
+}
 
 /* line 1, ../../../sass/partials/_maps.scss */
 #footer-map {
