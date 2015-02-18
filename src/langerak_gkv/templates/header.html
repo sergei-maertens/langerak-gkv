@@ -1,7 +1,7 @@
 {% load i18n static menu_tags cms_tags langerak %}
 <header class="header-container container hidden-xs">
     <figure id="header-image">
-        {% placeholder header_image or %}
+        {% placeholder header_image inherit or %}
             <img src="{% static "img/header_img1.png" %}">
         {% endplaceholder %}
     </figure>
