@@ -1,11 +1,12 @@
 from django.conf.urls import patterns, url
 from django.utils.translation import ugettext_lazy as _
 
-from .views import liturgy_list, liturgy_detail
+from .views import LiturgyListView, LiturgyDetailView
+
 
 urlpatterns = patterns(
     '',
-    url(r'^$', liturgy_list, name='list'),
-    url(_(r'^history/$'), liturgy_list, name='history'),
-    url(r'^(?P<liturgy_id>\d+)/$', liturgy_detail, name='detail'),
+    url(r'^$', LiturgyListView.as_view(), name='list'),
+    url(_(r'^history/$'), LiturgyListView.as_view(), name='history'),
+    url(r'^(?P<pk>\d+)/$', LiturgyDetailView.as_view(), name='detail'),
 )

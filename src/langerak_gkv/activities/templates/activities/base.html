@@ -13,26 +13,30 @@
             <span class="input-group-addon"><i class="fa fa-search fa-flip-horizontal"></i></span>
         </div>
     </div>
-
 </form>
 
 <div class="row">
     <section class="col-md-10">
-        <div class="" id="calendar"></div>
+        {% block calendar-content %}
+            <div class="" id="calendar"></div>
+        {% endblock calendar-content %}
     </section>
 
     <div class="col-md-2">
         <aside class="page-block">
 
-            Today
-            <br>
-            3 activities
-            <br>
-            Foo
-            <br>
-            Bar
-            <br>
-            Baz
+            <h3>{% filter capfirst %}{% now "l j F" %}{% endfilter %}</h3>
+
+            {% blocktrans count count=activities_today|length %}
+                1 activity{% plural %}{{ count }}activities
+            {% endblocktrans %}
+
+            {% for activity in activities_today %}
+                <a class="activity detail link" href="{{ activity.get_absolute_url }}">
+                    {{ activity.name }} <span class="fa fa-play"></span>
+                </a>
+            {% endfor %}
+
         </aside>
     </div>
 </div>

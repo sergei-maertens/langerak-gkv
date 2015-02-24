@@ -49,8 +49,6 @@ body.calendar {
     @include style-form-elements();
   }
 
-  // div.page-block.
-
   #calendar-search {
 
     margin-bottom: 15px;
@@ -73,13 +71,23 @@ body.calendar {
     }
   }
 
+  .fc .fc-toolbar button {
+    // font-size: 1em;
+    // height: 1em;
+  }
+
   .fc-toolbar {
     background-color: $main-color-blue;
     color: $white;
-    padding: 5px 10px;
+    padding: 2px 10px;
+    height: 36px;
+    margin-bottom: 2px;
 
     h2 {
-      font-size: 18px;
+      font-size: 22px;
+      line-height: 1.4;
+      text-transform: capitalize;
+      font-weight: bolder;
     }
 
     .fc-icon {
@@ -91,6 +99,20 @@ body.calendar {
       padding: 0;
       border: none;
       color: $white;
+      text-shadow: none;
+      @include box-shadow(none);
+
+      &.fc-state-hover {
+        z-index: 0;
+      }
+
+      .fc-icon {
+        margin: 0;
+        position: static;
+        font-size: 1.2em;
+        line-height: 1;
+        height: auto;
+      }
     }
   }
 
@@ -130,5 +152,16 @@ body.calendar {
 
   .fc-ltr .fc-basic-view .fc-day-number {
     text-align: left;
+  }
+
+  // sidebar
+  aside {
+    h3 {
+      font-size: 16px;
+      margin-top: 0;
+      background-color: $main-color-blue;
+      color: $white;
+      font-weight: bolder;
+    }
   }
 }
