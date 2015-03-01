@@ -67,6 +67,13 @@ class Activity(models.Model):
         return self.name
 
     def get_absolute_url(self):
+        if self.liturgy_id:
+            return reverse('liturgies:archive_date_detail', kwargs={
+                'year': self.start_date.year,
+                'month': self.start_date.month,
+                'day': self.start_date.day,
+                'pk': self.liturgy_id
+            })
         return reverse('activities:detail', kwargs={'slug': self.slug})
 
     def clean(self):

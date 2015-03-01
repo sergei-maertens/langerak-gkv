@@ -102,13 +102,18 @@ body.calendar {
       }
 
       .fc-icon {
+        font-size: 20px;
+        line-height: 1.4;
         margin: 0;
         position: static;
-        font-size: 1.2em;
-        line-height: 1;
         height: auto;
       }
     }
+  }
+
+  .fc .fc-toolbar button {
+    height: auto;
+    font-size: 16px;
   }
 
   // month view
@@ -149,6 +154,16 @@ body.calendar {
     text-align: left;
   }
 
+  .fc-day-header {
+    color: $text-dark;
+    text-align: center;
+
+    &.sub {
+      margin-top: 0;
+      margin-bottom: 5px;
+    }
+  }
+
   // sidebar
   aside {
     overflow: hidden;
@@ -161,12 +176,6 @@ body.calendar {
       color: $white;
       font-weight: bolder;
       line-height: 30px;
-    }
-
-    .fc-day-header {
-      color: $text-dark;
-      text-align: center;
-      margin-bottom: 5px;
     }
 
     .page-block {
@@ -183,6 +192,17 @@ body.calendar {
       .fa-play {
         color: $main-color-blue;
       }
+    }
+  }
+
+  &.detail {
+    .fc-toolbar {
+      margin-bottom: 5px;
+    }
+
+    h3.fc-day-header.sub {
+      font-size: 19px;
+      text-transform: none;
     }
   }
 }

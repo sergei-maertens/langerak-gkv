@@ -1,4 +1,4 @@
-from django.views.generic import DetailView, ListView
+from django.views.generic import ListView, DateDetailView
 
 from langerak_gkv.activities.views import ActivitiesTodayMixin
 from .models import Liturgy
@@ -9,6 +9,9 @@ class LiturgyListView(ActivitiesTodayMixin, ListView):
     template_name = 'liturgies/list.html'
 
 
-class LiturgyDetailView(ActivitiesTodayMixin, DetailView):
-    model = Liturgy
+class LiturgyDateDetailView(ActivitiesTodayMixin, DateDetailView):
+    queryset = Liturgy.objects.select_related('service').all()
     template_name = 'liturgies/detail.html'
+    allow_future = True
+    date_field = 'date'
+    month_format = '%m'
