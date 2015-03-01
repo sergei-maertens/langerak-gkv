@@ -399,7 +399,7 @@ GOOGLE_API_KEY = os.getenv('GOOGLE_API_KEY')
 LEAFLET_CONFIG = {
     'DEFAULT_CENTER': (51.93, 4.876),
     'DEFAULT_ZOOM': 9,
-    'TILES': [(_('Streets'), 'http://openmapsurfer.uni-hd.de/tiles/roads/x={x}&y={y}&z={z}', {
-        'minZoom': 0, 'maxZoom': 20, 'attribution': '',
-    })]
+    # 'TILES': [(_('Streets'), 'http://openmapsurfer.uni-hd.de/tiles/roads/x={x}&y={y}&z={z}', {
+    #     'minZoom': 0, 'maxZoom': 20, 'attribution': '',
+    # })]
 }
