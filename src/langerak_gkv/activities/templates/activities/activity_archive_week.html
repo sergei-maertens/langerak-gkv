@@ -1,0 +1,46 @@
+{% extends "activities/base.html" %}{% load i18n %}
+
+{% block body-class %}{{ block.super }} week-archive{% endblock %}
+
+{% block calendar-content %}
+<div class="fc fc-ltr fc-unthemed link-height activity-list" data-linkid="1">
+    <div class="fc-toolbar">
+        <div class="fc-left">
+            <a href="{% url 'activities:week-archive' year=previous_week|date:"Y" week=previous_week|date:"W" %}">
+                <button type="button" class="fc-button fc-prev-button">
+                    <span class="fc-icon fa fa-play fa-flip-horizontal"></span>
+                    &nbsp;{% trans "Previous week" %}
+                </button>
+            </a>
+        </div>
+        <div class="fc-right">
+            <a href="{% url 'activities:week-archive' year=next_week|date:"Y" week=next_week|date:"W" %}">
+                <button type="button" class="fc-button fc-next-button">
+                    {% trans "Next week" %}&nbsp;
+                    <span class="fc-icon fa fa-play"></span>
+                </button>
+            </a>
+        </div>
+        <div class="fc-center">
+            <h2>{% blocktrans with week=week|date:'W' %}Week {{ week }}{% endblocktrans %}</h2>
+        </div>
+    </div>
+
+    {% for activity in activities %}
+        {% ifchanged %}
+            <h3 class="fc-day-header sub">
+                <strong>{{ activity.start_date|date:"l j F"|capfirst }}</strong>
+            </h3>
+        {% endifchanged %}
+        <a class="activity detail link" href="{{ activity.get_absolute_url }}">&bull; {{ activity.name }}</a>
+    {% empty %}
+        <h3 class="fc-day-header sub"><strong>{{ week|date:"l j F"|capfirst }}</strong></h3>
+        <article class="page-block">{% trans "No activities this week!" %}</article>
+    {% endfor %}
+
+    {% for act in activities_today %}
+        <span class="activity detail link">&nbsp;</span>
+    {% endfor %}
+
+</div>
+{% endblock %}

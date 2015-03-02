@@ -4,11 +4,10 @@
 
 
 {% block content %}
-
 <form class="page-block clearfix" id="calendar-search">
     <span class="pull-left">
-        <a href="#" id="week-view" class="calendar-mode"><i class="fa fa-calendar"></i></a>
-        <a href="#" id="month-view" class="calendar-mode"><i class="fa fa-calendar-o"></i></a>
+        <a href="{% url 'activities:calendar' %}" id="week-view" class="calendar-mode"><i class="fa fa-calendar"></i></a>
+        <a href="{% url 'activities:week-archive' year=this_year week=this_week %}" id="month-view" class="calendar-mode"><i class="fa fa-calendar-o"></i></a>
         <a href="#" id="day-view" class="calendar-mode">
             <span class="fa-stack">
                 <i class="fa fa-calendar-o fa-stack-1x"></i>

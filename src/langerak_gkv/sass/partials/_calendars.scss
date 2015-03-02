@@ -135,7 +135,11 @@ body.calendar {
     color: $white;
     padding: 2px 10px;
     height: 33px;
-    margin-bottom: 2px;
+    margin-bottom: 5px;
+
+    & + .fc-view-container {
+      margin-top: -3px;
+    }
 
     h2 {
       font-size: 22px;
@@ -257,14 +261,34 @@ body.calendar {
     }
   }
 
-  &.detail {
-    .fc-toolbar {
-      margin-bottom: 5px;
-    }
-
+  &.detail,
+  &.week-archive {
     h3.fc-day-header.sub {
       font-size: 19px;
       text-transform: none;
+    }
+  }
+
+  &.week-archive {
+
+    h3.fc-day-header.sub {
+      color: $white;
+    }
+
+    .activity-list {
+      overflow: hidden;
+    }
+
+    .detail.link.activity {
+      background-color: $white;
+      display: block;
+      padding: 5px 15px;
+      color: $text-dark;
+      font-weight: bold;
+
+      &:nth-child(even) {
+        background-color: rgba($white, 0.3);
+      }
     }
   }
 }
