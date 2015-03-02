@@ -50,7 +50,6 @@ body.calendar {
   }
 
   #calendar-search {
-
     margin-bottom: 15px;
     padding: 5px;
 
@@ -62,8 +61,8 @@ body.calendar {
       max-width: 250px;
 
       input {
-        padding: 2px 6px;
-        height: 26px;
+        padding: 3px 6px;
+        height: 28px;
       }
 
       .input-group-addon {
@@ -72,6 +71,35 @@ body.calendar {
         font-size: 20px;
         padding: 2px 6px;
         @include opacity(0.8);
+      }
+    }
+
+    a.calendar-mode {
+      font-size: 20px;
+      color: $text-dark;
+      @include opacity(0.8);
+      @include transition(opacity 0.5s);
+      overflow: hidden;
+
+      &:hover,
+      &:active,
+      &:focus {
+        @include opacity(1);
+      }
+
+      .fa-stack {
+        $height: 20px;
+        font-size: $height;
+        height: $height;
+        width: $height - 2px;
+        line-height: $height;
+        top: 4px;
+        vertical-align: top;
+        > .fa-check {
+          font-size: 14px;
+          line-height: 24px;
+          height: 20px;
+        }
       }
     }
   }

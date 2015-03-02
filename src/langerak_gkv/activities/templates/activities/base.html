@@ -6,6 +6,17 @@
 {% block content %}
 
 <form class="page-block clearfix" id="calendar-search">
+    <span class="pull-left">
+        <a href="#" id="week-view" class="calendar-mode"><i class="fa fa-calendar"></i></a>
+        <a href="#" id="month-view" class="calendar-mode"><i class="fa fa-calendar-o"></i></a>
+        <a href="#" id="day-view" class="calendar-mode">
+            <span class="fa-stack">
+                <i class="fa fa-calendar-o fa-stack-1x"></i>
+                <i class="fa fa-check fa-stack-1x"></i>
+            </span>
+        </a>
+    </span>
+
     <div class="form-group pull-right">
         <div class="input-group">
             <input type="text" placeholder="{% trans "Find in calendar" %}"
