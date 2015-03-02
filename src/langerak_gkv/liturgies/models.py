@@ -1,4 +1,5 @@
 from django.conf import settings
+from django.core.urlresolvers import reverse
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
@@ -33,6 +34,14 @@ class Liturgy(models.Model):
             service=self.service.name,
             date=self.date.strftime('%d-%m-%Y')
             )
+
+    def get_absolute_url(self):
+        return reverse('liturgies:archive_date_detail', kwargs={
+            'year': self.date.year,
+            'month': self.date.month,
+            'day': self.date.day,
+            'pk': self.pk
+        })
 
     def get_collections(self):
         collections = []

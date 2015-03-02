@@ -71,6 +71,32 @@ body.calendar {
     }
   }
 
+  .fc-event {
+    background-color: transparent;
+    color: $main-color-blue;
+    border-color: transparent;
+    font-weight: bolder;
+
+    &:before {
+      content: "\2022";
+      float: left;
+      margin: 0 2px;
+      font-size: 130%;
+      line-height: 16px;
+    }
+
+    &.fc-not-start,
+    &.fc-not-end {
+      background-color: $main-color-light-purple;
+      border-color: $main-color-purple;
+    }
+  }
+
+  .fc-state-highlight {
+    background-color: $main-color-blue !important;
+    color: $white !important;
+  }
+
   .fc-toolbar {
     background-color: $main-color-blue;
     color: $white;
@@ -133,8 +159,11 @@ body.calendar {
     border: none;
     background-color: $main-color-green;
     text-transform: capitalize;
-    color: $white;
     padding: 5px 10px;
+  }
+
+  th.fc-day-header {
+    color: $white;
   }
 
   td.fc-widget-header,
