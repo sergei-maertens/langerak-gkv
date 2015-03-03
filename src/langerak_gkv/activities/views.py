@@ -1,7 +1,9 @@
 from datetime import date
 
 from django.db.models import Q
-from django.views.generic import TemplateView, DetailView, WeekArchiveView
+from django.views.generic import (
+    DayArchiveView, TemplateView, DetailView, WeekArchiveView
+)
 
 from .models import Activity
 
@@ -15,6 +17,7 @@ class ActivitiesTodayMixin(object):
         )
         today = date.today()
         context.update({
+            'today': today,
             'this_week': today.strftime('%W'),
             'this_year': today.year
         })
@@ -36,3 +39,12 @@ class ActivityWeekArchiveView(ActivitiesTodayMixin, WeekArchiveView):
     context_object_name = 'activities'
     allow_future = True
     allow_empty = True
+
+
+class ActivityDayArchiveView(ActivitiesTodayMixin, DayArchiveView):
+    model = Activity
+    date_field = 'start_date'
+    context_object_name = 'activities'
+    allow_future = True
+    allow_empty = True
+    month_format = '%m'

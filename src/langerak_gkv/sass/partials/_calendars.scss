@@ -77,10 +77,11 @@ body.calendar {
     a.calendar-mode {
       font-size: 20px;
       color: $text-dark;
-      @include opacity(0.8);
+      @include opacity(0.6);
       @include transition(opacity 0.5s);
       overflow: hidden;
 
+      &.active,
       &:hover,
       &:active,
       &:focus {
@@ -262,14 +263,16 @@ body.calendar {
   }
 
   &.detail,
-  &.week-archive {
+  &.week-archive,
+  &.day-archive {
     h3.fc-day-header.sub {
       font-size: 19px;
       text-transform: none;
     }
   }
 
-  &.week-archive {
+  &.week-archive,
+  &.day-archive {
 
     h3.fc-day-header.sub {
       color: $white;

@@ -1,0 +1,37 @@
+{% extends "activities/base.html" %}{% load i18n %}
+
+{% block body-class %}{{ block.super }} day-archive{% endblock %}
+
+{% block calendar-content %}
+<div class="fc fc-ltr fc-unthemed link-height activity-list" data-linkid="1">
+    <div class="fc-toolbar">
+        <div class="fc-left">
+            <a href="{% url 'activities:day-archive' year=previous_day.year month=previous_day.month day=previous_day.day %}">
+                <button type="button" class="fc-button fc-prev-button">
+                    <span class="fc-icon fa fa-play fa-flip-horizontal"></span>
+                    &nbsp;{% trans "Previous day" %}
+                </button>
+            </a>
+        </div>
+        <div class="fc-right">
+            <a href="{% url 'activities:day-archive' year=next_day.year month=next_day.month day=next_day.day %}">
+                <button type="button" class="fc-button fc-next-button">
+                    {% trans "Next day" %}&nbsp;
+                    <span class="fc-icon fa fa-play"></span>
+                </button>
+            </a>
+        </div>
+        <h2>{{ day|date:"l j F"|capfirst }}</h2>
+    </div>
+
+    <h3 class="fc-day-header sub"><strong>
+        {% blocktrans count count=activities|length %}1 activity {% plural %}{{ count }} activities{% endblocktrans %}
+    </strong></h3>
+    {% for activity in activities %}
+        <a class="activity detail link" href="{{ activity.get_absolute_url }}">&bull; {{ activity.name }}</a>
+    {% empty %}
+        <article class="page-block">{% trans "No activities on this day!" %}</article>
+    {% endfor %}
+
+</div>
+{% endblock %}

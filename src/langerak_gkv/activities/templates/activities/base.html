@@ -4,11 +4,16 @@
 
 
 {% block content %}
-<form class="page-block clearfix" id="calendar-search">
+<form class="page-block clearfix" id="calendar-search">{% spaceless %}
     <span class="pull-left">
-        <a href="{% url 'activities:calendar' %}" id="week-view" class="calendar-mode"><i class="fa fa-calendar"></i></a>
-        <a href="{% url 'activities:week-archive' year=this_year week=this_week %}" id="month-view" class="calendar-mode"><i class="fa fa-calendar-o"></i></a>
-        <a href="#" id="day-view" class="calendar-mode">
+        {% url 'activities:calendar' as url_calendar %}
+        <a href="{{ url_calendar }}" id="month-view" class="calendar-mode{% if request.path == url_calendar %} active{% endif %}">
+            <i class="fa fa-calendar"></i>
+        </a>
+        <a href="{% url 'activities:week-archive' year=this_year week=this_week %}" id="week-view" class="calendar-mode{% if week %} active{% endif %}">
+            <i class="fa fa-calendar-o"></i>
+        </a>
+        <a href="{% url 'activities:day-archive' year=today.year month=today.month day=today.day %}" id="day-view" class="calendar-mode{% if activity or liturgy or day %} active{% endif %}">
             <span class="fa-stack">
                 <i class="fa fa-calendar-o fa-stack-1x"></i>
                 <i class="fa fa-check fa-stack-1x"></i>
@@ -23,7 +28,7 @@
             <span class="input-group-addon"><i class="fa fa-search fa-flip-horizontal"></i></span>
         </div>
     </div>
-</form>
+{% endspaceless %}</form>
 
 <div class="row">
     <section class="col-md-10">
