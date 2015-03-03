@@ -8,7 +8,9 @@ class PrayerOnDemandForm(forms.ModelForm):
         model = PrayerOnDemand
         fields = ('name', 'email', 'body')
 
-    def __init__(self, *args, **kwargs):
+    def __init__(self, request=None, *args, **kwargs):
+        if request is not None and request.user.is_authenticated() and request.user.email:
+            kwargs.setdefault('initial', {})['email'] = request.user.email
         super(PrayerOnDemandForm, self).__init__(*args, **kwargs)
         for field_name in self.fields:
             field = self.fields[field_name]

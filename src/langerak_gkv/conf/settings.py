@@ -118,6 +118,8 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 
     'cms.context_processors.cms_settings',
     'sekizai.context_processors.sekizai',
+
+    'langerak_gkv.homepage.context_processors.sidebar',
 )
 
 MIDDLEWARE_CLASSES = [
