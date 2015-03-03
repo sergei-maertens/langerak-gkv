@@ -91,10 +91,10 @@
                             <span class="month">{{ item.start_date|date:"j" }}</span>
                         </span>
 
-                        <span class="description">
+                        <a class="description" href="{{ item.get_absolute_url }}">
                             {{ item.name }}
                             <span class="glyphicon glyphicon-play"></span>
-                        </span>
+                        </a>
                     </article>
                 {% endfor %}
             </div>
