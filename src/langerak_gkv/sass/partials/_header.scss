@@ -127,13 +127,13 @@ form#search {
   }
 
   .navbar-nav {
-    li {
-      &.active a {
+    > li {
+      &.active > a {
         background: $color-background;
         color: $main-color-purple;
       }
 
-      a, #btn-logout {
+      > a, #btn-logout {
         text-transform: uppercase;
         color: $text-dark;
         font-weight: bold;
@@ -151,6 +151,32 @@ form#search {
     display: block;
     width: 100%;
     text-align: left;
+  }
+
+  ul.dropdown-menu {
+    background-color: $main-color-purple;
+    padding: 5px;
+    @include border-radius(0);
+
+    > li > a {
+      background: $main-color-purple;
+      color: $white;
+      font-weight: 400;
+      padding: 3px 5px;
+
+      &:hover,
+      &:active,
+      &:focus {
+        color: rgba($black, 0.9);
+        background-color: $white;
+        font-weight: bolder;
+      }
+    }
+
+    .divider {
+      background-color: $main-color-light-purple;
+      margin: 1px -5px;
+    }
   }
 }
 

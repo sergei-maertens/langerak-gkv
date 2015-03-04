@@ -498,19 +498,19 @@ form#search .btn-search > .fa {
   background-color: #6D095E;
 }
 /* line 131, ../../../sass/partials/_header.scss */
-#main-nav .navbar-nav li.active a {
+#main-nav .navbar-nav > li.active > a {
   background: #E9E9E9;
   color: #6D095E;
 }
 /* line 136, ../../../sass/partials/_header.scss */
-#main-nav .navbar-nav li a, #main-nav .navbar-nav li #btn-logout {
+#main-nav .navbar-nav > li > a, #main-nav .navbar-nav > li #btn-logout {
   text-transform: uppercase;
   color: #584C40;
   font-weight: bold;
   padding: 7px 10px;
 }
 /* line 142, ../../../sass/partials/_header.scss */
-#main-nav .navbar-nav li a:hover, #main-nav .navbar-nav li a:focus, #main-nav .navbar-nav li a:active, #main-nav .navbar-nav li #btn-logout:hover, #main-nav .navbar-nav li #btn-logout:focus, #main-nav .navbar-nav li #btn-logout:active {
+#main-nav .navbar-nav > li > a:hover, #main-nav .navbar-nav > li > a:focus, #main-nav .navbar-nav > li > a:active, #main-nav .navbar-nav > li #btn-logout:hover, #main-nav .navbar-nav > li #btn-logout:focus, #main-nav .navbar-nav > li #btn-logout:active {
   background: #E9E9E9;
 }
 /* line 149, ../../../sass/partials/_header.scss */
@@ -520,8 +520,34 @@ form#search .btn-search > .fa {
   width: 100%;
   text-align: left;
 }
+/* line 156, ../../../sass/partials/_header.scss */
+#main-nav ul.dropdown-menu {
+  background-color: #6D095E;
+  padding: 5px;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+}
+/* line 161, ../../../sass/partials/_header.scss */
+#main-nav ul.dropdown-menu > li > a {
+  background: #6D095E;
+  color: #FFFFFF;
+  font-weight: 400;
+  padding: 3px 5px;
+}
+/* line 167, ../../../sass/partials/_header.scss */
+#main-nav ul.dropdown-menu > li > a:hover, #main-nav ul.dropdown-menu > li > a:active, #main-nav ul.dropdown-menu > li > a:focus {
+  color: rgba(0, 0, 0, 0.9);
+  background-color: #FFFFFF;
+  font-weight: bolder;
+}
+/* line 176, ../../../sass/partials/_header.scss */
+#main-nav ul.dropdown-menu .divider {
+  background-color: #A23854;
+  margin: 1px -5px;
+}
 
-/* line 158, ../../../sass/partials/_header.scss */
+/* line 184, ../../../sass/partials/_header.scss */
 .page-header {
   margin-top: 0;
   margin-bottom: 10px;
@@ -531,14 +557,14 @@ form#search .btn-search > .fa {
   padding: 5px;
   color: #FFFFFF;
 }
-/* line 167, ../../../sass/partials/_header.scss */
+/* line 193, ../../../sass/partials/_header.scss */
 .page-header a.abs-left {
   position: absolute;
   left: 10px;
   top: 5px;
   color: #FFFFFF;
 }
-/* line 174, ../../../sass/partials/_header.scss */
+/* line 200, ../../../sass/partials/_header.scss */
 .page-header .title {
   line-height: 20px;
   font-size: 120%;
