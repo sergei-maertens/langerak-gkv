@@ -87,8 +87,8 @@
                 {% for item in upcoming_activities %}
                     <article class="calendar-item clearfix">
                         <span class="date pull-left">
-                            <span class="day">{{ item.start_date|date:"D" }}</span>
-                            <span class="month">{{ item.start_date|date:"j" }}</span>
+                            <span class="day">{{ item.start_date|date:"d" }}</span>
+                            <span class="month">{{ item.start_date|date:"F" }}</span>
                         </span>
 
                         <a class="description" href="{{ item.get_absolute_url }}">
