@@ -17,6 +17,15 @@ $(function() {
 	    $('.link-height').data('processed', false).height('auto');
 	    syncHeights();
 	});
+
+    $('.help').popover({
+        'placement': 'auto right'
+    });
+
+    $('form.dropdown-menu').click(function(e) {
+        e.preventDefault();
+        return false;
+    });
 });
 
 $(window).load(syncHeights);

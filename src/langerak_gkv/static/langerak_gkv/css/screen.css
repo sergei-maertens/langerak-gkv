@@ -272,18 +272,26 @@ a.blue {
 }
 
 /* line 5, ../../../sass/partials/_forms.scss */
+.input-group-addon {
+  background-color: #FFFFFF;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+}
+
+/* line 10, ../../../sass/partials/_forms.scss */
 .form-control {
   border: none;
   -moz-border-radius: 0;
   -webkit-border-radius: 0;
   border-radius: 0;
 }
-/* line 9, ../../../sass/partials/_forms.scss */
+/* line 14, ../../../sass/partials/_forms.scss */
 .form-control.error {
   border: solid 1px red;
 }
 
-/* line 15, ../../../sass/partials/_forms.scss */
+/* line 20, ../../../sass/partials/_forms.scss */
 form .btn {
   color: #FFFFFF;
   font-size: 18px;
@@ -293,26 +301,26 @@ form .btn {
   -webkit-transition: background-color, 0.5s;
   transition: background-color, 0.5s;
 }
-/* line 22, ../../../sass/partials/_forms.scss */
+/* line 27, ../../../sass/partials/_forms.scss */
 form .btn:hover, form .btn:focus, form .btn:active {
   position: relative;
   top: 2px;
 }
-/* line 29, ../../../sass/partials/_forms.scss */
+/* line 34, ../../../sass/partials/_forms.scss */
 form .btn-fade:hover, form .btn-fade:focus, form .btn-fade:active {
   color: #FFFFFF;
   background-color: rgba(0, 0, 0, 0.075);
 }
-/* line 35, ../../../sass/partials/_forms.scss */
+/* line 40, ../../../sass/partials/_forms.scss */
 form .btn-transparent {
   background-color: transparent;
 }
 
-/* line 41, ../../../sass/partials/_forms.scss */
+/* line 46, ../../../sass/partials/_forms.scss */
 .errorlist {
   padding-left: 0;
 }
-/* line 44, ../../../sass/partials/_forms.scss */
+/* line 49, ../../../sass/partials/_forms.scss */
 .errorlist li {
   color: red;
   font-weight: bold;
@@ -521,7 +529,7 @@ form#search .btn-search > .fa {
   text-align: left;
 }
 /* line 156, ../../../sass/partials/_header.scss */
-#main-nav ul.dropdown-menu {
+#main-nav .dropdown-menu {
   background-color: #6D095E;
   padding: 5px;
   -moz-border-radius: 0;
@@ -529,20 +537,20 @@ form#search .btn-search > .fa {
   border-radius: 0;
 }
 /* line 161, ../../../sass/partials/_header.scss */
-#main-nav ul.dropdown-menu > li > a {
+#main-nav .dropdown-menu > li > a {
   background: #6D095E;
   color: #FFFFFF;
   font-weight: 400;
   padding: 3px 5px;
 }
 /* line 167, ../../../sass/partials/_header.scss */
-#main-nav ul.dropdown-menu > li > a:hover, #main-nav ul.dropdown-menu > li > a:active, #main-nav ul.dropdown-menu > li > a:focus {
+#main-nav .dropdown-menu > li > a:hover, #main-nav .dropdown-menu > li > a:active, #main-nav .dropdown-menu > li > a:focus {
   color: rgba(0, 0, 0, 0.9);
   background-color: #FFFFFF;
   font-weight: bolder;
 }
 /* line 176, ../../../sass/partials/_header.scss */
-#main-nav ul.dropdown-menu .divider {
+#main-nav .dropdown-menu .divider {
   background-color: #A23854;
   margin: 1px -5px;
 }
