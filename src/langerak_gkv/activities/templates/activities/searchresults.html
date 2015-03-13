@@ -1,0 +1,32 @@
+{% extends "activities/base.html" %}{% load i18n %}
+
+{% block body-class %}{{ block.super }} week-archive{% endblock %}
+
+{% block calendar-content %}
+<div class="fc fc-ltr fc-unthemed link-height activity-list" data-linkid="1">
+    <div class="fc-toolbar">
+        <div class="fc-center">
+            <h2>{% trans "Search results" %}</h2>
+        </div>
+    </div>
+
+    {% for activity in activities %}
+        {% ifchanged %}
+            <h3 class="fc-day-header sub">
+                <strong>{{ activity.start_date|date:"l j F"|capfirst }}</strong>
+            </h3>
+        {% endifchanged %}
+        <a class="activity detail link" href="{{ activity.get_absolute_url }}">&bull; {{ activity.name }}</a>
+    {% empty %}
+        <h3 class="fc-day-header sub"><strong>{{ week|date:"l j F"|capfirst }}</strong></h3>
+        <article class="page-block">{% trans "No activities this week!" %}</article>
+    {% endfor %}
+
+    {% for act in activities_today %}
+        <span class="activity detail link">&nbsp;</span>
+    {% endfor %}
+
+    {% include "includes/pagination.html" %}
+
+</div>
+{% endblock %}

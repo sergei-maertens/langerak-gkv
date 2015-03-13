@@ -4,7 +4,8 @@
 
 
 {% block content %}
-<form class="page-block clearfix" id="calendar-search">{% spaceless %}
+<form action="{% url 'activities:search' %}"
+        class="page-block clearfix" id="calendar-search">{% spaceless %}
     <span class="pull-left">
         {% url 'activities:calendar' as url_calendar %}
         <a href="{{ url_calendar }}" id="month-view" class="calendar-mode{% if request.path == url_calendar %} active{% endif %}">
@@ -25,7 +26,9 @@
         <div class="input-group">
             <input type="text" placeholder="{% trans "Find in calendar" %}"
                 name="q" class="form-control">
-            <span class="input-group-addon"><i class="fa fa-search fa-flip-horizontal"></i></span>
+            <span class="input-group-addon">
+                <button type="submit" class="fa fa-search fa-flip-horizontal"></button>
+            </span>
         </div>
     </div>
 {% endspaceless %}</form>
