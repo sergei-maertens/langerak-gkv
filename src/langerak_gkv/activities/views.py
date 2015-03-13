@@ -2,7 +2,7 @@ from datetime import date
 
 from django.db.models import Q
 from django.views.generic import (
-    DayArchiveView, TemplateView, DetailView, WeekArchiveView
+    DayArchiveView, TemplateView, DetailView, WeekArchiveView, ListView
 )
 
 from .models import Activity
@@ -48,3 +48,14 @@ class ActivityDayArchiveView(ActivitiesTodayMixin, DayArchiveView):
     allow_future = True
     allow_empty = True
     month_format = '%m'
+
+
+class ActivitySearchView(ActivitiesTodayMixin, ListView):
+    model = Activity
+    context_object_name = 'activities'
+    template_name = 'activities/searchresults.html'
+    paginate_by = 4
+
+    def get_queryset(self):
+        term = self.request.GET.get('q')
+        return Activity.objects.filter(name__icontains=term)
