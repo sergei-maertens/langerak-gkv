@@ -22,7 +22,7 @@ $(function() {
         'placement': 'auto right'
     });
 
-    $('form.dropdown-menu').click(function(e) {
+    $('form.dropdown-menu').on('click', ':not([type="submit"])', function(e) {
         e.preventDefault();
         return false;
     });
