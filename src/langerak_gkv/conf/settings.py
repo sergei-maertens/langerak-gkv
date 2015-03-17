@@ -411,3 +411,8 @@ LEAFLET_CONFIG = {
     #     'minZoom': 0, 'maxZoom': 20, 'attribution': '',
     # })]
 }
+
+#
+# EMAIL addresses
+#
+EMAIL_POD = 'pod@koningskerk.nu'
