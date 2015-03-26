@@ -338,7 +338,12 @@ THUMBNAIL_ALIASES = {
         'header': {
             'size': (1170, 315),
             'crop': True,
-            'upscale': True
+            'upscale': True,
+        },
+        'birthday': {
+            'size': (50, 50),
+            'crop': True,
+            'upscale': True,
         }
     }
 }

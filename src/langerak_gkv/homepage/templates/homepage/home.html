@@ -1,4 +1,4 @@
-{% extends "cms/base.html" %}{% load i18n static thumbnail koningskerk_tags cms_tags %}
+{% extends "cms/base.html" %}{% load i18n static thumbnail koningskerk_tags cms_tags users %}
 
 {% block body-class %}{{ block.super }} home{% endblock body-class %}
 
@@ -83,7 +83,7 @@
 
         <section class="home-wrapper">
             <div class="calendar">
-                <h3>Kalender Koningskerk</h3>
+                <h3>{% trans "Koningskerk calendar" %}</h3>
                 {% for item in upcoming_activities %}
                     <article class="calendar-item clearfix">
                         <span class="date pull-left">
@@ -96,9 +96,20 @@
                             <span class="glyphicon glyphicon-play"></span>
                         </a>
                     </article>
+                {% empty %}
+                    {% trans "No upcoming activities" %}
                 {% endfor %}
             </div>
         </section>
+
+        {% if user.is_authenticated %}
+        <section class="home-wrapper">
+            <div class="birthdays">
+                <h3>{% trans "Upcoming birthdays" %}</h3>
+                {% show_birthdays weeks=3 %}
+            </div>
+        </section>
+        {% endif %}
 
         {% include "homepage/includes/pod.html" %}
 
