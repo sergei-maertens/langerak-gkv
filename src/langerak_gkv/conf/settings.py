@@ -344,6 +344,11 @@ THUMBNAIL_ALIASES = {
             'size': (50, 50),
             'crop': True,
             'upscale': True,
+        },
+        'activity_detail': {
+            'size': (800, 400),
+            'crop': True,
+            'upscale': True,
         }
     }
 }

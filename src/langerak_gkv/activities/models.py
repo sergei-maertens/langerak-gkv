@@ -80,7 +80,8 @@ class Activity(models.Model):
         if self.start_date > self.end_date:
             raise ValidationError(_('The start date cannot come before the end date.'))
 
-        if self.start_date == self.end_date and self.end_time < self.start_time:
+        has_times = self.start_time is not None and self.end_time is not None
+        if self.start_date == self.end_date and has_times and self.end_time < self.start_time:
             raise ValidationError(_('The end time cannot come before the start time.'))
 
         if self.show_on_homepage and not self.image:
