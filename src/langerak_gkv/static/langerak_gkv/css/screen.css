@@ -67,6 +67,11 @@
 
 /* ie8, chrome, etc */
 /* line 1, ../../../sass/partials/_social.scss */
+li.social {
+  padding: 0;
+}
+
+/* line 5, ../../../sass/partials/_social.scss */
 .social {
   height: 32px;
   padding-left: 0;
@@ -75,19 +80,19 @@
   position: relative;
   top: 3px;
 }
-/* line 9, ../../../sass/partials/_social.scss */
+/* line 13, ../../../sass/partials/_social.scss */
 .social + li {
   padding-left: 0;
 }
-/* line 13, ../../../sass/partials/_social.scss */
+/* line 17, ../../../sass/partials/_social.scss */
 .social.facebook {
   background-color: #32528F;
 }
-/* line 17, ../../../sass/partials/_social.scss */
+/* line 21, ../../../sass/partials/_social.scss */
 .social.twitter {
   background-color: #2EA8DB;
 }
-/* line 21, ../../../sass/partials/_social.scss */
+/* line 25, ../../../sass/partials/_social.scss */
 .social a {
   display: block;
   width: 32px;
@@ -97,12 +102,17 @@
   font-size: 24px;
 }
 
-/* line 31, ../../../sass/partials/_social.scss */
+/* line 35, ../../../sass/partials/_social.scss */
 .fa-facebook {
   position: relative;
   font-size: 28px;
   left: 3px;
   top: 7px;
+}
+
+/* line 43, ../../../sass/partials/_social.scss */
+li.social + li .btn.read-more {
+  vertical-align: baseline;
 }
 
 /* line 1, ../../../sass/partials/_base.scss */
@@ -1037,15 +1047,7 @@ body.home article.link-block {
   position: relative;
   padding-bottom: 45px;
 }
-/* line 86, ../../../sass/partials/_homepage.scss */
-body.home article.activity footer,
-body.home article.link-block footer {
-  position: absolute;
-  bottom: 15px;
-  right: 10px;
-  height: 35px;
-}
-/* line 95, ../../../sass/partials/_homepage.scss */
+/* line 88, ../../../sass/partials/_homepage.scss */
 body.home section.news h1, body.home section.news h2 {
   color: #6D095E;
 }

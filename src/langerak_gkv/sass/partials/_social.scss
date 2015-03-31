@@ -1,3 +1,7 @@
+li.social {
+  padding: 0;
+}
+
 .social {
   height: 32px;
   padding-left: 0;
@@ -33,4 +37,10 @@
   font-size: 28px;
   left: 3px;
   top: 7px;
+}
+
+li.social + li {
+  .btn.read-more {
+    vertical-align: baseline;
+  }
 }
