@@ -6,8 +6,12 @@ $(function() {
         lng: 4.8763104
     };
 
+    // map in footer
     $(window).on('map:init', function (e) {
         var detail = e.originalEvent ? e.originalEvent.detail : e.detail;
+        if (detail.id != 'footer-map') {
+            return;
+        }
         // add marker
         L.marker([FOOTER_MAP_COORDINATES.lat, FOOTER_MAP_COORDINATES.lng]).addTo(detail.map);
     });

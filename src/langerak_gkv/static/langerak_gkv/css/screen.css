@@ -1092,6 +1092,11 @@ body.cms-page .cms-content {
   }
 }
 
+/* line 12, ../../../sass/partials/_maps.scss */
+#user-map {
+  margin-top: 30px;
+}
+
 /* line 2, ../../../sass/partials/apps/_profiles.scss */
 body.profile .block {
   padding: 10px;

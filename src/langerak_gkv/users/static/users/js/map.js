@@ -1,16 +1,30 @@
 $(function() {
-
-    var LOCATION = {
-        lat: 51.9307267,
-        lng: 4.8763104
-    };
+    var map;
+    var geocoder = new google.maps.Geocoder();
 
     $(window).on('map:init', function (e) {
         var detail = e.originalEvent ? e.originalEvent.detail : e.detail;
-        // add marker & center
-        var latlng = new L.LatLng(LOCATION.lat, LOCATION.lng);
-        L.marker(latlng).addTo(detail.map);
-        detail.map.panTo(latlng);
+        if (detail.id != 'user-map') {
+            return;
+        }
+        map = detail.map;
+        map.setZoom(15);
+
+        // geocode address
+        if (window.address) {
+            geocoder.geocode( {'address': window.address}, function(results, status) {
+                if (status == google.maps.GeocoderStatus.OK) {
+                    var lat = results[0].geometry.location.k;
+                    var lng = results[0].geometry.location.D;
+                    var latlng = new L.LatLng(lat, lng);
+                    // add marker & center
+                    L.marker(latlng).addTo(detail.map);
+                    detail.map.panTo(latlng);
+                } else if (window.console) {
+                    console.warn("Geocode was not successful for the following reason: " + status);
+                }
+            });
+        }
     });
 
 });

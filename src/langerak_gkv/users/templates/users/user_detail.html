@@ -127,7 +127,7 @@
 
 {% block extra_js %}
 {{ block.super }}
-<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+<script src="//maps.googleapis.com/maps/api/js"></script>
 <script>var address = '{{ profile.get_location_string }}';</script>
 <script src="{% static "users/js/map.js" %}"></script>
 {% endblock %}
