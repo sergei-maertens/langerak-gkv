@@ -266,6 +266,25 @@ a.blue {
   background-color: #70BDBD;
 }
 
+/* line 145, ../../../sass/partials/_base.scss */
+.popover {
+  background-color: #A23854;
+  border-color: rgba(109, 9, 94, 0.5);
+}
+/* line 149, ../../../sass/partials/_base.scss */
+.popover .popover-content {
+  color: #FFFFFF;
+  padding: 3px 5px;
+}
+/* line 154, ../../../sass/partials/_base.scss */
+.popover.top .arrow {
+  border-top-color: rgba(109, 9, 94, 0.5);
+}
+/* line 157, ../../../sass/partials/_base.scss */
+.popover.top .arrow:after {
+  border-top-color: #A23854;
+}
+
 /* line 1, ../../../sass/partials/_forms.scss */
 .form-group {
   margin-bottom: 10px;
