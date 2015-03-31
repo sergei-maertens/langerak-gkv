@@ -9,17 +9,17 @@
     <span class="pull-left">
         {% url 'activities:calendar' as url_calendar %}
         <a href="{{ url_calendar }}" id="month-view" data-toggle="popover" data-placement="top" data-trigger="hover"
-            data-content="{% trans "View calendar" %}"
+            data-content="{% trans "Calendar view" %}"
             class="calendar-mode{% if request.path == url_calendar or request.current_page.application_urls == 'ActivitiesApp' %} active{% endif %}">
             <i class="fa fa-calendar"></i>
         </a>
         <a href="{% url 'activities:week-archive' year=this_year week=this_week %}"
-            data-toggle="popover" data-content="{% trans "Calendar week view" %}" data-placement="top" data-trigger="hover"
+            data-toggle="popover" data-content="{% trans "Week view" %}" data-placement="top" data-trigger="hover"
             id="week-view" class="calendar-mode{% if week %} active{% endif %}">
             <i class="fa fa-calendar-o"></i>
         </a>
         <a href="{% url 'activities:day-archive' year=today.year month=today.month day=today.day %}"
-            data-toggle="popover" data-content="{% trans "Calendar day view" %}" data-placement="top" data-trigger="hover"
+            data-toggle="popover" data-content="{% trans "Day view" %}" data-placement="top" data-trigger="hover"
             id="day-view" class="calendar-mode{% if activity or liturgy or day %} active{% endif %}">
             <span class="fa-stack">
                 <i class="fa fa-calendar-o fa-stack-1x"></i>
