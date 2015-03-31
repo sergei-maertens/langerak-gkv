@@ -2,6 +2,7 @@
  * In this file you should write your main styles. (or centralize your imports)
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+@import url(http://fonts.googleapis.com/css?family=Ubuntu:400,700,400italic);
 /* line 1, ../../../sass/partials/_grid.scss */
 .col-xs-5ths,
 .col-sm-5ths,
@@ -41,20 +42,6 @@
   }
 }
 /* See: http://www.fontsquirrel.com/tools/webfont-generator */
-@font-face {
-  font-family: Example;
-  src: url("../fonts/example-webfont.eot");
-  src: url("../fonts/example-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/example-webfont.woff") format("woff"), url("../fonts/example-webfont.ttf") format("truetype"), url("../fonts/example-webfont.svg#exampleregular") format("svg");
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: Example;
-  src: url("../fonts/example-italic-webfont.eot");
-  src: url("../fonts/example-italic-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/example-italic-webfont.woff") format("woff"), url("../fonts/example-italic-webfont.ttf") format("truetype"), url("../fonts/example-italic-webfont.svg#vexampleitalic") format("svg");
-  font-weight: normal;
-  font-style: italic;
-}
 /*
  * color palette
  */
@@ -119,75 +106,80 @@
 }
 
 /* line 1, ../../../sass/partials/_base.scss */
+html, body {
+  font-family: "Ubuntu", Verdana, Geneva, sans-serif;
+}
+
+/* line 5, ../../../sass/partials/_base.scss */
 body {
   color: #584C40;
 }
 
-/* line 5, ../../../sass/partials/_base.scss */
+/* line 9, ../../../sass/partials/_base.scss */
 .narrow {
   padding-left: 50px;
   padding-right: 50px;
 }
-/* line 10, ../../../sass/partials/_base.scss */
+/* line 14, ../../../sass/partials/_base.scss */
 .narrow .narrow {
   margin-left: -50px;
   margin-right: -50px;
 }
 
-/* line 19, ../../../sass/partials/_base.scss */
+/* line 23, ../../../sass/partials/_base.scss */
 .gutter-small, .gutter-small .row, .gutter-small .form-horizontal .form-group {
   margin-left: -5px;
   margin-right: -5px;
 }
-/* line 24, ../../../sass/partials/_base.scss */
+/* line 28, ../../../sass/partials/_base.scss */
 .gutter-small > *, .gutter-small .row > *, .gutter-small .form-group > * {
   padding-left: 5px;
   padding-right: 5px;
 }
 
-/* line 30, ../../../sass/partials/_base.scss */
+/* line 34, ../../../sass/partials/_base.scss */
 #content {
   background-color: #E9E9E9;
   padding-top: 25px;
 }
 
-/* line 35, ../../../sass/partials/_base.scss */
+/* line 39, ../../../sass/partials/_base.scss */
 article {
   background-color: #FFFFFF;
   padding: 15px;
   margin-bottom: 15px;
 }
-/* line 40, ../../../sass/partials/_base.scss */
+/* line 44, ../../../sass/partials/_base.scss */
 article h1, article h2 {
   color: #D9E12E;
   font-weight: bold;
 }
-/* line 45, ../../../sass/partials/_base.scss */
+/* line 49, ../../../sass/partials/_base.scss */
 article footer {
   text-align: right;
 }
 
-/* line 50, ../../../sass/partials/_base.scss */
+/* line 54, ../../../sass/partials/_base.scss */
 .page-block {
   background-color: #FFFFFF;
 }
 
-/* line 54, ../../../sass/partials/_base.scss */
+/* line 58, ../../../sass/partials/_base.scss */
 img {
   width: 100%;
 }
 
-/* line 58, ../../../sass/partials/_base.scss */
+/* line 62, ../../../sass/partials/_base.scss */
 .margin-top {
   margin-top: 25px;
 }
 
-/* line 62, ../../../sass/partials/_base.scss */
+/* line 66, ../../../sass/partials/_base.scss */
 .section {
   margin-top: 10px;
 }
 
-/* line 66, ../../../sass/partials/_base.scss */
+/* line 70, ../../../sass/partials/_base.scss */
 .page-divider {
   font-weight: bold;
   background-color: #FFFFFF;
@@ -199,88 +191,88 @@ img {
 /*
  * Buttons
  */
-/* line 77, ../../../sass/partials/_base.scss */
+/* line 81, ../../../sass/partials/_base.scss */
 .btn {
   -moz-border-radius: 0;
   -webkit-border-radius: 0;
   border-radius: 0;
   text-transform: uppercase;
 }
-/* line 81, ../../../sass/partials/_base.scss */
+/* line 85, ../../../sass/partials/_base.scss */
 .btn, .btn:hover, .btn:active, .btn.active, .btn:focus {
   background-image: none;
   border: none;
   outline: none;
 }
-/* line 87, ../../../sass/partials/_base.scss */
+/* line 91, ../../../sass/partials/_base.scss */
 .btn.btn-default {
   background-color: #D9E12E;
   color: #584C40;
 }
-/* line 92, ../../../sass/partials/_base.scss */
+/* line 96, ../../../sass/partials/_base.scss */
 .btn.btn-action {
   background-color: #EC7537;
   color: #FFFFFF;
   font-weight: bold;
 }
-/* line 98, ../../../sass/partials/_base.scss */
+/* line 102, ../../../sass/partials/_base.scss */
 .btn.read-more {
   font-weight: bold;
 }
-/* line 101, ../../../sass/partials/_base.scss */
+/* line 105, ../../../sass/partials/_base.scss */
 .btn.read-more .glyphicon {
   color: #FFFFFF;
 }
 
-/* line 108, ../../../sass/partials/_base.scss */
+/* line 112, ../../../sass/partials/_base.scss */
 a.orange, a.green, a.blue, a.purple {
   color: #FFFFFF;
   text-transform: uppercase;
   padding: 6px 12px;
   font-weight: bolder;
 }
-/* line 117, ../../../sass/partials/_base.scss */
+/* line 121, ../../../sass/partials/_base.scss */
 a.orange.read-more, a.green.read-more, a.blue.read-more, a.purple.read-more {
   padding-right: 0;
 }
-/* line 119, ../../../sass/partials/_base.scss */
+/* line 123, ../../../sass/partials/_base.scss */
 a.orange.read-more .glyphicon-play, a.green.read-more .glyphicon-play, a.blue.read-more .glyphicon-play, a.purple.read-more .glyphicon-play {
   margin-right: 12px;
   color: #FFFFFF;
 }
-/* line 126, ../../../sass/partials/_base.scss */
+/* line 130, ../../../sass/partials/_base.scss */
 a.orange {
   background-color: #EC7537;
 }
-/* line 130, ../../../sass/partials/_base.scss */
+/* line 134, ../../../sass/partials/_base.scss */
 a.purple {
   background-color: #6D095E;
 }
-/* line 134, ../../../sass/partials/_base.scss */
+/* line 138, ../../../sass/partials/_base.scss */
 a.green {
   background-color: #D9E12E;
   color: #584C40;
 }
-/* line 139, ../../../sass/partials/_base.scss */
+/* line 143, ../../../sass/partials/_base.scss */
 a.blue {
   background-color: #70BDBD;
 }
 
-/* line 145, ../../../sass/partials/_base.scss */
+/* line 149, ../../../sass/partials/_base.scss */
 .popover {
   background-color: #A23854;
   border-color: rgba(109, 9, 94, 0.5);
 }
-/* line 149, ../../../sass/partials/_base.scss */
+/* line 153, ../../../sass/partials/_base.scss */
 .popover .popover-content {
   color: #FFFFFF;
   padding: 3px 5px;
 }
-/* line 154, ../../../sass/partials/_base.scss */
+/* line 158, ../../../sass/partials/_base.scss */
 .popover.top .arrow {
   border-top-color: rgba(109, 9, 94, 0.5);
 }
-/* line 157, ../../../sass/partials/_base.scss */
+/* line 161, ../../../sass/partials/_base.scss */
 .popover.top .arrow:after {
   border-top-color: #A23854;
 }
