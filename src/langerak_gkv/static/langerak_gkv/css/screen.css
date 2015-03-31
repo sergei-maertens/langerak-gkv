@@ -80,7 +80,7 @@
 
 /* ie8, chrome, etc */
 /* line 1, ../../../sass/partials/_social.scss */
-li.social {
+.social {
   height: 32px;
   padding-left: 0;
   padding-right: 0;
@@ -89,19 +89,19 @@ li.social {
   top: 3px;
 }
 /* line 9, ../../../sass/partials/_social.scss */
-li.social + li {
+.social + li {
   padding-left: 0;
 }
 /* line 13, ../../../sass/partials/_social.scss */
-li.social.facebook {
+.social.facebook {
   background-color: #32528F;
 }
 /* line 17, ../../../sass/partials/_social.scss */
-li.social.twitter {
+.social.twitter {
   background-color: #2EA8DB;
 }
 /* line 21, ../../../sass/partials/_social.scss */
-li.social a {
+.social a {
   display: block;
   width: 32px;
   height: 32px;
@@ -928,6 +928,14 @@ body.calendar.week-archive .detail.link.activity, body.calendar.day-archive .det
 /* line 292, ../../../sass/partials/_calendars.scss */
 body.calendar.week-archive .detail.link.activity:nth-child(even), body.calendar.day-archive .detail.link.activity:nth-child(even) {
   background-color: rgba(255, 255, 255, 0.3);
+}
+/* line 299, ../../../sass/partials/_calendars.scss */
+body.calendar #activity-detail header h4:first-child {
+  margin-top: 0;
+}
+/* line 303, ../../../sass/partials/_calendars.scss */
+body.calendar #activity-detail article.cmsplugin-text {
+  padding: 0;
 }
 
 /* line 1, ../../../sass/partials/_homepage.scss */

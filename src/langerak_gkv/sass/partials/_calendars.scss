@@ -294,4 +294,14 @@ body.calendar {
       }
     }
   }
+
+  #activity-detail {
+    header h4:first-child {
+      margin-top: 0;
+    }
+
+    article.cmsplugin-text {
+      padding: 0;
+    }
+  }
 }

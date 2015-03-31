@@ -37,6 +37,13 @@
                 {% endif %}
 
                 <div class="col-md-6">
+                    {% if activity.fb_event_id %}
+                    <span class="social facebook pull-right">
+                        <a href="https://facebook.com/events/{{ activity.fb_event_id }}/">
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                    </span>
+                    {% endif %}
 
                     {% if activity.location %}
                         <h4>{% trans "Location" %}</h4>
@@ -45,6 +52,7 @@
 
                     <h4>{% trans "Introduction" %}</h4>
                     {{ activity.description|linebreaksbr }}
+
 
                     {% if activity.url %}
                         <p>
