@@ -1045,9 +1045,8 @@ body.calendar #activity-detail article.cmsplugin-text {
 body.home article.activity,
 body.home article.link-block {
   position: relative;
-  padding-bottom: 45px;
 }
-/* line 88, ../../../sass/partials/_homepage.scss */
+/* line 87, ../../../sass/partials/_homepage.scss */
 body.home section.news h1, body.home section.news h2 {
   color: #6D095E;
 }
