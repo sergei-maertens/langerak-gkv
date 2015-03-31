@@ -1,4 +1,4 @@
-{% extends "users/base.html" %}{% load i18n thumbnail formatting %}
+{% extends "users/base.html" %}{% load i18n thumbnail formatting staticfiles leaflet_tags %}
 
 {% block main-content %}
     <div class="text-center page-header">
@@ -108,8 +108,7 @@
                 </div>
                 {% endblock %}
 
-
-                TODO: map
+                {% leaflet_map "user-map" %}
             </div>
         </div>
     </div>
@@ -123,4 +122,12 @@
             {% include "users/user_preview.html" %}
         {% endfor %}
     </div>
+{% endblock %}
+
+
+{% block extra_js %}
+{{ block.super }}
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+<script>var address = '{{ profile.get_location_string }}';</script>
+<script src="{% static "users/js/map.js" %}"></script>
 {% endblock %}

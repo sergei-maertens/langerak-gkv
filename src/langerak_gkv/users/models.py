@@ -113,13 +113,20 @@ class User(AbstractBaseUser, PermissionsMixin):
         return self.first_name
 
     def get_postal_code(self):
-        """ Format the postal code: 3118BJ becomes 3118 BJ """ # TODO: test
+        """ Format the postal code: 3118BJ becomes 3118 BJ """
         if not self.postal_code:
             return None
         bits = self.postal_code.split(' ')
-        if len(bits) == 1: # there was no space
-            bits = [bits[:4], bits[4:]]
+        if len(bits) == 1:  # there was no space
+            bits = [bits[0][:4], bits[0][4:]]
         return "{0} {1}".format(bits[0], bits[1])
+
+    def get_location_string(self):
+        if not self.address and not self.postal_code and not self.city:
+            return ''
+        if not self.address:
+            return u"{} {}".format(self.get_postal_code(), self.city).strip()
+        return u"{}, {} {}".format(self.address, self.get_postal_code(), self.city).strip()
 
     @cached_property
     def partner(self):
