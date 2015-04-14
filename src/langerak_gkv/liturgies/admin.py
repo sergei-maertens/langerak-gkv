@@ -7,18 +7,16 @@ class MailRecipientInline(admin.TabularInline):
     can_delete = False
 
 
-
 class LiturgyAdmin(admin.ModelAdmin):
     inlines = [MailRecipientInline]
 
-#         list_display = ('',)
-#         list_filter = ('',)
-#         inlines = [
-#             Inline,
-#         ]
-#         raw_id_fields = ('',)
-#         readonly_fields = ('',)
-#         search_fields = ['']
+
+class ServiceAdmin(admin.ModelAdmin):
+    list_display = ('__unicode__', 'name', 'time')
+    list_editable = ('name', 'time')
+    list_filter = ('time',)
+    search_fields = ('name', 'time')
+
 
 admin.site.register(Liturgy, LiturgyAdmin)
-admin.site.register(Service)
+admin.site.register(Service, ServiceAdmin)

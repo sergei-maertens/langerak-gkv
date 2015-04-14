@@ -31,18 +31,23 @@ class Command(NoArgsCommand):
         self.stdout.write('Migrating events...')
 
         collecte_regex = re.compile(r'(collecte [123]:?(?P<collecte>[\w \-]+))+', re.IGNORECASE)
-        audio_field = field = Liturgy._meta.get_field_by_name('audiofile')[0]
+        audio_field = Liturgy._meta.get_field_by_name('audiofile')[0]
         upload_to = audio_field.upload_to
+
+        services = {}
 
         events = Event.objects.using('legacy').all()
         for event in events:
             start = event.start_date.date()
             if event.category_id == CAT_KERKDIENST:
                 start_time = event.start_date.time()
-                service, _ = Service.objects.get_or_create(
-                    time=start_time,
-                    defaults={'name': start_time.strftime('%H:%i%s')}
-                )
+                service = services.get(start_time)
+                if service is None:
+                    service, _ = Service.objects.get_or_create(
+                        time=start_time,
+                        defaults={'name': start_time.strftime('%H:%M')}
+                    )
+                    services[start_time] = service
 
                 init_kwargs = {
                     'date': start,
@@ -51,7 +56,7 @@ class Command(NoArgsCommand):
                     'main_section': event.bijbelgedeelte or '',
                     'main_chapter': event.hoofdstuk or '',
                     'main_verse': event.vers or '',
-                    'service_theme': (event.thema or '')[:255],
+                    'service_theme': (event.thema or '')[:250],
                     'liturgy': event.liturgiebord or '',
                     'audiofile': '',
                     'beamist': event.beamist or '',
@@ -72,19 +77,15 @@ class Command(NoArgsCommand):
                 if event.geluid:
                     init_kwargs['audiofile'] = os.path.join(upload_to, event.geluid)
 
-                try:
-                    Liturgy.objects.create(**init_kwargs)
-                except Exception as e:
-                    import bpdb; bpdb.set_trace()
+                Liturgy.objects.create(**init_kwargs)
             else:
-                import bpdb; bpdb.set_trace()
                 Activity.objects.create(
+                    type=CAT_TYPE_MAPPING[event.category],
                     name=event.title,
                     start_date=start,
                     end_date=event.end_date.date() if event.end_date else start,
                     start_time=event.start_date.time(),
-                    end_time=event.end_date.time() if event.end_date else None
+                    end_time=event.end_date.time() if event.end_date else None,
+                    description=event.description or '',
+                    url=event.url
                 )
-
-
-        raise TypeError('blah')
