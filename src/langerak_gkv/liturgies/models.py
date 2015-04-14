@@ -12,9 +12,9 @@ class Liturgy(models.Model):
     preacher = models.CharField(_('preacher'), max_length=100)
     preach_author = models.CharField(_('preach author'), max_length=100)
     main_section = models.CharField(_('main section'), max_length=50, blank=True)
-    main_chapter = models.CharField(_('main chapter'), max_length=50, blank=True),
+    main_chapter = models.CharField(_('main chapter'), max_length=50, blank=True)
     main_verse = models.CharField(_('main verse'), max_length=50, blank=True)
-    service_theme = models.CharField(_('service theme'), max_length=50, blank=True)
+    service_theme = models.CharField(_('service theme'), max_length=150, blank=True)
     liturgy = models.TextField(_('liturgy'))
     audiofile = models.FileField(_('audiofile'), upload_to='liturgies/audio', max_length=100, blank=True)
     beamist = models.CharField(_('beamist'), max_length=50, blank=True)  # search on function: beamists
