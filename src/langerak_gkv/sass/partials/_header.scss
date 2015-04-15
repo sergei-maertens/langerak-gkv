@@ -133,7 +133,7 @@ form#search {
         color: $main-color-purple;
       }
 
-      > a, #btn-logout {
+      > a {
         text-transform: uppercase;
         color: $text-dark;
         font-weight: bold;
@@ -141,6 +141,17 @@ form#search {
 
         &:hover, &:focus, &:active {
           background: $color-background;
+        }
+      }
+
+      #btn-logout {
+        color: $white;
+        padding: 3px 5px;
+
+        &:hover, &:focus, &:active {
+          background: $white;
+          color: rgba($black, 0.9);
+          font-weight: bold;
         }
       }
     }

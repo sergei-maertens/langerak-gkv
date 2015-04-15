@@ -532,24 +532,35 @@ form#search .btn-search > .fa {
   color: #6D095E;
 }
 /* line 136, ../../../sass/partials/_header.scss */
-#main-nav .navbar-nav > li > a, #main-nav .navbar-nav > li #btn-logout {
+#main-nav .navbar-nav > li > a {
   text-transform: uppercase;
   color: #584C40;
   font-weight: bold;
   padding: 7px 10px;
 }
 /* line 142, ../../../sass/partials/_header.scss */
-#main-nav .navbar-nav > li > a:hover, #main-nav .navbar-nav > li > a:focus, #main-nav .navbar-nav > li > a:active, #main-nav .navbar-nav > li #btn-logout:hover, #main-nav .navbar-nav > li #btn-logout:focus, #main-nav .navbar-nav > li #btn-logout:active {
+#main-nav .navbar-nav > li > a:hover, #main-nav .navbar-nav > li > a:focus, #main-nav .navbar-nav > li > a:active {
   background: #E9E9E9;
 }
-/* line 149, ../../../sass/partials/_header.scss */
+/* line 147, ../../../sass/partials/_header.scss */
+#main-nav .navbar-nav > li #btn-logout {
+  color: #FFFFFF;
+  padding: 3px 5px;
+}
+/* line 151, ../../../sass/partials/_header.scss */
+#main-nav .navbar-nav > li #btn-logout:hover, #main-nav .navbar-nav > li #btn-logout:focus, #main-nav .navbar-nav > li #btn-logout:active {
+  background: #FFFFFF;
+  color: rgba(0, 0, 0, 0.9);
+  font-weight: bold;
+}
+/* line 160, ../../../sass/partials/_header.scss */
 #main-nav #btn-logout {
   text-decoration: none;
   display: block;
   width: 100%;
   text-align: left;
 }
-/* line 156, ../../../sass/partials/_header.scss */
+/* line 167, ../../../sass/partials/_header.scss */
 #main-nav .dropdown-menu {
   background-color: #6D095E;
   padding: 5px;
@@ -557,26 +568,26 @@ form#search .btn-search > .fa {
   -webkit-border-radius: 0;
   border-radius: 0;
 }
-/* line 161, ../../../sass/partials/_header.scss */
+/* line 172, ../../../sass/partials/_header.scss */
 #main-nav .dropdown-menu > li > a {
   background: #6D095E;
   color: #FFFFFF;
   font-weight: 400;
   padding: 3px 5px;
 }
-/* line 167, ../../../sass/partials/_header.scss */
+/* line 178, ../../../sass/partials/_header.scss */
 #main-nav .dropdown-menu > li > a:hover, #main-nav .dropdown-menu > li > a:active, #main-nav .dropdown-menu > li > a:focus {
   color: rgba(0, 0, 0, 0.9);
   background-color: #FFFFFF;
   font-weight: bolder;
 }
-/* line 176, ../../../sass/partials/_header.scss */
+/* line 187, ../../../sass/partials/_header.scss */
 #main-nav .dropdown-menu .divider {
   background-color: #A23854;
   margin: 1px -5px;
 }
 
-/* line 184, ../../../sass/partials/_header.scss */
+/* line 195, ../../../sass/partials/_header.scss */
 .page-header {
   margin-top: 0;
   margin-bottom: 10px;
@@ -586,14 +597,14 @@ form#search .btn-search > .fa {
   padding: 5px;
   color: #FFFFFF;
 }
-/* line 193, ../../../sass/partials/_header.scss */
+/* line 204, ../../../sass/partials/_header.scss */
 .page-header a.abs-left {
   position: absolute;
   left: 10px;
   top: 5px;
   color: #FFFFFF;
 }
-/* line 200, ../../../sass/partials/_header.scss */
+/* line 211, ../../../sass/partials/_header.scss */
 .page-header .title {
   line-height: 20px;
   font-size: 120%;
