@@ -27,7 +27,7 @@ class Liturgy(models.Model):
     class Meta:
         verbose_name = _('liturgy')
         verbose_name_plural = _('liturgies')
-        ordering = ['date']
+        ordering = ['-date']
 
     def __unicode__(self):
         return u'{service} {date}'.format(

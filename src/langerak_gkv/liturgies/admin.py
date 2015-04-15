@@ -8,6 +8,9 @@ class MailRecipientInline(admin.TabularInline):
 
 
 class LiturgyAdmin(admin.ModelAdmin):
+    list_display = ('__unicode__', 'date', 'preacher')
+    list_editable = ('preacher',)
+    list_filter = ('date', 'service__time')
     inlines = [MailRecipientInline]
 
 
