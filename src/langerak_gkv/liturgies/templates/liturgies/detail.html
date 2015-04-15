@@ -74,11 +74,7 @@
         <div class="row gutter-small">
             <div class="col-md-7">
                 <article class="link-height page-block" data-linkid="3">
-                    <ul>
-                        <li>{% trans "Contact information" %}</li>
-                        <li>{% trans "Scriba (phone: 0123456789)" %}</li>
-                        <li>{% trans "Email:" %}<a href="mailto:scriba@koningskerk.nu">scriba@koningskerk.nu</a></li>
-                    </ul>
+                    {{ liturgy.extra_information|linebreaksbr }}
                 </article>
             </div>
 
