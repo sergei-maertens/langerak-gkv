@@ -9,6 +9,7 @@ from .models import Activity
 
 
 class ActivitiesTodayMixin(object):
+
     def get_context_data(self, **kwargs):
         context = super(ActivitiesTodayMixin, self).get_context_data(**kwargs)
         today = date.today()
@@ -54,8 +55,13 @@ class ActivitySearchView(ActivitiesTodayMixin, ListView):
     model = Activity
     context_object_name = 'activities'
     template_name = 'activities/searchresults.html'
-    paginate_by = 4
+    paginate_by = 50
 
     def get_queryset(self):
-        term = self.request.GET.get('q')
-        return Activity.objects.filter(name__icontains=term)
+        terms = self.request.GET.get('q').split()
+        q = Q()
+        for term in terms:
+            q |= Q(name__icontains=term) | Q(description__icontains=term) | \
+                 Q(liturgy__preacher__icontains=term) | Q(liturgy__liturgy__icontains=term) | \
+                 Q(liturgy__service_theme__icontains=term)
+        return Activity.objects.filter(q).distinct()

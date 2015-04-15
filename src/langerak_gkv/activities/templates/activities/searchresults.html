@@ -6,7 +6,9 @@
 <div class="fc fc-ltr fc-unthemed link-height activity-list" data-linkid="1">
     <div class="fc-toolbar">
         <div class="fc-center">
-            <h2>{% trans "Search results" %}</h2>
+            <h2>{% blocktrans with number_results=paginator.count %}
+                Search results ({{ number_results }})
+            {% endblocktrans %}</h2>
         </div>
     </div>
 
