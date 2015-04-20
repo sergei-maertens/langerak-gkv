@@ -422,3 +422,5 @@ LEAFLET_CONFIG = {
 # EMAIL addresses
 #
 EMAIL_POD = 'pod@koningskerk.nu'
+EMAIL_ORGANIST = 'organist@koningskerk.nu'
+EMAIL_BEAMIST = 'beamist@koningskerk.nu'

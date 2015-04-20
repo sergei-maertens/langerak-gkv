@@ -66,16 +66,35 @@ class MailRecipient(models.Model):
 
     class Functions(DjangoChoices):
         preacher = ChoiceItem('0preacher', _('preacher'))
-        organist = ChoiceItem('1organist', _('organist'))
-        beamist = ChoiceItem('2beamist', _('beamist'))
+        organist = ChoiceItem('1organist', _('organist (%s)') % settings.EMAIL_ORGANIST)
+        beamist = ChoiceItem('2beamist', _('beamist (%s)') % settings.EMAIL_BEAMIST)
         other = ChoiceItem('3other', _('other'))
 
     liturgy = models.ForeignKey('Liturgy', verbose_name=_('liturgy'))
     user = models.ForeignKey(settings.AUTH_USER_MODEL, max_length=100, blank=True, null=True)
-    email = models.EmailField(max_length=254)
+    email = models.EmailField(max_length=254, blank=True)
     function = models.CharField(choices=Functions.choices, max_length=10,
                                 validators=[Functions.validator], blank=True)
     is_sent = models.BooleanField(default=False)
 
     class Meta:
         ordering = ['function']
+
+    def __unicode__(self):
+        return self.email
+
+    def save(self, *args, **kwargs):
+        if not self.pk and not self.email:
+            self.email = self.get_email()
+        super(MailRecipient, self).save(*args, **kwargs)
+
+    def get_email(self):
+        if self.email:
+            return self.email
+        if self.user and self.user.email:
+            return self.user.email
+        if self.function == self.Functions.organist:
+            return settings.EMAIL_ORGANIST
+        elif self.function == self.Functions.beamist:
+            return settings.EMAIL_BEAMIST
+        raise ValueError('Could not determine e-mail address')

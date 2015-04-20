@@ -1,0 +1,932 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-04-20 02:10-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: activities/cms_app.py:8
+msgid "Activities"
+msgstr ""
+
+#: activities/models.py:35 activities/models.py:102 activities/models.py:113
+#: homepage/models.py:10 users/models.py:209 users/models.py:220
+#: users/models.py:234
+msgid "name"
+msgstr ""
+
+#: activities/models.py:38
+msgid "start date"
+msgstr ""
+
+#: activities/models.py:39
+msgid "end date"
+msgstr ""
+
+#: activities/models.py:40
+msgid "start time"
+msgstr ""
+
+#: activities/models.py:41
+msgid "end time"
+msgstr ""
+
+#: activities/models.py:45
+msgid "location"
+msgstr ""
+
+#: activities/models.py:48
+msgid "short description/intro"
+msgstr ""
+
+#: activities/models.py:52
+msgid "If checked, this activity can appear on the homepage."
+msgstr ""
+
+#: activities/models.py:55
+msgid "external url"
+msgstr ""
+
+#: activities/models.py:57
+msgid "facebook event id"
+msgstr ""
+
+#: activities/models.py:62
+msgid "activity"
+msgstr ""
+
+#: activities/models.py:63
+msgid "activities"
+msgstr ""
+
+#: activities/models.py:81
+msgid "The start date cannot come before the end date."
+msgstr ""
+
+#: activities/models.py:85
+msgid "The end time cannot come before the start time."
+msgstr ""
+
+#: activities/models.py:88
+msgid "Homepage activities must have an image"
+msgstr ""
+
+#: activities/models.py:105 activities/models.py:106
+msgid "intended public"
+msgstr ""
+
+#: activities/templates/activities/activity_archive_day.html:12
+msgid "Previous day"
+msgstr ""
+
+#: activities/templates/activities/activity_archive_day.html:19
+msgid "Next day"
+msgstr ""
+
+#: activities/templates/activities/activity_archive_day.html:28
+#, python-format
+msgid "1 activity "
+msgid_plural "%(count)s activities"
+msgstr[0] ""
+msgstr[1] ""
+
+#: activities/templates/activities/activity_archive_day.html:33
+msgid "No activities on this day!"
+msgstr ""
+
+#: activities/templates/activities/activity_archive_week.html:12
+msgid "Previous week"
+msgstr ""
+
+#: activities/templates/activities/activity_archive_week.html:19
+msgid "Next week"
+msgstr ""
+
+#: activities/templates/activities/activity_archive_week.html:25
+#, python-format
+msgid "Week %(week)s"
+msgstr ""
+
+#: activities/templates/activities/activity_archive_week.html:38
+#: activities/templates/activities/searchresults.html:24
+msgid "No activities this week!"
+msgstr ""
+
+#: activities/templates/activities/activity_detail.html:20
+#: liturgies/templates/liturgies/detail.html:27
+msgid "at"
+msgstr ""
+
+#: activities/templates/activities/activity_detail.html:23
+msgid "until"
+msgstr ""
+
+#: activities/templates/activities/activity_detail.html:49
+#: users/templates/users/user_detail.html:74
+msgid "Location"
+msgstr ""
+
+#: activities/templates/activities/activity_detail.html:53
+msgid "Introduction"
+msgstr ""
+
+#: activities/templates/activities/activity_detail.html:59
+#, python-format
+msgid "Visit <a href=\"%(url)s\">%(url)s</a>."
+msgstr ""
+
+#: activities/templates/activities/base.html:12
+msgid "Calendar view"
+msgstr ""
+
+#: activities/templates/activities/base.html:17
+msgid "Week view"
+msgstr ""
+
+#: activities/templates/activities/base.html:22
+msgid "Day view"
+msgstr ""
+
+#: activities/templates/activities/base.html:33
+msgid "Find in calendar"
+msgstr ""
+
+#: activities/templates/activities/base.html:54
+#, python-format
+msgid ""
+"\n"
+"                1 activity"
+msgid_plural ""
+"%(count)s activities\n"
+"            "
+msgstr[0] ""
+msgstr[1] ""
+
+#: activities/templates/activities/searchresults.html:9
+#, python-format
+msgid ""
+"\n"
+"                Search results (%(number_results)s)\n"
+"            "
+msgstr ""
+
+#: conf/settings.py:368 conf/settings.py:396
+msgid "Default"
+msgstr ""
+
+#: conf/settings.py:369
+msgid "Homepage"
+msgstr ""
+
+#: conf/settings.py:370
+msgid "Content left, sidebar right"
+msgstr ""
+
+#: conf/settings.py:371
+msgid "3 Columns (responsive)"
+msgstr ""
+
+#: conf/settings.py:385
+msgid "header top image"
+msgstr ""
+
+#: conf/settings.py:397
+msgid "Orange"
+msgstr ""
+
+#: conf/settings.py:398
+msgid "Blue"
+msgstr ""
+
+#: conf/settings.py:399
+msgid "Green"
+msgstr ""
+
+#: conf/settings.py:400
+msgid "Purple"
+msgstr ""
+
+#: conf/settings.py:401
+msgid "Read-more orange"
+msgstr ""
+
+#: conf/settings.py:402
+msgid "Read-more blue"
+msgstr ""
+
+#: conf/settings.py:403
+msgid "Read-more green"
+msgstr ""
+
+#: conf/settings.py:404
+msgid "Read-more purple"
+msgstr ""
+
+#: homepage/cms_plugins.py:11
+msgid "Homepage link block"
+msgstr ""
+
+#: homepage/models.py:11
+msgid "email"
+msgstr ""
+
+#: homepage/models.py:12
+msgid "What should we pray for?"
+msgstr ""
+
+#: homepage/models.py:13
+msgid "replied"
+msgstr ""
+
+#: homepage/models.py:19
+msgid "prayer on demand"
+msgstr ""
+
+#: homepage/models.py:20
+msgid "prayer on demands"
+msgstr ""
+
+#: homepage/models.py:27
+msgid "title"
+msgstr ""
+
+#: homepage/models.py:28
+msgid "image"
+msgstr ""
+
+#: homepage/models.py:29 users/models.py:221
+msgid "description"
+msgstr ""
+
+#: homepage/models.py:29
+msgid "Displayed below the title"
+msgstr ""
+
+#: homepage/models.py:30
+msgid "page"
+msgstr ""
+
+#: homepage/models.py:30
+msgid "Page to link to"
+msgstr ""
+
+#: homepage/models.py:31
+msgid "enable social sharing"
+msgstr ""
+
+#: homepage/views.py:38 homepage/tests/test_views.py:40
+msgid "Your request was received, we will pray for you."
+msgstr ""
+
+#: homepage/views.py:50
+#, python-brace-format
+msgid "A new 'Prayer on Demand' was submitted. You can view this at {uri}"
+msgstr ""
+
+#: homepage/views.py:52 homepage/templates/homepage/includes/pod.html:5
+msgid "Prayer on demand"
+msgstr ""
+
+#: homepage/templates/homepage/home.html:78
+#, python-format
+msgid "%(preacher)s preaches"
+msgstr ""
+
+#: homepage/templates/homepage/home.html:86
+msgid "Koningskerk calendar"
+msgstr ""
+
+#: homepage/templates/homepage/home.html:100
+msgid "No upcoming activities"
+msgstr ""
+
+#: homepage/templates/homepage/home.html:108
+msgid "Upcoming birthdays"
+msgstr ""
+
+#: homepage/templates/homepage/cmsplugin/link.html:27
+#: homepage/templates/homepage/includes/activity.html:25
+msgid "Read more"
+msgstr ""
+
+#: homepage/templates/homepage/includes/pod.html:6
+msgid "Fill the form and our prayer group will pray for you."
+msgstr ""
+
+#: liturgies/cms_app.py:10
+msgid "Liturgies"
+msgstr ""
+
+#: liturgies/menu.py:12
+msgid "liturgies menu"
+msgstr ""
+
+#: liturgies/models.py:10
+msgid "date"
+msgstr ""
+
+#: liturgies/models.py:11
+msgid "service"
+msgstr ""
+
+#: liturgies/models.py:12 liturgies/models.py:68
+msgid "preacher"
+msgstr ""
+
+#: liturgies/models.py:13
+msgid "preach author"
+msgstr ""
+
+#: liturgies/models.py:14
+msgid "main section"
+msgstr ""
+
+#: liturgies/models.py:15
+msgid "main chapter"
+msgstr ""
+
+#: liturgies/models.py:16
+msgid "main verse"
+msgstr ""
+
+#: liturgies/models.py:17
+msgid "service theme"
+msgstr ""
+
+#: liturgies/models.py:18 liturgies/models.py:28 liturgies/models.py:73
+#: liturgies/signals.py:16
+msgid "liturgy"
+msgstr ""
+
+#: liturgies/models.py:19
+msgid "audiofile"
+msgstr ""
+
+#: liturgies/models.py:20 liturgies/models.py:70
+msgid "beamist"
+msgstr ""
+
+#: liturgies/models.py:21 liturgies/models.py:69
+msgid "organist"
+msgstr ""
+
+#: liturgies/models.py:22
+msgid "collection goal 1"
+msgstr ""
+
+#: liturgies/models.py:23
+msgid "collection goal 2"
+msgstr ""
+
+#: liturgies/models.py:24
+msgid "collection goal 3"
+msgstr ""
+
+#: liturgies/models.py:25
+msgid "extra information"
+msgstr ""
+
+#: liturgies/models.py:29
+msgid "liturgies"
+msgstr ""
+
+#: liturgies/models.py:58
+msgid "service name"
+msgstr ""
+
+#: liturgies/models.py:59
+msgid "service time"
+msgstr ""
+
+#: liturgies/models.py:71
+msgid "other"
+msgstr ""
+
+#: liturgies/urls.py:10
+msgid "^history/$"
+msgstr ""
+
+#: liturgies/templates/liturgies/detail.html:11
+msgid "Previous"
+msgstr ""
+
+#: liturgies/templates/liturgies/detail.html:16
+msgid "Next"
+msgstr ""
+
+#: liturgies/templates/liturgies/detail.html:27
+msgid "hours"
+msgstr ""
+
+#: liturgies/templates/liturgies/detail.html:38
+msgid "Preacher"
+msgstr ""
+
+#: liturgies/templates/liturgies/detail.html:44
+#, python-format
+msgid "Collection %(i)s"
+msgstr ""
+
+#: liturgies/templates/liturgies/detail.html:55
+msgid "Preach made by"
+msgstr ""
+
+#: liturgies/templates/liturgies/detail.html:59
+msgid "Main section"
+msgstr ""
+
+#: liturgies/templates/liturgies/detail.html:63
+msgid "Service theme"
+msgstr ""
+
+#: liturgies/templates/liturgies/detail.html:85
+msgid "This service is available as audio download"
+msgstr ""
+
+#: liturgies/templates/liturgies/detail.html:89
+msgid "No audio file available"
+msgstr ""
+
+#: templates/default.form:70
+msgid "Submit"
+msgstr ""
+
+#: templates/header.html:19 users/templates/users/user_search_form.html:6
+#: users/templates/users/user_search_form.html:20
+msgid "Search"
+msgstr ""
+
+#: templates/header.html:31
+msgid "Menu"
+msgstr ""
+
+#: templates/header.html:37
+msgid "logo"
+msgstr ""
+
+#: templates/header.html:43
+msgid "News"
+msgstr ""
+
+#: templates/header.html:52 templates/header.html.py:59
+#: users/templates/users/login.html:17
+msgid "Login"
+msgstr ""
+
+#: templates/header.html:71
+msgid "View own profile"
+msgstr ""
+
+#: templates/header.html:75
+msgid "Administration"
+msgstr ""
+
+#: templates/header.html:83
+msgid "Logout"
+msgstr ""
+
+#: templates/master.html:51
+msgid "Signup for the newsletter"
+msgstr ""
+
+#: templates/master.html:52
+msgid "Enter your e-mail address here"
+msgstr ""
+
+#: templates/master.html:59
+msgid "Home"
+msgstr ""
+
+#: templates/cms/base.html:11
+msgid "Put your content here"
+msgstr ""
+
+#: users/admin.py:18
+msgid "Personal info"
+msgstr ""
+
+#: users/admin.py:31
+msgid "Family and location"
+msgstr ""
+
+#: users/admin.py:38
+msgid "Permissions"
+msgstr ""
+
+#: users/admin.py:44
+msgid "Important dates"
+msgstr ""
+
+#: users/cms_app.py:8
+msgid "Users"
+msgstr ""
+
+#: users/forms.py:18
+msgid "A user with that email already exists."
+msgstr ""
+
+#: users/forms.py:19
+msgid "The two password fields didn't match."
+msgstr ""
+
+#: users/forms.py:21 users/forms.py:65
+msgid "Password"
+msgstr ""
+
+#: users/forms.py:23
+msgid "Password confirmation"
+msgstr ""
+
+#: users/forms.py:25
+msgid "Enter the same password as above, for verification."
+msgstr ""
+
+#: users/forms.py:26
+msgid "Username"
+msgstr ""
+
+#: users/forms.py:27
+msgid "Alternative to login."
+msgstr ""
+
+#: users/forms.py:64 users/templates/users/user_detail.html:93
+msgid "Email"
+msgstr ""
+
+#: users/forms.py:66
+msgid ""
+"Raw passwords are not stored, so there is no way to see this user's "
+"password, but you can change the password using <a href=\"password/\">this "
+"form</a>."
+msgstr ""
+
+#: users/forms.py:93 users/forms.py:109
+msgid "This username is taken, choose a different username."
+msgstr ""
+
+#: users/forms.py:114
+msgid "Email or username"
+msgstr ""
+
+#: users/forms.py:118
+msgid "Name"
+msgstr ""
+
+#: users/forms.py:119
+msgid "Search terms"
+msgstr ""
+
+#: users/forms.py:121
+msgid "Minimum age"
+msgstr ""
+
+#: users/forms.py:122
+msgid "Maximum age"
+msgstr ""
+
+#: users/forms.py:123
+msgid "Gender"
+msgstr ""
+
+#: users/models.py:42
+msgid "male"
+msgstr ""
+
+#: users/models.py:43
+msgid "female"
+msgstr ""
+
+#: users/models.py:54
+msgid "email address"
+msgstr ""
+
+#: users/models.py:55
+msgid "username"
+msgstr ""
+
+#: users/models.py:57
+msgid "first name"
+msgstr ""
+
+#: users/models.py:58
+msgid "last name"
+msgstr ""
+
+#: users/models.py:60
+msgid "staff status"
+msgstr ""
+
+#: users/models.py:61
+msgid "Designates whether the user can log into this admin site."
+msgstr ""
+
+#: users/models.py:63
+msgid "active"
+msgstr ""
+
+#: users/models.py:64
+msgid ""
+"Designates whether this user should be treated as active. Unselect this "
+"instead of deleting accounts."
+msgstr ""
+
+#: users/models.py:66
+msgid "date joined"
+msgstr ""
+
+#: users/models.py:69
+msgid "sex"
+msgstr ""
+
+#: users/models.py:70
+msgid "street"
+msgstr ""
+
+#: users/models.py:71
+msgid "Street name and number."
+msgstr ""
+
+#: users/models.py:72
+msgid "postal code"
+msgstr ""
+
+#: users/models.py:73
+msgid "city"
+msgstr ""
+
+#: users/models.py:75
+msgid "phone"
+msgstr ""
+
+#: users/models.py:76
+msgid "Home phone number"
+msgstr ""
+
+#: users/models.py:77
+msgid "mobile phone number"
+msgstr ""
+
+#: users/models.py:78
+msgid "Mobile phone number"
+msgstr ""
+
+#: users/models.py:80
+msgid "birth_date"
+msgstr ""
+
+#: users/models.py:81
+msgid "picture"
+msgstr ""
+
+#: users/models.py:82
+msgid "Profile picture"
+msgstr ""
+
+#: users/models.py:83
+msgid "Short 'about me' text"
+msgstr ""
+
+#: users/models.py:86 users/models.py:212
+msgid "district"
+msgstr ""
+
+#: users/models.py:89 users/models.py:238
+msgid "family"
+msgstr ""
+
+#: users/models.py:98
+msgid "user"
+msgstr ""
+
+#: users/models.py:99
+msgid "users"
+msgstr ""
+
+#: users/models.py:160
+msgid "User 2 is `relation type` of user 1."
+msgstr ""
+
+#: users/models.py:167
+msgid "user relation"
+msgstr ""
+
+#: users/models.py:168
+msgid "user relations"
+msgstr ""
+
+#: users/models.py:187 users/models.py:190
+msgid "name (male)"
+msgstr ""
+
+#: users/models.py:188 users/models.py:191
+msgid "name (female)"
+msgstr ""
+
+#: users/models.py:192
+msgid "Reverse direction of the relation"
+msgstr ""
+
+#: users/models.py:195
+msgid "is partner?"
+msgstr ""
+
+#: users/models.py:196
+msgid "is child/parent?"
+msgstr ""
+
+#: users/models.py:199
+msgid "relation type"
+msgstr ""
+
+#: users/models.py:200
+msgid "relation types"
+msgstr ""
+
+#: users/models.py:205
+#, python-brace-format
+msgid "{0}/{1} (reverse: {2}/{3})"
+msgstr ""
+
+#: users/models.py:213
+msgid "districts"
+msgstr ""
+
+#: users/models.py:222
+msgid "Describe what someone with this function does."
+msgstr ""
+
+#: users/models.py:225
+msgid "district function"
+msgstr ""
+
+#: users/models.py:226
+msgid "district functions"
+msgstr ""
+
+#: users/models.py:235
+msgid "Last name of the householder."
+msgstr ""
+
+#: users/models.py:239
+msgid "families"
+msgstr ""
+
+#: users/models.py:242
+#, python-brace-format
+msgid "Fam. {name}"
+msgstr ""
+
+#: users/templates/users/base.html:18
+msgid "Welcome"
+msgstr ""
+
+#: users/templates/users/base.html:22
+msgid "View profile"
+msgstr ""
+
+#: users/templates/users/base.html:27
+msgid "Edit profile"
+msgstr ""
+
+#: users/templates/users/birthdays.html:19
+#, python-format
+msgid ""
+"\n"
+"\tNo upcoming birthdays in the next week\n"
+"\t"
+msgid_plural ""
+"\n"
+"\tNo upcoming birthdays in the next %(weeks)s weeks.\n"
+"\t"
+msgstr[0] ""
+msgstr[1] ""
+
+#: users/templates/users/login.html:10
+msgid ""
+"Enter your e-mail address and password or username and password to login."
+msgstr ""
+
+#: users/templates/users/logout.html:5
+msgid "See you on your next visit!"
+msgstr ""
+
+#: users/templates/users/user_detail.html:7
+msgid "Back to overview"
+msgstr ""
+
+#: users/templates/users/user_detail.html:9
+msgid "Profile"
+msgstr ""
+
+#: users/templates/users/user_detail.html:28
+msgid "Partner of"
+msgstr ""
+
+#: users/templates/users/user_detail.html:37
+msgid "Children"
+msgstr ""
+
+#: users/templates/users/user_detail.html:58
+msgid "Date of birth"
+msgstr ""
+
+#: users/templates/users/user_detail.html:64
+msgid "Address"
+msgstr ""
+
+#: users/templates/users/user_detail.html:69
+msgid "Postal code"
+msgstr ""
+
+#: users/templates/users/user_detail.html:80
+msgid "Telephone"
+msgstr ""
+
+#: users/templates/users/user_detail.html:86
+msgid "Mobile phone"
+msgstr ""
+
+#: users/templates/users/user_detail.html:100
+msgid "District function"
+msgstr ""
+
+#: users/templates/users/user_detail.html:106
+msgid "About me"
+msgstr ""
+
+#: users/templates/users/user_detail.html:117
+msgid "1<sup>st</sup> degree connections"
+msgstr ""
+
+#: users/templates/users/user_form.html:40
+msgid "save"
+msgstr ""
+
+#: users/templates/users/user_preview.html:20
+msgid "Email me"
+msgstr ""
+
+#: users/templates/users/user_search_form.html:10
+msgid "Advanced search"
+msgstr ""
+
+#: utils/models.py:8
+msgid "app name"
+msgstr ""
+
+#: utils/models.py:9
+msgid "url name"
+msgstr ""
+
+#: utils/models.py:10
+msgid "display name"
+msgstr ""
+
+#: utils/models.py:11
+msgid "url namespace"
+msgstr ""
+
+#: utils/models.py:15
+msgid "urlconf menu entry"
+msgstr ""
+
+#: utils/models.py:16
+msgid "urlconf menu entries"
+msgstr ""
+
+#: worklog/models.py:8
+msgid "start"
+msgstr ""
+
+#: worklog/models.py:9
+msgid "end"
+msgstr ""
+
+#: worklog/models.py:10
+msgid "log_message"
+msgstr ""
+
+#: worklog/models.py:12
+msgid "paid?"
+msgstr ""
+
+#: worklog/models.py:15
+msgid "log entry"
+msgstr ""
+
+#: worklog/models.py:16
+msgid "log entries"
+msgstr ""
