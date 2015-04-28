@@ -19,7 +19,7 @@ class LiturgyEmailView(CreateView):
 
     def get_form_kwargs(self):
         kwargs = super(LiturgyEmailView, self).get_form_kwargs()
-        liturgies = self.request.REQUEST.getlist('liturgies')
+        liturgies = self.request.REQUEST.getlist('liturgy')
         kwargs['liturgies'] = liturgies
         return kwargs
 

@@ -5,7 +5,7 @@ from ..models import MailRecipient
 
 
 class LiturgyMailForm(MailForm):
-    recipients = forms.ModelMultipleChoiceField(queryset=MailRecipient.objects.filter())
+    recipients = forms.ModelMultipleChoiceField(queryset=MailRecipient.objects.none())
 
     class Meta(MailForm.Meta):
         fields = ('recipients', 'subject', 'body')
