@@ -1,8 +1,11 @@
 from django.contrib import admin
 from django.utils.translation import ugettext_lazy as _
 from django.core.urlresolvers import reverse
+from django.conf.urls import patterns, url
 
-from .models import Liturgy, Service, MailRecipient
+from ..models import Liturgy, Service, MailRecipient
+from .actions import send_liturgy_email
+from .views import LiturgyEmailView
 
 
 class MailRecipientInline(admin.TabularInline):
@@ -15,6 +18,23 @@ class MailRecipientAdmin(admin.ModelAdmin):
     list_filter = ('is_sent', 'function')
     search_fields = ('liturgy__date', 'liturgy__service__name', 'liturgy__service_theme')
     raw_id_fields = ('liturgy', 'user')
+
+    actions = [send_liturgy_email]
+
+    def get_urls(self):
+        """
+        Hook in extra views.
+        """
+        urls = super(MailRecipientAdmin, self).get_urls()
+        action_urls = patterns(
+            '',
+            url(
+                r'^send_mail/$',
+                self.admin_site.admin_view(LiturgyEmailView.as_view()),
+                name='send_liturgy_email'
+            ),
+        )
+        return action_urls + urls
 
 
 class LiturgyAdmin(admin.ModelAdmin):

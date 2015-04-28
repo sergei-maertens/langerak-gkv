@@ -193,6 +193,7 @@ INSTALLED_APPS = [
     'langerak_gkv.activities',
     'langerak_gkv.homepage',
     'langerak_gkv.liturgies',
+    'langerak_gkv.mailing',
     'langerak_gkv.users',
     'langerak_gkv.utils',
     'langerak_gkv.worklog',
