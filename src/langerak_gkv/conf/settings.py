@@ -168,6 +168,7 @@ INSTALLED_APPS = [
 
     # External applications.
     'axes',
+    'django_mailer',
     'south',
     'compressor',
     'easy_thumbnails',
@@ -286,6 +287,11 @@ LOGGING = {
 # SESSION_COOKIE_HTTPONLY = True
 # CSRF_COOKIE_SECURE = True
 # X_FRAME_OPTIONS = 'DENY'
+
+#
+# Mailing
+#
+EMAIL_BACKEND = 'django_mailer.smtp_queue.EmailBackend'
 
 #
 # Django-axes
