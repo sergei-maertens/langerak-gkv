@@ -1,0 +1,17 @@
+<script>
+$(function() {
+  $('body').on('click', '.social.twitter.share a', function(e) {
+    e.preventDefault();
+    // title etc -> use meta tags
+    var href = $(this).data('href') || $(this).attr('href');
+    var url = '//twitter.com/share?url='+encodeURIComponent(href);
+    var top = screen.height/2-150;
+    var left = screen.width/2-200;
+    var popup = window.open(url, 'tweet', 'width=400,height=300,top='+top+',left='+left);
+    if (window.focus) {
+        popup.focus();
+    }
+    return false;
+  });
+});
+</script>

@@ -19,8 +19,8 @@
                     <span class="fa fa-facebook"></span>
                 </a>
             </li>
-            <li class="social twitter">
-                <a href="#"><span class="fa fa-twitter"></span></a>
+            <li class="social twitter share">
+                <a href="#" data-href="{% absolute_url plugin.instance.page_link.get_absolute_url %}"><span class="fa fa-twitter"></span></a>
             </li>
             {% endif %}
             {% if plugin.instance.page_link_id %}
