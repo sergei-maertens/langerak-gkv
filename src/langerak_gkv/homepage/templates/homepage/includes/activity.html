@@ -1,4 +1,4 @@
-{% load i18n thumbnail %}
+{% load i18n thumbnail koningskerk_tags %}
 {% if activity %}
 <article class="activity link-height" data-linkid="{{ linkid }}">
     <header>
@@ -15,7 +15,7 @@
     <footer>
         <ul class="list-inline">
             <li class="social facebook">
-                <a href="#"><span class="fa fa-facebook"></span></a>
+                <a href="#" data-href="{% absolute_url activity.get_absolute_url %}"><span class="fa fa-facebook"></span></a>
             </li>
             <li class="social twitter">
                 <a href="#"><span class="fa fa-twitter"></span></a>

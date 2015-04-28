@@ -83,7 +83,10 @@
                     </div>
                 </div>
 
-                <div id="copyright" class="narrow">&copy; Copyright Koningskerk 2014</div>
+                <div id="copyright" class="narrow">
+                    &copy; Copyright Koningskerk 2014
+                    {# <div class="fb-like pull-right" data-share="true" data-width="400" data-show-faces="true"></div> #}
+                </div>
             </footer>
         {% endblock %}
 
@@ -92,6 +95,7 @@
         {% compress js %}
             {% leaflet_js %}
             <script src="{% static 'langerak_gkv/js/global.js' %}"></script>
+            {% include "includes/facebook.html" %}
         {% endcompress %}
 
         {% block extra_js %}{% endblock %}
