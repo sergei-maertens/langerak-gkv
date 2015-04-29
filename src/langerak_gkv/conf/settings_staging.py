@@ -1,3 +1,4 @@
+import raven
 from settings import *
 
 #
