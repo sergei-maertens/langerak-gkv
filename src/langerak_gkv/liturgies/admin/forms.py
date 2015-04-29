@@ -1,7 +1,7 @@
 from django import forms
 
 from langerak_gkv.mailing.forms import MailForm
-from ..models import MailRecipient
+from ..models import MailRecipient, Liturgy
 
 
 class LiturgyMailForm(MailForm):
@@ -23,3 +23,7 @@ class LiturgyMailForm(MailForm):
 
     def save(self, *args, **kwargs):
         import bpdb; bpdb.set_trace()
+
+
+class LiturgiesForm(forms.Form):
+    liturgy = forms.ModelMultipleChoiceField(queryset=Liturgy.objects.all())

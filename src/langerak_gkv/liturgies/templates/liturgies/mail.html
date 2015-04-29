@@ -1,0 +1,20 @@
+{% load i18n %}{% trans "Liturgies" %}
+==================================
+
+{% for liturgy in liturgies %}
+
+{% blocktrans with counter=forloop.counter %}Liturgy {{ counter }}{% endblocktrans %}
+-----------------------------
+
+{% trans "Service" %}: {{ liturgy.service.name }}, {{ liturgy.date|date:"l j F" }}, {{ liturgy.service.time|time:"H:i" }}
+{% trans "Preacher" %}: {{ liturgy.preacher }} ({{ liturgy.preach_authorer|default:_('no author') }})
+
+{% trans "Collections" %}: {{ liturgy.get_collections|join:', '|default:_('(none)') }}
+
+{% trans "Main section" %}: {{ liturgy.main_section|default:_('(empty)') }}
+{% trans "Service theme" %}: {{ liturgy.service_theme|default:_('(empty)') }}
+
+{% trans "Content" %}: {{ liturgy.liturgy|default:_('(empty)') }}
+
+{% trans "Extra information:" %} {{ liturgy.extra_information|default:_('(empty)') }}
+{% endfor %}
