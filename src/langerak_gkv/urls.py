@@ -10,6 +10,7 @@ admin.autodiscover()
 urlpatterns = patterns(
     '',
     url(r'^api/v1/', include('langerak_gkv.api.urls', namespace='api')),
+    url(r'^admin/rosetta/', include('rosetta.urls')),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^activities/', include('langerak_gkv.activities.urls', namespace='activities')),
     url(r'^liturgies/', include('langerak_gkv.liturgies.urls', namespace='liturgies')),

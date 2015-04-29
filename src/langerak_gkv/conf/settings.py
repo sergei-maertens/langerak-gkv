@@ -175,6 +175,7 @@ INSTALLED_APPS = [
     'leaflet',
     'formulation',
     'rest_framework',
+    'rosetta',
 
     # cms
     'mptt',
