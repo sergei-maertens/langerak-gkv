@@ -43,7 +43,7 @@ INSTALLED_APPS += [
 
 RAVEN_CONFIG = {
     'dsn': 'http://',
-    'release': raven.fetch_git_sha(os.path.dirname(__file__)),
+    'release': raven.fetch_git_sha(ROOT_DIR),
 }
 
 
