@@ -1,4 +1,5 @@
 from django import forms
+from django.core.mail import send_mail
 
 from langerak_gkv.mailing.forms import MailForm
 from ..models import MailRecipient, Liturgy
@@ -22,7 +23,12 @@ class LiturgyMailForm(MailForm):
         )
 
     def save(self, *args, **kwargs):
-        import bpdb; bpdb.set_trace()
+        mail = super(LiturgyMailForm, self).save(*args, **kwargs)
+        recipients = self.cleaned_data['recipients']
+        to = [r.email for r in recipients]
+        send_mail(mail.subject, mail.body, None, to)
+        recipients.update(is_sent=True)
+        return mail
 
 
 class LiturgiesForm(forms.Form):

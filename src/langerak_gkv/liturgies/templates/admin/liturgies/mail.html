@@ -16,6 +16,7 @@
 
 
     <form action="." method="post">{% csrf_token %}
+        {% for liturgy in liturgies %}<input type="hidden" name="liturgy" value="{{ liturgy.pk }}">{% endfor %}
         <fieldset class="module aligned">
             <h2>{% trans "Mail content" %}</h2>
             {% for field in form.visible_fields %}

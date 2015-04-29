@@ -1,3 +1,5 @@
+from django.contrib import messages
+from django.core.urlresolvers import reverse_lazy
 from django.template.loader import render_to_string
 from django.utils.translation import ugettext_lazy as _
 from django.views.generic import CreateView
@@ -11,6 +13,7 @@ class LiturgyEmailView(CreateView):
     model = Mail
     form_class = LiturgyMailForm
     template_name = 'admin/liturgies/mail.html'
+    success_url = reverse_lazy('admin:liturgies_liturgy_changelist')
 
     def _get_liturgies(self):
         form = LiturgiesForm(data=self.request.REQUEST)
@@ -38,4 +41,10 @@ class LiturgyEmailView(CreateView):
     def get_context_data(self, **kwargs):
         kwargs['opts'] = MailRecipient._meta
         kwargs['app_label'] = MailRecipient._meta.app_label
+        kwargs['liturgies'] = self._get_liturgies()
         return super(LiturgyEmailView, self).get_context_data(**kwargs)
+
+    def form_valid(self, form):
+        response = super(LiturgyEmailView, self).form_valid(form)
+        messages.success(self.request, _('The email has been put on the queue and will be send shortly'))
+        return response
