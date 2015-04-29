@@ -5,7 +5,6 @@ Sphinx==1.2
 Pillow==2.3.0
 django_compressor==1.4
 django-axes==1.3.6
-# raven
 django-choices==1.3
 formulation==2.0.13
 easy-thumbnails==2.2
@@ -13,6 +12,7 @@ django-class-based-auth-views==0.2
 django-image-cropping
 BeautifulSoup # lxml & compressor
 django-autoslug==1.7.2
+django-rosetta==0.7.6
 
 # api/http
 requests

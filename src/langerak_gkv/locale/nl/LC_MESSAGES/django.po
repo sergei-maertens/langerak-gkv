@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-04-20 02:10-0500\n"
+"POT-Creation-Date: 2015-04-29 15:56-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -183,55 +183,55 @@ msgid ""
 "            "
 msgstr ""
 
-#: conf/settings.py:368 conf/settings.py:396
+#: conf/settings.py:375 conf/settings.py:403
 msgid "Default"
 msgstr ""
 
-#: conf/settings.py:369
+#: conf/settings.py:376
 msgid "Homepage"
 msgstr ""
 
-#: conf/settings.py:370
+#: conf/settings.py:377
 msgid "Content left, sidebar right"
 msgstr ""
 
-#: conf/settings.py:371
+#: conf/settings.py:378
 msgid "3 Columns (responsive)"
 msgstr ""
 
-#: conf/settings.py:385
+#: conf/settings.py:392
 msgid "header top image"
 msgstr ""
 
-#: conf/settings.py:397
+#: conf/settings.py:404
 msgid "Orange"
 msgstr ""
 
-#: conf/settings.py:398
+#: conf/settings.py:405
 msgid "Blue"
 msgstr ""
 
-#: conf/settings.py:399
+#: conf/settings.py:406
 msgid "Green"
 msgstr ""
 
-#: conf/settings.py:400
+#: conf/settings.py:407
 msgid "Purple"
 msgstr ""
 
-#: conf/settings.py:401
+#: conf/settings.py:408
 msgid "Read-more orange"
 msgstr ""
 
-#: conf/settings.py:402
+#: conf/settings.py:409
 msgid "Read-more blue"
 msgstr ""
 
-#: conf/settings.py:403
+#: conf/settings.py:410
 msgid "Read-more green"
 msgstr ""
 
-#: conf/settings.py:404
+#: conf/settings.py:411
 msgid "Read-more purple"
 msgstr ""
 
@@ -239,7 +239,7 @@ msgstr ""
 msgid "Homepage link block"
 msgstr ""
 
-#: homepage/models.py:11
+#: homepage/models.py:11 mailing/models.py:16
 msgid "email"
 msgstr ""
 
@@ -317,7 +317,7 @@ msgstr ""
 msgid "Upcoming birthdays"
 msgstr ""
 
-#: homepage/templates/homepage/cmsplugin/link.html:27
+#: homepage/templates/homepage/cmsplugin/link.html:29
 #: homepage/templates/homepage/includes/activity.html:25
 msgid "Read more"
 msgstr ""
@@ -326,7 +326,7 @@ msgstr ""
 msgid "Fill the form and our prayer group will pray for you."
 msgstr ""
 
-#: liturgies/cms_app.py:10
+#: liturgies/cms_app.py:10 liturgies/templates/liturgies/mail.html:1
 msgid "Liturgies"
 msgstr ""
 
@@ -375,11 +375,11 @@ msgstr ""
 msgid "audiofile"
 msgstr ""
 
-#: liturgies/models.py:20 liturgies/models.py:70
+#: liturgies/models.py:20
 msgid "beamist"
 msgstr ""
 
-#: liturgies/models.py:21 liturgies/models.py:69
+#: liturgies/models.py:21
 msgid "organist"
 msgstr ""
 
@@ -411,12 +411,50 @@ msgstr ""
 msgid "service time"
 msgstr ""
 
+#: liturgies/models.py:69
+#, python-format
+msgid "organist (%s)"
+msgstr ""
+
+#: liturgies/models.py:70
+#, python-format
+msgid "beamist (%s)"
+msgstr ""
+
 #: liturgies/models.py:71
 msgid "other"
 msgstr ""
 
 #: liturgies/urls.py:10
 msgid "^history/$"
+msgstr ""
+
+#: liturgies/admin/__init__.py:48
+msgid "view email recipients"
+msgstr ""
+
+#: liturgies/admin/actions.py:17
+msgid "Compose and send e-mail"
+msgstr ""
+
+#: liturgies/admin/views.py:33
+msgid "Liturgy {} - {}"
+msgstr ""
+
+#: liturgies/admin/views.py:49
+msgid "The email has been put on the queue and will be send shortly"
+msgstr ""
+
+#: liturgies/templates/admin/liturgies/mail.html:15
+msgid "Send liturgy mailing"
+msgstr ""
+
+#: liturgies/templates/admin/liturgies/mail.html:21
+msgid "Mail content"
+msgstr ""
+
+#: liturgies/templates/admin/liturgies/mail.html:40
+msgid "Send"
 msgstr ""
 
 #: liturgies/templates/liturgies/detail.html:11
@@ -432,6 +470,7 @@ msgid "hours"
 msgstr ""
 
 #: liturgies/templates/liturgies/detail.html:38
+#: liturgies/templates/liturgies/mail.html:10
 msgid "Preacher"
 msgstr ""
 
@@ -445,10 +484,12 @@ msgid "Preach made by"
 msgstr ""
 
 #: liturgies/templates/liturgies/detail.html:59
+#: liturgies/templates/liturgies/mail.html:14
 msgid "Main section"
 msgstr ""
 
 #: liturgies/templates/liturgies/detail.html:63
+#: liturgies/templates/liturgies/mail.html:15
 msgid "Service theme"
 msgstr ""
 
@@ -458,6 +499,46 @@ msgstr ""
 
 #: liturgies/templates/liturgies/detail.html:89
 msgid "No audio file available"
+msgstr ""
+
+#: liturgies/templates/liturgies/mail.html:6
+#, python-format
+msgid "Liturgy %(counter)s"
+msgstr ""
+
+#: liturgies/templates/liturgies/mail.html:9
+msgid "Service"
+msgstr ""
+
+#: liturgies/templates/liturgies/mail.html:10
+msgid "no author"
+msgstr ""
+
+#: liturgies/templates/liturgies/mail.html:12
+msgid "Collections"
+msgstr ""
+
+#: liturgies/templates/liturgies/mail.html:12
+msgid "(none)"
+msgstr ""
+
+#: liturgies/templates/liturgies/mail.html:14
+#: liturgies/templates/liturgies/mail.html:15
+#: liturgies/templates/liturgies/mail.html:17
+#: liturgies/templates/liturgies/mail.html:19
+msgid "(empty)"
+msgstr ""
+
+#: liturgies/templates/liturgies/mail.html:17
+msgid "Content"
+msgstr ""
+
+#: liturgies/templates/liturgies/mail.html:19
+msgid "Extra information:"
+msgstr ""
+
+#: mailing/models.py:17
+msgid "emails"
 msgstr ""
 
 #: templates/default.form:70
