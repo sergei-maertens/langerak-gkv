@@ -20,5 +20,7 @@
         <p>{% trans "Sorry, no items match your search criteria." %}</p>
     {% endfor %}
 
-    {% include 'includes/pagination.html' %}
+    {% with extra_query='&q='|add:request.GET.q %}
+    {% include 'includes/pagination.html' with page_obj=page %}
+    {% endwith %}
 {% endblock %}
