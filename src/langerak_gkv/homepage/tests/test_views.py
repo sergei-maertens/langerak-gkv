@@ -7,7 +7,6 @@ from django_webtest import WebTest
 from ..models import PrayerOnDemand
 
 
-
 class HomepageTests(WebTest):
 
     @skip('TODO')
@@ -16,13 +15,12 @@ class HomepageTests(WebTest):
         # test that the prayer on demand form is present
         pass
 
-
     def test_prayer_on_demand(self):
         """ Test that submitting the prayer on demand form sends an e-mail """
-        homepage = self.app.get(reverse('home'))
+        homepage = self.app.get(reverse('pod'))
         self.assertEquals(homepage.status_code, 200)
 
-        pod_form = homepage.forms[1]
+        pod_form = homepage.forms[2]
         pod_form['email'] = 'test@test.com'
         pod_form['name'] = 'test name'
         pod_form['body'] = 'Pray for me'

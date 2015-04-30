@@ -17,7 +17,7 @@ class HomepageView(TemplateView):
     def get_context_data(self, **kwargs):
         # form initialization is specific to this view, the create view has its
         # own form builder
-        kwargs['form'] = PrayerOnDemandForm(request=self.request)
+        kwargs['pod_form'] = PrayerOnDemandForm(request=self.request)
         kwargs['activities'] = list(Activity.objects.homepage().order_by('?')[:4])
         return super(HomepageView, self).get_context_data(**kwargs)
 
