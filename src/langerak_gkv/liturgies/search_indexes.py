@@ -4,7 +4,7 @@ from .models import Liturgy
 
 
 class LiturgyIndex(indexes.SearchIndex, indexes.Indexable):
-    text = indexes.CharField(document=True, use_template=True)
+    text = indexes.EdgeNgramField(document=True, use_template=True)
 
     def get_model(self):
         return Liturgy
