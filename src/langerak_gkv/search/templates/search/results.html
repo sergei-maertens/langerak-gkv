@@ -1,7 +1,8 @@
-{% extends "cms/base.html" %}{% load i18n %}
+{% extends "master.html" %}{% load i18n %}
+
+{% block extra_title %} &bull; {% trans "Search results" %}{% endblock %}
 
 {% block body-class %}{{ block.super }} search{% endblock body-class %}
-
 
 {% block content %}
     {% for result in page.object_list %}
