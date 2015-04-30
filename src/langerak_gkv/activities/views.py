@@ -1,9 +1,11 @@
-from datetime import date
+from datetime import date, datetime, time
 
 from django.db.models import Q
 from django.views.generic import (
     DayArchiveView, TemplateView, DetailView, WeekArchiveView, ListView
 )
+
+from django_ical.views import ICalFeed
 
 from .models import Activity
 
@@ -65,3 +67,27 @@ class ActivitySearchView(ActivitiesTodayMixin, ListView):
                  Q(liturgy__preacher__icontains=term) | Q(liturgy__liturgy__icontains=term) | \
                  Q(liturgy__service_theme__icontains=term)
         return Activity.objects.filter(q).distinct()
+
+
+class Feed(ICalFeed):
+    product_id = '-//koningskerk.nu//Activities//NL'
+    timezone = 'Europe/Amsterdam'
+    file_name = 'activities.ics'
+
+    def items(self):
+        return Activity.objects.all().order_by('-start_date', '-start_time', 'end_date')
+
+    def item_link(self, item):
+        return item.get_absolute_url()
+
+    def item_title(self, item):
+        return item.name
+
+    def item_description(self, item):
+        return item.description
+
+    def item_start_datetime(self, item):
+        return datetime.combine(item.start_date, item.start_time or time())
+
+    def item_end_datetime(self, item):
+        return datetime.combine(item.end_date, item.end_time or time())

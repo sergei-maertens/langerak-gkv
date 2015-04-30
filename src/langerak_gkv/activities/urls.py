@@ -2,13 +2,14 @@ from django.conf.urls import patterns, url
 
 from .views import (
     ActivityCalendarView, ActivityDetailView, ActivityWeekArchiveView,
-    ActivityDayArchiveView, ActivitySearchView,
+    ActivityDayArchiveView, ActivitySearchView, Feed
 )
 
 
 urlpatterns = patterns(
     '',
     url(r'^$', ActivityCalendarView.as_view(), name='calendar'),
+    url(r'^feed.ics$', Feed(), name='ical-feed'),
     url(r'^searchresults/$', ActivitySearchView.as_view(), name='search'),
     url(r'^(?P<slug>[\w\-_]+)/$', ActivityDetailView.as_view(), name='detail'),
     url(r'^(?P<year>\d{4})/week/(?P<week>\d+)/$',
