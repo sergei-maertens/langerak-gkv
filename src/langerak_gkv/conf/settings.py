@@ -176,6 +176,8 @@ INSTALLED_APPS = [
     'formulation',
     'rest_framework',
     'rosetta',
+    'haystack',
+    'aldryn_search',
 
     # cms
     'mptt',
@@ -196,6 +198,7 @@ INSTALLED_APPS = [
     'langerak_gkv.homepage',
     'langerak_gkv.liturgies',
     'langerak_gkv.mailing',
+    'langerak_gkv.search',
     'langerak_gkv.users',
     'langerak_gkv.utils',
     'langerak_gkv.worklog',
@@ -432,3 +435,17 @@ LEAFLET_CONFIG = {
 EMAIL_POD = 'pod@koningskerk.nu'
 EMAIL_ORGANIST = 'organist@koningskerk.nu'
 EMAIL_BEAMIST = 'beamist@koningskerk.nu'
+
+
+#
+# Django-haystack
+#
+HAYSTACK_CONNECTIONS = {
+    'default': {
+        'ENGINE': 'haystack.backends.elasticsearch_backend.ElasticsearchSearchEngine',
+        'URL': 'http://127.0.0.1:9200/',
+        'INDEX_NAME': 'koningskerk',
+    },
+}
+# HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'
+# HAYSTACK_ROUTERS = ['aldryn_search.router.LanguageRouter',]

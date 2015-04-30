@@ -14,6 +14,7 @@ urlpatterns = patterns(
     url(r'^admin/', include(admin.site.urls)),
     url(r'^activities/', include('langerak_gkv.activities.urls', namespace='activities')),
     url(r'^liturgies/', include('langerak_gkv.liturgies.urls', namespace='liturgies')),
+    url(r'^search/', include('langerak_gkv.search.urls', namespace='search')),
     url(r'^users/', include('langerak_gkv.users.urls', namespace='users')),
     url(r'^', include('langerak_gkv.homepage.urls')),
 

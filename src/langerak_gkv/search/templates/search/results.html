@@ -1,0 +1,20 @@
+{% extends "cms/base.html" %}{% load i18n %}
+
+{% block body-class %}{{ block.super }} search{% endblock body-class %}
+
+
+{% block content %}
+	{% for result in page.object_list %}
+	    {% with type=result.content_type object=result.object %}
+	        {% if type == 'cms.title' %}
+	            {% include 'search/cms_item.html' with object=object item_type='cms' result=result %}
+	        {% else %}
+	            {% include 'search/base_item.html' with object=object %}
+	        {% endif %}
+	    {% endwith %}
+	{% empty %}
+	    <p>{% trans "Sorry, no items match your search criteria." %}</p>
+	{% endfor %}
+
+	{% include 'includes/pagination.html' %}
+{% endblock %}

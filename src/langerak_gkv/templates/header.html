@@ -15,8 +15,9 @@
 
     <a href="{% url 'home' %}" id="logo">Koningskerk</a>
 
-    <form id="search" action="#TODO" class="form-inline">
-        <input name="q" placeholder="{% trans "Search" %}" class="form-control">
+    <form id="search" action="{% url 'search:search' %}" class="form-inline">
+        <input name="q" placeholder="{% trans "Search" %}" class="form-control"
+            {% if request.GET.q %}value="{{ request.GET.q }}"{% endif %}>
         <button type="submit" class="btn-search"><i class="fa fa-search"></i></button>
     </form>
 </header>
