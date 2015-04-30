@@ -1,0 +1,8 @@
+{% extends "search/base_item.html" %}
+{% load i18n thumbnail %}
+
+{% block item-image %}<i class="fa fa-bell fa-5x"></i>{% endblock %}
+{% block item-class %}liturgy{% endblock %}
+{% block item-type %}{% trans "Liturgy" %}{% endblock %}
+
+{% block item-title %}<h4><a href="{{ object.get_absolute_url }}">{{ object.date|date:"l j F" }}, {{ object.service.name }}</a></h4>{% endblock %}

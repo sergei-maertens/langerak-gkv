@@ -1,0 +1,6 @@
+{{ object.service.name }}
+{{ object.preacher }}
+{{ object.main_section }}
+{{ object.main_theme }}
+{{ object.main_verse }}
+{{ object.liturgy }}

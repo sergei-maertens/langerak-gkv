@@ -4,17 +4,21 @@
 
 
 {% block content %}
-	{% for result in page.object_list %}
-	    {% with type=result.content_type object=result.object %}
-	        {% if type == 'cms.title' %}
-	            {% include 'search/cms_item.html' with object=object item_type='cms' result=result %}
-	        {% else %}
-	            {% include 'search/base_item.html' with object=object %}
-	        {% endif %}
-	    {% endwith %}
-	{% empty %}
-	    <p>{% trans "Sorry, no items match your search criteria." %}</p>
-	{% endfor %}
+    {% for result in page.object_list %}
+        {% with type=result.content_type object=result.object %}
+            {% if type == 'cms.title' %}
+                {% include 'search/cms_item.html' with object=object item_type='cms' result=result %}
+            {% elif type == 'activities.activity' %}
+                {% include 'search/activity_item.html' with object=object %}
+            {% elif type == 'liturgies.liturgy' %}
+                {% include 'search/liturgy_item.html' with object=object %}
+            {% else %}
+                {% include 'search/base_item.html' with object=object %}
+            {% endif %}
+        {% endwith %}
+    {% empty %}
+        <p>{% trans "Sorry, no items match your search criteria." %}</p>
+    {% endfor %}
 
-	{% include 'includes/pagination.html' %}
+    {% include 'includes/pagination.html' %}
 {% endblock %}
