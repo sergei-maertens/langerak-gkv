@@ -442,7 +442,8 @@ EMAIL_BEAMIST = 'beamist@koningskerk.nu'
 #
 HAYSTACK_CONNECTIONS = {
     'default': {
-        'ENGINE': 'haystack.backends.elasticsearch_backend.ElasticsearchSearchEngine',
+        # 'ENGINE': 'haystack.backends.elasticsearch_backend.ElasticsearchSearchEngine',
+        'ENGINE': 'langerak_gkv.search.backends.ConfigurableElasticSearchEngine',
         'URL': 'http://127.0.0.1:9200/',
         'INDEX_NAME': 'koningskerk',
     },
@@ -462,21 +463,21 @@ ELASTICSEARCH_INDEX_SETTINGS = {
                 u'haystack_ngram': {
                     u'max_gram': 15,
                     u'type': u'nGram',
-                    u'min_gram': 5  # Default: 3
+                    u'min_gram': 2  # Default: 3
                 }
             },
             u'tokenizer': {
-                u'haystack_ngram_tokenizer': {
-                    u'max_gram': 15,
-                    u'type': u'nGram',
-                    u'min_gram': 3
-                },
                 u'haystack_edgengram_tokenizer': {
                     u'max_gram': 15,
                     u'type': u'edgeNGram',
                     # u'side': u'front',
                     u'min_gram': 2
-                }
+                },
+                u'haystack_ngram_tokenizer': {
+                    u'max_gram': 15,
+                    u'type': u'nGram',
+                    u'min_gram': 2
+                },
             },
             u'analyzer': {
                 u'edgengram_analyzer': {
