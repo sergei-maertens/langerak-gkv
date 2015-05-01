@@ -3,7 +3,7 @@ from django.utils.translation import ugettext_lazy as _
 from cms.plugin_base import CMSPluginBase
 from cms.plugin_pool import plugin_pool
 
-from .models import HomepagePageLink
+from .models import HomepagePageLink, CharFieldPlugin
 
 
 class HomepageLinkPlugin(CMSPluginBase):
@@ -14,3 +14,11 @@ class HomepageLinkPlugin(CMSPluginBase):
 
 
 plugin_pool.register_plugin(HomepageLinkPlugin)
+
+
+class CharFieldPlugin(CMSPluginBase):
+    model = CharFieldPlugin
+    name = _('Simple text')
+    render_template = 'homepage/cmsplugin/charfield.html'
+
+plugin_pool.register_plugin(CharFieldPlugin)

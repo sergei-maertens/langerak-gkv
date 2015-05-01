@@ -6,5 +6,4 @@ def sidebar(request):
     return {
         'upcoming_activities': Activity.objects.upcoming(n=5),
         'pod_form': PrayerOnDemandForm(request=request),
-        'preacher': 'ds H.J. Lopers',
     }

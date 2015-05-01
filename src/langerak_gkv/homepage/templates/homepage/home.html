@@ -72,11 +72,15 @@
             <div>
                 <a href="http://www.luisterkerk.nl/gkvlangerak/direct.php">
                     <figure>
-                        <img src="{% static "homepage/predikant.png" %}">
+                        {% placeholder preach_image or %}
+                            <img src="{% static "homepage/predikant.png" %}">
+                        {% endplaceholder %}
                     </figure>
                 </a>
                 <div>
-                    <h3>{% blocktrans %}{{ preacher }} preaches{% endblocktrans %}</h3>
+                    <h3>
+                        {% placeholder preach_title or %}{% trans "Configure title" %}{% endplaceholder %}
+                    </h3>
                     <a href="http://www.luisterkerk.nl/gkvlangerak/direct.php">Watch the latest thoughts <span class="fa fa-youtube-play"></span></a>
                 </div>
             </div>

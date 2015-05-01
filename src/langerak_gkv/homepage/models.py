@@ -32,3 +32,10 @@ class HomepagePageLink(CMSPlugin):
 
     def __unicode__(self):
         return u'{} - {}'.format(self.title, self.page_link.__unicode__())
+
+
+class CharFieldPlugin(CMSPlugin):
+    content = models.CharField(_('text'), max_length=255)
+
+    def __unicode__(self):
+        return self.content
