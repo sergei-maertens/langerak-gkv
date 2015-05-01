@@ -1,8 +1,13 @@
 {% if messages %}
-{# TODO: styling #}
-<ul class="messages">
+<ul class="messages list-group">
     {% for message in messages %}
-    <li>{{ message }}</li>
+        <li class="list-group-item {{ message.tags }}">
+            <i class="fa fa-fw fa-check"></i>
+            <i class="fa fa-fw fa-times"></i>
+            <i class="fa fa-fw fa-exclamation"></i>
+            <i class="fa fa-fw fa-info"></i>
+            {{ message }}
+        </li>
     {% endfor %}
 </ul>
 {% endif %}

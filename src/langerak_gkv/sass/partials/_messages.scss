@@ -1,0 +1,30 @@
+.messages {
+
+  .info {
+    color: $dark-blue;
+  }
+
+  .warning {
+    color: $main-color-orange;
+  }
+
+  .error {
+    color: red;
+    font-weight: bold;
+  }
+
+  .list-group-item {
+
+    .fa {
+      display: none;
+    }
+
+    &.info .fa.fa-info,
+    &.success .fa.fa-check,
+    &.warning .fa.fa-exclamation,
+    &.error .fa.fa-times {
+      display: inline-block;
+    }
+  }
+
+}

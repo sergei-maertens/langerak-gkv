@@ -685,6 +685,28 @@ body > footer article {
   margin-bottom: 0;
 }
 
+/* line 3, ../../../sass/partials/_messages.scss */
+.messages .info {
+  color: #41575D;
+}
+/* line 7, ../../../sass/partials/_messages.scss */
+.messages .warning {
+  color: #EC7537;
+}
+/* line 11, ../../../sass/partials/_messages.scss */
+.messages .error {
+  color: red;
+  font-weight: bold;
+}
+/* line 18, ../../../sass/partials/_messages.scss */
+.messages .list-group-item .fa {
+  display: none;
+}
+/* line 22, ../../../sass/partials/_messages.scss */
+.messages .list-group-item.info .fa.fa-info, .messages .list-group-item.success .fa.fa-check, .messages .list-group-item.warning .fa.fa-exclamation, .messages .list-group-item.error .fa.fa-times {
+  display: inline-block;
+}
+
 /* line 2, ../../../sass/partials/_calendars.scss */
 body.home .calendar {
   background-color: #70BDBD;
