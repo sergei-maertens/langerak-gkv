@@ -1096,6 +1096,39 @@ body.home section.news h1, body.home section.news h2 {
   color: #6D095E;
 }
 
+/* line 94, ../../../sass/partials/_homepage.scss */
+#email-subscribe {
+  max-width: 408px;
+  display: inline;
+  height: 37px;
+  position: relative;
+  top: 1px;
+}
+@media (max-width: 1200px) {
+  /* line 94, ../../../sass/partials/_homepage.scss */
+  #email-subscribe {
+    max-width: 308px;
+  }
+}
+@media (max-width: 990px) {
+  /* line 94, ../../../sass/partials/_homepage.scss */
+  #email-subscribe {
+    max-width: 538px;
+  }
+}
+@media (max-width: 768px) {
+  /* line 94, ../../../sass/partials/_homepage.scss */
+  #email-subscribe {
+    max-width: 200px;
+  }
+}
+
+/* line 111, ../../../sass/partials/_homepage.scss */
+#subscribe-button {
+  display: inline;
+  margin-left: -2px;
+}
+
 /* line 3, ../../../sass/partials/_cms.scss */
 body.cms-page .cms-content {
   background-color: #FFFFFF;

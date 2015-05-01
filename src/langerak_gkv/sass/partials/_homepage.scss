@@ -89,3 +89,26 @@ body.home {
     }
   }
 }
+
+
+#email-subscribe {
+  max-width: 408px;
+  display: inline;
+  height: 37px;
+  position: relative;
+  top: 1px;
+  @media (max-width: 1200px) {
+    max-width: 308px;
+  }
+  @media (max-width: 990px) {
+    max-width: 538px;
+  }
+  @media (max-width: 768px) {
+    max-width: 200px;
+  }
+}
+
+#subscribe-button {
+  display: inline;
+  margin-left: -2px;
+}
