@@ -5,7 +5,7 @@ from django.contrib import admin
 
 from surlex.dj import surl
 
-from langerak_gkv.mailing.views import ActionRedirectView
+from langerak_gkv.mailing.views import ActionRedirectView, RedirectUnsubscribeRequestView
 
 
 admin.autodiscover()
@@ -28,6 +28,11 @@ urlpatterns = patterns(
         'activation-completed/$',
         ActionRedirectView.as_view(),
         name='newsletter_action_activated'),
+    surl(
+        '^newsletter/<newsletter_slug:s>/unsubscribe/confirm/$',
+        RedirectUnsubscribeRequestView.as_view(confirm=True),
+        name='newsletter_unsubscribe_confirm'
+    ),
     url(r'^newsletter/', include('newsletter.urls')),
 
     url(r'^', include('cms.urls')),

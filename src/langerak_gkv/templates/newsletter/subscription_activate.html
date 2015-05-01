@@ -6,9 +6,19 @@
 {% block home-body %}
 <article class="homepage-block">
     <h1>
+    {% if action == 'subscribe' %}
         {% blocktrans with name=newsletter.title %}
         Activate your subscription for the '{{ name }}' newsletter
         {% endblocktrans %}
+    {% elif action == 'unsubscribe' %}
+        {% blocktrans with name=newsletter.title %}
+        Confirm your cancellation for the '{{ name }}' newsletter
+        {% endblocktrans %}
+    {% else %}
+        {% blocktrans with name=newsletter.title %}
+        Update your subscription for the '{{ name }}' newsletter
+        {% endblocktrans %}
+    {% endif %}
     </h1>
 
     <form method="post" action="." class="form-horizontal">
@@ -21,7 +31,7 @@
             </fieldset>
 
             <div class="clearfix">
-                {% use 'btn-submit' btn_class='btn-action pull-right' btn_text=_('Activate') %}
+                {% use 'btn-submit' btn_class='btn-action pull-right' btn_text=_('Confirm') %}
             </div>
         {% endform %}
     </form>

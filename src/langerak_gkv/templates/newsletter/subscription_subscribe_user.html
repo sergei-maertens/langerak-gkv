@@ -10,28 +10,16 @@
         {% blocktrans with name=newsletter.title %}Subscribe to '{{ name }}'{% endblocktrans %}
     </h1>
 
-{% if error %}
+    {% trans "Do you want to subscribe to this newsletter?" %}
 
-    <p>{% trans "Due to a technical error we were not able to submit your confirmation email. This could be because your email address is invalid." %}</p>
-
-{% else %}
-
-    <form method="post" action="." class="form-horizontal">
+    <form method="post" action="{% url "newsletter_subscribe_confirm" newsletter.slug %}" class="form-horizontal">
         {% csrf_token %}
         {% form 'users/profile.form' %}
-            <fieldset>
-                {% for field in form %}
-                    {% field field %}
-                {% endfor %}
-            </fieldset>
-
             <div class="clearfix">
-                {% use 'btn-submit' btn_class='btn-action pull-right' btn_text=_('Activate') %}
+                {% use 'btn-submit' btn_class='btn-action pull-right' btn_text=_('Subscribe') %}
             </div>
         {% endform %}
     </form>
-
-{% endif %}
 
 </article>
 {% endblock home-body %}

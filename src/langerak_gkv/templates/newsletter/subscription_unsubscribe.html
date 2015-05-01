@@ -1,13 +1,12 @@
 {% extends "homepage/home.html" %}
 {% load i18n formulation %}
 
-{% block extra_title %} &bull; {% trans "Newsletter subscribe" %}{% endblock %}
-
+{% block extra_title %} &bull; {% trans "Newsletter unsubscribe" %}{% endblock %}
 
 {% block home-body %}
 <article class="homepage-block">
     <h1>
-        {% blocktrans with name=newsletter.title %}Subscribe to '{{ name }}'{% endblocktrans %}
+        {% blocktrans with name=newsletter.title %}Unsubscribe from '{{ name }}'{% endblocktrans %}
     </h1>
 
 {% if error %}
@@ -26,7 +25,7 @@
             </fieldset>
 
             <div class="clearfix">
-                {% use 'btn-submit' btn_class='btn-action pull-right' btn_text=_('Activate') %}
+                {% use 'btn-submit' btn_class='btn-action pull-right' btn_text=_('Unsubscribe') %}
             </div>
         {% endform %}
     </form>
