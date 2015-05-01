@@ -178,6 +178,9 @@ INSTALLED_APPS = [
     'rosetta',
     'haystack',
     'aldryn_search',
+    'django_extensions',
+    # 'sorl.thumbnail',
+    'newsletter',
 
     # cms
     'mptt',

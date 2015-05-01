@@ -16,6 +16,7 @@ urlpatterns = patterns(
     url(r'^liturgies/', include('langerak_gkv.liturgies.urls', namespace='liturgies')),
     url(r'^search/', include('langerak_gkv.search.urls', namespace='search')),
     url(r'^users/', include('langerak_gkv.users.urls', namespace='users')),
+    url(r'^newsletter/', include('newsletter.urls')),
     url(r'^', include('langerak_gkv.homepage.urls')),
 
     url(r'^', include('cms.urls')),

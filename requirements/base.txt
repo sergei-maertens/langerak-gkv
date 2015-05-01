@@ -14,6 +14,7 @@ BeautifulSoup # lxml & compressor
 django-autoslug==1.7.2
 django-rosetta==0.7.6
 django-ical==1.3
+django-newsletter==0.5.2
 
 # api/http
 requests
