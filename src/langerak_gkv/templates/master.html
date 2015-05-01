@@ -84,8 +84,8 @@
                 </div>
 
                 <div id="copyright" class="narrow">
-                    &copy; Copyright Koningskerk 2014
-                    {# <div class="fb-like pull-right" data-share="true" data-width="400" data-show-faces="true"></div> #}
+                    &copy; Copyright Koningskerk 2014-{% now "Y" %}
+                    <span class="pull-right" style="opacity:0.5;">{% trans "built by Sergei Maertens" %}</span>
                 </div>
             </footer>
         {% endblock %}
