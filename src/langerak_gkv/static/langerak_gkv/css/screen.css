@@ -234,55 +234,71 @@ img {
   color: #FFFFFF;
 }
 
-/* line 112, ../../../sass/partials/_base.scss */
-a.orange, a.green, a.blue, a.purple {
+/* line 113, ../../../sass/partials/_base.scss */
+a.orange, a.green, a.blue, a.purple,
+.btn.orange,
+.btn.green,
+.btn.blue,
+.btn.purple {
   color: #FFFFFF;
   text-transform: uppercase;
   padding: 6px 12px;
   font-weight: bolder;
 }
-/* line 121, ../../../sass/partials/_base.scss */
-a.orange.read-more, a.green.read-more, a.blue.read-more, a.purple.read-more {
+/* line 122, ../../../sass/partials/_base.scss */
+a.orange.read-more, a.green.read-more, a.blue.read-more, a.purple.read-more,
+.btn.orange.read-more,
+.btn.green.read-more,
+.btn.blue.read-more,
+.btn.purple.read-more {
   padding-right: 0;
 }
-/* line 123, ../../../sass/partials/_base.scss */
-a.orange.read-more .glyphicon-play, a.green.read-more .glyphicon-play, a.blue.read-more .glyphicon-play, a.purple.read-more .glyphicon-play {
+/* line 124, ../../../sass/partials/_base.scss */
+a.orange.read-more .glyphicon-play, a.green.read-more .glyphicon-play, a.blue.read-more .glyphicon-play, a.purple.read-more .glyphicon-play,
+.btn.orange.read-more .glyphicon-play,
+.btn.green.read-more .glyphicon-play,
+.btn.blue.read-more .glyphicon-play,
+.btn.purple.read-more .glyphicon-play {
   margin-right: 12px;
   color: #FFFFFF;
 }
-/* line 130, ../../../sass/partials/_base.scss */
-a.orange {
+/* line 131, ../../../sass/partials/_base.scss */
+a.orange,
+.btn.orange {
   background-color: #EC7537;
 }
-/* line 134, ../../../sass/partials/_base.scss */
-a.purple {
+/* line 135, ../../../sass/partials/_base.scss */
+a.purple,
+.btn.purple {
   background-color: #6D095E;
 }
-/* line 138, ../../../sass/partials/_base.scss */
-a.green {
+/* line 139, ../../../sass/partials/_base.scss */
+a.green,
+.btn.green {
   background-color: #D9E12E;
   color: #584C40;
 }
-/* line 143, ../../../sass/partials/_base.scss */
-a.blue {
+/* line 144, ../../../sass/partials/_base.scss */
+a.blue,
+.btn.blue {
   background-color: #70BDBD;
 }
 
-/* line 149, ../../../sass/partials/_base.scss */
+/* line 150, ../../../sass/partials/_base.scss */
 .popover {
   background-color: #A23854;
   border-color: rgba(109, 9, 94, 0.5);
 }
-/* line 153, ../../../sass/partials/_base.scss */
+/* line 154, ../../../sass/partials/_base.scss */
 .popover .popover-content {
   color: #FFFFFF;
   padding: 3px 5px;
 }
-/* line 158, ../../../sass/partials/_base.scss */
+/* line 159, ../../../sass/partials/_base.scss */
 .popover.top .arrow {
   border-top-color: rgba(109, 9, 94, 0.5);
 }
-/* line 161, ../../../sass/partials/_base.scss */
+/* line 162, ../../../sass/partials/_base.scss */
 .popover.top .arrow:after {
   border-top-color: #A23854;
 }
@@ -1282,4 +1298,10 @@ body.profile form.form-horizontal .form-group {
 body.profile form.form-horizontal .form-group .control-label {
   text-align: left;
   font-weight: normal;
+}
+
+/* line 2, ../../../sass/partials/apps/_liturgies.scss */
+body.liturgies.list article h1 {
+  font-size: 1.8em;
+  margin-top: 0;
 }

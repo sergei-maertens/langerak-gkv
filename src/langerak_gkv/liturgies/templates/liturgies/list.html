@@ -1,12 +1,48 @@
-{% extends "liturgies/base.html" %}
+{% extends "liturgies/base.html" %}{% load i18n %}
+
+{% block body-class %}{{ block.super }} liturgies list{% endblock body-class %}
 
 {% block calendar-content %}
-    Upcoming liturgies:
-    <ul>
+<div class="fc fc-ltr fc-unthemed link-height activity-list" data-linkid="1">
+    <div class="fc-toolbar">
+        <div class="fc-center">
+            <h2>{% trans "Upcoming liturgies" %}</h2>
+        </div>
+    </div>
+
+    <div class="fc-day-header sub">
+        <strong>{% blocktrans count counter=paginator.count %}
+        One upcoming{% plural %}{{ counter }} upcoming{% endblocktrans %}</strong>
+    </div>
+
     {% for liturgy in liturgies %}
-        <li>
-            <a href="{% url 'liturgies:detail' liturgy_id=liturgy.id %}">{{ liturgy }}</a>
-        </li>
+        <article class="page-block">
+            <h1>{% blocktrans with date=liturgy.date|date time=liturgy.service.time|time %}
+                {{ date }} <smal>{{ time }}</small> {% endblocktrans %}
+                {% if liturgy.preacher %}<span class="btn blue pull-right">{{ liturgy.preacher }}</span>{% endif %}
+            </h1>
+
+
+            {% if liturgy.service_theme %}
+                <p><i class="fa fa-comment-o pull-left"></i> {{ liturgy.service_theme }}</p>
+            {% endif %}
+
+            {% if liturgy.liturgy %}
+                <p>
+                    <i class="fa fa-quote-left pull-left"></i>
+                    {{ liturgy.liturgy|linebreaksbr|truncatewords:30 }}
+                </p>
+            {% endif %}
+
+            <div class="text-right">
+            <a href="{{ liturgy.get_absolute_url }}" class="orange">{% trans "Read more" %}</a>
+            </div>
+        </article>
+    {% empty %}
+        <article class="page-block">{% trans "No activities this week!" %}</article>
     {% endfor %}
-    </ul>
+
+</div>
+
+{% include 'includes/pagination.html' %}
 {% endblock %}
