@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-04-29 15:56-0500\n"
+"POT-Creation-Date: 2015-05-01 14:15-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -122,6 +122,7 @@ msgstr ""
 
 #: activities/templates/activities/activity_archive_week.html:38
 #: activities/templates/activities/searchresults.html:24
+#: liturgies/templates/liturgies/list.html:42
 msgid "No activities this week!"
 msgstr ""
 
@@ -175,6 +176,10 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
+#: activities/templates/activities/base.html:70
+msgid "iCal feed"
+msgstr ""
+
 #: activities/templates/activities/searchresults.html:9
 #, python-format
 msgid ""
@@ -183,60 +188,64 @@ msgid ""
 "            "
 msgstr ""
 
-#: conf/settings.py:375 conf/settings.py:403
+#: conf/settings.py:382 conf/settings.py:412
 msgid "Default"
 msgstr ""
 
-#: conf/settings.py:376
+#: conf/settings.py:383
 msgid "Homepage"
 msgstr ""
 
-#: conf/settings.py:377
+#: conf/settings.py:384
 msgid "Content left, sidebar right"
 msgstr ""
 
-#: conf/settings.py:378
+#: conf/settings.py:385
 msgid "3 Columns (responsive)"
 msgstr ""
 
-#: conf/settings.py:392
+#: conf/settings.py:401
 msgid "header top image"
 msgstr ""
 
-#: conf/settings.py:404
+#: conf/settings.py:413
 msgid "Orange"
 msgstr ""
 
-#: conf/settings.py:405
+#: conf/settings.py:414
 msgid "Blue"
 msgstr ""
 
-#: conf/settings.py:406
+#: conf/settings.py:415
 msgid "Green"
 msgstr ""
 
-#: conf/settings.py:407
+#: conf/settings.py:416
 msgid "Purple"
 msgstr ""
 
-#: conf/settings.py:408
+#: conf/settings.py:417
 msgid "Read-more orange"
 msgstr ""
 
-#: conf/settings.py:409
+#: conf/settings.py:418
 msgid "Read-more blue"
 msgstr ""
 
-#: conf/settings.py:410
+#: conf/settings.py:419
 msgid "Read-more green"
 msgstr ""
 
-#: conf/settings.py:411
+#: conf/settings.py:420
 msgid "Read-more purple"
 msgstr ""
 
 #: homepage/cms_plugins.py:11
 msgid "Homepage link block"
+msgstr ""
+
+#: homepage/cms_plugins.py:21
+msgid "Simple text"
 msgstr ""
 
 #: homepage/models.py:11 mailing/models.py:16
@@ -287,7 +296,11 @@ msgstr ""
 msgid "enable social sharing"
 msgstr ""
 
-#: homepage/views.py:38 homepage/tests/test_views.py:40
+#: homepage/models.py:38
+msgid "text"
+msgstr ""
+
+#: homepage/views.py:38 homepage/tests/test_views.py:38
 msgid "Your request was received, we will pray for you."
 msgstr ""
 
@@ -300,25 +313,25 @@ msgstr ""
 msgid "Prayer on demand"
 msgstr ""
 
-#: homepage/templates/homepage/home.html:78
-#, python-format
-msgid "%(preacher)s preaches"
+#: homepage/templates/homepage/home.html:87
+msgid "Configure title"
 msgstr ""
 
-#: homepage/templates/homepage/home.html:86
+#: homepage/templates/homepage/home.html:96
 msgid "Koningskerk calendar"
 msgstr ""
 
-#: homepage/templates/homepage/home.html:100
+#: homepage/templates/homepage/home.html:110
 msgid "No upcoming activities"
 msgstr ""
 
-#: homepage/templates/homepage/home.html:108
+#: homepage/templates/homepage/home.html:118
 msgid "Upcoming birthdays"
 msgstr ""
 
 #: homepage/templates/homepage/cmsplugin/link.html:29
 #: homepage/templates/homepage/includes/activity.html:25
+#: liturgies/templates/liturgies/list.html:38
 msgid "Read more"
 msgstr ""
 
@@ -501,6 +514,26 @@ msgstr ""
 msgid "No audio file available"
 msgstr ""
 
+#: liturgies/templates/liturgies/list.html:9
+msgid "Upcoming liturgies"
+msgstr ""
+
+#: liturgies/templates/liturgies/list.html:14
+#, python-format
+msgid ""
+"\n"
+"        One upcoming"
+msgid_plural "%(counter)s upcoming"
+msgstr[0] ""
+msgstr[1] ""
+
+#: liturgies/templates/liturgies/list.html:20
+#, python-format
+msgid ""
+"\n"
+"                %(date)s <smal>%(time)s</small> "
+msgstr ""
+
 #: liturgies/templates/liturgies/mail.html:6
 #, python-format
 msgid "Liturgy %(counter)s"
@@ -541,6 +574,45 @@ msgstr ""
 msgid "emails"
 msgstr ""
 
+#: mailing/views.py:12
+#, python-brace-format
+msgid "You have successfully subscribed to \"{newsletter}\""
+msgstr ""
+
+#: mailing/views.py:13
+#, python-brace-format
+msgid "You have successfully updated your subscription to \"{newsletter}\""
+msgstr ""
+
+#: mailing/views.py:14
+#, python-brace-format
+msgid "You have successfully unsubscribed from \"{newsletter}\""
+msgstr ""
+
+#: search/templates/search/activity_item.html:6
+msgid "Calendar"
+msgstr ""
+
+#: search/templates/search/base_item.html:14
+msgid "Other"
+msgstr ""
+
+#: search/templates/search/cms_item.html:6
+msgid "Page"
+msgstr ""
+
+#: search/templates/search/liturgy_item.html:6
+msgid "Liturgy"
+msgstr ""
+
+#: search/templates/search/results.html:3
+msgid "Search results"
+msgstr ""
+
+#: search/templates/search/results.html:22
+msgid "Sorry, no items match your search criteria."
+msgstr ""
+
 #: templates/default.form:70
 msgid "Submit"
 msgstr ""
@@ -550,32 +622,32 @@ msgstr ""
 msgid "Search"
 msgstr ""
 
-#: templates/header.html:31
+#: templates/header.html:32
 msgid "Menu"
 msgstr ""
 
-#: templates/header.html:37
+#: templates/header.html:38
 msgid "logo"
 msgstr ""
 
-#: templates/header.html:43
+#: templates/header.html:44
 msgid "News"
 msgstr ""
 
-#: templates/header.html:52 templates/header.html.py:59
+#: templates/header.html:53 templates/header.html.py:60
 #: users/templates/users/login.html:17
 msgid "Login"
 msgstr ""
 
-#: templates/header.html:71
+#: templates/header.html:72
 msgid "View own profile"
 msgstr ""
 
-#: templates/header.html:75
+#: templates/header.html:76
 msgid "Administration"
 msgstr ""
 
-#: templates/header.html:83
+#: templates/header.html:84
 msgid "Logout"
 msgstr ""
 
@@ -583,16 +655,115 @@ msgstr ""
 msgid "Signup for the newsletter"
 msgstr ""
 
-#: templates/master.html:52
+#: templates/master.html:55
 msgid "Enter your e-mail address here"
 msgstr ""
 
-#: templates/master.html:59
+#: templates/master.html:55
+msgid "next"
+msgstr ""
+
+#: templates/master.html:65
 msgid "Home"
+msgstr ""
+
+#: templates/master.html:94
+msgid "built by Sergei Maertens"
 msgstr ""
 
 #: templates/cms/base.html:11
 msgid "Put your content here"
+msgstr ""
+
+#: templates/newsletter/subscription_activate.html:4
+msgid "Activate newsletter subscription"
+msgstr ""
+
+#: templates/newsletter/subscription_activate.html:10
+#, python-format
+msgid ""
+"\n"
+"        Activate your subscription for the '%(name)s' newsletter\n"
+"        "
+msgstr ""
+
+#: templates/newsletter/subscription_activate.html:14
+#, python-format
+msgid ""
+"\n"
+"        Confirm your cancellation for the '%(name)s' newsletter\n"
+"        "
+msgstr ""
+
+#: templates/newsletter/subscription_activate.html:18
+#, python-format
+msgid ""
+"\n"
+"        Update your subscription for the '%(name)s' newsletter\n"
+"        "
+msgstr ""
+
+#: templates/newsletter/subscription_activate.html:34
+msgid "Confirm"
+msgstr ""
+
+#: templates/newsletter/subscription_subscribe.html:4
+#: templates/newsletter/subscription_subscribe_user.html:4
+msgid "Newsletter subscribe"
+msgstr ""
+
+#: templates/newsletter/subscription_subscribe.html:10
+#: templates/newsletter/subscription_subscribe_user.html:10
+#, python-format
+msgid "Subscribe to '%(name)s'"
+msgstr ""
+
+#: templates/newsletter/subscription_subscribe.html:15
+#: templates/newsletter/subscription_unsubscribe.html:14
+msgid ""
+"Due to a technical error we were not able to submit your confirmation email. "
+"This could be because your email address is invalid."
+msgstr ""
+
+#: templates/newsletter/subscription_subscribe.html:29
+msgid "Activate"
+msgstr ""
+
+#: templates/newsletter/subscription_subscribe_user.html:13
+msgid "Do you want to subscribe to this newsletter?"
+msgstr ""
+
+#: templates/newsletter/subscription_subscribe_user.html:19
+msgid "Subscribe"
+msgstr ""
+
+#: templates/newsletter/subscription_unsubscribe.html:4
+#: templates/newsletter/subscription_unsubscribe_email_sent.html:4
+#: templates/newsletter/subscription_unsubscribe_user.html:4
+msgid "Newsletter unsubscribe"
+msgstr ""
+
+#: templates/newsletter/subscription_unsubscribe.html:9
+#: templates/newsletter/subscription_unsubscribe_email_sent.html:9
+#: templates/newsletter/subscription_unsubscribe_user.html:9
+#, python-format
+msgid "Unsubscribe from '%(name)s'"
+msgstr ""
+
+#: templates/newsletter/subscription_unsubscribe.html:28
+#: templates/newsletter/subscription_unsubscribe_user.html:18
+msgid "Unsubscribe"
+msgstr ""
+
+#: templates/newsletter/subscription_unsubscribe_email_sent.html:12
+msgid ""
+"Your unsubscription request has successfully been received. An email has "
+"been sent to you with a link you need to follow in order to confirm your "
+"unsubscription."
+msgstr ""
+
+#: templates/newsletter/subscription_unsubscribe_user.html:12
+msgid "Do you want to unsubscribe from this newsletter?"
 msgstr ""
 
 #: users/admin.py:18
