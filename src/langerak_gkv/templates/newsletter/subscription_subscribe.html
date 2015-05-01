@@ -1,4 +1,37 @@
 {% extends "homepage/home.html" %}
-{% load i18n %}
+{% load i18n formulation %}
 
 {% block extra_title %}{% trans "Newsletter subscribe" %}{% endblock %}
+
+
+{% block home-body %}
+<article class="homepage-block">
+    <h1>
+        {% blocktrans with name=newsletter.title %}Subscribe to '{{ name }}'{% endblocktrans %}
+    </h1>
+
+{% if error %}
+
+    <p>{% trans "Due to a technical error we were not able to submit your confirmation email. This could be because your email address is invalid." %}</p>
+
+{% else %}
+
+    <form method="post" action="." class="form-horizontal">
+        {% csrf_token %}
+        {% form 'users/profile.form' %}
+            <fieldset>
+                {% for field in form %}
+                    {% field field %}
+                {% endfor %}
+            </fieldset>
+
+            <div class="clearfix">
+                {% use 'btn-submit' btn_class='btn-action pull-right' btn_text=_('Activate') %}
+            </div>
+        {% endform %}
+    </form>
+
+{% endif %}
+
+</article>
+{% endblock home-body %}
