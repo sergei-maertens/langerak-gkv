@@ -1,10 +1,11 @@
-{% extends "master.html" %}{% load i18n %}
+{% extends "homepage/home.html" %}{% load i18n %}
 
 {% block extra_title %} &bull; {% trans "Search results" %}{% endblock %}
 
 {% block body-class %}{{ block.super }} search{% endblock body-class %}
 
-{% block content %}
+{% block home-body %}
+<section class="home-wrapper">
     {% for result in page.object_list %}
         {% with type=result.content_type object=result.object %}
             {% if type == 'cms.title' %}
@@ -18,10 +19,11 @@
             {% endif %}
         {% endwith %}
     {% empty %}
-        <p>{% trans "Sorry, no items match your search criteria." %}</p>
+        {% trans "Sorry, no items match your search criteria." %}
     {% endfor %}
+</section>
 
     {% with extra_query='&q='|add:request.GET.q %}
-    {% include 'includes/pagination.html' with page_obj=page %}
+        {% include 'includes/pagination.html' with page_obj=page %}
     {% endwith %}
 {% endblock %}

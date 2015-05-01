@@ -8,5 +8,5 @@
 {% block item-title %}<h4><a href="{{ object.get_absolute_url }}">{{ object.date|date:"l j F" }}, {{ object.service.name }}</a></h4>{% endblock %}
 
 {% block item-body %}
-    <section class="intro">{{ object.liturgy|linebreaks }}</section>
+    <section class="intro">{{ object.liturgy|linebreaks|truncatewords:50 }}</section>
 {% endblock %}
