@@ -8,19 +8,21 @@ from django.conf import settings
 class Migration(DataMigration):
 
     depends_on = (
-        ('newsletter', '0001_initial'),
+        ('newsletter', '0006_auto__add_field_newsletter_send_html'),
     )
 
     def forwards(self, orm):
-        newsletter, created = orm['newsletter.Newsletter'].objects.get_or_create(
-            slug='koningskerk',
-            defaults=dict(
+        Newsletter = orm['newsletter.Newsletter']
+        try:
+            newsletter = Newsletter.objects.get(slug='koningskerk')
+        except Newsletter.DoesNotExist:
+            newsletter = Newsletter(
                 title='Koningskerk',
+                slug='koningskerk',
                 email=settings.DEFAULT_FROM_EMAIL,
                 sender='Koningskerk',
             )
-        )
-        if created:
+            newsletter.save()
             newsletter.site.add(settings.SITE_ID)
 
     def backwards(self, orm):
