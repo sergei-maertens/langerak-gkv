@@ -181,6 +181,7 @@ INSTALLED_APPS = [
     'django_extensions',
     # 'sorl.thumbnail',
     'newsletter',
+    'import_export',
 
     # cms
     'mptt',

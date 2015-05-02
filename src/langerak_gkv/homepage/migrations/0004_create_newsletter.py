@@ -7,6 +7,10 @@ from django.conf import settings
 
 class Migration(DataMigration):
 
+    depends_on = (
+        ('newsletter', '0001_initial'),
+    )
+
     def forwards(self, orm):
         newsletter, created = orm['newsletter.Newsletter'].objects.get_or_create(
             slug='koningskerk',
