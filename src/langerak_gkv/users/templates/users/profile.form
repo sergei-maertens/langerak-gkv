@@ -1,4 +1,4 @@
-{% extends "default.form" %}{% load formulation %}
+{% extends "default.form" %}{% load formulation i18n %}
 
 
 {% block _label %}

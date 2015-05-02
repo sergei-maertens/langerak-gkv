@@ -5,6 +5,8 @@ from django.contrib.auth.forms import ReadOnlyPasswordHashField, AuthenticationF
 from django.db.models import Q
 from django.utils.translation import ugettext_lazy as _
 
+from image_cropping import ImageCropWidget
+
 from .models import User
 
 
@@ -97,7 +99,10 @@ class UserChangeForm(forms.ModelForm):
 class ProfileUpdateForm(forms.ModelForm):
     class Meta:
         model = User
-        fields = ('email', 'username', 'mobile', 'picture', 'about_me')
+        fields = ('email', 'username', 'mobile', 'picture', 'cropping', 'about_me')
+        widgets = {
+            'picture': ImageCropWidget,
+        }
 
     def clean_username(self):
         username = self.cleaned_data.get('username')

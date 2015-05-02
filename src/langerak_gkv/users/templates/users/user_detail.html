@@ -13,15 +13,15 @@
         {# Images #}
         <aside class="col-md-5">
             <div class="avatars block link-height" data-linkid="1">
-                <figure>
-                    {% block profile_pic %}
+                {% block profile_pic %}
+                    <figure>
                         {% if profile.picture %}
-                            <img src="{{ profile.picture|thumbnail_url:'default' }}">
+                            <img src="{% thumbnail profile.picture 400x300 box=profile.cropping crop upscale %}">
                         {% else %}
                             <i class="fa fa-user"></i>
                         {% endif %}
-                    {% endblock %}
-                </figure>
+                    </figure>
+                {% endblock %}
 
                 {% if profile.partner %}
                 <div class="section">

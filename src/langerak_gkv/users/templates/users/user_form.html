@@ -1,18 +1,22 @@
 {% extends "users/user_detail.html" %}{% load formulation i18n %}
 
+{% block extrahead %}
+{{ form.media }}
+{% endblock extrahead %}
+
 {% block aside %} {% with search_form as form %} {{ block.super }} {% endwith %} {% endblock %}
 
 
 {% block main-content %}
-<form action="." class="form-horizontal" method="post">{% csrf_token %}
+<form action="." class="form-horizontal" method="post" enctype="multipart/form-data">{% csrf_token %}
     {{ block.super }}
 </form>
 {% endblock %}
 
 
-{% block picture %}
-    {{ block.super }}
-    {# TODO #}
+{% block profile_pic %}
+    {{ form.picture }}
+    {{ form.cropping }}
 {% endblock %}
 
 

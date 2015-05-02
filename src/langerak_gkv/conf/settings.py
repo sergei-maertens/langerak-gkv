@@ -182,6 +182,7 @@ INSTALLED_APPS = [
     # 'sorl.thumbnail',
     'newsletter',
     'import_export',
+    'image_cropping',
 
     # cms
     'mptt',
@@ -371,6 +372,7 @@ THUMBNAIL_ALIASES = {
 THUMBNAIL_ALIASES['']['homepage'] = THUMBNAIL_ALIASES['']['default']
 
 THUMBNAIL_PROCESSORS = (
+    'image_cropping.thumbnail_processors.crop_corners',
     'filer.thumbnail_processors.scale_and_crop_with_subject_location',
 )
 
@@ -505,3 +507,9 @@ ELASTICSEARCH_INDEX_SETTINGS = {
 # DJANGO-IMPORT-EXPORT
 #
 IMPORT_EXPORT_USE_TRANSACTIONS = True
+
+#
+# IMAGE CROPPING
+#
+# IMAGE_CROPPING_JQUERY_URL = None  # we embed it ourselves
+IMAGE_CROPPING_SIZE_WARNING = True

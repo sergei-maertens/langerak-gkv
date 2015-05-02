@@ -16,10 +16,14 @@ $(function() {
                 if (status == google.maps.GeocoderStatus.OK) {
                     var lat = results[0].geometry.location.k;
                     var lng = results[0].geometry.location.D;
-                    var latlng = new L.LatLng(lat, lng);
-                    // add marker & center
-                    L.marker(latlng).addTo(detail.map);
-                    detail.map.panTo(latlng);
+                    try {
+                        var latlng = new L.LatLng(lat, lng);
+                        // add marker & center
+                        L.marker(latlng).addTo(detail.map);
+                        detail.map.panTo(latlng);
+                    } catch (e) {
+                        console.log(e); // TODO: sentry
+                    }
                 } else if (window.console) {
                     console.warn("Geocode was not successful for the following reason: " + status);
                 }
