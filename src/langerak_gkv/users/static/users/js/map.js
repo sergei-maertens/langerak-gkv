@@ -14,8 +14,8 @@ $(function() {
         if (window.address) {
             geocoder.geocode( {'address': window.address}, function(results, status) {
                 if (status == google.maps.GeocoderStatus.OK) {
-                    var lat = results[0].geometry.location.k;
-                    var lng = results[0].geometry.location.D;
+                    var lat = results[0].geometry.location.lat();
+                    var lng = results[0].geometry.location.lng();
                     try {
                         var latlng = new L.LatLng(lat, lng);
                         // add marker & center
