@@ -5,4 +5,4 @@
 #   supervisorctl: name=uwsgi-langerak-{{ deploy_env }} state=restarted
 
 - name: touch wsgi file
-  file: path="{{ project_home }}src/langerak_gkv/wsgi/wsgi_{{ deploy_env }}.py" state=touch
+  file: path="{{ project_home }}/src/langerak_gkv/wsgi/wsgi_{{ deploy_env }}.py" state=touch
