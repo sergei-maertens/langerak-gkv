@@ -3,8 +3,11 @@ from django.utils.translation import ugettext_lazy as _
 from django.core.urlresolvers import reverse
 from django.conf.urls import patterns, url
 
+from import_export.admin import ImportExportActionModelAdmin
+
 from ..models import Liturgy, Service, MailRecipient
 from .actions import send_liturgy_email
+from .resources import LiturgyResource
 from .views import LiturgyEmailView
 
 
@@ -37,11 +40,12 @@ class MailRecipientAdmin(admin.ModelAdmin):
         return action_urls + urls
 
 
-class LiturgyAdmin(admin.ModelAdmin):
+class LiturgyAdmin(ImportExportActionModelAdmin):
     list_display = ('__unicode__', 'date', 'preacher', 'link_emails')
     list_editable = ('preacher',)
     list_filter = ('date', 'service__time')
     inlines = [MailRecipientInline]
+    resource_class = LiturgyResource
 
     def link_emails(self, obj):
         url = reverse('admin:liturgies_mailrecipient_changelist')
