@@ -157,6 +157,7 @@ FIXTURE_DIRS = (
 
 INSTALLED_APPS = [
 
+    'djamin',
     # Note: contenttypes should be first, see Django ticket #10827
     'django.contrib.contenttypes',
     'django.contrib.auth',
