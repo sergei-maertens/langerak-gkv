@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-05-01 14:15-0500\n"
+"POT-Creation-Date: 2015-05-05 10:34-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,8 +23,8 @@ msgid "Activities"
 msgstr ""
 
 #: activities/models.py:35 activities/models.py:102 activities/models.py:113
-#: homepage/models.py:10 users/models.py:209 users/models.py:220
-#: users/models.py:234
+#: homepage/models.py:10 societies/models.py:13 users/models.py:211
+#: users/models.py:222 users/models.py:236
 msgid "name"
 msgstr ""
 
@@ -188,55 +188,55 @@ msgid ""
 "            "
 msgstr ""
 
-#: conf/settings.py:382 conf/settings.py:412
+#: conf/settings.py:387 conf/settings.py:417
 msgid "Default"
 msgstr ""
 
-#: conf/settings.py:383
+#: conf/settings.py:388
 msgid "Homepage"
 msgstr ""
 
-#: conf/settings.py:384
+#: conf/settings.py:389
 msgid "Content left, sidebar right"
 msgstr ""
 
-#: conf/settings.py:385
+#: conf/settings.py:390
 msgid "3 Columns (responsive)"
 msgstr ""
 
-#: conf/settings.py:401
+#: conf/settings.py:406
 msgid "header top image"
 msgstr ""
 
-#: conf/settings.py:413
+#: conf/settings.py:418
 msgid "Orange"
 msgstr ""
 
-#: conf/settings.py:414
+#: conf/settings.py:419
 msgid "Blue"
 msgstr ""
 
-#: conf/settings.py:415
+#: conf/settings.py:420
 msgid "Green"
 msgstr ""
 
-#: conf/settings.py:416
+#: conf/settings.py:421
 msgid "Purple"
 msgstr ""
 
-#: conf/settings.py:417
+#: conf/settings.py:422
 msgid "Read-more orange"
 msgstr ""
 
-#: conf/settings.py:418
+#: conf/settings.py:423
 msgid "Read-more blue"
 msgstr ""
 
-#: conf/settings.py:419
+#: conf/settings.py:424
 msgid "Read-more green"
 msgstr ""
 
-#: conf/settings.py:420
+#: conf/settings.py:425
 msgid "Read-more purple"
 msgstr ""
 
@@ -276,7 +276,7 @@ msgstr ""
 msgid "image"
 msgstr ""
 
-#: homepage/models.py:29 users/models.py:221
+#: homepage/models.py:29 users/models.py:223
 msgid "description"
 msgstr ""
 
@@ -284,11 +284,11 @@ msgstr ""
 msgid "Displayed below the title"
 msgstr ""
 
-#: homepage/models.py:30
+#: homepage/models.py:30 societies/models.py:32
 msgid "page"
 msgstr ""
 
-#: homepage/models.py:30
+#: homepage/models.py:30 societies/models.py:32
 msgid "Page to link to"
 msgstr ""
 
@@ -313,30 +313,31 @@ msgstr ""
 msgid "Prayer on demand"
 msgstr ""
 
-#: homepage/templates/homepage/home.html:87
-msgid "Configure title"
-msgstr ""
-
-#: homepage/templates/homepage/home.html:96
-msgid "Koningskerk calendar"
-msgstr ""
-
-#: homepage/templates/homepage/home.html:110
-msgid "No upcoming activities"
-msgstr ""
-
-#: homepage/templates/homepage/home.html:118
-msgid "Upcoming birthdays"
-msgstr ""
-
 #: homepage/templates/homepage/cmsplugin/link.html:29
 #: homepage/templates/homepage/includes/activity.html:25
 #: liturgies/templates/liturgies/list.html:38
+#: societies/templates/societies/cmsplugin/society.html:11
 msgid "Read more"
 msgstr ""
 
 #: homepage/templates/homepage/includes/pod.html:6
 msgid "Fill the form and our prayer group will pray for you."
+msgstr ""
+
+#: homepage/templates/homepage/includes/sidebar.html:13
+msgid "Configure title"
+msgstr ""
+
+#: homepage/templates/homepage/includes/sidebar.html:22
+msgid "Koningskerk calendar"
+msgstr ""
+
+#: homepage/templates/homepage/includes/sidebar.html:36
+msgid "No upcoming activities"
+msgstr ""
+
+#: homepage/templates/homepage/includes/sidebar.html:44
+msgid "Upcoming birthdays"
 msgstr ""
 
 #: liturgies/cms_app.py:10 liturgies/templates/liturgies/mail.html:1
@@ -442,12 +443,19 @@ msgstr ""
 msgid "^history/$"
 msgstr ""
 
-#: liturgies/admin/__init__.py:48
+#: liturgies/admin/__init__.py:52
 msgid "view email recipients"
 msgstr ""
 
 #: liturgies/admin/actions.py:17
 msgid "Compose and send e-mail"
+msgstr ""
+
+#: liturgies/admin/resources.py:27
+#, python-format
+msgid ""
+"Could not parse time %s. Make sure that the `service__time` field is "
+"formatted as text."
 msgstr ""
 
 #: liturgies/admin/views.py:33
@@ -613,6 +621,38 @@ msgstr ""
 msgid "Sorry, no items match your search criteria."
 msgstr ""
 
+#: societies/admin.py:19
+msgid "member count"
+msgstr ""
+
+#: societies/admin.py:23 societies/admin.py:24
+msgid "edit content"
+msgstr ""
+
+#: societies/cms_plugins.py:11
+msgid "Society"
+msgstr ""
+
+#: societies/cms_plugins.py:12
+msgid "Societies"
+msgstr ""
+
+#: societies/models.py:19
+msgid "society"
+msgstr ""
+
+#: societies/models.py:20
+msgid "societies"
+msgstr ""
+
+#: societies/views.py:17
+msgid "This page is only visible for content editors"
+msgstr ""
+
+#: societies/templates/societies/includes/society.html:8
+msgid "Members"
+msgstr ""
+
 #: templates/default.form:70
 msgid "Submit"
 msgstr ""
@@ -651,24 +691,28 @@ msgstr ""
 msgid "Logout"
 msgstr ""
 
-#: templates/master.html:51
+#: templates/master.html:52
 msgid "Signup for the newsletter"
 msgstr ""
 
-#: templates/master.html:55
+#: templates/master.html:56
 msgid "Enter your e-mail address here"
 msgstr ""
 
-#: templates/master.html:55
+#: templates/master.html:56
 msgid "next"
 msgstr ""
 
-#: templates/master.html:65
+#: templates/master.html:66
 msgid "Home"
 msgstr ""
 
-#: templates/master.html:94
+#: templates/master.html:95
 msgid "built by Sergei Maertens"
+msgstr ""
+
+#: templates/admin/base_site.html:4
+msgid "Koningskerk site admin"
 msgstr ""
 
 #: templates/cms/base.html:11
@@ -786,257 +830,257 @@ msgstr ""
 msgid "Users"
 msgstr ""
 
-#: users/forms.py:18
+#: users/forms.py:20
 msgid "A user with that email already exists."
 msgstr ""
 
-#: users/forms.py:19
+#: users/forms.py:21
 msgid "The two password fields didn't match."
 msgstr ""
 
-#: users/forms.py:21 users/forms.py:65
+#: users/forms.py:23 users/forms.py:67
 msgid "Password"
 msgstr ""
 
-#: users/forms.py:23
+#: users/forms.py:25
 msgid "Password confirmation"
 msgstr ""
 
-#: users/forms.py:25
+#: users/forms.py:27
 msgid "Enter the same password as above, for verification."
 msgstr ""
 
-#: users/forms.py:26
+#: users/forms.py:28
 msgid "Username"
 msgstr ""
 
-#: users/forms.py:27
+#: users/forms.py:29
 msgid "Alternative to login."
 msgstr ""
 
-#: users/forms.py:64 users/templates/users/user_detail.html:93
+#: users/forms.py:66 users/templates/users/user_detail.html:93
 msgid "Email"
 msgstr ""
 
-#: users/forms.py:66
+#: users/forms.py:68
 msgid ""
 "Raw passwords are not stored, so there is no way to see this user's "
 "password, but you can change the password using <a href=\"password/\">this "
 "form</a>."
 msgstr ""
 
-#: users/forms.py:93 users/forms.py:109
+#: users/forms.py:95 users/forms.py:114
 msgid "This username is taken, choose a different username."
 msgstr ""
 
-#: users/forms.py:114
+#: users/forms.py:119
 msgid "Email or username"
 msgstr ""
 
-#: users/forms.py:118
+#: users/forms.py:123
 msgid "Name"
 msgstr ""
 
-#: users/forms.py:119
+#: users/forms.py:124
 msgid "Search terms"
 msgstr ""
 
-#: users/forms.py:121
+#: users/forms.py:126
 msgid "Minimum age"
 msgstr ""
 
-#: users/forms.py:122
+#: users/forms.py:127
 msgid "Maximum age"
 msgstr ""
 
-#: users/forms.py:123
+#: users/forms.py:128
 msgid "Gender"
 msgstr ""
 
-#: users/models.py:42
+#: users/models.py:43
 msgid "male"
 msgstr ""
 
-#: users/models.py:43
+#: users/models.py:44
 msgid "female"
 msgstr ""
 
-#: users/models.py:54
+#: users/models.py:55
 msgid "email address"
 msgstr ""
 
-#: users/models.py:55
+#: users/models.py:56
 msgid "username"
 msgstr ""
 
-#: users/models.py:57
+#: users/models.py:58
 msgid "first name"
 msgstr ""
 
-#: users/models.py:58
+#: users/models.py:59
 msgid "last name"
 msgstr ""
 
-#: users/models.py:60
+#: users/models.py:61
 msgid "staff status"
 msgstr ""
 
-#: users/models.py:61
+#: users/models.py:62
 msgid "Designates whether the user can log into this admin site."
 msgstr ""
 
-#: users/models.py:63
+#: users/models.py:64
 msgid "active"
 msgstr ""
 
-#: users/models.py:64
+#: users/models.py:65
 msgid ""
 "Designates whether this user should be treated as active. Unselect this "
 "instead of deleting accounts."
 msgstr ""
 
-#: users/models.py:66
+#: users/models.py:67
 msgid "date joined"
 msgstr ""
 
-#: users/models.py:69
+#: users/models.py:70
 msgid "sex"
 msgstr ""
 
-#: users/models.py:70
+#: users/models.py:71
 msgid "street"
 msgstr ""
 
-#: users/models.py:71
+#: users/models.py:72
 msgid "Street name and number."
 msgstr ""
 
-#: users/models.py:72
+#: users/models.py:73
 msgid "postal code"
 msgstr ""
 
-#: users/models.py:73
+#: users/models.py:74
 msgid "city"
 msgstr ""
 
-#: users/models.py:75
+#: users/models.py:76
 msgid "phone"
 msgstr ""
 
-#: users/models.py:76
+#: users/models.py:77
 msgid "Home phone number"
 msgstr ""
 
-#: users/models.py:77
+#: users/models.py:78
 msgid "mobile phone number"
 msgstr ""
 
-#: users/models.py:78
+#: users/models.py:79
 msgid "Mobile phone number"
 msgstr ""
 
-#: users/models.py:80
+#: users/models.py:81
 msgid "birth_date"
 msgstr ""
 
-#: users/models.py:81
+#: users/models.py:82
 msgid "picture"
 msgstr ""
 
-#: users/models.py:82
+#: users/models.py:83
 msgid "Profile picture"
 msgstr ""
 
-#: users/models.py:83
+#: users/models.py:85
 msgid "Short 'about me' text"
 msgstr ""
 
-#: users/models.py:86 users/models.py:212
+#: users/models.py:88 users/models.py:214
 msgid "district"
 msgstr ""
 
-#: users/models.py:89 users/models.py:238
+#: users/models.py:91 users/models.py:240
 msgid "family"
 msgstr ""
 
-#: users/models.py:98
+#: users/models.py:100
 msgid "user"
 msgstr ""
 
-#: users/models.py:99
+#: users/models.py:101
 msgid "users"
 msgstr ""
 
-#: users/models.py:160
+#: users/models.py:162
 msgid "User 2 is `relation type` of user 1."
 msgstr ""
 
-#: users/models.py:167
+#: users/models.py:169
 msgid "user relation"
 msgstr ""
 
-#: users/models.py:168
+#: users/models.py:170
 msgid "user relations"
 msgstr ""
 
-#: users/models.py:187 users/models.py:190
+#: users/models.py:189 users/models.py:192
 msgid "name (male)"
 msgstr ""
 
-#: users/models.py:188 users/models.py:191
+#: users/models.py:190 users/models.py:193
 msgid "name (female)"
 msgstr ""
 
-#: users/models.py:192
+#: users/models.py:194
 msgid "Reverse direction of the relation"
 msgstr ""
 
-#: users/models.py:195
+#: users/models.py:197
 msgid "is partner?"
 msgstr ""
 
-#: users/models.py:196
+#: users/models.py:198
 msgid "is child/parent?"
 msgstr ""
 
-#: users/models.py:199
+#: users/models.py:201
 msgid "relation type"
 msgstr ""
 
-#: users/models.py:200
+#: users/models.py:202
 msgid "relation types"
 msgstr ""
 
-#: users/models.py:205
+#: users/models.py:207
 #, python-brace-format
 msgid "{0}/{1} (reverse: {2}/{3})"
 msgstr ""
 
-#: users/models.py:213
+#: users/models.py:215
 msgid "districts"
 msgstr ""
 
-#: users/models.py:222
+#: users/models.py:224
 msgid "Describe what someone with this function does."
 msgstr ""
 
-#: users/models.py:225
+#: users/models.py:227
 msgid "district function"
 msgstr ""
 
-#: users/models.py:226
+#: users/models.py:228
 msgid "district functions"
 msgstr ""
 
-#: users/models.py:235
+#: users/models.py:237
 msgid "Last name of the householder."
 msgstr ""
 
-#: users/models.py:239
+#: users/models.py:241
 msgid "families"
 msgstr ""
 
-#: users/models.py:242
+#: users/models.py:244
 #, python-brace-format
 msgid "Fam. {name}"
 msgstr ""
@@ -1123,7 +1167,7 @@ msgstr ""
 msgid "1<sup>st</sup> degree connections"
 msgstr ""
 
-#: users/templates/users/user_form.html:40
+#: users/templates/users/user_form.html:44
 msgid "save"
 msgstr ""
 
