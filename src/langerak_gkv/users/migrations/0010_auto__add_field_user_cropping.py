@@ -7,6 +7,10 @@ from django.db import models
 
 class Migration(SchemaMigration):
 
+    needed_by = (
+        ('cms', '0075_use_structure'),
+    )
+
     def forwards(self, orm):
         # Adding field 'User.cropping'
         db.add_column(u'users_user', 'cropping',
