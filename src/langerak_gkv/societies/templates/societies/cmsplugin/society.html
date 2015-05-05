@@ -1,9 +1,9 @@
 {% load i18n cms_tags %}
 
 <article class="no-padding">
-    <h1>{{ instance.society.name }}</h1>
-
-    {% render_placeholder instance.society.content %}
+    {% with instance.society as society %}
+        {% include "societies/includes/society.html" %}
+    {% endwith %}
 
     {% if instance.page_link %}
     <div class="text-right">

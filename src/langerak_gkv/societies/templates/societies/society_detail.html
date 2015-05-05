@@ -1,0 +1,10 @@
+{% extends "homepage/home.html" %}
+
+
+{% block home-body %}
+<article>
+    {% with object as society %}
+        {% include "societies/includes/society.html" %}
+    {% endwith %}
+</article>
+{% endblock %}

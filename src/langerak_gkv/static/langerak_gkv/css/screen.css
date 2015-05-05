@@ -1190,69 +1190,82 @@ body.cms-page .cms-content {
   margin-top: 30px;
 }
 
-/* line 2, ../../../sass/partials/apps/_profiles.scss */
-body.profile .block {
+/* line 3, ../../../sass/partials/apps/_profiles.scss */
+body.profile .block,
+body.cms-page .block {
   padding: 10px;
   background-color: #FFFFFF;
 }
-/* line 9, ../../../sass/partials/apps/_profiles.scss */
-body.profile .avatars .row.small {
+/* line 10, ../../../sass/partials/apps/_profiles.scss */
+body.profile .avatars .row.small,
+body.cms-page .avatars .row.small {
   margin-left: -2px;
   margin-right: -2px;
 }
-/* line 14, ../../../sass/partials/apps/_profiles.scss */
-body.profile .avatars .row.small > * {
+/* line 15, ../../../sass/partials/apps/_profiles.scss */
+body.profile .avatars .row.small > *,
+body.cms-page .avatars .row.small > * {
   padding-left: 2px;
   padding-right: 2px;
 }
-/* line 21, ../../../sass/partials/apps/_profiles.scss */
-body.profile .relation {
+/* line 22, ../../../sass/partials/apps/_profiles.scss */
+body.profile .relation,
+body.cms-page .relation {
   text-align: center;
   background-color: #FFFFFF;
 }
-/* line 25, ../../../sass/partials/apps/_profiles.scss */
-body.profile .relation.loose {
+/* line 26, ../../../sass/partials/apps/_profiles.scss */
+body.profile .relation.loose,
+body.cms-page .relation.loose {
   margin-bottom: 10px;
 }
-/* line 29, ../../../sass/partials/apps/_profiles.scss */
-body.profile .relation.padded {
+/* line 30, ../../../sass/partials/apps/_profiles.scss */
+body.profile .relation.padded,
+body.cms-page .relation.padded {
   padding: 10px;
 }
-/* line 33, ../../../sass/partials/apps/_profiles.scss */
-body.profile .relation .fa-user {
+/* line 34, ../../../sass/partials/apps/_profiles.scss */
+body.profile .relation .fa-user,
+body.cms-page .relation .fa-user {
   font-size: 500%;
   width: 100%;
   color: #6D095E;
   border: solid 1px rgba(109, 9, 94, 0.2);
 }
-/* line 41, ../../../sass/partials/apps/_profiles.scss */
-body.profile .relation figcaption {
+/* line 42, ../../../sass/partials/apps/_profiles.scss */
+body.profile .relation figcaption,
+body.cms-page .relation figcaption {
   text-align: left;
   color: #584C40;
   margin-top: 5px;
 }
-/* line 47, ../../../sass/partials/apps/_profiles.scss */
-body.profile .relation a:hover {
+/* line 48, ../../../sass/partials/apps/_profiles.scss */
+body.profile .relation a:hover,
+body.cms-page .relation a:hover {
   text-decoration: none;
 }
-/* line 51, ../../../sass/partials/apps/_profiles.scss */
-body.profile .relation .phone {
+/* line 52, ../../../sass/partials/apps/_profiles.scss */
+body.profile .relation .phone,
+body.cms-page .relation .phone {
   margin-top: 5px;
   color: #A23854;
   font-weight: bolder;
 }
-/* line 56, ../../../sass/partials/apps/_profiles.scss */
-body.profile .relation .phone .fa-mobile-phone {
+/* line 57, ../../../sass/partials/apps/_profiles.scss */
+body.profile .relation .phone .fa-mobile-phone,
+body.cms-page .relation .phone .fa-mobile-phone {
   font-size: 18px;
   vertical-align: middle;
 }
-/* line 62, ../../../sass/partials/apps/_profiles.scss */
-body.profile .relation .btn-action {
+/* line 63, ../../../sass/partials/apps/_profiles.scss */
+body.profile .relation .btn-action,
+body.cms-page .relation .btn-action {
   padding: 3px 6px;
   font-size: 12px;
 }
-/* line 67, ../../../sass/partials/apps/_profiles.scss */
-body.profile .relation a.goto {
+/* line 68, ../../../sass/partials/apps/_profiles.scss */
+body.profile .relation a.goto,
+body.cms-page .relation a.goto {
   display: inline-block;
   font-size: 10px;
   line-height: 17px;
@@ -1262,34 +1275,40 @@ body.profile .relation a.goto {
   float: right;
   text-align: center;
 }
-/* line 76, ../../../sass/partials/apps/_profiles.scss */
-body.profile .relation a.goto i.fa-play {
+/* line 77, ../../../sass/partials/apps/_profiles.scss */
+body.profile .relation a.goto i.fa-play,
+body.cms-page .relation a.goto i.fa-play {
   position: relative;
   left: 1px;
 }
-/* line 83, ../../../sass/partials/apps/_profiles.scss */
-body.profile .profile-list .relation .fa-user {
+/* line 84, ../../../sass/partials/apps/_profiles.scss */
+body.profile .profile-list .relation .fa-user,
+body.cms-page .profile-list .relation .fa-user {
   border: none;
   -moz-box-shadow: inset 0 0 1px 0 rgba(162, 56, 84, 0.6);
   -webkit-box-shadow: inset 0 0 1px 0 rgba(162, 56, 84, 0.6);
   box-shadow: inset 0 0 1px 0 rgba(162, 56, 84, 0.6);
 }
-/* line 87, ../../../sass/partials/apps/_profiles.scss */
-body.profile .profile-list .relation .fa-user:before {
+/* line 88, ../../../sass/partials/apps/_profiles.scss */
+body.profile .profile-list .relation .fa-user:before,
+body.cms-page .profile-list .relation .fa-user:before {
   vertical-align: middle;
 }
-/* line 92, ../../../sass/partials/apps/_profiles.scss */
-body.profile #current-user {
+/* line 93, ../../../sass/partials/apps/_profiles.scss */
+body.profile #current-user,
+body.cms-page #current-user {
   background-color: #EC7537;
   color: #FFFFFF;
   margin-bottom: 15px;
 }
-/* line 97, ../../../sass/partials/apps/_profiles.scss */
-body.profile #current-user h4 {
+/* line 98, ../../../sass/partials/apps/_profiles.scss */
+body.profile #current-user h4,
+body.cms-page #current-user h4 {
   margin-top: 0;
 }
-/* line 101, ../../../sass/partials/apps/_profiles.scss */
-body.profile #current-user a {
+/* line 102, ../../../sass/partials/apps/_profiles.scss */
+body.profile #current-user a,
+body.cms-page #current-user a {
   display: block;
   color: #FFFFFF;
   text-decoration: none;
@@ -1298,61 +1317,83 @@ body.profile #current-user a {
   font-size: 12px;
   line-height: 24px;
 }
-/* line 110, ../../../sass/partials/apps/_profiles.scss */
-body.profile #current-user a i.fa {
+/* line 111, ../../../sass/partials/apps/_profiles.scss */
+body.profile #current-user a i.fa,
+body.cms-page #current-user a i.fa {
   width: 16px;
   text-align: center;
   margin-right: 5px;
   font-size: 16px;
 }
-/* line 119, ../../../sass/partials/apps/_profiles.scss */
-body.profile #form-login {
+/* line 120, ../../../sass/partials/apps/_profiles.scss */
+body.profile #form-login,
+body.cms-page #form-login {
   margin-bottom: 25px;
 }
-/* line 121, ../../../sass/partials/apps/_profiles.scss */
-body.profile #form-login input {
+/* line 122, ../../../sass/partials/apps/_profiles.scss */
+body.profile #form-login input,
+body.cms-page #form-login input {
   border: solid 1px rgba(162, 56, 84, 0.3);
 }
-/* line 126, ../../../sass/partials/apps/_profiles.scss */
-body.profile h2.name {
+/* line 127, ../../../sass/partials/apps/_profiles.scss */
+body.profile h2.name,
+body.cms-page h2.name {
   margin-top: 0;
   font-size: 18px;
   font-weight: bold;
   line-height: 24px;
 }
-/* line 132, ../../../sass/partials/apps/_profiles.scss */
-body.profile h2.name .surname {
+/* line 133, ../../../sass/partials/apps/_profiles.scss */
+body.profile h2.name .surname,
+body.cms-page h2.name .surname {
   font-weight: normal;
 }
-/* line 137, ../../../sass/partials/apps/_profiles.scss */
-body.profile .email a {
+/* line 138, ../../../sass/partials/apps/_profiles.scss */
+body.profile .email a,
+body.cms-page .email a {
   color: #EC7537;
 }
 /* line 10, ../../../sass/partials/_utils.scss */
-body.profile form input, body.profile form select, body.profile form textarea {
+body.profile form input, body.profile form select, body.profile form textarea,
+body.cms-page form input,
+body.cms-page form select,
+body.cms-page form textarea {
   -moz-box-shadow: inset 0 0 8px rgba(109, 9, 94, 0.2);
   -webkit-box-shadow: inset 0 0 8px rgba(109, 9, 94, 0.2);
   box-shadow: inset 0 0 8px rgba(109, 9, 94, 0.2);
 }
-/* line 144, ../../../sass/partials/apps/_profiles.scss */
-body.profile form textarea {
+/* line 145, ../../../sass/partials/apps/_profiles.scss */
+body.profile form textarea,
+body.cms-page form textarea {
   height: 75px;
 }
-/* line 148, ../../../sass/partials/apps/_profiles.scss */
-body.profile form .btn-action {
+/* line 149, ../../../sass/partials/apps/_profiles.scss */
+body.profile form .btn-action,
+body.cms-page form .btn-action {
   background-color: #A23854;
   font-size: 14px;
 }
-/* line 154, ../../../sass/partials/apps/_profiles.scss */
-body.profile form.form-horizontal .form-group {
+/* line 155, ../../../sass/partials/apps/_profiles.scss */
+body.profile form.form-horizontal .form-group,
+body.cms-page form.form-horizontal .form-group {
   margin-left: -5px;
   margin-right: -5px;
   margin-bottom: 5px;
 }
-/* line 159, ../../../sass/partials/apps/_profiles.scss */
-body.profile form.form-horizontal .form-group .control-label {
+/* line 160, ../../../sass/partials/apps/_profiles.scss */
+body.profile form.form-horizontal .form-group .control-label,
+body.cms-page form.form-horizontal .form-group .control-label {
   text-align: left;
   font-weight: normal;
+}
+
+/* line 172, ../../../sass/partials/apps/_profiles.scss */
+body.cms-page .profile-list h2 {
+  margin-top: -15px;
+}
+/* line 176, ../../../sass/partials/apps/_profiles.scss */
+body.cms-page .profile-list .relation {
+  background-color: rgba(0, 0, 0, 0.05);
 }
 
 /* line 2, ../../../sass/partials/apps/_liturgies.scss */

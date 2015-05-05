@@ -1,4 +1,5 @@
-body.profile {
+body.profile,
+body.cms-page {
   .block {
     padding: 10px;
     background-color: $white;
@@ -161,6 +162,19 @@ body.profile {
           font-weight: normal;
         }
       }
+    }
+  }
+}
+
+body.cms-page {
+  .profile-list {
+
+    h2 {
+      margin-top: -15px;
+    }
+
+    .relation {
+      background-color: rgba($black, 0.05);
     }
   }
 }

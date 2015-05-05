@@ -7,7 +7,7 @@ from .models import Society
 
 
 class SocietyAdmin(PlaceholderAdminMixin, admin.ModelAdmin):
-    list_display = ('name', 'member_count')
+    list_display = ('name', 'member_count', 'edit_url')
     filter_horizontal = ('members',)
 
     def get_queryset(self, request):
@@ -17,6 +17,12 @@ class SocietyAdmin(PlaceholderAdminMixin, admin.ModelAdmin):
     def member_count(self, obj):
         return obj.members.count()
     member_count.short_description = _('member count')
+
+    def edit_url(self, obj):
+        url = obj.get_absolute_url()
+        return u'<a href="{}">{}</a>'.format(url, _('edit content'))
+    edit_url.short_description = _('edit content')
+    edit_url.allow_tags = True
 
 
 admin.site.register(Society, SocietyAdmin)
