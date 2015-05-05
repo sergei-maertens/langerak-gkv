@@ -18,29 +18,27 @@ django-newsletter==0.5.2
 django-import-export==0.2.6
 
 # api/http
-requests
-djangorestframework
+requests==2.5.1
+djangorestframework==3.1.1
 
 # cms
 django-cms==3.1.0
-djangocms-text-ckeditor
-django-filer
-cmsplugin-filer
-djangocms-link
-djangocms-column
-djangocms-oembed
-djangocms-grid
-djangocms-table
+djangocms-text-ckeditor==2.4.3
+django-filer==0.9.9
+cmsplugin-filer==0.10.1
+djangocms-link==1.6
+djangocms-column==1.5
+djangocms-oembed==0.5
+djangocms-grid==1.2
+djangocms-table==1.2
 
 # search
 elasticsearch==1.4.0
 django-haystack==2.3.1
 aldryn-search==0.2.7
 
-# geo
-# django-geojson
-django-leaflet
-jsonfield
+django-leaflet==0.16
+jsonfield==1.0.3
 
 # mailing
 git+http://github.com/SmileyChris/django-mailer-2.git#egg=django-mailer-2
