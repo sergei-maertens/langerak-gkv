@@ -22,7 +22,7 @@ requests
 djangorestframework
 
 # cms
-django-cms
+django-cms==3.1.0
 djangocms-text-ckeditor
 django-filer
 cmsplugin-filer

@@ -185,7 +185,7 @@ INSTALLED_APPS = [
     'image_cropping',
 
     # cms
-    'mptt',
+    'treebeard',
     'djangocms_text_ckeditor',
     'filer',
     'cmsplugin_filer_file',
@@ -204,6 +204,7 @@ INSTALLED_APPS = [
     'langerak_gkv.liturgies',
     'langerak_gkv.mailing',
     'langerak_gkv.search',
+    'langerak_gkv.societies',
     'langerak_gkv.users',
     'langerak_gkv.utils',
     'langerak_gkv.worklog',

@@ -3,15 +3,13 @@
 {% block content %}
 <div class="row">
     <div class="col-xs-12 col-md-8 col-xl-9">
-        <div class="cms-content">
-            {% placeholder page_content %}
-        </div>
+        {% placeholder page_content %}
     </div>
 
-    <div class="col-xs-12 col-md-4 col-xl-3">
-        <div class="cms-content">
-            {% placeholder sidebar %}
-        </div>
-    </div>
+    <aside class="col-xs-12 col-md-4 col-xl-3">
+        {% placeholder sidebar or %}
+            {% include "homepage/includes/sidebar.html" %}
+        {% endplaceholder %}
+    </aside>
 </div>
 {% endblock %}

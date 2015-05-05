@@ -1,0 +1,16 @@
+{% load i18n cms_tags %}
+
+<article class="no-padding">
+    <h1>{{ instance.society.name }}</h1>
+
+    {% render_placeholder instance.society.content %}
+
+    {% if instance.page_link %}
+    <div class="text-right">
+        <a href="{{ instance.page_link.get_absolute_url }}" class="btn btn-default read-more">
+            {% trans "Read more" %}
+            <span class="glyphicon glyphicon-play"></span>
+        </a>
+    </div>
+</article>
+{% endif %}

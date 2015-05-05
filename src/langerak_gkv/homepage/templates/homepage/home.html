@@ -71,58 +71,7 @@
 
 
     <aside class="col-md-4">
-
-        {# TODO: cms #}
-        <div class="home-wrapper" id="luisterkerk">
-            <div>
-                <a href="http://www.luisterkerk.nl/gkvlangerak/direct.php">
-                    <figure>
-                        {% placeholder preach_image or %}
-                            <img src="{% static "homepage/predikant.png" %}">
-                        {% endplaceholder %}
-                    </figure>
-                </a>
-                <div>
-                    <h3>
-                        {% placeholder preach_title or %}{% trans "Configure title" %}{% endplaceholder %}
-                    </h3>
-                    <a href="http://www.luisterkerk.nl/gkvlangerak/direct.php">Watch the latest thoughts <span class="fa fa-youtube-play"></span></a>
-                </div>
-            </div>
-        </div>
-
-        <section class="home-wrapper">
-            <div class="calendar">
-                <h3>{% trans "Koningskerk calendar" %}</h3>
-                {% for item in upcoming_activities %}
-                    <article class="calendar-item clearfix">
-                        <span class="date pull-left">
-                            <span class="day">{{ item.start_date|date:"d" }}</span>
-                            <span class="month">{{ item.start_date|date:"F" }}</span>
-                        </span>
-
-                        <a class="description" href="{{ item.get_absolute_url }}">
-                            {{ item.name }}
-                            <span class="glyphicon glyphicon-play"></span>
-                        </a>
-                    </article>
-                {% empty %}
-                    {% trans "No upcoming activities" %}
-                {% endfor %}
-            </div>
-        </section>
-
-        {% if user.is_authenticated %}
-        <section class="home-wrapper">
-            <div class="birthdays">
-                <h3>{% trans "Upcoming birthdays" %}</h3>
-                {% show_birthdays weeks=3 %}
-            </div>
-        </section>
-        {% endif %}
-
-        {% include "homepage/includes/pod.html" %}
-
+        {% include "homepage/includes/sidebar.html" %}
     </aside>
 
 
