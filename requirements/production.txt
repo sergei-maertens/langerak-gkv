@@ -2,3 +2,4 @@
 psycopg2==2.5.2
 mysql-python==1.2.5
 raven==5.2.0
+uwsgi==2.0.10

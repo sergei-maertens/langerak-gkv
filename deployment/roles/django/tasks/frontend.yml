@@ -1,8 +1,8 @@
 ---
 # Install the frontend dependencies
 
-- name: Install dependencies with Node
-  npm: path={{ project_home }} production=yes
+# - name: Install dependencies with Node
+#   npm: path={{ project_home }} production=yes
 
 # - name: Install dependencies with Bower
 #   bower: offline=yes path={{ project_home }}
