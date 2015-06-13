@@ -10,23 +10,12 @@ TEMPLATE_DEBUG = DEBUG
 WSGI_APPLICATION = 'langerak_gkv.wsgi.wsgi_production.application'
 
 ADMINS = (
-    # ('Your Name', 'your_email@example.com'),
+    ('Sergei Maertens', 'sergeimaertens@gmail.com'),
 )
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': '',
-        'USER': '',
-        'PASSWORD': '',
-        'HOST': '',
-        'PORT': '',
-    }
-}
 
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 # See https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['koningskerk.nu', 'www.koningskerk.nu']
 
 LOGGING['loggers'].update({
     'langerak_gkv': {
@@ -41,6 +30,8 @@ LOGGING['loggers'].update({
     },
 })
 
+from .settings_local import *
+
 #
 # Raven
 #
@@ -48,6 +39,6 @@ INSTALLED_APPS = list(INSTALLED_APPS) + [
     'raven.contrib.django.raven_compat',
 ]
 RAVEN_CONFIG = {
-    'dsn': 'http://',
+    'dsn': RAVEN_DSN,
     'release': raven.fetch_git_sha(ROOT_DIR),
 }

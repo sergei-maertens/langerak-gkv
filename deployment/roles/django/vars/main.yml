@@ -1,3 +1,0 @@
----
-# combine variables for easier use
-venv: "{{ project_home }}/env"

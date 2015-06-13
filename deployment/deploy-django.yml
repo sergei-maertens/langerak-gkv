@@ -1,13 +1,18 @@
 ---
 # Deploys the application code to the server
 - name: Update the application to the latest version
-  hosts: web
+  hosts: production
   vars:
     deploy_env: "{{ target|default('staging') }}"
     release: "{{ release_tag|default('master') }}"
     repository: https://github.com/sergei-maertens/langerak-gkv.git
     settings_module: langerak_gkv.conf.settings_{{ deploy_env }}
     project_home: "{{ ansible_env.HOME }}/django/{{ deploy_env }}"
-  remote_user: lang
+    venv: "{{ project_home }}/env"
+  remote_user: konkerk
   roles:
+    - git
+    - postgres
+    - supervisor
+    - nginx
     - django

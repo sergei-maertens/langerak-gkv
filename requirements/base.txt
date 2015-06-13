@@ -41,7 +41,7 @@ django-leaflet==0.16
 jsonfield==1.0.3
 
 # mailing
-git+http://github.com/SmileyChris/django-mailer-2.git#egg=django-mailer-2
+git+https://github.com/SmileyChris/django-mailer-2.git#egg=django-mailer-2
 
 # pretty admin
 -e git+https://github.com/hersonls/djamin.git#egg=djamin
