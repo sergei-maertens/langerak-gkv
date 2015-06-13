@@ -1,8 +1,8 @@
-upstream production_django {
+upstream konkerk_production_django {
     server 127.0.0.1:8010;
 }
 
-# upstream staging_django {
+# upstream konkerk_staging_django {
 #     server 127.0.0.1:8011;
 # }
 
@@ -45,7 +45,7 @@ server {
     }
 
     location / {
-        uwsgi_pass production_django;
+        uwsgi_pass konkerk_production_django;
         include uwsgi_params;
     }
 
