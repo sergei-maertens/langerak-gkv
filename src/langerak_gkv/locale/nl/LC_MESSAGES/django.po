@@ -2,168 +2,170 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-06-14 07:32-0500\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2015-06-14 08:14-0551\n"
+"Last-Translator: Sergei Maertens <sergeimaertens@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Translated-Using: django-rosetta 0.7.6\n"
 
 #: activities/cms_app.py:8
 msgid "Activities"
-msgstr ""
+msgstr "Activiteiten"
 
 #: activities/models.py:35 activities/models.py:102 activities/models.py:113
 #: homepage/models.py:10 societies/models.py:13 users/models.py:211
 #: users/models.py:222 users/models.py:236
 msgid "name"
-msgstr ""
+msgstr "naam"
 
 #: activities/models.py:38
 msgid "start date"
-msgstr ""
+msgstr "startdatum"
 
 #: activities/models.py:39
 msgid "end date"
-msgstr ""
+msgstr "einddatum"
 
 #: activities/models.py:40
 msgid "start time"
-msgstr ""
+msgstr "starttijd"
 
 #: activities/models.py:41
 msgid "end time"
-msgstr ""
+msgstr "eindtijd"
 
 #: activities/models.py:45
 msgid "location"
-msgstr ""
+msgstr "locatie"
 
 #: activities/models.py:48
 msgid "short description/intro"
-msgstr ""
+msgstr "korte beschrijving/intro"
 
 #: activities/models.py:52
 msgid "If checked, this activity can appear on the homepage."
 msgstr ""
+"Indien aangevinkt, dan kan deze activiteit op de homepage verschijnen."
 
 #: activities/models.py:55
 msgid "external url"
-msgstr ""
+msgstr "externe link"
 
 #: activities/models.py:57
 msgid "facebook event id"
-msgstr ""
+msgstr "facebook event id"
 
 #: activities/models.py:62
 msgid "activity"
-msgstr ""
+msgstr "activiteit"
 
 #: activities/models.py:63
 msgid "activities"
-msgstr ""
+msgstr "activiteiten"
 
 #: activities/models.py:81
 msgid "The start date cannot come before the end date."
-msgstr ""
+msgstr "De einddatum kan niet voor de startdatum vallen."
 
 #: activities/models.py:85
 msgid "The end time cannot come before the start time."
-msgstr ""
+msgstr "De eindtijd kan niet voor de starttijd vallen."
 
 #: activities/models.py:88
 msgid "Homepage activities must have an image"
-msgstr ""
+msgstr "Homepage-activiteiten moeten een afbeelding hebben"
 
 #: activities/models.py:105 activities/models.py:106
 msgid "intended public"
-msgstr ""
+msgstr "doelpubliek"
 
 #: activities/templates/activities/activity_archive_day.html:12
 msgid "Previous day"
-msgstr ""
+msgstr "Vorige dag"
 
 #: activities/templates/activities/activity_archive_day.html:19
 msgid "Next day"
-msgstr ""
+msgstr "Volgende dag"
 
 #: activities/templates/activities/activity_archive_day.html:28
 #, python-format
 msgid "1 activity "
 msgid_plural "%(count)s activities"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "1 activiteit"
+msgstr[1] "%(count)s activiteiten"
 
 #: activities/templates/activities/activity_archive_day.html:33
 msgid "No activities on this day!"
-msgstr ""
+msgstr "Er zijn geen activiteiten op deze dag!"
 
 #: activities/templates/activities/activity_archive_week.html:12
 msgid "Previous week"
-msgstr ""
+msgstr "Vorige week"
 
 #: activities/templates/activities/activity_archive_week.html:19
 msgid "Next week"
-msgstr ""
+msgstr "Volgende week"
 
 #: activities/templates/activities/activity_archive_week.html:25
 #, python-format
 msgid "Week %(week)s"
-msgstr ""
+msgstr "Week %(week)s"
 
 #: activities/templates/activities/activity_archive_week.html:38
 #: activities/templates/activities/searchresults.html:24
 #: liturgies/templates/liturgies/list.html:42
 msgid "No activities this week!"
-msgstr ""
+msgstr "Er zijn geen activiteiten in deze week!"
 
 #: activities/templates/activities/activity_detail.html:20
 #: liturgies/templates/liturgies/detail.html:27
 msgid "at"
-msgstr ""
+msgstr "om"
 
 #: activities/templates/activities/activity_detail.html:23
 msgid "until"
-msgstr ""
+msgstr "tot"
 
 #: activities/templates/activities/activity_detail.html:49
 #: users/templates/users/user_detail.html:74
 msgid "Location"
-msgstr ""
+msgstr "Locatie"
 
 #: activities/templates/activities/activity_detail.html:53
 msgid "Introduction"
-msgstr ""
+msgstr "Inleiding"
 
 #: activities/templates/activities/activity_detail.html:59
 #, python-format
 msgid "Visit <a href=\"%(url)s\">%(url)s</a>."
-msgstr ""
+msgstr "Bezoek <a href=\"%(url)s\">%(url)s</a>."
 
 #: activities/templates/activities/base.html:12
 msgid "Calendar view"
-msgstr ""
+msgstr "Kalenderweergave"
 
 #: activities/templates/activities/base.html:17
 msgid "Week view"
-msgstr ""
+msgstr "Weekweergave"
 
 #: activities/templates/activities/base.html:22
 msgid "Day view"
-msgstr ""
+msgstr "Dagweergave"
 
 #: activities/templates/activities/base.html:33
 msgid "Find in calendar"
-msgstr ""
+msgstr "Zoek in de kalender"
 
 #: activities/templates/activities/base.html:54
 #, python-format
@@ -173,12 +175,12 @@ msgid ""
 msgid_plural ""
 "%(count)s activities\n"
 "            "
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "1 activiteit"
+msgstr[1] "%(count)s activiteiten"
 
 #: activities/templates/activities/base.html:70
 msgid "iCal feed"
-msgstr ""
+msgstr "iCal feed"
 
 #: activities/templates/activities/searchresults.html:9
 #, python-format
@@ -187,269 +189,273 @@ msgid ""
 "                Search results (%(number_results)s)\n"
 "            "
 msgstr ""
+"\n"
+"Zoekresultaten (%(number_results)s)"
 
 #: conf/settings.py:388 conf/settings.py:418
 msgid "Default"
-msgstr ""
+msgstr "Standaard"
 
 #: conf/settings.py:389
 msgid "Homepage"
-msgstr ""
+msgstr "Homepagina"
 
 #: conf/settings.py:390
 msgid "Content left, sidebar right"
-msgstr ""
+msgstr "Inhoud links, zijbalk rechts"
 
 #: conf/settings.py:391
 msgid "3 Columns (responsive)"
-msgstr ""
+msgstr "3 Kolommen (responsive)"
 
 #: conf/settings.py:407
 msgid "header top image"
-msgstr ""
+msgstr "headerafbeelding"
 
 #: conf/settings.py:419
 msgid "Orange"
-msgstr ""
+msgstr "Oranje"
 
 #: conf/settings.py:420
 msgid "Blue"
-msgstr ""
+msgstr "Blauw"
 
 #: conf/settings.py:421
 msgid "Green"
-msgstr ""
+msgstr "Groen"
 
 #: conf/settings.py:422
 msgid "Purple"
-msgstr ""
+msgstr "Paars"
 
 #: conf/settings.py:423
 msgid "Read-more orange"
-msgstr ""
+msgstr "Lees-meer oranje"
 
 #: conf/settings.py:424
 msgid "Read-more blue"
-msgstr ""
+msgstr "Lees-meer blauw"
 
 #: conf/settings.py:425
 msgid "Read-more green"
-msgstr ""
+msgstr "Lees-meer groen"
 
 #: conf/settings.py:426
 msgid "Read-more purple"
-msgstr ""
+msgstr "Lees-meer paars"
 
 #: homepage/cms_plugins.py:11
 msgid "Homepage link block"
-msgstr ""
+msgstr "Homepagina linkblok"
 
 #: homepage/cms_plugins.py:21
 msgid "Simple text"
-msgstr ""
+msgstr "Eenvoudige tekst"
 
 #: homepage/models.py:11 mailing/models.py:16
 msgid "email"
-msgstr ""
+msgstr "e-mail"
 
 #: homepage/models.py:12
 msgid "What should we pray for?"
-msgstr ""
+msgstr "Waarvoor moeten we bidden?"
 
 #: homepage/models.py:13
 msgid "replied"
-msgstr ""
+msgstr "beantwoord"
 
 #: homepage/models.py:19
 msgid "prayer on demand"
-msgstr ""
+msgstr "prayer on demand"
 
 #: homepage/models.py:20
 msgid "prayer on demands"
-msgstr ""
+msgstr "prayer on demands"
 
 #: homepage/models.py:27
 msgid "title"
-msgstr ""
+msgstr "titel"
 
 #: homepage/models.py:28
 msgid "image"
-msgstr ""
+msgstr "afbeelding"
 
 #: homepage/models.py:29 users/models.py:223
 msgid "description"
-msgstr ""
+msgstr "beschrijving"
 
 #: homepage/models.py:29
 msgid "Displayed below the title"
-msgstr ""
+msgstr "Word afgebeeld onder de titel"
 
 #: homepage/models.py:30 societies/models.py:32
 msgid "page"
-msgstr ""
+msgstr "pagina"
 
 #: homepage/models.py:30 societies/models.py:32
 msgid "Page to link to"
-msgstr ""
+msgstr "Pagina om naar te verwijzen"
 
 #: homepage/models.py:31
 msgid "enable social sharing"
-msgstr ""
+msgstr "laat social sharen toe"
 
 #: homepage/models.py:38
 msgid "text"
-msgstr ""
+msgstr "tekst"
 
 #: homepage/views.py:38 homepage/tests/test_views.py:38
 msgid "Your request was received, we will pray for you."
-msgstr ""
+msgstr "Je verzoek is ontvangen, we zullen voor je bidden."
 
 #: homepage/views.py:50
 #, python-brace-format
 msgid "A new 'Prayer on Demand' was submitted. You can view this at {uri}"
 msgstr ""
+"Er werd een nieuwe 'Prayer on Demand' toegevoegd. Je kan deze bekijken op "
+"{uri}"
 
 #: homepage/views.py:52 homepage/templates/homepage/includes/pod.html:5
 msgid "Prayer on demand"
-msgstr ""
+msgstr "Prayer on demand"
 
 #: homepage/templates/homepage/cmsplugin/link.html:29
 #: homepage/templates/homepage/includes/activity.html:25
 #: liturgies/templates/liturgies/list.html:38
 #: societies/templates/societies/cmsplugin/society.html:11
 msgid "Read more"
-msgstr ""
+msgstr "Lees meer"
 
 #: homepage/templates/homepage/includes/pod.html:6
 msgid "Fill the form and our prayer group will pray for you."
-msgstr ""
+msgstr "Vul het formulier in en onze gebedsgroep zal bidden voor je."
 
 #: homepage/templates/homepage/includes/sidebar.html:13
 msgid "Configure title"
-msgstr ""
+msgstr "Stel titel in"
 
 #: homepage/templates/homepage/includes/sidebar.html:22
 msgid "Koningskerk calendar"
-msgstr ""
+msgstr "Koningskerk kalender"
 
 #: homepage/templates/homepage/includes/sidebar.html:36
 msgid "No upcoming activities"
-msgstr ""
+msgstr "Geen aankomende activiteiten"
 
 #: homepage/templates/homepage/includes/sidebar.html:44
 msgid "Upcoming birthdays"
-msgstr ""
+msgstr "Aankomende verjaardagen"
 
 #: liturgies/cms_app.py:10 liturgies/templates/liturgies/mail.html:1
 msgid "Liturgies"
-msgstr ""
+msgstr "Kerkdiensten"
 
 #: liturgies/menu.py:12
 msgid "liturgies menu"
-msgstr ""
+msgstr "kerdienstenmenu"
 
 #: liturgies/models.py:10
 msgid "date"
-msgstr ""
+msgstr "datum"
 
 #: liturgies/models.py:11
 msgid "service"
-msgstr ""
+msgstr "dienst"
 
 #: liturgies/models.py:12 liturgies/models.py:68
 msgid "preacher"
-msgstr ""
+msgstr "predikant"
 
 #: liturgies/models.py:13
 msgid "preach author"
-msgstr ""
+msgstr "auteur preek"
 
 #: liturgies/models.py:14
 msgid "main section"
-msgstr ""
+msgstr "hoofdgedeelte"
 
 #: liturgies/models.py:15
 msgid "main chapter"
-msgstr ""
+msgstr "hoofd-hoofdstuk"
 
 #: liturgies/models.py:16
 msgid "main verse"
-msgstr ""
+msgstr "hoofdvers"
 
 #: liturgies/models.py:17
 msgid "service theme"
-msgstr ""
+msgstr "theme dienst"
 
 #: liturgies/models.py:18 liturgies/models.py:28 liturgies/models.py:73
 #: liturgies/signals.py:16
 msgid "liturgy"
-msgstr ""
+msgstr "kerkdienst"
 
 #: liturgies/models.py:19
 msgid "audiofile"
-msgstr ""
+msgstr "mp3-bestand"
 
 #: liturgies/models.py:20
 msgid "beamist"
-msgstr ""
+msgstr "beamist"
 
 #: liturgies/models.py:21
 msgid "organist"
-msgstr ""
+msgstr "organist"
 
 #: liturgies/models.py:22
 msgid "collection goal 1"
-msgstr ""
+msgstr "collecte 1"
 
 #: liturgies/models.py:23
 msgid "collection goal 2"
-msgstr ""
+msgstr "collecte 2"
 
 #: liturgies/models.py:24
 msgid "collection goal 3"
-msgstr ""
+msgstr "collecte 3"
 
 #: liturgies/models.py:25
 msgid "extra information"
-msgstr ""
+msgstr "extra informatie"
 
 #: liturgies/models.py:29
 msgid "liturgies"
-msgstr ""
+msgstr "kerkdiensten"
 
 #: liturgies/models.py:58
 msgid "service name"
-msgstr ""
+msgstr "naam dienst"
 
 #: liturgies/models.py:59
 msgid "service time"
-msgstr ""
+msgstr "tijd dienst"
 
 #: liturgies/models.py:69
 #, python-format
 msgid "organist (%s)"
-msgstr ""
+msgstr "organist (%s)"
 
 #: liturgies/models.py:70
 #, python-format
 msgid "beamist (%s)"
-msgstr ""
+msgstr "beamist (%s)"
 
 #: liturgies/models.py:71
 msgid "other"
-msgstr ""
+msgstr "overige"
 
 #: liturgies/urls.py:10
 msgid "^history/$"
-msgstr ""
+msgstr "^geschiedenis/$"
 
 #: liturgies/admin/__init__.py:52
 msgid "view email recipients"
-msgstr ""
+msgstr "bekijk e-mail ontvangers"
 
 #: liturgies/admin/actions.py:17
 msgid "Compose and send e-mail"
-msgstr ""
+msgstr "Opstellen en versturen van e-mail"
 
 #: liturgies/admin/resources.py:27
 #, python-format
@@ -457,74 +463,77 @@ msgid ""
 "Could not parse time %s. Make sure that the `service__time` field is "
 "formatted as text."
 msgstr ""
+"Kon de tijd %s niet parsen. Let er op dat het 'service__time' veld als tekst"
+" geformatteeerd is."
 
 #: liturgies/admin/views.py:33
 msgid "Liturgy {} - {}"
-msgstr ""
+msgstr "Kerkdienst {} - {}"
 
 #: liturgies/admin/views.py:49
 msgid "The email has been put on the queue and will be send shortly"
 msgstr ""
+"De e-mail werd op de wachtlijst geplaatst en zal binnenkort verstuurd worden"
 
 #: liturgies/templates/admin/liturgies/mail.html:15
 msgid "Send liturgy mailing"
-msgstr ""
+msgstr "Verstuur kerkdienst mailing"
 
 #: liturgies/templates/admin/liturgies/mail.html:21
 msgid "Mail content"
-msgstr ""
+msgstr "E-mailinhoud"
 
 #: liturgies/templates/admin/liturgies/mail.html:40
 msgid "Send"
-msgstr ""
+msgstr "Verstuur"
 
 #: liturgies/templates/liturgies/detail.html:11
 msgid "Previous"
-msgstr ""
+msgstr "Vorige"
 
 #: liturgies/templates/liturgies/detail.html:16
 msgid "Next"
-msgstr ""
+msgstr "Volgende"
 
 #: liturgies/templates/liturgies/detail.html:27
 msgid "hours"
-msgstr ""
+msgstr "uren"
 
 #: liturgies/templates/liturgies/detail.html:38
 #: liturgies/templates/liturgies/mail.html:10
 msgid "Preacher"
-msgstr ""
+msgstr "Predikant"
 
 #: liturgies/templates/liturgies/detail.html:44
 #, python-format
 msgid "Collection %(i)s"
-msgstr ""
+msgstr "Collecte %(i)s"
 
 #: liturgies/templates/liturgies/detail.html:55
 msgid "Preach made by"
-msgstr ""
+msgstr "Preek gemaakt door"
 
 #: liturgies/templates/liturgies/detail.html:59
 #: liturgies/templates/liturgies/mail.html:14
 msgid "Main section"
-msgstr ""
+msgstr "Hoofdgedeelte"
 
 #: liturgies/templates/liturgies/detail.html:63
 #: liturgies/templates/liturgies/mail.html:15
 msgid "Service theme"
-msgstr ""
+msgstr "Thema"
 
 #: liturgies/templates/liturgies/detail.html:85
 msgid "This service is available as audio download"
-msgstr ""
+msgstr "Deze dienst is beschikbaar als audiodownload"
 
 #: liturgies/templates/liturgies/detail.html:89
 msgid "No audio file available"
-msgstr ""
+msgstr "Geen audiobestand beschikbaar"
 
 #: liturgies/templates/liturgies/list.html:9
 msgid "Upcoming liturgies"
-msgstr ""
+msgstr "Aankomende kerkdiensten"
 
 #: liturgies/templates/liturgies/list.html:14
 #, python-format
@@ -532,8 +541,8 @@ msgid ""
 "\n"
 "        One upcoming"
 msgid_plural "%(counter)s upcoming"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "1 aankomend"
+msgstr[1] "%(counter)s aankomend"
 
 #: liturgies/templates/liturgies/list.html:20
 #, python-format
@@ -541,191 +550,193 @@ msgid ""
 "\n"
 "                %(date)s <smal>%(time)s</small> "
 msgstr ""
+"\n"
+"%(date)s <small>%(time)s</small>"
 
 #: liturgies/templates/liturgies/mail.html:6
 #, python-format
 msgid "Liturgy %(counter)s"
-msgstr ""
+msgstr "Kerkdienst %(counter)s"
 
 #: liturgies/templates/liturgies/mail.html:9
 msgid "Service"
-msgstr ""
+msgstr "Dienst"
 
 #: liturgies/templates/liturgies/mail.html:10
 msgid "no author"
-msgstr ""
+msgstr "geen auteur"
 
 #: liturgies/templates/liturgies/mail.html:12
 msgid "Collections"
-msgstr ""
+msgstr "Collectes"
 
 #: liturgies/templates/liturgies/mail.html:12
 msgid "(none)"
-msgstr ""
+msgstr "(geen)"
 
 #: liturgies/templates/liturgies/mail.html:14
 #: liturgies/templates/liturgies/mail.html:15
 #: liturgies/templates/liturgies/mail.html:17
 #: liturgies/templates/liturgies/mail.html:19
 msgid "(empty)"
-msgstr ""
+msgstr "(leeg)"
 
 #: liturgies/templates/liturgies/mail.html:17
 msgid "Content"
-msgstr ""
+msgstr "Inhoud"
 
 #: liturgies/templates/liturgies/mail.html:19
 msgid "Extra information:"
-msgstr ""
+msgstr "Extra informatie:"
 
 #: mailing/models.py:17
 msgid "emails"
-msgstr ""
+msgstr "e-mails"
 
 #: mailing/views.py:12
 #, python-brace-format
 msgid "You have successfully subscribed to \"{newsletter}\""
-msgstr ""
+msgstr "Je bent succesvol ingeschreven op '{newsletter}'"
 
 #: mailing/views.py:13
 #, python-brace-format
 msgid "You have successfully updated your subscription to \"{newsletter}\""
-msgstr ""
+msgstr "Je hebt succesvol je abonnement op '{newsletter}' bijgewerkt"
 
 #: mailing/views.py:14
 #, python-brace-format
 msgid "You have successfully unsubscribed from \"{newsletter}\""
-msgstr ""
+msgstr "Je bent succesvol uitgeschreven van '{newsletter}'"
 
 #: search/templates/search/activity_item.html:6
 msgid "Calendar"
-msgstr ""
+msgstr "Kalender"
 
 #: search/templates/search/base_item.html:14
 msgid "Other"
-msgstr ""
+msgstr "Overige"
 
 #: search/templates/search/cms_item.html:6
 msgid "Page"
-msgstr ""
+msgstr "Pagina"
 
 #: search/templates/search/liturgy_item.html:6
 msgid "Liturgy"
-msgstr ""
+msgstr "Kerkdienst"
 
 #: search/templates/search/results.html:3
 msgid "Search results"
-msgstr ""
+msgstr "Zoekresultaten"
 
 #: search/templates/search/results.html:22
 msgid "Sorry, no items match your search criteria."
-msgstr ""
+msgstr "Sorry, er zijn geen zoekresultaten gevonden."
 
 #: societies/admin.py:19
 msgid "member count"
-msgstr ""
+msgstr "aantal leden"
 
 #: societies/admin.py:23 societies/admin.py:24
 msgid "edit content"
-msgstr ""
+msgstr "bewerk inhoud"
 
 #: societies/cms_plugins.py:11
 msgid "Society"
-msgstr ""
+msgstr "Vereniging"
 
 #: societies/cms_plugins.py:12
 msgid "Societies"
-msgstr ""
+msgstr "Verenigingen"
 
 #: societies/models.py:19
 msgid "society"
-msgstr ""
+msgstr "vereniging"
 
 #: societies/models.py:20
 msgid "societies"
-msgstr ""
+msgstr "verenigingen"
 
 #: societies/views.py:17
 msgid "This page is only visible for content editors"
-msgstr ""
+msgstr "Deze pagina is enkel zichtbaar voor content-editors"
 
 #: societies/templates/societies/includes/society.html:8
 msgid "Members"
-msgstr ""
+msgstr "Leden"
 
 #: templates/default.form:70
 msgid "Submit"
-msgstr ""
+msgstr "Verzend"
 
 #: templates/header.html:19 users/templates/users/user_search_form.html:6
 #: users/templates/users/user_search_form.html:20
 msgid "Search"
-msgstr ""
+msgstr "Zoek"
 
 #: templates/header.html:32
 msgid "Menu"
-msgstr ""
+msgstr "Menu"
 
 #: templates/header.html:38
 msgid "logo"
-msgstr ""
+msgstr "logo"
 
 #: templates/header.html:44
 msgid "News"
-msgstr ""
+msgstr "Nieuws"
 
 #: templates/header.html:53 templates/header.html.py:60
 #: users/templates/users/login.html:17
 msgid "Login"
-msgstr ""
+msgstr "Inloggen"
 
 #: templates/header.html:62 users/templates/users/login.html:19
 msgid "Forgot password?"
-msgstr ""
+msgstr "Wachtwoord vergeten?"
 
 #: templates/header.html:73
 msgid "View own profile"
-msgstr ""
+msgstr "Bekijk eigen profiel"
 
 #: templates/header.html:77
 msgid "Administration"
-msgstr ""
+msgstr "Administratie"
 
 #: templates/header.html:85
 msgid "Logout"
-msgstr ""
+msgstr "Uitloggen"
 
 #: templates/master.html:52
 msgid "Signup for the newsletter"
-msgstr ""
+msgstr "Abonneren op de nieuwsbrief"
 
 #: templates/master.html:56
 msgid "Enter your e-mail address here"
-msgstr ""
+msgstr "Voer hier je e-mailadres in"
 
 #: templates/master.html:56
 msgid "next"
-msgstr ""
+msgstr "volgende"
 
 #: templates/master.html:66
 msgid "Home"
-msgstr ""
+msgstr "Home"
 
 #: templates/master.html:95
 msgid "built by Sergei Maertens"
-msgstr ""
+msgstr "gebouwd door Sergei Maertens"
 
 #: templates/admin/base_site.html:4
 msgid "Koningskerk site admin"
-msgstr ""
+msgstr "Koningskerk administratiepaneel"
 
 #: templates/cms/base.html:11
 msgid "Put your content here"
-msgstr ""
+msgstr "Voer hier je content in"
 
 #: templates/newsletter/subscription_activate.html:4
 msgid "Activate newsletter subscription"
-msgstr ""
+msgstr "Activeer nieuwsbriefinschrijving"
 
 #: templates/newsletter/subscription_activate.html:10
 #, python-format
@@ -734,6 +745,8 @@ msgid ""
 "        Activate your subscription for the '%(name)s' newsletter\n"
 "        "
 msgstr ""
+"\n"
+"Activeer je abonnement voor de '%(name)s' nieuwsbrief"
 
 #: templates/newsletter/subscription_activate.html:14
 #, python-format
@@ -742,6 +755,8 @@ msgid ""
 "        Confirm your cancellation for the '%(name)s' newsletter\n"
 "        "
 msgstr ""
+"\n"
+"Bevestig je uitschrijving op de '%(name)s' nieuwsbrief"
 
 #: templates/newsletter/subscription_activate.html:18
 #, python-format
@@ -750,58 +765,62 @@ msgid ""
 "        Update your subscription for the '%(name)s' newsletter\n"
 "        "
 msgstr ""
+"\n"
+"Update je abonnement voor de '%(name)s' nieuwsbrief"
 
 #: templates/newsletter/subscription_activate.html:34
 msgid "Confirm"
-msgstr ""
+msgstr "Bevestigen"
 
 #: templates/newsletter/subscription_subscribe.html:4
 #: templates/newsletter/subscription_subscribe_user.html:4
 msgid "Newsletter subscribe"
-msgstr ""
+msgstr "Abonneren op nieuwsbrief"
 
 #: templates/newsletter/subscription_subscribe.html:10
 #: templates/newsletter/subscription_subscribe_user.html:10
 #, python-format
 msgid "Subscribe to '%(name)s'"
-msgstr ""
+msgstr "Abonneren op '%(name)s'"
 
 #: templates/newsletter/subscription_subscribe.html:15
 #: templates/newsletter/subscription_unsubscribe.html:14
 msgid ""
-"Due to a technical error we were not able to submit your confirmation email. "
-"This could be because your email address is invalid."
+"Due to a technical error we were not able to submit your confirmation email."
+" This could be because your email address is invalid."
 msgstr ""
+"Door een technisch probleem konden we je bevestigingsemail niet versturen. "
+"Dit kan gebeuren als je e-mailadres ongeldig is."
 
 #: templates/newsletter/subscription_subscribe.html:29
 msgid "Activate"
-msgstr ""
+msgstr "Activeren"
 
 #: templates/newsletter/subscription_subscribe_user.html:13
 msgid "Do you want to subscribe to this newsletter?"
-msgstr ""
+msgstr "Wil je je abonneren op deze nieuwsbrief?"
 
 #: templates/newsletter/subscription_subscribe_user.html:19
 msgid "Subscribe"
-msgstr ""
+msgstr "Abonneren"
 
 #: templates/newsletter/subscription_unsubscribe.html:4
 #: templates/newsletter/subscription_unsubscribe_email_sent.html:4
 #: templates/newsletter/subscription_unsubscribe_user.html:4
 msgid "Newsletter unsubscribe"
-msgstr ""
+msgstr "Uitschrijven van nieuwsbrief"
 
 #: templates/newsletter/subscription_unsubscribe.html:9
 #: templates/newsletter/subscription_unsubscribe_email_sent.html:9
 #: templates/newsletter/subscription_unsubscribe_user.html:9
 #, python-format
 msgid "Unsubscribe from '%(name)s'"
-msgstr ""
+msgstr "Uitschrijven van '%(name)s'"
 
 #: templates/newsletter/subscription_unsubscribe.html:28
 #: templates/newsletter/subscription_unsubscribe_user.html:18
 msgid "Unsubscribe"
-msgstr ""
+msgstr "Uitschrijven"
 
 #: templates/newsletter/subscription_unsubscribe_email_sent.html:12
 msgid ""
@@ -809,86 +828,92 @@ msgid ""
 "been sent to you with a link you need to follow in order to confirm your "
 "unsubscription."
 msgstr ""
+"Je verzoek tot uitschrijving is ontvangen. Er werd een e-mail verstuurd met "
+"een link om je uitschrijving te bevestigen."
 
 #: templates/newsletter/subscription_unsubscribe_user.html:12
 msgid "Do you want to unsubscribe from this newsletter?"
-msgstr ""
+msgstr "Wil je uitschrijven van deze nieuwsbrief?"
 
 #: templates/password_reset/recovery_form.html:5
 msgid "Password recovery"
-msgstr ""
+msgstr "Wachtwoordherstel"
 
 #: templates/password_reset/recovery_form.html:14
 msgid "Recover my password"
-msgstr ""
+msgstr "Herstel mijn wachtwoord"
 
 #: templates/password_reset/reset.html:5
 #, python-format
 msgid ""
-"Sorry, this password reset link is invalid. You can still <a href="
-"\"%(recovery_url)s\">request a new one</a>."
+"Sorry, this password reset link is invalid. You can still <a "
+"href=\"%(recovery_url)s\">request a new one</a>."
 msgstr ""
+"Sorry, deze wachtwoordresetlink is ongeldig. Je kan wel <a "
+"href=\"%(recovery_url)s\">een nieuwe aanvragen</a>."
 
 #: templates/password_reset/reset.html:9
 #, python-format
 msgid "Hi, <strong>%(username)s</strong>. Please choose your new password."
 msgstr ""
+"Hallo, <strong>%(username)s</strong>. Gelieve je nieuwe wachtwoord te "
+"kiezen."
 
 #: templates/password_reset/reset.html:12
 msgid "Set new password"
-msgstr ""
+msgstr "Stel nieuw wachtwoord in"
 
 #: users/admin.py:18
 msgid "Personal info"
-msgstr ""
+msgstr "Persoonlijek informatie"
 
 #: users/admin.py:31
 msgid "Family and location"
-msgstr ""
+msgstr "Familie en woonplaats"
 
 #: users/admin.py:38
 msgid "Permissions"
-msgstr ""
+msgstr "Rechten"
 
 #: users/admin.py:44
 msgid "Important dates"
-msgstr ""
+msgstr "Belangrijke data"
 
 #: users/cms_app.py:8
 msgid "Users"
-msgstr ""
+msgstr "Gebruikers"
 
 #: users/forms.py:20
 msgid "A user with that email already exists."
-msgstr ""
+msgstr "Er bestaat al een gebruiker met dit e-mailadres."
 
 #: users/forms.py:21
 msgid "The two password fields didn't match."
-msgstr ""
+msgstr "De twee wachtwoorden kwamen niet overeen."
 
 #: users/forms.py:23 users/forms.py:67
 msgid "Password"
-msgstr ""
+msgstr "Wachtwoord"
 
 #: users/forms.py:25
 msgid "Password confirmation"
-msgstr ""
+msgstr "Wachtwoord bevestiging"
 
 #: users/forms.py:27
 msgid "Enter the same password as above, for verification."
-msgstr ""
+msgstr "Voer hetzelfde wachtwoord in als hierboven, ter controle."
 
 #: users/forms.py:28
 msgid "Username"
-msgstr ""
+msgstr "Gebruikersnaam"
 
 #: users/forms.py:29
 msgid "Alternative to login."
-msgstr ""
+msgstr "Alternatieve loginnaam (naast e-mailadres)."
 
 #: users/forms.py:66 users/templates/users/user_detail.html:93
 msgid "Email"
-msgstr ""
+msgstr "E-mail"
 
 #: users/forms.py:68
 msgid ""
@@ -899,59 +924,59 @@ msgstr ""
 
 #: users/forms.py:95 users/forms.py:114
 msgid "This username is taken, choose a different username."
-msgstr ""
+msgstr "Deze gebruikersnaam is al in gebruik, kies een andere gebruikersnaam."
 
 #: users/forms.py:119
 msgid "Email or username"
-msgstr ""
+msgstr "E-mailadres of gebruikersnaam"
 
 #: users/forms.py:123
 msgid "Name"
-msgstr ""
+msgstr "Naam"
 
 #: users/forms.py:124
 msgid "Search terms"
-msgstr ""
+msgstr "Zoektermen"
 
 #: users/forms.py:126
 msgid "Minimum age"
-msgstr ""
+msgstr "Minimumleeftijd"
 
 #: users/forms.py:127
 msgid "Maximum age"
-msgstr ""
+msgstr "Maximumleeftijd"
 
 #: users/forms.py:128
 msgid "Gender"
-msgstr ""
+msgstr "Geslacht"
 
 #: users/models.py:43
 msgid "male"
-msgstr ""
+msgstr "man"
 
 #: users/models.py:44
 msgid "female"
-msgstr ""
+msgstr "vrouw"
 
 #: users/models.py:55
 msgid "email address"
-msgstr ""
+msgstr "e-mailadres"
 
 #: users/models.py:56
 msgid "username"
-msgstr ""
+msgstr "gebruikersnaam"
 
 #: users/models.py:58
 msgid "first name"
-msgstr ""
+msgstr "voornaam"
 
 #: users/models.py:59
 msgid "last name"
-msgstr ""
+msgstr "familienaam"
 
 #: users/models.py:61
 msgid "staff status"
-msgstr ""
+msgstr "is staf"
 
 #: users/models.py:62
 msgid "Designates whether the user can log into this admin site."
@@ -959,7 +984,7 @@ msgstr ""
 
 #: users/models.py:64
 msgid "active"
-msgstr ""
+msgstr "actief"
 
 #: users/models.py:65
 msgid ""
@@ -969,161 +994,161 @@ msgstr ""
 
 #: users/models.py:67
 msgid "date joined"
-msgstr ""
+msgstr "registratiedatum"
 
 #: users/models.py:70
 msgid "sex"
-msgstr ""
+msgstr "geslacht"
 
 #: users/models.py:71
 msgid "street"
-msgstr ""
+msgstr "straat"
 
 #: users/models.py:72
 msgid "Street name and number."
-msgstr ""
+msgstr "Straatnaam en nummer."
 
 #: users/models.py:73
 msgid "postal code"
-msgstr ""
+msgstr "postcode"
 
 #: users/models.py:74
 msgid "city"
-msgstr ""
+msgstr "stad"
 
 #: users/models.py:76
 msgid "phone"
-msgstr ""
+msgstr "telefoon"
 
 #: users/models.py:77
 msgid "Home phone number"
-msgstr ""
+msgstr "Thuistelefoon"
 
 #: users/models.py:78
 msgid "mobile phone number"
-msgstr ""
+msgstr "mobiel"
 
 #: users/models.py:79
 msgid "Mobile phone number"
-msgstr ""
+msgstr "Mobiele telefoon"
 
 #: users/models.py:81
 msgid "birth_date"
-msgstr ""
+msgstr "geboortedatum"
 
 #: users/models.py:82
 msgid "picture"
-msgstr ""
+msgstr "foto"
 
 #: users/models.py:83
 msgid "Profile picture"
-msgstr ""
+msgstr "Profielfoto"
 
 #: users/models.py:85
 msgid "Short 'about me' text"
-msgstr ""
+msgstr "Korte 'over mij' tekst"
 
 #: users/models.py:88 users/models.py:214
 msgid "district"
-msgstr ""
+msgstr "wijk"
 
 #: users/models.py:91 users/models.py:240
 msgid "family"
-msgstr ""
+msgstr "familie"
 
 #: users/models.py:100
 msgid "user"
-msgstr ""
+msgstr "gebruiker"
 
 #: users/models.py:101
 msgid "users"
-msgstr ""
+msgstr "gebruikers"
 
 #: users/models.py:162
 msgid "User 2 is `relation type` of user 1."
-msgstr ""
+msgstr "Gebruiker 2 is `relatietype` van gebruiker 1."
 
 #: users/models.py:169
 msgid "user relation"
-msgstr ""
+msgstr "gebruikersrelatie"
 
 #: users/models.py:170
 msgid "user relations"
-msgstr ""
+msgstr "gebruikersrelaties"
 
 #: users/models.py:189 users/models.py:192
 msgid "name (male)"
-msgstr ""
+msgstr "naam (man)"
 
 #: users/models.py:190 users/models.py:193
 msgid "name (female)"
-msgstr ""
+msgstr "naam (vrouw)"
 
 #: users/models.py:194
 msgid "Reverse direction of the relation"
-msgstr ""
+msgstr "Omgekeerde richting van de relatie"
 
 #: users/models.py:197
 msgid "is partner?"
-msgstr ""
+msgstr "is partner?"
 
 #: users/models.py:198
 msgid "is child/parent?"
-msgstr ""
+msgstr "is kind/ouder?"
 
 #: users/models.py:201
 msgid "relation type"
-msgstr ""
+msgstr "relatietype"
 
 #: users/models.py:202
 msgid "relation types"
-msgstr ""
+msgstr "relatietypes"
 
 #: users/models.py:207
 #, python-brace-format
 msgid "{0}/{1} (reverse: {2}/{3})"
-msgstr ""
+msgstr "{0}/{1} (omgekeerd: {2}/{3})"
 
 #: users/models.py:215
 msgid "districts"
-msgstr ""
+msgstr "wijken"
 
 #: users/models.py:224
 msgid "Describe what someone with this function does."
-msgstr ""
+msgstr "Beschrijf wat iemand met deze functie doet."
 
 #: users/models.py:227
 msgid "district function"
-msgstr ""
+msgstr "wijkindeling"
 
 #: users/models.py:228
 msgid "district functions"
-msgstr ""
+msgstr "wijkindelingen"
 
 #: users/models.py:237
 msgid "Last name of the householder."
-msgstr ""
+msgstr "Familienaam van het gezinshoofd."
 
 #: users/models.py:241
 msgid "families"
-msgstr ""
+msgstr "families"
 
 #: users/models.py:244
 #, python-brace-format
 msgid "Fam. {name}"
-msgstr ""
+msgstr "Fam. {name}"
 
 #: users/templates/users/base.html:18
 msgid "Welcome"
-msgstr ""
+msgstr "Welkom"
 
 #: users/templates/users/base.html:22
 msgid "View profile"
-msgstr ""
+msgstr "Bekijk profiel"
 
 #: users/templates/users/base.html:27
 msgid "Edit profile"
-msgstr ""
+msgstr "Bewerk profiel"
 
 #: users/templates/users/birthdays.html:19
 #, python-format
@@ -1136,116 +1161,121 @@ msgid_plural ""
 "\tNo upcoming birthdays in the next %(weeks)s weeks.\n"
 "\t"
 msgstr[0] ""
+"\n"
+"Geen verjaardagen in de komende week"
 msgstr[1] ""
+"\n"
+"Geen verjaardagen in de komende %(weeks)s weken."
 
 #: users/templates/users/login.html:10
 msgid ""
 "Enter your e-mail address and password or username and password to login."
 msgstr ""
+"Voer je e-mailadres (of gebruikersnaam) en wachtwoord in om in te loggen."
 
 #: users/templates/users/logout.html:5
 msgid "See you on your next visit!"
-msgstr ""
+msgstr "Tot het volgende bezoek!"
 
 #: users/templates/users/user_detail.html:7
 msgid "Back to overview"
-msgstr ""
+msgstr "Terug naar het overzicht"
 
 #: users/templates/users/user_detail.html:9
 msgid "Profile"
-msgstr ""
+msgstr "Profiel"
 
 #: users/templates/users/user_detail.html:28
 msgid "Partner of"
-msgstr ""
+msgstr "Partner van"
 
 #: users/templates/users/user_detail.html:37
 msgid "Children"
-msgstr ""
+msgstr "Kinderen"
 
 #: users/templates/users/user_detail.html:58
 msgid "Date of birth"
-msgstr ""
+msgstr "Geboortedatum"
 
 #: users/templates/users/user_detail.html:64
 msgid "Address"
-msgstr ""
+msgstr "Adres"
 
 #: users/templates/users/user_detail.html:69
 msgid "Postal code"
-msgstr ""
+msgstr "Postcode"
 
 #: users/templates/users/user_detail.html:80
 msgid "Telephone"
-msgstr ""
+msgstr "Telefoon"
 
 #: users/templates/users/user_detail.html:86
 msgid "Mobile phone"
-msgstr ""
+msgstr "Mobiel"
 
 #: users/templates/users/user_detail.html:100
 msgid "District function"
-msgstr ""
+msgstr "Wijkindeling"
 
 #: users/templates/users/user_detail.html:106
 msgid "About me"
-msgstr ""
+msgstr "Over mij"
 
 #: users/templates/users/user_detail.html:117
 msgid "1<sup>st</sup> degree connections"
-msgstr ""
+msgstr "1<sup>ste</sup> graads connecties"
 
 #: users/templates/users/user_form.html:44
 msgid "save"
-msgstr ""
+msgstr "bewaren"
 
 #: users/templates/users/user_preview.html:20
 msgid "Email me"
-msgstr ""
+msgstr "E-mail me"
 
 #: users/templates/users/user_search_form.html:10
 msgid "Advanced search"
-msgstr ""
+msgstr "Geavanceerd zoeken"
 
 #: utils/models.py:8
 msgid "app name"
-msgstr ""
+msgstr "app name"
 
 #: utils/models.py:9
 msgid "url name"
-msgstr ""
+msgstr "url name"
 
 #: utils/models.py:10
 msgid "display name"
-msgstr ""
+msgstr "weergave"
 
 #: utils/models.py:11
 msgid "url namespace"
-msgstr ""
+msgstr "url namespace"
 
 #: utils/models.py:15
 msgid "urlconf menu entry"
-msgstr ""
+msgstr "urlconf menu-item"
 
 #: utils/models.py:16
 msgid "urlconf menu entries"
-msgstr ""
+msgstr "urlconf menu-items"
 
 #: worklog/models.py:8
 msgid "start"
-msgstr ""
+msgstr "start"
 
 #: worklog/models.py:9
 msgid "end"
-msgstr ""
+msgstr "eind"
 
 #: worklog/models.py:10
 msgid "log_message"
-msgstr ""
+msgstr "logbericht"
 
 #: worklog/models.py:12
 msgid "paid?"
-msgstr ""
+msgstr "betaald?"
 
 #: worklog/models.py:15
 msgid "log entry"
