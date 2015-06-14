@@ -30,6 +30,9 @@ $(function() {
 
 
     $('form.dropdown-menu').on('click', ':not([type="submit"])', function(e) {
+        if ($(this).is('a')) {
+            window.location = $(this).attr('href');
+        }
         e.preventDefault();
         return false;
     });
