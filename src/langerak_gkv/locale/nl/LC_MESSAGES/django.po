@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-05-05 10:34-0500\n"
+"POT-Creation-Date: 2015-06-14 07:32-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -188,55 +188,55 @@ msgid ""
 "            "
 msgstr ""
 
-#: conf/settings.py:387 conf/settings.py:417
+#: conf/settings.py:388 conf/settings.py:418
 msgid "Default"
 msgstr ""
 
-#: conf/settings.py:388
+#: conf/settings.py:389
 msgid "Homepage"
 msgstr ""
 
-#: conf/settings.py:389
+#: conf/settings.py:390
 msgid "Content left, sidebar right"
 msgstr ""
 
-#: conf/settings.py:390
+#: conf/settings.py:391
 msgid "3 Columns (responsive)"
 msgstr ""
 
-#: conf/settings.py:406
+#: conf/settings.py:407
 msgid "header top image"
 msgstr ""
 
-#: conf/settings.py:418
+#: conf/settings.py:419
 msgid "Orange"
 msgstr ""
 
-#: conf/settings.py:419
+#: conf/settings.py:420
 msgid "Blue"
 msgstr ""
 
-#: conf/settings.py:420
+#: conf/settings.py:421
 msgid "Green"
 msgstr ""
 
-#: conf/settings.py:421
+#: conf/settings.py:422
 msgid "Purple"
 msgstr ""
 
-#: conf/settings.py:422
+#: conf/settings.py:423
 msgid "Read-more orange"
 msgstr ""
 
-#: conf/settings.py:423
+#: conf/settings.py:424
 msgid "Read-more blue"
 msgstr ""
 
-#: conf/settings.py:424
+#: conf/settings.py:425
 msgid "Read-more green"
 msgstr ""
 
-#: conf/settings.py:425
+#: conf/settings.py:426
 msgid "Read-more purple"
 msgstr ""
 
@@ -679,15 +679,19 @@ msgstr ""
 msgid "Login"
 msgstr ""
 
-#: templates/header.html:72
+#: templates/header.html:62 users/templates/users/login.html:19
+msgid "Forgot password?"
+msgstr ""
+
+#: templates/header.html:73
 msgid "View own profile"
 msgstr ""
 
-#: templates/header.html:76
+#: templates/header.html:77
 msgid "Administration"
 msgstr ""
 
-#: templates/header.html:84
+#: templates/header.html:85
 msgid "Logout"
 msgstr ""
 
@@ -808,6 +812,30 @@ msgstr ""
 
 #: templates/newsletter/subscription_unsubscribe_user.html:12
 msgid "Do you want to unsubscribe from this newsletter?"
+msgstr ""
+
+#: templates/password_reset/recovery_form.html:5
+msgid "Password recovery"
+msgstr ""
+
+#: templates/password_reset/recovery_form.html:14
+msgid "Recover my password"
+msgstr ""
+
+#: templates/password_reset/reset.html:5
+#, python-format
+msgid ""
+"Sorry, this password reset link is invalid. You can still <a href="
+"\"%(recovery_url)s\">request a new one</a>."
+msgstr ""
+
+#: templates/password_reset/reset.html:9
+#, python-format
+msgid "Hi, <strong>%(username)s</strong>. Please choose your new password."
+msgstr ""
+
+#: templates/password_reset/reset.html:12
+msgid "Set new password"
 msgstr ""
 
 #: users/admin.py:18
