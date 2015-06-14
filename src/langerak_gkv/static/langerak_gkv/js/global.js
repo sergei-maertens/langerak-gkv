@@ -7,6 +7,7 @@ $(function() {
     };
 
     // map in footer
+    L.Icon.Default.imagePath = '/static/leaflet/images/';
     $(window).on('map:init', function (e) {
         var detail = e.originalEvent ? e.originalEvent.detail : e.detail;
         if (detail.id != 'footer-map') {
