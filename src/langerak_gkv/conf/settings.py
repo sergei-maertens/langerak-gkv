@@ -184,6 +184,7 @@ INSTALLED_APPS = [
     'newsletter',
     'import_export',
     'image_cropping',
+    'password_reset',
 
     # cms
     'treebeard',

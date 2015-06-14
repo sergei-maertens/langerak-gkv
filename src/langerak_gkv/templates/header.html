@@ -59,6 +59,7 @@
                                 {% for f in loginform %}{% field f %}{% endfor %}
                                 {% use 'btn-submit' btn_text=_('Login') btn_class='btn-transparent btn-fade' %}
                             {% endform %}
+                            <div><a href="{% url "password_reset_recover" %}">{% trans "Forgot password?" %}</a></div>
                         </form>
                     </li>
                 {% else %}

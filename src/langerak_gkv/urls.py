@@ -21,6 +21,7 @@ urlpatterns = patterns(
     url(r'^search/', include('langerak_gkv.search.urls', namespace='search')),
     url(r'^societies/', include('langerak_gkv.societies.urls', namespace='societies')),
     url(r'^users/', include('langerak_gkv.users.urls', namespace='users')),
+    url(r'^users/password/', include('password_reset.urls')),
     url(r'^', include('langerak_gkv.homepage.urls')),
 
     # newsletter + hijack some urls
