@@ -8,7 +8,7 @@
     </header>
 
     <p class="description">
-        {{ plugin.instance.description|safe|linebreaksbr }}
+        {{ plugin.instance.description|linebreaksbr|urlize }}
     </p>
 
     <footer>
