@@ -24,6 +24,8 @@ class Liturgy(models.Model):
     collection_goal3 = models.CharField(_('collection goal 3'), max_length=50, blank=True)
     extra_information = models.TextField(_('extra information'), blank=True)
 
+    internal_remarks = models.TextField(_('remarks (internal)'), blank=True)
+
     class Meta:
         verbose_name = _('liturgy')
         verbose_name_plural = _('liturgies')

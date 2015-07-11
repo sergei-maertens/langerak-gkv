@@ -16,5 +16,5 @@
 
 {% trans "Content" %}: {{ liturgy.liturgy|default:_('(empty)') }}
 
-{% trans "Extra information:" %} {{ liturgy.extra_information|default:_('(empty)') }}
+{% trans "Remarks:" %} {{ liturgy.internal_remarks|default:_('(empty)') }}
 {% endfor %}
