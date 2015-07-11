@@ -31,7 +31,7 @@ class HomepagePageLink(CMSPlugin):
     enable_sharing = models.BooleanField(_('enable social sharing'), default=True)
 
     def __unicode__(self):
-        return u'{} - {}'.format(self.title, self.page_link.__unicode__())
+        return u'{0} - {1}'.format(self.title, self.page_link)
 
 
 class CharFieldPlugin(CMSPlugin):
