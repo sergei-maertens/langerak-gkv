@@ -2,9 +2,12 @@ from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin as _UserAdmin
 from django.utils.translation import ugettext_lazy as _
 
+from import_export.admin import ImportExportMixin
+
 from .models import (User, District, UserRelation, RelationType,
                      DistrictFunction, Family)
 from .forms import UserChangeForm, UserCreationForm
+from .resources import UserResource
 
 
 class UserRelationInline(admin.TabularInline):
@@ -12,7 +15,7 @@ class UserRelationInline(admin.TabularInline):
     fk_name = 'user1'
 
 
-class UserAdmin(_UserAdmin):
+class UserAdmin(ImportExportMixin, _UserAdmin):
     fieldsets = (
         (None, {'fields': (('email', 'username'), 'password')}),
         (_('Personal info'), {
@@ -26,32 +29,28 @@ class UserAdmin(_UserAdmin):
                 'picture',
                 'about_me',
                 ),
-            }
-        ),
+        }),
         (_('Family and location'), {
             'fields': (
                 ('district', 'district_function',),
                 'family',
                 )
-            }
-        ),
+        }),
         (_('Permissions'), {
             'fields': ('is_active', 'is_staff', 'is_superuser',
-                        'groups', 'user_permissions'),
+                       'groups', 'user_permissions'),
             'classes': ('collapse',)
-            }
-        ),
+        }),
         (_('Important dates'), {
             'fields': ('last_login', 'date_joined'),
             'classes': ('collapse',),
-            }
-        ),
+        }),
     )
     add_fieldsets = (
         (None, {
             'classes': ('wide',),
-            'fields': ('email', 'password1', 'password2')}
-        ),
+            'fields': ('email', 'password1', 'password2')
+        }),
     )
     form = UserChangeForm
     add_form = UserCreationForm
@@ -60,7 +59,8 @@ class UserAdmin(_UserAdmin):
     search_fields = ('first_name', 'last_name', 'email')
     ordering = ('email',)
 
-    inlines = [UserRelationInline,]
+    inlines = [UserRelationInline]
+    resource_class = UserResource
 
 
 class DistrictAdmin(admin.ModelAdmin):
