@@ -1,12 +1,14 @@
-from django.contrib import admin
-from django.utils.translation import ugettext_lazy as _
-from django.core.urlresolvers import reverse
 from django.conf.urls import patterns, url
+from django.contrib import admin, messages
+from django.core.urlresolvers import reverse
+from django.template.loader import render_to_string
+from django.utils.translation import ugettext_lazy as _
 
 from import_export.admin import ImportExportActionModelAdmin
 
 from ..models import Liturgy, Service, MailRecipient
 from .actions import send_liturgy_email
+from .forms import LiturgyMailForm
 from .resources import LiturgyResource
 from .views import LiturgyEmailView
 
@@ -46,6 +48,25 @@ class LiturgyAdmin(ImportExportActionModelAdmin):
     list_filter = ('date', 'service__time')
     inlines = [MailRecipientInline]
     resource_class = LiturgyResource
+
+    def save_model(self, request, obj, form, change):
+        super(LiturgyAdmin, self).save_model(request, obj, form, change)
+
+        # send the unset e-mails
+        recipients = MailRecipient.objects.filter(liturgy=obj, is_sent=False)
+        if not recipients.exists():
+            return
+
+        initial = {
+            'recipients': recipients,
+            'body': render_to_string('liturgies/mail.html', {'liturgies': [obj]}),
+            'subject': 'Liturgie kerkdienst',
+        }
+        data = initial.copy()
+        data['recipients'] = [r.id for r in recipients]
+        form = LiturgyMailForm(liturgies=[obj], initial=initial, data=data)
+        form.save()
+        messages.success(request, _('The email has been put on the queue and will be send shortly'))
 
     def link_emails(self, obj):
         url = reverse('admin:liturgies_mailrecipient_changelist')

@@ -1,6 +1,5 @@
 import os
 
-import django.conf.global_settings as DEFAULT_SETTINGS
 from django.utils.translation import ugettext_lazy as _
 from djchoices import DjangoChoices, ChoiceItem
 
@@ -450,6 +449,8 @@ LEAFLET_CONFIG = {
 EMAIL_POD = 'pod@koningskerk.nu'
 EMAIL_ORGANIST = 'organist@koningskerk.nu'
 EMAIL_BEAMIST = 'beamist@koningskerk.nu'
+EMAIL_KOSTER = 'koster@koningskerk.nu'
+EMAIL_PREACHER = 'predikant@koningskerk.nu'
 
 
 #

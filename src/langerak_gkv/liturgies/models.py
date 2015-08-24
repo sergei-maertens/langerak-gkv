@@ -14,7 +14,7 @@ class Liturgy(models.Model):
     main_section = models.CharField(_('main section'), max_length=50, blank=True)
     main_chapter = models.CharField(_('main chapter'), max_length=50, blank=True)
     main_verse = models.CharField(_('main verse'), max_length=50, blank=True)
-    service_theme = models.CharField(_('service theme'), max_length=150, blank=True)
+    service_theme = models.CharField(_('service theme'), max_length=255, blank=True)
     liturgy = models.TextField(_('liturgy'))
     audiofile = models.FileField(_('audiofile'), upload_to='liturgies/audio', max_length=100, blank=True)
     beamist = models.CharField(_('beamist'), max_length=50, blank=True)  # search on function: beamists
@@ -67,9 +67,10 @@ class Service(models.Model):
 class MailRecipient(models.Model):
 
     class Functions(DjangoChoices):
-        preacher = ChoiceItem('0preacher', _('preacher'))
+        preacher = ChoiceItem('0preacher', _('preacher (%s)') % settings.EMAIL_PREACHER)
         organist = ChoiceItem('1organist', _('organist (%s)') % settings.EMAIL_ORGANIST)
         beamist = ChoiceItem('2beamist', _('beamist (%s)') % settings.EMAIL_BEAMIST)
+        koster = ChoiceItem('koster', _('koster (%s)') % settings.EMAIL_KOSTER)
         other = ChoiceItem('3other', _('other'))
 
     liturgy = models.ForeignKey('Liturgy', verbose_name=_('liturgy'))
@@ -99,4 +100,8 @@ class MailRecipient(models.Model):
             return settings.EMAIL_ORGANIST
         elif self.function == self.Functions.beamist:
             return settings.EMAIL_BEAMIST
+        elif self.function == self.Functions.preacher:
+            return settings.EMAIL_PREACHER
+        elif self.function == self.Functions.koster:
+            return settings.EMAIL_KOSTER
         raise ValueError('Could not determine e-mail address')

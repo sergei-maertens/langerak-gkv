@@ -29,8 +29,7 @@ class LiturgyEmailView(CreateView):
             initial['recipients'] = MailRecipient.objects.filter(pk__in=pks)
             initial['body'] = render_to_string(
                 'liturgies/mail.html', {'liturgies': liturgies})
-            initial['subject'] = u', '.join(
-                _('Liturgy {} - {}').format(l.date, l.service.time) for l in liturgies)
+            initial['subject'] = 'Liturgie kerkdienst'
         return initial
 
     def get_form_kwargs(self):
