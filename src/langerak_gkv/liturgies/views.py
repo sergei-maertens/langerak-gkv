@@ -14,7 +14,7 @@ class LiturgyListView(ActivitiesTodayMixin, ListView):
 
     def get_queryset(self):
         qs = super(LiturgyListView, self).get_queryset()
-        return qs.filter(date__gte=date.today()).order_by('date')
+        return qs.filter(date__gte=date.today()).order_by('date', 'service__time')
 
 
 class LiturgyDateDetailView(ActivitiesTodayMixin, DateDetailView):
