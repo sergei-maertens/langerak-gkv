@@ -10,4 +10,4 @@ environment =
     DJANGO_SETTINGS_MODULE={{ settings_module }},
     VIRTUAL_ENV={{ venv }},
     PROJECT_ROOT={{ project_home }},
-    PROJECT_PORT=8010
+    PROJECT_PORT={{ ports.get(deploy_env) }}
