@@ -12,13 +12,14 @@ def show_birthdays(weeks=3):
     today = date.today()
     upper_limit = today + timedelta(weeks=weeks)
 
-    month = today.month
+    month, year = today.month, today.year
     qs = User.objects.none()
-    while month <= upper_limit.month:
+    while (month, year) <= (upper_limit.month, upper_limit.year):
         qs |= User.objects.filter(birthdate__month=month)
         month = (month+1)
         if month == 13:
             month = 1
+            year += 1
 
     users = [
         user for user in qs.distinct()
