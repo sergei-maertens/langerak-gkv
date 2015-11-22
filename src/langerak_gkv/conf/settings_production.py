@@ -15,7 +15,7 @@ ADMINS = (
 
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 # See https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts
-ALLOWED_HOSTS = ['koningskerk.nu', 'www.koningskerk.nu']
+ALLOWED_HOSTS = ['koningskerk.nu', 'www.koningskerk.nu', 'live.koningskerk.nu']
 
 LOGGING['loggers'].update({
     'langerak_gkv': {
