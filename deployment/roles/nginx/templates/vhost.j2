@@ -6,15 +6,16 @@ upstream konkerk_staging_django {
     server 127.0.0.1:8011;
 }
 
-# server {
-#     listen 80;
-#     server_name koningskerk.nu www.koningskerk.nu;
-#     return 301 https://koningskerk.nu$request_uri;
-# }
+server {
+    listen 80;
+    server_name koningskerk.nu www.koningskerk.nu;
+    # return 301 http://www.koningskerk.nu$request_uri;
+    return 301 http://www.langerak.gkv.nl$request_uri;
+}
 
 server {
     listen       80;
-    server_name  koningskerk.nu www.koningskerk.nu;
+    server_name  live.koningskerk.nu;
     error_log /var/log/nginx/koningskerk.nu.error.log warn;
     access_log  /var/log/nginx/koningskerk.nu.access.log main;
 
@@ -95,7 +96,7 @@ server {
     if (-f $document_root/maintenance.html ) {
         set $maintenance on;
     }
-    if ($remote_addr = "62.45.209.60") {
+    if ($remote_addr = "163.158.230.128") {
         set $maintenance off;
     }
     if ($maintenance = on) {
