@@ -47,10 +47,6 @@ RAVEN_CONFIG = {
 }
 
 
-LOGIN_REDIRECT_URL = '/staging/'
-MEDIA_URL = '/staging/media/'
-STATIC_URL = '/staging/static/'
-
 try:
     from .settings_local import *
 except ImportError:
