@@ -170,6 +170,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.admin',
 
+    # order matters...
+    'langerak_gkv.users',
+
     # External applications.
     'axes',
     'django_mailer',
@@ -209,7 +212,6 @@ INSTALLED_APPS = [
     'langerak_gkv.mailing',
     'langerak_gkv.search',
     'langerak_gkv.societies',
-    'langerak_gkv.users',
     'langerak_gkv.utils',
     'langerak_gkv.worklog',
     'langerak_gkv.migration',
@@ -512,3 +514,9 @@ IMPORT_EXPORT_USE_TRANSACTIONS = True
 #
 # IMAGE_CROPPING_JQUERY_URL = None  # we embed it ourselves
 IMAGE_CROPPING_SIZE_WARNING = True
+
+
+#
+# Tests
+#
+TEST_RUNNER = 'django.test.runner.DiscoverRunner'

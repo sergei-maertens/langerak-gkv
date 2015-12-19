@@ -14,7 +14,8 @@ BeautifulSoup==3.2.1 # lxml & compressor
 django-autoslug==1.9.3
 django-rosetta==0.7.6
 django-ical==1.3
-django-newsletter==0.5.2
+# django-newsletter==0.5.2
+git+https://github.com/sergei-maertens/django-newsletter.git@0.6-dev#egg=django-newsletter
 django-import-export==0.4.2
 django-password-reset==0.8.1
 
