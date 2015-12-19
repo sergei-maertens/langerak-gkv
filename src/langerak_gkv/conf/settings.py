@@ -145,7 +145,7 @@ MIDDLEWARE_CLASSES = [
 ROOT_URLCONF = 'langerak_gkv.urls'
 
 # Python dotted path to the WSGI application used by Django's runserver.
-WSGI_APPLICATION = 'langerak_gkv.wsgi.application'
+WSGI_APPLICATION = 'wsgi.application'
 
 TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".

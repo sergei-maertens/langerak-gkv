@@ -7,7 +7,6 @@ from settings import *
 
 DEBUG = False
 TEMPLATE_DEBUG = DEBUG
-WSGI_APPLICATION = 'langerak_gkv.wsgi.wsgi_staging.application'
 
 ADMINS = (
     ('Sergei Maertens', 'sergeimaertens@gmail.com'),
