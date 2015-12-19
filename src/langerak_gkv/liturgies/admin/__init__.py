@@ -49,13 +49,18 @@ class LiturgyAdmin(ImportExportActionModelAdmin):
     inlines = [MailRecipientInline]
     resource_class = LiturgyResource
 
-    def save_model(self, request, obj, form, change):
-        super(LiturgyAdmin, self).save_model(request, obj, form, change)
+    def response_change(self, request, obj):
+        """
+        Also sent out the e-mails that aren't send yet.
+
+        Hook in here because save_model doesn't save_related yet.
+        """
+        response = super(LiturgyAdmin, self).response_change(request, obj)
 
         # send the unset e-mails
         recipients = MailRecipient.objects.filter(liturgy=obj, is_sent=False)
         if not recipients.exists():
-            return
+            return response
 
         initial = {
             'recipients': recipients,
@@ -67,6 +72,7 @@ class LiturgyAdmin(ImportExportActionModelAdmin):
         form = LiturgyMailForm(liturgies=[obj], initial=initial, data=data)
         form.save()
         messages.success(request, _('The email has been put on the queue and will be send shortly'))
+        return response
 
     def link_emails(self, obj):
         url = reverse('admin:liturgies_mailrecipient_changelist')
