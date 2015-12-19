@@ -173,7 +173,6 @@ INSTALLED_APPS = [
     # External applications.
     'axes',
     'django_mailer',
-    'south',
     'compressor',
     'easy_thumbnails',
     'leaflet',
@@ -326,14 +325,6 @@ AUTHENTICATION_BACKENDS = (
 )
 LOGIN_URL = 'users:login'
 LOGIN_REDIRECT_URL = '/'
-
-
-#
-# South
-#
-SOUTH_MIGRATION_MODULES = {
-    'easy_thumbnails': 'easy_thumbnails.south_migrations',
-}
 
 
 #

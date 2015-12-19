@@ -67,11 +67,6 @@ DEBUG_TOOLBAR_CONFIG = {
     'INTERCEPT_REDIRECTS': False
 }
 
-#
-# South
-#
-SKIP_SOUTH_TESTS = True
-
 # Override settings with local settings.
 try:
     from settings_local import *
