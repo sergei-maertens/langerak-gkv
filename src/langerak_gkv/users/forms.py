@@ -30,6 +30,7 @@ class UserCreationForm(forms.ModelForm):
 
     class Meta:
         model = User
+        fields = '__all__'
 
     def clean_email(self):
         # Since User.email is unique, this check is redundant,

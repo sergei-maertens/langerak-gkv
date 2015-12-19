@@ -145,7 +145,7 @@ MIDDLEWARE_CLASSES = [
 ROOT_URLCONF = 'langerak_gkv.urls'
 
 # Python dotted path to the WSGI application used by Django's runserver.
-WSGI_APPLICATION = 'langerak_gkv.wsgi.application'
+WSGI_APPLICATION = 'wsgi.application'
 
 TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
@@ -170,10 +170,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.admin',
 
+    # order matters...
+    'langerak_gkv.users',
+
     # External applications.
     'axes',
     'django_mailer',
-    'south',
     'compressor',
     'easy_thumbnails',
     'leaflet',
@@ -190,6 +192,7 @@ INSTALLED_APPS = [
     'password_reset',
 
     # cms
+    'cms',
     'treebeard',
     'djangocms_text_ckeditor',
     'filer',
@@ -198,7 +201,6 @@ INSTALLED_APPS = [
     'cmsplugin_filer_image',
     'cmsplugin_filer_video',
     'cmsplugin_filer_link',
-    'cms',
     'menus',
     'sekizai',
     'djangocms_grid',
@@ -210,7 +212,6 @@ INSTALLED_APPS = [
     'langerak_gkv.mailing',
     'langerak_gkv.search',
     'langerak_gkv.societies',
-    'langerak_gkv.users',
     'langerak_gkv.utils',
     'langerak_gkv.worklog',
     'langerak_gkv.migration',
@@ -329,14 +330,6 @@ LOGIN_REDIRECT_URL = '/'
 
 
 #
-# South
-#
-SOUTH_MIGRATION_MODULES = {
-    'easy_thumbnails': 'easy_thumbnails.south_migrations',
-}
-
-
-#
 # Easy thumbnails
 #
 THUMBNAIL_HIGH_RESOLUTION = True
@@ -431,6 +424,15 @@ class FilerStyles(DjangoChoices):
 FILER_LINK_STYLES = FilerStyles.choices
 
 
+MIGRATION_MODULES = {
+    'cmsplugin_filer_file': 'cmsplugin_filer_file.migrations_django',
+    'cmsplugin_filer_folder': 'cmsplugin_filer_folder.migrations_django',
+    'cmsplugin_filer_link': 'cmsplugin_filer_link.migrations_django',
+    'cmsplugin_filer_image': 'cmsplugin_filer_image.migrations_django',
+    'cmsplugin_filer_teaser': 'cmsplugin_filer_teaser.migrations_django',
+    'cmsplugin_filer_video': 'cmsplugin_filer_video.migrations_django',
+}
+
 #
 # GEO
 #
@@ -521,3 +523,9 @@ IMPORT_EXPORT_USE_TRANSACTIONS = True
 #
 # IMAGE_CROPPING_JQUERY_URL = None  # we embed it ourselves
 IMAGE_CROPPING_SIZE_WARNING = True
+
+
+#
+# Tests
+#
+TEST_RUNNER = 'django.test.runner.DiscoverRunner'
