@@ -192,6 +192,7 @@ INSTALLED_APPS = [
     'password_reset',
 
     # cms
+    'cms',
     'treebeard',
     'djangocms_text_ckeditor',
     'filer',
@@ -200,7 +201,6 @@ INSTALLED_APPS = [
     'cmsplugin_filer_image',
     'cmsplugin_filer_video',
     'cmsplugin_filer_link',
-    'cms',
     'menus',
     'sekizai',
     'djangocms_grid',

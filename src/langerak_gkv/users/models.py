@@ -38,19 +38,20 @@ class UserManager(BaseUserManager):
                                  **extra_fields)
 
 
+def get_image_path(instance, filename):
+    """
+    Keep the pictures in folders directly relate to the user:
+    /media/images/users/<user_id>/example.jpg
+    """
+    name, extension = os.path.splitext(filename)
+    filename = name + extension
+    return os.path.join('images/users', str(instance.id), filename)
+
+
 class User(AbstractBaseUser, PermissionsMixin):
     class Sex(DjangoChoices):
         male = ChoiceItem('male', _('male'))
         female = ChoiceItem('female', _('female'))
-
-    def get_image_path(instance, filename):
-        """
-        Keep the pictures in folders directly relate to the user:
-        /media/images/users/<user_id>/example.jpg
-        """
-        name, extension = os.path.splitext(filename)
-        filename = name + extension
-        return os.path.join('images/users', str(instance.id), filename)
 
     email = models.EmailField(_('email address'), max_length=254, unique=True)
     username = models.CharField(_('username'), max_length=100, blank=True)
