@@ -38,19 +38,20 @@ class UserManager(BaseUserManager):
                                  **extra_fields)
 
 
+def get_image_path(instance, filename):
+    """
+    Keep the pictures in folders directly relate to the user:
+    /media/images/users/<user_id>/example.jpg
+    """
+    name, extension = os.path.splitext(filename)
+    filename = name + extension
+    return os.path.join('images/users', str(instance.id), filename)
+
+
 class User(AbstractBaseUser, PermissionsMixin):
     class Sex(DjangoChoices):
         male = ChoiceItem('male', _('male'))
         female = ChoiceItem('female', _('female'))
-
-    def get_image_path(instance, filename):
-        """
-        Keep the pictures in folders directly relate to the user:
-        /media/images/users/<user_id>/example.jpg
-        """
-        name, extension = os.path.splitext(filename)
-        filename = name + extension
-        return os.path.join('images/users', str(instance.id), filename)
 
     email = models.EmailField(_('email address'), max_length=254, unique=True)
     username = models.CharField(_('username'), max_length=100, blank=True)
@@ -58,38 +59,46 @@ class User(AbstractBaseUser, PermissionsMixin):
     first_name = models.CharField(_('first name'), max_length=50, blank=True)
     last_name = models.CharField(_('last name'), max_length=50, blank=True)
 
-    is_staff = models.BooleanField(_('staff status'), default=False,
+    is_staff = models.BooleanField(
+        _('staff status'), default=False,
         help_text=_('Designates whether the user can log into this admin '
                     'site.'))
-    is_active = models.BooleanField(_('active'), default=True,
+    is_active = models.BooleanField(
+        _('active'), default=True,
         help_text=_('Designates whether this user should be treated as '
                     'active. Unselect this instead of deleting accounts.'))
     date_joined = models.DateTimeField(_('date joined'), default=timezone.now)
 
     # profile related
     sex = models.CharField(_('sex'), max_length=10, blank=True, choices=Sex.choices, default=Sex.male)
-    address = models.CharField(_('street'), max_length=255, blank=True,
+    address = models.CharField(
+        _('street'), max_length=255, blank=True,
         help_text=_('Street name and number.'))
     postal_code = models.CharField(_('postal code'), max_length=10, blank=True)
     city = models.CharField(_('city'), max_length=100, blank=True)
 
-    phone = models.CharField(_('phone'), max_length=20, blank=True,
+    phone = models.CharField(
+        _('phone'), max_length=20, blank=True,
         help_text=_('Home phone number'))
-    mobile = models.CharField(_('mobile phone number'), max_length=20, blank=True,
+    mobile = models.CharField(
+        _('mobile phone number'), max_length=20, blank=True,
         help_text=_('Mobile phone number'))
 
     birthdate = models.DateField(_('birth_date'), blank=True, null=True)
-    picture = models.ImageField(_('picture'), upload_to=get_image_path,
+    picture = models.ImageField(
+        _('picture'), upload_to=get_image_path,
         blank=True, null=True, help_text=_('Profile picture'))
     cropping = ImageRatioField('picture', '400x300')
     about_me = models.TextField(blank=True, help_text=_('Short \'about me\' text'))
 
     # district/family information, from district we find the people with district functions
-    district = models.ForeignKey('users.District', verbose_name=_(u'district'),
+    district = models.ForeignKey(
+        'users.District', verbose_name=_(u'district'),
         blank=True, null=True)
     district_function = models.ForeignKey('users.DistrictFunction', blank=True, null=True)
     family = models.ForeignKey('users.Family', verbose_name=_('family'), blank=True, null=True)
-    relations = models.ManyToManyField('self', blank=True, null=True,
+    relations = models.ManyToManyField(
+        'self', blank=True, null=True,
         through='users.UserRelation', symmetrical=False)
 
     objects = UserManager()
@@ -158,7 +167,8 @@ class UserRelation(models.Model):
     """
     user1 = models.ForeignKey('users.User', related_name='related_users')
     user2 = models.ForeignKey('users.User', related_name='reverse_related_users')
-    relation_type = models.ForeignKey('users.RelationType',
+    relation_type = models.ForeignKey(
+        'users.RelationType',
         help_text=_('User 2 is `relation type` of user 1.'), related_name='+')
 
     # children can be found by: querying the relations of a user for those that have
@@ -202,8 +212,10 @@ class RelationType(models.Model):
         verbose_name_plural = _(u'relation types')
 
     def __unicode__(self):
-        formatter_args = (self.name_male, self.name_female,
-            self.reverse_name_male, self.reverse_name_female)
+        formatter_args = (
+            self.name_male, self.name_female,
+            self.reverse_name_male, self.reverse_name_female
+        )
         return _(u'{0}/{1} (reverse: {2}/{3})').format(*formatter_args)
 
 
@@ -220,7 +232,8 @@ class District(models.Model):
 
 class DistrictFunction(models.Model):
     name = models.CharField(_('name'), max_length=255)
-    description = models.CharField(_('description'), max_length=255, blank=True,
+    description = models.CharField(
+        _('description'), max_length=255, blank=True,
         help_text=_('Describe what someone with this function does.'))
 
     class Meta:
@@ -233,8 +246,7 @@ class DistrictFunction(models.Model):
 
 class Family(models.Model):
     """ A family groups members living together in the same physical house. """
-    name = models.CharField(_('name'), max_length=255,
-        help_text=_('Last name of the householder.'))
+    name = models.CharField(_('name'), max_length=255, help_text=_('Last name of the householder.'))
 
     class Meta:
         verbose_name = _(u'family')
@@ -244,13 +256,9 @@ class Family(models.Model):
         return _('Fam. {name}').format(name=self.name)
 
 
-
-
-
 # Profielpagina
-# -Overzichtspagina van alle gemeenteleden onder elkaar met thumbnail foto en kort overzicht belangrijkste contactgegevens
+# -Overzichtspagina van alle gemeenteleden onder elkaar met thumbnail foto en kort overzicht
+#  belangrijkste contactgegevens
 #     Uitgebreide zoekfunctionaliteit
 # -Persoonlijke pagina met volgende gegevens:
 # Eerstegraads connecties (in kleine thumbnails)
-
-from .signals import *

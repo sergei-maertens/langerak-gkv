@@ -1,117 +1,84 @@
 # -*- coding: utf-8 -*-
-from south.utils import datetime_utils as datetime
-from south.db import db
-from south.v2 import SchemaMigration
-from django.db import models
+from __future__ import unicode_literals
+
+from django.db import models, migrations
+import autoslug.fields
+import cms.models.fields
+import filer.fields.image
 
 
-class Migration(SchemaMigration):
+class Migration(migrations.Migration):
 
-    def forwards(self, orm):
-        # Adding model 'Activity'
-        db.create_table(u'activities_activity', (
-            (u'id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
-            ('name', self.gf('django.db.models.fields.CharField')(max_length=100)),
-            ('start_date', self.gf('django.db.models.fields.DateField')()),
-            ('end_date', self.gf('django.db.models.fields.DateField')()),
-            ('start_time', self.gf('django.db.models.fields.TimeField')(null=True, blank=True)),
-            ('end_time', self.gf('django.db.models.fields.TimeField')(null=True, blank=True)),
-            ('intended_public', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['activities.IntendedPublic'], null=True, blank=True)),
-            ('type', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['activities.ActivityType'])),
-            ('location', self.gf('django.db.models.fields.CharField')(max_length=255, blank=True)),
-            ('description', self.gf('django.db.models.fields.TextField')()),
-            ('content', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['cms.Placeholder'], null=True)),
-            ('url', self.gf('django.db.models.fields.URLField')(max_length=200, blank=True)),
-            ('liturgy', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['liturgies.Liturgy'], null=True)),
-            ('fb_event_id', self.gf('django.db.models.fields.CharField')(max_length=50, blank=True)),
-        ))
-        db.send_create_signal(u'activities', ['Activity'])
+    dependencies = [
+        ('filer', '0002_auto_20150606_2003'),
+        ('liturgies', '0001_initial'),
+        ('cms', '0012_auto_20150607_2207'),
+    ]
 
-        # Adding model 'IntendedPublic'
-        db.create_table(u'activities_intendedpublic', (
-            (u'id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
-            ('name', self.gf('django.db.models.fields.CharField')(max_length=100)),
-        ))
-        db.send_create_signal(u'activities', ['IntendedPublic'])
-
-        # Adding model 'ActivityType'
-        db.create_table(u'activities_activitytype', (
-            (u'id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
-            ('name', self.gf('django.db.models.fields.CharField')(max_length=100)),
-        ))
-        db.send_create_signal(u'activities', ['ActivityType'])
-
-
-    def backwards(self, orm):
-        # Deleting model 'Activity'
-        db.delete_table(u'activities_activity')
-
-        # Deleting model 'IntendedPublic'
-        db.delete_table(u'activities_intendedpublic')
-
-        # Deleting model 'ActivityType'
-        db.delete_table(u'activities_activitytype')
-
-
-    models = {
-        u'activities.activity': {
-            'Meta': {'ordering': "['start_date', 'start_time', 'end_date', 'end_time']", 'object_name': 'Activity'},
-            'content': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['cms.Placeholder']", 'null': 'True'}),
-            'description': ('django.db.models.fields.TextField', [], {}),
-            'end_date': ('django.db.models.fields.DateField', [], {}),
-            'end_time': ('django.db.models.fields.TimeField', [], {'null': 'True', 'blank': 'True'}),
-            'fb_event_id': ('django.db.models.fields.CharField', [], {'max_length': '50', 'blank': 'True'}),
-            u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
-            'intended_public': ('django.db.models.fields.related.ForeignKey', [], {'to': u"orm['activities.IntendedPublic']", 'null': 'True', 'blank': 'True'}),
-            'liturgy': ('django.db.models.fields.related.ForeignKey', [], {'to': u"orm['liturgies.Liturgy']", 'null': 'True'}),
-            'location': ('django.db.models.fields.CharField', [], {'max_length': '255', 'blank': 'True'}),
-            'name': ('django.db.models.fields.CharField', [], {'max_length': '100'}),
-            'start_date': ('django.db.models.fields.DateField', [], {}),
-            'start_time': ('django.db.models.fields.TimeField', [], {'null': 'True', 'blank': 'True'}),
-            'type': ('django.db.models.fields.related.ForeignKey', [], {'to': u"orm['activities.ActivityType']"}),
-            'url': ('django.db.models.fields.URLField', [], {'max_length': '200', 'blank': 'True'})
-        },
-        u'activities.activitytype': {
-            'Meta': {'object_name': 'ActivityType'},
-            u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
-            'name': ('django.db.models.fields.CharField', [], {'max_length': '100'})
-        },
-        u'activities.intendedpublic': {
-            'Meta': {'object_name': 'IntendedPublic'},
-            u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
-            'name': ('django.db.models.fields.CharField', [], {'max_length': '100'})
-        },
-        'cms.placeholder': {
-            'Meta': {'object_name': 'Placeholder'},
-            'default_width': ('django.db.models.fields.PositiveSmallIntegerField', [], {'null': 'True'}),
-            u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
-            'slot': ('django.db.models.fields.CharField', [], {'max_length': '255', 'db_index': 'True'})
-        },
-        u'liturgies.liturgy': {
-            'Meta': {'ordering': "['date']", 'object_name': 'Liturgy'},
-            'audiofile': ('django.db.models.fields.files.FileField', [], {'max_length': '100', 'blank': 'True'}),
-            'beamist': ('django.db.models.fields.CharField', [], {'max_length': '50', 'blank': 'True'}),
-            'collection_goal1': ('django.db.models.fields.CharField', [], {'max_length': '50', 'blank': 'True'}),
-            'collection_goal2': ('django.db.models.fields.CharField', [], {'max_length': '50', 'blank': 'True'}),
-            'collection_goal3': ('django.db.models.fields.CharField', [], {'max_length': '50', 'blank': 'True'}),
-            'date': ('django.db.models.fields.DateTimeField', [], {}),
-            'extra_information': ('django.db.models.fields.TextField', [], {'blank': 'True'}),
-            u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
-            'liturgy': ('django.db.models.fields.TextField', [], {}),
-            'main_section': ('django.db.models.fields.CharField', [], {'max_length': '50', 'blank': 'True'}),
-            'main_verse': ('django.db.models.fields.CharField', [], {'max_length': '50', 'blank': 'True'}),
-            'organist': ('django.db.models.fields.CharField', [], {'max_length': '50', 'blank': 'True'}),
-            'preach_author': ('django.db.models.fields.CharField', [], {'max_length': '100'}),
-            'preacher': ('django.db.models.fields.CharField', [], {'max_length': '100'}),
-            'service': ('django.db.models.fields.related.ForeignKey', [], {'to': u"orm['liturgies.Service']"}),
-            'service_theme': ('django.db.models.fields.CharField', [], {'max_length': '50', 'blank': 'True'})
-        },
-        u'liturgies.service': {
-            'Meta': {'object_name': 'Service'},
-            u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
-            'name': ('django.db.models.fields.CharField', [], {'max_length': '50'}),
-            'time': ('django.db.models.fields.TimeField', [], {})
-        }
-    }
-
-    complete_apps = ['activities']
+    operations = [
+        migrations.CreateModel(
+            name='Activity',
+            fields=[
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
+                ('name', models.CharField(max_length=100, verbose_name='name')),
+                ('slug', autoslug.fields.AutoSlugField(populate_from=b'name', unique=True, null=True, editable=False)),
+                ('start_date', models.DateField(verbose_name='start date')),
+                ('end_date', models.DateField(verbose_name='end date')),
+                ('start_time', models.TimeField(null=True, verbose_name='start time', blank=True)),
+                ('end_time', models.TimeField(null=True, verbose_name='end time', blank=True)),
+                ('location', models.CharField(max_length=255, verbose_name='location', blank=True)),
+                ('description', models.TextField(verbose_name='short description/intro')),
+                ('show_on_homepage', models.BooleanField(default=False, help_text='If checked, this activity can appear on the homepage.')),
+                ('url', models.URLField(verbose_name='external url', blank=True)),
+                ('fb_event_id', models.CharField(max_length=50, verbose_name='facebook event id', blank=True)),
+                ('content', cms.models.fields.PlaceholderField(slotname=b'content', editable=False, to='cms.Placeholder', null=True)),
+                ('image', filer.fields.image.FilerImageField(blank=True, to='filer.Image', null=True)),
+            ],
+            options={
+                'ordering': ['start_date', 'start_time', 'end_date', 'end_time'],
+                'verbose_name': 'activity',
+                'verbose_name_plural': 'activities',
+            },
+            bases=(models.Model,),
+        ),
+        migrations.CreateModel(
+            name='ActivityType',
+            fields=[
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
+                ('name', models.CharField(max_length=100, verbose_name='name')),
+            ],
+            options={
+            },
+            bases=(models.Model,),
+        ),
+        migrations.CreateModel(
+            name='IntendedPublic',
+            fields=[
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
+                ('name', models.CharField(max_length=100, verbose_name='name')),
+            ],
+            options={
+                'verbose_name': 'intended public',
+                'verbose_name_plural': 'intended public',
+            },
+            bases=(models.Model,),
+        ),
+        migrations.AddField(
+            model_name='activity',
+            name='intended_public',
+            field=models.ForeignKey(blank=True, to='activities.IntendedPublic', null=True),
+            preserve_default=True,
+        ),
+        migrations.AddField(
+            model_name='activity',
+            name='liturgy',
+            field=models.ForeignKey(editable=False, to='liturgies.Liturgy', null=True),
+            preserve_default=True,
+        ),
+        migrations.AddField(
+            model_name='activity',
+            name='type',
+            field=models.ForeignKey(to='activities.ActivityType'),
+            preserve_default=True,
+        ),
+    ]

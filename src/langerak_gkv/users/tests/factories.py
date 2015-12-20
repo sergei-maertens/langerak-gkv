@@ -1,12 +1,10 @@
 import factory
 import factory.fuzzy
 
-from ..models import User, UserRelation, RelationType
-
 
 class UserFactory(factory.django.DjangoModelFactory):
     class Meta:
-        model = User
+        model = 'users.User'
 
     first_name = factory.fuzzy.FuzzyChoice(['John', 'Jane'])
     last_name = 'Doe'
@@ -17,7 +15,7 @@ class UserFactory(factory.django.DjangoModelFactory):
 
 class RelationTypeFactory(factory.django.DjangoModelFactory):
     class Meta:
-        model = RelationType
+        model = 'users.RelationType'
 
     name_male = factory.fuzzy.FuzzyChoice(['Vader', 'Vriend'])
     name_female = factory.fuzzy.FuzzyChoice(['Moeder', 'Vriendin'])
@@ -31,7 +29,7 @@ class RelationTypeFactory(factory.django.DjangoModelFactory):
 
 class UserRelationFactory(factory.django.DjangoModelFactory):
     class Meta:
-        model = UserRelation
+        model = 'users.UserRelation'
 
     user1 = factory.SubFactory(UserFactory)
     user2 = factory.SubFactory(UserFactory)

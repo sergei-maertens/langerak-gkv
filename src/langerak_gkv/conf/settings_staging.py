@@ -7,7 +7,6 @@ from settings import *
 
 DEBUG = False
 TEMPLATE_DEBUG = DEBUG
-WSGI_APPLICATION = 'langerak_gkv.wsgi.wsgi_staging.application'
 
 ADMINS = (
     ('Sergei Maertens', 'sergeimaertens@gmail.com'),
@@ -46,10 +45,6 @@ RAVEN_CONFIG = {
     'release': raven.fetch_git_sha(ROOT_DIR),
 }
 
-
-LOGIN_REDIRECT_URL = '/staging/'
-MEDIA_URL = '/staging/media/'
-STATIC_URL = '/staging/static/'
 
 try:
     from .settings_local import *
