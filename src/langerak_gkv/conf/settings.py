@@ -12,24 +12,11 @@ ROOT_DIR = os.path.abspath(os.path.join(DJANGO_PROJECT_DIR, os.path.pardir, os.p
 #
 
 DEBUG = False
-TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
-    # ('Your Name', 'your_email@example.com'),
+    ('Sergei Maertens', 'sergeimaertens@gmail.com'),
 )
 MANAGERS = ADMINS
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': '',                      # Or path to database file if using sqlite3.
-        # The following settings are not used with sqlite3:
-        'USER': '',
-        'PASSWORD': '',
-        'HOST': '',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
-        'PORT': '',                      # Set to empty string for default.
-    }
-}
 
 LANGUAGES = (
     ('nl', 'Nederlands'),
@@ -48,7 +35,7 @@ ALLOWED_HOSTS = []
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
 # although not all choices may be available on all operating systems.
 # In a Windows environment this must be set to your system time zone.
-TIME_ZONE = 'America/Chicago'
+TIME_ZONE = 'Europe/Amsterdam'
 
 SITE_ID = 1
 
@@ -100,7 +87,7 @@ STATICFILES_FINDERS = [
 ]
 
 # Make this unique, and don't share it with anybody.
-SECRET_KEY = 'h7fj5&l=^u5e2lf^v^-p=ze%a57x6byw7uoihxllpl)j^-k+#u'
+SECRET_KEY = 'I am different on staging and production'
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
@@ -306,7 +293,7 @@ LOGGING = {
 #
 # Mailing
 #
-EMAIL_BACKEND = 'django_mailer.smtp_queue.EmailBackend'
+EMAIL_BACKEND = 'django_yubin.smtp_queue.EmailBackend'
 
 #
 # Django-axes

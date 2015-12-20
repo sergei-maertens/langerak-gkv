@@ -1,16 +1,6 @@
 import raven
-from settings import *
+from .settings import *
 
-#
-# Standard Django settings.
-#
-
-DEBUG = False
-TEMPLATE_DEBUG = DEBUG
-
-ADMINS = (
-    ('Sergei Maertens', 'sergeimaertens@gmail.com'),
-)
 
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 # See https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts
