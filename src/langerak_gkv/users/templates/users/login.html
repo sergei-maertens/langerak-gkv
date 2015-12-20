@@ -1,21 +1,21 @@
-{% extends "master.html" %}{% load i18n formulation %}
+{% extends "master.html" %}{% load i18n sniplates %}
 
 {% block body-class %}profile{% endblock %}
 
 {% block content %}
 <div class="row">
 <form action="." method="post" class="col-xs-12 col-md-6" id="form-login">{% csrf_token %}
-{% form 'default.form' %}
+{% load_widgets form='default.form' %}
 
-    <p>{% trans "Enter your e-mail address and password or username and password to login." %}</p>
+<p>{% trans "Enter your e-mail address and password or username and password to login." %}</p>
 
-    {{ form.non_field_errors }}
+{{ form.non_field_errors }}
 
-    <input type="hidden" name="next" value="{{ request.REQUEST.next }}">
-    {% for field in form %}{% field field %}{% endfor %}
+<input type="hidden" name="next" value="{{ request.REQUEST.next }}">
+{% for field in form %}{% form_field field %}{% endfor %}
 
-    {% use 'btn-submit' btn_text=_('Login') %}
-{% endform %}
+{% widget 'form:btn-submit' btn_text=_('Login') %}
+
 <a href="{% url "password_reset_recover" %}">{% trans "Forgot password?" %}</a>
 </form>
 </div>

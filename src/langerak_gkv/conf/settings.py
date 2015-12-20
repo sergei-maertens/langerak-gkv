@@ -160,8 +160,6 @@ FIXTURE_DIRS = (
 )
 
 INSTALLED_APPS = [
-
-    'djamin',
     # Note: contenttypes should be first, see Django ticket #10827
     'django.contrib.contenttypes',
     'django.contrib.auth',
@@ -171,16 +169,16 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.admin',
 
-    # order matters...
+    # order matters, needed for cms migrations
     'langerak_gkv.users',
 
     # External applications.
     'axes',
-    'django_mailer',
+    'django_yubin',
     'compressor',
     'easy_thumbnails',
     'leaflet',
-    'formulation',
+    'sniplates',
     'rest_framework',
     'rosetta',
     'haystack',

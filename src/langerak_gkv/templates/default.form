@@ -1,8 +1,8 @@
-{% extends "formulation/default.form" %}{% load formulation %}
+{% extends "sniplates/django.html" %}{% load sniplates %}
 
 {% block input %}
 <div class="form-group">
-{% use "_label" %}
+{% reuse "_label" %}
 <input type="{{ field_type|default:"text" }}"
     name="{{ html_name }}"
     id="{{ id }}"
@@ -12,43 +12,43 @@
     {{ autofocus|yesno:"autofocus," }}
     {% if placeholder %}placeholder="{{ placeholder }}"{% endif %}
 >
-{% use "_help" %}
-{% use "_errors" %}
+{% reuse "_help" %}
+{% reuse "_errors" %}
 </div>
 {% endblock %}
 
 
 {% block Textarea %}
 <div class="form-group">
-{% use "_label" %}
+{% reuse "_label" %}
 <textarea name="{{ html_name }}" id="{{ id }}"
     class="form-control {{ required|yesno:"required," }} {{ css_classes }} {{ errors|yesno:"error," }}"
     {{ autofocus|yesno:"autofocus," }}
     {% if placeholder %}placeholder="{{ placeholder }}"{% endif %}
     {{ widget.attrs|flat_attrs }}
 >{{ value|default:"" }}</textarea>
-{% use "_help" %}
-{% use "_errors" %}
+{% reuse "_help" %}
+{% reuse "_errors" %}
 </div>
 {% endblock %}
 
 
 {% block Select %}
 <div class="form-group {{ required|yesno:"required," }}">
-    {% use "_label" %}
+    {% reuse "_label" %}
     <select name="{{ html_name }}" id="{{ id }}" {{ widget.attrs|flat_attrs }} class="form-control" >
     {% for val, display in choices %}
         <option value="{{ val }}" {% if val == value|default:None %}selected{% endif %}>{{ display }}</option>
     {% endfor %}
     </select>
-    {% use "_help" %}
-    {% use "_errors" %}
+    {% reuse "_help" %}
+    {% reuse "_errors" %}
 </div>
 {% endblock %}
 
 
 {% block CheckboxSelectMultiple %}
-{% use "_label" %}
+{% reuse "_label" %}
 <div id="{{ id }}">
     {% for val, display in choices %}
         <div class="checkbox">
@@ -59,8 +59,8 @@
         </div>
     {% endfor %}
 </div>
-{% use "_help" %}
-{% use "_errors" %}
+{% reuse "_help" %}
+{% reuse "_errors" %}
 {% endblock %}
 
 

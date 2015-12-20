@@ -1,4 +1,4 @@
-{% extends "default.form" %}{% load formulation %}
+{% extends "default.form" %}{% load sniplates %}
 
 
 {% block input %}
@@ -17,6 +17,6 @@
             <i class="help fa fa-question fa-lg" data-trigger="hover focus click" data-toggle="popover" data-content="{{ label }}"></i>
         </span>
     </div>
-    {% use "_errors" %}
+    {% reuse "_errors" %}
 </div>
 {% endblock %}

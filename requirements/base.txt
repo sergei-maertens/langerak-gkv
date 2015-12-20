@@ -6,7 +6,7 @@ Pillow==2.9.0
 django_compressor==1.6
 django-axes==1.5.0
 django-choices==1.4.2
-formulation==2.0.13
+django-sniplates==0.3.2
 easy-thumbnails==2.3
 django-class-based-auth-views==0.3
 django-image-cropping==1.0.3
@@ -43,7 +43,5 @@ django-leaflet==0.17.1
 jsonfield==1.0.3
 
 # mailing
-git+https://github.com/SmileyChris/django-mailer-2.git#egg=django-mailer-2
-
-# pretty admin
--e git+https://github.com/hersonls/djamin.git#egg=djamin
+# django-yubin==0.1.8
+git+https://github.com/sergei-maertens/django-yubin.git@master#egg=django-yubin
