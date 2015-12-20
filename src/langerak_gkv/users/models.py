@@ -98,7 +98,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     district_function = models.ForeignKey('users.DistrictFunction', blank=True, null=True)
     family = models.ForeignKey('users.Family', verbose_name=_('family'), blank=True, null=True)
     relations = models.ManyToManyField(
-        'self', blank=True, null=True,
+        'self', blank=True,
         through='users.UserRelation', symmetrical=False)
 
     objects = UserManager()

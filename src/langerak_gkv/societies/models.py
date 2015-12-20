@@ -13,7 +13,7 @@ class Society(models.Model):
     name = models.CharField(_('name'), max_length=255)
     content = PlaceholderField('content')
 
-    members = models.ManyToManyField(settings.AUTH_USER_MODEL, blank=True, null=True)
+    members = models.ManyToManyField(settings.AUTH_USER_MODEL, blank=True)
 
     class Meta:
         verbose_name = _('society')
