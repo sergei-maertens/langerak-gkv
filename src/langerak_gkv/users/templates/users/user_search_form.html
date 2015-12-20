@@ -1,24 +1,22 @@
-{% load i18n formulation %}
+{% load i18n sniplates %}
 <form action="{% url 'users:search' %}" method="post" class="block">{% csrf_token %}
-{% form 'default.form' %}
-    <fieldset>
-        {% field form.full_name %}
-        {% use 'btn-submit' btn_text=_('Search') btn_class='btn-action' %}
-    </fieldset>
+{% load_widgets form='default.form' %}
+<fieldset>
+    {% form_field form.full_name %}
+    {% widget 'form:btn-submit' btn_text=_('Search') btn_class='btn-action' %}
+</fieldset>
 
-    <fieldset>
-        <h4>{% trans "Advanced search" %}</h4>
-        {% field form.query %}
-        {% field form.sex %}
-        {% field form.min_age %}
-        {% field form.max_age %}
-        {% field form.first_name %}
-        {% field form.last_name %}
-        {% field form.address %}
-        {% field form.district_function %}
+<fieldset>
+    <h4>{% trans "Advanced search" %}</h4>
+    {% form_field form.query %}
+    {% form_field form.sex %}
+    {% form_field form.min_age %}
+    {% form_field form.max_age %}
+    {% form_field form.first_name %}
+    {% form_field form.last_name %}
+    {% form_field form.address %}
+    {% form_field form.district_function %}
 
-        {% use 'btn-submit' btn_text=_('Search') btn_class='btn-action' %}
-    </fieldset>
-
-{% endform %}
+    {% widget 'form:btn-submit' btn_text=_('Search') btn_class='btn-action' %}
+</fieldset>
 </form>

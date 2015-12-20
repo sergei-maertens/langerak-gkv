@@ -28,7 +28,7 @@
                 </a>
             </div>
 
-            {% include "users/user_search_form.html" %}
+            {% include "users/user_search_form.html" with form=search_form|default:form %}
 
         {% endblock %}
     </aside>

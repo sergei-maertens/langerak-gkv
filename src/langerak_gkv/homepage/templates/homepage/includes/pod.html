@@ -1,4 +1,4 @@
-{% load i18n formulation %}
+{% load i18n sniplates %}
 
 <section class="home-wrapper" id="pod">
     <div>
@@ -6,10 +6,9 @@
             <small>{% trans "Fill the form and our prayer group will pray for you." %}</small>
         </h3>
         <form action="{% url 'pod' %}" method="post">{% csrf_token %}
-            {% form 'homepage/pod.form' %}
-            {% for field in pod_form %}{% field field %}{% endfor %}
-                {% use 'btn-submit' btn_class='btn-transparent btn-fade' %}
-            {% endform %}
+            {% load_widgets form='homepage/pod.form' %}
+            {% for field in pod_form %}{% form_field field %}{% endfor %}
+            {% widget 'form:btn-submit' btn_class='btn-transparent btn-fade' %}
         </form>
     </div>
 </section>
