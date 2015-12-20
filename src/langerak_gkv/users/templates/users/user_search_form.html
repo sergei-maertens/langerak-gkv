@@ -3,7 +3,7 @@
 {% load_widgets form='default.form' %}
 <fieldset>
     {% form_field form.full_name %}
-    {% use 'btn-submit' btn_text=_('Search') btn_class='btn-action' %}
+    {% widget 'form:btn-submit' btn_text=_('Search') btn_class='btn-action' %}
 </fieldset>
 
 <fieldset>

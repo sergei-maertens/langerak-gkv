@@ -16,7 +16,7 @@
             id="{{ id }}"
             value="{{ value|default:"" }}"
             class="form-control {{ required|yesno:"required," }} {{ css_classes }} {{ errors|yesno:"error," }}"
-            {{ widget.attrs|flat_attrs }}
+            {{ widget.attrs|flatattrs }}
             {{ autofocus|yesno:"autofocus," }}
             {% if placeholder %}placeholder="{{ placeholder }}"{% endif %}
         >
@@ -37,7 +37,7 @@
             class="form-control {{ required|yesno:"required," }} {{ css_classes }} {{ errors|yesno:"error," }}"
             {{ autofocus|yesno:"autofocus," }}
             {% if placeholder %}placeholder="{{ placeholder }}"{% endif %}
-            {{ widget.attrs|flat_attrs }}
+            {{ widget.attrs|flatattrs }}
         >{{ value|default:"" }}</textarea>
         {% reuse "_errors" %}
     </span>
