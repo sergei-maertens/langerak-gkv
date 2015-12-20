@@ -1,4 +1,4 @@
-{% load i18n static menu_tags cms_tags langerak formulation %}
+{% load i18n static menu_tags cms_tags langerak sniplates %}
 <header class="header-container container hidden-xs">
     <figure id="header-image">
         {% placeholder header_image inherit or %}
@@ -55,10 +55,9 @@
 
                         <form class="dropdown-menu" role="menu" method="post"
                                 action="{% url 'users:login' %}">{% csrf_token %}
-                            {% form 'users/login.form' %}
-                                {% for f in loginform %}{% field f %}{% endfor %}
-                                {% use 'btn-submit' btn_text=_('Login') btn_class='btn-transparent btn-fade' %}
-                            {% endform %}
+                            {% load_widgets form='users/login.form' %}
+                            {% for f in loginform %}{% form_field f %}{% endfor %}
+                            {% widget 'form:btn-submit' btn_text=_('Login') btn_class='btn-transparent btn-fade' %}
                             <div><a href="{% url "password_reset_recover" %}">{% trans "Forgot password?" %}</a></div>
                         </form>
                     </li>

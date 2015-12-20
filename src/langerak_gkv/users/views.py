@@ -9,7 +9,6 @@ from .forms import UserSearchForm, LoginForm, ProfileUpdateForm
 
 
 class UserSearchMixin(FormMixin):
-    form_class = UserSearchForm
     form = None
     form_context_name = 'form'
     initial = {
@@ -17,8 +16,7 @@ class UserSearchMixin(FormMixin):
     }
 
     def get_search_form(self):
-        form_class = self.get_form_class()
-        return super(UserSearchMixin, self).get_form(form_class)
+        return super(UserSearchMixin, self).get_form(UserSearchForm)
 
     def get_context_data(self, **kwargs):
         kwargs[self.form_context_name] = self.form or self.get_search_form()

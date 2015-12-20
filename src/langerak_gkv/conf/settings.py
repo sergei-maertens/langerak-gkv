@@ -12,24 +12,11 @@ ROOT_DIR = os.path.abspath(os.path.join(DJANGO_PROJECT_DIR, os.path.pardir, os.p
 #
 
 DEBUG = False
-TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
-    # ('Your Name', 'your_email@example.com'),
+    ('Sergei Maertens', 'sergeimaertens@gmail.com'),
 )
 MANAGERS = ADMINS
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': '',                      # Or path to database file if using sqlite3.
-        # The following settings are not used with sqlite3:
-        'USER': '',
-        'PASSWORD': '',
-        'HOST': '',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
-        'PORT': '',                      # Set to empty string for default.
-    }
-}
 
 LANGUAGES = (
     ('nl', 'Nederlands'),
@@ -48,7 +35,7 @@ ALLOWED_HOSTS = []
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
 # although not all choices may be available on all operating systems.
 # In a Windows environment this must be set to your system time zone.
-TIME_ZONE = 'America/Chicago'
+TIME_ZONE = 'Europe/Amsterdam'
 
 SITE_ID = 1
 
@@ -100,31 +87,35 @@ STATICFILES_FINDERS = [
 ]
 
 # Make this unique, and don't share it with anybody.
-SECRET_KEY = 'h7fj5&l=^u5e2lf^v^-p=ze%a57x6byw7uoihxllpl)j^-k+#u'
+SECRET_KEY = 'I am different on staging and production'
 
-# List of callables that know how to import templates from various sources.
-TEMPLATE_LOADERS = (
-    'django.template.loaders.filesystem.Loader',
-    'django.template.loaders.app_directories.Loader',
-    # 'django.template.loaders.eggs.Loader',
-)
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [
+            os.path.join(DJANGO_PROJECT_DIR, 'templates'),
+        ],
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                'django.contrib.auth.context_processors.auth',
+                'django.template.context_processors.debug',
+                'django.template.context_processors.i18n',
+                'django.template.context_processors.media',
+                'django.template.context_processors.static',
+                'django.template.context_processors.tz',
+                'django.template.context_processors.request',
+                'django.contrib.messages.context_processors.messages',
 
-TEMPLATE_CONTEXT_PROCESSORS = (
-    'django.contrib.auth.context_processors.auth',
-    'django.core.context_processors.debug',
-    'django.core.context_processors.i18n',
-    'django.core.context_processors.media',
-    'django.core.context_processors.static',
-    'django.core.context_processors.tz',
-    'django.core.context_processors.request',
-    'django.contrib.messages.context_processors.messages',
+                'cms.context_processors.cms_settings',
+                'sekizai.context_processors.sekizai',
 
-    'cms.context_processors.cms_settings',
-    'sekizai.context_processors.sekizai',
-
-    'langerak_gkv.homepage.context_processors.sidebar',
-    'langerak_gkv.users.context_processors.login',
-)
+                'langerak_gkv.homepage.context_processors.sidebar',
+                'langerak_gkv.users.context_processors.login',
+            ],
+        },
+    },
+]
 
 MIDDLEWARE_CLASSES = [
     'django.middleware.common.CommonMiddleware',
@@ -148,20 +139,12 @@ ROOT_URLCONF = 'langerak_gkv.urls'
 # Python dotted path to the WSGI application used by Django's runserver.
 WSGI_APPLICATION = 'wsgi.application'
 
-TEMPLATE_DIRS = (
-    # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
-    # Always use forward slashes, even on Windows.
-    # Don't forget to use absolute paths, not relative paths.
-    os.path.join(DJANGO_PROJECT_DIR, 'templates'),
-)
 
 FIXTURE_DIRS = (
     os.path.join(DJANGO_PROJECT_DIR, 'fixtures'),
 )
 
 INSTALLED_APPS = [
-
-    'djamin',
     # Note: contenttypes should be first, see Django ticket #10827
     'django.contrib.contenttypes',
     'django.contrib.auth',
@@ -171,16 +154,16 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.admin',
 
-    # order matters...
+    # order matters, needed for cms migrations
     'langerak_gkv.users',
 
     # External applications.
     'axes',
-    'django_mailer',
+    'django_yubin',
     'compressor',
     'easy_thumbnails',
     'leaflet',
-    'formulation',
+    'sniplates',
     'rest_framework',
     'rosetta',
     'haystack',
@@ -308,7 +291,7 @@ LOGGING = {
 #
 # Mailing
 #
-EMAIL_BACKEND = 'django_mailer.smtp_queue.EmailBackend'
+EMAIL_BACKEND = 'django_yubin.smtp_queue.EmailBackend'
 
 #
 # Django-axes

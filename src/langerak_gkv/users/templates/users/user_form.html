@@ -1,4 +1,4 @@
-{% extends "users/user_detail.html" %}{% load formulation i18n %}
+{% extends "users/user_detail.html" %}{% load sniplates i18n %}
 
 {% block extrahead %}
 {{ form.media }}
@@ -21,28 +21,25 @@
 
 
 {% block mobile %}
-{% form 'users/profile.form' %}
-    {% field form.mobile %}
-{% endform %}
+{% load_widgets form='users/profile.form' %}
+{% form_field form.mobile %}
 {% endblock %}
 
 
 {% block email %}
-{% form 'users/profile.form' %}
-    {% field form.email %}
-    <br>
-    {% field form.username %}
-{% endform %}
+{% load_widgets form='users/profile.form' %}
+{% form_field form.email %}
+<br>
+{% form_field form.username %}
 {% endblock %}
 
 
 {% block about_me %}
-{% form 'users/profile.form' %}
-    {% field form.about_me %}
+{% load_widgets form='users/profile.form' %}
+{% form_field form.about_me %}
 
-    <div class="clearfix">
-        {% trans "save" as save %}
-        {% use 'btn-submit' btn_class='btn-action pull-right' btn_text=save %}
-    </div>
-{% endform %}
+<div class="clearfix">
+    {% trans "save" as save %}
+    {% widget 'form:btn-submit' btn_class='btn-action pull-right' btn_text=save %}
+</div>
 {% endblock %}

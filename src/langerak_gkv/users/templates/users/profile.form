@@ -1,4 +1,4 @@
-{% extends "default.form" %}{% load formulation i18n %}
+{% extends "default.form" %}{% load sniplates i18n %}
 
 
 {% block _label %}
@@ -9,37 +9,37 @@
 
 {% block input %}
 <div class="form-group">
-    {% use "_label" %}
+    {% reuse "_label" %}
     <span class="col-md-6">
         <input type="{{ widget.input_type|default:"text" }}"
             name="{{ html_name }}"
             id="{{ id }}"
             value="{{ value|default:"" }}"
             class="form-control {{ required|yesno:"required," }} {{ css_classes }} {{ errors|yesno:"error," }}"
-            {{ widget.attrs|flat_attrs }}
+            {{ widget.attrs|flatattrs }}
             {{ autofocus|yesno:"autofocus," }}
             {% if placeholder %}placeholder="{{ placeholder }}"{% endif %}
         >
-        {% use "_errors" %}
+        {% reuse "_errors" %}
     </span>
 </div>
 {% endblock %}
 
-{% block TextInput_mobile %}{% use 'input' %}{% endblock %}
-{% block TextInput_username %}{% use 'input' %}{% endblock %}
-{% block EmailInput_email %}{% use 'input' %}{% endblock %}
+{% block TextInput_mobile %}{% reuse 'input' %}{% endblock %}
+{% block TextInput_username %}{% reuse 'input' %}{% endblock %}
+{% block EmailInput_email %}{% reuse 'input' %}{% endblock %}
 
 {% block Textarea_about_me %}
 <div class="form-group">
-    {% use "_label" %}
+    {% reuse "_label" %}
     <span class="col-md-6">
         <textarea name="{{ html_name }}" id="{{ id }}"
             class="form-control {{ required|yesno:"required," }} {{ css_classes }} {{ errors|yesno:"error," }}"
             {{ autofocus|yesno:"autofocus," }}
             {% if placeholder %}placeholder="{{ placeholder }}"{% endif %}
-            {{ widget.attrs|flat_attrs }}
+            {{ widget.attrs|flatattrs }}
         >{{ value|default:"" }}</textarea>
-        {% use "_errors" %}
+        {% reuse "_errors" %}
     </span>
 </div>
 {% endblock %}

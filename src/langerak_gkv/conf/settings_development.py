@@ -1,17 +1,13 @@
-from settings import *
+from .settings import *
 
 #
 # Standard Django settings.
 #
 
 DEBUG = True
-TEMPLATE_DEBUG = DEBUG
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
-ADMINS = (
-    # ('Your Name', 'your_email@example.com'),
-)
-MANAGERS = ADMINS
+MANAGERS = ADMINS = ()
 
 DATABASES = {
     'default': {
