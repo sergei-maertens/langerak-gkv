@@ -12,7 +12,9 @@
 
     <div class="fc-day-header sub">
         <strong>{% blocktrans count counter=paginator.count %}
-        One upcoming{% plural %}{{ counter }} upcoming{% endblocktrans %}</strong>
+        One upcoming
+        {% plural %}
+        {{ counter }} upcoming{% endblocktrans %}</strong>
     </div>
 
     {% include 'liturgies/_liturgy_list.html' %}

@@ -54,7 +54,9 @@
 
             <div class="fc-day-header sub"><strong>
             {% blocktrans count count=activities_today|length %}
-                1 activity{% plural %}{{ count }} activities
+                1 activity
+                {% plural %}
+                {{ count }} activities
             {% endblocktrans %}
             </strong></div>
 
