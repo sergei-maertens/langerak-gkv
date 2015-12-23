@@ -17,4 +17,16 @@ body.liturgies.list {
             margin-left: auto; // float to the right
         }
     }
+
+    &.archive {
+        .page-block {
+            padding: 10px 15px;
+            margin-bottom: 5px;
+        }
+
+        .month-link {
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+    }
 }

@@ -1,6 +1,6 @@
 from datetime import date
 
-from django.views.generic import ListView, DateDetailView
+from django.views.generic import ArchiveIndexView, ListView, DateDetailView, MonthArchiveView
 
 from langerak_gkv.activities.views import ActivitiesTodayMixin
 from .models import Liturgy
@@ -15,6 +15,18 @@ class LiturgyListView(ActivitiesTodayMixin, ListView):
     def get_queryset(self):
         qs = super(LiturgyListView, self).get_queryset()
         return qs.filter(date__gte=date.today()).order_by('date', 'service__time')
+
+
+class LiturgyArchiveView(ActivitiesTodayMixin, ArchiveIndexView):
+    model = Liturgy
+    date_field = 'date'
+    date_list_period = 'month'
+
+
+class LiturgyMonthArchiveView(ActivitiesTodayMixin, MonthArchiveView):
+    queryset = Liturgy.objects.select_related('service').all()
+    date_field = 'date'
+    month_format = '%m'
 
 
 class LiturgyDateDetailView(ActivitiesTodayMixin, DateDetailView):

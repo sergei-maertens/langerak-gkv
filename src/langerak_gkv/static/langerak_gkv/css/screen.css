@@ -1421,3 +1421,13 @@ body.liturgies.list #calendar-search ul.list-inline {
 body.liturgies.list #calendar-search .pull-right {
   margin-left: auto;
 }
+/* line 22, ../../../sass/partials/apps/_liturgies.scss */
+body.liturgies.list.archive .page-block {
+  padding: 10px 15px;
+  margin-bottom: 5px;
+}
+/* line 27, ../../../sass/partials/apps/_liturgies.scss */
+body.liturgies.list.archive .month-link {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}

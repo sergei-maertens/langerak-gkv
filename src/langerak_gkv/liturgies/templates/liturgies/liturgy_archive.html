@@ -1,0 +1,87 @@
+{% extends "liturgies/base.html" %}{% load i18n %}
+
+{% block body-class %}{{ block.super }} liturgies list archive{% endblock body-class %}
+
+
+{% block calendar-modes %}
+<ul class="list-inline">
+    <li>
+        <a href="{% url 'liturgies:list' %}">
+            <i class="fa fa-calendar"></i>
+            {% trans "Upcoming liturgies" %}
+        </a>
+    </li>
+</ul>
+{% endblock %}
+
+
+{% block calendar-content %}
+<div class="fc fc-ltr fc-unthemed link-height activity-list" data-linkid="1">
+    <div class="fc-toolbar">
+        <div class="fc-center">
+            <h2>{% trans "Liturgies archive" %}</h2>
+        </div>
+    </div>
+
+    {% regroup date_list by year as dates_by_year %}
+
+    {% for month in dates_by_year %}
+        <div class="fc-day-header sub" id="year{{ month.grouper }}"><strong>{{ month.grouper }}</strong></div>
+
+        <div class="page-block">
+            <div class="row">
+
+                {% for d in month.list %}
+
+                    <div class="col-lg-3 col-md-4 month-link">
+                        <a href="{% url 'liturgies:archive_date_month' d|date:"Y" d|date:"m" %}">{{ d|date:"F Y" }}</a>
+                    </div>
+
+                {% endfor %}
+
+            </div>
+        </div>
+
+    {% endfor %}
+
+
+    {% comment %}
+
+    {{ date_list }}
+
+
+
+    {% for liturgy in liturgies %}
+        <article class="page-block">
+            <h1>{% blocktrans with date=liturgy.date|date time=liturgy.service.time|time %}
+                {{ date }} <smal>{{ time }}</small> {% endblocktrans %}
+                {% if liturgy.preacher %}<span class="btn blue pull-right">{{ liturgy.preacher }}</span>{% endif %}
+            </h1>
+
+
+            {% if liturgy.service_theme %}
+                <p><i class="fa fa-comment-o pull-left"></i> {{ liturgy.service_theme }}</p>
+            {% endif %}
+
+            {% if liturgy.liturgy %}
+                <p>
+                    <i class="fa fa-quote-left pull-left"></i>
+                    {{ liturgy.liturgy|linebreaksbr|truncatewords:30 }}
+                </p>
+            {% endif %}
+
+            <div class="text-right">
+            <a href="{{ liturgy.get_absolute_url }}" class="orange">{% trans "Read more" %}</a>
+            </div>
+        </article>
+    {% empty %}
+        <article class="page-block">{% trans "No activities this week!" %}</article>
+    {% endfor %}
+
+
+    {% endcomment %}
+
+</div>
+
+{% include 'includes/pagination.html' %}
+{% endblock %}
