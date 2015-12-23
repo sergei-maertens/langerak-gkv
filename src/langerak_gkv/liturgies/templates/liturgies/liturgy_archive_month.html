@@ -6,13 +6,12 @@
 <div class="fc fc-ltr fc-unthemed link-height activity-list" data-linkid="1">
     <div class="fc-toolbar">
         <div class="fc-center">
-            <h2>{% trans "Upcoming liturgies" %}</h2>
+            <h2>{% trans "Liturgies archive" %}</h2>
         </div>
     </div>
 
     <div class="fc-day-header sub">
-        <strong>{% blocktrans count counter=paginator.count %}
-        One upcoming{% plural %}{{ counter }} upcoming{% endblocktrans %}</strong>
+        {{ month|date:"F Y" }}
     </div>
 
     {% include 'liturgies/_liturgy_list.html' %}

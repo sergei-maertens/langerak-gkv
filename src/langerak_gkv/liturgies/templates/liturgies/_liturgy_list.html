@@ -1,0 +1,27 @@
+{% load i18n %}
+{% for liturgy in liturgies %}
+    <article class="page-block">
+        <h1>{% blocktrans with date=liturgy.date|date time=liturgy.service.time|time %}
+            {{ date }} <smal>{{ time }}</small> {% endblocktrans %}
+            {% if liturgy.preacher %}<span class="btn blue pull-right">{{ liturgy.preacher }}</span>{% endif %}
+        </h1>
+
+
+        {% if liturgy.service_theme %}
+            <p><i class="fa fa-comment-o pull-left"></i> {{ liturgy.service_theme }}</p>
+        {% endif %}
+
+        {% if liturgy.liturgy %}
+            <p>
+                <i class="fa fa-quote-left pull-left"></i>
+                {{ liturgy.liturgy|linebreaksbr|truncatewords:30 }}
+            </p>
+        {% endif %}
+
+        <div class="text-right">
+        <a href="{{ liturgy.get_absolute_url }}" class="orange">{% trans "Read more" %}</a>
+        </div>
+    </article>
+{% empty %}
+    <article class="page-block">{% trans "No activities this week!" %}</article>
+{% endfor %}

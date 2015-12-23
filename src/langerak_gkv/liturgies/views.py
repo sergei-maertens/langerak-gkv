@@ -27,6 +27,8 @@ class LiturgyMonthArchiveView(ActivitiesTodayMixin, MonthArchiveView):
     queryset = Liturgy.objects.select_related('service').all()
     date_field = 'date'
     month_format = '%m'
+    context_object_name = 'liturgies'
+    allow_future = True
 
 
 class LiturgyDateDetailView(ActivitiesTodayMixin, DateDetailView):
