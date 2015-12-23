@@ -7,6 +7,7 @@
 <form action="{% url 'activities:search' %}"
         class="page-block clearfix" id="calendar-search">{% spaceless %}
     <span class="pull-left">
+        {% block calendar-modes %}
         {% url 'activities:calendar' as url_calendar %}
         <a href="{{ url_calendar }}" id="month-view" data-toggle="popover" data-placement="top" data-trigger="hover"
             data-content="{% trans "Calendar view" %}"
@@ -26,6 +27,7 @@
                 <i class="fa fa-check fa-stack-1x"></i>
             </span>
         </a>
+        {% endblock %}
     </span>
 
     <div class="form-group pull-right">

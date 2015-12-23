@@ -1,6 +1,0 @@
-* archive: find services
-* 404's on mp3's (migration)
-* kerkbladen: file integration support, styling
-* inherit sidebar
-* green readability
-* simple photo album

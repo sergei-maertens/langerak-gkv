@@ -1405,3 +1405,19 @@ body.liturgies.list article h1 {
   font-size: 1.8em;
   margin-top: 0;
 }
+/* line 7, ../../../sass/partials/apps/_liturgies.scss */
+body.liturgies.list #calendar-search {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+}
+/* line 11, ../../../sass/partials/apps/_liturgies.scss */
+body.liturgies.list #calendar-search ul.list-inline {
+  margin-bottom: 0;
+  margin-left: 0;
+}
+/* line 16, ../../../sass/partials/apps/_liturgies.scss */
+body.liturgies.list #calendar-search .pull-right {
+  margin-left: auto;
+}

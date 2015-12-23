@@ -1,1 +1,15 @@
 {% extends "activities/base.html" %} {# use the calendar base template #}
+{% load i18n %}
+
+
+{% block calendar-modes %}
+<ul class="list-inline">
+    <li>
+        <a href="{% url 'liturgies:history' %}">
+            <i class="fa fa-archive"></i> {% trans "Archive" %}</a>
+    </li>
+</ul>
+{% endblock %}
+
+
+{# <li><a href="{% url 'liturgies:list' %}">{% trans "Upcoming liturgies" %}</a></li> #}

@@ -3,4 +3,18 @@ body.liturgies.list {
         font-size: 1.8em;
         margin-top: 0;
     }
+
+    #calendar-search {
+        @include display-flex;
+        @include align-items(center);
+
+        ul.list-inline {
+            margin-bottom: 0;
+            margin-left: 0;
+        }
+
+        .pull-right {
+            margin-left: auto; // float to the right
+        }
+    }
 }
