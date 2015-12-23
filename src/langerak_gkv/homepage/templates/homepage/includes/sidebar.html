@@ -3,16 +3,19 @@
     <div>
         <a href="http://www.luisterkerk.nl/gkvlangerak/direct.php">
             <figure>
-                {% placeholder preach_image or %}
-                    <img src="{% static "homepage/predikant.png" %}">
-                {% endplaceholder %}
+                {% static_placeholder 'preach_image' or %}
+                    <img src="{% static "homepage/dominee.jpg" %}">
+                {% endstatic_placeholder %}
             </figure>
         </a>
         <div>
             <h3>
-                {% placeholder preach_title or %}{% trans "Configure title" %}{% endplaceholder %}
+                {% static_placeholder 'preach_title' or %}{% trans "Configure title" %}{% endstatic_placeholder %}
             </h3>
-            <a href="http://www.luisterkerk.nl/gkvlangerak/direct.php">Watch the latest thoughts <span class="fa fa-youtube-play"></span></a>
+            <a href="http://www.luisterkerk.nl/gkvlangerak/direct.php">
+                {% static_placeholder 'preach_subtitle' or %}{% trans "Watch the latest thoughts" %}{% endstatic_placeholder %}
+                <i class="fa fa-youtube-play"></i>
+            </a>
         </div>
     </div>
 </div>

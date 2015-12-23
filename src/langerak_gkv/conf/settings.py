@@ -383,6 +383,7 @@ CMS_PLACEHOLDER_CONF = {
     'slot4': {'plugins': ['HomepageLinkPlugin']},
     'preach_image': {'plugins': ['FilerImagePlugin']},
     'preach_title': {'plugins': ['CharFieldPlugin']},
+    'preach_subtitle': {'plugins': ['CharFieldPlugin']},
 }
 
 CMSPLUGIN_FILER_IMAGE_STYLE_CHOICES = (
