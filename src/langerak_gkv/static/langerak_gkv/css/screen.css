@@ -1169,6 +1169,10 @@ body.cms-page .cms-content {
     float: none !important;
   }
 }
+/* line 22, ../../../sass/partials/_cms.scss */
+body.cms-page span.file img {
+  width: auto;
+}
 
 /* line 1, ../../../sass/partials/_maps.scss */
 #footer-map {
