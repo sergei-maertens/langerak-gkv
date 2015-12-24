@@ -42,11 +42,8 @@ article {
   margin-bottom: 15px;
 
   h1, h2 {
-    color: $main-color-green;
+    color: darken($main-color-green, 10%);
     font-weight: bold;
-    @include text-shadow(
-      1px 1px 0px darken($main-color-green, 10%)
-    );
   }
 
   footer {
