@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-23 22:10+0100\n"
+"POT-Creation-Date: 2015-12-24 16:05+0100\n"
 "PO-Revision-Date: 2015-12-23 21:54+0020\n"
 "Last-Translator: Sergei Maertens <sergeimaertens@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -24,7 +24,7 @@ msgid "Activities"
 msgstr "Activiteiten"
 
 #: activities/models.py:35 activities/models.py:102 activities/models.py:113
-#: homepage/models.py:10 societies/models.py:13 users/models.py:223
+#: homepage/models.py:11 societies/models.py:13 users/models.py:223
 #: users/models.py:234 users/models.py:249
 msgid "name"
 msgstr "naam"
@@ -257,55 +257,55 @@ msgstr "Homepagina linkblok"
 msgid "Simple text"
 msgstr "Eenvoudige tekst"
 
-#: homepage/models.py:11 mailing/models.py:16
+#: homepage/models.py:12 mailing/models.py:16
 msgid "email"
 msgstr "e-mail"
 
-#: homepage/models.py:12
+#: homepage/models.py:13
 msgid "What should we pray for?"
 msgstr "Waarvoor moeten we bidden?"
 
-#: homepage/models.py:13
+#: homepage/models.py:14
 msgid "replied"
 msgstr "beantwoord"
 
-#: homepage/models.py:19
+#: homepage/models.py:20
 msgid "prayer on demand"
 msgstr "prayer on demand"
 
-#: homepage/models.py:20
+#: homepage/models.py:21
 msgid "prayer on demands"
 msgstr "prayer on demands"
 
-#: homepage/models.py:27
+#: homepage/models.py:28
 msgid "title"
 msgstr "titel"
 
-#: homepage/models.py:28
+#: homepage/models.py:29
 msgid "image"
 msgstr "afbeelding"
 
-#: homepage/models.py:29 users/models.py:236
+#: homepage/models.py:30 users/models.py:236
 msgid "description"
 msgstr "beschrijving"
 
-#: homepage/models.py:29
+#: homepage/models.py:30
 msgid "Displayed below the title"
 msgstr "Word afgebeeld onder de titel"
 
-#: homepage/models.py:30 societies/models.py:32
+#: homepage/models.py:31 societies/models.py:32
 msgid "page"
 msgstr "pagina"
 
-#: homepage/models.py:30 societies/models.py:32
+#: homepage/models.py:31 societies/models.py:32
 msgid "Page to link to"
 msgstr "Pagina om naar te verwijzen"
 
-#: homepage/models.py:31
+#: homepage/models.py:32
 msgid "enable social sharing"
 msgstr "laat social sharen toe"
 
-#: homepage/models.py:38
+#: homepage/models.py:39
 msgid "text"
 msgstr "tekst"
 
@@ -323,6 +323,11 @@ msgstr "Prayer on demand"
 #: homepage/templates/homepage/includes/pod.html:6
 msgid "Fill the form and our prayer group will pray for you."
 msgstr "Vul het formulier in en onze gebedsgroep zal bidden voor je."
+
+#: homepage/templates/homepage/includes/sidebar.html:4
+#: homepage/templates/homepage/includes/sidebar.html:15
+msgid "preach_url"
+msgstr "http://www.kerkdienstmeebeleven.nu/index.php/kerkdiensten?kerk=3"
 
 #: homepage/templates/homepage/includes/sidebar.html:13
 msgid "Configure title"
@@ -518,10 +523,12 @@ msgid "Liturgies archive"
 msgstr "Kerkdienstenarchief"
 
 #: liturgies/templates/liturgies/detail.html:11
+#: templates/cmsplugin_filer_folder/plugins/folder/default.html:44
 msgid "Previous"
 msgstr "Vorige"
 
 #: liturgies/templates/liturgies/detail.html:16
+#: templates/cmsplugin_filer_folder/plugins/folder/default.html:48
 msgid "Next"
 msgstr "Volgende"
 
@@ -567,6 +574,7 @@ msgid "Upcoming liturgies"
 msgstr "Aankomende kerkdiensten"
 
 #: liturgies/templates/liturgies/list.html:14
+#, python-format
 msgid ""
 "\n"
 "        One upcoming\n"
