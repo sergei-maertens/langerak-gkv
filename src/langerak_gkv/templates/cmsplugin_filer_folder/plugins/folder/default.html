@@ -1,0 +1,53 @@
+{% load i18n thumbnail sekizai_tags %}
+
+
+<article class="cmsplugin_filer_folder" id="filer-folder-{{ instance.id }}">
+
+    <h2>{{ object.title|default:object.folder.name }}</h2>
+
+    {% if object.view_option == "list" %}
+        <div class="row">
+
+            {% for image in folder_images %}
+
+                <div class="col-md-4 col-lg-3">
+
+                    <a href="{{ image.file.url }}">
+                        <img src="{% thumbnail image.file 400x300 crop="True" %}" class="img-responsive" alt="{{ image.label }}">
+                    </a>
+
+                </div>
+
+            {% endfor %}
+
+        </div>
+    {% else %}  {# Slideshow #}
+        <div id="carousel-folder-{{ instance.id }}" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                {% for image in folder_images %}
+                <li data-target="#carousel-folder-{{ instance.id }}"
+                    data-slide-to="{{ forloop.counter0 }}"
+                    {% if forloop.first %}class="active"{% endif %}></li>
+                {% endfor %}
+            </ol>
+
+            <div class="carousel-inner" role="listbox">
+                {% for image in folder_images %}
+                <div class="item {% if forloop.first %}active{% endif %}">
+                    <img src="{% thumbnail image.file 1024x1024  %}" alt="{{ image.label }}">
+                </div>
+                {% endfor %}
+            </div>
+
+            <a class="left carousel-control" href="#carousel-folder-{{ instance.id }}" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                <span class="sr-only">{% trans "Previous" %}</span>
+            </a>
+            <a class="right carousel-control" href="#carousel-folder-{{ instance.id }}" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <span class="sr-only">{% trans "Next" %}</span>
+            </a>
+        </div>
+    {% endif %}
+
+</article>

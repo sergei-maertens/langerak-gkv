@@ -1,4 +1,4 @@
 {
     "directory": "src/langerak_gkv/static/vendor",
-    "timeout": "10000"
+    "timeout": 10000
 }
