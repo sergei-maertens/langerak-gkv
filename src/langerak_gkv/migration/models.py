@@ -58,3 +58,31 @@ class Event(models.Model):
     class Meta:
         managed = False
         db_table = 'lang_jcalpro_events'
+
+
+class Document(models.Model):
+    catid = models.IntegerField()
+    dmname = models.TextField()
+    dmdescription = models.TextField(blank=True, null=True)
+    dmdate_published = models.DateTimeField()
+    dmowner = models.IntegerField()
+    dmfilename = models.TextField()
+    published = models.IntegerField()
+    dmurl = models.TextField(blank=True, null=True)
+    dmcounter = models.IntegerField(blank=True, null=True)
+    checked_out = models.IntegerField()
+    checked_out_time = models.DateTimeField()
+    approved = models.IntegerField()
+    dmthumbnail = models.TextField(blank=True, null=True)
+    dmlastupdateon = models.DateTimeField(blank=True, null=True)
+    dmlastupdateby = models.IntegerField()
+    dmsubmitedby = models.IntegerField()
+    dmmantainedby = models.IntegerField(blank=True, null=True)
+    dmlicense_id = models.IntegerField(blank=True, null=True)
+    dmlicense_display = models.IntegerField()
+    access = models.IntegerField()
+    attribs = models.TextField()
+
+    class Meta:
+        managed = False
+        db_table = 'lang_docman'
