@@ -1174,7 +1174,7 @@ body.cms-page .cms-content {
   }
 }
 /* line 25, ../../../sass/partials/_cms.scss */
-body.cms-page span.file img,
+body.cms-page .file img,
 body.cms-page .cmsplugin_filer_folder_list img,
 body.cms-page .cmsplugin_filer_folder_slideshow img,
 body.cms-page .carousel-inner .item img {
