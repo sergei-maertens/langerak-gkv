@@ -101,6 +101,8 @@ class User(AbstractBaseUser, PermissionsMixin):
         'self', blank=True,
         through='users.UserRelation', symmetrical=False)
 
+    external_code = models.CharField(_('external code'), max_length=10, null=True, blank=True)
+
     objects = UserManager()
 
     USERNAME_FIELD = 'email'
