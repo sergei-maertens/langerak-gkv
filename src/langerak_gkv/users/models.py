@@ -250,9 +250,16 @@ class Family(models.Model):
     """ A family groups members living together in the same physical house. """
     name = models.CharField(_('name'), max_length=255, help_text=_('Last name of the householder.'))
 
+    address = models.CharField(
+        _('street'), max_length=255, blank=True,
+        help_text=_('Street name and number.'))
+    postal_code = models.CharField(_('postal code'), max_length=10)
+    city = models.CharField(_('city'), max_length=100, blank=True)
+
     class Meta:
         verbose_name = _(u'family')
         verbose_name_plural = _(u'families')
+        unique_together = ('address', 'postal_code')
 
     def __unicode__(self):
         return _('Fam. {name}').format(name=self.name)
