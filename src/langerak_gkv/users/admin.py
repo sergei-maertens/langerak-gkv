@@ -82,7 +82,7 @@ class RelationTypeAdmin(admin.ModelAdmin):
 
 
 class FamilyAdmin(admin.ModelAdmin):
-    list_display = ('name',)
+    list_display = ('name', 'address', 'postal_code', 'city')
     search_fields = ('name',)
 
 

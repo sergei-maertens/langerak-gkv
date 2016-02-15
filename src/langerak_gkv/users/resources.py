@@ -2,7 +2,7 @@ from datetime import date
 
 from import_export import resources
 
-from .models import User
+from .models import Family, User
 
 
 class UserResource(resources.ModelResource):
@@ -58,5 +58,17 @@ class UserResource(resources.ModelResource):
             obj.email = '{}@koningskerk.nu'.format(data['external_code'])
 
     def before_save_instance(self, instance, dry_run):
-        if self.get_queryset().filter(email=instance.email).exists():
+        if self.get_queryset().filter(email=instance.email).exclude(pk=instance.pk).exists():
             instance.email = '{}@koningskerk.nu'.format(instance.external_code)
+
+        # find the family
+        kwargs = {
+            'address': instance.address,
+            'postal_code': instance.postal_code,
+        }
+        defaults = {
+            'city': instance.city,
+            'name': instance.last_name
+        }
+        family, created = Family.objects.get_or_create(defaults=defaults, **kwargs)
+        instance.family = family
