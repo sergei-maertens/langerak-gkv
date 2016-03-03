@@ -29,13 +29,14 @@ class UserAdmin(ImportExportMixin, _UserAdmin):
                 'birthdate',
                 'picture',
                 'about_me',
-                ),
+                'member_type',
+            ),
         }),
         (_('Family and location'), {
             'fields': (
                 ('district', 'district_function',),
                 'family',
-                )
+            )
         }),
         (_('Permissions'), {
             'fields': ('is_active', 'is_staff', 'is_superuser',

@@ -131,7 +131,7 @@ class UserSearchForm(forms.ModelForm):
 
     class Meta:
         model = User
-        fields = ('first_name', 'last_name', 'address', 'district_function')
+        fields = ('first_name', 'last_name', 'address', 'district_function', 'member_type')
 
     def as_filters(self):
         """Convert the form data to a dict suitable for ``QuerySet.filter`` """
