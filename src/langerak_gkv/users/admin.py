@@ -13,6 +13,7 @@ from .resources import UserResource
 class UserRelationInline(admin.TabularInline):
     model = UserRelation
     fk_name = 'user1'
+    raw_id_fields = ['user2']
 
 
 class UserAdmin(ImportExportMixin, _UserAdmin):

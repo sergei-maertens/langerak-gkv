@@ -49,9 +49,15 @@ def get_image_path(instance, filename):
 
 
 class User(AbstractBaseUser, PermissionsMixin):
+
     class Sex(DjangoChoices):
         male = ChoiceItem('male', _('male'))
         female = ChoiceItem('female', _('female'))
+
+    class MemberType(DjangoChoices):
+        baptised = ChoiceItem('baptised', _('baptised member'))
+        practicing = ChoiceItem('practicing', _('practicing member'))
+        guest = ChoiceItem('guest', _('guest member'))
 
     email = models.EmailField(_('email address'), max_length=254, unique=True)
     username = models.CharField(_('username'), max_length=100, blank=True)
@@ -92,11 +98,14 @@ class User(AbstractBaseUser, PermissionsMixin):
     about_me = models.TextField(blank=True, help_text=_('Short \'about me\' text'))
 
     # district/family information, from district we find the people with district functions
+    member_type = models.CharField(_('member type'), max_length=20, choices=MemberType.choices, blank=True)
     district = models.ForeignKey(
         'users.District', verbose_name=_(u'district'),
-        blank=True, null=True)
-    district_function = models.ForeignKey('users.DistrictFunction', blank=True, null=True)
-    family = models.ForeignKey('users.Family', verbose_name=_('family'), blank=True, null=True)
+        blank=True, null=True, on_delete=models.PROTECT)
+    district_function = models.ForeignKey('users.DistrictFunction', blank=True, null=True, on_delete=models.PROTECT)
+    family = models.ForeignKey(
+        'users.Family', verbose_name=_('family'),
+        blank=True, null=True, on_delete=models.PROTECT)
     relations = models.ManyToManyField(
         'self', blank=True,
         through='users.UserRelation', symmetrical=False)
@@ -110,6 +119,10 @@ class User(AbstractBaseUser, PermissionsMixin):
     class Meta:
         verbose_name = _('user')
         verbose_name_plural = _('users')
+
+    def __unicode__(self):
+        full_name = self.get_full_name().strip()
+        return full_name or getattr(self, self.USERNAME_FIELD)
 
     def get_absolute_url(self):
         return reverse('users:profile', kwargs={'pk': self.pk})
@@ -167,11 +180,11 @@ class UserRelation(models.Model):
     """
     E.g. user2 is daughter, user1 is father, relation type is 'daughter'
     """
-    user1 = models.ForeignKey('users.User', related_name='related_users')
-    user2 = models.ForeignKey('users.User', related_name='reverse_related_users')
+    user1 = models.ForeignKey('users.User', related_name='related_users', on_delete=models.PROTECT)
+    user2 = models.ForeignKey('users.User', related_name='reverse_related_users', on_delete=models.PROTECT)
     relation_type = models.ForeignKey(
         'users.RelationType',
-        help_text=_('User 2 is `relation type` of user 1.'), related_name='+')
+        help_text=_('User 2 is `relation type` of user 1.'), related_name='+', on_delete=models.PROTECT)
 
     # children can be found by: querying the relations of a user for those that have
     # child/parent relationship. to find the children, limit it to users that have
@@ -201,9 +214,12 @@ class RelationType(models.Model):
     name_male = models.CharField(_('name (male)'), max_length=100)
     name_female = models.CharField(_('name (female)'), max_length=100)
 
-    reverse_name_male = models.CharField(_('name (male)'), max_length=100)
-    reverse_name_female = models.CharField(_('name (female)'), max_length=100)
-    reverse = models.ForeignKey('self', null=True, help_text=_('Reverse direction of the relation'))
+    reverse_name_male = models.CharField(_('reverse name (male)'), max_length=100)
+    reverse_name_female = models.CharField(_('reverse name (female)'), max_length=100)
+    reverse = models.ForeignKey(
+        'self', null=True,
+        help_text=_('Reverse direction of the relation'), on_delete=models.PROTECT
+    )
 
     # 2 extra fields to be able to show the children of a user
     is_partner = models.BooleanField(_('is partner?'), default=False)

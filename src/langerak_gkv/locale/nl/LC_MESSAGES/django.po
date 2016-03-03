@@ -2,14 +2,14 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-24 16:05+0100\n"
-"PO-Revision-Date: 2015-12-23 21:54+0020\n"
+"POT-Creation-Date: 2016-03-03 22:09+0100\n"
+"PO-Revision-Date: 2016-03-03 22:10+0020\n"
 "Last-Translator: Sergei Maertens <sergeimaertens@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -19,154 +19,160 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Translated-Using: django-rosetta 0.7.8\n"
 
-#: activities/cms_app.py:8
+#: src/langerak_gkv/activities/cms_app.py:8
 msgid "Activities"
 msgstr "Activiteiten"
 
-#: activities/models.py:35 activities/models.py:102 activities/models.py:113
-#: homepage/models.py:11 societies/models.py:13 users/models.py:223
-#: users/models.py:234 users/models.py:249
+#: src/langerak_gkv/activities/models.py:35
+#: src/langerak_gkv/activities/models.py:102
+#: src/langerak_gkv/activities/models.py:113
+#: src/langerak_gkv/homepage/models.py:11
+#: src/langerak_gkv/societies/models.py:13
+#: src/langerak_gkv/users/models.py:241 src/langerak_gkv/users/models.py:252
+#: src/langerak_gkv/users/models.py:267
 msgid "name"
 msgstr "naam"
 
-#: activities/models.py:38
+#: src/langerak_gkv/activities/models.py:38
 msgid "start date"
 msgstr "startdatum"
 
-#: activities/models.py:39
+#: src/langerak_gkv/activities/models.py:39
 msgid "end date"
 msgstr "einddatum"
 
-#: activities/models.py:40
+#: src/langerak_gkv/activities/models.py:40
 msgid "start time"
 msgstr "starttijd"
 
-#: activities/models.py:41
+#: src/langerak_gkv/activities/models.py:41
 msgid "end time"
 msgstr "eindtijd"
 
-#: activities/models.py:45
+#: src/langerak_gkv/activities/models.py:45
 msgid "location"
 msgstr "locatie"
 
-#: activities/models.py:48
+#: src/langerak_gkv/activities/models.py:48
 msgid "short description/intro"
 msgstr "korte beschrijving/intro"
 
-#: activities/models.py:52
+#: src/langerak_gkv/activities/models.py:52
 msgid "If checked, this activity can appear on the homepage."
-msgstr "Indien aangevinkt, dan kan deze activiteit op de homepage verschijnen."
+msgstr ""
+"Indien aangevinkt, dan kan deze activiteit op de homepage verschijnen."
 
-#: activities/models.py:55
+#: src/langerak_gkv/activities/models.py:55
 msgid "external url"
 msgstr "externe link"
 
-#: activities/models.py:57
+#: src/langerak_gkv/activities/models.py:57
 msgid "facebook event id"
 msgstr "facebook event id"
 
-#: activities/models.py:62
+#: src/langerak_gkv/activities/models.py:62
 msgid "activity"
 msgstr "activiteit"
 
-#: activities/models.py:63
+#: src/langerak_gkv/activities/models.py:63
 msgid "activities"
 msgstr "activiteiten"
 
-#: activities/models.py:81
+#: src/langerak_gkv/activities/models.py:81
 msgid "The start date cannot come before the end date."
 msgstr "De einddatum kan niet voor de startdatum vallen."
 
-#: activities/models.py:85
+#: src/langerak_gkv/activities/models.py:85
 msgid "The end time cannot come before the start time."
 msgstr "De eindtijd kan niet voor de starttijd vallen."
 
-#: activities/models.py:88
+#: src/langerak_gkv/activities/models.py:88
 msgid "Homepage activities must have an image"
 msgstr "Homepage-activiteiten moeten een afbeelding hebben"
 
-#: activities/models.py:105 activities/models.py:106
+#: src/langerak_gkv/activities/models.py:105
+#: src/langerak_gkv/activities/models.py:106
 msgid "intended public"
 msgstr "doelpubliek"
 
-#: activities/templates/activities/activity_archive_day.html:12
+#: src/langerak_gkv/activities/templates/activities/activity_archive_day.html:12
 msgid "Previous day"
 msgstr "Vorige dag"
 
-#: activities/templates/activities/activity_archive_day.html:19
+#: src/langerak_gkv/activities/templates/activities/activity_archive_day.html:19
 msgid "Next day"
 msgstr "Volgende dag"
 
-#: activities/templates/activities/activity_archive_day.html:28
+#: src/langerak_gkv/activities/templates/activities/activity_archive_day.html:28
 #, python-format
 msgid "1 activity "
 msgid_plural "%(count)s activities"
 msgstr[0] "1 activiteit"
 msgstr[1] "%(count)s activiteiten"
 
-#: activities/templates/activities/activity_archive_day.html:33
+#: src/langerak_gkv/activities/templates/activities/activity_archive_day.html:33
 msgid "No activities on this day!"
 msgstr "Er zijn geen activiteiten op deze dag!"
 
-#: activities/templates/activities/activity_archive_week.html:12
+#: src/langerak_gkv/activities/templates/activities/activity_archive_week.html:12
 msgid "Previous week"
 msgstr "Vorige week"
 
-#: activities/templates/activities/activity_archive_week.html:19
+#: src/langerak_gkv/activities/templates/activities/activity_archive_week.html:19
 msgid "Next week"
 msgstr "Volgende week"
 
-#: activities/templates/activities/activity_archive_week.html:25
+#: src/langerak_gkv/activities/templates/activities/activity_archive_week.html:25
 #, python-format
 msgid "Week %(week)s"
 msgstr "Week %(week)s"
 
-#: activities/templates/activities/activity_archive_week.html:38
-#: activities/templates/activities/searchresults.html:24
-#: liturgies/templates/liturgies/_liturgy_list.html:26
+#: src/langerak_gkv/activities/templates/activities/activity_archive_week.html:38
+#: src/langerak_gkv/activities/templates/activities/searchresults.html:24
+#: src/langerak_gkv/liturgies/templates/liturgies/_liturgy_list.html:26
 msgid "No activities this week!"
 msgstr "Er zijn geen activiteiten in deze week!"
 
-#: activities/templates/activities/activity_detail.html:20
-#: liturgies/templates/liturgies/detail.html:27
+#: src/langerak_gkv/activities/templates/activities/activity_detail.html:20
+#: src/langerak_gkv/liturgies/templates/liturgies/detail.html:27
 msgid "at"
 msgstr "om"
 
-#: activities/templates/activities/activity_detail.html:23
+#: src/langerak_gkv/activities/templates/activities/activity_detail.html:23
 msgid "until"
 msgstr "tot"
 
-#: activities/templates/activities/activity_detail.html:49
-#: users/templates/users/user_detail.html:74
+#: src/langerak_gkv/activities/templates/activities/activity_detail.html:49
+#: src/langerak_gkv/users/templates/users/user_detail.html:74
 msgid "Location"
 msgstr "Locatie"
 
-#: activities/templates/activities/activity_detail.html:53
+#: src/langerak_gkv/activities/templates/activities/activity_detail.html:53
 msgid "Introduction"
 msgstr "Inleiding"
 
-#: activities/templates/activities/activity_detail.html:59
+#: src/langerak_gkv/activities/templates/activities/activity_detail.html:59
 #, python-format
 msgid "Visit <a href=\"%(url)s\">%(url)s</a>."
 msgstr "Bezoek <a href=\"%(url)s\">%(url)s</a>."
 
-#: activities/templates/activities/base.html:13
+#: src/langerak_gkv/activities/templates/activities/base.html:13
 msgid "Calendar view"
 msgstr "Kalenderweergave"
 
-#: activities/templates/activities/base.html:18
+#: src/langerak_gkv/activities/templates/activities/base.html:18
 msgid "Week view"
 msgstr "Weekweergave"
 
-#: activities/templates/activities/base.html:23
+#: src/langerak_gkv/activities/templates/activities/base.html:23
 msgid "Day view"
 msgstr "Dagweergave"
 
-#: activities/templates/activities/base.html:35
+#: src/langerak_gkv/activities/templates/activities/base.html:35
 msgid "Find in calendar"
 msgstr "Zoek in de kalender"
 
-#: activities/templates/activities/base.html:56
+#: src/langerak_gkv/activities/templates/activities/base.html:56
 #, python-format
 msgid ""
 "\n"
@@ -183,11 +189,11 @@ msgstr[1] ""
 "\n"
 "%(count)s activiteiten"
 
-#: activities/templates/activities/base.html:74
+#: src/langerak_gkv/activities/templates/activities/base.html:74
 msgid "iCal feed"
 msgstr "iCal feed"
 
-#: activities/templates/activities/searchresults.html:9
+#: src/langerak_gkv/activities/templates/activities/searchresults.html:9
 #, python-format
 msgid ""
 "\n"
@@ -197,317 +203,327 @@ msgstr ""
 "\n"
 "Zoekresultaten (%(number_results)s)"
 
-#: conf/settings.py:370 conf/settings.py:401
+#: src/langerak_gkv/conf/settings.py:370 src/langerak_gkv/conf/settings.py:401
 msgid "Default"
 msgstr "Standaard"
 
-#: conf/settings.py:371
+#: src/langerak_gkv/conf/settings.py:371
 msgid "Homepage"
 msgstr "Homepagina"
 
-#: conf/settings.py:372
+#: src/langerak_gkv/conf/settings.py:372
 msgid "Content left, sidebar right"
 msgstr "Inhoud links, zijbalk rechts"
 
-#: conf/settings.py:373
+#: src/langerak_gkv/conf/settings.py:373
 msgid "3 Columns (responsive)"
 msgstr "3 Kolommen (responsive)"
 
-#: conf/settings.py:390
+#: src/langerak_gkv/conf/settings.py:390
 msgid "header top image"
 msgstr "headerafbeelding"
 
-#: conf/settings.py:402
+#: src/langerak_gkv/conf/settings.py:402
 msgid "Orange"
 msgstr "Oranje"
 
-#: conf/settings.py:403
+#: src/langerak_gkv/conf/settings.py:403
 msgid "Blue"
 msgstr "Blauw"
 
-#: conf/settings.py:404
+#: src/langerak_gkv/conf/settings.py:404
 msgid "Green"
 msgstr "Groen"
 
-#: conf/settings.py:405
+#: src/langerak_gkv/conf/settings.py:405
 msgid "Purple"
 msgstr "Paars"
 
-#: conf/settings.py:406
+#: src/langerak_gkv/conf/settings.py:406
 msgid "Read-more orange"
 msgstr "Lees-meer oranje"
 
-#: conf/settings.py:407
+#: src/langerak_gkv/conf/settings.py:407
 msgid "Read-more blue"
 msgstr "Lees-meer blauw"
 
-#: conf/settings.py:408
+#: src/langerak_gkv/conf/settings.py:408
 msgid "Read-more green"
 msgstr "Lees-meer groen"
 
-#: conf/settings.py:409
+#: src/langerak_gkv/conf/settings.py:409
 msgid "Read-more purple"
 msgstr "Lees-meer paars"
 
-#: homepage/cms_plugins.py:11
+#: src/langerak_gkv/homepage/cms_plugins.py:11
 msgid "Homepage link block"
 msgstr "Homepagina linkblok"
 
-#: homepage/cms_plugins.py:21
+#: src/langerak_gkv/homepage/cms_plugins.py:21
 msgid "Simple text"
 msgstr "Eenvoudige tekst"
 
-#: homepage/models.py:12 mailing/models.py:16
+#: src/langerak_gkv/homepage/models.py:12
+#: src/langerak_gkv/mailing/models.py:16
 msgid "email"
 msgstr "e-mail"
 
-#: homepage/models.py:13
+#: src/langerak_gkv/homepage/models.py:13
 msgid "What should we pray for?"
 msgstr "Waarvoor moeten we bidden?"
 
-#: homepage/models.py:14
+#: src/langerak_gkv/homepage/models.py:14
 msgid "replied"
 msgstr "beantwoord"
 
-#: homepage/models.py:20
+#: src/langerak_gkv/homepage/models.py:20
 msgid "prayer on demand"
 msgstr "prayer on demand"
 
-#: homepage/models.py:21
+#: src/langerak_gkv/homepage/models.py:21
 msgid "prayer on demands"
 msgstr "prayer on demands"
 
-#: homepage/models.py:28
+#: src/langerak_gkv/homepage/models.py:28
 msgid "title"
 msgstr "titel"
 
-#: homepage/models.py:29
+#: src/langerak_gkv/homepage/models.py:29
 msgid "image"
 msgstr "afbeelding"
 
-#: homepage/models.py:30 users/models.py:236
+#: src/langerak_gkv/homepage/models.py:30 src/langerak_gkv/users/models.py:254
 msgid "description"
 msgstr "beschrijving"
 
-#: homepage/models.py:30
+#: src/langerak_gkv/homepage/models.py:30
 msgid "Displayed below the title"
 msgstr "Word afgebeeld onder de titel"
 
-#: homepage/models.py:31 societies/models.py:32
+#: src/langerak_gkv/homepage/models.py:31
+#: src/langerak_gkv/societies/models.py:32
 msgid "page"
 msgstr "pagina"
 
-#: homepage/models.py:31 societies/models.py:32
+#: src/langerak_gkv/homepage/models.py:31
+#: src/langerak_gkv/societies/models.py:32
 msgid "Page to link to"
 msgstr "Pagina om naar te verwijzen"
 
-#: homepage/models.py:32
+#: src/langerak_gkv/homepage/models.py:32
 msgid "enable social sharing"
 msgstr "laat social sharen toe"
 
-#: homepage/models.py:39
+#: src/langerak_gkv/homepage/models.py:39
 msgid "text"
 msgstr "tekst"
 
-#: homepage/templates/homepage/cmsplugin/link.html:29
-#: homepage/templates/homepage/includes/activity.html:25
-#: liturgies/templates/liturgies/_liturgy_list.html:22
-#: societies/templates/societies/cmsplugin/society.html:11
+#: src/langerak_gkv/homepage/templates/homepage/cmsplugin/link.html:29
+#: src/langerak_gkv/homepage/templates/homepage/includes/activity.html:25
+#: src/langerak_gkv/liturgies/templates/liturgies/_liturgy_list.html:22
+#: src/langerak_gkv/societies/templates/societies/cmsplugin/society.html:11
 msgid "Read more"
 msgstr "Lees meer"
 
-#: homepage/templates/homepage/includes/pod.html:5 homepage/views.py:52
+#: src/langerak_gkv/homepage/templates/homepage/includes/pod.html:5
+#: src/langerak_gkv/homepage/views.py:52
 msgid "Prayer on demand"
 msgstr "Prayer on demand"
 
-#: homepage/templates/homepage/includes/pod.html:6
+#: src/langerak_gkv/homepage/templates/homepage/includes/pod.html:6
 msgid "Fill the form and our prayer group will pray for you."
 msgstr "Vul het formulier in en onze gebedsgroep zal bidden voor je."
 
-#: homepage/templates/homepage/includes/sidebar.html:4
-#: homepage/templates/homepage/includes/sidebar.html:15
+#: src/langerak_gkv/homepage/templates/homepage/includes/sidebar.html:4
+#: src/langerak_gkv/homepage/templates/homepage/includes/sidebar.html:15
 msgid "preach_url"
 msgstr "http://www.kerkdienstmeebeleven.nu/index.php/kerkdiensten?kerk=3"
 
-#: homepage/templates/homepage/includes/sidebar.html:13
+#: src/langerak_gkv/homepage/templates/homepage/includes/sidebar.html:13
 msgid "Configure title"
 msgstr "Stel titel in"
 
-#: homepage/templates/homepage/includes/sidebar.html:16
+#: src/langerak_gkv/homepage/templates/homepage/includes/sidebar.html:16
 msgid "Watch the latest thoughts"
 msgstr "Bekijk de laatste gedachten"
 
-#: homepage/templates/homepage/includes/sidebar.html:25
+#: src/langerak_gkv/homepage/templates/homepage/includes/sidebar.html:25
 msgid "Koningskerk calendar"
 msgstr "Koningskerk kalender"
 
-#: homepage/templates/homepage/includes/sidebar.html:39
+#: src/langerak_gkv/homepage/templates/homepage/includes/sidebar.html:39
 msgid "No upcoming activities"
 msgstr "Geen aankomende activiteiten"
 
-#: homepage/templates/homepage/includes/sidebar.html:47
+#: src/langerak_gkv/homepage/templates/homepage/includes/sidebar.html:47
 msgid "Upcoming birthdays"
 msgstr "Aankomende verjaardagen"
 
-#: homepage/tests/test_views.py:38 homepage/views.py:38
+#: src/langerak_gkv/homepage/tests/test_views.py:38
+#: src/langerak_gkv/homepage/views.py:38
 msgid "Your request was received, we will pray for you."
 msgstr "Je verzoek is ontvangen, we zullen voor je bidden."
 
-#: homepage/views.py:50
+#: src/langerak_gkv/homepage/views.py:50
 #, python-brace-format
 msgid "A new 'Prayer on Demand' was submitted. You can view this at {uri}"
 msgstr ""
 "Er werd een nieuwe 'Prayer on Demand' toegevoegd. Je kan deze bekijken op "
 "{uri}"
 
-#: liturgies/admin/__init__.py:74 liturgies/admin/views.py:48
+#: src/langerak_gkv/liturgies/admin/__init__.py:74
+#: src/langerak_gkv/liturgies/admin/views.py:48
 msgid "The email has been put on the queue and will be send shortly"
 msgstr ""
 "De e-mail werd op de wachtlijst geplaatst en zal binnenkort verstuurd worden"
 
-#: liturgies/admin/__init__.py:79
+#: src/langerak_gkv/liturgies/admin/__init__.py:79
 msgid "view email recipients"
 msgstr "bekijk e-mail ontvangers"
 
-#: liturgies/admin/actions.py:17
+#: src/langerak_gkv/liturgies/admin/actions.py:17
 msgid "Compose and send e-mail"
 msgstr "Opstellen en versturen van e-mail"
 
-#: liturgies/admin/resources.py:27
+#: src/langerak_gkv/liturgies/admin/resources.py:27
 #, python-format
 msgid ""
 "Could not parse time %s. Make sure that the `service__time` field is "
 "formatted as text."
 msgstr ""
-"Kon de tijd %s niet parsen. Let er op dat het 'service__time' veld als tekst "
-"geformatteeerd is."
+"Kon de tijd %s niet parsen. Let er op dat het 'service__time' veld als tekst"
+" geformatteeerd is."
 
-#: liturgies/apps.py:7 liturgies/models.py:31
+#: src/langerak_gkv/liturgies/apps.py:7
+#: src/langerak_gkv/liturgies/models.py:31
 msgid "liturgies"
 msgstr "kerkdiensten"
 
-#: liturgies/cms_app.py:10 liturgies/templates/liturgies/mail.html:1
+#: src/langerak_gkv/liturgies/cms_app.py:10
+#: src/langerak_gkv/liturgies/templates/liturgies/mail.html:1
 msgid "Liturgies"
 msgstr "Kerkdiensten"
 
-#: liturgies/menu.py:12
+#: src/langerak_gkv/liturgies/menu.py:12
 msgid "liturgies menu"
 msgstr "kerdienstenmenu"
 
-#: liturgies/models.py:10
+#: src/langerak_gkv/liturgies/models.py:10
 msgid "date"
 msgstr "datum"
 
-#: liturgies/models.py:11
+#: src/langerak_gkv/liturgies/models.py:11
 msgid "service"
 msgstr "dienst"
 
-#: liturgies/models.py:12
+#: src/langerak_gkv/liturgies/models.py:12
 msgid "preacher"
 msgstr "predikant"
 
-#: liturgies/models.py:13
+#: src/langerak_gkv/liturgies/models.py:13
 msgid "preach author"
 msgstr "auteur preek"
 
-#: liturgies/models.py:14
+#: src/langerak_gkv/liturgies/models.py:14
 msgid "main section"
 msgstr "hoofdgedeelte"
 
-#: liturgies/models.py:15
+#: src/langerak_gkv/liturgies/models.py:15
 msgid "main chapter"
 msgstr "hoofd-hoofdstuk"
 
-#: liturgies/models.py:16
+#: src/langerak_gkv/liturgies/models.py:16
 msgid "main verse"
 msgstr "hoofdvers"
 
-#: liturgies/models.py:17
+#: src/langerak_gkv/liturgies/models.py:17
 msgid "service theme"
 msgstr "theme dienst"
 
-#: liturgies/models.py:18 liturgies/models.py:30 liturgies/models.py:76
-#: liturgies/signals.py:16
+#: src/langerak_gkv/liturgies/models.py:18
+#: src/langerak_gkv/liturgies/models.py:30
+#: src/langerak_gkv/liturgies/models.py:76
+#: src/langerak_gkv/liturgies/signals.py:16
 msgid "liturgy"
 msgstr "kerkdienst"
 
-#: liturgies/models.py:19
+#: src/langerak_gkv/liturgies/models.py:19
 msgid "audiofile"
 msgstr "mp3-bestand"
 
-#: liturgies/models.py:20
+#: src/langerak_gkv/liturgies/models.py:20
 msgid "beamist"
 msgstr "beamist"
 
-#: liturgies/models.py:21
+#: src/langerak_gkv/liturgies/models.py:21
 msgid "organist"
 msgstr "organist"
 
-#: liturgies/models.py:22
+#: src/langerak_gkv/liturgies/models.py:22
 msgid "collection goal 1"
 msgstr "collecte 1"
 
-#: liturgies/models.py:23
+#: src/langerak_gkv/liturgies/models.py:23
 msgid "collection goal 2"
 msgstr "collecte 2"
 
-#: liturgies/models.py:24
+#: src/langerak_gkv/liturgies/models.py:24
 msgid "collection goal 3"
 msgstr "collecte 3"
 
-#: liturgies/models.py:25
+#: src/langerak_gkv/liturgies/models.py:25
 msgid "extra information"
 msgstr "extra informatie"
 
-#: liturgies/models.py:27
+#: src/langerak_gkv/liturgies/models.py:27
 msgid "remarks (internal)"
 msgstr "opmerkingen (intern)"
 
-#: liturgies/models.py:60
+#: src/langerak_gkv/liturgies/models.py:60
 msgid "service name"
 msgstr "naam dienst"
 
-#: liturgies/models.py:61
+#: src/langerak_gkv/liturgies/models.py:61
 msgid "service time"
 msgstr "tijd dienst"
 
-#: liturgies/models.py:70
+#: src/langerak_gkv/liturgies/models.py:70
 #, python-format
 msgid "preacher (%s)"
 msgstr "predikant (%s)"
 
-#: liturgies/models.py:71
+#: src/langerak_gkv/liturgies/models.py:71
 #, python-format
 msgid "organist (%s)"
 msgstr "organist (%s)"
 
-#: liturgies/models.py:72
+#: src/langerak_gkv/liturgies/models.py:72
 #, python-format
 msgid "beamist (%s)"
 msgstr "beamist (%s)"
 
-#: liturgies/models.py:73
+#: src/langerak_gkv/liturgies/models.py:73
 #, python-format
 msgid "koster (%s)"
 msgstr "organist (%s)"
 
-#: liturgies/models.py:74
+#: src/langerak_gkv/liturgies/models.py:74
 msgid "other"
 msgstr "overige"
 
-#: liturgies/templates/admin/liturgies/mail.html:15
+#: src/langerak_gkv/liturgies/templates/admin/liturgies/mail.html:15
 msgid "Send liturgy mailing"
 msgstr "Verstuur kerkdienst mailing"
 
-#: liturgies/templates/admin/liturgies/mail.html:21
+#: src/langerak_gkv/liturgies/templates/admin/liturgies/mail.html:21
 msgid "Mail content"
 msgstr "E-mailinhoud"
 
-#: liturgies/templates/admin/liturgies/mail.html:40
+#: src/langerak_gkv/liturgies/templates/admin/liturgies/mail.html:40
 msgid "Send"
 msgstr "Verstuur"
 
-#: liturgies/templates/liturgies/_liturgy_list.html:4
+#: src/langerak_gkv/liturgies/templates/liturgies/_liturgy_list.html:4
 #, python-format
 msgid ""
 "\n"
@@ -516,64 +532,64 @@ msgstr ""
 "\n"
 "%(date)s <small>%(time)s</small>"
 
-#: liturgies/templates/liturgies/base.html:9
-#: liturgies/templates/liturgies/liturgy_archive.html:22
-#: liturgies/templates/liturgies/liturgy_archive_month.html:9
+#: src/langerak_gkv/liturgies/templates/liturgies/base.html:9
+#: src/langerak_gkv/liturgies/templates/liturgies/liturgy_archive.html:22
+#: src/langerak_gkv/liturgies/templates/liturgies/liturgy_archive_month.html:9
 msgid "Liturgies archive"
 msgstr "Kerkdienstenarchief"
 
-#: liturgies/templates/liturgies/detail.html:11
-#: templates/cmsplugin_filer_folder/plugins/folder/default.html:44
+#: src/langerak_gkv/liturgies/templates/liturgies/detail.html:11
+#: src/langerak_gkv/templates/cmsplugin_filer_folder/plugins/folder/default.html:44
 msgid "Previous"
 msgstr "Vorige"
 
-#: liturgies/templates/liturgies/detail.html:16
-#: templates/cmsplugin_filer_folder/plugins/folder/default.html:48
+#: src/langerak_gkv/liturgies/templates/liturgies/detail.html:16
+#: src/langerak_gkv/templates/cmsplugin_filer_folder/plugins/folder/default.html:48
 msgid "Next"
 msgstr "Volgende"
 
-#: liturgies/templates/liturgies/detail.html:27
+#: src/langerak_gkv/liturgies/templates/liturgies/detail.html:27
 msgid "hours"
 msgstr "uren"
 
-#: liturgies/templates/liturgies/detail.html:38
-#: liturgies/templates/liturgies/mail.html:10
+#: src/langerak_gkv/liturgies/templates/liturgies/detail.html:38
+#: src/langerak_gkv/liturgies/templates/liturgies/mail.html:10
 msgid "Preacher"
 msgstr "Predikant"
 
-#: liturgies/templates/liturgies/detail.html:44
+#: src/langerak_gkv/liturgies/templates/liturgies/detail.html:44
 #, python-format
 msgid "Collection %(i)s"
 msgstr "Collecte %(i)s"
 
-#: liturgies/templates/liturgies/detail.html:55
+#: src/langerak_gkv/liturgies/templates/liturgies/detail.html:55
 msgid "Preach made by"
 msgstr "Preek gemaakt door"
 
-#: liturgies/templates/liturgies/detail.html:59
-#: liturgies/templates/liturgies/mail.html:14
+#: src/langerak_gkv/liturgies/templates/liturgies/detail.html:59
+#: src/langerak_gkv/liturgies/templates/liturgies/mail.html:14
 msgid "Main section"
 msgstr "Hoofdgedeelte"
 
-#: liturgies/templates/liturgies/detail.html:63
-#: liturgies/templates/liturgies/mail.html:15
+#: src/langerak_gkv/liturgies/templates/liturgies/detail.html:63
+#: src/langerak_gkv/liturgies/templates/liturgies/mail.html:15
 msgid "Service theme"
 msgstr "Thema"
 
-#: liturgies/templates/liturgies/detail.html:85
+#: src/langerak_gkv/liturgies/templates/liturgies/detail.html:85
 msgid "This service is available as audio download"
 msgstr "Deze dienst is beschikbaar als audiodownload"
 
-#: liturgies/templates/liturgies/detail.html:89
+#: src/langerak_gkv/liturgies/templates/liturgies/detail.html:89
 msgid "No audio file available"
 msgstr "Geen audiobestand beschikbaar"
 
-#: liturgies/templates/liturgies/list.html:9
-#: liturgies/templates/liturgies/liturgy_archive.html:11
+#: src/langerak_gkv/liturgies/templates/liturgies/list.html:9
+#: src/langerak_gkv/liturgies/templates/liturgies/liturgy_archive.html:11
 msgid "Upcoming liturgies"
 msgstr "Aankomende kerkdiensten"
 
-#: liturgies/templates/liturgies/list.html:14
+#: src/langerak_gkv/liturgies/templates/liturgies/list.html:14
 #, python-format
 msgid ""
 "\n"
@@ -589,188 +605,197 @@ msgstr[1] ""
 "\n"
 "%(counter)s aankomend"
 
-#: liturgies/templates/liturgies/mail.html:6
+#: src/langerak_gkv/liturgies/templates/liturgies/mail.html:6
 #, python-format
 msgid "Liturgy %(counter)s"
 msgstr "Kerkdienst %(counter)s"
 
-#: liturgies/templates/liturgies/mail.html:9
+#: src/langerak_gkv/liturgies/templates/liturgies/mail.html:9
 msgid "Service"
 msgstr "Dienst"
 
-#: liturgies/templates/liturgies/mail.html:10
+#: src/langerak_gkv/liturgies/templates/liturgies/mail.html:10
 msgid "no author"
 msgstr "geen auteur"
 
-#: liturgies/templates/liturgies/mail.html:12
+#: src/langerak_gkv/liturgies/templates/liturgies/mail.html:12
 msgid "Collections"
 msgstr "Collectes"
 
-#: liturgies/templates/liturgies/mail.html:12
+#: src/langerak_gkv/liturgies/templates/liturgies/mail.html:12
 msgid "(none)"
 msgstr "(geen)"
 
-#: liturgies/templates/liturgies/mail.html:14
-#: liturgies/templates/liturgies/mail.html:15
-#: liturgies/templates/liturgies/mail.html:17
-#: liturgies/templates/liturgies/mail.html:19
+#: src/langerak_gkv/liturgies/templates/liturgies/mail.html:14
+#: src/langerak_gkv/liturgies/templates/liturgies/mail.html:15
+#: src/langerak_gkv/liturgies/templates/liturgies/mail.html:17
+#: src/langerak_gkv/liturgies/templates/liturgies/mail.html:19
 msgid "(empty)"
 msgstr "(leeg)"
 
-#: liturgies/templates/liturgies/mail.html:17
+#: src/langerak_gkv/liturgies/templates/liturgies/mail.html:17
 msgid "Content"
 msgstr "Inhoud"
 
-#: liturgies/templates/liturgies/mail.html:19
+#: src/langerak_gkv/liturgies/templates/liturgies/mail.html:19
 msgid "Remarks:"
 msgstr "Opmerkingen:"
 
-#: liturgies/urls.py:9
+#: src/langerak_gkv/liturgies/urls.py:9
 msgid "^history/$"
 msgstr "^archief/$"
 
-#: mailing/models.py:17
+#: src/langerak_gkv/mailing/models.py:17
 msgid "emails"
 msgstr "e-mails"
 
-#: mailing/views.py:12
+#: src/langerak_gkv/mailing/views.py:12
 #, python-brace-format
 msgid "You have successfully subscribed to \"{newsletter}\""
 msgstr "Je bent succesvol ingeschreven op '{newsletter}'"
 
-#: mailing/views.py:13
+#: src/langerak_gkv/mailing/views.py:13
 #, python-brace-format
 msgid "You have successfully updated your subscription to \"{newsletter}\""
 msgstr "Je hebt succesvol je abonnement op '{newsletter}' bijgewerkt"
 
-#: mailing/views.py:14
+#: src/langerak_gkv/mailing/views.py:14
 #, python-brace-format
 msgid "You have successfully unsubscribed from \"{newsletter}\""
 msgstr "Je bent succesvol uitgeschreven van '{newsletter}'"
 
-#: search/templates/search/activity_item.html:6
+#: src/langerak_gkv/search/templates/search/activity_item.html:6
 msgid "Calendar"
 msgstr "Kalender"
 
-#: search/templates/search/base_item.html:14
+#: src/langerak_gkv/search/templates/search/base_item.html:14
 msgid "Other"
 msgstr "Overige"
 
-#: search/templates/search/cms_item.html:6
+#: src/langerak_gkv/search/templates/search/cms_item.html:6
 msgid "Page"
 msgstr "Pagina"
 
-#: search/templates/search/liturgy_item.html:6
+#: src/langerak_gkv/search/templates/search/liturgy_item.html:6
 msgid "Liturgy"
 msgstr "Kerkdienst"
 
-#: search/templates/search/results.html:3
+#: src/langerak_gkv/search/templates/search/results.html:3
 msgid "Search results"
 msgstr "Zoekresultaten"
 
-#: search/templates/search/results.html:22
+#: src/langerak_gkv/search/templates/search/results.html:22
 msgid "Sorry, no items match your search criteria."
 msgstr "Sorry, er zijn geen zoekresultaten gevonden."
 
-#: societies/admin.py:19
+#: src/langerak_gkv/societies/admin.py:19
 msgid "member count"
 msgstr "aantal leden"
 
-#: societies/admin.py:23 societies/admin.py:24
+#: src/langerak_gkv/societies/admin.py:23
+#: src/langerak_gkv/societies/admin.py:24
 msgid "edit content"
 msgstr "bewerk inhoud"
 
-#: societies/cms_plugins.py:11
+#: src/langerak_gkv/societies/cms_plugins.py:11
 msgid "Society"
 msgstr "Vereniging"
 
-#: societies/cms_plugins.py:12
+#: src/langerak_gkv/societies/cms_plugins.py:12
 msgid "Societies"
 msgstr "Verenigingen"
 
-#: societies/models.py:19
+#: src/langerak_gkv/societies/models.py:19
 msgid "society"
 msgstr "vereniging"
 
-#: societies/models.py:20
+#: src/langerak_gkv/societies/models.py:20
 msgid "societies"
 msgstr "verenigingen"
 
-#: societies/templates/societies/includes/society.html:8
+#: src/langerak_gkv/societies/templates/societies/includes/society.html:8
 msgid "Members"
 msgstr "Leden"
 
-#: societies/views.py:17
+#: src/langerak_gkv/societies/views.py:17
 msgid "This page is only visible for content editors"
 msgstr "Deze pagina is enkel zichtbaar voor content-editors"
 
-#: templates/admin/base_site.html:4
+#: src/langerak_gkv/templates/admin/base_site.html:4
 msgid "Koningskerk site admin"
 msgstr "Koningskerk administratiepaneel"
 
-#: templates/cms/base.html:11
+#: src/langerak_gkv/templates/cms/base.html:11
 msgid "Put your content here"
 msgstr "Voer hier je content in"
 
-#: templates/header.html:21 users/templates/users/user_search_form.html:6
-#: users/templates/users/user_search_form.html:20
+#: src/langerak_gkv/templates/cmsplugin_filer_file/plugins/file/default.html:7
+msgid "(file missing!)"
+msgstr "(bestand ontbreekt!)"
+
+#: src/langerak_gkv/templates/header.html:21
+#: src/langerak_gkv/users/templates/users/user_search_form.html:6
+#: src/langerak_gkv/users/templates/users/user_search_form.html:20
 msgid "Search"
 msgstr "Zoek"
 
-#: templates/header.html:34
+#: src/langerak_gkv/templates/header.html:34
 msgid "Menu"
 msgstr "Menu"
 
-#: templates/header.html:40
+#: src/langerak_gkv/templates/header.html:40
 msgid "logo"
 msgstr "logo"
 
-#: templates/header.html:46 templates/master.html:62
+#: src/langerak_gkv/templates/header.html:46
+#: src/langerak_gkv/templates/master.html:62
 msgid "Home"
 msgstr "Home"
 
-#: templates/header.html:55 templates/header.html.py:62
-#: users/templates/users/login.html:17
+#: src/langerak_gkv/templates/header.html:55
+#: src/langerak_gkv/templates/header.html:62
+#: src/langerak_gkv/users/templates/users/login.html:17
 msgid "Login"
 msgstr "Inloggen"
 
-#: templates/header.html:63 users/templates/users/login.html:19
+#: src/langerak_gkv/templates/header.html:63
+#: src/langerak_gkv/users/templates/users/login.html:19
 msgid "Forgot password?"
 msgstr "Wachtwoord vergeten?"
 
-#: templates/header.html:74
+#: src/langerak_gkv/templates/header.html:74
 msgid "View own profile"
 msgstr "Bekijk eigen profiel"
 
-#: templates/header.html:78
+#: src/langerak_gkv/templates/header.html:78
 msgid "Administration"
 msgstr "Administratie"
 
-#: templates/header.html:86
+#: src/langerak_gkv/templates/header.html:86
 msgid "Logout"
 msgstr "Uitloggen"
 
-#: templates/master.html:48
+#: src/langerak_gkv/templates/master.html:48
 msgid "Signup for the newsletter"
 msgstr "Abonneren op de nieuwsbrief"
 
-#: templates/master.html:52
+#: src/langerak_gkv/templates/master.html:52
 msgid "Enter your e-mail address here"
 msgstr "Voer hier je e-mailadres in"
 
-#: templates/master.html:52
+#: src/langerak_gkv/templates/master.html:52
 msgid "next"
 msgstr "volgende"
 
-#: templates/master.html:91
+#: src/langerak_gkv/templates/master.html:91
 msgid "built by Sergei Maertens"
 msgstr "gebouwd door Sergei Maertens"
 
-#: templates/newsletter/subscription_activate.html:4
+#: src/langerak_gkv/templates/newsletter/subscription_activate.html:4
 msgid "Activate newsletter subscription"
 msgstr "Activeer nieuwsbriefinschrijving"
 
-#: templates/newsletter/subscription_activate.html:10
+#: src/langerak_gkv/templates/newsletter/subscription_activate.html:10
 #, python-format
 msgid ""
 "\n"
@@ -780,7 +805,7 @@ msgstr ""
 "\n"
 "Activeer je abonnement voor de '%(name)s' nieuwsbrief"
 
-#: templates/newsletter/subscription_activate.html:14
+#: src/langerak_gkv/templates/newsletter/subscription_activate.html:14
 #, python-format
 msgid ""
 "\n"
@@ -790,7 +815,7 @@ msgstr ""
 "\n"
 "Bevestig je uitschrijving op de '%(name)s' nieuwsbrief"
 
-#: templates/newsletter/subscription_activate.html:18
+#: src/langerak_gkv/templates/newsletter/subscription_activate.html:18
 #, python-format
 msgid ""
 "\n"
@@ -800,61 +825,61 @@ msgstr ""
 "\n"
 "Update je abonnement voor de '%(name)s' nieuwsbrief"
 
-#: templates/newsletter/subscription_activate.html:34
+#: src/langerak_gkv/templates/newsletter/subscription_activate.html:34
 msgid "Confirm"
 msgstr "Bevestigen"
 
-#: templates/newsletter/subscription_subscribe.html:4
-#: templates/newsletter/subscription_subscribe_user.html:4
+#: src/langerak_gkv/templates/newsletter/subscription_subscribe.html:4
+#: src/langerak_gkv/templates/newsletter/subscription_subscribe_user.html:4
 msgid "Newsletter subscribe"
 msgstr "Abonneren op nieuwsbrief"
 
-#: templates/newsletter/subscription_subscribe.html:10
-#: templates/newsletter/subscription_subscribe_user.html:10
+#: src/langerak_gkv/templates/newsletter/subscription_subscribe.html:10
+#: src/langerak_gkv/templates/newsletter/subscription_subscribe_user.html:10
 #, python-format
 msgid "Subscribe to '%(name)s'"
 msgstr "Abonneren op '%(name)s'"
 
-#: templates/newsletter/subscription_subscribe.html:15
-#: templates/newsletter/subscription_unsubscribe.html:14
+#: src/langerak_gkv/templates/newsletter/subscription_subscribe.html:15
+#: src/langerak_gkv/templates/newsletter/subscription_unsubscribe.html:14
 msgid ""
-"Due to a technical error we were not able to submit your confirmation email. "
-"This could be because your email address is invalid."
+"Due to a technical error we were not able to submit your confirmation email."
+" This could be because your email address is invalid."
 msgstr ""
 "Door een technisch probleem konden we je bevestigingsemail niet versturen. "
 "Dit kan gebeuren als je e-mailadres ongeldig is."
 
-#: templates/newsletter/subscription_subscribe.html:29
+#: src/langerak_gkv/templates/newsletter/subscription_subscribe.html:29
 msgid "Activate"
 msgstr "Activeren"
 
-#: templates/newsletter/subscription_subscribe_user.html:13
+#: src/langerak_gkv/templates/newsletter/subscription_subscribe_user.html:13
 msgid "Do you want to subscribe to this newsletter?"
 msgstr "Wil je je abonneren op deze nieuwsbrief?"
 
-#: templates/newsletter/subscription_subscribe_user.html:19
+#: src/langerak_gkv/templates/newsletter/subscription_subscribe_user.html:19
 msgid "Subscribe"
 msgstr "Abonneren"
 
-#: templates/newsletter/subscription_unsubscribe.html:4
-#: templates/newsletter/subscription_unsubscribe_email_sent.html:4
-#: templates/newsletter/subscription_unsubscribe_user.html:4
+#: src/langerak_gkv/templates/newsletter/subscription_unsubscribe.html:4
+#: src/langerak_gkv/templates/newsletter/subscription_unsubscribe_email_sent.html:4
+#: src/langerak_gkv/templates/newsletter/subscription_unsubscribe_user.html:4
 msgid "Newsletter unsubscribe"
 msgstr "Uitschrijven van nieuwsbrief"
 
-#: templates/newsletter/subscription_unsubscribe.html:9
-#: templates/newsletter/subscription_unsubscribe_email_sent.html:9
-#: templates/newsletter/subscription_unsubscribe_user.html:9
+#: src/langerak_gkv/templates/newsletter/subscription_unsubscribe.html:9
+#: src/langerak_gkv/templates/newsletter/subscription_unsubscribe_email_sent.html:9
+#: src/langerak_gkv/templates/newsletter/subscription_unsubscribe_user.html:9
 #, python-format
 msgid "Unsubscribe from '%(name)s'"
 msgstr "Uitschrijven van '%(name)s'"
 
-#: templates/newsletter/subscription_unsubscribe.html:28
-#: templates/newsletter/subscription_unsubscribe_user.html:18
+#: src/langerak_gkv/templates/newsletter/subscription_unsubscribe.html:28
+#: src/langerak_gkv/templates/newsletter/subscription_unsubscribe_user.html:18
 msgid "Unsubscribe"
 msgstr "Uitschrijven"
 
-#: templates/newsletter/subscription_unsubscribe_email_sent.html:12
+#: src/langerak_gkv/templates/newsletter/subscription_unsubscribe_email_sent.html:12
 msgid ""
 "Your unsubscription request has successfully been received. An email has "
 "been sent to you with a link you need to follow in order to confirm your "
@@ -863,325 +888,359 @@ msgstr ""
 "Je verzoek tot uitschrijving is ontvangen. Er werd een e-mail verstuurd met "
 "een link om je uitschrijving te bevestigen."
 
-#: templates/newsletter/subscription_unsubscribe_user.html:12
+#: src/langerak_gkv/templates/newsletter/subscription_unsubscribe_user.html:12
 msgid "Do you want to unsubscribe from this newsletter?"
 msgstr "Wil je uitschrijven van deze nieuwsbrief?"
 
-#: templates/password_reset/recovery_form.html:5
+#: src/langerak_gkv/templates/password_reset/recovery_form.html:5
 msgid "Password recovery"
 msgstr "Wachtwoordherstel"
 
-#: templates/password_reset/recovery_form.html:14
+#: src/langerak_gkv/templates/password_reset/recovery_form.html:14
 msgid "Recover my password"
 msgstr "Herstel mijn wachtwoord"
 
-#: templates/password_reset/reset.html:5
+#: src/langerak_gkv/templates/password_reset/reset.html:5
 #, python-format
 msgid ""
-"Sorry, this password reset link is invalid. You can still <a href="
-"\"%(recovery_url)s\">request a new one</a>."
+"Sorry, this password reset link is invalid. You can still <a "
+"href=\"%(recovery_url)s\">request a new one</a>."
 msgstr ""
-"Sorry, deze wachtwoordresetlink is ongeldig. Je kan wel <a href="
-"\"%(recovery_url)s\">een nieuwe aanvragen</a>."
+"Sorry, deze wachtwoordresetlink is ongeldig. Je kan wel <a "
+"href=\"%(recovery_url)s\">een nieuwe aanvragen</a>."
 
-#: templates/password_reset/reset.html:9
+#: src/langerak_gkv/templates/password_reset/reset.html:9
 #, python-format
 msgid "Hi, <strong>%(username)s</strong>. Please choose your new password."
 msgstr ""
-"Hallo, <strong>%(username)s</strong>. Gelieve je nieuwe wachtwoord te kiezen."
+"Hallo, <strong>%(username)s</strong>. Gelieve je nieuwe wachtwoord te "
+"kiezen."
 
-#: templates/password_reset/reset.html:12
+#: src/langerak_gkv/templates/password_reset/reset.html:12
 msgid "Set new password"
 msgstr "Stel nieuw wachtwoord in"
 
-#: users/admin.py:21
+#: src/langerak_gkv/users/admin.py:22
 msgid "Personal info"
 msgstr "Persoonlijek informatie"
 
-#: users/admin.py:33
+#: src/langerak_gkv/users/admin.py:34
 msgid "Family and location"
 msgstr "Familie en woonplaats"
 
-#: users/admin.py:39
+#: src/langerak_gkv/users/admin.py:40
 msgid "Permissions"
 msgstr "Rechten"
 
-#: users/admin.py:44
+#: src/langerak_gkv/users/admin.py:45
 msgid "Important dates"
 msgstr "Belangrijke data"
 
-#: users/apps.py:7 users/models.py:110
+#: src/langerak_gkv/users/apps.py:7 src/langerak_gkv/users/models.py:121
 msgid "users"
 msgstr "gebruikers"
 
-#: users/cms_app.py:8
+#: src/langerak_gkv/users/cms_app.py:8
 msgid "Users"
 msgstr "Gebruikers"
 
-#: users/forms.py:20
+#: src/langerak_gkv/users/forms.py:20
 msgid "A user with that email already exists."
 msgstr "Er bestaat al een gebruiker met dit e-mailadres."
 
-#: users/forms.py:21
+#: src/langerak_gkv/users/forms.py:21
 msgid "The two password fields didn't match."
 msgstr "De twee wachtwoorden kwamen niet overeen."
 
-#: users/forms.py:23 users/forms.py:68
+#: src/langerak_gkv/users/forms.py:23 src/langerak_gkv/users/forms.py:68
 msgid "Password"
 msgstr "Wachtwoord"
 
-#: users/forms.py:25
+#: src/langerak_gkv/users/forms.py:25
 msgid "Password confirmation"
 msgstr "Wachtwoord bevestiging"
 
-#: users/forms.py:27
+#: src/langerak_gkv/users/forms.py:27
 msgid "Enter the same password as above, for verification."
 msgstr "Voer hetzelfde wachtwoord in als hierboven, ter controle."
 
-#: users/forms.py:28
+#: src/langerak_gkv/users/forms.py:28
 msgid "Username"
 msgstr "Gebruikersnaam"
 
-#: users/forms.py:29
+#: src/langerak_gkv/users/forms.py:29
 msgid "Alternative to login."
 msgstr "Alternatieve loginnaam (naast e-mailadres)."
 
-#: users/forms.py:67 users/templates/users/user_detail.html:93
+#: src/langerak_gkv/users/forms.py:67
+#: src/langerak_gkv/users/templates/users/user_detail.html:93
 msgid "Email"
 msgstr "E-mail"
 
-#: users/forms.py:69
+#: src/langerak_gkv/users/forms.py:69
 msgid ""
 "Raw passwords are not stored, so there is no way to see this user's "
 "password, but you can change the password using <a href=\"password/\">this "
 "form</a>."
 msgstr ""
 
-#: users/forms.py:96 users/forms.py:115
+#: src/langerak_gkv/users/forms.py:96 src/langerak_gkv/users/forms.py:115
 msgid "This username is taken, choose a different username."
 msgstr "Deze gebruikersnaam is al in gebruik, kies een andere gebruikersnaam."
 
-#: users/forms.py:120
+#: src/langerak_gkv/users/forms.py:120
 msgid "Email or username"
 msgstr "E-mailadres of gebruikersnaam"
 
-#: users/forms.py:124
+#: src/langerak_gkv/users/forms.py:124
 msgid "Name"
 msgstr "Naam"
 
-#: users/forms.py:125
+#: src/langerak_gkv/users/forms.py:125
 msgid "Search terms"
 msgstr "Zoektermen"
 
-#: users/forms.py:127
+#: src/langerak_gkv/users/forms.py:127
 msgid "Minimum age"
 msgstr "Minimumleeftijd"
 
-#: users/forms.py:128
+#: src/langerak_gkv/users/forms.py:128
 msgid "Maximum age"
 msgstr "Maximumleeftijd"
 
-#: users/forms.py:129
+#: src/langerak_gkv/users/forms.py:129
 msgid "Gender"
 msgstr "Geslacht"
 
-#: users/models.py:53
+#: src/langerak_gkv/users/models.py:54
 msgid "male"
 msgstr "man"
 
-#: users/models.py:54
+#: src/langerak_gkv/users/models.py:55
 msgid "female"
 msgstr "vrouw"
 
-#: users/models.py:56
+#: src/langerak_gkv/users/models.py:58
+msgid "baptised member"
+msgstr "dooplid"
+
+#: src/langerak_gkv/users/models.py:59
+msgid "practicing member"
+msgstr "belijdend lid"
+
+#: src/langerak_gkv/users/models.py:60
+msgid "guest member"
+msgstr "gastlid"
+
+#: src/langerak_gkv/users/models.py:62
 msgid "email address"
 msgstr "e-mailadres"
 
-#: users/models.py:57
+#: src/langerak_gkv/users/models.py:63
 msgid "username"
 msgstr "gebruikersnaam"
 
-#: users/models.py:59
+#: src/langerak_gkv/users/models.py:65
 msgid "first name"
 msgstr "voornaam"
 
-#: users/models.py:60
+#: src/langerak_gkv/users/models.py:66
 msgid "last name"
 msgstr "familienaam"
 
-#: users/models.py:63
+#: src/langerak_gkv/users/models.py:69
 msgid "staff status"
 msgstr "is staf"
 
-#: users/models.py:64
+#: src/langerak_gkv/users/models.py:70
 msgid "Designates whether the user can log into this admin site."
 msgstr ""
 
-#: users/models.py:67
+#: src/langerak_gkv/users/models.py:73
 msgid "active"
 msgstr "actief"
 
-#: users/models.py:68
+#: src/langerak_gkv/users/models.py:74
 msgid ""
 "Designates whether this user should be treated as active. Unselect this "
 "instead of deleting accounts."
 msgstr ""
 
-#: users/models.py:70
+#: src/langerak_gkv/users/models.py:76
 msgid "date joined"
 msgstr "registratiedatum"
 
-#: users/models.py:73
+#: src/langerak_gkv/users/models.py:79
 msgid "sex"
 msgstr "geslacht"
 
-#: users/models.py:75
+#: src/langerak_gkv/users/models.py:81 src/langerak_gkv/users/models.py:270
 msgid "street"
 msgstr "straat"
 
-#: users/models.py:76
+#: src/langerak_gkv/users/models.py:82 src/langerak_gkv/users/models.py:271
 msgid "Street name and number."
 msgstr "Straatnaam en nummer."
 
-#: users/models.py:77
+#: src/langerak_gkv/users/models.py:83 src/langerak_gkv/users/models.py:272
 msgid "postal code"
 msgstr "postcode"
 
-#: users/models.py:78
+#: src/langerak_gkv/users/models.py:84 src/langerak_gkv/users/models.py:273
 msgid "city"
 msgstr "stad"
 
-#: users/models.py:81
+#: src/langerak_gkv/users/models.py:87
 msgid "phone"
 msgstr "telefoon"
 
-#: users/models.py:82
+#: src/langerak_gkv/users/models.py:88
 msgid "Home phone number"
 msgstr "Thuistelefoon"
 
-#: users/models.py:84
+#: src/langerak_gkv/users/models.py:90
 msgid "mobile phone number"
 msgstr "mobiel"
 
-#: users/models.py:85
+#: src/langerak_gkv/users/models.py:91
 msgid "Mobile phone number"
 msgstr "Mobiele telefoon"
 
-#: users/models.py:87
+#: src/langerak_gkv/users/models.py:93
 msgid "birth_date"
 msgstr "geboortedatum"
 
-#: users/models.py:89
+#: src/langerak_gkv/users/models.py:95
 msgid "picture"
 msgstr "foto"
 
-#: users/models.py:90
+#: src/langerak_gkv/users/models.py:96
 msgid "Profile picture"
 msgstr "Profielfoto"
 
-#: users/models.py:92
+#: src/langerak_gkv/users/models.py:98
 msgid "Short 'about me' text"
 msgstr "Korte 'over mij' tekst"
 
-#: users/models.py:96 users/models.py:226
+#: src/langerak_gkv/users/models.py:101
+#| msgid "member count"
+msgid "member type"
+msgstr "type lid"
+
+#: src/langerak_gkv/users/models.py:103 src/langerak_gkv/users/models.py:244
 msgid "district"
 msgstr "wijk"
 
-#: users/models.py:99 users/models.py:252
+#: src/langerak_gkv/users/models.py:107 src/langerak_gkv/users/models.py:276
 msgid "family"
 msgstr "familie"
 
-#: users/models.py:109
+#: src/langerak_gkv/users/models.py:113
+#| msgid "external url"
+msgid "external code"
+msgstr "externe code"
+
+#: src/langerak_gkv/users/models.py:120
 msgid "user"
 msgstr "gebruiker"
 
-#: users/models.py:172
+#: src/langerak_gkv/users/models.py:187
 msgid "User 2 is `relation type` of user 1."
 msgstr "Gebruiker 2 is `relatietype` van gebruiker 1."
 
-#: users/models.py:179
+#: src/langerak_gkv/users/models.py:194
 msgid "user relation"
 msgstr "gebruikersrelatie"
 
-#: users/models.py:180
+#: src/langerak_gkv/users/models.py:195
 msgid "user relations"
 msgstr "gebruikersrelaties"
 
-#: users/models.py:199 users/models.py:202
+#: src/langerak_gkv/users/models.py:214
 msgid "name (male)"
 msgstr "naam (man)"
 
-#: users/models.py:200 users/models.py:203
+#: src/langerak_gkv/users/models.py:215
 msgid "name (female)"
 msgstr "naam (vrouw)"
 
-#: users/models.py:204
+#: src/langerak_gkv/users/models.py:217
+#| msgid "name (male)"
+msgid "reverse name (male)"
+msgstr "naam (man), omgekeerde richting"
+
+#: src/langerak_gkv/users/models.py:218
+#| msgid "name (female)"
+msgid "reverse name (female)"
+msgstr "naam (vrouw), omgekeerde richting"
+
+#: src/langerak_gkv/users/models.py:221
 msgid "Reverse direction of the relation"
 msgstr "Omgekeerde richting van de relatie"
 
-#: users/models.py:207
+#: src/langerak_gkv/users/models.py:225
 msgid "is partner?"
 msgstr "is partner?"
 
-#: users/models.py:208
+#: src/langerak_gkv/users/models.py:226
 msgid "is child/parent?"
 msgstr "is kind/ouder?"
 
-#: users/models.py:211
+#: src/langerak_gkv/users/models.py:229
 msgid "relation type"
 msgstr "relatietype"
 
-#: users/models.py:212
+#: src/langerak_gkv/users/models.py:230
 msgid "relation types"
 msgstr "relatietypes"
 
-#: users/models.py:219
+#: src/langerak_gkv/users/models.py:237
 #, python-brace-format
 msgid "{0}/{1} (reverse: {2}/{3})"
 msgstr "{0}/{1} (omgekeerd: {2}/{3})"
 
-#: users/models.py:227
+#: src/langerak_gkv/users/models.py:245
 msgid "districts"
 msgstr "wijken"
 
-#: users/models.py:237
+#: src/langerak_gkv/users/models.py:255
 msgid "Describe what someone with this function does."
 msgstr "Beschrijf wat iemand met deze functie doet."
 
-#: users/models.py:240
+#: src/langerak_gkv/users/models.py:258
 msgid "district function"
 msgstr "wijkindeling"
 
-#: users/models.py:241
+#: src/langerak_gkv/users/models.py:259
 msgid "district functions"
 msgstr "wijkindelingen"
 
-#: users/models.py:249
+#: src/langerak_gkv/users/models.py:267
 msgid "Last name of the householder."
 msgstr "Familienaam van het gezinshoofd."
 
-#: users/models.py:253
+#: src/langerak_gkv/users/models.py:277
 msgid "families"
 msgstr "families"
 
-#: users/models.py:256
+#: src/langerak_gkv/users/models.py:281
 #, python-brace-format
 msgid "Fam. {name}"
 msgstr "Fam. {name}"
 
-#: users/templates/users/base.html:18
+#: src/langerak_gkv/users/templates/users/base.html:18
 msgid "Welcome"
 msgstr "Welkom"
 
-#: users/templates/users/base.html:22
+#: src/langerak_gkv/users/templates/users/base.html:22
 msgid "View profile"
 msgstr "Bekijk profiel"
 
-#: users/templates/users/base.html:27
+#: src/langerak_gkv/users/templates/users/base.html:27
 msgid "Edit profile"
 msgstr "Bewerk profiel"
 
-#: users/templates/users/birthdays.html:19
+#: src/langerak_gkv/users/templates/users/birthdays.html:19
 #, python-format
 msgid ""
 "\n"
@@ -1198,121 +1257,121 @@ msgstr[1] ""
 "\n"
 "Geen verjaardagen in de komende %(weeks)s weken."
 
-#: users/templates/users/login.html:10
+#: src/langerak_gkv/users/templates/users/login.html:10
 msgid ""
 "Enter your e-mail address and password or username and password to login."
 msgstr ""
 "Voer je e-mailadres (of gebruikersnaam) en wachtwoord in om in te loggen."
 
-#: users/templates/users/logout.html:5
+#: src/langerak_gkv/users/templates/users/logout.html:5
 msgid "See you on your next visit!"
 msgstr "Tot het volgende bezoek!"
 
-#: users/templates/users/user_detail.html:7
+#: src/langerak_gkv/users/templates/users/user_detail.html:7
 msgid "Back to overview"
 msgstr "Terug naar het overzicht"
 
-#: users/templates/users/user_detail.html:9
+#: src/langerak_gkv/users/templates/users/user_detail.html:9
 msgid "Profile"
 msgstr "Profiel"
 
-#: users/templates/users/user_detail.html:28
+#: src/langerak_gkv/users/templates/users/user_detail.html:28
 msgid "Partner of"
 msgstr "Partner van"
 
-#: users/templates/users/user_detail.html:37
+#: src/langerak_gkv/users/templates/users/user_detail.html:37
 msgid "Children"
 msgstr "Kinderen"
 
-#: users/templates/users/user_detail.html:58
+#: src/langerak_gkv/users/templates/users/user_detail.html:58
 msgid "Date of birth"
 msgstr "Geboortedatum"
 
-#: users/templates/users/user_detail.html:64
+#: src/langerak_gkv/users/templates/users/user_detail.html:64
 msgid "Address"
 msgstr "Adres"
 
-#: users/templates/users/user_detail.html:69
+#: src/langerak_gkv/users/templates/users/user_detail.html:69
 msgid "Postal code"
 msgstr "Postcode"
 
-#: users/templates/users/user_detail.html:80
+#: src/langerak_gkv/users/templates/users/user_detail.html:80
 msgid "Telephone"
 msgstr "Telefoon"
 
-#: users/templates/users/user_detail.html:86
+#: src/langerak_gkv/users/templates/users/user_detail.html:86
 msgid "Mobile phone"
 msgstr "Mobiel"
 
-#: users/templates/users/user_detail.html:100
+#: src/langerak_gkv/users/templates/users/user_detail.html:100
 msgid "District function"
 msgstr "Wijkindeling"
 
-#: users/templates/users/user_detail.html:106
+#: src/langerak_gkv/users/templates/users/user_detail.html:106
 msgid "About me"
 msgstr "Over mij"
 
-#: users/templates/users/user_detail.html:117
+#: src/langerak_gkv/users/templates/users/user_detail.html:117
 msgid "1<sup>st</sup> degree connections"
 msgstr "1<sup>ste</sup> graads connecties"
 
-#: users/templates/users/user_form.html:42
+#: src/langerak_gkv/users/templates/users/user_form.html:42
 msgid "save"
 msgstr "bewaren"
 
-#: users/templates/users/user_preview.html:20
+#: src/langerak_gkv/users/templates/users/user_preview.html:20
 msgid "Email me"
 msgstr "E-mail me"
 
-#: users/templates/users/user_search_form.html:10
+#: src/langerak_gkv/users/templates/users/user_search_form.html:10
 msgid "Advanced search"
 msgstr "Geavanceerd zoeken"
 
-#: utils/models.py:8
+#: src/langerak_gkv/utils/models.py:8
 msgid "app name"
 msgstr "app name"
 
-#: utils/models.py:9
+#: src/langerak_gkv/utils/models.py:9
 msgid "url name"
 msgstr "url name"
 
-#: utils/models.py:10
+#: src/langerak_gkv/utils/models.py:10
 msgid "display name"
 msgstr "weergave"
 
-#: utils/models.py:11
+#: src/langerak_gkv/utils/models.py:11
 msgid "url namespace"
 msgstr "url namespace"
 
-#: utils/models.py:15
+#: src/langerak_gkv/utils/models.py:15
 msgid "urlconf menu entry"
 msgstr "urlconf menu-item"
 
-#: utils/models.py:16
+#: src/langerak_gkv/utils/models.py:16
 msgid "urlconf menu entries"
 msgstr "urlconf menu-items"
 
-#: worklog/models.py:8
+#: src/langerak_gkv/worklog/models.py:8
 msgid "start"
 msgstr "start"
 
-#: worklog/models.py:9
+#: src/langerak_gkv/worklog/models.py:9
 msgid "end"
 msgstr "eind"
 
-#: worklog/models.py:10
+#: src/langerak_gkv/worklog/models.py:10
 msgid "log_message"
 msgstr "logbericht"
 
-#: worklog/models.py:12
+#: src/langerak_gkv/worklog/models.py:12
 msgid "paid?"
 msgstr "betaald?"
 
-#: worklog/models.py:15
+#: src/langerak_gkv/worklog/models.py:15
 msgid "log entry"
 msgstr ""
 
-#: worklog/models.py:16
+#: src/langerak_gkv/worklog/models.py:16
 msgid "log entries"
 msgstr ""
 
