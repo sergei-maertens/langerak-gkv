@@ -8,6 +8,13 @@
         {% endfor %}
     </div>
 
+    <div class="pull-left">
+        <a href="{% url 'users:search-pdf' %}?{{ search_form_qs }}">
+            <i class="fa fa-file-pdf-o"></i>
+            {% trans "export to pdf" %}
+        </a>
+    </div>
+
     {% include "includes/pagination.html" with qs=search_form_qs %}
 
 {% endblock main-content %}

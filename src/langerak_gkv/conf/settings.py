@@ -328,12 +328,12 @@ THUMBNAIL_ALIASES = {
             'upscale': True,
         },
         'small': {
-            'size': (120, 90),
+            'size': (120, 120),
             'crop': True,
             'upscale': True,
         },
         'avatar_portrait': {
-            'size': (300, 320),
+            'size': (300, 300),
             'crop': True,
             'upscale': True,
         },

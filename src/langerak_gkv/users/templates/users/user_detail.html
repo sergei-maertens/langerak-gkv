@@ -16,7 +16,7 @@
                 {% block profile_pic %}
                     <figure>
                         {% if profile.picture %}
-                            <img src="{% thumbnail profile.picture 400x300 box=profile.cropping crop upscale %}">
+                            <img src="{% thumbnail profile.picture 400x400 box=profile.cropping crop upscale %}">
                         {% else %}
                             <i class="fa fa-user"></i>
                         {% endif %}

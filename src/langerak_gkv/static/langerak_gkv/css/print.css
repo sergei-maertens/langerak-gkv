@@ -1,3 +1,513 @@
 /* Welcome to Compass. Use this file to define print styles.
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/print.css" media="print" rel="stylesheet" type="text/css" /> */
+/* See: http://www.fontsquirrel.com/tools/webfont-generator */
+@import url(http://fonts.googleapis.com/css?family=Ubuntu:400,700,400italic);
+/*
+ * color palette
+ */
+/*
+* Hide the dotted lines around an element when it receives focus.
+*/
+/* line 5, ../../../sass/partials/_utils.scss */
+* {
+  _noFocusLine: expression(this.hideFocus=true);
+}
+
+/* ie7 */
+/* line 6, ../../../sass/partials/_utils.scss */
+::-moz-focus-inner {
+  border: 0;
+}
+
+/* firefox */
+/* line 7, ../../../sass/partials/_utils.scss */
+:focus, a:focus {
+  outline: none;
+}
+
+/* ie8, chrome, etc */
+/* line 1, ../../../sass/partials/_base.scss */
+html, body {
+  font-family: "Ubuntu", Verdana, Geneva, sans-serif;
+}
+
+/* line 5, ../../../sass/partials/_base.scss */
+body {
+  color: #584C40;
+}
+
+/* line 9, ../../../sass/partials/_base.scss */
+.narrow {
+  padding-left: 50px;
+  padding-right: 50px;
+}
+/* line 14, ../../../sass/partials/_base.scss */
+.narrow .narrow {
+  margin-left: -50px;
+  margin-right: -50px;
+}
+
+/* line 23, ../../../sass/partials/_base.scss */
+.gutter-small, .gutter-small .row, .gutter-small .form-horizontal .form-group {
+  margin-left: -5px;
+  margin-right: -5px;
+}
+/* line 28, ../../../sass/partials/_base.scss */
+.gutter-small > *, .gutter-small .row > *, .gutter-small .form-group > * {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+/* line 34, ../../../sass/partials/_base.scss */
+#content {
+  background-color: #E9E9E9;
+  padding-top: 25px;
+}
+
+/* line 39, ../../../sass/partials/_base.scss */
+article {
+  background-color: #FFFFFF;
+  padding: 15px;
+  margin-bottom: 15px;
+}
+/* line 44, ../../../sass/partials/_base.scss */
+article h1, article h2 {
+  color: #b9c01c;
+  font-weight: bold;
+}
+/* line 49, ../../../sass/partials/_base.scss */
+article footer {
+  text-align: right;
+}
+
+/* line 54, ../../../sass/partials/_base.scss */
+.page-block {
+  background-color: #FFFFFF;
+}
+
+/* line 58, ../../../sass/partials/_base.scss */
+img {
+  width: 100%;
+}
+
+/* line 62, ../../../sass/partials/_base.scss */
+.margin-top {
+  margin-top: 25px;
+}
+
+/* line 66, ../../../sass/partials/_base.scss */
+.section {
+  margin-top: 10px;
+}
+
+/* line 70, ../../../sass/partials/_base.scss */
+.page-divider {
+  font-weight: bold;
+  background-color: #FFFFFF;
+  padding: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/*
+ * Buttons
+ */
+/* line 81, ../../../sass/partials/_base.scss */
+.btn {
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  text-transform: uppercase;
+}
+/* line 85, ../../../sass/partials/_base.scss */
+.btn, .btn:hover, .btn:active, .btn.active, .btn:focus {
+  background-image: none;
+  border: none;
+  outline: none;
+}
+/* line 91, ../../../sass/partials/_base.scss */
+.btn.btn-default {
+  background-color: #D9E12E;
+  color: #584C40;
+}
+/* line 96, ../../../sass/partials/_base.scss */
+.btn.btn-action {
+  background-color: #EC7537;
+  color: #FFFFFF;
+  font-weight: bold;
+}
+/* line 102, ../../../sass/partials/_base.scss */
+.btn.read-more {
+  font-weight: bold;
+}
+/* line 105, ../../../sass/partials/_base.scss */
+.btn.read-more .glyphicon {
+  color: #FFFFFF;
+}
+
+/* line 113, ../../../sass/partials/_base.scss */
+a.orange, a.green, a.blue, a.purple,
+.btn.orange,
+.btn.green,
+.btn.blue,
+.btn.purple {
+  color: #FFFFFF;
+  text-transform: uppercase;
+  padding: 6px 12px;
+  font-weight: bolder;
+}
+/* line 122, ../../../sass/partials/_base.scss */
+a.orange.read-more, a.green.read-more, a.blue.read-more, a.purple.read-more,
+.btn.orange.read-more,
+.btn.green.read-more,
+.btn.blue.read-more,
+.btn.purple.read-more {
+  padding-right: 0;
+}
+/* line 124, ../../../sass/partials/_base.scss */
+a.orange.read-more .glyphicon-play, a.green.read-more .glyphicon-play, a.blue.read-more .glyphicon-play, a.purple.read-more .glyphicon-play,
+.btn.orange.read-more .glyphicon-play,
+.btn.green.read-more .glyphicon-play,
+.btn.blue.read-more .glyphicon-play,
+.btn.purple.read-more .glyphicon-play {
+  margin-right: 12px;
+  color: #FFFFFF;
+}
+/* line 131, ../../../sass/partials/_base.scss */
+a.orange,
+.btn.orange {
+  background-color: #EC7537;
+}
+/* line 135, ../../../sass/partials/_base.scss */
+a.purple,
+.btn.purple {
+  background-color: #6D095E;
+}
+/* line 139, ../../../sass/partials/_base.scss */
+a.green,
+.btn.green {
+  background-color: #D9E12E;
+  color: #584C40;
+}
+/* line 144, ../../../sass/partials/_base.scss */
+a.blue,
+.btn.blue {
+  background-color: #70BDBD;
+}
+
+/* line 150, ../../../sass/partials/_base.scss */
+.popover {
+  background-color: #A23854;
+  border-color: rgba(109, 9, 94, 0.5);
+}
+/* line 154, ../../../sass/partials/_base.scss */
+.popover .popover-content {
+  color: #FFFFFF;
+  padding: 3px 5px;
+}
+/* line 159, ../../../sass/partials/_base.scss */
+.popover.top .arrow {
+  border-top-color: rgba(109, 9, 94, 0.5);
+}
+/* line 162, ../../../sass/partials/_base.scss */
+.popover.top .arrow:after {
+  border-top-color: #A23854;
+}
+
+/* line 3, ../../../sass/partials/apps/_profiles.scss */
+body.profile .block,
+body.cms-page .block {
+  padding: 10px;
+  background-color: #FFFFFF;
+}
+/* line 10, ../../../sass/partials/apps/_profiles.scss */
+body.profile .avatars .row.small,
+body.cms-page .avatars .row.small {
+  margin-left: -2px;
+  margin-right: -2px;
+}
+/* line 15, ../../../sass/partials/apps/_profiles.scss */
+body.profile .avatars .row.small > *,
+body.cms-page .avatars .row.small > * {
+  padding-left: 2px;
+  padding-right: 2px;
+}
+/* line 22, ../../../sass/partials/apps/_profiles.scss */
+body.profile .relation,
+body.cms-page .relation {
+  text-align: center;
+  background-color: #FFFFFF;
+}
+/* line 26, ../../../sass/partials/apps/_profiles.scss */
+body.profile .relation.loose,
+body.cms-page .relation.loose {
+  margin-bottom: 10px;
+}
+/* line 30, ../../../sass/partials/apps/_profiles.scss */
+body.profile .relation.padded,
+body.cms-page .relation.padded {
+  padding: 10px;
+}
+/* line 34, ../../../sass/partials/apps/_profiles.scss */
+body.profile .relation .fa-user,
+body.cms-page .relation .fa-user {
+  font-size: 500%;
+  width: 100%;
+  color: #6D095E;
+  border: solid 1px rgba(109, 9, 94, 0.2);
+}
+/* line 42, ../../../sass/partials/apps/_profiles.scss */
+body.profile .relation figcaption,
+body.cms-page .relation figcaption {
+  text-align: left;
+  color: #584C40;
+  margin-top: 5px;
+}
+/* line 48, ../../../sass/partials/apps/_profiles.scss */
+body.profile .relation a:hover,
+body.cms-page .relation a:hover {
+  text-decoration: none;
+}
+/* line 52, ../../../sass/partials/apps/_profiles.scss */
+body.profile .relation .phone,
+body.cms-page .relation .phone {
+  margin-top: 5px;
+  color: #A23854;
+  font-weight: bolder;
+}
+/* line 57, ../../../sass/partials/apps/_profiles.scss */
+body.profile .relation .phone .fa-mobile-phone,
+body.cms-page .relation .phone .fa-mobile-phone {
+  font-size: 18px;
+  vertical-align: middle;
+}
+/* line 63, ../../../sass/partials/apps/_profiles.scss */
+body.profile .relation .btn-action,
+body.cms-page .relation .btn-action {
+  padding: 3px 6px;
+  font-size: 12px;
+}
+/* line 68, ../../../sass/partials/apps/_profiles.scss */
+body.profile .relation a.goto,
+body.cms-page .relation a.goto {
+  display: inline-block;
+  font-size: 10px;
+  line-height: 17px;
+  width: 23px;
+  color: #FFFFFF;
+  background-color: #A23854;
+  float: right;
+  text-align: center;
+}
+/* line 77, ../../../sass/partials/apps/_profiles.scss */
+body.profile .relation a.goto i.fa-play,
+body.cms-page .relation a.goto i.fa-play {
+  position: relative;
+  left: 1px;
+}
+/* line 84, ../../../sass/partials/apps/_profiles.scss */
+body.profile .profile-list .relation .fa-user,
+body.cms-page .profile-list .relation .fa-user {
+  border: none;
+  min-height: 120px;
+  -moz-box-shadow: inset 0 0 1px 0 rgba(162, 56, 84, 0.6);
+  -webkit-box-shadow: inset 0 0 1px 0 rgba(162, 56, 84, 0.6);
+  box-shadow: inset 0 0 1px 0 rgba(162, 56, 84, 0.6);
+}
+/* line 89, ../../../sass/partials/apps/_profiles.scss */
+body.profile .profile-list .relation .fa-user:before,
+body.cms-page .profile-list .relation .fa-user:before {
+  vertical-align: middle;
+}
+/* line 94, ../../../sass/partials/apps/_profiles.scss */
+body.profile #current-user,
+body.cms-page #current-user {
+  background-color: #EC7537;
+  color: #FFFFFF;
+  margin-bottom: 15px;
+}
+/* line 99, ../../../sass/partials/apps/_profiles.scss */
+body.profile #current-user h4,
+body.cms-page #current-user h4 {
+  margin-top: 0;
+}
+/* line 103, ../../../sass/partials/apps/_profiles.scss */
+body.profile #current-user a,
+body.cms-page #current-user a {
+  display: block;
+  color: #FFFFFF;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bolder;
+  font-size: 12px;
+  line-height: 24px;
+}
+/* line 112, ../../../sass/partials/apps/_profiles.scss */
+body.profile #current-user a i.fa,
+body.cms-page #current-user a i.fa {
+  width: 16px;
+  text-align: center;
+  margin-right: 5px;
+  font-size: 16px;
+}
+/* line 121, ../../../sass/partials/apps/_profiles.scss */
+body.profile #form-login,
+body.profile .pw-reset,
+body.cms-page #form-login,
+body.cms-page .pw-reset {
+  margin-bottom: 25px;
+}
+/* line 124, ../../../sass/partials/apps/_profiles.scss */
+body.profile #form-login input,
+body.profile .pw-reset input,
+body.cms-page #form-login input,
+body.cms-page .pw-reset input {
+  border: solid 1px rgba(162, 56, 84, 0.3);
+}
+/* line 130, ../../../sass/partials/apps/_profiles.scss */
+body.profile span.name, body.profile strong.name,
+body.cms-page span.name,
+body.cms-page strong.name {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+/* line 136, ../../../sass/partials/apps/_profiles.scss */
+body.profile h2.name,
+body.cms-page h2.name {
+  margin-top: 0;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 24px;
+}
+/* line 142, ../../../sass/partials/apps/_profiles.scss */
+body.profile h2.name .surname,
+body.cms-page h2.name .surname {
+  font-weight: normal;
+}
+/* line 147, ../../../sass/partials/apps/_profiles.scss */
+body.profile .email a,
+body.cms-page .email a {
+  color: #EC7537;
+}
+/* line 10, ../../../sass/partials/_utils.scss */
+body.profile form input, body.profile form select, body.profile form textarea,
+body.cms-page form input,
+body.cms-page form select,
+body.cms-page form textarea {
+  -moz-box-shadow: inset 0 0 8px rgba(109, 9, 94, 0.2);
+  -webkit-box-shadow: inset 0 0 8px rgba(109, 9, 94, 0.2);
+  box-shadow: inset 0 0 8px rgba(109, 9, 94, 0.2);
+}
+/* line 154, ../../../sass/partials/apps/_profiles.scss */
+body.profile form textarea,
+body.cms-page form textarea {
+  height: 75px;
+}
+/* line 158, ../../../sass/partials/apps/_profiles.scss */
+body.profile form .btn-action,
+body.cms-page form .btn-action {
+  background-color: #A23854;
+  font-size: 14px;
+}
+/* line 164, ../../../sass/partials/apps/_profiles.scss */
+body.profile form.form-horizontal .form-group,
+body.cms-page form.form-horizontal .form-group {
+  margin-left: -5px;
+  margin-right: -5px;
+  margin-bottom: 5px;
+}
+/* line 169, ../../../sass/partials/apps/_profiles.scss */
+body.profile form.form-horizontal .form-group .control-label,
+body.cms-page form.form-horizontal .form-group .control-label {
+  text-align: left;
+  font-weight: normal;
+}
+
+/* line 181, ../../../sass/partials/apps/_profiles.scss */
+body.cms-page .profile-list h2 {
+  margin-top: -15px;
+}
+/* line 185, ../../../sass/partials/apps/_profiles.scss */
+body.cms-page .profile-list .relation {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* line 12, ../../../sass/print.scss */
+* {
+  box-sizing: border-box;
+}
+
+/* line 16, ../../../sass/print.scss */
+body {
+  margin: 0;
+}
+
+/* line 20, ../../../sass/print.scss */
+.btn {
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+
+/* line 35, ../../../sass/print.scss */
+.row {
+  margin-right: -5px;
+  margin-left: -5px;
+}
+/* line 39, ../../../sass/print.scss */
+.row:after, .row:before {
+  content: ' ';
+  display: table;
+}
+/* line 45, ../../../sass/print.scss */
+.row:after {
+  clear: both;
+}
+
+/* line 50, ../../../sass/print.scss */
+#content {
+  background-color: white;
+  padding: 0 !important;
+}
+
+/* line 57, ../../../sass/print.scss */
+.profile-list .col-sm-6 {
+  position: relative;
+  min-height: 1px;
+  padding-right: 5px;
+  padding-left: 5px;
+  float: left;
+  width: 50%;
+  margin-bottom: 10px;
+}
+/* line 68, ../../../sass/print.scss */
+.profile-list .relation {
+  border: solid 1px #E9E9E9;
+  padding: 10px;
+}
+/* line 72, ../../../sass/print.scss */
+.profile-list .relation figure {
+  margin: 0;
+}
+
+/* line 78, ../../../sass/print.scss */
+.text-left {
+  text-align: left;
+}
+
+/* line 82, ../../../sass/print.scss */
+a {
+  text-decoration: none;
+}

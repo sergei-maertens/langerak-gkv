@@ -1,10 +1,12 @@
 import urllib
+from datetime import date
 
 from django.views.generic import DetailView, ListView
 from django.views.generic.edit import FormMixin, UpdateView
 
 from class_based_auth_views.views import LoginView, LogoutView
 
+from langerak_gkv.utils.pdf import PDFTemplateResponseMixin
 from langerak_gkv.utils.view_mixins import LoginRequiredMixin
 from .models import User
 from .forms import UserSearchForm, LoginForm, ProfileUpdateForm
@@ -18,12 +20,10 @@ class UserSearchMixin(FormMixin):
     }
 
     def get_search_form(self):
-        return super(UserSearchMixin, self).get_form(UserSearchForm)
-
-    def get_form_kwargs(self):
-        kwargs = super(UserSearchMixin, self).get_form_kwargs()
-        kwargs['data'] = self.request.GET
-        return kwargs
+        form = super(UserSearchMixin, self).get_form(UserSearchForm)
+        form.data = self.request.GET
+        form.is_bound = True
+        return form
 
     def get_context_data(self, **kwargs):
         search_form = self.form or self.get_search_form()
@@ -50,11 +50,26 @@ class UserSearchView(UserListView):
     def get(self, request, *args, **kwargs):
         self.form = self.get_search_form()
         if not self.form.is_valid():
+            self.object_list = self.get_queryset().none()
             return self.form_invalid(self.form)
         return super(UserSearchView, self).get(request, *args, **kwargs)
 
     def post(self, request, *args, **kwargs):
         return self.get(request, *args, **kwargs)
+
+
+class UserSearchPDFView(PDFTemplateResponseMixin, UserSearchView):
+    """
+    View to render PDF of user list.
+    """
+    paginate_by = None
+    template_name = 'users/user_list_pdf.html'
+
+    def get_filename(self):
+        """
+        Returns the filename of the rendered PDF.
+        """
+        return 'koningskerk-leden-{0.year}-{0.month}-{0.day}.pdf'.format(date.today())
 
 
 class UserProfileView(LoginRequiredMixin, UserSearchMixin, DetailView):
