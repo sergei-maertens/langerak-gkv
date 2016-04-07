@@ -18,4 +18,17 @@ body.cms-page {
     }
   }
 
+  .file,
+  .cmsplugin_filer_folder_list,
+  .cmsplugin_filer_folder_slideshow,
+  .carousel-inner .item {
+    img {
+      width: auto;
+    }
+  }
+
+  .carousel-inner .item img {
+    margin-left: auto;
+    margin-right: auto;
+  }
 }

@@ -24,14 +24,15 @@ body.cms-page {
       }
 
       > .day {
-        margin-top: 19px;
-        font-size: 34px;
+        margin-top: 17px;
+        font-size: 32px;
         line-height: 30px;
         font-weight: bold;
       }
 
       > .month {
         line-height: 12px;
+        font-size: 12px;
       }
     }
 
@@ -216,7 +217,7 @@ body.calendar {
   }
 
   th.fc-day-header {
-    color: $white;
+    color: $text-dark;
   }
 
   td.fc-widget-header,

@@ -3,6 +3,7 @@ from django.utils.translation import ugettext_lazy as _
 
 from cms.models import CMSPlugin
 from cms.models.fields import PageField
+from djangocms_text_ckeditor.fields import HTMLField
 from filer.fields.image import FilerImageField
 
 
@@ -26,7 +27,7 @@ class PrayerOnDemand(models.Model):
 class HomepagePageLink(CMSPlugin):
     title = models.CharField(_('title'), max_length=50)
     image = FilerImageField(verbose_name=_('image'))
-    description = models.TextField(_('description'), help_text=_('Displayed below the title'))
+    description = HTMLField(_('description'), help_text=_('Displayed below the title'))
     page_link = PageField(verbose_name=_("page"), blank=True, null=True, help_text=_("Page to link to"))
     enable_sharing = models.BooleanField(_('enable social sharing'), default=True)
 

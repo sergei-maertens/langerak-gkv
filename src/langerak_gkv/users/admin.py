@@ -13,6 +13,7 @@ from .resources import UserResource
 class UserRelationInline(admin.TabularInline):
     model = UserRelation
     fk_name = 'user1'
+    raw_id_fields = ['user2']
 
 
 class UserAdmin(ImportExportMixin, _UserAdmin):
@@ -28,13 +29,14 @@ class UserAdmin(ImportExportMixin, _UserAdmin):
                 'birthdate',
                 'picture',
                 'about_me',
-                ),
+                'member_type',
+            ),
         }),
         (_('Family and location'), {
             'fields': (
                 ('district', 'district_function',),
                 'family',
-                )
+            )
         }),
         (_('Permissions'), {
             'fields': ('is_active', 'is_staff', 'is_superuser',
@@ -82,7 +84,7 @@ class RelationTypeAdmin(admin.ModelAdmin):
 
 
 class FamilyAdmin(admin.ModelAdmin):
-    list_display = ('name',)
+    list_display = ('name', 'address', 'postal_code', 'city')
     search_fields = ('name',)
 
 

@@ -16,6 +16,10 @@
     background-color: $main-color-green;
     padding: 10px;
 
+    h3 {
+      color: $text-dark;
+    }
+
     figure {
       margin-right: 10px;
     }
@@ -72,7 +76,7 @@
     .fa-youtube-play {
       font-size: 28px;
       vertical-align: bottom;
-      color: $dark-blue;
+      color: $white;
     }
   }
 }
