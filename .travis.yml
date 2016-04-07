@@ -1,0 +1,32 @@
+language: python
+
+python:
+  - "2.7"
+
+cache:
+  directories:
+    - $HOME/.pip-cache
+
+services:
+  - elasticsearch
+  - postgresql
+
+env:
+  - DJANGO_SETTINGS_MODULE=langerak_gkv.conf.settings_travis
+
+install:
+  - pip install --upgrade setuptools pip
+  - pip install -r requirements/test.txt --cache-dir $HOME/.pip-cache
+  - npm install -g bower
+
+before_script:
+  - mkdir log
+  - bower install
+  - src/manage.py collectstatic --noinput --link
+
+script:
+  - coverage run src/manage.py test src -v 2
+
+after_success:
+  - coveralls
+  - codecov
