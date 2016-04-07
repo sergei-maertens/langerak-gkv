@@ -1,0 +1,9 @@
+[run]
+branch = True
+source = src
+
+[report]
+omit = */migrations/*,*/tests/*,src/conf/settings_*,src/manage.py,src/conf/wsgi.py
+exclude_lines =
+    pragma: no cover
+    noqa

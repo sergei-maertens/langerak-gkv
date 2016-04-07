@@ -26,3 +26,8 @@ settings_local.py
 
 # dependencies
 src/langerak_gkv/static/vendor/
+
+# testing
+.coverage
+/htmlcov
+/reports
