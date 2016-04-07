@@ -8,7 +8,10 @@
                 {% else %}
                     <i class="fa fa-user link-height" data-linkid="2"></i>
                 {% endif %}
-                <figcaption><strong>{{ relation.first_name }}</strong><br>{{ relation.last_name|default:"&nbsp;" }}</figcaption>
+                <figcaption>
+                    <strong class="name">{{ relation.first_name }}</strong>
+                    <span class="name">{{ relation.last_name|default:"&nbsp;" }}</span>
+                </figcaption>
             </figure>
         </a>
         <div class="text-left">

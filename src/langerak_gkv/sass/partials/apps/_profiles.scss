@@ -125,6 +125,13 @@ body.cms-page {
     }
   }
 
+  span, strong {
+    &.name {
+      display: block;
+      @include ellipsis;
+    }
+  }
+
   h2.name {
     margin-top: 0;
     font-size: 18px;
