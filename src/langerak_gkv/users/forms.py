@@ -151,12 +151,13 @@ class UserSearchForm(forms.ModelForm):
         if full_name:
             bits = full_name.split()
             for bit in bits:
-                q_or |= Q(Q(first_name__icontains=bit) | Q(last_name__icontains=bit))
+                q_or |= Q(first_name__icontains=bit) | Q(last_name__icontains=bit)
 
         query = self.cleaned_data.get('query')
         if query:
-            pass  # TODO
-            # q_and &= Q(description__icontains=query)
+            bits = query.split()
+            for bit in bits:
+                q_or |= Q(first_name__icontains=bit) | Q(last_name__icontains=bit) | Q(about_me__icontains=bit)
 
         gender = self.cleaned_data.pop('sex')
         if gender:
@@ -165,6 +166,8 @@ class UserSearchForm(forms.ModelForm):
         for field, value in self.cleaned_data.items():
             if not value:
                 continue  # no value set (None or empty string or zero)
+            if field == 'query':
+                continue
             flter = '{}__iexact'.format(field)
             if field == 'district_function':
                 flter = field
