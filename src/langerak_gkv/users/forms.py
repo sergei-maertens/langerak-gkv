@@ -105,6 +105,9 @@ class ProfileUpdateForm(forms.ModelForm):
             'picture': ImageCropWidget,
         }
 
+    def __init__(self, *args, **kwargs):
+        super(ProfileUpdateForm, self).__init__(*args, **kwargs)
+
     def clean_username(self):
         username = self.cleaned_data.get('username')
         if username:

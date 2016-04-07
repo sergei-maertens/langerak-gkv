@@ -18,12 +18,9 @@ class UserSearchMixin(FormMixin):
     }
 
     def get_search_form(self):
-        return super(UserSearchMixin, self).get_form(UserSearchForm)
-
-    def get_form_kwargs(self):
-        kwargs = super(UserSearchMixin, self).get_form_kwargs()
-        kwargs['data'] = self.request.GET
-        return kwargs
+        form = super(UserSearchMixin, self).get_form(UserSearchForm)
+        form.data = self.request.GET
+        return form
 
     def get_context_data(self, **kwargs):
         search_form = self.form or self.get_search_form()
