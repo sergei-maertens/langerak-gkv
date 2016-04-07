@@ -3,9 +3,11 @@
 {% block body-class %}profile{% endblock %}
 
 {% block content %}
-<div class="row gutter-small profile-list">
-    {% for relation in profiles %}
-        {% include "users/user_preview_pdf.html" %}
-    {% endfor %}
+<div class="profile-list">
+    <div class="row">
+        {% for relation in profiles %}
+            {% include "users/user_preview_pdf.html" %}
+        {% endfor %}
+    </div>
 </div>
 {% endblock %}

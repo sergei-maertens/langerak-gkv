@@ -1,6 +1,6 @@
 import mimetypes
 import posixpath
-import urllib
+from urllib2 import urlparse
 
 from django.conf import settings
 from django.contrib.staticfiles import finders
@@ -22,20 +22,20 @@ class UrlFetcher(object):
     def __init__(self, request, base_url=None):
         self.request = request
         # build the static url to look for
-        static_url = urllib.parse.urlsplit(settings.STATIC_URL)
+        static_url = urlparse.urlsplit(settings.STATIC_URL)
         if not static_url.scheme and not static_url.netloc:
-            static_url = urllib.parse.urljoin(base_url, settings.STATIC_URL)
-            static_url = urllib.parse.urlsplit(static_url)
+            static_url = urlparse.urljoin(base_url, settings.STATIC_URL)
+            static_url = urlparse.urlsplit(static_url)
         self.static_url = static_url
         self.local_storage = issubclass(staticfiles_storage.__class__, FileSystemStorage)
 
     def __call__(self, url):
         orig_url = url
-        url = urllib.parse.urlsplit(url)
+        url = urlparse.urlsplit(url)
         same_base = (self.static_url.scheme, self.static_url.netloc) == (url.scheme, url.netloc)
         if self.local_storage and same_base and url.path.startswith(self.static_url.path):
             path = url.path.replace(self.static_url.path, '')
-            normalized_path = posixpath.normpath(urllib.parse.unquote(path)).lstrip('/')
+            normalized_path = posixpath.normpath(urlparse.unquote(path)).lstrip('/')
             absolute_path = finders.find(normalized_path)
             content_type, encoding = mimetypes.guess_type(absolute_path)
             with open(absolute_path, 'r') as f:
