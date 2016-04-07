@@ -1,0 +1,20 @@
+{% load i18n thumbnail formatting %}
+<div class="col-sm-4">
+    <div class="padded relation loose">
+        <a href="{{ relation.get_absolute_url }}" title="{{ relation.get_full_name }}">
+            <figure>
+                <figcaption>
+                    <strong class="name">{{ relation.first_name }}</strong>
+                    <span class="name">{{ relation.last_name|default:"&nbsp;" }}</span>
+                </figcaption>
+            </figure>
+        </a>
+        <div class="text-left">
+            <p class="phone">
+                <i class="fa fa-mobile-phone"></i>
+                {{ relation.phone|phone }} / {{ relation.mobile|phone }}
+            </p>
+            <span class="btn btn-action">{{ relation.email }}</span>
+        </div>
+    </div>
+</div>

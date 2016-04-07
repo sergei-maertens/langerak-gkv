@@ -56,6 +56,14 @@ class UserSearchView(UserListView):
         return self.get(request, *args, **kwargs)
 
 
+class UserSearchPDFView(UserSearchView):
+    """
+    View to render PDF of user list.
+    """
+    paginate_by = None
+    template_name = 'users/user_list_pdf.html'
+
+
 class UserProfileView(LoginRequiredMixin, UserSearchMixin, DetailView):
     model = User
     context_object_name = 'profile'
