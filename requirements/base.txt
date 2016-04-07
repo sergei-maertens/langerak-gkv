@@ -42,7 +42,7 @@ djangocms-table==1.2
 # search
 elasticsearch==2.1.0
 django-haystack==2.4.1
-aldryn-search==0.2.10
+aldryn-search==0.2.11
 
 django-leaflet==0.17.1
 jsonfield==1.0.3
