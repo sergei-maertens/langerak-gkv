@@ -4,7 +4,7 @@
 {% block input %}
 <div class="form-group">
     <div class="input-group">
-        <input type="{{ field_type|default:"text" }}"
+        <input type="{{ input_type|default:"text" }}"
             name="{{ html_name }}"
             id="{{ id }}"
             value="{{ value|default:"" }}"
