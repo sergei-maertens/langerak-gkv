@@ -1,3 +1,5 @@
+import urllib
+
 from django.views.generic import DetailView, ListView
 from django.views.generic.edit import FormMixin, UpdateView
 
@@ -24,7 +26,9 @@ class UserSearchMixin(FormMixin):
         return kwargs
 
     def get_context_data(self, **kwargs):
-        kwargs[self.form_context_name] = self.form or self.get_search_form()
+        search_form = self.form or self.get_search_form()
+        kwargs[self.form_context_name] = search_form
+        kwargs['search_form_qs'] = urllib.urlencode(search_form.data)
         return super(UserSearchMixin, self).get_context_data(**kwargs)
 
 

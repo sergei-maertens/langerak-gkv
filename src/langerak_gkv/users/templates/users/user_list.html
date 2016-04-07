@@ -8,6 +8,6 @@
         {% endfor %}
     </div>
 
-    {% include "includes/pagination.html" %}
+    {% include "includes/pagination.html" with qs=search_form_qs %}
 
 {% endblock main-content %}
