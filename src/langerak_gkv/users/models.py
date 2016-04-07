@@ -94,7 +94,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     picture = models.ImageField(
         _('picture'), upload_to=get_image_path,
         blank=True, null=True, help_text=_('Profile picture'))
-    cropping = ImageRatioField('picture', '400x300')
+    cropping = ImageRatioField('picture', '400x400')
     about_me = models.TextField(blank=True, help_text=_('Short \'about me\' text'))
 
     # district/family information, from district we find the people with district functions

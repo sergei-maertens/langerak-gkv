@@ -20,6 +20,7 @@ class UserSearchMixin(FormMixin):
     def get_search_form(self):
         form = super(UserSearchMixin, self).get_form(UserSearchForm)
         form.data = self.request.GET
+        form.is_bound = True
         return form
 
     def get_context_data(self, **kwargs):
@@ -47,6 +48,7 @@ class UserSearchView(UserListView):
     def get(self, request, *args, **kwargs):
         self.form = self.get_search_form()
         if not self.form.is_valid():
+            self.object_list = self.get_queryset().none()
             return self.form_invalid(self.form)
         return super(UserSearchView, self).get(request, *args, **kwargs)
 

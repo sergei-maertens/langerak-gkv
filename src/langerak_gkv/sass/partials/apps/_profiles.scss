@@ -83,6 +83,7 @@ body.cms-page {
 
   .profile-list .relation .fa-user {
     border: none;
+    min-height: 120px;
     @include box-shadow(inset 0 0 1px 0 rgba($main-color-light-purple, 0.6));
 
     &:before {
