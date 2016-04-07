@@ -18,6 +18,11 @@ class UserSearchMixin(FormMixin):
     def get_search_form(self):
         return super(UserSearchMixin, self).get_form(UserSearchForm)
 
+    def get_form_kwargs(self):
+        kwargs = super(UserSearchMixin, self).get_form_kwargs()
+        kwargs['data'] = self.request.GET
+        return kwargs
+
     def get_context_data(self, **kwargs):
         kwargs[self.form_context_name] = self.form or self.get_search_form()
         return super(UserSearchMixin, self).get_context_data(**kwargs)
@@ -34,14 +39,18 @@ class UserSearchView(UserListView):
 
     def get_queryset(self):
         qs = super(UserSearchView, self).get_queryset()
+        if not self.form.is_valid():
+            return qs
         return qs.filter(self.form.as_filters())
 
-    def post(self, request, *args, **kwargs):
+    def get(self, request, *args, **kwargs):
         self.form = self.get_search_form()
-        if self.form.is_valid():
-            return self.get(request, *args, **kwargs)
-        else:
+        if not self.form.is_valid():
             return self.form_invalid(self.form)
+        return super(UserSearchView, self).get(request, *args, **kwargs)
+
+    def post(self, request, *args, **kwargs):
+        return self.get(request, *args, **kwargs)
 
 
 class UserProfileView(LoginRequiredMixin, UserSearchMixin, DetailView):

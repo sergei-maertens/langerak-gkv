@@ -1,5 +1,4 @@
 {% load i18n sniplates %}
-<form action="{% url 'users:search' %}" method="post" class="block">{% csrf_token %}
 {% load_widgets form='default.form' %}
 <fieldset>
     {% form_field form.full_name %}
