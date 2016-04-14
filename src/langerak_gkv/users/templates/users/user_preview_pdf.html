@@ -11,14 +11,14 @@
         </a>
         <div class="text-left">
             <p>
-                {{ profile.birthdate }}<br>
-                {{ profile.district_function }}
+                {{ relation.birthdate }}<br>
+                {{ relation.district_function|default:'' }}
             </p>
 
-            {% if profile.address or profile.postal_code or profile.city %}
+            {% if relation.address or relation.postal_code or relation.city %}
             <p>
-                {{ profile.address }}<br>
-                {{ profile.postal_code }}{% if profile.postal_code %}, {% endif %}{{ profile.city }}
+                {{ relation.address }}<br>
+                {{ relation.postal_code }}{% if relation.postal_code %}, {% endif %}{{ relation.city }}
             </p>
             {% endif %}
 
