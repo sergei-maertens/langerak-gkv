@@ -10,6 +10,18 @@
             </figure>
         </a>
         <div class="text-left">
+            <p>
+                {{ profile.birthdate }}<br>
+                {{ profile.district_function }}
+            </p>
+
+            {% if profile.address or profile.postal_code or profile.city %}
+            <p>
+                {{ profile.address }}<br>
+                {{ profile.postal_code }}{% if profile.postal_code %}, {% endif %}{{ profile.city }}
+            </p>
+            {% endif %}
+
             <p class="phone">
                 <i class="fa fa-mobile-phone"></i>
                 {{ relation.phone|phone }} / {{ relation.mobile|phone }}
