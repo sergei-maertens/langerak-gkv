@@ -1,3 +1,4 @@
+import urllib
 from datetime import date, datetime, time
 
 from django.db.models import Q
@@ -67,6 +68,11 @@ class ActivitySearchView(ActivitiesTodayMixin, ListView):
                  Q(liturgy__preacher__icontains=term) | Q(liturgy__liturgy__icontains=term) | \
                  Q(liturgy__service_theme__icontains=term)
         return Activity.objects.filter(q).distinct()
+
+    def get_context_data(self, **kwargs):
+        context = super(ActivitySearchView, self).get_context_data(**kwargs)
+        context['qs'] = urllib.urlencode({'q': self.request.GET.get('q')})
+        return context
 
 
 class Feed(ICalFeed):
