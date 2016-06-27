@@ -3,11 +3,13 @@ from datetime import date, datetime, time
 
 from django.db.models import Q
 from django.views.generic import (
-    DayArchiveView, TemplateView, DetailView, WeekArchiveView, ListView
+    CreateView, DayArchiveView, TemplateView, DetailView,
+    WeekArchiveView, ListView
 )
 
 from django_ical.views import ICalFeed
 
+from langerak_gkv.utils.view_mixins import PermissionRequiredMixin
 from .models import Activity
 
 
@@ -73,6 +75,17 @@ class ActivitySearchView(ActivitiesTodayMixin, ListView):
         context = super(ActivitySearchView, self).get_context_data(**kwargs)
         context['qs'] = urllib.urlencode({'q': self.request.GET.get('q')})
         return context
+
+
+class ActivityCreateView(PermissionRequiredMixin, ActivitiesTodayMixin, CreateView):
+    model = Activity
+    permissions = 'activities.add_activity'
+    fields = (
+        'name', 'type', 'start_date', 'end_date',
+        'start_time', 'end_time', 'location',
+        'intended_public', 'image', 'description',
+        'show_on_homepage', 'url', 'fb_event_id'
+    )
 
 
 class Feed(ICalFeed):

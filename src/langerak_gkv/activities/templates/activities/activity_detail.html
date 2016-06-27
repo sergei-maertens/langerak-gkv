@@ -66,69 +66,6 @@
 
         {% render_placeholder activity.content %}
 
-        {% comment %}
-        <div class="row gutter-small">
-            <div class="col-md-5">
-                <article class="page-block link-height" data-linkid="2">
-                    <div class="row">
-                        <div class="col-xs-4">{% trans "Preacher" %}:</div>
-                        <div class="col-xs-8">{{ liturgy.preacher }}</div>
-                    </div>
-                    {% for collection in liturgy.get_collections %}
-                        <div class="row">
-                            <div class="col-xs-4">
-                                {% blocktrans with i=forloop.counter %}Collection {{ i }}{% endblocktrans %}:
-                            </div>
-                            <div class="col-xs-8">{{ collection }}</div>
-                        </div>
-                    {% endfor %}
-                </article>
-            </div>
-
-            <div class="col-md-7">
-                <article class="page-block link-height" data-linkid="2">
-                    <div class="row">
-                        <div class="col-xs-4">{% trans "Preach made by" %}:</div>
-                        <div class="col-xs-8">{{ liturgy.preach_author }}</div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-4">{% trans "Main section" %}:</div>
-                        <div class="col-xs-8">{{ liturgy.main_section }}</div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-4">{% trans "Service theme" %}:</div>
-                        <div class="col-xs-8">{{ liturgy.service_theme }}</div>
-                    </div>
-                </article>
-            </div>
-        </div>
-
-        <article class="page-block">
-            {{ liturgy.liturgy|linebreaks }}
-        </article>
-
-        <div class="row gutter-small">
-            <div class="col-md-7">
-                <article class="link-height page-block" data-linkid="3">
-                    <ul>
-                        <li>{% trans "Contact information" %}</li>
-                        <li>{% trans "Scriba (phone: 0123456789)" %}</li>
-                        <li>{% trans "Email:" %}<a href="mailto:scriba@koningskerk.nu">scriba@koningskerk.nu</a></li>
-                    </ul>
-                </article>
-            </div>
-
-            <div class="col-md-5">
-                <article class="link-height page-block" data-linkid="3">
-                    {# <a href="{{ liturgy.audiofile.url }}"> #}
-                    <a href="#">
-                        {% trans "This service is available as audio download" %}
-                        <i class="fa fa-file-audio-o"></i>
-                    </a>
-                </article>
-            </div>
-        </div>
-        {% endcomment %}
     </article>
 </div>
 {% endblock %}
