@@ -37,3 +37,7 @@ class LiturgyDateDetailView(ActivitiesTodayMixin, DateDetailView):
     allow_future = True
     date_field = 'date'
     month_format = '%m'
+
+    def get_context_data(self, **kwargs):
+        kwargs['activity_pk'] = self.object.activity_set.first().pk
+        return super(LiturgyDateDetailView, self).get_context_data(**kwargs)

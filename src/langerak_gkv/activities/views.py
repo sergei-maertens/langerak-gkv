@@ -2,6 +2,7 @@ import urllib
 from datetime import date, datetime, time
 
 from django.db.models import Q
+from django.utils import timezone
 from django.views.generic import (
     CreateView, DayArchiveView, TemplateView, DetailView,
     WeekArchiveView, ListView
@@ -38,6 +39,11 @@ class ActivityDetailView(ActivitiesTodayMixin, DetailView):
     model = Activity
     context_object_name = 'activity'
 
+    def get_context_data(self, **kwargs):
+        context = super(ActivityDetailView, self).get_context_data(**kwargs)
+        context['activity_pk'] = self.object.pk
+        return context
+
 
 class ActivityWeekArchiveView(ActivitiesTodayMixin, WeekArchiveView):
     model = Activity
@@ -67,8 +73,8 @@ class ActivitySearchView(ActivitiesTodayMixin, ListView):
         q = Q()
         for term in terms:
             q |= Q(name__icontains=term) | Q(description__icontains=term) | \
-                 Q(liturgy__preacher__icontains=term) | Q(liturgy__liturgy__icontains=term) | \
-                 Q(liturgy__service_theme__icontains=term)
+                Q(liturgy__preacher__icontains=term) | Q(liturgy__liturgy__icontains=term) | \
+                Q(liturgy__service_theme__icontains=term)
         return Activity.objects.filter(q).distinct()
 
     def get_context_data(self, **kwargs):
@@ -93,8 +99,16 @@ class Feed(ICalFeed):
     timezone = 'Europe/Amsterdam'
     file_name = 'activities.ics'
 
-    def items(self):
-        return Activity.objects.all().order_by('-start_date', '-start_time', 'end_date')
+    def get_object(self, request, *args, **kwargs):
+        if kwargs.get('pk'):
+            return Activity.objects.get(pk=kwargs['pk'])
+        return None
+
+    def items(self, obj):
+        queryset = Activity.objects.order_by('-start_date', '-start_time', 'end_date')
+        if obj:
+            return queryset.filter(pk=obj.pk)
+        return queryset.filter(start_date__gte=timezone.now())
 
     def item_link(self, item):
         return item.get_absolute_url()
