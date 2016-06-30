@@ -71,14 +71,21 @@
         </aside>
     </div>
 </div>
-    {% block ical %}
-        {% if activity_pk %}
-            {% url 'activities:ical-feed' pk=activity_pk as feed_url %}
-        {% else %}
-            {% url 'activities:ical-feed' as feed_url %}
-        {% endif %}
-        <a href="{{ feed_url }}" class="pull-right">{% trans "iCal feed" %}</a>
-    {% endblock %}
+
+{% url 'activities:add' as url_add %}
+{% if perms.activities.add_activity and request.path != url_add %}
+    <a href="{{ url_add }}">{% trans "Add activity" %}</a>
+{% endif %}
+
+{% block ical %}
+    {% if activity_pk %}
+        {% url 'activities:ical-feed' pk=activity_pk as feed_url %}
+    {% else %}
+        {% url 'activities:ical-feed' as feed_url %}
+    {% endif %}
+    <a href="{{ feed_url }}" class="pull-right">{% trans "iCal feed" %}</a>
+{% endblock %}
+
 {% endblock %}
 
 

@@ -1208,6 +1208,13 @@ body.cms-page .carousel-inner .item img {
   margin-top: 30px;
 }
 
+/* line 2, ../../../sass/partials/apps/_activities.scss */
+body.calendar fieldset {
+  background-color: #FFFFFF;
+  padding: 1em;
+  margin-bottom: 1em;
+}
+
 /* line 3, ../../../sass/partials/apps/_profiles.scss */
 body.profile .block,
 body.cms-page .block {

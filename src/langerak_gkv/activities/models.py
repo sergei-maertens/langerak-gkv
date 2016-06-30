@@ -77,7 +77,8 @@ class Activity(models.Model):
         return reverse('activities:detail', kwargs={'slug': self.slug})
 
     def clean(self):
-        if self.start_date > self.end_date:
+        has_dates = self.start_date and self.end_date
+        if has_dates and self.start_date > self.end_date:
             raise ValidationError(_('The start date cannot come before the end date.'))
 
         has_times = self.start_time is not None and self.end_time is not None

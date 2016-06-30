@@ -19,40 +19,38 @@
     <fieldset>
         {% form_field form.name %}
         <div class="row">
-            <div class="col-md-6">{% form_field form.type %}</div>
-            <div class="col-md-6">{% form_field form.location %}</div>
+            <div class="col-md-6">
+                {% form_field form.start_date %}
+                {% form_field form.end_date %}
+                {% form_field form.location %}
+            </div>
+            <div class="col-md-6">
+                {% form_field form.description %}
+            </div>
         </div>
     </fieldset>
 
     <fieldset>
         <div class="row">
-            <div class="col-md-6">{% form_field form.start_date %}</div>
-            <div class="col-md-6">{% form_field form.end_date %}</div>
-        </div>
-        <div class="row">
-            <div class="col-md-6">{% form_field form.start_time %}</div>
-            <div class="col-md-6">{% form_field form.end_time %}</div>
+            <div class="col-md-6">
+                {% form_field form.start_time %}
+                {% form_field form.end_time %}
+            </div>
+            <div class="col-md-6">
+                {% form_field form.type %}
+                {% form_field form.intended_public %}
+            </div>
         </div>
     </fieldset>
 
     <fieldset>
-        <div class="row">
-            <div class="col-md-6">{% form_field form.description %}</div>
-            <div class="col-md-6">{% form_field form.intended_public %}</div>
-        </div>
-
         <div class="row">
             <div class="col-md-6">{% form_field form.url %}</div>
             <div class="col-md-6">{% form_field form.fb_event_id %}</div>
         </div>
-
-        <div class="row">
-            <div class="col-md-6">{{ form.image }}</div>
-            <div class="col-md-6">{% form_field form.show_on_homepage %}</div>
-        </div>
     </fieldset>
 
-    <button type="submit" class="btn btn-action">{% trans "Submit" %}</button>
+    <button type="submit" class="btn btn-action pull-right">{% trans "Save" %}</button>
 
 </form>
 

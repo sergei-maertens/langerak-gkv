@@ -18,6 +18,10 @@
 {% endblock %}
 
 
+{% block DateInput %}{% reuse "input" input_type="text" value=value|date:'Y-m-d' %}{% endblock %}
+{% block TimeInput %}{% reuse "input" input_type="text" value=value|time:'H:i:s' %}{% endblock %}
+
+
 {% block Textarea %}
 <div class="form-group">
 {% reuse "_label" %}
