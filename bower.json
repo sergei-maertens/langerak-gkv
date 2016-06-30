@@ -18,6 +18,7 @@
   ],
   "dependencies": {
     "fullcalendar": "~2.2.6",
-    "bootstrap": "~3.3.2"
+    "bootstrap": "~3.3.2",
+    "font-awesome": "~4.6.3"
   }
 }

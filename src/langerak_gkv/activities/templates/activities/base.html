@@ -22,10 +22,7 @@
         <a href="{% url 'activities:day-archive' year=today.year month=today.month day=today.day %}"
             data-toggle="popover" data-content="{% trans "Day view" %}" data-placement="top" data-trigger="hover"
             id="day-view" class="calendar-mode{% if activity or liturgy or day %} active{% endif %}">
-            <span class="fa-stack">
-                <i class="fa fa-calendar-o fa-stack-1x"></i>
-                <i class="fa fa-check fa-stack-1x"></i>
-            </span>
+            <i class="fa fa-calendar-check-o"></i>
         </a>
         {% endblock %}
     </span>
