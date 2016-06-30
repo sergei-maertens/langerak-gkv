@@ -9,7 +9,7 @@
     {% for result in page.object_list %}
         {% with type=result.content_type object=result.object %}
             {% if type == 'cms.title' %}
-                {% include 'search/cms_item.html' with object=object item_type='cms' result=result %}
+                {% include 'search/cms_item.html' with object=object item_type='cms-page' result=result %}
             {% elif type == 'activities.activity' %}
                 {% include 'search/activity_item.html' with object=object %}
             {% elif type == 'liturgies.liturgy' %}
