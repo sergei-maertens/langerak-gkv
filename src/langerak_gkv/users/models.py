@@ -180,8 +180,8 @@ class UserRelation(models.Model):
     """
     E.g. user2 is daughter, user1 is father, relation type is 'daughter'
     """
-    user1 = models.ForeignKey('users.User', related_name='related_users', on_delete=models.PROTECT)
-    user2 = models.ForeignKey('users.User', related_name='reverse_related_users', on_delete=models.PROTECT)
+    user1 = models.ForeignKey('users.User', related_name='related_users', on_delete=models.CASCADE)
+    user2 = models.ForeignKey('users.User', related_name='reverse_related_users', on_delete=models.CASCADE)
     relation_type = models.ForeignKey(
         'users.RelationType',
         help_text=_('User 2 is `relation type` of user 1.'), related_name='+', on_delete=models.PROTECT)
