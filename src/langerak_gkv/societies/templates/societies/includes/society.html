@@ -5,7 +5,6 @@
 {% render_placeholder society.content %}
 
 {% if society.members.exists %}
-<h2>{% trans "Members" %}</h2>
 <div class="row gutter-small profile-list">
     {% for relation in society.members.all %}
         {% include "users/user_preview.html" %}
