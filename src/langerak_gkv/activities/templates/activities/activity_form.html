@@ -48,6 +48,10 @@
             <div class="col-md-6">{% form_field form.url %}</div>
             <div class="col-md-6">{% form_field form.fb_event_id %}</div>
         </div>
+        <div class="row">
+            <div class="col-md-6"><label>{% trans "Image" %}</label>{{ form.image }}</div>
+            <div class="col-md-6">{% form_field form.show_on_homepage %}</div>
+        </div>
     </fieldset>
 
     <button type="submit" class="btn btn-action pull-right">{% trans "Save" %}</button>

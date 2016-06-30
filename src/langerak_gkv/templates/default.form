@@ -18,7 +18,7 @@
 {% endblock %}
 
 
-{% block DateInput %}{% reuse "input" input_type="text" value=value|date:'Y-m-d' %}{% endblock %}
+{% block DateInput %}{% reuse "input" input_type="text" value=value|date:'d-m-Y' placeholder=_('dd-mm-yyyy') %}{% endblock %}
 {% block TimeInput %}{% reuse "input" input_type="text" value=value|time:'H:i:s' %}{% endblock %}
 
 

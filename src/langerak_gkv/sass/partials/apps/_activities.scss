@@ -4,4 +4,56 @@ body.calendar {
     padding: 1em;
     margin-bottom: 1em;
   }
+
+  .js-file-selector {
+    a.js-related-lookup {
+      display: none;
+    }
+  }
+
+  #id_image_thumbnail_img {
+    width: 86px;
+    height: 86px;
+  }
+
+  .filer-dropzone {
+    padding: 10px;
+    min-height: 56px;
+    border-style: dashed;
+
+    &:after {
+      clear: both;
+      content: " ";
+      display: table;
+    }
+
+    .dz-default {
+      float: right;
+      width: 50%;
+    }
+
+    .dz-message {
+      line-height: 86px;
+      margin: 0;
+    }
+
+    .filerFile {
+      float: left;
+      width: 50%;
+
+      &.dz-image-preview {
+        width: 100%;
+      }
+
+      .filerClearer {
+        width: 10px;
+        margin-left: 10px;
+      }
+
+      .dz-name {
+        line-height: 36px;
+      }
+    }
+
+  }
 }

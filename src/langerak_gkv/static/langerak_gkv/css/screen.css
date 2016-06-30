@@ -1214,6 +1214,55 @@ body.calendar fieldset {
   padding: 1em;
   margin-bottom: 1em;
 }
+/* line 9, ../../../sass/partials/apps/_activities.scss */
+body.calendar .js-file-selector a.js-related-lookup {
+  display: none;
+}
+/* line 14, ../../../sass/partials/apps/_activities.scss */
+body.calendar #id_image_thumbnail_img {
+  width: 86px;
+  height: 86px;
+}
+/* line 19, ../../../sass/partials/apps/_activities.scss */
+body.calendar .filer-dropzone {
+  padding: 10px;
+  min-height: 56px;
+  border-style: dashed;
+}
+/* line 24, ../../../sass/partials/apps/_activities.scss */
+body.calendar .filer-dropzone:after {
+  clear: both;
+  content: " ";
+  display: table;
+}
+/* line 30, ../../../sass/partials/apps/_activities.scss */
+body.calendar .filer-dropzone .dz-default {
+  float: right;
+  width: 50%;
+}
+/* line 35, ../../../sass/partials/apps/_activities.scss */
+body.calendar .filer-dropzone .dz-message {
+  line-height: 86px;
+  margin: 0;
+}
+/* line 40, ../../../sass/partials/apps/_activities.scss */
+body.calendar .filer-dropzone .filerFile {
+  float: left;
+  width: 50%;
+}
+/* line 44, ../../../sass/partials/apps/_activities.scss */
+body.calendar .filer-dropzone .filerFile.dz-image-preview {
+  width: 100%;
+}
+/* line 48, ../../../sass/partials/apps/_activities.scss */
+body.calendar .filer-dropzone .filerFile .filerClearer {
+  width: 10px;
+  margin-left: 10px;
+}
+/* line 53, ../../../sass/partials/apps/_activities.scss */
+body.calendar .filer-dropzone .filerFile .dz-name {
+  line-height: 36px;
+}
 
 /* line 3, ../../../sass/partials/apps/_profiles.scss */
 body.profile .block,
