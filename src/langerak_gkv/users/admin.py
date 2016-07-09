@@ -27,7 +27,7 @@ class UserAdmin(ImportExportMixin, _UserAdmin):
                 ('postal_code', 'city'),
                 ('phone', 'mobile'),
                 'birthdate',
-                ('picture', 'cropping'),
+                'picture', 'cropping',
                 'about_me',
                 'member_type',
             ),
