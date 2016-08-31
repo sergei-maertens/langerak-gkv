@@ -9,13 +9,13 @@ upstream konkerk_staging_django {
 server {
     listen 80;
     server_name koningskerk.nu www.koningskerk.nu;
-    # return 301 http://www.koningskerk.nu$request_uri;
-    return 301 http://www.langerak.gkv.nl$request_uri;
+    return 301 http://www.koningskerk.nu$request_uri;
+    # return 301 http://www.langerak.gkv.nl$request_uri;
 }
 
 server {
     listen       80;
-    server_name  live.koningskerk.nu;
+    server_name  www.koningskerk.nu;
     error_log /var/log/nginx/koningskerk.nu.error.log warn;
     access_log  /var/log/nginx/koningskerk.nu.access.log main;
 
