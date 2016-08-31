@@ -102,7 +102,11 @@ class User(AbstractBaseUser, PermissionsMixin):
     district = models.ForeignKey(
         'users.District', verbose_name=_(u'district'),
         blank=True, null=True, on_delete=models.PROTECT)
-    district_function = models.ForeignKey('users.DistrictFunction', blank=True, null=True, on_delete=models.PROTECT)
+    district_function = models.ForeignKey(
+        'users.DistrictFunction', blank=True,
+        null=True, on_delete=models.PROTECT,
+        verbose_name=_('district function')
+    )
     family = models.ForeignKey(
         'users.Family', verbose_name=_('family'),
         blank=True, null=True, on_delete=models.PROTECT)
