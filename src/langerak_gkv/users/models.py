@@ -11,7 +11,13 @@ from djchoices import DjangoChoices, ChoiceItem
 from image_cropping import ImageRatioField
 
 
-class UserManager(BaseUserManager):
+class UsersQuerySet(models.QuerySet):
+
+    def only_real(self):
+        return self.filter(exclude_in_queries=False)
+
+
+class UserManager(BaseUserManager.from_queryset(UsersQuerySet)):
     use_for_related_fields = True
 
     def _create_user(self, email, password,
@@ -116,6 +122,8 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     external_code = models.CharField(_('external code'), max_length=10, null=True, blank=True)
 
+    exclude_in_queries = models.BooleanField(default=False)
+
     objects = UserManager()
 
     USERNAME_FIELD = 'email'
@@ -168,7 +176,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     @cached_property
     def children(self):
         relations = self.related_users.filter(relation_type__is_child_parent=True).values('user2')
-        return User.objects.filter(pk__in=relations).order_by('birthdate')  # oldest first
+        return User.objects.only_real().filter(pk__in=relations).order_by('birthdate')  # oldest first
 
     @cached_property
     def connections(self):  # TODO: unittest
@@ -177,7 +185,7 @@ class User(AbstractBaseUser, PermissionsMixin):
             relation_type__is_partner=False,
             relation_type__is_child_parent=False
         )
-        return User.objects.filter(pk__in=relations.values('user2')).order_by('?')
+        return User.objects.only_real().filter(pk__in=relations.values('user2')).order_by('?')
 
 
 class UserRelation(models.Model):

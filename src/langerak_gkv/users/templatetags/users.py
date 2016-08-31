@@ -15,7 +15,7 @@ def show_birthdays(weeks=3):
     month, year = today.month, today.year
     qs = User.objects.none()
     while (month, year) <= (upper_limit.month, upper_limit.year):
-        qs |= User.objects.filter(birthdate__month=month)
+        qs |= User.objects.only_real().filter(birthdate__month=month)
         month = (month+1)
         if month == 13:
             month = 1

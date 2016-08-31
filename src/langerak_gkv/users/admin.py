@@ -40,7 +40,7 @@ class UserAdmin(ImportExportMixin, _UserAdmin):
         }),
         (_('Permissions'), {
             'fields': ('is_active', 'is_staff', 'is_superuser',
-                       'groups', 'user_permissions'),
+                       'exclude_in_queries', 'groups', 'user_permissions'),
             'classes': ('collapse',)
         }),
         (_('Important dates'), {
@@ -57,7 +57,7 @@ class UserAdmin(ImportExportMixin, _UserAdmin):
     form = UserChangeForm
     add_form = UserCreationForm
     list_display = ('email', 'first_name', 'last_name', 'is_staff', 'district', 'district_function')
-    list_filter = _UserAdmin.list_filter + ('district', 'district_function', 'family',)
+    list_filter = _UserAdmin.list_filter + ('district', 'district_function', 'family', 'exclude_in_queries')
     search_fields = ('first_name', 'last_name', 'email')
     ordering = ('email',)
 

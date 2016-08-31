@@ -33,7 +33,7 @@ class UserSearchMixin(FormMixin):
 
 
 class UserListView(LoginRequiredMixin, UserSearchMixin, ListView):
-    model = User
+    queryset = User.objects.only_real()
     context_object_name = 'profiles'
     paginate_by = 15
 
@@ -73,12 +73,12 @@ class UserSearchPDFView(PDFTemplateResponseMixin, UserSearchView):
 
 
 class UserProfileView(LoginRequiredMixin, UserSearchMixin, DetailView):
-    model = User
+    queryset = User.objects.only_real()
     context_object_name = 'profile'
 
 
 class UpdateProfileView(LoginRequiredMixin, UserSearchMixin, UpdateView):
-    model = User
+    queryset = User.objects.only_real()
     form_class = ProfileUpdateForm
     form_context_name = 'search_form'
 
