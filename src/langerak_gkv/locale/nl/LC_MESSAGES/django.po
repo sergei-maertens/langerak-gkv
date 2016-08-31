@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-31 18:55+0200\n"
-"PO-Revision-Date: 2016-08-31 18:56+0020\n"
+"POT-Creation-Date: 2016-08-31 19:09+0200\n"
+"PO-Revision-Date: 2016-08-31 19:14+0020\n"
 "Last-Translator: Sergei Maertens <sergeimaertens@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -152,7 +152,6 @@ msgid "Visit <a href=\"%(url)s\">%(url)s</a>."
 msgstr "Bezoek <a href=\"%(url)s\">%(url)s</a>."
 
 #: activities/templates/activities/activity_form.html:52
-#| msgid "image"
 msgid "Image"
 msgstr "afbeelding"
 
@@ -194,7 +193,6 @@ msgstr[1] ""
 "%(count)s activiteiten"
 
 #: activities/templates/activities/base.html:74
-#| msgid "activity"
 msgid "Add activity"
 msgstr "activiteit toevoegen"
 
@@ -777,7 +775,7 @@ msgstr "Voer hier je e-mailadres in"
 msgid "next"
 msgstr "volgende"
 
-#: templates/master.html:91
+#: templates/master.html:92
 msgid "built by Sergei Maertens"
 msgstr "gebouwd door Sergei Maertens"
 
@@ -882,6 +880,53 @@ msgstr ""
 msgid "Do you want to unsubscribe from this newsletter?"
 msgstr "Wil je uitschrijven van deze nieuwsbrief?"
 
+#: templates/password_reset/recovery_done.html:3
+#| msgid "Set new password"
+msgid "New password set"
+msgstr "Nieuw wachtwoord ingesteld"
+
+#: templates/password_reset/recovery_done.html:6
+msgid ""
+"Your password has successfully been reset. You can use it right now on the "
+"login page."
+msgstr ""
+"Je wachtwoord werd met succes opnieuw ingesteld. Je kan het nu gebruiken op "
+"de inlogpagina."
+
+#: templates/password_reset/recovery_email.txt:1
+#, python-format
+#| msgid "Email or username"
+msgid "Dear %(username)s,"
+msgstr "Beste %(username)s,"
+
+#: templates/password_reset/recovery_email.txt:3
+#, python-format
+msgid ""
+"You -- or someone pretending to be you -- has requested a password reset on "
+"%(domain)s."
+msgstr ""
+"Je -- of iemand die zich als jou voordoet -- hebt een wachtwoordherstel "
+"gevraagd voor %(domain)s."
+
+#: templates/password_reset/recovery_email.txt:5
+msgid "You can set your new password by following this link:"
+msgstr ""
+"Je kan je nieuwe wachtwoord instellen door de volgende link te volgen:"
+
+#: templates/password_reset/recovery_email.txt:9
+msgid ""
+"If you don't want to reset your password, simply ignore this email and it "
+"will stay unchanged."
+msgstr ""
+"Indien je je wachtwoord niet wil herstellen, dan kan je gewoon deze e-mail "
+"negeren. Het wachtwoord blijft dan ongewijzigd."
+
+#: templates/password_reset/recovery_email_subject.txt:1
+#, python-format
+#| msgid "Password recovery"
+msgid "Password recovery on %(domain)s"
+msgstr "Wachtwoordherstel voor %(domain)s"
+
 #: templates/password_reset/recovery_form.html:5
 msgid "Password recovery"
 msgstr "Wachtwoordherstel"
@@ -909,6 +954,20 @@ msgstr ""
 #: templates/password_reset/reset.html:12
 msgid "Set new password"
 msgstr "Stel nieuw wachtwoord in"
+
+#: templates/password_reset/reset_sent.html:4
+#| msgid "Password recovery"
+msgid "Password recovery sent"
+msgstr "Wachtwoordherstel verstuurd"
+
+#: templates/password_reset/reset_sent.html:7
+#, python-format
+msgid ""
+"An email was sent to <strong>%(email)s</strong> %(ago)s ago. Use the link in"
+" it to set a new password."
+msgstr ""
+"Er werd %(ago)s geleden een e-mail verstuurd naar %(email)s. Volg de link in"
+" de e-mail om je wachtwoord opnieuw in te stellen."
 
 #: users/admin.py:22
 msgid "Personal info"
