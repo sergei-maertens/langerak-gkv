@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-08 09:32+0200\n"
-"PO-Revision-Date: 2016-09-08 09:34+0020\n"
+"POT-Creation-Date: 2016-09-08 14:42+0200\n"
+"PO-Revision-Date: 2016-09-08 14:44+0020\n"
 "Last-Translator: Sergei Maertens <sergeimaertens@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -270,7 +270,7 @@ msgstr "Homepagina linkblok"
 msgid "Simple text"
 msgstr "Eenvoudige tekst"
 
-#: homepage/models.py:12 mailing/models.py:16
+#: homepage/models.py:12 mailing/models.py:24
 msgid "email"
 msgstr "e-mail"
 
@@ -373,12 +373,12 @@ msgstr ""
 "Er werd een nieuwe 'Prayer on Demand' toegevoegd. Je kan deze bekijken op "
 "{uri}"
 
-#: liturgies/admin/__init__.py:74 liturgies/admin/views.py:48
+#: liturgies/admin/__init__.py:69 liturgies/admin/views.py:48
 msgid "The email has been put on the queue and will be send shortly"
 msgstr ""
 "De e-mail werd op de wachtlijst geplaatst en zal binnenkort verstuurd worden"
 
-#: liturgies/admin/__init__.py:79
+#: liturgies/admin/__init__.py:96
 msgid "view email recipients"
 msgstr "bekijk e-mail ontvangers"
 
@@ -399,7 +399,8 @@ msgstr ""
 msgid "liturgies"
 msgstr "kerkdiensten"
 
-#: liturgies/cms_app.py:10 liturgies/templates/liturgies/mail.html:1
+#: liturgies/cms_app.py:10 liturgies/templates/liturgies/mail.html:6
+#: liturgies/templates/liturgies/mail.html:11
 msgid "Liturgies"
 msgstr "Kerkdiensten"
 
@@ -546,12 +547,11 @@ msgid "Next"
 msgstr "Volgende"
 
 #: liturgies/templates/liturgies/detail.html:27
-#| msgid "hours"
 msgid "hour"
 msgstr "uur"
 
 #: liturgies/templates/liturgies/detail.html:38
-#: liturgies/templates/liturgies/mail.html:10
+#: liturgies/templates/liturgies/mail.html:19
 msgid "Preacher"
 msgstr "Predikant"
 
@@ -565,12 +565,12 @@ msgid "Preach made by"
 msgstr "Preek gemaakt door"
 
 #: liturgies/templates/liturgies/detail.html:59
-#: liturgies/templates/liturgies/mail.html:14
+#: liturgies/templates/liturgies/mail.html:25
 msgid "Main section"
 msgstr "Hoofdgedeelte"
 
 #: liturgies/templates/liturgies/detail.html:66
-#: liturgies/templates/liturgies/mail.html:15
+#: liturgies/templates/liturgies/mail.html:29
 msgid "Service theme"
 msgstr "Thema"
 
@@ -603,49 +603,95 @@ msgstr[1] ""
 "\n"
 "%(counter)s aankomend"
 
-#: liturgies/templates/liturgies/mail.html:6
+#: liturgies/templates/liturgies/mail.html:14
 #, python-format
 msgid "Liturgy %(counter)s"
 msgstr "Kerkdienst %(counter)s"
 
-#: liturgies/templates/liturgies/mail.html:9
+#: liturgies/templates/liturgies/mail.html:16
 msgid "Service"
 msgstr "Dienst"
 
-#: liturgies/templates/liturgies/mail.html:10
+#: liturgies/templates/liturgies/mail.html:20
 msgid "no author"
 msgstr "geen auteur"
 
-#: liturgies/templates/liturgies/mail.html:12
+#: liturgies/templates/liturgies/mail.html:22
 msgid "Collections"
 msgstr "Collectes"
 
-#: liturgies/templates/liturgies/mail.html:12
+#: liturgies/templates/liturgies/mail.html:23
 msgid "(none)"
 msgstr "(geen)"
 
-#: liturgies/templates/liturgies/mail.html:14
-#: liturgies/templates/liturgies/mail.html:15
-#: liturgies/templates/liturgies/mail.html:17
-#: liturgies/templates/liturgies/mail.html:19
+#: liturgies/templates/liturgies/mail.html:26
+#: liturgies/templates/liturgies/mail.html:30
+#: liturgies/templates/liturgies/mail.html:33
+#: liturgies/templates/liturgies/mail.html:36
 msgid "(empty)"
 msgstr "(leeg)"
 
-#: liturgies/templates/liturgies/mail.html:17
+#: liturgies/templates/liturgies/mail.html:32
 msgid "Content"
 msgstr "Inhoud"
 
-#: liturgies/templates/liturgies/mail.html:19
-msgid "Remarks:"
-msgstr "Opmerkingen:"
+#: liturgies/templates/liturgies/mail.html:35
+#| msgid "Remarks:"
+msgid "Remarks"
+msgstr "Opmerkingen"
 
 #: liturgies/urls.py:9
 msgid "^history/$"
 msgstr "^archief/$"
 
-#: mailing/models.py:17
+#: mailing/mail_template.py:40
+#, python-brace-format
+msgid "TemplateSyntaxError: {0}"
+msgstr "TemplateSyntaxError: {0}"
+
+#: mailing/mail_template.py:55
+#, python-brace-format
+msgid "These variables are required, but missing: {vars}"
+msgstr "Deze variabelen zijn verplicht, maar ontbreken: {vars}"
+
+#: mailing/mail_template.py:62
+#, python-brace-format
+msgid "These variables are present, but unexpected: {vars}"
+msgstr "Deze variabelen zijn onverwatch aanwezig: {vars}"
+
+#: mailing/models.py:25
 msgid "emails"
 msgstr "e-mails"
+
+#: mailing/models.py:33 search/templates/search/liturgy_item.html:6
+msgid "Liturgy"
+msgstr "Kerkdienst"
+
+#: mailing/models.py:38
+msgid "type"
+msgstr "type"
+
+#: mailing/models.py:40
+msgid "subject"
+msgstr "onderwerp"
+
+#: mailing/models.py:41
+msgid "body"
+msgstr "inhoud"
+
+#: mailing/models.py:41
+msgid "Add the body with {{variable}} placeholders"
+msgstr "Voeg de inhoudtekst toe met {{variable}} invulwaarden"
+
+#: mailing/models.py:58
+#| msgid "Email me"
+msgid "mail template"
+msgstr "E-mail sjabloon"
+
+#: mailing/models.py:59
+#| msgid "Email me"
+msgid "mail templates"
+msgstr "E-mail sjablonen"
 
 #: mailing/views.py:12
 #, python-brace-format
@@ -673,10 +719,6 @@ msgstr "Overige"
 #: search/templates/search/cms_item.html:6
 msgid "Page"
 msgstr "Pagina"
-
-#: search/templates/search/liturgy_item.html:6
-msgid "Liturgy"
-msgstr "Kerkdienst"
 
 #: search/templates/search/results.html:3
 msgid "Search results"
