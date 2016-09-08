@@ -66,6 +66,7 @@ class LiturgyAdmin(ImportExportActionModelAdmin):
             'recipients': recipients,
             'body': render_to_string('liturgies/mail.html', {'liturgies': [obj]}),
             'subject': 'Liturgie kerkdienst',
+            'is_html': True,
         }
         data = initial.copy()
         data['recipients'] = [r.id for r in recipients]

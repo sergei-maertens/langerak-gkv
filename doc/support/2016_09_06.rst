@@ -2,7 +2,7 @@
 Issues reported 6th of September, 2016
 ======================================
 
-* preach e-mails: everything is on one line currently
+* preach e-mails: everything is on one line currently (**done**)
 
 * preach e-mails: add field for intro tekst (with placeholders?)
 
