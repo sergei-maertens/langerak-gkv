@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-08 14:42+0200\n"
-"PO-Revision-Date: 2016-09-08 14:44+0020\n"
+"POT-Creation-Date: 2016-09-08 15:17+0200\n"
+"PO-Revision-Date: 2016-09-08 15:18+0020\n"
 "Last-Translator: Sergei Maertens <sergeimaertens@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -24,8 +24,8 @@ msgid "Activities"
 msgstr "Activiteiten"
 
 #: activities/models.py:35 activities/models.py:103 activities/models.py:114
-#: homepage/models.py:11 societies/models.py:13 users/models.py:253
-#: users/models.py:264 users/models.py:279
+#: homepage/models.py:11 liturgies/models.py:12 societies/models.py:13
+#: users/models.py:253 users/models.py:264 users/models.py:279
 msgid "name"
 msgstr "naam"
 
@@ -373,12 +373,12 @@ msgstr ""
 "Er werd een nieuwe 'Prayer on Demand' toegevoegd. Je kan deze bekijken op "
 "{uri}"
 
-#: liturgies/admin/__init__.py:69 liturgies/admin/views.py:48
+#: liturgies/admin/__init__.py:77 liturgies/admin/views.py:48
 msgid "The email has been put on the queue and will be send shortly"
 msgstr ""
 "De e-mail werd op de wachtlijst geplaatst en zal binnenkort verstuurd worden"
 
-#: liturgies/admin/__init__.py:96
+#: liturgies/admin/__init__.py:107
 msgid "view email recipients"
 msgstr "bekijk e-mail ontvangers"
 
@@ -395,7 +395,7 @@ msgstr ""
 "Kon de tijd %s niet parsen. Let er op dat het 'service__time' veld als tekst"
 " geformatteeerd is."
 
-#: liturgies/apps.py:7 liturgies/models.py:31
+#: liturgies/apps.py:7 liturgies/models.py:42
 msgid "liturgies"
 msgstr "kerkdiensten"
 
@@ -408,104 +408,108 @@ msgstr "Kerkdiensten"
 msgid "liturgies menu"
 msgstr "kerdienstenmenu"
 
-#: liturgies/models.py:10
+#: liturgies/models.py:19
 msgid "date"
 msgstr "datum"
 
-#: liturgies/models.py:11
+#: liturgies/models.py:20
 msgid "service"
 msgstr "dienst"
 
-#: liturgies/models.py:12
+#: liturgies/models.py:21
 msgid "preacher"
 msgstr "predikant"
 
-#: liturgies/models.py:13
+#: liturgies/models.py:22
 msgid "preach author"
 msgstr "auteur preek"
 
-#: liturgies/models.py:14
+#: liturgies/models.py:23
 msgid "main section"
 msgstr "hoofdgedeelte"
 
-#: liturgies/models.py:15
+#: liturgies/models.py:24
 msgid "main chapter"
 msgstr "hoofd-hoofdstuk"
 
-#: liturgies/models.py:16
+#: liturgies/models.py:25
 msgid "main verse"
 msgstr "hoofdvers"
 
-#: liturgies/models.py:17
+#: liturgies/models.py:26
 msgid "service theme"
 msgstr "theme dienst"
 
-#: liturgies/models.py:18 liturgies/models.py:30 liturgies/models.py:76
+#: liturgies/models.py:27 liturgies/models.py:41 liturgies/models.py:87
 #: liturgies/signals.py:16
 msgid "liturgy"
 msgstr "kerkdienst"
 
-#: liturgies/models.py:19
+#: liturgies/models.py:28
 msgid "audiofile"
 msgstr "mp3-bestand"
 
-#: liturgies/models.py:20
+#: liturgies/models.py:29
 msgid "beamist"
 msgstr "beamist"
 
-#: liturgies/models.py:21
+#: liturgies/models.py:30
 msgid "organist"
 msgstr "organist"
 
-#: liturgies/models.py:22
+#: liturgies/models.py:31
 msgid "collection goal 1"
 msgstr "collecte 1"
 
-#: liturgies/models.py:23
+#: liturgies/models.py:32
 msgid "collection goal 2"
 msgstr "collecte 2"
 
-#: liturgies/models.py:24
+#: liturgies/models.py:33
 msgid "collection goal 3"
 msgstr "collecte 3"
 
-#: liturgies/models.py:25
+#: liturgies/models.py:34
 msgid "extra information"
 msgstr "extra informatie"
 
-#: liturgies/models.py:27
+#: liturgies/models.py:36
+msgid "other churches"
+msgstr "andere kerken"
+
+#: liturgies/models.py:38
 msgid "remarks (internal)"
 msgstr "opmerkingen (intern)"
 
-#: liturgies/models.py:60
+#: liturgies/models.py:71
 msgid "service name"
 msgstr "naam dienst"
 
-#: liturgies/models.py:61
+#: liturgies/models.py:72
 msgid "service time"
 msgstr "tijd dienst"
 
-#: liturgies/models.py:70
+#: liturgies/models.py:81
 #, python-format
 msgid "preacher (%s)"
 msgstr "predikant (%s)"
 
-#: liturgies/models.py:71
+#: liturgies/models.py:82
 #, python-format
 msgid "organist (%s)"
 msgstr "organist (%s)"
 
-#: liturgies/models.py:72
+#: liturgies/models.py:83
 #, python-format
 msgid "beamist (%s)"
 msgstr "beamist (%s)"
 
-#: liturgies/models.py:73
+#: liturgies/models.py:84
 #, python-format
 msgid "koster (%s)"
 msgstr "organist (%s)"
 
-#: liturgies/models.py:74
+#: liturgies/models.py:85
 msgid "other"
 msgstr "overige"
 
@@ -551,7 +555,7 @@ msgid "hour"
 msgstr "uur"
 
 #: liturgies/templates/liturgies/detail.html:38
-#: liturgies/templates/liturgies/mail.html:19
+#: liturgies/templates/liturgies/mail.html:22
 msgid "Preacher"
 msgstr "Predikant"
 
@@ -565,12 +569,10 @@ msgid "Preach made by"
 msgstr "Preek gemaakt door"
 
 #: liturgies/templates/liturgies/detail.html:59
-#: liturgies/templates/liturgies/mail.html:25
 msgid "Main section"
 msgstr "Hoofdgedeelte"
 
 #: liturgies/templates/liturgies/detail.html:66
-#: liturgies/templates/liturgies/mail.html:29
 msgid "Service theme"
 msgstr "Thema"
 
@@ -609,36 +611,42 @@ msgid "Liturgy %(counter)s"
 msgstr "Kerkdienst %(counter)s"
 
 #: liturgies/templates/liturgies/mail.html:16
+msgid "Date"
+msgstr "Datum"
+
+#: liturgies/templates/liturgies/mail.html:19
 msgid "Service"
 msgstr "Dienst"
 
-#: liturgies/templates/liturgies/mail.html:20
+#: liturgies/templates/liturgies/mail.html:23
 msgid "no author"
 msgstr "geen auteur"
 
-#: liturgies/templates/liturgies/mail.html:22
-msgid "Collections"
-msgstr "Collectes"
-
-#: liturgies/templates/liturgies/mail.html:23
-msgid "(none)"
-msgstr "(geen)"
+#: liturgies/templates/liturgies/mail.html:25 mailing/models.py:33
+#: search/templates/search/liturgy_item.html:6
+msgid "Liturgy"
+msgstr "Kerkdienst"
 
 #: liturgies/templates/liturgies/mail.html:26
-#: liturgies/templates/liturgies/mail.html:30
-#: liturgies/templates/liturgies/mail.html:33
-#: liturgies/templates/liturgies/mail.html:36
+#: liturgies/templates/liturgies/mail.html:40
+#: liturgies/templates/liturgies/mail.html:43
+#: liturgies/templates/liturgies/mail.html:46
 msgid "(empty)"
 msgstr "(leeg)"
 
-#: liturgies/templates/liturgies/mail.html:32
-msgid "Content"
-msgstr "Inhoud"
-
-#: liturgies/templates/liturgies/mail.html:35
-#| msgid "Remarks:"
+#: liturgies/templates/liturgies/mail.html:39
 msgid "Remarks"
 msgstr "Opmerkingen"
+
+#: liturgies/templates/liturgies/mail.html:42
+#| msgid "organist"
+msgid "Organist"
+msgstr "Organist"
+
+#: liturgies/templates/liturgies/mail.html:45
+#| msgid "beamist"
+msgid "Beamist"
+msgstr "Beamist"
 
 #: liturgies/urls.py:9
 msgid "^history/$"
@@ -663,10 +671,6 @@ msgstr "Deze variabelen zijn onverwatch aanwezig: {vars}"
 msgid "emails"
 msgstr "e-mails"
 
-#: mailing/models.py:33 search/templates/search/liturgy_item.html:6
-msgid "Liturgy"
-msgstr "Kerkdienst"
-
 #: mailing/models.py:38
 msgid "type"
 msgstr "type"
@@ -684,12 +688,10 @@ msgid "Add the body with {{variable}} placeholders"
 msgstr "Voeg de inhoudtekst toe met {{variable}} invulwaarden"
 
 #: mailing/models.py:58
-#| msgid "Email me"
 msgid "mail template"
 msgstr "E-mail sjabloon"
 
 #: mailing/models.py:59
-#| msgid "Email me"
 msgid "mail templates"
 msgstr "E-mail sjablonen"
 
@@ -1461,6 +1463,15 @@ msgstr "loglijn"
 #: worklog/models.py:16
 msgid "log entries"
 msgstr "loglijnen"
+
+#~ msgid "Collections"
+#~ msgstr "Collectes"
+
+#~ msgid "(none)"
+#~ msgstr "(geen)"
+
+#~ msgid "Content"
+#~ msgstr "Inhoud"
 
 #~ msgid "Members"
 #~ msgstr "Leden"

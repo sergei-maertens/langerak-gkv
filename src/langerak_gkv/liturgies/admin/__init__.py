@@ -2,7 +2,7 @@ from django.conf.urls import patterns, url
 from django.contrib import admin, messages
 from django.core.urlresolvers import reverse
 from django.template.loader import render_to_string
-from django.template.defaultfilters import date
+from django.template.defaultfilters import date, time
 from django.utils.safestring import mark_safe
 from django.utils.translation import ugettext_lazy as _
 
@@ -10,11 +10,16 @@ from import_export.admin import ImportExportActionModelAdmin
 
 from langerak_gkv.mailing.models import MailTemplate, Templates
 
-from ..models import Liturgy, Service, MailRecipient
+from ..models import Church, Liturgy, Service, MailRecipient
 from .actions import send_liturgy_email
 from .forms import LiturgyMailForm
 from .resources import LiturgyResource
 from .views import LiturgyEmailView
+
+
+@admin.register(Church)
+class ChurchAdmin(admin.ModelAdmin):
+    list_display = ['name']
 
 
 class MailRecipientInline(admin.TabularInline):
@@ -22,6 +27,7 @@ class MailRecipientInline(admin.TabularInline):
     can_delete = False
 
 
+@admin.register(MailRecipient)
 class MailRecipientAdmin(admin.ModelAdmin):
     list_display = ('liturgy', 'email', 'function', 'user', 'is_sent')
     list_filter = ('is_sent', 'function')
@@ -46,12 +52,14 @@ class MailRecipientAdmin(admin.ModelAdmin):
         return action_urls + urls
 
 
+@admin.register(Liturgy)
 class LiturgyAdmin(ImportExportActionModelAdmin):
     list_display = ('__unicode__', 'date', 'preacher', 'link_emails')
     list_editable = ('preacher',)
     list_filter = ('date', 'service__time')
     inlines = [MailRecipientInline]
     resource_class = LiturgyResource
+    filter_horizontal = ('other_churches',)
 
     def response_change(self, request, obj):
         """
@@ -74,10 +82,13 @@ class LiturgyAdmin(ImportExportActionModelAdmin):
         body = render_to_string('liturgies/mail.html', {'liturgies': [obj]})
         template = MailTemplate.objects.filter(template_type=Templates.liturgy).first()
         if template is not None:
+            extra_churches = ', '.join(list(obj.other_churches.values_list('name', flat=True)))
             subject, body = template.render({
                 'extra_churches': '',
                 'day': date(obj.date, 'l'),
                 'liturgy_details': mark_safe(body),
+                'extra_churches': '+ {}'.format(extra_churches) if extra_churches else '',
+                'datetime': '{}, {}'.format(date(obj.date, 'l j F'), time(obj.service.time, 'H.i')),
             })
 
         initial = {
@@ -97,13 +108,9 @@ class LiturgyAdmin(ImportExportActionModelAdmin):
     link_emails.allow_tags = True
 
 
+@admin.register(Service)
 class ServiceAdmin(admin.ModelAdmin):
     list_display = ('__unicode__', 'name', 'time')
     list_editable = ('name', 'time')
     list_filter = ('time',)
     search_fields = ('name', 'time')
-
-
-admin.site.register(Liturgy, LiturgyAdmin)
-admin.site.register(MailRecipient, MailRecipientAdmin)
-admin.site.register(Service, ServiceAdmin)

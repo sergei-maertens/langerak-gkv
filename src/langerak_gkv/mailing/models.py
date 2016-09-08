@@ -65,5 +65,7 @@ class MailTemplate(models.Model):
         validate_template(self)
 
     def render(self, context):
-        tpl = Template(self.body)
-        return tpl.render(Context(context))
+        tpl_subject = Template(self.subject)
+        tpl_body = Template(self.body)
+        ctx = Context(context)
+        return tpl_subject.render(ctx), tpl_body.render(ctx)
