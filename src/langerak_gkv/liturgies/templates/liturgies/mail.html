@@ -13,27 +13,36 @@
             <div style="padding-top: 10px;padding-bottom:10px; border-bottom: solid 2px grey;">
                 <h2>{% blocktrans with counter=forloop.counter %}Liturgy {{ counter }}{% endblocktrans %}</h2>
 
+                <h3>{% trans "Date" %}</h3>
+                <p>{{ liturgy.date|date:"l j F" }}</p>
+
                 <h3>{% trans "Service" %}</h3>
-                <p>{{ liturgy.service.name }}, {{ liturgy.date|date:"l j F" }}, {{ liturgy.service.time|time:"H:i" }}</p>
+                <p>{{ liturgy.service.name }}, {{ liturgy.service.time|time:"H:i" }}</p>
 
                 <h3>{% trans "Preacher" %}</h3>
                 <p>{{ liturgy.preacher }} ({{ liturgy.preach_authorer|default:_('no author') }})</p>
 
+                <h3>{% trans "Liturgy" %}</h3>
+                <p>{{ liturgy.liturgy|default:_('(empty)')|linebreaksbr }}</p>
+
+                {% comment %}
                 <h3>{% trans "Collections" %}</h3>
                 <p>{{ liturgy.get_collections|join:', '|default:_('(none)') }}</p>
 
                 <h3>{% trans "Main section" %}</h3>
                 <p>{{ liturgy.main_section|default:_('(empty)') }}</p>
 
-
                 <h3>{% trans "Service theme" %}</h3>
                 <p>{{ liturgy.service_theme|default:_('(empty)') }}</p>
-
-                <h3>{% trans "Content" %}</h3>
-                <p>{{ liturgy.liturgy|default:_('(empty)')|linebreaksbr }}</p>
-
+                {% endcomment %}
                 <h3>{% trans "Remarks" %}</h3>
                 <p>{{ liturgy.internal_remarks|default:_('(empty)')|linebreaksbr }}</p>
+
+                <h3>{% trans "Organist" %}</h3>
+                <p>{{ liturgy.organist|default:_('(empty)') }}</p>
+
+                <h3>{% trans "Beamist" %}</h3>
+                <p>{{ liturgy.beamist|default:_('(empty)') }}</p>
             </div>
         {% endfor %}
     </body>

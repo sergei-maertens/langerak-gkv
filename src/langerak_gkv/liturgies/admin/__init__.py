@@ -2,7 +2,7 @@ from django.conf.urls import patterns, url
 from django.contrib import admin, messages
 from django.core.urlresolvers import reverse
 from django.template.loader import render_to_string
-from django.template.defaultfilters import date
+from django.template.defaultfilters import date, time
 from django.utils.safestring import mark_safe
 from django.utils.translation import ugettext_lazy as _
 
@@ -88,7 +88,7 @@ class LiturgyAdmin(ImportExportActionModelAdmin):
                 'day': date(obj.date, 'l'),
                 'liturgy_details': mark_safe(body),
                 'extra_churches': '+ {}'.format(extra_churches) if extra_churches else '',
-                'datetime': '',
+                'datetime': '{}, {}'.format(date(obj.date, 'l j F'), time(obj.service.time, 'H.i')),
             })
 
         initial = {
