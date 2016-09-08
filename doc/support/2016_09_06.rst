@@ -4,7 +4,7 @@ Issues reported 6th of September, 2016
 
 * preach e-mails: everything is on one line currently (**done**)
 
-* preach e-mails: add field for intro tekst (with placeholders?)
+* preach e-mails: add field for intro tekst (with placeholders?) (**done**)
 
 * E-mail addresses should be @langerak.gkv.nl instead of @koninksker.nu because of existing forwarders. (**done**)
 
