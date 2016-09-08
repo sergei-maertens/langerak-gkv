@@ -1,9 +1,18 @@
 from django.conf import settings
 from django.core.urlresolvers import reverse
 from django.db import models
+from django.utils.encoding import python_2_unicode_compatible
 from django.utils.translation import ugettext_lazy as _
 
 from djchoices import DjangoChoices, ChoiceItem
+
+
+@python_2_unicode_compatible
+class Church(models.Model):
+    name = models.CharField(_('name'), max_length=100)
+
+    def __str__(self):
+        return self.name
 
 
 class Liturgy(models.Model):
@@ -23,6 +32,8 @@ class Liturgy(models.Model):
     collection_goal2 = models.CharField(_('collection goal 2'), max_length=50, blank=True)
     collection_goal3 = models.CharField(_('collection goal 3'), max_length=50, blank=True)
     extra_information = models.TextField(_('extra information'), blank=True)
+
+    other_churches = models.ManyToManyField('Church', verbose_name=_('other churches'), blank=True)
 
     internal_remarks = models.TextField(_('remarks (internal)'), blank=True)
 
