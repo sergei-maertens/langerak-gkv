@@ -57,7 +57,10 @@
                     </div>
                     <div class="row">
                         <div class="col-xs-4">{% trans "Main section" %}:</div>
-                        <div class="col-xs-8">{{ liturgy.main_section }}</div>
+                        <div class="col-xs-8">
+                            {{ liturgy.main_section }}
+                            {{ liturgy.main_chapter }}{% if liturgy.main_verse %}:{{ liturgy.main_verse }}{% endif %}
+                        </div>
                     </div>
                     <div class="row">
                         <div class="col-xs-4">{% trans "Service theme" %}:</div>
