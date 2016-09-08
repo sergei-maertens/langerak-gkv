@@ -51,8 +51,9 @@ django-leaflet==0.18.1
 jsonfield==1.0.3
 
 # mailing
-# django-yubin==0.1.8
-git+https://github.com/sergei-maertens/django-yubin.git@master#egg=django-yubin
+django-yubin==0.3.0
+html2text==2016.5.29
+
 
 # PDF export
 WeasyPrint==0.26

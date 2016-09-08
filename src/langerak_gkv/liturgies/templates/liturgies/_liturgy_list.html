@@ -1,7 +1,7 @@
 {% load i18n %}
 {% for liturgy in liturgies %}
     <article class="page-block">
-        <h1>{% blocktrans with date=liturgy.date|date time=liturgy.service.time|time %}
+        <h1>{% blocktrans with date=liturgy.date|date time=liturgy.service.time|time:"H:i" %}
             {{ date }} <smal>{{ time }}</small> {% endblocktrans %}
             {% if liturgy.preacher %}<span class="btn blue pull-right">{{ liturgy.preacher }}</span>{% endif %}
         </h1>
