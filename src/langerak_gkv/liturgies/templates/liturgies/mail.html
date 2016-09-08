@@ -1,20 +1,40 @@
-{% load i18n %}{% trans "Liturgies" %}
-==================================
+{% load i18n %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>{% trans "Liturgies" %}</title>
+    </head>
 
-{% for liturgy in liturgies %}
+    <body>
 
-{% blocktrans with counter=forloop.counter %}Liturgy {{ counter }}{% endblocktrans %}
------------------------------
+        <h1>{% trans "Liturgies" %}</h1>
+        {% for liturgy in liturgies %}
+            <div style="padding-top: 10px;padding-bottom:10px; border-bottom: solid 2px grey;">
+                <h2>{% blocktrans with counter=forloop.counter %}Liturgy {{ counter }}{% endblocktrans %}</h2>
 
-{% trans "Service" %}: {{ liturgy.service.name }}, {{ liturgy.date|date:"l j F" }}, {{ liturgy.service.time|time:"H:i" }}
-{% trans "Preacher" %}: {{ liturgy.preacher }} ({{ liturgy.preach_authorer|default:_('no author') }})
+                <h3>{% trans "Service" %}</h3>
+                <p>{{ liturgy.service.name }}, {{ liturgy.date|date:"l j F" }}, {{ liturgy.service.time|time:"H:i" }}</p>
 
-{% trans "Collections" %}: {{ liturgy.get_collections|join:', '|default:_('(none)') }}
+                <h3>{% trans "Preacher" %}</h3>
+                <p>{{ liturgy.preacher }} ({{ liturgy.preach_authorer|default:_('no author') }})</p>
 
-{% trans "Main section" %}: {{ liturgy.main_section|default:_('(empty)') }}
-{% trans "Service theme" %}: {{ liturgy.service_theme|default:_('(empty)') }}
+                <h3>{% trans "Collections" %}</h3>
+                <p>{{ liturgy.get_collections|join:', '|default:_('(none)') }}</p>
 
-{% trans "Content" %}: {{ liturgy.liturgy|default:_('(empty)') }}
+                <h3>{% trans "Main section" %}</h3>
+                <p>{{ liturgy.main_section|default:_('(empty)') }}</p>
 
-{% trans "Remarks:" %} {{ liturgy.internal_remarks|default:_('(empty)') }}
-{% endfor %}
+
+                <h3>{% trans "Service theme" %}</h3>
+                <p>{{ liturgy.service_theme|default:_('(empty)') }}</p>
+
+                <h3>{% trans "Content" %}</h3>
+                <p>{{ liturgy.liturgy|default:_('(empty)')|linebreaksbr }}</p>
+
+                <h3>{% trans "Remarks" %}</h3>
+                <p>{{ liturgy.internal_remarks|default:_('(empty)')|linebreaksbr }}</p>
+            </div>
+        {% endfor %}
+    </body>
+</html>

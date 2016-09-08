@@ -35,7 +35,7 @@ class Liturgy(models.Model):
         return u'{service} {date}'.format(
             service=self.service.name,
             date=self.date.strftime('%d-%m-%Y')
-            )
+        )
 
     def get_absolute_url(self):
         return reverse('liturgies:archive_date_detail', kwargs={

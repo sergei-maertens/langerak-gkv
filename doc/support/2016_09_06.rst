@@ -1,0 +1,14 @@
+======================================
+Issues reported 6th of September, 2016
+======================================
+
+* preach e-mails: everything is on one line currently (**done**)
+
+* preach e-mails: add field for intro tekst (with placeholders?)
+
+* E-mail addresses should be @langerak.gkv.nl instead of @koninksker.nu because of existing forwarders. (**done**)
+
+* Merge 'Hoofgedeelte', 'Hoofdstuk' & 'Hoofdvers' into format
+  Hoofdgedeelte Hoofdstuk:Hoofdvers. (detail page liturgy) (**done**)
+
+* Change evening/midday am/pm to HH:mm format. (**done**)

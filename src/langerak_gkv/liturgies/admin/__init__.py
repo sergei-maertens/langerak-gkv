@@ -2,9 +2,13 @@ from django.conf.urls import patterns, url
 from django.contrib import admin, messages
 from django.core.urlresolvers import reverse
 from django.template.loader import render_to_string
+from django.template.defaultfilters import date
+from django.utils.safestring import mark_safe
 from django.utils.translation import ugettext_lazy as _
 
 from import_export.admin import ImportExportActionModelAdmin
+
+from langerak_gkv.mailing.models import MailTemplate, Templates
 
 from ..models import Liturgy, Service, MailRecipient
 from .actions import send_liturgy_email
@@ -57,22 +61,35 @@ class LiturgyAdmin(ImportExportActionModelAdmin):
         """
         response = super(LiturgyAdmin, self).response_change(request, obj)
 
-        # send the unset e-mails
         recipients = MailRecipient.objects.filter(liturgy=obj, is_sent=False)
         if not recipients.exists():
             return response
+        # send the unsent e-mails
+        self._send_mail(obj, recipients)
+        messages.success(request, _('The email has been put on the queue and will be send shortly'))
+        return response
+
+    def _send_mail(self, obj, recipients):
+        subject = 'Liturgie kerkdienst'
+        body = render_to_string('liturgies/mail.html', {'liturgies': [obj]})
+        template = MailTemplate.objects.filter(template_type=Templates.liturgy).first()
+        if template is not None:
+            subject, body = template.render({
+                'extra_churches': '',
+                'day': date(obj.date, 'l'),
+                'liturgy_details': mark_safe(body),
+            })
 
         initial = {
             'recipients': recipients,
-            'body': render_to_string('liturgies/mail.html', {'liturgies': [obj]}),
-            'subject': 'Liturgie kerkdienst',
+            'body': body,
+            'subject': subject,
+            'is_html': True,
         }
         data = initial.copy()
         data['recipients'] = [r.id for r in recipients]
         form = LiturgyMailForm(liturgies=[obj], initial=initial, data=data)
         form.save()
-        messages.success(request, _('The email has been put on the queue and will be send shortly'))
-        return response
 
     def link_emails(self, obj):
         url = reverse('admin:liturgies_mailrecipient_changelist')

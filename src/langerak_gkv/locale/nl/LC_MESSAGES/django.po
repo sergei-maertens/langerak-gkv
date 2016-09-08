@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-31 19:09+0200\n"
-"PO-Revision-Date: 2016-08-31 19:14+0020\n"
+"POT-Creation-Date: 2016-09-08 09:32+0200\n"
+"PO-Revision-Date: 2016-09-08 09:34+0020\n"
 "Last-Translator: Sergei Maertens <sergeimaertens@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -24,8 +24,8 @@ msgid "Activities"
 msgstr "Activiteiten"
 
 #: activities/models.py:35 activities/models.py:103 activities/models.py:114
-#: homepage/models.py:11 societies/models.py:13 users/models.py:241
-#: users/models.py:252 users/models.py:267
+#: homepage/models.py:11 societies/models.py:13 users/models.py:253
+#: users/models.py:264 users/models.py:279
 msgid "name"
 msgstr "naam"
 
@@ -298,7 +298,7 @@ msgstr "titel"
 msgid "image"
 msgstr "afbeelding"
 
-#: homepage/models.py:30 users/models.py:254
+#: homepage/models.py:30 users/models.py:266
 msgid "description"
 msgstr "beschrijving"
 
@@ -546,8 +546,9 @@ msgid "Next"
 msgstr "Volgende"
 
 #: liturgies/templates/liturgies/detail.html:27
-msgid "hours"
-msgstr "uren"
+#| msgid "hours"
+msgid "hour"
+msgstr "uur"
 
 #: liturgies/templates/liturgies/detail.html:38
 #: liturgies/templates/liturgies/mail.html:10
@@ -568,16 +569,16 @@ msgstr "Preek gemaakt door"
 msgid "Main section"
 msgstr "Hoofdgedeelte"
 
-#: liturgies/templates/liturgies/detail.html:63
+#: liturgies/templates/liturgies/detail.html:66
 #: liturgies/templates/liturgies/mail.html:15
 msgid "Service theme"
 msgstr "Thema"
 
-#: liturgies/templates/liturgies/detail.html:85
+#: liturgies/templates/liturgies/detail.html:88
 msgid "This service is available as audio download"
 msgstr "Deze dienst is beschikbaar als audiodownload"
 
-#: liturgies/templates/liturgies/detail.html:89
+#: liturgies/templates/liturgies/detail.html:92
 msgid "No audio file available"
 msgstr "Geen audiobestand beschikbaar"
 
@@ -881,7 +882,6 @@ msgid "Do you want to unsubscribe from this newsletter?"
 msgstr "Wil je uitschrijven van deze nieuwsbrief?"
 
 #: templates/password_reset/recovery_done.html:3
-#| msgid "Set new password"
 msgid "New password set"
 msgstr "Nieuw wachtwoord ingesteld"
 
@@ -895,7 +895,6 @@ msgstr ""
 
 #: templates/password_reset/recovery_email.txt:1
 #, python-format
-#| msgid "Email or username"
 msgid "Dear %(username)s,"
 msgstr "Beste %(username)s,"
 
@@ -923,7 +922,6 @@ msgstr ""
 
 #: templates/password_reset/recovery_email_subject.txt:1
 #, python-format
-#| msgid "Password recovery"
 msgid "Password recovery on %(domain)s"
 msgstr "Wachtwoordherstel voor %(domain)s"
 
@@ -956,7 +954,6 @@ msgid "Set new password"
 msgstr "Stel nieuw wachtwoord in"
 
 #: templates/password_reset/reset_sent.html:4
-#| msgid "Password recovery"
 msgid "Password recovery sent"
 msgstr "Wachtwoordherstel verstuurd"
 
@@ -985,7 +982,7 @@ msgstr "Rechten"
 msgid "Important dates"
 msgstr "Belangrijke data"
 
-#: users/apps.py:7 users/models.py:121
+#: users/apps.py:7 users/models.py:133
 msgid "users"
 msgstr "gebruikers"
 
@@ -1060,214 +1057,214 @@ msgstr "Maximumleeftijd"
 msgid "Gender"
 msgstr "Geslacht"
 
-#: users/models.py:54
+#: users/models.py:60
 msgid "male"
 msgstr "man"
 
-#: users/models.py:55
+#: users/models.py:61
 msgid "female"
 msgstr "vrouw"
 
-#: users/models.py:58
+#: users/models.py:64
 msgid "baptised member"
 msgstr "dooplid"
 
-#: users/models.py:59
+#: users/models.py:65
 msgid "practicing member"
 msgstr "belijdend lid"
 
-#: users/models.py:60
+#: users/models.py:66
 msgid "guest member"
 msgstr "gastlid"
 
-#: users/models.py:62
+#: users/models.py:68
 msgid "email address"
 msgstr "e-mailadres"
 
-#: users/models.py:63
+#: users/models.py:69
 msgid "username"
 msgstr "gebruikersnaam"
 
-#: users/models.py:65
+#: users/models.py:71
 msgid "first name"
 msgstr "voornaam"
 
-#: users/models.py:66
+#: users/models.py:72
 msgid "last name"
 msgstr "familienaam"
 
-#: users/models.py:69
+#: users/models.py:75
 msgid "staff status"
 msgstr "is staf"
 
-#: users/models.py:70
+#: users/models.py:76
 msgid "Designates whether the user can log into this admin site."
 msgstr ""
 
-#: users/models.py:73
+#: users/models.py:79
 msgid "active"
 msgstr "actief"
 
-#: users/models.py:74
+#: users/models.py:80
 msgid ""
 "Designates whether this user should be treated as active. Unselect this "
 "instead of deleting accounts."
 msgstr ""
 
-#: users/models.py:76
+#: users/models.py:82
 msgid "date joined"
 msgstr "registratiedatum"
 
-#: users/models.py:79
+#: users/models.py:85
 msgid "sex"
 msgstr "geslacht"
 
-#: users/models.py:81 users/models.py:270
+#: users/models.py:87 users/models.py:282
 msgid "street"
 msgstr "straat"
 
-#: users/models.py:82 users/models.py:271
+#: users/models.py:88 users/models.py:283
 msgid "Street name and number."
 msgstr "Straatnaam en nummer."
 
-#: users/models.py:83 users/models.py:272
+#: users/models.py:89 users/models.py:284
 msgid "postal code"
 msgstr "postcode"
 
-#: users/models.py:84 users/models.py:273
+#: users/models.py:90 users/models.py:285
 msgid "city"
 msgstr "stad"
 
-#: users/models.py:87
+#: users/models.py:93
 msgid "phone"
 msgstr "telefoon"
 
-#: users/models.py:88
+#: users/models.py:94
 msgid "Home phone number"
 msgstr "Thuistelefoon"
 
-#: users/models.py:90
+#: users/models.py:96
 msgid "mobile phone number"
 msgstr "mobiel"
 
-#: users/models.py:91
+#: users/models.py:97
 msgid "Mobile phone number"
 msgstr "Mobiele telefoon"
 
-#: users/models.py:93
+#: users/models.py:99
 msgid "birth_date"
 msgstr "geboortedatum"
 
-#: users/models.py:95
+#: users/models.py:101
 msgid "picture"
 msgstr "foto"
 
-#: users/models.py:96
+#: users/models.py:102
 msgid "Profile picture"
 msgstr "Profielfoto"
 
-#: users/models.py:98
+#: users/models.py:104
 msgid "Short 'about me' text"
 msgstr "Korte 'over mij' tekst"
 
-#: users/models.py:101
+#: users/models.py:107
 msgid "member type"
 msgstr "type lid"
 
-#: users/models.py:103 users/models.py:244
+#: users/models.py:109 users/models.py:256
 msgid "district"
 msgstr "wijk"
 
-#: users/models.py:107 users/models.py:276
+#: users/models.py:114 users/models.py:270
+msgid "district function"
+msgstr "wijkindeling"
+
+#: users/models.py:117 users/models.py:288
 msgid "family"
 msgstr "familie"
 
-#: users/models.py:113
+#: users/models.py:123
 msgid "external code"
 msgstr "externe code"
 
-#: users/models.py:120
+#: users/models.py:132
 msgid "user"
 msgstr "gebruiker"
 
-#: users/models.py:187
+#: users/models.py:199
 msgid "User 2 is `relation type` of user 1."
 msgstr "Gebruiker 2 is `relatietype` van gebruiker 1."
 
-#: users/models.py:194
+#: users/models.py:206
 msgid "user relation"
 msgstr "gebruikersrelatie"
 
-#: users/models.py:195
+#: users/models.py:207
 msgid "user relations"
 msgstr "gebruikersrelaties"
 
-#: users/models.py:214
+#: users/models.py:226
 msgid "name (male)"
 msgstr "naam (man)"
 
-#: users/models.py:215
+#: users/models.py:227
 msgid "name (female)"
 msgstr "naam (vrouw)"
 
-#: users/models.py:217
+#: users/models.py:229
 msgid "reverse name (male)"
 msgstr "naam (man), omgekeerde richting"
 
-#: users/models.py:218
+#: users/models.py:230
 msgid "reverse name (female)"
 msgstr "naam (vrouw), omgekeerde richting"
 
-#: users/models.py:221
+#: users/models.py:233
 msgid "Reverse direction of the relation"
 msgstr "Omgekeerde richting van de relatie"
 
-#: users/models.py:225
+#: users/models.py:237
 msgid "is partner?"
 msgstr "is partner?"
 
-#: users/models.py:226
+#: users/models.py:238
 msgid "is child/parent?"
 msgstr "is kind/ouder?"
 
-#: users/models.py:229
+#: users/models.py:241
 msgid "relation type"
 msgstr "relatietype"
 
-#: users/models.py:230
+#: users/models.py:242
 msgid "relation types"
 msgstr "relatietypes"
 
-#: users/models.py:237
+#: users/models.py:249
 #, python-brace-format
 msgid "{0}/{1} (reverse: {2}/{3})"
 msgstr "{0}/{1} (omgekeerd: {2}/{3})"
 
-#: users/models.py:245
+#: users/models.py:257
 msgid "districts"
 msgstr "wijken"
 
-#: users/models.py:255
+#: users/models.py:267
 msgid "Describe what someone with this function does."
 msgstr "Beschrijf wat iemand met deze functie doet."
 
-#: users/models.py:258
-msgid "district function"
-msgstr "wijkindeling"
-
-#: users/models.py:259
+#: users/models.py:271
 msgid "district functions"
 msgstr "wijkindelingen"
 
-#: users/models.py:267
+#: users/models.py:279
 msgid "Last name of the householder."
 msgstr "Familienaam van het gezinshoofd."
 
-#: users/models.py:277
+#: users/models.py:289
 msgid "families"
 msgstr "families"
 
-#: users/models.py:281
+#: users/models.py:293
 #, python-brace-format
 msgid "Fam. {name}"
 msgstr "Fam. {name}"

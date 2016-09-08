@@ -435,11 +435,11 @@ LEAFLET_CONFIG = {
 #
 # EMAIL addresses
 #
-EMAIL_POD = 'pod@koningskerk.nu'
-EMAIL_ORGANIST = 'organist@koningskerk.nu'
-EMAIL_BEAMIST = 'beamist@koningskerk.nu'
-EMAIL_KOSTER = 'koster@koningskerk.nu'
-EMAIL_PREACHER = 'predikant@koningskerk.nu'
+EMAIL_POD = 'pod@langerak.gkv.nl'
+EMAIL_ORGANIST = 'organist@langerak.gkv.nl'
+EMAIL_BEAMIST = 'beamist@langerak.gkv.nl'
+EMAIL_KOSTER = 'koster@langerak.gkv.nl'
+EMAIL_PREACHER = 'predikant@langerak.gkv.nl'
 
 
 #
