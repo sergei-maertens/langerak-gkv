@@ -79,7 +79,7 @@ class LiturgyAdmin(ImportExportActionModelAdmin):
 
     def _send_mail(self, obj, recipients):
         subject = 'Liturgie kerkdienst'
-        body = render_to_string('liturgies/mail.html', {'liturgies': [obj]})
+        body = render_to_string('liturgies/mail.html', {'liturgies': [obj], 'single': True})
         template = MailTemplate.objects.filter(template_type=Templates.liturgy).first()
         if template is not None:
             extra_churches = ', '.join(list(obj.other_churches.values_list('name', flat=True)))
@@ -89,6 +89,7 @@ class LiturgyAdmin(ImportExportActionModelAdmin):
                 'liturgy_details': mark_safe(body),
                 'extra_churches': '+ {}'.format(extra_churches) if extra_churches else '',
                 'datetime': '{}, {}'.format(date(obj.date, 'l j F'), time(obj.service.time, 'H.i')),
+                'part_of_day': obj.part_of_day,
             })
 
         initial = {

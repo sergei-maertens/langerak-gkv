@@ -66,6 +66,20 @@ class Liturgy(models.Model):
             collections.append(self.collection_goal3)
         return collections
 
+    @property
+    def part_of_day(self):
+        """
+        Returns the string representation of the part of the day when the liturgy happens.
+
+        E.g. 'morning', 'afternoon', 'evening'
+        """
+        service_time = self.service.time
+        if service_time.hour < 12:
+            return _('morning')
+        elif service_time.hour < 17:
+            return _('afternoon')
+        return _('evening')
+
 
 class Service(models.Model):
     name = models.CharField(_('service name'), max_length=50)
@@ -79,10 +93,11 @@ class MailRecipient(models.Model):
 
     class Functions(DjangoChoices):
         preacher = ChoiceItem('0preacher', _('preacher (%s)') % settings.EMAIL_PREACHER)
-        organist = ChoiceItem('1organist', _('organist (%s)') % settings.EMAIL_ORGANIST)
-        beamist = ChoiceItem('2beamist', _('beamist (%s)') % settings.EMAIL_BEAMIST)
         koster = ChoiceItem('koster', _('koster (%s)') % settings.EMAIL_KOSTER)
-        other = ChoiceItem('3other', _('other'))
+        beamist = ChoiceItem('2beamist', _('beamist (%s)') % settings.EMAIL_BEAMIST)
+        organist = ChoiceItem('1organist', _('organist (%s)') % settings.EMAIL_ORGANIST)
+        bible_goup = ChoiceItem('biblegroup', _('bible group (%s)' % settings.EMAIL_BIBLE_GROUP))
+        preach_creation = ChoiceItem('preach_creation', _('preach creation (%s)' % settings.EMAIL_PREACH_CREATION))
 
     liturgy = models.ForeignKey('Liturgy', verbose_name=_('liturgy'))
     user = models.ForeignKey(settings.AUTH_USER_MODEL, max_length=100, blank=True, null=True)

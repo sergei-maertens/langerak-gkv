@@ -440,6 +440,8 @@ EMAIL_ORGANIST = 'organist@langerak.gkv.nl'
 EMAIL_BEAMIST = 'beamist@langerak.gkv.nl'
 EMAIL_KOSTER = 'koster@langerak.gkv.nl'
 EMAIL_PREACHER = 'predikant@langerak.gkv.nl'
+EMAIL_BIBLE_GROUP = 'bijbelleesgroep@langerak.gkv.nl'
+EMAIL_PREACH_CREATION = 'preekvoorziening@langerak.gkv.nl'
 
 
 #
