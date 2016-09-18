@@ -44,11 +44,12 @@ class MailTemplate(models.Model):
         Templates.liturgy: {
             'subject': [
                 Variable('extra_churches'),
-                Variable('datetime')
+                Variable('datetime'),
             ],
             'body': [
                 Variable('extra_churches'),
                 Variable('day'),
+                Variable('part_of_day'),
                 Variable('liturgy_details', required=True)
             ]
         }
