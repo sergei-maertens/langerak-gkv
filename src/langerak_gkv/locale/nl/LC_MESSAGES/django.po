@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-18 14:18+0200\n"
-"PO-Revision-Date: 2016-09-18 14:18+0020\n"
+"POT-Creation-Date: 2016-09-18 14:24+0200\n"
+"PO-Revision-Date: 2016-09-18 14:26+0020\n"
 "Last-Translator: Sergei Maertens <sergeimaertens@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -439,7 +439,7 @@ msgstr "hoofdvers"
 msgid "service theme"
 msgstr "theme dienst"
 
-#: liturgies/models.py:27 liturgies/models.py:41 liturgies/models.py:101
+#: liturgies/models.py:27 liturgies/models.py:41 liturgies/models.py:102
 #: liturgies/signals.py:16
 msgid "liturgy"
 msgstr "kerkdienst"
@@ -508,7 +508,7 @@ msgstr "predikant (%s)"
 
 #: liturgies/models.py:96
 #, python-format
-msgid "organist (%s)"
+msgid "koster (%s)"
 msgstr "organist (%s)"
 
 #: liturgies/models.py:97
@@ -518,12 +518,19 @@ msgstr "beamist (%s)"
 
 #: liturgies/models.py:98
 #, python-format
-msgid "koster (%s)"
+msgid "organist (%s)"
 msgstr "organist (%s)"
 
 #: liturgies/models.py:99
-msgid "other"
-msgstr "overige"
+#, python-format
+msgid "bible group (%s)"
+msgstr "bijbelleesgroep (%s)"
+
+#: liturgies/models.py:100
+#, python-format
+#| msgid "preacher (%s)"
+msgid "preach creation (%s)"
+msgstr "preekvoorziening (%s)"
 
 #: liturgies/templates/admin/liturgies/mail.html:15
 msgid "Send liturgy mailing"
@@ -1471,6 +1478,9 @@ msgstr "loglijn"
 #: worklog/models.py:16
 msgid "log entries"
 msgstr "loglijnen"
+
+#~ msgid "other"
+#~ msgstr "overige"
 
 #~ msgid "no author"
 #~ msgstr "geen auteur"

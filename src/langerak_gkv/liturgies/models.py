@@ -93,10 +93,11 @@ class MailRecipient(models.Model):
 
     class Functions(DjangoChoices):
         preacher = ChoiceItem('0preacher', _('preacher (%s)') % settings.EMAIL_PREACHER)
-        organist = ChoiceItem('1organist', _('organist (%s)') % settings.EMAIL_ORGANIST)
-        beamist = ChoiceItem('2beamist', _('beamist (%s)') % settings.EMAIL_BEAMIST)
         koster = ChoiceItem('koster', _('koster (%s)') % settings.EMAIL_KOSTER)
-        other = ChoiceItem('3other', _('other'))
+        beamist = ChoiceItem('2beamist', _('beamist (%s)') % settings.EMAIL_BEAMIST)
+        organist = ChoiceItem('1organist', _('organist (%s)') % settings.EMAIL_ORGANIST)
+        bible_goup = ChoiceItem('biblegroup', _('bible group (%s)' % settings.EMAIL_BIBLE_GROUP))
+        preach_creation = ChoiceItem('preach_creation', _('preach creation (%s)' % settings.EMAIL_PREACH_CREATION))
 
     liturgy = models.ForeignKey('Liturgy', verbose_name=_('liturgy'))
     user = models.ForeignKey(settings.AUTH_USER_MODEL, max_length=100, blank=True, null=True)
