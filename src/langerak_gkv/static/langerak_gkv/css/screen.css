@@ -1208,6 +1208,35 @@ body.cms-page .carousel-inner .item img {
   margin-top: 30px;
 }
 
+/* line 3, ../../../sass/components/users/_birthdays-list.scss */
+.birthdays-list .birthdays-list__month {
+  background-color: #70BDBD;
+  color: #FFFFFF;
+  text-align: center;
+  padding: 5px;
+}
+
+/* line 1, ../../../sass/components/users/_birthday.scss */
+.birthday {
+  height: 100px;
+  margin-top: 10px;
+  text-align: center;
+}
+/* line 6, ../../../sass/components/users/_birthday.scss */
+.birthday .birthday__name {
+  font-weight: 600;
+  line-height: 100px;
+}
+/* line 11, ../../../sass/components/users/_birthday.scss */
+.birthday .birthday__date {
+  line-height: 100px;
+}
+/* line 16, ../../../sass/components/users/_birthday.scss */
+.birthday .birthday__profile-picture > img {
+  width: 100px;
+  height: 100px;
+}
+
 /* line 2, ../../../sass/partials/apps/_activities.scss */
 body.calendar fieldset {
   background-color: #FFFFFF;

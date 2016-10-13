@@ -1,0 +1,21 @@
+.birthday {
+  height: 100px;
+  margin-top: 10px;
+  text-align: center;
+
+  .birthday__name {
+    font-weight: 600;
+    line-height: 100px;
+  }
+
+  .birthday__date {
+    line-height: 100px;
+  }
+
+  .birthday__profile-picture {
+    > img {
+      width: 100px;
+      height: 100px;
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{% load thumbnail %}
+<section class="birthdays-list">
+    {% for profile in profiles %}
+
+        {% ifchanged profile.birthdate.month %}
+            <h2 class="birthdays-list__month">{{ profile.birthdate|date:"F"|capfirst }}</h2>
+        {% endifchanged %}
+
+        <div class="birtdays-list__profile birthday row">
+            <div class="col-md-2">
+                <span class="birthday__date">{{ profile.birthdate|date:"d b" }}</span>
+            </div>
+
+            <div class="col-md-4">
+                <a href="{{ profile.get_absolute_url }}" class="birthday__name">
+                    {{ profile.get_full_name }}
+                </a>
+            </div>
+
+            <div class="col-md-6">
+                <span class="birthday__profile-picture">
+                    {% if profile.picture %}
+                        <img src="{{ profile.picture|thumbnail_url:'small' }}">
+                    {% else %}
+                        <i class="fa fa-user fa-3x"></i>
+                    {% endif %}
+                </span>
+            </div>
+        </div>
+    {% endfor %}
+</section>
