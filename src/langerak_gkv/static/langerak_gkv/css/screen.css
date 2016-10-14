@@ -3,7 +3,7 @@
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
 @import url(http://fonts.googleapis.com/css?family=Ubuntu:400,700,400italic);
-/* line 1, ../../../sass/partials/_grid.scss */
+/* line 3, ../../../sass/partials/_grid.scss */
 .col-xs-5ths,
 .col-sm-5ths,
 .col-md-5ths,
@@ -14,28 +14,28 @@
   padding-left: 15px;
 }
 
-/* line 11, ../../../sass/partials/_grid.scss */
+/* line 13, ../../../sass/partials/_grid.scss */
 .col-xs-5ths {
   width: 20%;
   float: left;
 }
 
 @media (min-width: 768px) {
-  /* line 16, ../../../sass/partials/_grid.scss */
+  /* line 18, ../../../sass/partials/_grid.scss */
   .col-sm-5ths {
     width: 20%;
     float: left;
   }
 }
 @media (min-width: 992px) {
-  /* line 22, ../../../sass/partials/_grid.scss */
+  /* line 24, ../../../sass/partials/_grid.scss */
   .col-md-5ths {
     width: 20%;
     float: left;
   }
 }
 @media (min-width: 1200px) {
-  /* line 28, ../../../sass/partials/_grid.scss */
+  /* line 30, ../../../sass/partials/_grid.scss */
   .col-lg-5ths {
     width: 20%;
     float: left;
@@ -125,71 +125,72 @@ body {
   color: #584C40;
 }
 
-/* line 9, ../../../sass/partials/_base.scss */
-.narrow {
-  padding-left: 50px;
-  padding-right: 50px;
+@media (min-width: 768px) {
+  /* line 10, ../../../sass/partials/_base.scss */
+  .narrow {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+  /* line 15, ../../../sass/partials/_base.scss */
+  .narrow .narrow {
+    margin-left: -50px;
+    margin-right: -50px;
+  }
 }
-/* line 14, ../../../sass/partials/_base.scss */
-.narrow .narrow {
-  margin-left: -50px;
-  margin-right: -50px;
-}
-
-/* line 23, ../../../sass/partials/_base.scss */
+/* line 25, ../../../sass/partials/_base.scss */
 .gutter-small, .gutter-small .row, .gutter-small .form-horizontal .form-group {
   margin-left: -5px;
   margin-right: -5px;
 }
-/* line 28, ../../../sass/partials/_base.scss */
+/* line 30, ../../../sass/partials/_base.scss */
 .gutter-small > *, .gutter-small .row > *, .gutter-small .form-group > * {
   padding-left: 5px;
   padding-right: 5px;
 }
 
-/* line 34, ../../../sass/partials/_base.scss */
+/* line 36, ../../../sass/partials/_base.scss */
 #content {
   background-color: #E9E9E9;
   padding-top: 25px;
 }
 
-/* line 39, ../../../sass/partials/_base.scss */
+/* line 41, ../../../sass/partials/_base.scss */
 article {
   background-color: #FFFFFF;
   padding: 15px;
   margin-bottom: 15px;
 }
-/* line 44, ../../../sass/partials/_base.scss */
+/* line 46, ../../../sass/partials/_base.scss */
 article h1, article h2 {
   color: #b9c01c;
   font-weight: bold;
 }
-/* line 49, ../../../sass/partials/_base.scss */
+/* line 51, ../../../sass/partials/_base.scss */
 article footer {
   text-align: right;
 }
 
-/* line 54, ../../../sass/partials/_base.scss */
+/* line 56, ../../../sass/partials/_base.scss */
 .page-block {
   background-color: #FFFFFF;
 }
 
-/* line 58, ../../../sass/partials/_base.scss */
+/* line 60, ../../../sass/partials/_base.scss */
 img {
   width: 100%;
 }
 
-/* line 62, ../../../sass/partials/_base.scss */
+/* line 64, ../../../sass/partials/_base.scss */
 .margin-top {
   margin-top: 25px;
 }
 
-/* line 66, ../../../sass/partials/_base.scss */
+/* line 68, ../../../sass/partials/_base.scss */
 .section {
   margin-top: 10px;
 }
 
-/* line 70, ../../../sass/partials/_base.scss */
+/* line 72, ../../../sass/partials/_base.scss */
 .page-divider {
   font-weight: bold;
   background-color: #FFFFFF;
@@ -201,40 +202,40 @@ img {
 /*
  * Buttons
  */
-/* line 81, ../../../sass/partials/_base.scss */
+/* line 83, ../../../sass/partials/_base.scss */
 .btn {
   -moz-border-radius: 0;
   -webkit-border-radius: 0;
   border-radius: 0;
   text-transform: uppercase;
 }
-/* line 85, ../../../sass/partials/_base.scss */
+/* line 87, ../../../sass/partials/_base.scss */
 .btn, .btn:hover, .btn:active, .btn.active, .btn:focus {
   background-image: none;
   border: none;
   outline: none;
 }
-/* line 91, ../../../sass/partials/_base.scss */
+/* line 93, ../../../sass/partials/_base.scss */
 .btn.btn-default {
   background-color: #D9E12E;
   color: #584C40;
 }
-/* line 96, ../../../sass/partials/_base.scss */
+/* line 98, ../../../sass/partials/_base.scss */
 .btn.btn-action {
   background-color: #EC7537;
   color: #FFFFFF;
   font-weight: bold;
 }
-/* line 102, ../../../sass/partials/_base.scss */
+/* line 104, ../../../sass/partials/_base.scss */
 .btn.read-more {
   font-weight: bold;
 }
-/* line 105, ../../../sass/partials/_base.scss */
+/* line 107, ../../../sass/partials/_base.scss */
 .btn.read-more .glyphicon {
   color: #FFFFFF;
 }
 
-/* line 113, ../../../sass/partials/_base.scss */
+/* line 115, ../../../sass/partials/_base.scss */
 a.orange, a.green, a.blue, a.purple,
 .btn.orange,
 .btn.green,
@@ -245,7 +246,7 @@ a.orange, a.green, a.blue, a.purple,
   padding: 6px 12px;
   font-weight: bolder;
 }
-/* line 122, ../../../sass/partials/_base.scss */
+/* line 124, ../../../sass/partials/_base.scss */
 a.orange.read-more, a.green.read-more, a.blue.read-more, a.purple.read-more,
 .btn.orange.read-more,
 .btn.green.read-more,
@@ -253,7 +254,7 @@ a.orange.read-more, a.green.read-more, a.blue.read-more, a.purple.read-more,
 .btn.purple.read-more {
   padding-right: 0;
 }
-/* line 124, ../../../sass/partials/_base.scss */
+/* line 126, ../../../sass/partials/_base.scss */
 a.orange.read-more .glyphicon-play, a.green.read-more .glyphicon-play, a.blue.read-more .glyphicon-play, a.purple.read-more .glyphicon-play,
 .btn.orange.read-more .glyphicon-play,
 .btn.green.read-more .glyphicon-play,
@@ -262,43 +263,43 @@ a.orange.read-more .glyphicon-play, a.green.read-more .glyphicon-play, a.blue.re
   margin-right: 12px;
   color: #FFFFFF;
 }
-/* line 131, ../../../sass/partials/_base.scss */
+/* line 133, ../../../sass/partials/_base.scss */
 a.orange,
 .btn.orange {
   background-color: #EC7537;
 }
-/* line 135, ../../../sass/partials/_base.scss */
+/* line 137, ../../../sass/partials/_base.scss */
 a.purple,
 .btn.purple {
   background-color: #6D095E;
 }
-/* line 139, ../../../sass/partials/_base.scss */
+/* line 141, ../../../sass/partials/_base.scss */
 a.green,
 .btn.green {
   background-color: #D9E12E;
   color: #584C40;
 }
-/* line 144, ../../../sass/partials/_base.scss */
+/* line 146, ../../../sass/partials/_base.scss */
 a.blue,
 .btn.blue {
   background-color: #70BDBD;
 }
 
-/* line 150, ../../../sass/partials/_base.scss */
+/* line 152, ../../../sass/partials/_base.scss */
 .popover {
   background-color: #A23854;
   border-color: rgba(109, 9, 94, 0.5);
 }
-/* line 154, ../../../sass/partials/_base.scss */
+/* line 156, ../../../sass/partials/_base.scss */
 .popover .popover-content {
   color: #FFFFFF;
   padding: 3px 5px;
 }
-/* line 159, ../../../sass/partials/_base.scss */
+/* line 161, ../../../sass/partials/_base.scss */
 .popover.top .arrow {
   border-top-color: rgba(109, 9, 94, 0.5);
 }
-/* line 162, ../../../sass/partials/_base.scss */
+/* line 164, ../../../sass/partials/_base.scss */
 .popover.top .arrow:after {
   border-top-color: #A23854;
 }
@@ -1214,27 +1215,46 @@ body.cms-page .carousel-inner .item img {
   color: #FFFFFF;
   text-align: center;
   padding: 5px;
+  margin-top: 0;
 }
 
 /* line 1, ../../../sass/components/users/_birthday.scss */
 .birthday {
-  height: 100px;
-  margin-top: 10px;
+  height: 75px;
   text-align: center;
 }
-/* line 6, ../../../sass/components/users/_birthday.scss */
+/* line 7, ../../../sass/components/users/_birthday.scss */
 .birthday .birthday__name {
   font-weight: 600;
-  line-height: 100px;
+  line-height: 75px;
 }
-/* line 11, ../../../sass/components/users/_birthday.scss */
+/* line 12, ../../../sass/components/users/_birthday.scss */
 .birthday .birthday__date {
-  line-height: 100px;
+  line-height: 75px;
 }
 /* line 16, ../../../sass/components/users/_birthday.scss */
+.birthday .birthday__profile-picture {
+  line-height: 75px;
+}
+/* line 19, ../../../sass/components/users/_birthday.scss */
 .birthday .birthday__profile-picture > img {
-  width: 100px;
-  height: 100px;
+  width: 75px;
+  height: 75px;
+}
+
+/* line 2, ../../../sass/components/users/_months-list.scss */
+.months-list .months-list__title {
+  background-color: #70BDBD;
+  color: #FFFFFF;
+  text-align: center;
+  padding: 5px;
+  margin-top: 0;
+}
+/* line 10, ../../../sass/components/users/_months-list.scss */
+.months-list .months-list__link {
+  display: block;
+  margin-left: 15px;
+  padding: 5px 0;
 }
 
 /* line 2, ../../../sass/partials/apps/_activities.scss */

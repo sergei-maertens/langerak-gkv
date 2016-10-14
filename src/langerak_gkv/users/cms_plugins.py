@@ -1,4 +1,5 @@
 from django.contrib.auth import get_user_model
+from django.utils.dates import MONTHS
 from django.utils.translation import ugettext_lazy as _
 
 from cms.models import CMSPlugin
@@ -20,4 +21,5 @@ class BirthdayCalendarPlugin(CMSPluginBase):
         users = list(User.objects.filter(birthdate__isnull=False))
         users.sort(key=lambda u: (u.birthdate.month, u.birthdate.day))
         context['profiles'] = users
+        context['months'] = [m[1] for m in sorted(MONTHS.items())]
         return context

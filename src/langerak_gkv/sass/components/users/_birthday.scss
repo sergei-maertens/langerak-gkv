@@ -1,21 +1,24 @@
 .birthday {
-  height: 100px;
-  margin-top: 10px;
+  $height: 75px;
+
+  height: $height;
   text-align: center;
 
   .birthday__name {
     font-weight: 600;
-    line-height: 100px;
+    line-height: $height;
   }
 
   .birthday__date {
-    line-height: 100px;
+    line-height: $height;
   }
 
   .birthday__profile-picture {
+    line-height: $height;
+
     > img {
-      width: 100px;
-      height: 100px;
+      width: $height;
+      height: $height;
     }
   }
 }
