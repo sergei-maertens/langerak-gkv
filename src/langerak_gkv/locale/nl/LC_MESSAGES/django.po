@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-18 14:24+0200\n"
-"PO-Revision-Date: 2016-09-18 14:26+0020\n"
+"POT-Creation-Date: 2016-10-16 19:41+0200\n"
+"PO-Revision-Date: 2016-10-16 19:42+0020\n"
 "Last-Translator: Sergei Maertens <sergeimaertens@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -439,10 +439,11 @@ msgstr "hoofdvers"
 msgid "service theme"
 msgstr "theme dienst"
 
-#: liturgies/models.py:27 liturgies/models.py:41 liturgies/models.py:102
-#: liturgies/signals.py:16
+#: liturgies/models.py:27
+#| msgid "liturgy"
+msgctxt "admin field"
 msgid "liturgy"
-msgstr "kerkdienst"
+msgstr "liturgie"
 
 #: liturgies/models.py:28
 msgid "audiofile"
@@ -480,6 +481,10 @@ msgstr "andere kerken"
 msgid "remarks (internal)"
 msgstr "opmerkingen (intern)"
 
+#: liturgies/models.py:41 liturgies/models.py:102 liturgies/signals.py:16
+msgid "liturgy"
+msgstr "kerkdienst"
+
 #: liturgies/models.py:78 liturgies/tests/test_liturgy_model.py:17
 #: liturgies/tests/test_liturgy_model.py:18
 msgid "morning"
@@ -509,7 +514,7 @@ msgstr "predikant (%s)"
 #: liturgies/models.py:96
 #, python-format
 msgid "koster (%s)"
-msgstr "organist (%s)"
+msgstr "koster (%s)"
 
 #: liturgies/models.py:97
 #, python-format
@@ -528,7 +533,6 @@ msgstr "bijbelleesgroep (%s)"
 
 #: liturgies/models.py:100
 #, python-format
-#| msgid "preacher (%s)"
 msgid "preach creation (%s)"
 msgstr "preekvoorziening (%s)"
 
@@ -1049,6 +1053,11 @@ msgstr "gebruikers"
 msgid "Users"
 msgstr "Gebruikers"
 
+#: users/cms_plugins.py:13
+#| msgid "Find in calendar"
+msgid "Birthday calendar"
+msgstr "Verjaardagskalender"
+
 #: users/forms.py:20
 msgid "A user with that email already exists."
 msgstr "Er bestaat al een gebruiker met dit e-mailadres."
@@ -1356,6 +1365,10 @@ msgstr[0] ""
 msgstr[1] ""
 "\n"
 "Geen verjaardagen in de komende %(weeks)s weken."
+
+#: users/templates/users/cmsplugin/birthdays.html:41
+msgid "Months"
+msgstr "Ga naar maand"
 
 #: users/templates/users/login.html:10
 msgid ""

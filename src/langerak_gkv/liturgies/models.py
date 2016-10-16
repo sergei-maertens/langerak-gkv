@@ -2,7 +2,7 @@ from django.conf import settings
 from django.core.urlresolvers import reverse
 from django.db import models
 from django.utils.encoding import python_2_unicode_compatible
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import ugettext_lazy as _, pgettext_lazy
 
 from djchoices import DjangoChoices, ChoiceItem
 
@@ -24,7 +24,7 @@ class Liturgy(models.Model):
     main_chapter = models.CharField(_('main chapter'), max_length=50, blank=True)
     main_verse = models.CharField(_('main verse'), max_length=50, blank=True)
     service_theme = models.CharField(_('service theme'), max_length=255, blank=True)
-    liturgy = models.TextField(_('liturgy'))
+    liturgy = models.TextField(pgettext_lazy('admin field', 'liturgy'))
     audiofile = models.FileField(_('audiofile'), upload_to='liturgies/audio', max_length=100, blank=True)
     beamist = models.CharField(_('beamist'), max_length=50, blank=True)  # search on function: beamists
     organist = models.CharField(_('organist'), max_length=50, blank=True)  # searches on function: organists
@@ -102,7 +102,7 @@ class MailRecipient(models.Model):
     liturgy = models.ForeignKey('Liturgy', verbose_name=_('liturgy'))
     user = models.ForeignKey(settings.AUTH_USER_MODEL, max_length=100, blank=True, null=True)
     email = models.EmailField(max_length=254, blank=True)
-    function = models.CharField(choices=Functions.choices, max_length=10,
+    function = models.CharField(choices=Functions.choices, max_length=50,
                                 validators=[Functions.validator], blank=True)
     is_sent = models.BooleanField(default=False)
 
