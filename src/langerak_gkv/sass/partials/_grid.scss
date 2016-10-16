@@ -1,3 +1,5 @@
+$breakpoint-mobile: 768px;
+
 .col-xs-5ths,
 .col-sm-5ths,
 .col-md-5ths,
@@ -12,7 +14,7 @@
     width: 20%;
     float: left;
 }
-@media (min-width: 768px) {
+@media (min-width: $breakpoint-mobile) {
 .col-sm-5ths {
         width: 20%;
         float: left;

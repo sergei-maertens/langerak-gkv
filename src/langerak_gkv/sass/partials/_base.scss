@@ -6,14 +6,16 @@ body {
   color: $text-dark;
 }
 
-.narrow {
-  $spacing: 50px;
-  padding-left: $spacing;
-  padding-right: $spacing;
-
+@media (min-width: $breakpoint-mobile) {
   .narrow {
-    margin-left: -$spacing;
-    margin-right: -$spacing;
+    $spacing: 50px;
+    padding-left: $spacing;
+    padding-right: $spacing;
+
+    .narrow {
+      margin-left: -$spacing;
+      margin-right: -$spacing;
+    }
   }
 }
 
