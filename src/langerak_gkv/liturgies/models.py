@@ -122,12 +122,11 @@ class MailRecipient(models.Model):
             return self.email
         if self.user and self.user.email:
             return self.user.email
-        if self.function == self.Functions.organist:
-            return settings.EMAIL_ORGANIST
-        elif self.function == self.Functions.beamist:
-            return settings.EMAIL_BEAMIST
-        elif self.function == self.Functions.preacher:
-            return settings.EMAIL_PREACHER
-        elif self.function == self.Functions.koster:
-            return settings.EMAIL_KOSTER
+
+        value_to_attr = {value.value: key for key, value in self.Functions._fields.items()}
+        attr = value_to_attr.get(self.function)
+        if attr is not None:
+            email = getattr(settings, 'EMAIL_%s' % attr.upper(), None)
+            if email is not None:
+                return email
         raise ValueError('Could not determine e-mail address')
