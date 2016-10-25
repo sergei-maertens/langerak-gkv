@@ -5,7 +5,7 @@
 
             {% ifchanged profile.birthdate.month %}
                 <div class="row"><div class="col-xs-12">
-                <h3 class="birthdays-list__month" id="month{{ profile.birthdate|date:"j" }}">
+                <h3 class="birthdays-list__month" id="month{{ profile.birthdate|date:"n" }}">
                     {{ profile.birthdate|date:"F"|capfirst }}
                 </h3>
                 </div></div>
