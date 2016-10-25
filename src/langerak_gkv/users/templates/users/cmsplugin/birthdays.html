@@ -5,14 +5,14 @@
 
             {% ifchanged profile.birthdate.month %}
                 <div class="row"><div class="col-xs-12">
-                <h3 class="birthdays-list__month" id="month{{ profile.birthdate|date:"M" }}">
+                <h3 class="birthdays-list__month" id="month{{ profile.birthdate|date:"j" }}">
                     {{ profile.birthdate|date:"F"|capfirst }}
                 </h3>
                 </div></div>
             {% endifchanged %}
 
             <div class="birtdays-list__profile birthday row">
-                <div class="col-xs-4 col-sm-6 ol-md-4">
+                <div class="col-xs-4 col-sm-6 col-md-4">
                     {% ifchanged profile.birthdate|date:"d M" %}
                         <span class="birthday__date">{{ profile.birthdate|date:"d b" }}</span>
                     {% endifchanged %}
