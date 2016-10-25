@@ -1,8 +1,10 @@
-import urllib
+from __future__ import absolute_import, unicode_literals
+
 from datetime import date, datetime, time
 
 from django.db.models import Q
 from django.utils import timezone
+from django.utils.http import urlencode
 from django.views.generic import (
     CreateView, DayArchiveView, TemplateView, DetailView,
     WeekArchiveView, ListView
@@ -79,7 +81,7 @@ class ActivitySearchView(ActivitiesTodayMixin, ListView):
 
     def get_context_data(self, **kwargs):
         context = super(ActivitySearchView, self).get_context_data(**kwargs)
-        context['qs'] = urllib.urlencode({'q': self.request.GET.get('q')})
+        context['qs'] = urlencode({'q': self.request.GET.get('q') or ''})
         return context
 
 
