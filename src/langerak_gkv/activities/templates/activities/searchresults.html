@@ -15,7 +15,7 @@
     {% for activity in activities %}
         {% ifchanged %}
             <h3 class="fc-day-header sub">
-                <strong>{{ activity.start_date|date:"l j F"|capfirst }}</strong>
+                <strong>{{ activity.start_date|date:"l j F Y"|capfirst }}</strong>
             </h3>
         {% endifchanged %}
         <a class="activity detail link" href="{{ activity.get_absolute_url }}">&bull; {{ activity.name }}</a>
