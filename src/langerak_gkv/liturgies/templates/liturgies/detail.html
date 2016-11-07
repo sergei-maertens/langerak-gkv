@@ -24,7 +24,7 @@
 
     <h3 class="fc-day-header sub">
         <strong>
-        {% filter capfirst %}{{ liturgy.date|date:"l j F" }} {% trans "at" %} {{ liturgy.service.time|time:"H.i" }} {% trans "hour" %}
+        {% filter capfirst %}{{ liturgy.date|date:"l j F Y" }} {% trans "at" %} {{ liturgy.service.time|time:"H.i" }} {% trans "hour" %}
         {% endfilter %}
         </strong>
     </h3>
