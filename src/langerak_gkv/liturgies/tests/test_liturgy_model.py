@@ -3,7 +3,9 @@ from datetime import time
 from django.test import TestCase
 from django.utils.translation import ugettext as _
 
-from .factories import LiturgyFactory
+from langerak_gkv.activities.models import Activity
+
+from .factories import LiturgyFactory, ServiceFactory
 
 
 class LiturgyTests(TestCase):
@@ -18,3 +20,13 @@ class LiturgyTests(TestCase):
         self.assertEqual(liturgy2.part_of_day, _('morning'))
         self.assertEqual(liturgy3.part_of_day, _('afternoon'))
         self.assertEqual(liturgy4.part_of_day, _('evening'))
+
+    def test_updates_activity(self):
+        liturgy = LiturgyFactory.create(service__time=time(16, 30))
+        activity = Activity.objects.get()
+        self.assertEqual(activity.start_time, time(16, 30))
+
+        liturgy.service = ServiceFactory.create(time=time(18, 30))
+        liturgy.save()
+        activity.refresh_from_db()
+        self.assertEqual(activity.start_time, time(18, 30))
