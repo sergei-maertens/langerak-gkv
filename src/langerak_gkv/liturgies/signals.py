@@ -23,8 +23,13 @@ def create_or_update_activity(sender, instance, created, **kwargs):
             type=act_type
         )
     else:
-        activities = instance.activity_set.exclude(start_date=instance.date, end_date=instance.date)
-        activities.update(start_date=instance.date, end_date=instance.date)
+        activities = instance.activity_set.all()
+        activities.update(
+            name=instance.service.name,
+            start_date=instance.date,
+            end_date=instance.date,
+            start_time=instance.service.time,
+        )
 
 
 @receiver(post_save, sender=Service, dispatch_uid='sync_service_activity')
