@@ -53,7 +53,7 @@ django-leaflet
 jsonfield
 
 # mailing
-django-yubin==
+django-yubin
 html2text
 
 
