@@ -181,6 +181,7 @@ INSTALLED_APPS = [
     'cms',
     'treebeard',
     'djangocms_text_ckeditor',
+    'djangocms_video',
     'filer',
     'cmsplugin_filer_file',
     'cmsplugin_filer_folder',
@@ -407,6 +408,7 @@ class FilerStyles(DjangoChoices):
     blue_rm = ChoiceItem('blue read-more', _('Read-more blue'))
     green_rm = ChoiceItem('green read-more', _('Read-more green'))
     purple_rm = ChoiceItem('purple read-more', _('Read-more purple'))
+
 
 FILER_LINK_STYLES = FilerStyles.choices
 

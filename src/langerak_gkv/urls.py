@@ -44,9 +44,11 @@ urlpatterns = patterns(
 # If settings.DEBUG is set to True, some URLs can be handled by Django.
 # Normally, these URLs should be covered by the webserver for optimization.
 if settings.DEBUG:
+    import debug_toolbar
     # Static files are handled by the staticfiles package. This section only
     # adds media files to be served as well.
     urlpatterns += patterns(
         '',
         url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT}),
+        url(r'^__debug__/', include(debug_toolbar.urls)),
     )

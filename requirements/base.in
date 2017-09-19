@@ -33,7 +33,7 @@ djangorestframework
 # cms
 django-sekizai
 django-cms
-djangocms-text-ckeditor
+djangocms-text-ckeditor>3.2
 django-filer
 django-mptt
 cmsplugin-filer

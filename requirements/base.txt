@@ -48,7 +48,7 @@ django-standard-form==1.1.1  # via aldryn-search
 django-treebeard==4.1.2   # via django-cms
 django-webtest==1.9.2
 django-yubin==0.3.0
-django==1.8.15
+django==1.8.18            # via aldryn-boilerplates, aldryn-search, cmsplugin-filer, django-choices, django-classy-tags, django-cms, django-filer, django-formtools, django-haystack, django-ical, django-leaflet, django-mptt, django-password-reset, django-rosetta, django-sniplates, django-standard-form, django-treebeard, djangocms-attributes-field, djangocms-grid, djangocms-oembed, easy-thumbnails, jsonfield
 django_compressor==2.0
 djangocms-admin-style==1.2.7  # via django-cms
 djangocms-attributes-field==0.3.0  # via djangocms-video
@@ -57,7 +57,7 @@ djangocms-grid==1.3.0
 djangocms-link==1.7.2
 djangocms-oembed==0.5
 djangocms-table==1.2
-djangocms-text-ckeditor==2.9.1
+djangocms-text-ckeditor==3.5.0
 djangocms-video==2.0.4
 djangorestframework==3.2.5
 docutils==0.14            # via sphinx
