@@ -1,0 +1,62 @@
+Django==1.8.18
+
+Sphinx==1.4
+Pillow==3.2.0
+django_compressor==2.0
+django-axes==1.6.0
+django-choices==1.4.2
+django-flat-theme==1.1.3
+django-sniplates==0.3.2
+easy-thumbnails==2.3
+django-class-based-auth-views==0.3
+django-image-cropping==1.0.3
+BeautifulSoup==3.2.1 # lxml & compressor
+django-autoslug==1.9.3
+django-rosetta==0.7.11
+Django<1.9
+
+django-ical==1.3
+html5lib==0.9999999
+
+# news letter
+# django-newsletter==0.5.2
+sorl-thumbnail==12.4a1
+-e git+https://github.com/sergei-maertens/django-newsletter.git@0.6-dev#egg=django-newsletter
+
+django-import-export
+django-password-reset
+
+# api/http
+requests
+djangorestframework
+
+# cms
+django-sekizai
+django-cms
+djangocms-text-ckeditor>3.2
+django-filer
+django-mptt
+cmsplugin-filer
+djangocms-link
+djangocms-column
+djangocms-oembed
+djangocms-grid
+djangocms-table
+djangocms-video
+
+# search
+elasticsearch
+django-haystack
+aldryn-search
+
+django-leaflet
+jsonfield
+
+# mailing
+django-yubin
+html2text
+
+
+# PDF export
+CairoSVG<2.0
+WeasyPrint==0.26
