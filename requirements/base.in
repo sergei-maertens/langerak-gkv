@@ -1,14 +1,13 @@
 psycopg2
 python-dotenv
 
-Django==1.8.18
+Django>=1.8,<2.0
 
 Sphinx
 Pillow>=5.4.1
 django_compressor
 django-axes
 django-choices
-django-flat-theme
 django-sniplates
 easy-thumbnails
 django-class-based-auth-views
@@ -18,7 +17,6 @@ django-autoslug
 django-rosetta
 
 django-ical
-html5lib
 
 # news letter
 # django-newsletter
@@ -37,7 +35,6 @@ django-sekizai
 django-cms==3.5.3
 djangocms-text-ckeditor>3.2
 django-filer
-django-mptt
 cmsplugin-filer>=1.1.3
 djangocms-link
 djangocms-column
@@ -49,7 +46,7 @@ djangocms-video
 # search
 elasticsearch
 django-haystack
-aldryn-search>=0.3.0
+aldryn-search>=1.0.1
 
 django-leaflet
 jsonfield

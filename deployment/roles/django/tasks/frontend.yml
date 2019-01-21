@@ -8,6 +8,11 @@
 #   bower: offline=yes path={{ project_home }}
 # bugged for now: https://github.com/ansible/ansible-modules-extras/issues/495
 
+# - name: Install dependencies with NPM
+#   npm:
+#     path: "{{ project_home }}"
+#     production: yes
+
 - name: Install dependencies with Bower
   command: /usr/local/bin/bower install
   args:

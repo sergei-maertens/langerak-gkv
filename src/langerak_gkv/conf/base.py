@@ -165,7 +165,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'flat',
     'django.contrib.admin',
 
     # order matters, needed for cms migrations
@@ -252,7 +251,7 @@ LOGGING = {
         },
         'null': {
             'level': 'DEBUG',
-            'class': 'django.utils.log.NullHandler',
+            'class': 'logging.NullHandler',
         },
         'console': {
             'level': 'DEBUG',
@@ -319,10 +318,10 @@ AXES_USE_USER_AGENT = False  # Default: False
 #
 
 AUTH_USER_MODEL = 'users.User'
-AUTHENTICATION_BACKENDS = (
+AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
     'langerak_gkv.users.backends.UsernameModelBackend',
-)
+]
 LOGIN_URL = 'users:login'
 LOGIN_REDIRECT_URL = '/'
 
