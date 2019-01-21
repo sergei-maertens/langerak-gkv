@@ -65,6 +65,6 @@ DEBUG_TOOLBAR_CONFIG = {
 
 # Override settings with local settings.
 try:
-    from settings_local import *
+    from .local import *  # noqa
 except ImportError:
     pass

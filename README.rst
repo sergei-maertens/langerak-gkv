@@ -52,7 +52,7 @@ below.
    used::
 
     $ python bootstrap.py <production|staging|test|development>
-    
+
 4. Activate your virtual environment and create the statics and database::
 
     $ source env/bin/activate
@@ -74,8 +74,8 @@ by this command::
 
     $ python src/manage.py runserver
 
-If you are making local, machine specific, changes, add them to 
-``src/langerak_gkv/conf/settings_local.py``. You can base this file on
+If you are making local, machine specific, changes, add them to
+``src/langerak_gkv/conf/local.py``. You can base this file on
 the example file included in the same directory.
 
 Enable SASS/Compass::
@@ -88,13 +88,13 @@ For more information on SASS and Compass, see: http://compass-style.org/
 Staging and production
 ----------------------
 
-Configure your webserver and/or WSGI handler. See: 
+Configure your webserver and/or WSGI handler. See:
 https://docs.djangoproject.com/en/dev/howto/deployment/
 
 Note that your wsgi script in ``src/langerak_gkv/wsgi.py already
 points to your staging|production settings.py file. This happens when
 bootstrapping your environment.
-    
+
 Update installation
 ===================
 
@@ -109,7 +109,7 @@ When updating an existing installation:
 
     $ hg pull --update
     $ pip install -r requirements/<production|staging|test|development>.txt
-    
+
 3. Update the statics and database::
 
     $ python src/manage.py collectstatic --link

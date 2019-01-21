@@ -12,7 +12,7 @@
 *~
 
 # Environment
-settings_local.py
+local.py
 /env/
 /media/
 /static/

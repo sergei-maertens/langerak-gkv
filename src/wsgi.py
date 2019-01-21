@@ -17,7 +17,8 @@ def setupenv():
     src_dir = os.path.dirname(os.path.abspath(__file__))
     sys.path = [src_dir] + sys.path
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "langerak_gkv.conf.settings")
+
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "langerak_gkv.conf.production")
 
 setupenv()
 application = get_wsgi_application()

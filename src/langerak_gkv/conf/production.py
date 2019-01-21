@@ -19,7 +19,7 @@ LOGGING['loggers'].update({
     },
 })
 
-from .settings_local import *
+from .local import *  # noqa
 
 #
 # Raven

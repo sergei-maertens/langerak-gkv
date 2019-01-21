@@ -12,7 +12,7 @@ services:
   - postgresql
 
 env:
-  - DJANGO_SETTINGS_MODULE=langerak_gkv.conf.settings_travis
+  - DJANGO_SETTINGS_MODULE=langerak_gkv.conf.travis
 
 install:
   - pip install --upgrade setuptools pip
