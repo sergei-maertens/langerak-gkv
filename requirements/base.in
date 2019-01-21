@@ -4,7 +4,7 @@ python-dotenv
 Django==1.8.18
 
 Sphinx
-Pillow
+Pillow>=5.4.1
 django_compressor
 django-axes
 django-choices
@@ -29,7 +29,7 @@ django-import-export
 django-password-reset
 
 # api/http
-requests
+requests>=2.21.0
 djangorestframework
 
 # cms
