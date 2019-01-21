@@ -8,8 +8,9 @@ from class_based_auth_views.views import LoginView, LogoutView
 
 from langerak_gkv.utils.pdf import PDFTemplateResponseMixin
 from langerak_gkv.utils.view_mixins import LoginRequiredMixin
+
+from .forms import LoginForm, ProfileUpdateForm, UserSearchForm
 from .models import User
-from .forms import UserSearchForm, LoginForm, ProfileUpdateForm
 
 
 class UserSearchMixin(FormMixin):

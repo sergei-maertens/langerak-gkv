@@ -10,7 +10,6 @@ from filer.models import File, Folder
 
 from ...models import Document
 
-
 CAT_KERKBLADEN = 41
 
 

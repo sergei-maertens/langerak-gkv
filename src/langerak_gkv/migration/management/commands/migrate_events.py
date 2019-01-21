@@ -3,10 +3,9 @@ import re
 
 from django.core.management.base import NoArgsCommand
 
-from langerak_gkv.migration.models import Event, Category
-from langerak_gkv.liturgies.models import Liturgy, Service
 from langerak_gkv.activities.models import Activity, ActivityType
-
+from langerak_gkv.liturgies.models import Liturgy, Service
+from langerak_gkv.migration.models import Category, Event
 
 CAT_KERKDIENST = 2
 CAT_TYPE_MAPPING = {}

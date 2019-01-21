@@ -2,7 +2,7 @@ import os
 
 from django.utils.translation import ugettext_lazy as _
 
-from djchoices import DjangoChoices, ChoiceItem
+from djchoices import ChoiceItem, DjangoChoices
 
 # Automatically figure out the BASE_DIR and PROJECT_DIR.
 DJANGO_PROJECT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), os.path.pardir))

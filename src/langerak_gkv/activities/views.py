@@ -6,13 +6,14 @@ from django.db.models import Q
 from django.utils import timezone
 from django.utils.http import urlencode
 from django.views.generic import (
-    CreateView, DayArchiveView, TemplateView, DetailView,
-    WeekArchiveView, ListView
+    CreateView, DayArchiveView, DetailView, ListView, TemplateView,
+    WeekArchiveView
 )
 
 from django_ical.views import ICalFeed
 
 from langerak_gkv.utils.view_mixins import PermissionRequiredMixin
+
 from .models import Activity
 
 

@@ -8,8 +8,12 @@ from .menu import LiturgiesMenu
 
 class LiturgiesApp(CMSApp):
     name = _('Liturgies')
-    urls = ['langerak_gkv.liturgies.urls']
-    menus = [LiturgiesMenu]
+
+    def get_menus(self, page=None, language=None, **kwargs):
+        return [LiturgiesMenu]
+
+    def get_urls(self, page=None, language=None, **kwargs):
+        return ['langerak_gkv.liturgies.urls']
 
 
 apphook_pool.register(LiturgiesApp)

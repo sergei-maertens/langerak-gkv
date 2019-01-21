@@ -1,10 +1,9 @@
 from django.conf.urls import url
 
 from .views import (
-    ActivityCalendarView, ActivityCreateView, ActivityDetailView,
-    ActivityWeekArchiveView, ActivityDayArchiveView, ActivitySearchView, Feed
+    ActivityCalendarView, ActivityCreateView, ActivityDayArchiveView,
+    ActivityDetailView, ActivitySearchView, ActivityWeekArchiveView, Feed
 )
-
 
 urlpatterns = [
     url(r'^$', ActivityCalendarView.as_view(), name='calendar'),

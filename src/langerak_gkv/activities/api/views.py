@@ -1,8 +1,8 @@
 from rest_framework import generics
 
 from ..models import Activity
-from .serializers import ActivitySerializer
 from .forms import CalendarRangeForm
+from .serializers import ActivitySerializer
 
 
 class ActivityListApiView(generics.ListAPIView):

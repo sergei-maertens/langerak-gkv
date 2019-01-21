@@ -1,8 +1,8 @@
 from django.conf.urls import patterns, url
 from django.contrib import admin, messages
 from django.core.urlresolvers import reverse
-from django.template.loader import render_to_string
 from django.template.defaultfilters import date, time
+from django.template.loader import render_to_string
 from django.utils.safestring import mark_safe
 from django.utils.translation import ugettext_lazy as _
 
@@ -10,7 +10,7 @@ from import_export.admin import ImportExportActionModelAdmin
 
 from langerak_gkv.mailing.models import MailTemplate, Templates
 
-from ..models import Church, Liturgy, Service, MailRecipient
+from ..models import Church, Liturgy, MailRecipient, Service
 from .actions import send_liturgy_email
 from .forms import LiturgyMailForm
 from .resources import LiturgyResource

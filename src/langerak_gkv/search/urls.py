@@ -1,9 +1,8 @@
-from django.conf.urls import url, patterns
+from django.conf.urls import patterns, url
 
-from haystack.query import SearchQuerySet
 from haystack.forms import SearchForm
+from haystack.query import SearchQuerySet
 from haystack.views import SearchView
-
 
 sqs = SearchQuerySet()
 

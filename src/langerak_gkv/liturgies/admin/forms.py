@@ -5,7 +5,7 @@ import html2text
 
 from langerak_gkv.mailing.forms import MailForm
 
-from ..models import MailRecipient, Liturgy
+from ..models import Liturgy, MailRecipient
 
 
 class LiturgyMailForm(MailForm):

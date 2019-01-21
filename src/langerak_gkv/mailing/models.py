@@ -1,14 +1,12 @@
 from django.db import models
-from django.template import Template, Context
+from django.template import Context, Template
 from django.utils.encoding import python_2_unicode_compatible
 from django.utils.translation import ugettext_lazy as _
 
 from djangocms_text_ckeditor.fields import HTMLField
 from djchoices import ChoiceItem, DjangoChoices
 
-from .mail_template import (
-    Variable, validate_template
-)
+from .mail_template import Variable, validate_template
 
 
 @python_2_unicode_compatible
