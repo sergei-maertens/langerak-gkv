@@ -23,7 +23,7 @@ html5lib
 # news letter
 # django-newsletter
 sorl-thumbnail
--e git+https://github.com/sergei-maertens/django-newsletter.git@0.6-dev#egg=django-newsletter
+django-newsletter==0.6
 
 django-import-export
 django-password-reset
