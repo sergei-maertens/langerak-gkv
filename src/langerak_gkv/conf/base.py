@@ -213,7 +213,6 @@ INSTALLED_APPS = [
     'langerak_gkv.societies',
     'langerak_gkv.utils',
     'langerak_gkv.worklog',
-    'langerak_gkv.migration',
 ]
 
 LOGGING_DIR = os.path.join(BASE_DIR, 'log')
