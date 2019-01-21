@@ -47,7 +47,7 @@ django-sortedm2m==1.5.0   # via aldryn-common
 django-spurl==0.6.4       # via aldryn-search
 django-standard-form==1.1.1  # via aldryn-search
 django-treebeard==4.1.2   # via django-cms
-django-webtest==1.9.2
+django-webtest==1.9.4
 django-yubin==0.3.0
 django==1.8.18
 djangocms-admin-style==1.2.7  # via django-cms
@@ -80,6 +80,7 @@ odfpy==1.3.5              # via tablib
 openpyxl==2.4.8           # via tablib
 pillow==3.2.0
 polib==1.0.8              # via django-rosetta
+psycopg2==2.7.6.1
 pycparser==2.18           # via cffi
 pygments==2.2.0           # via sphinx
 pyphen==0.9.4             # via weasyprint
