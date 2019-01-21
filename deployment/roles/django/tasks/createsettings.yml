@@ -1,6 +1,12 @@
 ---
 
-- name: Create the secret settings file
-  template: src=local.py.j2
-            dest={{ project_home }}/src/langerak_gkv/conf/local.py
-            mode=0600
+- name: Ensure the local settings are removed
+  file:
+    path: "{{ project_home }}/src/langerak_gkv/conf/local.py"
+    state: absent
+
+- name: Template out the .env file
+  template:
+    src: env.j2
+    dest: "{{ project_home }}/.env"
+    mode: 0600

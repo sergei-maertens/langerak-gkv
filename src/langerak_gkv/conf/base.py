@@ -1,17 +1,21 @@
 import os
 
 from django.utils.translation import ugettext_lazy as _
+
 from djchoices import DjangoChoices, ChoiceItem
 
-# Automatically figure out the ROOT_DIR and PROJECT_DIR.
+# Automatically figure out the BASE_DIR and PROJECT_DIR.
 DJANGO_PROJECT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), os.path.pardir))
-ROOT_DIR = os.path.abspath(os.path.join(DJANGO_PROJECT_DIR, os.path.pardir, os.path.pardir))
+BASE_DIR = os.path.abspath(os.path.join(DJANGO_PROJECT_DIR, os.path.pardir, os.path.pardir))
 
 #
 # Standard Django settings.
 #
 
 DEBUG = False
+
+# Make this unique, and don't share it with anybody.
+SECRET_KEY = os.getenv('SECRET_KEY')
 
 ADMINS = (
     ('Sergei Maertens', 'sergeimaertens@gmail.com'),
@@ -29,7 +33,18 @@ LOCALE_PATHS = (
 
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 # See https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '').split(',')
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.getenv('DB_NAME'),
+        'USER': os.getenv('DB_USER'),
+        'PASSWORD': os.getenv('DB_PASSWORD', ''),
+        'HOST': os.getenv('DB_HOST', 'localhost'),
+        'PORT': os.getenv('DB_PORT', 5432),
+    }
+}
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
@@ -37,7 +52,7 @@ ALLOWED_HOSTS = []
 # In a Windows environment this must be set to your system time zone.
 TIME_ZONE = 'Europe/Amsterdam'
 
-SITE_ID = 1
+SITE_ID = int(os.getenv('SITE_ID', '1'))
 
 # If you set this to False, Django will make some optimizations so as not
 # to load the internationalization machinery.
@@ -52,7 +67,7 @@ USE_TZ = True
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/var/www/example.com/media/"
-MEDIA_ROOT = os.path.join(ROOT_DIR, 'media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
@@ -63,7 +78,7 @@ MEDIA_URL = '/media/'
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/var/www/example.com/static/"
-STATIC_ROOT = os.path.join(ROOT_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # URL prefix for static files.
 # Example: "http://example.com/static/", "http://static.example.com/"
@@ -85,9 +100,6 @@ STATICFILES_FINDERS = [
     'compressor.finders.CompressorFinder',
     # 'django.contrib.staticfiles.finders.DefaultStorageFinder',
 ]
-
-# Make this unique, and don't share it with anybody.
-SECRET_KEY = 'I am different on staging and production'
 
 TEMPLATES = [
     {
@@ -204,7 +216,7 @@ INSTALLED_APPS = [
     'langerak_gkv.migration',
 ]
 
-LOGGING_DIR = os.path.join(ROOT_DIR, 'log')
+LOGGING_DIR = os.path.join(BASE_DIR, 'log')
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
@@ -437,6 +449,7 @@ LEAFLET_CONFIG = {
 #
 # EMAIL addresses
 #
+DEFAULT_FROM_EMAIL = os.getenv('DEFAULT_FROM_EMAIL')
 EMAIL_POD = 'pod@langerak.gkv.nl'
 EMAIL_ORGANIST = 'organist@langerak.gkv.nl'
 EMAIL_BEAMIST = 'beamist@langerak.gkv.nl'
@@ -457,8 +470,6 @@ HAYSTACK_CONNECTIONS = {
         'INDEX_NAME': 'koningskerk',
     },
 }
-# HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'
-# HAYSTACK_ROUTERS = ['aldryn_search.router.LanguageRouter',]
 
 ELASTICSEARCH_INDEX_SETTINGS = {
     u'settings': {
@@ -492,7 +503,9 @@ ELASTICSEARCH_INDEX_SETTINGS = {
                 u'edgengram_analyzer': {
                     u'filter': [u'lowercase', u'haystack_edgengram'],
                     u'type': u'custom',
-                    u'tokenizer': u'standard'  # Required for searching numbers: http://stackoverflow.com/questions/13636419/elasticsearch-edgengrams-and-numbers
+                    # Required for searching numbers:
+                    # http://stackoverflow.com/questions/13636419/elasticsearch-edgengrams-and-numbers
+                    u'tokenizer': u'standard'
                 },
                 u'ngram_analyzer': {
                     u'filter': [u'haystack_ngram'],
@@ -520,3 +533,25 @@ IMAGE_CROPPING_SIZE_WARNING = True
 # Tests
 #
 TEST_RUNNER = 'django.test.runner.DiscoverRunner'
+
+# Raven
+SENTRY_DSN = os.getenv('SENTRY_DSN')
+
+if SENTRY_DSN:
+    import raven
+
+    INSTALLED_APPS = INSTALLED_APPS + [
+        'raven.contrib.django.raven_compat',
+    ]
+
+    RAVEN_CONFIG = {
+        'dsn': SENTRY_DSN,
+        'release': raven.fetch_git_sha(BASE_DIR),
+    }
+    LOGGING['handlers'].update({
+        'sentry': {
+            'level': 'WARNING',
+            'class': 'raven.handlers.logging.SentryHandler',
+            'dsn': RAVEN_CONFIG['dsn']
+        },
+    })

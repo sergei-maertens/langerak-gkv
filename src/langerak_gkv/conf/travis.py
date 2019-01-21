@@ -1,6 +1,12 @@
 from __future__ import absolute_import
 
-from .base import *
+import os
+
+os.environ['DB_NAME'] = 'koningskerk'
+os.environ['DB_USER'] = 'postgres'
+os.environ['ALLOWED_HOSTS'] = ''
+
+from .base import *  # noqa, isort:skip
 
 #
 # Standard Django settings.
@@ -9,19 +15,6 @@ from .base import *
 DEBUG = False
 
 ADMINS = ()
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'koningskerk',
-        'USER': 'postgres',
-        'PASSWORD': '',
-    }
-}
-
-# Hosts/domain names that are valid for this site; required if DEBUG is False
-# See https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts
-ALLOWED_HOSTS = []
 
 LOGGING['loggers'].update({
     'django': {
