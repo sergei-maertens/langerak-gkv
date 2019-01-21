@@ -72,7 +72,7 @@ class ActivitySearchView(ActivitiesTodayMixin, ListView):
     paginate_by = 50
 
     def get_queryset(self):
-        terms = self.request.GET.get('q').split()
+        terms = self.request.GET.get('q', '').split()
         q = Q()
         for term in terms:
             q |= Q(name__icontains=term) | Q(description__icontains=term) | \
