@@ -1,5 +1,5 @@
 import raven
-from .settings import *
+from .base import *
 
 
 # Hosts/domain names that are valid for this site; required if DEBUG is False

@@ -1,4 +1,4 @@
-from .settings import *
+from .base import *
 
 #
 # Standard Django settings.
