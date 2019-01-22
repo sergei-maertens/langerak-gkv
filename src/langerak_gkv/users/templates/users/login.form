@@ -7,7 +7,7 @@
         <input type="{{ input_type|default:"text" }}"
             name="{{ html_name }}"
             id="{{ id }}"
-            value="{{ value|default:"" }}"
+            value="{{ raw_value|default:"" }}"
             class="form-control {{ required|yesno:"required," }} {{ css_classes }} {{ errors|yesno:"error," }}"
             {{ widget.attrs|flatattrs }}
             {{ autofocus|yesno:"autofocus," }}
