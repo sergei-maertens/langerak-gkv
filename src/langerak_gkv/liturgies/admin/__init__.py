@@ -1,4 +1,4 @@
-from django.conf.urls import patterns, url
+from django.conf.urls import url
 from django.contrib import admin, messages
 from django.core.urlresolvers import reverse
 from django.template.defaultfilters import date, time
@@ -41,14 +41,13 @@ class MailRecipientAdmin(admin.ModelAdmin):
         Hook in extra views.
         """
         urls = super(MailRecipientAdmin, self).get_urls()
-        action_urls = patterns(
-            '',
+        action_urls = [
             url(
                 r'^send_mail/$',
                 self.admin_site.admin_view(LiturgyEmailView.as_view()),
                 name='send_liturgy_email'
             ),
-        )
+        ]
         return action_urls + urls
 
 
