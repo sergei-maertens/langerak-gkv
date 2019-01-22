@@ -17,11 +17,10 @@ env:
 install:
   - pip install --upgrade setuptools pip
   - pip install -r requirements/test.txt --cache-dir $HOME/.pip-cache
-  - npm install -g bower
+  - npm install
 
 before_script:
   - mkdir log
-  - bower install
   - src/manage.py collectstatic --noinput --link
 
 script:

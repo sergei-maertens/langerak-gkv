@@ -99,6 +99,13 @@ STATICFILES_DIRS = (
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
     os.path.join(DJANGO_PROJECT_DIR, 'static'),
+
+    # 3rd party NPM deps
+    ('fullcalendar', os.path.join(BASE_DIR, 'node_modules', 'fullcalendar', 'dist')),
+    ('momentjs', os.path.join(BASE_DIR, 'node_modules', 'moment', 'min')),
+    ('jquery', os.path.join(BASE_DIR, 'node_modules', 'jquery', 'dist')),
+    ('bootstrap', os.path.join(BASE_DIR, 'node_modules', 'bootstrap', 'dist')),
+    ('font-awesome', os.path.join(BASE_DIR, 'node_modules', 'font-awesome')),
 )
 
 # List of finder classes that know how to find static files in

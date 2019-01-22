@@ -27,6 +27,7 @@ local.py
 
 # dependencies
 src/langerak_gkv/static/vendor/
+node_modules
 
 # testing
 .coverage

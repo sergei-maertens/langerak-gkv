@@ -88,15 +88,15 @@
 
 {% block extra_css %}
     {{ block.super }}
-    <link href="{% static 'vendor/fullcalendar/dist/fullcalendar.min.css' %}" rel="stylesheet">
+    <link href="{% static 'fullcalendar/fullcalendar.min.css' %}" rel="stylesheet">
 {% endblock %}
 
 
 {% block extra_js %}
     {{ block.super }}
-    <script src="{% static 'vendor/moment/min/moment-with-locales.min.js' %}"></script>
-    <script src="{% static 'vendor/fullcalendar/dist/fullcalendar.min.js' %}"></script>
-    {% with 'vendor/fullcalendar/dist/lang/'|add:LANGUAGE_CODE|add:'.js' as lang_file %}
+    <script src="{% static 'momentjs/moment-with-locales.min.js' %}"></script>
+    <script src="{% static 'fullcalendar/fullcalendar.min.js' %}"></script>
+    {% with 'fullcalendar/lang/'|add:LANGUAGE_CODE|add:'.js' as lang_file %}
         <script src="{% static lang_file %}"></script>
     {% endwith %}
     <script>
