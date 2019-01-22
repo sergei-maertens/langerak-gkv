@@ -1,0 +1,7 @@
+---
+
+- include: common.yml
+- include: postgres.yml
+- include: transfer_backups.yml
+
+- include: files.yml

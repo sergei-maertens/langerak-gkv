@@ -1,0 +1,10 @@
+---
+
+- name: Deploy the koningskerk.nu CMS
+  hosts: web
+  remote_user: konkerk
+  roles:
+    - nginx
+    - django
+    - supervisor
+  become_method: su
