@@ -2,6 +2,7 @@ from django.conf import settings
 from django.conf.urls import include, url
 from django.conf.urls.static import static
 from django.contrib import admin
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 from surlex.dj import surl
 
@@ -38,7 +39,8 @@ urlpatterns = [
     url(r'^newsletter/', include('newsletter.urls')),
 
     url(r'^', include('cms.urls')),
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+] + staticfiles_urlpatterns()
 
 
 # If settings.DEBUG is set to True, some URLs can be handled by Django.
@@ -48,6 +50,5 @@ if settings.DEBUG:
     # Static files are handled by the staticfiles package. This section only
     # adds media files to be served as well.
     urlpatterns += [
-        url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT}),
         url(r'^__debug__/', include(debug_toolbar.urls)),
-    ]
+    ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
