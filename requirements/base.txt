@@ -9,8 +9,6 @@ aldryn-boilerplates==0.8.0  # via aldryn-common
 aldryn-common==1.0.5      # via aldryn-search
 aldryn-search==1.0.1
 babel==2.6.0              # via sphinx
-backports.functools-lru-cache==1.5  # via soupsieve
-beautifulsoup4==4.7.1     # via webtest
 beautifulsoup==3.2.1
 cairocffi==0.9.0          # via cairosvg, weasyprint
 cairosvg==1.0.22
@@ -30,7 +28,6 @@ django-class-based-auth-views==0.4
 django-classy-tags==0.8.0  # via django-cms, django-sekizai, django-standard-form
 django-cms==3.4.6
 django-compressor==2.2
-django-extensions==2.1.4  # via django-newsletter
 django-filer==1.4.4
 django-formtools==2.1     # via django-cms
 django-haystack==2.8.1
@@ -41,7 +38,7 @@ django-ipware==2.1.0      # via django-axes
 django-js-asset==1.1.0    # via django-mptt
 django-leaflet==0.24.0
 django-mptt==0.9.1        # via django-filer
-django-newsletter==0.6
+django-newsletter==0.7
 django-password-reset==2.0
 django-polymorphic==2.0.3  # via django-filer
 django-rosetta==0.9.1
@@ -51,7 +48,6 @@ django-sortedm2m==1.5.0   # via aldryn-common
 django-spurl==0.6.5       # via aldryn-search
 django-standard-form==1.1.1  # via aldryn-search
 django-treebeard==4.3     # via django-cms
-django-webtest==1.9.4     # via django-newsletter
 django-yubin==1.3.0
 django==1.11.18
 djangocms-admin-style==1.2.9  # via django-cms
@@ -101,25 +97,21 @@ pyzmail==1.0.3            # via django-yubin
 rcssmin==1.0.6            # via django-compressor
 requests==2.21.0
 rjsmin==1.0.12            # via django-compressor
-six==1.12.0               # via aldryn-common, django-extensions, django-image-cropping, django-newsletter, django-rosetta, django-spurl, html5lib, packaging, python-dateutil, sphinx, webtest
+six==1.12.0               # via aldryn-common, django-image-cropping, django-newsletter, django-rosetta, django-spurl, html5lib, packaging, python-dateutil, sphinx
 snowballstemmer==1.2.1    # via sphinx
 sorl-thumbnail==12.5.0
-soupsieve==1.7.2          # via beautifulsoup4
 sphinx==1.8.3
 sphinxcontrib-websupport==1.1.0  # via sphinx
 surlex==0.2.0             # via django-newsletter
 tablib==0.12.1            # via django-import-export
 tinycss2==0.6.1           # via cssselect2, weasyprint
-typing==3.6.6             # via django-extensions, sphinx
+typing==3.6.6             # via sphinx
 unicodecsv==0.14.1        # via django-newsletter, tablib
 unidecode==1.0.23         # via django-filer
 urllib3==1.24.1           # via elasticsearch, requests
 urlobject==2.4.3          # via django-spurl
-waitress==1.2.0           # via webtest
 weasyprint==0.42.3
 webencodings==0.5.1       # via html5lib, tinycss2
-webob==1.8.5              # via webtest
-webtest==2.0.32           # via django-newsletter, django-webtest
 xlrd==1.2.0               # via tablib
 xlwt==1.3.0               # via tablib
 yurl==0.13                # via aldryn-boilerplates

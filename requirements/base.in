@@ -20,7 +20,7 @@ django-ical
 
 # news letter
 sorl-thumbnail
-django-newsletter==0.6
+django-newsletter==0.7
 
 django-import-export
 django-password-reset
