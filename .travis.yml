@@ -12,8 +12,9 @@ services:
   - postgresql
 
 env:
-  - DJANGO_SETTINGS_MODULE=langerak_gkv.conf.travis
-  - SECRET_KEY=travis
+  global:
+    - DJANGO_SETTINGS_MODULE=langerak_gkv.conf.travis
+    - SECRET_KEY=travis
 
 install:
   - pip install --upgrade setuptools pip
