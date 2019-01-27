@@ -23,7 +23,7 @@ install:
 
 before_script:
   - mkdir log
-  - src/manage.py collectstatic --noinput --link
+  - src/manage.py collectstatic --noinput --link --settings=langerak_gkv.conf.travis
 
 script:
   - coverage run src/manage.py test src -v 2
