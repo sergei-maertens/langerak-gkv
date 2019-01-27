@@ -20,6 +20,8 @@ local.py
 .env
 .vault_password.txt
 
+*.retry
+
 *.sqlite
 
 # Sublime
