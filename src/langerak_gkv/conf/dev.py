@@ -56,6 +56,10 @@ DEBUG_TOOLBAR_CONFIG = {
     'JQUERY_URL': None,
 }
 
+INSTALLED_APPS += [
+    'django_extensions',
+]
+
 # Override settings with local settings.
 try:
     from .local import *  # noqa
