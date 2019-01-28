@@ -2,6 +2,7 @@
 
 django_repo: "ssh://git@github.com/sergei-maertens/langerak-gkv.git"
 venv: "{{ ansible_env.HOME }}/.virtualenvs/{{ env }}"
+django_root: "{{ ansible_env.HOME }}/django/{{ env }}"
 project_home: "{{ django_root }}"
 settings_module: "conf.settings.{{ env }}"
 storage_path: "/mnt/bigstorage/{{ ansible_ssh_user }}/{{ env }}/media"
