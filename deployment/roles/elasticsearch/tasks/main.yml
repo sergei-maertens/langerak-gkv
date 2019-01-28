@@ -6,18 +6,21 @@
   apt_key:
     url: https://packages.elastic.co/GPG-KEY-elasticsearch
     id: "{{ es_key_fingerprint }}"
-  remote_user: root
 
 - name: Add Elastic Search sources
   apt_repository:
     repo: "deb https://packages.elastic.co/elasticsearch/{{ es_version }}/debian stable main"
     state: present
     filename: "elasticsearch-{{ es_version }}"
-  remote_user: root
 
 - name: Install Elastic Search
   package:
     name: elasticsearch
     state: present
     update_cache: yes
-  remote_user: root
+
+- name: Ensure Elastic Search is running
+  service:
+    name: elasticsearch
+    state: started
+    enabled: yes
