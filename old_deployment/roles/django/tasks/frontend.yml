@@ -1,7 +1,0 @@
----
-# Install the frontend dependencies
-
-- name: Install dependencies with NPM
-  npm:
-    path: "{{ project_home }}"
-    production: yes

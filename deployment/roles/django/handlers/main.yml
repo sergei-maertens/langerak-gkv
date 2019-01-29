@@ -2,5 +2,7 @@
 # Handlers to be run on notify
 
 - name: restart uwsgi
-  supervisorctl: name=uwsgi-{{ user }}-{{ env }} state=restarted
+  supervisorctl:
+    name: "uwsgi-{{ user }}-{{ env }}"
+    state: restarted
   remote_user: root

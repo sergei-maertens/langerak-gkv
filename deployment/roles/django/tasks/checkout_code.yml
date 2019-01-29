@@ -19,4 +19,6 @@
     chdir: "{{ project_home }}/src"
 
 - name: Ensure log dir exists
-  file: path={{ project_home }}/log state=directory
+  file:
+    path: "{{ project_home }}/log"
+    state: directory

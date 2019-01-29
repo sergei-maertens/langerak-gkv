@@ -3,10 +3,13 @@
 
 - name: Upgrade pip
   pip:
+    name: "{{ item }}"
     virtualenv: "{{ venv }}"
-    name: pip
     state: latest
     virtualenv_python: python2
+  with_items:
+    - pip
+    - setuptools
 
 - name: Set up virtualenvwrapper post-activate hook
   template:
