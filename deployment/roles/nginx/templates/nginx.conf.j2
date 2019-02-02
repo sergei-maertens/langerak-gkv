@@ -61,17 +61,6 @@ server {
     }
 
     location / {
-        include proxy_params;
-        proxy_pass http://127.0.0.1:8080;
-
-        proxy_intercept_errors on;
-        recursive_error_pages on;
-        error_page 403 = @django;
-        error_page 404 = @django;
-        error_page 405 = @django;
-    }
-
-    location @django {
         uwsgi_pass {{ user }}_{{ env }}_django;
         include uwsgi_params;
     }
