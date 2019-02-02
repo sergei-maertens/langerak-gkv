@@ -2,7 +2,7 @@ from django.contrib import admin
 
 from cms.admin.placeholderadmin import PlaceholderAdminMixin
 
-from .models import Activity, IntendedPublic, ActivityType
+from .models import Activity, ActivityType, IntendedPublic
 
 
 class ActivityAdmin(PlaceholderAdminMixin, admin.ModelAdmin):

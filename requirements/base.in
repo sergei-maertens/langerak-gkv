@@ -1,27 +1,26 @@
-Django==1.8.18
+psycopg2
+python-dotenv
 
-Sphinx==1.4
-Pillow==3.2.0
-django_compressor==2.0
-django-axes==1.6.0
-django-choices==1.4.2
-django-flat-theme==1.1.3
-django-sniplates==0.3.2
-easy-thumbnails==2.3
-django-class-based-auth-views==0.3
-django-image-cropping==1.0.3
-BeautifulSoup==3.2.1 # lxml & compressor
-django-autoslug==1.9.3
-django-rosetta==0.7.11
-Django<1.9
+Django<2.0
 
-django-ical==1.3
-html5lib==0.9999999
+Sphinx
+Pillow>=5.4.1
+django_compressor
+django-axes
+django-choices
+django-sniplates
+easy-thumbnails
+django-class-based-auth-views
+django-image-cropping
+BeautifulSoup
+django-autoslug
+django-rosetta
+
+django-ical
 
 # news letter
-# django-newsletter==0.5.2
-sorl-thumbnail==12.4a1
--e git+https://github.com/sergei-maertens/django-newsletter.git@0.6-dev#egg=django-newsletter
+sorl-thumbnail
+django-newsletter==0.7
 
 django-import-export
 django-password-reset
@@ -32,11 +31,10 @@ djangorestframework
 
 # cms
 django-sekizai
-django-cms
+django-cms<3.5
 djangocms-text-ckeditor>3.2
 django-filer
-django-mptt
-cmsplugin-filer
+cmsplugin-filer>=1.1.3
 djangocms-link
 djangocms-column
 djangocms-oembed
@@ -45,12 +43,11 @@ djangocms-table
 djangocms-video
 
 # search
-elasticsearch
+elasticsearch<5.0
 django-haystack
 aldryn-search
 
 django-leaflet
-jsonfield
 
 # mailing
 django-yubin
@@ -59,4 +56,4 @@ html2text
 
 # PDF export
 CairoSVG<2.0
-WeasyPrint==0.26
+WeasyPrint<43

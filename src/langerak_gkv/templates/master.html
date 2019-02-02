@@ -7,8 +7,8 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <link href="{% static 'vendor/bootstrap/dist/css/bootstrap.min.css' %}" rel="stylesheet">
-        <link href="{% static 'vendor/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
+        <link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+        <link href="{% static 'font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
         {% compress css %}
             <link href="{% static 'langerak_gkv/css/screen.css' %}" media="screen, projection" rel="stylesheet" type="text/css" />
             <link href="{% static 'langerak_gkv/css/print.css' %}" media="print" rel="stylesheet" type="text/css" />
@@ -26,7 +26,7 @@
         <!--[if lt IE 9]>
             <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
-        <script src="{% static 'langerak_gkv/lib/jquery/js/jquery-1.9.1.min.js' %}"></script>
+        <script src="{% static 'jquery/jquery.min.js' %}"></script>
 
         <link rel="shortcut icon" href="{% static 'logo/favicon.png' %}">
         {% block extrahead %}{% endblock extrahead %}
@@ -95,7 +95,7 @@
             </footer>
         {% endblock %}
 
-        <script src="{% static 'vendor/bootstrap/dist/js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
 
         {% compress js %}
             {% leaflet_js %}

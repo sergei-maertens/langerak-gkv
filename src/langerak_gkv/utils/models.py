@@ -1,6 +1,6 @@
-from django.db import models
-from django.core.urlresolvers import reverse, NoReverseMatch
 from django.core.exceptions import ValidationError
+from django.core.urlresolvers import NoReverseMatch, reverse
+from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
 

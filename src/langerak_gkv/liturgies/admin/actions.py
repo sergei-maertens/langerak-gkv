@@ -1,8 +1,8 @@
 from django.core.urlresolvers import reverse
 from django.shortcuts import redirect
-from django.utils.translation import ugettext_lazy as _
 from django.utils.datastructures import MultiValueDict
 from django.utils.http import urlencode
+from django.utils.translation import ugettext_lazy as _
 
 
 def send_liturgy_email(modeladmin, request, queryset):

@@ -5,8 +5,9 @@ from django.utils.translation import ugettext_lazy as _
 from django.views.generic import CreateView
 
 from langerak_gkv.mailing.models import Mail
+
 from ..models import MailRecipient
-from .forms import LiturgyMailForm, LiturgiesForm
+from .forms import LiturgiesForm, LiturgyMailForm
 
 
 class LiturgyEmailView(CreateView):

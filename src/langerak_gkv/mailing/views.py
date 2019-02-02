@@ -7,7 +7,6 @@ from django.views.generic import RedirectView
 from newsletter.models import Newsletter
 from newsletter.views import UnsubscribeRequestView, UnsubscribeUserView
 
-
 ACTION_MAPPING = {
     'subscribe': _('You have successfully subscribed to "{newsletter}"'),
     'update': _('You have successfully updated your subscription to "{newsletter}"'),

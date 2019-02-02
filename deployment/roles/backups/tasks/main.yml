@@ -1,0 +1,7 @@
+---
+
+- import_tasks: common.yml
+- import_tasks: postgres.yml
+- import_tasks: transfer_backups.yml
+
+- import_tasks: files.yml

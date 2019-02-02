@@ -1,12 +1,12 @@
 from __future__ import unicode_literals
 
-from django.test import TestCase
 from django.core.urlresolvers import reverse
+from django.test import TestCase
 
 from django_webtest import WebTest
 
-from .factories import UserFactory, UserRelationFactory, RelationTypeFactory
-from ..models import UserRelation, RelationType
+from ..models import RelationType, UserRelation
+from .factories import RelationTypeFactory, UserFactory, UserRelationFactory
 
 
 class UserRelationTests(TestCase):

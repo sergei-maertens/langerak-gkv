@@ -6,13 +6,14 @@ from django.db.models import Q
 from django.utils import timezone
 from django.utils.http import urlencode
 from django.views.generic import (
-    CreateView, DayArchiveView, TemplateView, DetailView,
-    WeekArchiveView, ListView
+    CreateView, DayArchiveView, DetailView, ListView, TemplateView,
+    WeekArchiveView
 )
 
 from django_ical.views import ICalFeed
 
 from langerak_gkv.utils.view_mixins import PermissionRequiredMixin
+
 from .models import Activity
 
 
@@ -71,7 +72,7 @@ class ActivitySearchView(ActivitiesTodayMixin, ListView):
     paginate_by = 50
 
     def get_queryset(self):
-        terms = self.request.GET.get('q').split()
+        terms = self.request.GET.get('q', '').split()
         q = Q()
         for term in terms:
             q |= Q(name__icontains=term) | Q(description__icontains=term) | \

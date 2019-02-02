@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-from urllib import urlencode
 import json
-import requests
 import logging
+from urllib import urlencode
 
 from django.conf import settings
 
+import requests
 
 logger = logging.getLogger(__name__)
 

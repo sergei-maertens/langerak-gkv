@@ -4,6 +4,7 @@ from django.core.urlresolvers import reverse
 from django_webtest import WebTest
 
 from langerak_gkv.users.tests.factories import UserFactory
+
 from .factories import LiturgyFactory
 
 

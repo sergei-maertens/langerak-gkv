@@ -2,8 +2,9 @@ from datetime import date, time
 
 from django.test import TestCase
 
-from .factories import LiturgyFactory
 from langerak_gkv.activities.models import Activity
+
+from .factories import LiturgyFactory
 
 
 class SignalTests(TestCase):

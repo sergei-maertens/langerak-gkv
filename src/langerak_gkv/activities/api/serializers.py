@@ -1,6 +1,6 @@
 from datetime import date
 
-from rest_framework import serializers, fields
+from rest_framework import fields, serializers
 
 from ..models import Activity
 

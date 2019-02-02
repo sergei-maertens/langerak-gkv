@@ -1,10 +1,13 @@
 ---
 # Main tasks file to distribute the subtasks
 
-- include: makedirs.yml
-- include: dependencies.yml
-- include: createsettings.yml
-- include: migrate.yml
-- include: frontend.yml
-- include: collectstatic.yml
-- include: cronjobs.yml
+- import_tasks: install_os_packages.yml
+- import_tasks: checkout_code.yml
+- import_tasks: dependencies.yml
+- import_tasks: db.yml
+- import_tasks: secrets.yml
+- import_tasks: migrate.yml
+- import_tasks: frontend.yml
+- import_tasks: media.yml
+- import_tasks: collectstatic.yml
+- import_tasks: cronjobs.yml

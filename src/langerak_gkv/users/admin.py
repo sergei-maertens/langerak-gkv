@@ -4,9 +4,10 @@ from django.utils.translation import ugettext_lazy as _
 
 from import_export.admin import ImportExportMixin
 
-from .models import (User, District, UserRelation, RelationType,
-                     DistrictFunction, Family)
 from .forms import UserChangeForm, UserCreationForm
+from .models import (
+    District, DistrictFunction, Family, RelationType, User, UserRelation
+)
 from .resources import UserResource
 
 

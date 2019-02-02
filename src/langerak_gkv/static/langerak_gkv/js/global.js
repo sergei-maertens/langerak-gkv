@@ -39,7 +39,7 @@
         });
     });
 
-    $(window).load(syncHeights);
+    $(window).on('load', syncHeights);
 
     function syncHeights() {
         $('.link-height').each(function() {

@@ -44,73 +44,23 @@ below.
 
 2. Get the code::
 
-    $ hg clone ssh://hg@bitbucket.org/maykinmedia/langerak_gkv
-    $ cd langerak_gkv
+    $ git clone git@github.com/sergei-maertens/langerak-gkv.git
+    $ cd langerak-gkv
 
-3. Bootstrap the virtual environment and install all required libraries. The
-   ``boostrap.py`` script basically sets the proper Django settings file to be
-   used::
+3. Create the virtual environment and install all required libraries.::
 
-    $ python bootstrap.py <production|staging|test|development>
-    
+    $ mkvirtualenv -p python2.7 koningskerk
+    $ pip install -r requirements/development.txt
+    $ npm install
+
 4. Activate your virtual environment and create the statics and database::
 
-    $ source env/bin/activate
-    $ python src/manage.py collectstatic --link
-    $ python src/manage.py syncdb --migrate
+    $ workon koningskerk
+    $ python src/manage.py collectstatic --link --noinput
+    $ python src/manage.py migrate
 
+Extra services required
+-----------------------
 
-Developers
-----------
-
-Optionally, you can load demo data and extract demo media files::
-
-    $ python src/manage.py loaddata demo
-    $ cd media
-    $ tar -xzf demo.tgz
-
-You can now run your installation and point your browser to the address given
-by this command::
-
-    $ python src/manage.py runserver
-
-If you are making local, machine specific, changes, add them to 
-``src/langerak_gkv/conf/settings_local.py``. You can base this file on
-the example file included in the same directory.
-
-Enable SASS/Compass::
-
-    $ compass watch
-
-For more information on SASS and Compass, see: http://compass-style.org/
-
-
-Staging and production
-----------------------
-
-Configure your webserver and/or WSGI handler. See: 
-https://docs.djangoproject.com/en/dev/howto/deployment/
-
-Note that your wsgi script in ``src/langerak_gkv/wsgi.py already
-points to your staging|production settings.py file. This happens when
-bootstrapping your environment.
-    
-Update installation
-===================
-
-When updating an existing installation:
-
-1. Activate the virtual environment::
-
-    $ cd langerak_gkv
-    $ source env/bin/activate
-
-2. Update the code and libraries::
-
-    $ hg pull --update
-    $ pip install -r requirements/<production|staging|test|development>.txt
-    
-3. Update the statics and database::
-
-    $ python src/manage.py collectstatic --link
-    $ python src/manage.py syncdb --migrate
+* PostgreSQL 9.2+
+* Elasticsearch 2.4

@@ -1,4 +1,4 @@
-from datetime import time, date, timedelta
+from datetime import date, time, timedelta
 
 import factory
 import factory.fuzzy

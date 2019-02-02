@@ -1,8 +1,10 @@
 from django.conf.urls import url
 from django.utils.translation import ugettext_lazy as _
 
-from .views import LiturgyArchiveView, LiturgyListView, LiturgyDateDetailView, LiturgyMonthArchiveView
-
+from .views import (
+    LiturgyArchiveView, LiturgyDateDetailView, LiturgyListView,
+    LiturgyMonthArchiveView
+)
 
 urlpatterns = [
     url(r'^$', LiturgyListView.as_view(), name='list'),
