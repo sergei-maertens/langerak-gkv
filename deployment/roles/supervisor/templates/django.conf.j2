@@ -6,7 +6,7 @@ environment =
 
 [program:uwsgi-{{ user }}-{{ env }}]
 user = {{ user }}
-command = {{ ansible_env.HOME }}/.virtualenvs/{{ env }}/bin/uwsgi --ini {{ ansible_env.HOME }}/django/{{ env }}/src/conf/uwsgi.ini
+command = {{ ansible_env.HOME }}/.virtualenvs/{{ env }}/bin/uwsgi --ini {{ uwsgi_ini_file }}
 autostart = true
 autorestart = true
 stderr_logfile = {{ ansible_env.HOME }}/django/{{ env }}/log/uwsgi_err.log

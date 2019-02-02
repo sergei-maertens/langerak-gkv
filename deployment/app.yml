@@ -3,6 +3,8 @@
 - name: Deploy the koningskerk.nu CMS
   hosts: web
   remote_user: konkerk
+  vars:
+    app_name: langerak_gkv
   roles:
     - nginx
     - django

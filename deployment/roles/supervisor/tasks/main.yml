@@ -1,19 +1,27 @@
 ---
 
 - name: Install supervisord
-  package: name=supervisor state=present
+  package:
+    name: supervisor
+    state: present
   remote_user: root
 
 - name: Install the Django config
-  template: src=django.conf.j2 dest="/etc/supervisor/conf.d/uwsgi-{{ konkerk }}-{{ env }}.conf"
+  template:
+    src: django.conf.j2
+    dest: "/etc/supervisor/conf.d/uwsgi-{{ user }}-{{ env }}.conf"
   remote_user: root
   notify:
     - restart uwsgi
 
 - name: Enable the supervisor program
-  supervisorctl: name="uwsgi-{{ konkerk }}-{{ env }}" state=present
+  supervisorctl:
+    name: "uwsgi-{{ user }}-{{ env }}"
+    state: present
   remote_user: root
 
 - name: Start the supervisor program
-  supervisorctl: name="uwsgi-{{ konkerk }}-{{ env }}" state=started
+  supervisorctl:
+    name: "uwsgi-{{ user }}-{{ env }}"
+    state: started
   remote_user: root

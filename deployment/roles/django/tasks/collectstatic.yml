@@ -1,7 +1,7 @@
 ---
 
-- name: Flush memcached
-  shell: memcflush --servers=localhost:11211
+# - name: Flush memcached
+#   shell: memcflush --servers=localhost:11211
 
 - name: Run collectstatic
   django_manage:
