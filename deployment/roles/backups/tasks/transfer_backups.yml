@@ -9,7 +9,7 @@
 # TODO: automate transfering the public key to the backup server
 - name: Install backup transfer cronjob
   cron:
-    name: "rsync backup to remote"
+    name: "rsync backup to remote ({{ env }})"
     minute: 0
     hour: 3
     job: "bash {{ backups_dir }}/rsync_backups.sh"

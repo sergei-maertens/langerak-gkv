@@ -39,7 +39,7 @@
 
 - name: Install postgres backup cronjob
   cron:
-    name: "postgres backup"
+    name: "postgres backup ({{ env }})"
     minute: 50
     hour: 1
     job: "bash {{ backups_dir }}/pg_backup_rotated.sh"

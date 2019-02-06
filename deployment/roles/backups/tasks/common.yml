@@ -2,9 +2,13 @@
 
 - name: Ensure backups directory exists
   file:
-    path: "{{ item }}"
+    path: "{{ backups_dir }}"
     state: directory
     mode: 0700
-  with_items:
-    - "{{ backups_dir }}"
-    - "{{ backups_dir }}/postgres"
+
+- name: Ensure backups subdirectories exist
+  file:
+    path: "{{ backups_dir }}/{{ item }}"
+    state: directory
+    mode: 0700
+  with_items: "{{ db_folders }}"

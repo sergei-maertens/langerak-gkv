@@ -1,9 +1,8 @@
 ---
 
-backups_dir: "{{ ansible_env.HOME }}/backups"
+backups_dir: "{{ ansible_env.HOME }}/backups/{{ env }}"
 
 mysql_dump_privs: "SELECT,LOCK TABLES,SHOW VIEW,EVENT,TRIGGER"
 
-# FIXME: use docroot
-shop_path: "{{ ansible_env.HOME }}/public_html/winkel"
-forum_path: "{{ ansible_env.HOME }}/public_html/phpBB3"
+db_folders:
+  - postgres
