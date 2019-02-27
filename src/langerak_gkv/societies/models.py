@@ -5,7 +5,7 @@ from django.utils.encoding import python_2_unicode_compatible
 from django.utils.translation import ugettext_lazy as _
 
 from cms.models import CMSPlugin
-from cms.models.fields import PlaceholderField, PageField
+from cms.models.fields import PageField, PlaceholderField
 
 
 @python_2_unicode_compatible

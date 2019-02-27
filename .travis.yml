@@ -12,16 +12,17 @@ services:
   - postgresql
 
 env:
-  - DJANGO_SETTINGS_MODULE=langerak_gkv.conf.settings_travis
+  global:
+    - DJANGO_SETTINGS_MODULE=langerak_gkv.conf.travis
+    - SECRET_KEY=travis
 
 install:
   - pip install --upgrade setuptools pip
   - pip install -r requirements/test.txt --cache-dir $HOME/.pip-cache
-  - npm install -g bower
+  - npm install
 
 before_script:
   - mkdir log
-  - bower install
   - src/manage.py collectstatic --noinput --link
 
 script:

@@ -12,11 +12,15 @@
 *~
 
 # Environment
-settings_local.py
+local.py
 /env/
 /media/
 /static/
 /log
+.env
+.vault_password.txt
+
+*.retry
 
 *.sqlite
 
@@ -26,6 +30,7 @@ settings_local.py
 
 # dependencies
 src/langerak_gkv/static/vendor/
+node_modules
 
 # testing
 .coverage

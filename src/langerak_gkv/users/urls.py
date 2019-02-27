@@ -1,8 +1,9 @@
 from django.conf.urls import url
 
-from .views import (UserProfileView, UserListView, LoginView, LogoutView,
-                    UserSearchView, UserSearchPDFView, UpdateProfileView)
-
+from .views import (
+    LoginView, LogoutView, UpdateProfileView, UserListView, UserProfileView,
+    UserSearchPDFView, UserSearchView
+)
 
 urlpatterns = [
     url(r'^$', UserListView.as_view(), name='list'),

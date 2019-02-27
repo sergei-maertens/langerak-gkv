@@ -1,7 +1,5 @@
-from django.conf.urls import patterns, include, url
+from django.conf.urls import include, url
 
-
-urlpatterns = patterns(
-    '',
+urlpatterns = [
     url(r'^activities/', include('langerak_gkv.activities.api.urls', namespace='activities')),
-)
+]

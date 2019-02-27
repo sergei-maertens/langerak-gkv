@@ -3,6 +3,7 @@ from django.dispatch import receiver
 from django.utils.translation import ugettext as _
 
 from langerak_gkv.activities.models import Activity, ActivityType
+
 from .models import Liturgy, Service
 
 

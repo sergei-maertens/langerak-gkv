@@ -1,18 +1,19 @@
 from django.conf import settings
-from django.conf.urls import patterns, include, url
+from django.conf.urls import include, url
 from django.conf.urls.static import static
 from django.contrib import admin
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 from surlex.dj import surl
 
-from langerak_gkv.mailing.views import ActionRedirectView, RedirectUnsubscribeRequestView
-
+from langerak_gkv.mailing.views import (
+    ActionRedirectView, RedirectUnsubscribeRequestView
+)
 
 admin.autodiscover()
 
 
-urlpatterns = patterns(
-    '',
+urlpatterns = [
     url(r'^api/v1/', include('langerak_gkv.api.urls', namespace='api')),
     url(r'^admin/rosetta/', include('rosetta.urls')),
     url(r'^admin/', include(admin.site.urls)),
@@ -38,7 +39,8 @@ urlpatterns = patterns(
     url(r'^newsletter/', include('newsletter.urls')),
 
     url(r'^', include('cms.urls')),
-) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+] + staticfiles_urlpatterns()
 
 
 # If settings.DEBUG is set to True, some URLs can be handled by Django.
@@ -47,8 +49,6 @@ if settings.DEBUG:
     import debug_toolbar
     # Static files are handled by the staticfiles package. This section only
     # adds media files to be served as well.
-    urlpatterns += patterns(
-        '',
-        url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT}),
+    urlpatterns += [
         url(r'^__debug__/', include(debug_toolbar.urls)),
-    )
+    ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

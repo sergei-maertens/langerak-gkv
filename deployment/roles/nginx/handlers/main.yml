@@ -1,0 +1,8 @@
+---
+# Handlers to be run on notify
+
+- name: reload nginx
+  service:
+    name: nginx
+    state: reloaded
+  remote_user: root

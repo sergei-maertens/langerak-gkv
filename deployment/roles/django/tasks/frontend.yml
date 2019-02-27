@@ -1,14 +1,12 @@
 ---
 # Install the frontend dependencies
 
-# - name: Install dependencies with Node
-#   npm: path={{ project_home }} production=yes
+- name: Install project dependencies with Node
+  npm:
+    path: "{{ project_home }}"
+    production: no  # we need the build tooling, for now
 
-# - name: Install dependencies with Bower
-#   bower: offline=yes path={{ project_home }}
-# bugged for now: https://github.com/ansible/ansible-modules-extras/issues/495
-
-- name: Install dependencies with Bower
-  command: /usr/local/bin/bower install
-  args:
-    chdir: "{{ project_home }}"
+# - name: Build the frontend
+#   command: npm run build
+#   args:
+#     chdir: "{{ project_home }}"

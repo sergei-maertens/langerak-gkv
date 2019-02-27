@@ -1,9 +1,7 @@
-from django.conf.urls import url, patterns
+from django.conf.urls import url
 
 from .views import SocietyDetailView
 
-
-urlpatterns = patterns(
-    '',
+urlpatterns = [
     url(r'^(?P<pk>\d+)/$', SocietyDetailView.as_view(), name='detail'),
-)
+]

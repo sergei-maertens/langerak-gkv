@@ -1,0 +1,29 @@
+---
+
+- name: Ensure media folder exists
+  file:
+    path: "{{ storage_path }}"
+    state: directory
+    mode: 0750
+  tags:
+    - media
+
+- name: Ensure media folder is symlink to big storage
+  file:
+    src: "{{ storage_path }}"
+    dest: "{{ project_home }}/media"
+    state: link
+  tags:
+    - media
+
+- name: Ensure folders have correct permissions (must be readable by nginx)
+  file:
+    path: "{{ item }}"
+    state: directory
+    mode: 0750
+  with_items:
+    - "{{ storage_path }}"
+    - "{{ storage_path }}/.."
+    - "{{ storage_path }}/../.."
+  tags:
+    - media

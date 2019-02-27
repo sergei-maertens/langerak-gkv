@@ -14,3 +14,4 @@ Documentation
     :maxdepth: 3
 
     general/index
+    envvars

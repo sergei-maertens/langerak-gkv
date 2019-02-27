@@ -4,7 +4,9 @@ from urllib2 import urlparse
 
 from django.conf import settings
 from django.contrib.staticfiles import finders
-from django.contrib.staticfiles.storage import staticfiles_storage, FileSystemStorage
+from django.contrib.staticfiles.storage import (
+    FileSystemStorage, staticfiles_storage
+)
 from django.template.response import TemplateResponse
 from django.views.generic.base import TemplateResponseMixin, TemplateView
 

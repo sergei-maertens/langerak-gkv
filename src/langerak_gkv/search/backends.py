@@ -1,5 +1,8 @@
 from django.conf import settings
-from haystack.backends.elasticsearch_backend import ElasticsearchSearchEngine, ElasticsearchSearchBackend
+
+from haystack.backends.elasticsearch_backend import (
+    ElasticsearchSearchBackend, ElasticsearchSearchEngine
+)
 
 
 class ConfigurableElasticBackend(ElasticsearchSearchBackend):

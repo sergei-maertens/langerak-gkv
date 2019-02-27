@@ -1,8 +1,8 @@
-from django.conf.urls import patterns, url
+from django.conf.urls import url
 from django.contrib import admin, messages
 from django.core.urlresolvers import reverse
-from django.template.loader import render_to_string
 from django.template.defaultfilters import date, time
+from django.template.loader import render_to_string
 from django.utils.safestring import mark_safe
 from django.utils.translation import ugettext_lazy as _
 
@@ -10,7 +10,7 @@ from import_export.admin import ImportExportActionModelAdmin
 
 from langerak_gkv.mailing.models import MailTemplate, Templates
 
-from ..models import Church, Liturgy, Service, MailRecipient
+from ..models import Church, Liturgy, MailRecipient, Service
 from .actions import send_liturgy_email
 from .forms import LiturgyMailForm
 from .resources import LiturgyResource
@@ -41,14 +41,13 @@ class MailRecipientAdmin(admin.ModelAdmin):
         Hook in extra views.
         """
         urls = super(MailRecipientAdmin, self).get_urls()
-        action_urls = patterns(
-            '',
+        action_urls = [
             url(
                 r'^send_mail/$',
                 self.admin_site.admin_view(LiturgyEmailView.as_view()),
                 name='send_liturgy_email'
             ),
-        )
+        ]
         return action_urls + urls
 
 

@@ -1,8 +1,11 @@
 from datetime import date
 
-from django.views.generic import ArchiveIndexView, ListView, DateDetailView, MonthArchiveView
+from django.views.generic import (
+    ArchiveIndexView, DateDetailView, ListView, MonthArchiveView
+)
 
 from langerak_gkv.activities.views import ActivitiesTodayMixin
+
 from .models import Liturgy
 
 

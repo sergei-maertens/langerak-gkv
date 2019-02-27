@@ -1,6 +1,6 @@
 from django.contrib import messages
-from django.views.generic import DetailView
 from django.utils.translation import ugettext_lazy as _
+from django.views.generic import DetailView
 
 from .models import Society
 
