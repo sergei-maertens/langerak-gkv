@@ -68,6 +68,10 @@ server {
         include uwsgi_params;
     }
 
+    location /.well-known {
+        # deliberately empty - same root
+    }
+
     location /favicon.ico {
         alias {{ docroot }}/favicon.ico;
         expires max;
