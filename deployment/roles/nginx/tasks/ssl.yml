@@ -3,7 +3,7 @@
 # SSL setup here assumes wildcard certificate for the entire domain
 
 - name: Load ssl private keys
-  include_vars: vars/ssl.yml
+  include_vars: "vars/ssl.{{ env }}.yml"
   no_log: true
 
 - name: Send private ssl keys
@@ -18,8 +18,8 @@
 
 - name: Copy ssl keys and certs
   copy:
-    src: wildcard.{{ user }}.crt
-    dest: /etc/ssl/wildcard.{{ user }}.crt
+    src: "{{ env }}.{{ user }}.crt"
+    dest: "/etc/ssl/{{ env }}.{{ user }}.crt"
     mode: 0600
     owner: root
     group: root

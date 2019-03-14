@@ -6,15 +6,15 @@ upstream {{ user }}_{{ env }}_django {
     server 127.0.0.1:{{ uwsgi.port }};
 }
 
-# server {
-#     listen 80;
-#     server_name {{ server.name }}
-#                 {{ server.aliases|join(' ') }};
-#     return 301 https://{{ server.name }}$request_uri;
-# }
+server {
+    listen 80;
+    server_name {{ server.name }}
+                {{ server.aliases|join(' ') }};
+    return 301 https://{{ server.name }}$request_uri;
+}
 
 server {
-    listen       80;
+    listen       443;
     server_name {{ server.name }}
                 {{ server.aliases|join(' ') }};
     error_log /var/log/nginx/{{ user }}.{{ env }}/error.log warn;
@@ -26,13 +26,13 @@ server {
     client_max_body_size 512m;
     client_body_timeout 300s;
 
-    # ssl on;
-    # ssl_certificate /etc/ssl/wildcard.{{ user }}.crt;
-    # ssl_certificate_key /etc/ssl/{{ user }}.key;
-    # ssl_protocols TLSv1.2 TLSv1.1 TLSv1;
-    # ssl_dhparam /etc/ssl/certs/dhparam.pem;
-    # ssl_prefer_server_ciphers on;
-    # ssl_ciphers "EECDH+ECDSA+AESGCM EECDH+aRSA+AESGCM EECDH+ECDSA+SHA384 EECDH+ECDSA+SHA256 EECDH+aRSA+SHA384 EECDH+aRSA+SHA256 EECDH+aRSA+RC4 EECDH EDH+aRSA RC4 !aNULL !eNULL !LOW !3DES !MD5 !EXP !PSK !SRP !DSS !RC4 ";
+    ssl on;
+    ssl_certificate /etc/ssl/{{ env }}.{{ user }}.crt;
+    ssl_certificate_key /etc/ssl/{{ user }}.key;
+    ssl_protocols TLSv1.2 TLSv1.1 TLSv1;
+    ssl_dhparam /etc/ssl/certs/dhparam.pem;
+    ssl_prefer_server_ciphers on;
+    ssl_ciphers "EECDH+ECDSA+AESGCM EECDH+aRSA+AESGCM EECDH+ECDSA+SHA384 EECDH+ECDSA+SHA256 EECDH+aRSA+SHA384 EECDH+aRSA+SHA256 EECDH+aRSA+RC4 EECDH EDH+aRSA RC4 !aNULL !eNULL !LOW !3DES !MD5 !EXP !PSK !SRP !DSS !RC4 ";
 
     # # 180 days
     # add_header Strict-Transport-Security "max-age=15552000; includeSubdomains; preload";
@@ -66,6 +66,10 @@ server {
     location / {
         uwsgi_pass {{ user }}_{{ env }}_django;
         include uwsgi_params;
+    }
+
+    location /.well-known {
+        # deliberately empty - same root
     }
 
     location /favicon.ico {
