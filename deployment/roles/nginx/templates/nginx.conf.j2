@@ -23,6 +23,9 @@ server {
     charset utf-8;
     root {{ docroot }};
 
+    client_max_body_size 512m;
+    client_body_timeout 300s;
+
     # ssl on;
     # ssl_certificate /etc/ssl/wildcard.{{ user }}.crt;
     # ssl_certificate_key /etc/ssl/{{ user }}.key;
