@@ -9,7 +9,7 @@
 - name: Send private ssl keys
   copy:
     content: "{{ ssl_private_key }}"
-    dest: /etc/ssl/{{ user }}.key
+    dest: "/etc/ssl/{{ env }}.{{ user }}.key"
     mode: 0600
     owner: root
     group: root
