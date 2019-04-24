@@ -22,8 +22,8 @@ LOGGING['loggers'].update({
         'level': 'DEBUG',
         'propagate': True,
     },
-    'django': {
-        'handlers': ['django'],
+    'django.request': {
+        'handlers': ['console'],
         'level': 'DEBUG',
         'propagate': True,
     },
