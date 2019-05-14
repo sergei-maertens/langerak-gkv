@@ -1,3 +1,4 @@
+pip-tools
 psycopg2
 python-dotenv
 
@@ -57,3 +58,6 @@ html2text
 # PDF export
 CairoSVG<2.0
 WeasyPrint<43
+
+uwsgi
+raven
