@@ -2,7 +2,7 @@
 
 - name: Cron - send e-mails
   cron:
-    name: send e-mails
+    name: send e-mails ({{ env }})
     minute: "*/2"
     job: >
       cd {{ project_home }} &&
@@ -11,7 +11,7 @@
 
 - name: Cron - retry deferred emails
   cron:
-    name: retry deferred e-mails
+    name: retry deferred e-mails ({{ env }})
     minute: 0,20,40
     job: >
       cd {{ project_home }} &&
@@ -20,7 +20,7 @@
 
 - name: Cron - update elastic search index
   cron:
-    name: update elastic search index
+    name: update elastic search index ({{ env }})
     minute: 10,30,50
     job: >
       cd {{ project_home }} &&
