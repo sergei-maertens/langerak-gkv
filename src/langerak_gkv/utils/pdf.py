@@ -1,6 +1,6 @@
 import mimetypes
 import posixpath
-from urllib2 import urlparse
+from urllib.parse import urlparse
 
 from django.conf import settings
 from django.contrib.staticfiles import finders
