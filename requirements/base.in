@@ -13,7 +13,6 @@ django-sniplates
 easy-thumbnails
 django-class-based-auth-views
 django-image-cropping
-BeautifulSoup
 django-autoslug
 django-rosetta
 
