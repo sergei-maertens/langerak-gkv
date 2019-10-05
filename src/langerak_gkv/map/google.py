@@ -15,8 +15,8 @@ class GoogleApiException(Exception):
 
 
 class GoogleResponse(object):
-    OK = 'OK'
-    OVER_QUERY_LIMIT = 'OVER_QUERY_LIMIT'
+    OK = "OK"
+    OVER_QUERY_LIMIT = "OVER_QUERY_LIMIT"
 
 
 def geolocation(address):
@@ -28,15 +28,11 @@ def geolocation(address):
     """
     logger.debug(u"Geo-locating address")
 
-    qs = {
-        'key': settings.GOOGLE_API_KEY,
-        'sensor': 'false',
-        'address': address,
-    }
+    qs = {"key": settings.GOOGLE_API_KEY, "sensor": "false", "address": address}
     logger.debug(qs)
-    response = requests.get(u'https://maps.googleapis.com/maps/api/geocode/json?{0}'.format(
-        urlencode(qs)
-    ))
+    response = requests.get(
+        u"https://maps.googleapis.com/maps/api/geocode/json?{0}".format(urlencode(qs))
+    )
     logger.debug(response)
 
     # Example Google Geolocation service response::
@@ -99,9 +95,11 @@ def geolocation(address):
         raise GoogleApiException(response.content)
 
     result = json.loads(response.content)
-    if result['status'] != GoogleResponse.OK:
+    if result["status"] != GoogleResponse.OK:
         raise GoogleApiException(response.content)
 
-    location = result['results'][0]['geometry']['location']
-    logger.debug(u"Geolocation success: {0} / {1}".format(location['lat'], location['lng']))
-    return (location['lat'], location['lng'])
+    location = result["results"][0]["geometry"]["location"]
+    logger.debug(
+        u"Geolocation success: {0} / {1}".format(location["lat"], location["lng"])
+    )
+    return (location["lat"], location["lng"])

@@ -8,12 +8,12 @@ from langerak_gkv.users.tests.factories import UserFactory
 
 class ServiceFactory(factory.django.DjangoModelFactory):
 
-    name = factory.Iterator(['Morning', 'Noon'])
+    name = factory.Iterator(["Morning", "Noon"])
     time = factory.Iterator([time(9, 30), time(14, 00)])
 
     class Meta:
-        model = 'liturgies.Service'
-        django_get_or_create = ('time',)
+        model = "liturgies.Service"
+        django_get_or_create = ("time",)
 
 
 class LiturgyFactory(factory.django.DjangoModelFactory):
@@ -23,7 +23,7 @@ class LiturgyFactory(factory.django.DjangoModelFactory):
     preacher = factory.fuzzy.FuzzyText(length=15)
 
     class Meta:
-        model = 'liturgies.Liturgy'
+        model = "liturgies.Liturgy"
 
 
 class MailRecipientFactory(factory.django.DjangoModelFactory):
@@ -32,4 +32,4 @@ class MailRecipientFactory(factory.django.DjangoModelFactory):
     user = factory.SubFactory(UserFactory)
 
     class Meta:
-        model = 'liturgies.MailRecipient'
+        model = "liturgies.MailRecipient"

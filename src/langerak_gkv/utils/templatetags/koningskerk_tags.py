@@ -12,7 +12,7 @@ def pop(value, index=0):
 
 @register.simple_tag(takes_context=True)
 def absolute_url(context, location=None):
-    return context['request'].build_absolute_uri(location)
+    return context["request"].build_absolute_uri(location)
 
 
 # @register.inclusion_tag('users/birthdays.html')

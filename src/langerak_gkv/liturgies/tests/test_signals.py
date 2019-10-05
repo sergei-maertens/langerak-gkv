@@ -8,7 +8,6 @@ from .factories import LiturgyFactory
 
 
 class SignalTests(TestCase):
-
     def test_activity_created(self):
         """
         Test that an activity is created when a liturgy is created.
@@ -26,7 +25,9 @@ class SignalTests(TestCase):
         """
         Test that the linked activity date is updated if the liturgy changes.
         """
-        liturgy = LiturgyFactory.create(date=date(2015, 2, 21), service__time=time(9, 30))
+        liturgy = LiturgyFactory.create(
+            date=date(2015, 2, 21), service__time=time(9, 30)
+        )
         liturgy.date = date(2015, 2, 22)
         liturgy.save()
 
@@ -45,7 +46,9 @@ class SignalTests(TestCase):
         """
         Test that the activity is deleted if the liturgy is deleted
         """
-        liturgy = LiturgyFactory.create(date=date(2015, 2, 21), service__time=time(9, 30))
+        liturgy = LiturgyFactory.create(
+            date=date(2015, 2, 21), service__time=time(9, 30)
+        )
         l_id = liturgy.id
         liturgy.delete()
         self.assertEqual(Activity.objects.filter(liturgy_id=l_id).count(), 0)

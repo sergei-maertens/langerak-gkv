@@ -4,6 +4,4 @@ from .views import SocietyDetailView
 
 app_name = "societies"
 
-urlpatterns = [
-    path('<int:pk>/', SocietyDetailView.as_view(), name='detail'),
-]
+urlpatterns = [path("<int:pk>/", SocietyDetailView.as_view(), name="detail")]

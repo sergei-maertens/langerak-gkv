@@ -9,10 +9,10 @@ from langerak_gkv.utils.models import URLConfMenuEntry
 
 class LiturgiesMenu(CMSAttachMenu):
 
-    name = _('liturgies menu')
+    name = _("liturgies menu")
 
     def get_nodes(self, request):
-        nodes = URLConfMenuEntry.objects.filter(app_name='liturgies').order_by('order')
+        nodes = URLConfMenuEntry.objects.filter(app_name="liturgies").order_by("order")
         return [NavigationNode(node.display_name, node.resolve(), 1) for node in nodes]
 
 

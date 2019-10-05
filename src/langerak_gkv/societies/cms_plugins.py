@@ -8,10 +8,10 @@ from .models import SocietyPlugin
 
 class SocietyPlugin(CMSPluginBase):
     model = SocietyPlugin
-    name = _('Society')
-    module = _('Societies')
-    raw_id_fields = ('society',)
-    render_template = 'societies/cmsplugin/society.html'
+    name = _("Society")
+    module = _("Societies")
+    raw_id_fields = ("society",)
+    render_template = "societies/cmsplugin/society.html"
 
 
 plugin_pool.register_plugin(SocietyPlugin)

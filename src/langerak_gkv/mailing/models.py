@@ -19,43 +19,44 @@ class Mail(models.Model):
     sent = models.BooleanField(default=False)
 
     class Meta:
-        verbose_name = _('email')
-        verbose_name_plural = _('emails')
-        ordering = ('-pk',)
+        verbose_name = _("email")
+        verbose_name_plural = _("emails")
+        ordering = ("-pk",)
 
     def __str__(self):
         return self.subject
 
 
 class Templates(DjangoChoices):
-    liturgy = ChoiceItem('liturgy', _('Liturgy'))
+    liturgy = ChoiceItem("liturgy", _("Liturgy"))
 
 
 @python_2_unicode_compatible
 class MailTemplate(models.Model):
-    template_type = models.CharField(_('type'), max_length=50, choices=Templates.choices, unique=True)
+    template_type = models.CharField(
+        _("type"), max_length=50, choices=Templates.choices, unique=True
+    )
 
-    subject = models.CharField(_('subject'), max_length=255)
-    body = HTMLField(_('body'), help_text=_('Add the body with {{variable}} placeholders'))
+    subject = models.CharField(_("subject"), max_length=255)
+    body = HTMLField(
+        _("body"), help_text=_("Add the body with {{variable}} placeholders")
+    )
 
     CONFIG = {
         Templates.liturgy: {
-            'subject': [
-                Variable('extra_churches'),
-                Variable('datetime'),
+            "subject": [Variable("extra_churches"), Variable("datetime")],
+            "body": [
+                Variable("extra_churches"),
+                Variable("day"),
+                Variable("part_of_day"),
+                Variable("liturgy_details", required=True),
             ],
-            'body': [
-                Variable('extra_churches'),
-                Variable('day'),
-                Variable('part_of_day'),
-                Variable('liturgy_details', required=True)
-            ]
         }
     }
 
     class Meta:
-        verbose_name = _('mail template')
-        verbose_name_plural = _('mail templates')
+        verbose_name = _("mail template")
+        verbose_name_plural = _("mail templates")
 
     def __str__(self):
         return self.template_type

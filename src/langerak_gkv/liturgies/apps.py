@@ -3,8 +3,8 @@ from django.utils.translation import ugettext_lazy as _
 
 
 class LiturgiesConfig(AppConfig):
-    name = 'langerak_gkv.liturgies'
-    verbose_name = _('liturgies')
+    name = "langerak_gkv.liturgies"
+    verbose_name = _("liturgies")
 
     def ready(self):
         from . import signals  # noqa

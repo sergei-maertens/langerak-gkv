@@ -14,8 +14,8 @@ class ActivityListApiView(generics.ListAPIView):
         range_form = CalendarRangeForm(self.request.GET)
         if range_form.is_valid():
             qs = base.filter(
-                start_date__lte=range_form.cleaned_data['end'],
-                end_date__gte=range_form.cleaned_data['start']
+                start_date__lte=range_form.cleaned_data["end"],
+                end_date__gte=range_form.cleaned_data["start"],
             )
         else:
             qs = base

@@ -5,10 +5,10 @@ from cms.apphook_pool import apphook_pool
 
 
 class UsersApp(CMSApp):
-    name = _('Users')
+    name = _("Users")
 
     def get_urls(self, page=None, language=None, **kwargs):
-        return ['langerak_gkv.users.urls']
+        return ["langerak_gkv.users.urls"]
 
 
 apphook_pool.register(UsersApp)

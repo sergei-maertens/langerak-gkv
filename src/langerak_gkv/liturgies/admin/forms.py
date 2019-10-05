@@ -13,28 +13,25 @@ class LiturgyMailForm(MailForm):
     is_html = forms.BooleanField(required=False, initial=False)
 
     class Meta(MailForm.Meta):
-        fields = ('recipients', 'subject', 'body')
-        widgets = {
-            'body': forms.Textarea(attrs={'cols': 120, 'rows': 20})
-        }
+        fields = ("recipients", "subject", "body")
+        widgets = {"body": forms.Textarea(attrs={"cols": 120, "rows": 20})}
 
     def __init__(self, *args, **kwargs):
-        liturgies = kwargs.pop('liturgies')
+        liturgies = kwargs.pop("liturgies")
         super(LiturgyMailForm, self).__init__(*args, **kwargs)
-        self.fields['recipients'].queryset = MailRecipient.objects.filter(
-            liturgy__in=liturgies,
-            is_sent=False  # can only send once
+        self.fields["recipients"].queryset = MailRecipient.objects.filter(
+            liturgy__in=liturgies, is_sent=False  # can only send once
         )
 
     def save(self, *args, **kwargs):
         mail = super(LiturgyMailForm, self).save(*args, **kwargs)
 
         body, html_message = mail.body, None
-        if self.cleaned_data['is_html']:
+        if self.cleaned_data["is_html"]:
             html_message = mail.body
             body = html2text.html2text(html_message)
 
-        recipients = self.cleaned_data['recipients']
+        recipients = self.cleaned_data["recipients"]
         to = [r.email for r in recipients]
         send_mail(mail.subject, body, None, to, html_message=html_message)
         recipients.update(is_sent=True)

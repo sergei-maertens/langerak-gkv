@@ -5,6 +5,6 @@ from .forms import PrayerOnDemandForm
 
 def sidebar(request):
     return {
-        'upcoming_activities': Activity.objects.upcoming(n=5),
-        'pod_form': PrayerOnDemandForm(request=request),
+        "upcoming_activities": Activity.objects.upcoming(n=5),
+        "pod_form": PrayerOnDemandForm(request=request),
     }
