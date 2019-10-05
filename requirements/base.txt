@@ -41,7 +41,7 @@ django-sekizai==1.0.0
 django-sniplates==0.6.0
 django-treebeard==4.3     # via django-cms
 django-yubin==1.4.0
-django==2.1.12
+django==2.1.13
 djangocms-admin-style==1.4.0  # via django-cms
 djangocms-attributes-field==1.1.0  # via djangocms-file, djangocms-link, djangocms-picture, djangocms-video
 djangocms-column==1.9.0
