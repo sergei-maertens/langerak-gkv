@@ -1,5 +1,7 @@
 {% load thumbnail filer_tags filer_image_tags %}{% spaceless %}
 
+TODO: migrate to djangocms_picture/default/picture.html
+
 {% if placeholder == 'header_image' %}
     {% thumbnail instance.image 'header' as thumbnail %}
 {% else %}
