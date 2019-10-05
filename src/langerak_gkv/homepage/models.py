@@ -26,7 +26,7 @@ class PrayerOnDemand(models.Model):
 
 class HomepagePageLink(CMSPlugin):
     title = models.CharField(_('title'), max_length=50)
-    image = FilerImageField(verbose_name=_('image'))
+    image = FilerImageField(verbose_name=_('image'), on_delete=models.CASCADE)
     description = HTMLField(_('description'), help_text=_('Displayed below the title'))
     page_link = PageField(verbose_name=_("page"), blank=True, null=True, help_text=_("Page to link to"))
     enable_sharing = models.BooleanField(_('enable social sharing'), default=True)

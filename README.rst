@@ -49,18 +49,17 @@ below.
 
 3. Create the virtual environment and install all required libraries.::
 
-    $ mkvirtualenv -p python2.7 koningskerk
+    $ mkvirtualenv -p python2.6 koningskerk
     $ pip install -r requirements/development.txt
     $ npm install
 
 4. Activate your virtual environment and create the statics and database::
 
     $ workon koningskerk
-    $ python src/manage.py collectstatic --link --noinput
     $ python src/manage.py migrate
 
 Extra services required
 -----------------------
 
-* PostgreSQL 9.2+
+* PostgreSQL 9.5+
 * Elasticsearch 2.4

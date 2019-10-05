@@ -1,7 +1,7 @@
 from datetime import datetime, time
 
 from django.core.exceptions import ValidationError
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 from django.db import models
 from django.db.models import Q
 from django.utils import timezone
@@ -40,11 +40,11 @@ class Activity(models.Model):
     start_time = models.TimeField(_('start time'), null=True, blank=True)
     end_time = models.TimeField(_('end time'), null=True, blank=True)
 
-    intended_public = models.ForeignKey('IntendedPublic', null=True, blank=True)
-    type = models.ForeignKey('ActivityType')
+    intended_public = models.ForeignKey('IntendedPublic', null=True, blank=True, on_delete=models.CASCADE)
+    type = models.ForeignKey('ActivityType', on_delete=models.CASCADE)
     location = models.CharField(_('location'), max_length=255, blank=True)
 
-    image = FilerImageField(blank=True, null=True)
+    image = FilerImageField(blank=True, null=True, on_delete=models.CASCADE)
     description = models.TextField(_('short description/intro'))
     content = PlaceholderField('content')
     show_on_homepage = models.BooleanField(
@@ -53,7 +53,7 @@ class Activity(models.Model):
     )
 
     url = models.URLField(_('external url'), blank=True)
-    liturgy = models.ForeignKey('liturgies.Liturgy', null=True, editable=False)
+    liturgy = models.ForeignKey('liturgies.Liturgy', null=True, editable=False, on_delete=models.CASCADE)
     fb_event_id = models.CharField(_('facebook event id'), max_length=50, blank=True)
 
     objects = ActivityManager()

@@ -1,5 +1,5 @@
 from django.conf import settings
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 from django.db import models
 from django.utils.encoding import python_2_unicode_compatible
 from django.utils.translation import pgettext_lazy, ugettext_lazy as _
@@ -17,7 +17,7 @@ class Church(models.Model):
 
 class Liturgy(models.Model):
     date = models.DateField(_('date'))
-    service = models.ForeignKey('Service', verbose_name=_('service'))
+    service = models.ForeignKey('Service', verbose_name=_('service'), on_delete=models.CASCADE)
     preacher = models.CharField(_('preacher'), max_length=100)
     preach_author = models.CharField(_('preach author'), max_length=100)
     main_section = models.CharField(_('main section'), max_length=50, blank=True)
@@ -99,8 +99,8 @@ class MailRecipient(models.Model):
         bible_goup = ChoiceItem('biblegroup', _('bible group (%s)' % settings.EMAIL_BIBLE_GROUP))
         preach_creation = ChoiceItem('preach_creation', _('preach creation (%s)' % settings.EMAIL_PREACH_CREATION))
 
-    liturgy = models.ForeignKey('Liturgy', verbose_name=_('liturgy'))
-    user = models.ForeignKey(settings.AUTH_USER_MODEL, max_length=100, blank=True, null=True)
+    liturgy = models.ForeignKey('Liturgy', verbose_name=_('liturgy'), on_delete=models.CASCADE)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, max_length=100, blank=True, null=True, on_delete=models.CASCADE)
     email = models.EmailField(max_length=254, blank=True)
     function = models.CharField(choices=Functions.choices, max_length=50,
                                 validators=[Functions.validator], blank=True)

@@ -1,5 +1,5 @@
 from django.core.exceptions import ValidationError
-from django.core.urlresolvers import NoReverseMatch, reverse
+from django.urls import NoReverseMatch, reverse
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 

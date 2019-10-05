@@ -53,9 +53,9 @@ class ConfigurableElasticBackend(ElasticsearchSearchBackend):
         }
     }
     """
+
     def __init__(self, connection_alias, **connection_options):
-        super(ConfigurableElasticBackend, self).__init__(
-                                connection_alias, **connection_options)
+        super(ConfigurableElasticBackend, self).__init__(connection_alias, **connection_options)
         user_settings = getattr(settings, 'ELASTICSEARCH_INDEX_SETTINGS', None)
         if user_settings is not None:
             setattr(self, 'DEFAULT_SETTINGS', user_settings)

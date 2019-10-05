@@ -1,7 +1,7 @@
 import logging
 
 from django import template
-from django.core.urlresolvers import NoReverseMatch, reverse
+from django.urls import NoReverseMatch, reverse
 from django.template.defaultfilters import stringfilter
 
 logger = logging.getLogger(__name__)

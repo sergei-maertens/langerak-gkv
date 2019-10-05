@@ -1,5 +1,5 @@
 from django.conf import settings
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 from django.db import models
 from django.utils.encoding import python_2_unicode_compatible
 from django.utils.translation import ugettext_lazy as _
@@ -28,7 +28,7 @@ class Society(models.Model):
 
 @python_2_unicode_compatible
 class SocietyPlugin(CMSPlugin):
-    society = models.ForeignKey(Society)
+    society = models.ForeignKey(Society, on_delete=models.CASCADE)
     page_link = PageField(verbose_name=_("page"), blank=True, null=True, help_text=_("Page to link to"))
 
     def __str__(self):

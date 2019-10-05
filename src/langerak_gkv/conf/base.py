@@ -149,6 +149,7 @@ TEMPLATES = [
 
 MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',
+    'axes.middleware.AxesMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.locale.LocaleMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -161,7 +162,6 @@ MIDDLEWARE = [
     'cms.middleware.user.CurrentUserMiddleware',
     'cms.middleware.toolbar.ToolbarMiddleware',
     'cms.middleware.language.LanguageCookieMiddleware',
-    # 'axes.middleware.FailedLoginMiddleware'
 ]
 
 ROOT_URLCONF = 'langerak_gkv.urls'
@@ -198,8 +198,6 @@ INSTALLED_APPS = [
     'rest_framework',
     'rosetta',
     'haystack',
-    'aldryn_search',
-    # 'sorl.thumbnail',
     'newsletter',
     'import_export',
     'image_cropping',
@@ -209,13 +207,11 @@ INSTALLED_APPS = [
     'cms',
     'treebeard',
     'djangocms_text_ckeditor',
-    'djangocms_video',
     'filer',
-    'cmsplugin_filer_file',
-    'cmsplugin_filer_folder',
-    'cmsplugin_filer_image',
-    'cmsplugin_filer_video',
-    'cmsplugin_filer_link',
+    'djangocms_file',
+    'djangocms_picture',
+    'djangocms_video',
+    'djangocms_link',
     'menus',
     'sekizai',
     'djangocms_grid',
@@ -228,7 +224,6 @@ INSTALLED_APPS = [
     'langerak_gkv.search',
     'langerak_gkv.societies',
     'langerak_gkv.utils',
-    'langerak_gkv.worklog',
 ]
 
 LOGGING_DIR = os.path.join(BASE_DIR, 'log')
@@ -337,6 +332,7 @@ AXES_USE_USER_AGENT = False  # Default: False
 
 AUTH_USER_MODEL = 'users.User'
 AUTHENTICATION_BACKENDS = [
+    'axes.backends.AxesBackend',
     'django.contrib.auth.backends.ModelBackend',
     'langerak_gkv.users.backends.UsernameModelBackend',
 ]
@@ -415,7 +411,7 @@ CMS_PLACEHOLDER_CONF = {
     'preach_subtitle': {'plugins': ['CharFieldPlugin']},
 }
 
-CMSPLUGIN_FILER_IMAGE_STYLE_CHOICES = (
+DJANGOCMS_PICTURE_ALIGN = (
     ('header', _('header top image')),
 )
 

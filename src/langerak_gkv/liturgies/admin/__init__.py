@@ -1,6 +1,6 @@
 from django.conf.urls import url
 from django.contrib import admin, messages
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 from django.template.defaultfilters import date, time
 from django.template.loader import render_to_string
 from django.utils.safestring import mark_safe

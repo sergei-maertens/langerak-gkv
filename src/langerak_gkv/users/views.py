@@ -4,7 +4,7 @@ from datetime import date
 from django.views.generic import DetailView, ListView
 from django.views.generic.edit import FormMixin, UpdateView
 
-from class_based_auth_views.views import LoginView, LogoutView
+from django.contrib.auth.views import LoginView, LogoutView
 
 from langerak_gkv.utils.pdf import PDFTemplateResponseMixin
 from langerak_gkv.utils.view_mixins import LoginRequiredMixin
