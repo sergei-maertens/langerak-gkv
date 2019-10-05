@@ -196,7 +196,6 @@ INSTALLED_APPS = [
     "djangocms_link",
     "menus",
     "sekizai",
-    "djangocms_grid",
     # Project applications.
     "langerak_gkv.activities",
     "langerak_gkv.homepage",
@@ -350,8 +349,6 @@ CMS_PLACEHOLDER_CONF = {
 }
 
 DJANGOCMS_PICTURE_ALIGN = (("header", _("header top image")),)
-
-DJANGOCMS_GRID_CONFIG = {"COLUMNS": 12, "TOTAL_WIDTH": 1170, "GUTTER": 30}
 
 
 class FilerStyles(DjangoChoices):
