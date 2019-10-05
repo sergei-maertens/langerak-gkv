@@ -36,7 +36,7 @@ class RedirectUnsubscribeUserView(UnsubscribeUserView):
 
 class RedirectUnsubscribeRequestView(UnsubscribeRequestView):
     def dispatch(self, request, *args, **kwargs):
-        if request.user.is_authenticated():
+        if request.user.is_authenticated:
             kwargs["confirm"] = self.confirm
             return RedirectUnsubscribeUserView.as_view()(request, *args, **kwargs)
 

@@ -1,7 +1,7 @@
 html2text
 pip-tools
 Pillow
-psycopg2
+psycopg2<2.8  # fixed in django 2.2+
 python-dotenv
 raven
 requests
@@ -29,7 +29,7 @@ easy-thumbnails
 
 # cms
 django-sekizai
-django-cms
+django-cms<3.7
 djangocms-text-ckeditor
 django-filer
 djangocms-file
