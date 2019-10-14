@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  web:
+    image: regexit/kerkwebsite:latest
+    volumes:
+      - .env:/app/.env
+      - /var/run/postgresql:/var/run/postgresql
+    env_file:
+      - .env
+    environment:
+      - SECRET_KEY=dummy
+      - DB_HOST=/var/run/postgresql
+      - ALLOWED_HOSTS=*
+    ports:
+      - "8000:8000"

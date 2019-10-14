@@ -29,8 +29,7 @@ local.py
 /langerak.sublime-project
 
 # dependencies
-src/langerak_gkv/static/vendor/
-node_modules
+/node_modules
 
 # testing
 .coverage

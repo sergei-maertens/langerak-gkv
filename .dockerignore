@@ -1,0 +1,8 @@
+/media
+/static
+/node_modules
+/deployment
+/log
+.gitignore
+.dockerignore
+.vault_password.txt
