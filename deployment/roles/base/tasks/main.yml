@@ -13,5 +13,3 @@
 - import_tasks: databases.yml
 - import_tasks: webservers.yml
 - import_tasks: caches.yml
-
-- import_tasks: vcs.yml
