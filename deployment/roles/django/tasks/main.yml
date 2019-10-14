@@ -2,12 +2,6 @@
 # Main tasks file to distribute the subtasks
 
 - import_tasks: install_os_packages.yml
-- import_tasks: checkout_code.yml
-- import_tasks: dependencies.yml
-- import_tasks: db.yml
 - import_tasks: secrets.yml
-- import_tasks: migrate.yml
-- import_tasks: frontend.yml
 - import_tasks: media.yml
-- import_tasks: collectstatic.yml
 - import_tasks: cronjobs.yml

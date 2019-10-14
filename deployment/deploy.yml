@@ -1,0 +1,23 @@
+---
+
+- name: Deploy with Docker
+  hosts: all
+  remote_user: root
+
+  vars:
+    image: regexit/kerkwebsite:latest
+    nginx_log_dir: /var/log/nginx/rkl
+
+  roles:
+    - role: users
+    - role: geerlingguy.docker
+    - role: database
+    - role: django
+
+# TODO: template out env (ES!)
+# TODO: spin up docker container
+#   mount volume for media
+#   mount volume for logs
+#   mount /var/run/postgresql
+# TODO: letsencrypt
+# TODO: nginx vhost

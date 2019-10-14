@@ -8,13 +8,11 @@
     password: "{{ django_db.password }}"
   become: yes
   become_user: postgres
-  remote_user: root
 
 - name: Create Django Postgres db
   postgresql_db:
     name: "{{ django_db.name }}"
-    encoding: "UTF-8"
     owner: "{{ django_db.user }}"
+    encoding: "UTF-8"
   become: yes
   become_user: postgres
-  remote_user: root
