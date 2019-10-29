@@ -22,7 +22,7 @@ python src/manage.py migrate
 >&2 echo "Starting server"
 uwsgi \
     --http :${UWSGI_PORT:-8000} \
-    --module langerak_gkv.wsgi \
+    --module wsgi \
     --static-map /static=/app/static \
     --static-map /media=/app/media  \
     --chdir src \
