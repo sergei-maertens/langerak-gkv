@@ -5,14 +5,8 @@
     path: "{{ storage_path }}"
     state: directory
     mode: 0750
-  tags:
-    - media
-
-- name: Ensure media folder is symlink to big storage
-  file:
-    src: "{{ storage_path }}"
-    dest: "{{ project_home }}/media"
-    state: link
+    owner: "{{ user }}"
+    group: "{{ user }}"
   tags:
     - media
 

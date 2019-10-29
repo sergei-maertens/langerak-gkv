@@ -1,4 +1,30 @@
 ---
 
-- import_tasks: ssl.yml
-- import_tasks: vhost.yml
+- name: Disable the default nginx vhost
+  file:
+    path: /etc/nginx/sites-enabled/default
+    state: absent
+  notify:
+    - reload nginx
+
+- name: Ensure the log directory exists
+  file:
+    path: "{{ nginx_log_dir }}"
+    state: directory
+    owner: www-data
+    group: www-data
+
+- name: Install the Nginx config file
+  template:
+    src: nginx.conf.j2
+    dest: /etc/nginx/sites-available/{{ user }}.{{ env }}.conf
+  notify:
+    - reload nginx
+
+- name: Ensure the site is enabled (symlink)
+  file:
+    src: /etc/nginx/sites-available/{{ user }}.{{ env }}.conf
+    dest: /etc/nginx/sites-enabled/{{ user }}.{{ env }}.conf
+    state: link
+  notify:
+    - reload nginx

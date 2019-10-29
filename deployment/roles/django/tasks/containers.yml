@@ -1,0 +1,27 @@
+---
+
+# Ensure the necessary containers run
+
+- name: Ensure a separate network exists
+  docker_network:
+    name: "{{ docker_network }}"
+
+- name: Ensure web container runs
+  docker_container:
+    name: "{{ user }}-{{ env }}-web"
+    image: "{{ image | mandatory }}"
+    pull: yes
+    hostname: "{{ user }}-{{ env }}-web"
+    state: started
+    restart: no
+    restart_policy: always
+    purge_networks: yes
+    networks:
+      - name: "{{ docker_network }}"
+    volumes:
+      - "{{ storage_path }}:/app/media"
+      - /var/run/postgresql/:/var/run/postgresql
+    env_file: "{{ project_home }}/.env"
+    published_ports:
+      - "127.0.0.1:{{ backend_port }}:8000"
+    command: /uwsgi.sh

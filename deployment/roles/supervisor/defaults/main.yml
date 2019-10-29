@@ -1,3 +1,0 @@
----
-
-uwsgi_ini_file: "{{ ansible_env.HOME }}/django/{{ env }}/src/{{ app_name }}/conf/uwsgi.ini"
