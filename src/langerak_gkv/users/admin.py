@@ -96,7 +96,7 @@ class DistrictFunctionAdmin(admin.ModelAdmin):
 
 class RelationTypeAdmin(admin.ModelAdmin):
     list_display = (
-        "__unicode__",
+        "__str__",
         "name_male",
         "name_female",
         "reverse_name_male",

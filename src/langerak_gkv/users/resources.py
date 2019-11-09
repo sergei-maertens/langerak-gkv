@@ -2,6 +2,7 @@ from datetime import date
 
 from import_export import resources
 
+from .constants import Sex
 from .models import Family, User
 
 
@@ -50,9 +51,9 @@ class UserResource(resources.ModelResource):
 
         def get_sex(row):
             if row[sex] == "dhr.":
-                return User.Sex.male
+                return Sex.male
             elif row[sex] == "mevr.":
-                return User.Sex.female
+                return Sex.female
             return ""
 
         dataset.append_col(get_sex, header="sex")

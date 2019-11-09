@@ -7,6 +7,7 @@ from django.utils.translation import ugettext_lazy as _
 
 from image_cropping import ImageCropWidget
 
+from .constants import Sex
 from .models import User
 
 
@@ -140,7 +141,7 @@ class UserSearchForm(forms.ModelForm):
     sex = forms.MultipleChoiceField(
         label=_("Gender"),
         required=False,
-        choices=User.Sex.choices,
+        choices=Sex.choices,
         widget=forms.CheckboxSelectMultiple,
     )
 

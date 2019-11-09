@@ -1,52 +1,16 @@
 import os
 
-from django.contrib.auth.models import (
-    AbstractBaseUser,
-    BaseUserManager,
-    PermissionsMixin,
-)
+from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin
 from django.db import models
 from django.urls import reverse
 from django.utils import timezone
 from django.utils.functional import cached_property
 from django.utils.translation import ugettext_lazy as _
 
-from djchoices import ChoiceItem, DjangoChoices
 from image_cropping import ImageRatioField
 
-
-class UsersQuerySet(models.QuerySet):
-    def only_real(self):
-        return self.filter(exclude_in_queries=False)
-
-
-class UserManager(BaseUserManager.from_queryset(UsersQuerySet)):
-    use_for_related_fields = True
-
-    def _create_user(self, email, password, is_staff, is_superuser, **extra_fields):
-        """
-        Creates and saves a User with the given username, email and password.
-        """
-        now = timezone.now()
-        email = self.normalize_email(email)
-        user = self.model(
-            email=email,
-            is_staff=is_staff,
-            is_active=True,
-            is_superuser=is_superuser,
-            last_login=now,
-            date_joined=now,
-            **extra_fields
-        )
-        user.set_password(password)
-        user.save(using=self._db)
-        return user
-
-    def create_user(self, email=None, password=None, **extra_fields):
-        return self._create_user(email, password, False, False, **extra_fields)
-
-    def create_superuser(self, email, password, **extra_fields):
-        return self._create_user(email, password, True, True, **extra_fields)
+from .constants import MemberType, Sex
+from .managers import UserManager
 
 
 def get_image_path(instance, filename):
@@ -60,15 +24,6 @@ def get_image_path(instance, filename):
 
 
 class User(AbstractBaseUser, PermissionsMixin):
-    class Sex(DjangoChoices):
-        male = ChoiceItem("male", _("male"))
-        female = ChoiceItem("female", _("female"))
-
-    class MemberType(DjangoChoices):
-        baptised = ChoiceItem("baptised", _("baptised member"))
-        practicing = ChoiceItem("practicing", _("practicing member"))
-        guest = ChoiceItem("guest", _("guest member"))
-
     email = models.EmailField(_("email address"), max_length=254, unique=True)
     username = models.CharField(_("username"), max_length=100, blank=True)
 
@@ -127,7 +82,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     )
     district = models.ForeignKey(
         "users.District",
-        verbose_name=_(u"district"),
+        verbose_name=_("district"),
         blank=True,
         null=True,
         on_delete=models.PROTECT,
@@ -164,7 +119,7 @@ class User(AbstractBaseUser, PermissionsMixin):
         verbose_name = _("user")
         verbose_name_plural = _("users")
 
-    def __unicode__(self):
+    def __str__(self):
         full_name = self.get_full_name().strip()
         return full_name or getattr(self, self.USERNAME_FIELD)
 
@@ -195,8 +150,8 @@ class User(AbstractBaseUser, PermissionsMixin):
         if not self.address and not self.postal_code and not self.city:
             return ""
         if not self.address:
-            return u"{} {}".format(self.get_postal_code(), self.city).strip()
-        return u"{}, {} {}".format(
+            return "{} {}".format(self.get_postal_code(), self.city).strip()
+        return "{}, {} {}".format(
             self.address, self.get_postal_code(), self.city
         ).strip()
 
@@ -252,11 +207,11 @@ class UserRelation(models.Model):
     # more recent birth date
 
     class Meta:
-        verbose_name = _(u"user relation")
-        verbose_name_plural = _(u"user relations")
+        verbose_name = _("user relation")
+        verbose_name_plural = _("user relations")
 
-    def __unicode__(self):
-        return u"{user2} ({user2_relation} of {user1})".format(
+    def __str__(self):
+        return "{user2} ({user2_relation} of {user1})".format(
             **self.get_textual_repr()
         )
 
@@ -291,27 +246,27 @@ class RelationType(models.Model):
     is_child_parent = models.BooleanField(_("is child/parent?"), default=False)
 
     class Meta:
-        verbose_name = _(u"relation type")
-        verbose_name_plural = _(u"relation types")
+        verbose_name = _("relation type")
+        verbose_name_plural = _("relation types")
 
-    def __unicode__(self):
+    def __str__(self):
         formatter_args = (
             self.name_male,
             self.name_female,
             self.reverse_name_male,
             self.reverse_name_female,
         )
-        return _(u"{0}/{1} (reverse: {2}/{3})").format(*formatter_args)
+        return _("{0}/{1} (reverse: {2}/{3})").format(*formatter_args)
 
 
 class District(models.Model):
     name = models.CharField(_("name"), max_length=255)
 
     class Meta:
-        verbose_name = _(u"district")
-        verbose_name_plural = _(u"districts")
+        verbose_name = _("district")
+        verbose_name_plural = _("districts")
 
-    def __unicode__(self):
+    def __str__(self):
         return self.name
 
 
@@ -325,10 +280,10 @@ class DistrictFunction(models.Model):
     )
 
     class Meta:
-        verbose_name = _(u"district function")
-        verbose_name_plural = _(u"district functions")
+        verbose_name = _("district function")
+        verbose_name_plural = _("district functions")
 
-    def __unicode__(self):
+    def __str__(self):
         return self.name
 
 
@@ -346,17 +301,9 @@ class Family(models.Model):
     city = models.CharField(_("city"), max_length=100, blank=True)
 
     class Meta:
-        verbose_name = _(u"family")
-        verbose_name_plural = _(u"families")
+        verbose_name = _("family")
+        verbose_name_plural = _("families")
         unique_together = ("address", "postal_code")
 
-    def __unicode__(self):
+    def __str__(self):
         return _("Fam. {name}").format(name=self.name)
-
-
-# Profielpagina
-# -Overzichtspagina van alle gemeenteleden onder elkaar met thumbnail foto en kort overzicht
-#  belangrijkste contactgegevens
-#     Uitgebreide zoekfunctionaliteit
-# -Persoonlijke pagina met volgende gegevens:
-# Eerstegraads connecties (in kleine thumbnails)
