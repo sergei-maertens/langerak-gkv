@@ -18,6 +18,7 @@ class UserManager(BaseUserManager.from_queryset(UsersQuerySet)):
         now = timezone.now()
         email = self.normalize_email(email)
         user = self.model(
+            username=email,
             email=email,
             is_staff=is_staff,
             is_active=True,

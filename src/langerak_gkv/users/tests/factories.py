@@ -6,6 +6,7 @@ class UserFactory(factory.django.DjangoModelFactory):
     class Meta:
         model = "users.User"
 
+    username = factory.Sequence(lambda n: f"user-{n}")
     first_name = factory.fuzzy.FuzzyChoice(["John", "Jane"])
     last_name = "Doe"
     email = factory.LazyAttributeSequence(

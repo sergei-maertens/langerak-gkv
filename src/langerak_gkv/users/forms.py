@@ -18,10 +18,7 @@ class UserCreationForm(forms.ModelForm):
     password.
     """
 
-    error_messages = {
-        "duplicate_email": _("A user with that email already exists."),
-        "password_mismatch": _("The two password fields didn't match."),
-    }
+    error_messages = {"password_mismatch": _("The two password fields didn't match.")}
     password1 = forms.CharField(label=_("Password"), widget=forms.PasswordInput)
     password2 = forms.CharField(
         label=_("Password confirmation"),
@@ -29,24 +26,12 @@ class UserCreationForm(forms.ModelForm):
         help_text=_("Enter the same password as above, for verification."),
     )
     username = forms.CharField(
-        label=_("Username"), required=False, help_text=_("Alternative to login.")
+        label=_("Username"), required=True, help_text=_("Used for login.")
     )
 
     class Meta:
         model = User
         fields = "__all__"
-
-    def clean_email(self):
-        # Since User.email is unique, this check is redundant,
-        # but it sets a nicer error message than the ORM.
-        email = self.cleaned_data["email"]
-        try:
-            User._default_manager.get(email=email)
-        except User.DoesNotExist:
-            return email
-        raise forms.ValidationError(
-            self.error_messages["duplicate_email"], code="duplicate_email"
-        )
 
     def clean_password2(self):
         password1 = self.cleaned_data.get("password1")
@@ -66,7 +51,7 @@ class UserCreationForm(forms.ModelForm):
 
 
 class UserChangeForm(forms.ModelForm):
-    email = forms.EmailField(label=_("Email"), max_length=254)
+    email = forms.EmailField(label=_("Email"), max_length=254, required=False)
     password = ReadOnlyPasswordHashField(
         label=_("Password"),
         help_text=_(

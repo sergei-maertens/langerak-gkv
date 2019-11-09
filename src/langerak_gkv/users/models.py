@@ -24,8 +24,8 @@ def get_image_path(instance, filename):
 
 
 class User(AbstractBaseUser, PermissionsMixin):
-    email = models.EmailField(_("email address"), max_length=254, unique=True)
-    username = models.CharField(_("username"), max_length=100, blank=True)
+    email = models.EmailField(_("email address"), max_length=254, blank=True)
+    username = models.CharField(_("username"), max_length=100, unique=True)
 
     first_name = models.CharField(_("first name"), max_length=50, blank=True)
     last_name = models.CharField(_("last name"), max_length=50, blank=True)
@@ -113,7 +113,7 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     objects = UserManager()
 
-    USERNAME_FIELD = "email"
+    USERNAME_FIELD = "username"
 
     class Meta:
         verbose_name = _("user")
@@ -211,9 +211,7 @@ class UserRelation(models.Model):
         verbose_name_plural = _("user relations")
 
     def __str__(self):
-        return "{user2} ({user2_relation} of {user1})".format(
-            **self.get_textual_repr()
-        )
+        return "{user2} ({user2_relation} of {user1})".format(**self.get_textual_repr())
 
     def get_textual_repr(self):
         """ Does the logic in checking the sexes and displaying the correct relation """

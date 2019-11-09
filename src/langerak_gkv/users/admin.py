@@ -17,7 +17,7 @@ class UserRelationInline(admin.TabularInline):
 
 class UserAdmin(ImportExportMixin, _UserAdmin):
     fieldsets = (
-        (None, {"fields": (("email", "username"), "password")}),
+        (None, {"fields": ("username", "email", "password")}),
         (
             _("Personal info"),
             {
@@ -59,11 +59,18 @@ class UserAdmin(ImportExportMixin, _UserAdmin):
         ),
     )
     add_fieldsets = (
-        (None, {"classes": ("wide",), "fields": ("email", "password1", "password2")}),
+        (
+            None,
+            {
+                "classes": ("wide",),
+                "fields": ("username", "password1", "password2", "email"),
+            },
+        ),
     )
     form = UserChangeForm
     add_form = UserCreationForm
     list_display = (
+        "username",
         "email",
         "first_name",
         "last_name",
@@ -77,7 +84,7 @@ class UserAdmin(ImportExportMixin, _UserAdmin):
         "family",
         "exclude_in_queries",
     )
-    search_fields = ("first_name", "last_name", "email")
+    search_fields = ("first_name", "last_name", "email", "username")
     ordering = ("email",)
 
     inlines = [UserRelationInline]

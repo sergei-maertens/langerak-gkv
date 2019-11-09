@@ -297,7 +297,7 @@ AUTH_USER_MODEL = "users.User"
 AUTHENTICATION_BACKENDS = [
     "axes.backends.AxesBackend",
     "django.contrib.auth.backends.ModelBackend",
-    "langerak_gkv.users.backends.UsernameModelBackend",
+    "langerak_gkv.users.backends.EmailModelBackend",
 ]
 LOGIN_URL = "users:login"
 LOGIN_REDIRECT_URL = "/"
