@@ -35,3 +35,7 @@ local.py
 .coverage
 /htmlcov
 /reports
+
+# Build artifacts
+src/langerak_gkv/static/css/
+src/langerak_gkv/static/js/
