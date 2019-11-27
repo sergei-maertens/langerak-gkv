@@ -1,7 +1,7 @@
 from django.conf import settings
 from django.contrib import messages
 from django.core.mail import send_mail
-from django.urls import reverse, reverse_lazy
+from django.urls import reverse
 from django.utils.translation import ugettext_lazy as _
 from django.views.generic import CreateView
 
@@ -13,7 +13,7 @@ class PODCreateView(CreateView):
     template_name = "homepage/home.html"
     model = PrayerOnDemand
     form_class = PrayerOnDemandForm
-    success_url = reverse_lazy("home")
+    success_url = "/"
 
     def get_form_kwargs(self):
         kwargs = super(PODCreateView, self).get_form_kwargs()

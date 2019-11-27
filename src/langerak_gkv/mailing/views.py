@@ -1,6 +1,5 @@
 from django.contrib import messages
 from django.shortcuts import get_object_or_404, redirect
-from django.urls import reverse_lazy
 from django.utils.translation import ugettext_lazy as _
 from django.views.generic import RedirectView
 
@@ -15,7 +14,7 @@ ACTION_MAPPING = {
 
 
 class ActionRedirectView(RedirectView):
-    url = reverse_lazy("home")
+    url = "/"
     permanent = False
 
     def get(self, request, *args, **kwargs):
@@ -31,7 +30,7 @@ class ActionRedirectView(RedirectView):
 class RedirectUnsubscribeUserView(UnsubscribeUserView):
     def post(self, request, *args, **kwargs):
         super(RedirectUnsubscribeUserView, self).post(request, *args, **kwargs)
-        return redirect("home")
+        return redirect("/")
 
 
 class RedirectUnsubscribeRequestView(UnsubscribeRequestView):
@@ -44,5 +43,5 @@ class RedirectUnsubscribeRequestView(UnsubscribeRequestView):
             request, *args, **kwargs
         )
         if self.request.method == "POST":
-            return redirect("home")
+            return redirect("/")
         return response
