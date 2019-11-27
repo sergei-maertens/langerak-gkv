@@ -342,10 +342,10 @@ CMS_TEMPLATES = (
 
 CMS_PLACEHOLDER_CONF = {
     "header_image": {"plugins": ["FilerImagePlugin"]},
-    "slot1": {"plugins": ["HomepageLinkPlugin"]},
-    "slot2": {"plugins": ["HomepageLinkPlugin"]},
-    "slot3": {"plugins": ["HomepageLinkPlugin"]},
-    "slot4": {"plugins": ["HomepageLinkPlugin"]},
+    "slot11": {"plugins": ["HomepageLinkPlugin"]},
+    "slot12": {"plugins": ["HomepageLinkPlugin"]},
+    "slot21": {"plugins": ["HomepageLinkPlugin"]},
+    "slot22": {"plugins": ["HomepageLinkPlugin"]},
     "preach_image": {"plugins": ["FilerImagePlugin"]},
     "preach_title": {"plugins": ["CharFieldPlugin"]},
     "preach_subtitle": {"plugins": ["CharFieldPlugin"]},
