@@ -38,7 +38,6 @@ urlpatterns = [
         name="newsletter_unsubscribe_confirm",
     ),
     path("newsletter/", include("newsletter.urls")),
-    path("", include("cms.urls")),
 ] + staticfiles_urlpatterns()
 
 
@@ -52,3 +51,7 @@ if settings.DEBUG:
     urlpatterns += [path("__debug__/", include(debug_toolbar.urls))] + static(
         settings.MEDIA_URL, document_root=settings.MEDIA_ROOT
     )
+
+urlpatterns += [
+    path("", include("cms.urls")),
+]
