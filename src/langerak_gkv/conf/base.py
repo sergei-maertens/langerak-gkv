@@ -146,8 +146,8 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     # External middleware.
-    "cms.middleware.page.CurrentPageMiddleware",
     "cms.middleware.user.CurrentUserMiddleware",
+    "cms.middleware.page.CurrentPageMiddleware",
     "cms.middleware.toolbar.ToolbarMiddleware",
     "cms.middleware.language.LanguageCookieMiddleware",
 ]
@@ -322,7 +322,10 @@ THUMBNAIL_ALIASES[""]["homepage"] = THUMBNAIL_ALIASES[""]["default"]
 
 THUMBNAIL_PROCESSORS = (
     "image_cropping.thumbnail_processors.crop_corners",
-    "filer.thumbnail_processors.scale_and_crop_with_subject_location",
+    'easy_thumbnails.processors.colorspace',
+    'easy_thumbnails.processors.autocrop',
+    'filer.thumbnail_processors.scale_and_crop_with_subject_location',
+    'easy_thumbnails.processors.filters'
 )
 
 #
