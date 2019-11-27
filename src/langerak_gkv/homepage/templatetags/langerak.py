@@ -18,12 +18,15 @@ def active(path, reverse_name, exact=False):
     try:
         url = reverse(reverse_name)
     except NoReverseMatch as e:
-        logger.debug(e)
-        return False
+        if reverse_name == "home":
+            url = "/"
+        else:
+            logger.debug(e)
+            return False
 
     if path == url and exact:
         return True
-    elif path.startswith(url) and not exact and path != reverse("home"):
+    elif path.startswith(url) and not exact and path != "/":
         return True
     return False
 
