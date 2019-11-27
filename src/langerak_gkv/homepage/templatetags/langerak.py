@@ -4,6 +4,10 @@ from django import template
 from django.template.defaultfilters import stringfilter
 from django.urls import NoReverseMatch, reverse
 
+from langerak_gkv.activities.models import Activity
+
+from ..forms import PrayerOnDemandForm
+
 logger = logging.getLogger(__name__)
 register = template.Library()
 
@@ -28,3 +32,14 @@ def active(path, reverse_name, exact=False):
 @stringfilter
 def active_exact(path, reverse_name):
     return active(path, reverse_name, exact=True)
+
+
+@register.simple_tag
+def get_activities():
+    qs = Activity.objects.homepage().order_by("?")[:4]
+    return list(qs)
+
+
+@register.simple_tag
+def get_pod_form(request):
+    return PrayerOnDemandForm(request=request)

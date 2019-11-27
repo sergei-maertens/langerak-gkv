@@ -3,23 +3,10 @@ from django.contrib import messages
 from django.core.mail import send_mail
 from django.urls import reverse, reverse_lazy
 from django.utils.translation import ugettext_lazy as _
-from django.views.generic import CreateView, TemplateView
-
-from langerak_gkv.activities.models import Activity
+from django.views.generic import CreateView
 
 from .forms import PrayerOnDemandForm
 from .models import PrayerOnDemand
-
-
-class HomepageView(TemplateView):
-    template_name = "homepage/home.html"
-
-    def get_context_data(self, **kwargs):
-        # form initialization is specific to this view, the create view has its
-        # own form builder
-        kwargs["pod_form"] = PrayerOnDemandForm(request=self.request)
-        kwargs["activities"] = list(Activity.objects.homepage().order_by("?")[:4])
-        return super(HomepageView, self).get_context_data(**kwargs)
 
 
 class PODCreateView(CreateView):

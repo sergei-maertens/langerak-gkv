@@ -1,8 +1,11 @@
-{% extends "cms/base.html" %}{% load i18n static thumbnail koningskerk_tags cms_tags users %}
+{% extends "cms/base.html" %}{% load i18n static thumbnail langerak koningskerk_tags cms_tags users %}
 
 {% block body-class %}{{ block.super }} home{% endblock body-class %}
 
 {% block content %}
+
+{% get_activities as activities %}
+
 <div class="row">
 
     <div class="col-md-8">
