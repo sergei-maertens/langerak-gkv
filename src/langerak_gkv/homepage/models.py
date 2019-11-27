@@ -17,10 +17,10 @@ class PrayerOnDemand(models.Model):
     modified = models.DateTimeField(auto_now=True)
 
     class Meta:
-        verbose_name = _(u"prayer on demand")
-        verbose_name_plural = _(u"prayer on demands")
+        verbose_name = _("prayer on demand")
+        verbose_name_plural = _("prayer on demands")
 
-    def __unicode__(self):
+    def __str__(self):
         return self.name
 
 
@@ -33,12 +33,12 @@ class HomepagePageLink(CMSPlugin):
     )
     enable_sharing = models.BooleanField(_("enable social sharing"), default=True)
 
-    def __unicode__(self):
-        return u"{0} - {1}".format(self.title, self.page_link)
+    def __str__(self):
+        return f"{self.title} - {self.page_link }"
 
 
 class CharFieldPlugin(CMSPlugin):
     content = models.CharField(_("text"), max_length=255)
 
-    def __unicode__(self):
+    def __str__(self):
         return self.content

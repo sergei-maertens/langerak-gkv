@@ -2,30 +2,30 @@
 <article class="link-block link-height" data-linkid="{{ linkid }}">
     <header>
         <figure>
-            <img src="{{ plugin.instance.image|thumbnail_url:'homepage' }}">
+            <img src="{{ instance.image|thumbnail_url:'homepage' }}">
         </figure>
-        <h2>{{ plugin.instance.title }}</h2>
+        <h2>{{ instance.title }}</h2>
     </header>
 
     <p class="description">
-        {{ plugin.instance.description|safe }}
+        {{ instance.description|safe }}
     </p>
 
     <footer>
         <ul class="list-inline">
-            {% if plugin.instance.enable_sharing %}
+            {% if instance.enable_sharing %}
             <li class="social facebook share">
-                <a href="#" data-href="{% absolute_url plugin.instance.page_link.get_absolute_url %}">
+                <a href="#" data-href="{% absolute_url instance.page_link.get_absolute_url %}">
                     <span class="fa fa-facebook"></span>
                 </a>
             </li>
             <li class="social twitter share">
-                <a href="#" data-href="{% absolute_url plugin.instance.page_link.get_absolute_url %}"><span class="fa fa-twitter"></span></a>
+                <a href="#" data-href="{% absolute_url instance.page_link.get_absolute_url %}"><span class="fa fa-twitter"></span></a>
             </li>
             {% endif %}
-            {% if plugin.instance.page_link_id %}
+            {% if instance.page_link_id %}
             <li>
-                <a href="{{ plugin.instance.page_link.get_absolute_url }}" class="btn btn-default read-more">
+                <a href="{{ instance.page_link.get_absolute_url }}" class="btn btn-default read-more">
                     {% trans "Read more" %}
                     <span class="glyphicon glyphicon-play"></span>
                 </a>
