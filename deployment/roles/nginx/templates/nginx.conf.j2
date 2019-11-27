@@ -61,7 +61,7 @@ server {
 
     {% for dir in nginx_file_dirs %}
     {%- set bits = dir.split('/') -%}
-    location /{{ bits[-1] }}/ {
+    location /{{ bits[-1] }} {
         expires 30d;
         alias {{ dir }};
         access_log  {{ nginx_log_dir }}/media.access.log;
