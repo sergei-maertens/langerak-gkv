@@ -6,9 +6,7 @@
 {% block body-class %} cms-page {% endblock %}
 
 {% block content %}
-<div class="cms-content">
-    {% placeholder page_content or %}
-        {% trans "Put your content here" %}
-    {% endplaceholder %}
-</div>
+{% placeholder page_content or %}
+    {% trans "Put your content here" %}
+{% endplaceholder %}
 {% endblock %}
