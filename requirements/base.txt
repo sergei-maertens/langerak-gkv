@@ -15,13 +15,12 @@ cssselect2==0.2.2         # via cairosvg, weasyprint
 cssselect==1.1.0          # via pyquery
 defusedxml==0.6.0         # via cairosvg, odfpy
 diff-match-patch==20181111  # via django-import-export
-django-appconf==1.0.3     # via django-axes, django-compressor, django-image-cropping
+django-appconf==1.0.3     # via django-axes, django-image-cropping
 django-autoslug==1.9.6
 django-axes==5.0.13
 django-choices==1.7.0
 django-classy-tags==0.9.0  # via django-cms, django-sekizai
 django-cms==3.7.1
-django-compressor==2.3
 django-filer==1.5.0
 django-formtools==2.1     # via django-cms
 django-haystack==2.8.1
@@ -81,9 +80,7 @@ pytz==2019.2              # via django, django-recurrence, django-yubin, icalend
 pyyaml==5.1.2             # via tablib
 pyzmail36==1.0.4          # via django-yubin
 raven==6.10.0
-rcssmin==1.0.6            # via django-compressor
 requests==2.22.0
-rjsmin==1.1.0             # via django-compressor
 six==1.12.0               # via django-appconf, django-image-cropping, django-newsletter, django-rosetta, html5lib, pip-tools, python-dateutil
 sorl-thumbnail==12.5.0    # via django-newsletter
 surlex==0.2.0             # via django-newsletter
