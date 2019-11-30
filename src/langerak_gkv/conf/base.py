@@ -108,8 +108,6 @@ STATICFILES_DIRS = (
 STATICFILES_FINDERS = [
     "django.contrib.staticfiles.finders.FileSystemFinder",
     "django.contrib.staticfiles.finders.AppDirectoriesFinder",
-    "compressor.finders.CompressorFinder",
-    # 'django.contrib.staticfiles.finders.DefaultStorageFinder',
 ]
 
 TEMPLATES = [
@@ -174,7 +172,6 @@ INSTALLED_APPS = [
     # External applications.
     "axes",
     "django_yubin",
-    "compressor",
     "easy_thumbnails",
     "leaflet",
     "sniplates",

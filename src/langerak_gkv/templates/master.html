@@ -1,32 +1,18 @@
-{% load compress staticfiles i18n sekizai_tags cms_tags menu_tags leaflet_tags %}<!DOCTYPE html>
+{% load staticfiles i18n sekizai_tags cms_tags menu_tags leaflet_tags %}<!DOCTYPE html>
 <html lang="nl">
     <head>
         <meta charset="utf-8">
         <title>{% block title %}Koningskerk{% block extra_title %}{% endblock %}{% endblock %}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="">
+        <meta name="description" content="Website Gereformeerde Kerk Langerak">
         <meta name="author" content="">
 
-        <link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
         <link href="{% static 'font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
-        {% compress css %}
-            <link href="{% static 'langerak_gkv/css/screen.css' %}" media="screen, projection" rel="stylesheet" type="text/css" />
-            <link href="{% static 'langerak_gkv/css/print.css' %}" media="print" rel="stylesheet" type="text/css" />
-            {% leaflet_css %}
-            {% block extra_css %}{% endblock %}
-        {% endcompress %}
+        <link href="{% static 'css/screen.css' %}" media="screen, projection" rel="stylesheet" `/>
+        {% leaflet_css %}
+        {% block extra_css %}{% endblock %}
 
         {% render_block "css" %} {# sekizai/django-cms #}
-
-        <!--[if IE]>
-            <link href="{% static 'langerak_gkv/css/ie.css' %}" media="screen, projection" rel="stylesheet" type="text/css" />
-        <![endif]-->
-
-        <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
-        <!--[if lt IE 9]>
-            <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
-        <script src="{% static 'jquery/jquery.min.js' %}"></script>
 
         <link rel="shortcut icon" href="{% static 'logo/favicon.png' %}">
         {% block extrahead %}{% endblock extrahead %}
@@ -95,14 +81,9 @@
             </footer>
         {% endblock %}
 
-        <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
-
-        {% compress js %}
-            {% leaflet_js %}
-            <script src="{% static 'langerak_gkv/js/global.js' %}"></script>
-            {% include "includes/facebook.html" %}
-            {% include "includes/twitter.html" %}
-        {% endcompress %}
+        {% leaflet_js %}
+        {% include "includes/facebook.html" %}
+        {% include "includes/twitter.html" %}
 
         {% block extra_js %}{% endblock %}
         {% render_block "js" %} {# sekizai/django-cms #}
