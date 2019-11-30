@@ -2,12 +2,11 @@
 <html lang="nl">
     <head>
         <meta charset="utf-8">
-        <title>{% block title %}Koningskerk{% block extra_title %}{% endblock %}{% endblock %}</title>
+        <title>{% block title %}GKL{% block extra_title %}{% endblock %}{% endblock %}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Website Gereformeerde Kerk Langerak">
         <meta name="author" content="">
 
-        <link href="{% static 'font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
         <link href="{% static 'css/screen.css' %}" media="screen, projection" rel="stylesheet" `/>
         {% leaflet_css %}
         {% block extra_css %}{% endblock %}
@@ -19,7 +18,15 @@
     </head>
 
     <body class="{% block body-class %}{% endblock %}">
+
         {% cms_toolbar %}
+
+        {% include "includes/header.html" %}
+
+        <main>
+        </main>
+
+
         {% block header %}{% include "header.html" %}{% endblock %}
 
         <section class="container narrow" id="content">
