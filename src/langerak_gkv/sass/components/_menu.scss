@@ -1,0 +1,24 @@
+@import "../lib/typography";
+
+$menu-font-color: #ffffff !default;
+$menu-space-inbetween: 1.4em;
+
+.menu {
+  display: flex;
+  padding: 0 $menu-space-inbetween / 2;
+
+  & &__item {
+    @include menu-item;
+    color: $menu-font-color;
+    text-transform: uppercase;
+    font-size: 2rem;
+    line-height: 5rem;
+    text-decoration: none;
+    padding: 0 $menu-space-inbetween / 2;
+
+    &:hover {
+      text-decoration: underline;
+      color: darken($menu-font-color, 10%);
+    }
+  }
+}

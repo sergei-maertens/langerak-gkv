@@ -29,7 +29,7 @@ function watchJS() {
  * Runs "sass" task instantly and when any file in paths.sassSrc changes
  */
 function watchSCSS() {
-    scss()
+    scss();
     gulp.watch(paths.sassSrc, scss);
 }
 
