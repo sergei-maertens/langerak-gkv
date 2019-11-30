@@ -1,4 +1,10 @@
-{% load i18n static menu_tags cms_tags langerak sniplates %}
+{% load menu_tags %}
 
-<header>
+<header class="page-header">
+
+    <nav class="menu">
+        <a href="{{ home_url }}" class="menu__item">{{ home_title }}</a>
+        {% show_menu 1 %}
+    </nav>
+
 </header>

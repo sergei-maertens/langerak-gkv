@@ -96,6 +96,7 @@ STATICFILES_DIRS = (
     # Don't forget to use absolute paths, not relative paths.
     os.path.join(DJANGO_PROJECT_DIR, "static"),
     # 3rd party NPM deps
+    ("normalize.css", os.path.join(BASE_DIR, "node_modules", "normalize.css")),
     ("fullcalendar", os.path.join(BASE_DIR, "node_modules", "fullcalendar", "dist")),
     ("momentjs", os.path.join(BASE_DIR, "node_modules", "moment", "min")),
 )
@@ -125,6 +126,7 @@ TEMPLATES = [
                 "cms.context_processors.cms_settings",
                 "sekizai.context_processors.sekizai",
                 "langerak_gkv.homepage.context_processors.sidebar",
+                "langerak_gkv.homepage.context_processors.home",
                 "langerak_gkv.users.context_processors.login",
             ]
         },

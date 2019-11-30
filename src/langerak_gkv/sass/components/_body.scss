@@ -1,0 +1,15 @@
+$body-background: #d1d1d1 !default;
+$body-content-width: 1600px !default;
+$body-content-default-background: white !default;
+
+body {
+  background: $body-background;
+  box-sizing: border-box;
+
+  .page-header,
+  main {
+    width: $body-content-width;
+    margin: 0 auto;
+    background: $body-content-default-background;
+  }
+}
