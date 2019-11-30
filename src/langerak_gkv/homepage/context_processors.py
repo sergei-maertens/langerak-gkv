@@ -13,5 +13,7 @@ def sidebar(request):
 
 
 def home(request) -> Dict[str, str]:
+    if not request.current_page:
+        return {}
     root = request.current_page.get_root()
     return {"home_url": root.get_absolute_url(), "home_title": root.get_title()}

@@ -4,7 +4,11 @@ $body-content-default-background: white !default;
 
 body {
   background: $body-background;
-  box-sizing: border-box;
+  min-height: 100vh;
+
+  &, & * {
+    box-sizing: border-box;
+  }
 
   .page-header,
   main {
