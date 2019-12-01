@@ -1,0 +1,37 @@
+{% load menu_tags %}
+
+<header class="page-header">
+
+    <nav class="menu">
+        <a href="{{ home_url }}" class="menu__item">{{ home_title }}</a>
+        {% show_menu 1 %}
+    </nav>
+
+    <section class="header-content">
+        <div style="text-align: right">
+            <span>mijn profiel</span>
+            <span>uitloggen (username)</span>
+            <input name="q" placeholder="zoekveld">
+        </div>
+
+        <aside class="calendar">
+            {% for item in upcoming_activities %}
+                {% include "includes/calendar-item.html" with item=item only %}
+            {% endfor %}
+        </aside>
+
+        <div class="header-content__end">
+
+            <div class="social-icon-list">
+                <span class="social-icon social-icon--lightblue">+</span>
+                <span class="social-icon social-icon--darkblue">+</span>
+                <span class="social-icon social-icon--red">+</span>
+                <span class="social-icon social-icon--lightblue">+</span>
+            </div>
+
+            {% include "includes/breadcrumbs.html" %}
+        </div>
+
+    </section>
+
+</header>

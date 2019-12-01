@@ -1,8 +1,6 @@
 import os
 
-from django.utils.translation import ugettext_lazy as _
-
-from djchoices import ChoiceItem, DjangoChoices
+from .cms import *  # noqa
 
 # Automatically figure out the BASE_DIR and PROJECT_DIR.
 DJANGO_PROJECT_DIR = os.path.abspath(
@@ -96,11 +94,9 @@ STATICFILES_DIRS = (
     # Don't forget to use absolute paths, not relative paths.
     os.path.join(DJANGO_PROJECT_DIR, "static"),
     # 3rd party NPM deps
+    ("normalize.css", os.path.join(BASE_DIR, "node_modules", "normalize.css")),
     ("fullcalendar", os.path.join(BASE_DIR, "node_modules", "fullcalendar", "dist")),
     ("momentjs", os.path.join(BASE_DIR, "node_modules", "moment", "min")),
-    ("jquery", os.path.join(BASE_DIR, "node_modules", "jquery", "dist")),
-    ("bootstrap", os.path.join(BASE_DIR, "node_modules", "bootstrap", "dist")),
-    ("font-awesome", os.path.join(BASE_DIR, "node_modules", "font-awesome")),
 )
 
 # List of finder classes that know how to find static files in
@@ -108,8 +104,6 @@ STATICFILES_DIRS = (
 STATICFILES_FINDERS = [
     "django.contrib.staticfiles.finders.FileSystemFinder",
     "django.contrib.staticfiles.finders.AppDirectoriesFinder",
-    "compressor.finders.CompressorFinder",
-    # 'django.contrib.staticfiles.finders.DefaultStorageFinder',
 ]
 
 TEMPLATES = [
@@ -130,6 +124,7 @@ TEMPLATES = [
                 "cms.context_processors.cms_settings",
                 "sekizai.context_processors.sekizai",
                 "langerak_gkv.homepage.context_processors.sidebar",
+                "langerak_gkv.homepage.context_processors.home",
                 "langerak_gkv.users.context_processors.login",
             ]
         },
@@ -174,7 +169,6 @@ INSTALLED_APPS = [
     # External applications.
     "axes",
     "django_yubin",
-    "compressor",
     "easy_thumbnails",
     "leaflet",
     "sniplates",
@@ -301,73 +295,6 @@ AUTHENTICATION_BACKENDS = [
 ]
 LOGIN_URL = "users:login"
 LOGIN_REDIRECT_URL = "/"
-
-
-#
-# Easy thumbnails
-#
-THUMBNAIL_HIGH_RESOLUTION = True
-
-THUMBNAIL_ALIASES = {
-    "": {
-        "default": {"size": (400, 300), "crop": True, "upscale": True},
-        "small": {"size": (120, 120), "crop": True, "upscale": True},
-        "avatar_portrait": {"size": (300, 300), "crop": True, "upscale": True},
-        "header": {"size": (1170, 315), "crop": True, "upscale": True},
-        "birthday": {"size": (50, 50), "crop": True, "upscale": True},
-        "activity_detail": {"size": (800, 400), "crop": True, "upscale": True},
-    }
-}
-THUMBNAIL_ALIASES[""]["homepage"] = THUMBNAIL_ALIASES[""]["default"]
-
-THUMBNAIL_PROCESSORS = (
-    "image_cropping.thumbnail_processors.crop_corners",
-    "easy_thumbnails.processors.colorspace",
-    "easy_thumbnails.processors.autocrop",
-    "filer.thumbnail_processors.scale_and_crop_with_subject_location",
-    "easy_thumbnails.processors.filters",
-)
-
-#
-# Django CMS
-#
-CMS_PERMISSION = True
-
-CMS_TEMPLATES = (
-    ("cms/default.html", _("Default")),
-    ("homepage/home.html", _("Homepage")),
-    ("cms/right_sidebar.html", _("Content left, sidebar right")),
-    ("cms/3_columns.html", _("3 Columns (responsive)")),
-)
-
-CMS_PLACEHOLDER_CONF = {
-    "header_image": {"plugins": ["FilerImagePlugin"]},
-    "slot11": {"plugins": ["HomepageLinkPlugin"]},
-    "slot12": {"plugins": ["HomepageLinkPlugin"]},
-    "slot21": {"plugins": ["HomepageLinkPlugin"]},
-    "slot22": {"plugins": ["HomepageLinkPlugin"]},
-    "preach_image": {"plugins": ["FilerImagePlugin"]},
-    "preach_title": {"plugins": ["CharFieldPlugin"]},
-    "preach_subtitle": {"plugins": ["CharFieldPlugin"]},
-}
-
-DJANGOCMS_PICTURE_ALIGN = (("header", _("header top image")),)
-
-
-class FilerStyles(DjangoChoices):
-    default = ChoiceItem(" ", _("Default"))
-    orange = ChoiceItem("orange", _("Orange"))
-    blue = ChoiceItem("blue", _("Blue"))
-    green = ChoiceItem("green", _("Green"))
-    purple = ChoiceItem("purple", _("Purple"))
-    orange_rm = ChoiceItem("orange read-more", _("Read-more orange"))
-    blue_rm = ChoiceItem("blue read-more", _("Read-more blue"))
-    green_rm = ChoiceItem("green read-more", _("Read-more green"))
-    purple_rm = ChoiceItem("purple read-more", _("Read-more purple"))
-
-
-FILER_LINK_STYLES = FilerStyles.choices
-
 
 #
 # GEO

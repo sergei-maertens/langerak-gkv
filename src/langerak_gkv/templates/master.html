@@ -1,108 +1,42 @@
-{% load compress staticfiles i18n sekizai_tags cms_tags menu_tags leaflet_tags %}<!DOCTYPE html>
+{% load staticfiles i18n sekizai_tags cms_tags menu_tags leaflet_tags %}<!DOCTYPE html>
 <html lang="nl">
     <head>
         <meta charset="utf-8">
-        <title>{% block title %}Koningskerk{% block extra_title %}{% endblock %}{% endblock %}</title>
+        <title>{% block title %}GKL{% block extra_title %}{% endblock %}{% endblock %}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="">
+        <meta name="description" content="Website Gereformeerde Kerk Langerak">
         <meta name="author" content="">
 
-        <link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
-        <link href="{% static 'font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
-        {% compress css %}
-            <link href="{% static 'langerak_gkv/css/screen.css' %}" media="screen, projection" rel="stylesheet" type="text/css" />
-            <link href="{% static 'langerak_gkv/css/print.css' %}" media="print" rel="stylesheet" type="text/css" />
-            {% leaflet_css %}
-            {% block extra_css %}{% endblock %}
-        {% endcompress %}
+        {# Load font(s) #}
+        <link href="https://fonts.googleapis.com/css?family=Titillium+Web:200i,300,400,600i&amp;display=swap" rel="stylesheet">
+
+        {# Load stylesheets #}
+        <link href="{% static 'normalize.css/normalize.css' %}" media="screen, projection" rel="stylesheet" `/>
+        <link href="{% static 'css/screen.css' %}" media="screen, projection" rel="stylesheet" `/>
+        {% leaflet_css %}
+        {% block extra_css %}{% endblock %}
 
         {% render_block "css" %} {# sekizai/django-cms #}
-
-        <!--[if IE]>
-            <link href="{% static 'langerak_gkv/css/ie.css' %}" media="screen, projection" rel="stylesheet" type="text/css" />
-        <![endif]-->
-
-        <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
-        <!--[if lt IE 9]>
-            <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
-        <script src="{% static 'jquery/jquery.min.js' %}"></script>
 
         <link rel="shortcut icon" href="{% static 'logo/favicon.png' %}">
         {% block extrahead %}{% endblock extrahead %}
     </head>
 
     <body class="{% block body-class %}{% endblock %}">
+
         {% cms_toolbar %}
-        {% block header %}{% include "header.html" %}{% endblock %}
 
-        <section class="container narrow" id="content">
-            {% block messages %}{% include "includes/messages.html" %}{% endblock %}
-            {% block content %}Override block `content`{% endblock %}
-        </section>
+        {% include "includes/header.html" %}
 
-        {% block footer %}
-            <footer class="container narrow">
-                <div class="narrow" id="newsletter">
-                    <div class="row">
-                        <h2 class="col-xs-12 col-md-6">{% trans "Signup for the newsletter" %}</h2>
-                        <div class="col-xs-12 col-md-6">
-
-                            <form action="{% url 'newsletter_subscribe_request' newsletter_slug='koningskerk' %}" method="post">{% csrf_token %}
-                                <input class="form-control" placeholder="{% trans "Enter your e-mail address here" %}" name="email_field" id="email-subscribe"><button type="submit" id="subscribe-button" class="btn btn-action">{% trans "next" %}</button>
-                            </form>
-
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row" id="main-footer">
-                    <div class="col-xs-6 col-lg-3">
-                        <ul>
-                            <li><a href="/">{% trans "Home" %}</a></li>
-                            {% show_menu 1 100 100 100 'menu/footer_menu_left.html' %}
-                        </ul>
-                    </div>
-                    <div class="col-xs-6 col-lg-3">
-                        <ul>
-                            {% show_menu 1 100 100 100 'menu/footer_menu_right.html' %}
-                        </ul>
-                    </div>
-                    <div class="col-xs-12 col-lg-6">
-                        <div class="row">
-                            <div class="col-sm-6">
-                                {% leaflet_map "footer-map" %}
-                            </div>
-
-                            <div class="col-sm-6">
-                                <p>{% static_placeholder 'footer_logo' %}</p>
-                                <p>
-                                    <address>
-                                        {% static_placeholder 'footer_address' %}
-                                    </address>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="copyright" class="narrow">
-                    &copy; Copyright Koningskerk 2014-{% now "Y" %}
-                    <a href="https://regex-it.nl/">
-                        <span class="pull-right" style="opacity:0.5;">{% trans "built by Sergei Maertens" %}</span>
-                    </a>
-                </div>
-            </footer>
+        {% block messages %}
+            {% include "includes/messages.html" %}
         {% endblock %}
 
-        <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+        <main class="page-content">
+            {% block content %}Override block `content`{% endblock %}
+        </main>
 
-        {% compress js %}
-            {% leaflet_js %}
-            <script src="{% static 'langerak_gkv/js/global.js' %}"></script>
-            {% include "includes/facebook.html" %}
-            {% include "includes/twitter.html" %}
-        {% endcompress %}
+        {% include "includes/footer.html" %}
 
         {% block extra_js %}{% endblock %}
         {% render_block "js" %} {# sekizai/django-cms #}

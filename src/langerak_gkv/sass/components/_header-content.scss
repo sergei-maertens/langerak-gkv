@@ -1,0 +1,21 @@
+@import "../lib/measurements";
+
+$header-content-width: $body-content-width !default;
+
+.header-content {
+  background-image: url('../img/strepen.png');
+  background-size: $header-content-width auto;
+  background-repeat: repeat-y;
+
+  & &__end {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    background: #ffffff;
+    clip-path: polygon(0% 0%, 100% 100%, 0% 100%);
+    padding: 30px 70px;
+
+    height: $strepen-skew-height;
+  }
+}

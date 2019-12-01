@@ -4,76 +4,33 @@
 
 {% block content %}
 
-{% get_activities as activities %}
+<section class="homepage">
 
-<div class="row">
+    {# Top row - with images #}
+    <section class="homepage__row homepage__row--top">
+        {% with True as has_image %}
+            {% placeholder slot11 %}
+            {% placeholder slot12 %}
+            {% placeholder slot13 %}
+        {% endwith %}
+    </section>
 
-    <div class="col-md-8">
+    {# Top row - without images #}
+    <section class="homepage__row homepage__row--middle">
+        {% placeholder slot21 %}
+        {% placeholder slot22 %}
+        {% placeholder slot23 %}
+    </section>
 
-        {% block home-body %}
+    {# Top row - with images #}
+    <section class="homepage__row homepage__row--bottom">
+        {% with True as has_image %}
+            {% placeholder slot31 %}
+            {% placeholder slot32 %}
+            {% placeholder slot33 %}
+        {% endwith %}
+    </section>
 
-        <section class="activities">
-            <div class="row">
+</section>
 
-                <div class="col-md-6">
-                    {% with linkid='1' %}
-                        {% placeholder slot11 or %}
-                            {% with activity=activities|pop %}
-                                {% include "homepage/includes/activity.html" %}
-                            {% endwith %}
-                        {% endplaceholder %}
-                    {% endwith %}
-                </div>
-
-                <div class="col-md-6">
-                    {% with linkid='1' %}
-                        {% placeholder slot12 or %}
-                            {% with activity=activities|pop %}
-                                {% include "homepage/includes/activity.html" %}
-                            {% endwith %}
-                        {% endplaceholder %}
-                    {% endwith %}
-                </div>
-
-            </div>
-
-            <div class="row">
-
-                <div class="col-md-6">
-                    {% with linkid='2' %}
-                        {% placeholder slot21 or %}
-                            {% with activity=activities|pop %}
-                                {% include "homepage/includes/activity.html" %}
-                            {% endwith %}
-                        {% endplaceholder %}
-                    {% endwith %}
-                </div>
-
-                <div class="col-md-6">
-                    {% with linkid='2' %}
-                        {% placeholder slot22 or %}
-                            {% with activity=activities|pop %}
-                                {% include "homepage/includes/activity.html" %}
-                            {% endwith %}
-                        {% endplaceholder %}
-                    {% endwith %}
-                </div>
-
-            </div>
-        </section>
-
-        <section class="news">
-            {% placeholder misc %}
-        </section>
-
-        {% endblock %}
-
-    </div>
-
-
-    <aside class="col-md-4">
-        {% include "homepage/includes/sidebar.html" %}
-    </aside>
-
-</div>
 {% endblock %}

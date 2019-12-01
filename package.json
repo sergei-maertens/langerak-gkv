@@ -1,13 +1,15 @@
 {
-  "name": "langerak-gkv",
-  "version": "1.2.0",
+  "name": "langerak_gkv",
+  "version": "2.0.0",
   "description": "Frontend assets for CMS website",
-  "main": "src/index.js",
+  "main": "src/langerak_gkv/index.js",
   "directories": {
     "doc": "doc"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "gulp build",
+    "watch": "gulp watch"
   },
   "repository": {
     "type": "git",
@@ -24,8 +26,32 @@
   },
   "homepage": "https://github.com/sergei-maertens/langerak-gkv#readme",
   "dependencies": {
-    "bootstrap": "^3.4.1",
-    "font-awesome": "^4.6.3",
-    "fullcalendar": "^2.9.1"
+    "fullcalendar": "^2.9.1",
+    "normalize.css": "^8.0.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.7.4",
+    "@babel/polyfill": "^7.7.0",
+    "@babel/preset-env": "^7.7.4",
+    "autoprefixer": "^9.7.2",
+    "babel-loader": "^8.0.6",
+    "chai": "^4.2.0",
+    "cssnano": "^4.1.10",
+    "eyeglass": "^2.4.1",
+    "gulp": "^4.0.2",
+    "gulp-file": "^0.4.0",
+    "gulp-hub": "^4.2.0",
+    "gulp-if": "^3.0.0",
+    "gulp-jshint": "^2.1.0",
+    "gulp-jshint-jslint-file-reporter": "^0.1.0",
+    "gulp-postcss": "^8.0.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.5",
+    "jshint": "^2.10.3",
+    "jshint-stylish": "^2.2.1",
+    "postcss-selector-lint": "^1.0.0",
+    "webpack": "^4.41.2",
+    "webpack-dev-server": "^3.9.0",
+    "webpack-stream": "^5.2.1"
   }
 }

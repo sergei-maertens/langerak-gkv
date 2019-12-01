@@ -49,6 +49,8 @@ DEBUG_TOOLBAR_CONFIG = {"INTERCEPT_REDIRECTS": False, "JQUERY_URL": None}
 
 INSTALLED_APPS += ["django_extensions"]
 
+CMS_PAGE_CACHE = False
+
 # Override settings with local settings.
 try:
     from .local import *  # noqa
