@@ -1,8 +1,16 @@
 {% load menu_tags %}
 
 {% for child in children %}
-<a href="{{ child.attr.redirect_url|default:child.get_absolute_url }}"
-   class="menu__item {% if child.selected %}menu__item--active{% endif %}">
-   {{ child.get_menu_title }}
-</a>
+<div>
+    <a href="{{ child.attr.redirect_url|default:child.get_absolute_url }}"
+       class="menu__item {% if child.selected %}menu__item--active{% endif %}">
+       {{ child.get_menu_title }}
+    </a>
+
+    {% if child.selected and child.children %}
+        <div class="menu__child">
+            {% show_menu from_level to_level extra_inactive extra_active template "" "" child %}
+        </div>
+    {% endif %}
+</div>
 {% endfor %}

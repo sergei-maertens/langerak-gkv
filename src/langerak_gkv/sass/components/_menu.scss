@@ -9,6 +9,7 @@ $menu-space-inbetween: 1.4em;
 
   & &__item {
     @include title;
+    display: block;
     color: $menu-font-color;
     text-transform: uppercase;
     font-size: 2rem;
@@ -20,5 +21,11 @@ $menu-space-inbetween: 1.4em;
       text-decoration: underline;
       color: darken($menu-font-color, 10%);
     }
+  }
+
+  & &__child &__item {
+    font-size: 1.3rem;
+    line-height: 3rem;
+    padding-left: 2rem;
   }
 }
