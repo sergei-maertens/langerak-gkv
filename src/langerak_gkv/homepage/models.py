@@ -31,7 +31,6 @@ class HomepagePageLink(CMSPlugin):
     page_link = PageField(
         verbose_name=_("page"), blank=True, null=True, help_text=_("Page to link to")
     )
-    enable_sharing = models.BooleanField(_("enable social sharing"), default=True)
 
     def __str__(self):
         return f"{self.title} - {self.page_link }"
