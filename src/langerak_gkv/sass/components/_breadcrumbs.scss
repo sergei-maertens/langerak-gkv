@@ -1,6 +1,7 @@
+@import "../lib/colors";
 @import "../lib/typography";
 
-$breadcrumbs-color: #43b792;
+$breadcrumbs-color: $theme-green !default;
 
 .breadcrumbs {
   @include body;

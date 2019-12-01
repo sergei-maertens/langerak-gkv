@@ -1,0 +1,25 @@
+@import "../lib/colors";
+@import "../lib/typography";
+
+.homepage-block {
+  text-align: center;
+  text-decoration: none;
+
+  &#{&}--no-link {
+    cursor: text;
+  }
+
+  & &__title {
+    @include subtitle;
+    text-transform: uppercase;
+    font-style: normal;
+    font-size: 1.3rem;
+    color: $theme-green;
+  }
+
+  & &__description {
+    @include body;
+    font-size: 1.3rem;
+    color: $font-color;
+  }
+}

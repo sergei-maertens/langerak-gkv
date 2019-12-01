@@ -7,37 +7,29 @@
 <section class="homepage">
 
     {# Top row - with images #}
-    <article class="homagepage-block">
-        {% placeholder slot11 %}
-    </article>
-    <article class="homagepage-block">
-        {% placeholder slot12 %}
-    </article>
-    <article class="homagepage-block">
-        {% placeholder slot13 %}
-    </article>
+    <section class="homepage__row homepage__row--top">
+        {% with True as has_image %}
+            {% placeholder slot11 %}
+            {% placeholder slot12 %}
+            {% placeholder slot13 %}
+        {% endwith %}
+    </section>
 
-    {# Middle row - without images #}
-    <article class="homagepage-block homagepage-block--no-img">
+    {# Top row - without images #}
+    <section class="homepage__row homepage__row--middle">
         {% placeholder slot21 %}
-    </article>
-    <article class="homagepage-block homagepage-block--no-img">
         {% placeholder slot22 %}
-    </article>
-    <article class="homagepage-block homagepage-block--no-img">
         {% placeholder slot23 %}
-    </article>
+    </section>
 
-    {# Bottom row - with images #}
-    <article class="homagepage-block">
-        {% placeholder slot31 %}
-    </article>
-    <article class="homagepage-block">
-        {% placeholder slot32 %}
-    </article>
-    <article class="homagepage-block">
-        {% placeholder slot33 %}
-    </article>
+    {# Top row - with images #}
+    <section class="homepage__row homepage__row--bottom">
+        {% with True as has_image %}
+            {% placeholder slot31 %}
+            {% placeholder slot32 %}
+            {% placeholder slot33 %}
+        {% endwith %}
+    </section>
 
 </section>
 

@@ -8,7 +8,7 @@ $menu-space-inbetween: 1.4em;
   padding: 0 $menu-space-inbetween / 2;
 
   & &__item {
-    @include menu-item;
+    @include title;
     color: $menu-font-color;
     text-transform: uppercase;
     font-size: 2rem;
