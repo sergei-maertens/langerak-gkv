@@ -1,6 +1,8 @@
+{% if not is_homepage %}
 <nav class="breadcrumbs">
     {% for page in request.current_page.get_ancestor_pages %}
         <span class="breadcrumbs__breadcrumb">{{ page.get_menu_title }}</span>
     {% endfor %}
     <span class="breadcrumbs__breadcrumb">{{ request.current_page.get_menu_title }}</span>
 </nav>
+{% endif %}
