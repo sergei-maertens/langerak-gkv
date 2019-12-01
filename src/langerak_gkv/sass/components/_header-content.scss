@@ -1,3 +1,5 @@
+@import "../lib/measurements";
+
 $header-content-width: $body-content-width !default;
 
 .header-content {
@@ -14,6 +16,6 @@ $header-content-width: $body-content-width !default;
     clip-path: polygon(0% 0%, 100% 100%, 0% 100%);
     padding: 30px 70px;
 
-    min-height: 240px;
+    height: $strepen-skew-height;
   }
 }

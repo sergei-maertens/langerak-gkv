@@ -1,11 +1,45 @@
+@import "../lib/measurements";
+
+$homepage-middle-row-skew-height: $strepen-skew-height;
+
+$page-content-padding: 70px;
+$homepage-row-padding: 30px;
+
 .homepage {
   & &__row {
     display: flex;
     justify-content: space-around;
     align-items: flex-start;
 
+    padding-left: $homepage-row-padding;
+    padding-right: $homepage-row-padding;
+
+    &--middle {
+
+      // See _page-content for the side padding. we reset here because the
+      // background need to span the full width
+      margin-left: - $page-content-padding;
+      margin-right: - $page-content-padding;
+      padding-left: $page-content-padding + $homepage-row-padding;
+      padding-right: $page-content-padding + $homepage-row-padding;
+
+      background-image: url('../img/strepen.png');
+      background-size: $header-content-width auto;
+      background-repeat: repeat-y;
+
+      // Set up the clipped path
+      padding-top: $homepage-middle-row-skew-height;
+      padding-bottom: $homepage-middle-row-skew-height;
+      clip-path: polygon(
+        0% 0%,
+        100% $homepage-middle-row-skew-height,
+        100% 100%,
+        0% calc(100% - #{$homepage-middle-row-skew-height})
+      );
+    }
+
     > * {
-      max-width: 33%;
+      width: 33%;
     }
   }
 }

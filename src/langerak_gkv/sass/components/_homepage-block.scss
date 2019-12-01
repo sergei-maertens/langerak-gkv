@@ -1,9 +1,18 @@
 @import "../lib/colors";
 @import "../lib/typography";
 
+@mixin block-color($default: $theme-green, $alt: white) {
+  color: $theme-green;
+
+  @at-root .homepage__row--middle & {
+    color: $alt;
+  }
+}
+
 .homepage-block {
   text-align: center;
   text-decoration: none;
+  padding: 1em;
 
   &#{&}--no-link {
     cursor: text;
@@ -11,15 +20,15 @@
 
   & &__title {
     @include subtitle;
+    @include block-color;
     text-transform: uppercase;
     font-style: normal;
     font-size: 1.3rem;
-    color: $theme-green;
   }
 
   & &__description {
     @include body;
+    @include block-color($font-color);
     font-size: 1.3rem;
-    color: $font-color;
   }
 }
