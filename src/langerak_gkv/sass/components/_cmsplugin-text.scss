@@ -1,10 +1,14 @@
 @import "../lib/typography";
 
 .cmsplugin-text {
-    @include body;
+  @include body;
 
-    p {
-        margin-block-start: 0;
-        margin-block-end: 0;
-    }
+  p {
+    margin-block-start: 0;
+    margin-block-end: 0;
+  }
+
+  h2 {
+    @include subtitle;
+  }
 }

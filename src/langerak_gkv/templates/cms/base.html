@@ -6,6 +6,9 @@
 {% block body-class %} cms-page {% endblock %}
 
 {% block content %}
+
+<h1 class="page-title">{% page_attribute "page_title" %}</h1>
+
 {% placeholder page_content or %}
     {% trans "Put your content here" %}
 {% endplaceholder %}

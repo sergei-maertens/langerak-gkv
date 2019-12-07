@@ -1,0 +1,13 @@
+@import "../lib/colors";
+@import "../lib/typography";
+
+.page-title {
+  @include title;
+  color: $theme-green-yellow;
+  font-size: 3rem;
+
+  margin-block-start: 0;
+  margin-block-end: 0;
+
+  padding: 1rem 0 2rem;
+}
