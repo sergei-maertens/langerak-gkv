@@ -40,6 +40,13 @@ $header-content-width: $body-content-width !default;
     z-index: 2;
   }
 
+  & &__actions {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row-reverse;
+    align-items: center;
+  }
+
   & &__end {
     display: flex;
     flex-direction: column;
