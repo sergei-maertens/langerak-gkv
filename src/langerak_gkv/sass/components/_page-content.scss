@@ -1,3 +1,18 @@
+@import "../lib/colors";
+
+$border-height: 500px;
+
 .page-content {
   padding: 0 70px;
+  position: relative;
+
+  & &__border {
+    display: block;
+    position: absolute;
+    top: calc(50% - #{$border-height / 2});
+    left: 0;
+    width: 5px;
+    height: $border-height;
+    background: $theme-green-yellow;
+  }
 }
