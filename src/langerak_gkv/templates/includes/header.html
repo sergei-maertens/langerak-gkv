@@ -1,4 +1,4 @@
-{% load cms_tags menu_tags %}
+{% load cms_tags menu_tags i18n %}
 
 <header class="page-header">
 
@@ -16,11 +16,22 @@
 
         <div class="header-content__foreground">
 
-            <div style="text-align: right">
-                <span>mijn profiel</span>
-                <span>uitloggen (username)</span>
-                <input name="q" placeholder="zoekveld">
-            </div>
+            <aside class="header-content__actions">
+
+                <form action="{% url 'search:search' %}" class="search-form" method="get">
+                    <input
+                        name="q"
+                        class="search-form__search"
+                        placeholder="{% trans 'search field' %}"
+                        {% if request.GET.q %}value="{{ request.GET.q }}"{% endif %}>
+                </form>
+
+                <nav class="user-actions">
+                    <a class="user-actions__action" href="#">{% trans "my profile" %}</a>
+                    <a class="user-actions__action" href="#">{% trans "log out (username)" %}</a>
+                </nav>
+
+            </aside>
 
             <aside class="calendar">
                 {% for item in upcoming_activities %}
