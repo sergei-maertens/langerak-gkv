@@ -11,7 +11,8 @@ body {
   }
 
   .page-header,
-  main {
+  main,
+  .page-footer {
     width: $body-content-width;
     margin: 0 auto;
   }
