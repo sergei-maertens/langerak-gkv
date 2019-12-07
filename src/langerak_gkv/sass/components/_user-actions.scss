@@ -1,0 +1,19 @@
+@import "../lib/typography";
+@import "../lib/colors";
+
+.user-actions {
+  & &__action {
+    @include body;
+    font-weight: 200;
+    text-transform: lowercase;
+    color: white;
+    font-size: 2rem;
+    text-decoration: none;
+    margin-right: 1em;
+
+    &:hover {
+      color: darken(white, 10%);
+      border-bottom: solid 1px darken(white, 10%);
+    }
+  }
+}
