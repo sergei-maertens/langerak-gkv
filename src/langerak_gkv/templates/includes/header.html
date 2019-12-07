@@ -1,4 +1,4 @@
-{% load menu_tags %}
+{% load cms_tags menu_tags %}
 
 <header class="page-header">
 
@@ -8,28 +8,37 @@
     </nav>
 
     <section class="header-content">
-        <div style="text-align: right">
-            <span>mijn profiel</span>
-            <span>uitloggen (username)</span>
-            <input name="q" placeholder="zoekveld">
+
+        <div class="header-content__background">
+            {% placeholder "header image" inherit %}
+            <div class="header-content__background-image"></div>
         </div>
 
-        <aside class="calendar">
-            {% for item in upcoming_activities %}
-                {% include "includes/calendar-item.html" with item=item only %}
-            {% endfor %}
-        </aside>
+        <div class="header-content__foreground">
 
-        <div class="header-content__end">
-
-            <div class="social-icon-list">
-                <span class="social-icon social-icon--lightblue">+</span>
-                <span class="social-icon social-icon--darkblue">+</span>
-                <span class="social-icon social-icon--red">+</span>
-                <span class="social-icon social-icon--lightblue">+</span>
+            <div style="text-align: right">
+                <span>mijn profiel</span>
+                <span>uitloggen (username)</span>
+                <input name="q" placeholder="zoekveld">
             </div>
 
-            {% include "includes/breadcrumbs.html" %}
+            <aside class="calendar">
+                {% for item in upcoming_activities %}
+                    {% include "includes/calendar-item.html" with item=item only %}
+                {% endfor %}
+            </aside>
+
+            <div class="header-content__end">
+
+                <div class="social-icon-list">
+                    <span class="social-icon social-icon--lightblue">+</span>
+                    <span class="social-icon social-icon--darkblue">+</span>
+                    <span class="social-icon social-icon--red">+</span>
+                    <span class="social-icon social-icon--lightblue">+</span>
+                </div>
+
+                {% include "includes/breadcrumbs.html" %}
+            </div>
         </div>
 
     </section>

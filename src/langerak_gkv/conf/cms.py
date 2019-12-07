@@ -42,7 +42,7 @@ CMS_TEMPLATES = (
 _homepage_slot_conf = {"plugins": ["HomepageLinkPlugin"]}
 
 CMS_PLACEHOLDER_CONF = {
-    "header_image": {"plugins": ["FilerImagePlugin"]},
+    "header image": {"plugins": ["PicturePlugin"], "limits": {"global": 1}},
     "slot11": _homepage_slot_conf,
     "slot12": _homepage_slot_conf,
     "slot13": _homepage_slot_conf,
