@@ -27,8 +27,17 @@
                 </form>
 
                 <nav class="user-actions">
-                    <a class="user-actions__action" href="#">{% trans "my profile" %}</a>
-                    <a class="user-actions__action" href="#">{% trans "log out (username)" %}</a>
+                    <a class="user-actions__action" href="{% url 'users:profile' pk=user.pk %}">
+                        {% trans "my profile" %}
+                    </a>
+                    <a class="user-actions__action" href="#" class="logout-url">
+                        {% trans "log out (username)" %}
+                    </a>
+
+                    <form action="{% url 'users:logout' %}" method="post" style="display: none;" class="logout-form">
+                        {% csrf_token %}
+                        <input type="hidden" name="next" value="/">
+                    </form>
                 </nav>
 
             </aside>
