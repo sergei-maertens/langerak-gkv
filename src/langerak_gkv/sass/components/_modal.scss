@@ -49,6 +49,12 @@ $modal-backdrop-color: rgba(0, 0, 0, 0.5);
     }
   }
 
+  & &__title {
+    @include page-title;
+    margin: 0 0 1em;
+    font-size: 2rem;
+  }
+
   & &__content {
     @include body;
 
@@ -59,7 +65,7 @@ $modal-backdrop-color: rgba(0, 0, 0, 0.5);
     box-shadow: 2px 2px 5px 0 $shadow-form-inputs;
 
     min-width: 30vw;
-    min-height: 50vh;
+    min-height: 25vh;
     max-width: 600px;
     max-height: 75vh;
 

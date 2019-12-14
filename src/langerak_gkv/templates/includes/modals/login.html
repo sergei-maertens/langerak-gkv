@@ -5,16 +5,16 @@
 
 {% nested_widget 'modals:modal' modal_type='login' modal_active=True %}
 
+    <h1 class="modal__title">{% trans "Login" %}</h1>
+
     <form action="{% url 'users:login' %}" method="post" class="form" autocomplete="off">
         {% csrf_token %}
 
-        {% for field in login_form %}
-            {% form_field field %}
-        {% endfor %}
+        {% form_field login_form.username %}
+        {% form_field login_form.password %}
 
         <div class="form__submit-row">
-            {% url 'password_reset_recover' as pw_reset_url %}
-            {% widget 'form:link-btn' href=pw_reset_url text=_("Forgot password?") %}
+            <a href="{% url 'password_reset_recover' %}">{% trans 'Forgot password?' %}</a>
             {% widget 'form:submit' text=_("Login") %}
         </div>
 
