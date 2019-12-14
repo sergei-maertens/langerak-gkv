@@ -1,6 +1,8 @@
 @import "../lib/typography";
 @import "../lib/colors";
 
+$search-icon-size: 2rem 2rem;
+
 .search-form {
 
   padding: 2.4em 30px 2.4em 0;
@@ -11,8 +13,19 @@
     text-transform: uppercase;;
     font-size: 1.6rem;
     color: $font-color-light;
+    border: none;
 
-    padding: 0.75rem 2rem 0.75rem 1em;
+    padding: 0.75rem 2.5rem 0.75rem 1em;
+
+    background-image: url('../img/zoek.svg');
+    background-repeat: no-repeat;
+    background-size: $search-icon-size;
+    background-position: calc(100% - 0.5rem) 50%;
+
+    &:focus {
+      outline: none;
+      box-shadow: 2px 2px 5px 0 #333333;
+    }
   }
 
 }
