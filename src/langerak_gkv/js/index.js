@@ -1,1 +1,1 @@
-// Deliberately empty, for now
+import './components/modal';
