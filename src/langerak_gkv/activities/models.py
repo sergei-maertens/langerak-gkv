@@ -66,7 +66,7 @@ class Activity(models.Model):
         verbose_name_plural = _(u"activities")
         ordering = ["start_date", "start_time", "end_date", "end_time"]
 
-    def __unicode__(self):
+    def __str__(self):
         return self.name
 
     def get_absolute_url(self):
@@ -116,12 +116,12 @@ class IntendedPublic(models.Model):
         verbose_name = _(u"intended public")
         verbose_name_plural = _(u"intended public")
 
-    def __unicode__(self):
+    def __str__(self):
         return self.name
 
 
 class ActivityType(models.Model):
     name = models.CharField(_("name"), max_length=100)
 
-    def __unicode__(self):
+    def __str__(self):
         return self.name
