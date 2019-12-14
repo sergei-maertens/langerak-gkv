@@ -1,0 +1,19 @@
+{% extends "includes/forms/base.html" %}
+{% load sniplates i18n %}
+
+
+{% block TextInput %}
+<div class="field">
+    {% reuse "_label" bem_class="field__label" %}
+    {% reuse "input" input_type="text" bem_class="field__input" %}
+    {% reuse "_help_text" bem_class="field__help" %}
+</div>
+{% endblock TextInput %}
+
+{% block PasswordInput %}
+<div class="field">
+    {% reuse "_label" bem_class="field__label" %}
+    {% reuse "input" input_type="password" raw_value="" bem_class="field__input" %}
+    {% reuse "_help_text" bem_class="field__help" %}
+</div>
+{% endblock %}

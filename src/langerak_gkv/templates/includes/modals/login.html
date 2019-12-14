@@ -1,7 +1,24 @@
-{% load sniplates %}
-
+{% if login_form %}
+{% load i18n sniplates %}
 {% load_widgets modals='includes/modals.html' %}
+{% load_widgets form='includes/forms/default.html' %}
 
-{% nested_widget 'modals:modal' modal_type='login' %}
-    LOGIN
+{% nested_widget 'modals:modal' modal_type='login' modal_active=True %}
+
+    <form action="{% url 'users:login' %}" method="post" class="form" autocomplete="off">
+        {% csrf_token %}
+
+        {% for field in login_form %}
+            {% form_field field %}
+        {% endfor %}
+
+        <div class="form__submit-row">
+            {% url 'password_reset_recover' as pw_reset_url %}
+            {% widget 'form:link-btn' href=pw_reset_url text=_("Forgot password?") %}
+            {% widget 'form:submit' text=_("Login") %}
+        </div>
+
+    </form>
+
 {% endnested %}
+{% endif %}

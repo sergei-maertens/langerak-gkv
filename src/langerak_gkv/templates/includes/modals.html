@@ -4,7 +4,7 @@
 {# Usage: {% nested_widget 'modals:modal' modal_type='login' %} content here {% endnested %} #}
 {% block modal %}
 <div
-    class="modal modal--inactive{% if modal_type %} modal--{{ modal_type }}{% endif %}"
+    class="modal{% if not modal_active %} modal--inactive{% endif %}{% if modal_type %} modal--{{ modal_type }}{% endif %}"
     {% if modal_type %} data-modal="{{ modal_type }}"{% endif %}
 >
     <div class="modal__backdrop"></div>
