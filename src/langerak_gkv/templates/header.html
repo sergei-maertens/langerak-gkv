@@ -1,29 +1,5 @@
 {% load i18n static menu_tags cms_tags langerak sniplates %}
 {# DEPRECATED - being replaced by includes/header.html #}
-<header class="header-container container hidden-xs">
-    <figure id="header-image">
-        {% placeholder 'header_image' inherit or %}
-            {% static_placeholder 'default-header-image' or %}
-                <img src="{% static "img/default-header.jpg" %}">
-            {% endstatic_placeholder %}
-        {% endplaceholder %}
-    </figure>
-
-    <div id="header-overlay">
-        <div id="header-overlay-left"></div>
-        <div id="header-overlay-right">
-            <span id="bid-ontvangt" class="visible-lg-block visible-xl-block"></span>
-        </div>
-    </div>
-
-    <a href="/" id="logo">Koningskerk</a>
-
-    <form id="search" action="{% url 'search:search' %}" class="form-inline">
-        <input name="q" placeholder="{% trans "Search" %}" class="form-control"
-            {% if request.GET.q %}value="{{ request.GET.q }}"{% endif %}>
-        <button type="submit" class="btn-search"><i class="fa fa-search"></i></button>
-    </form>
-</header>
 
 
 <!-- navbar -->
@@ -43,10 +19,6 @@
         </div>
 
         <div class="collapse navbar-collapse" id="lang-main-menu">
-            <ul class="nav navbar-nav navbar-left">
-                <li class="{% if request.path|active_exact:'home' %}active{% endif %}"><a href="/">{% trans "Home" %}</a></li>
-                {% show_menu 1 2 2 2 %}
-            </ul>
 
             <ul class="nav navbar-nav navbar-right">
                 {% if not user.is_authenticated %}
