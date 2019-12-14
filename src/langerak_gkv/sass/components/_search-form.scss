@@ -24,7 +24,7 @@ $search-icon-size: 2rem 2rem;
 
     &:focus {
       outline: none;
-      box-shadow: 2px 2px 5px 0 #333333;
+      box-shadow: 2px 2px 5px 0 $shadow-form-inputs;
     }
   }
 

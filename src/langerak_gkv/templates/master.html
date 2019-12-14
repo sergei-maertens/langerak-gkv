@@ -39,6 +39,11 @@
 
         {% include "includes/footer.html" %}
 
+        {% block modals %}
+            {% include "includes/modals/login.html" %}
+        {% endblock modals %}
+
+        <script src="{% static 'js/main.js' %}"></script>
         {% block extra_js %}{% endblock %}
         {% render_block "js" %} {# sekizai/django-cms #}
     </body>

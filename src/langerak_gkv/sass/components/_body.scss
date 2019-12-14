@@ -5,6 +5,7 @@ $body-content-default-background: white !default;
 body {
   background: $body-background;
   min-height: 100vh;
+  position: relative;
 
   &, & * {
     box-sizing: border-box;
