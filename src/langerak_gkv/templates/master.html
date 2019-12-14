@@ -1,4 +1,4 @@
-{% load staticfiles i18n sekizai_tags cms_tags menu_tags leaflet_tags sniplates %}<!DOCTYPE html>
+{% load staticfiles i18n sekizai_tags cms_tags menu_tags leaflet_tags %}<!DOCTYPE html>
 <html lang="nl">
     <head>
         <meta charset="utf-8">
@@ -39,11 +39,9 @@
 
         {% include "includes/footer.html" %}
 
-        {% load_widgets modals='includes/modals.html' %}
-
-        {% nested_widget 'modals:modal' modal_type='login' %}
-            LOGIN
-        {% endnested %}
+        {% block modals %}
+            {% include "includes/modals/login.html" %}
+        {% endblock modals %}
 
         <script src="{% static 'js/main.js' %}"></script>
         {% block extra_js %}{% endblock %}
