@@ -1,0 +1,12 @@
+{% load sniplates %}
+
+
+{# Usage: {% nested_widget 'modals:modal' modal_type='login' %} content here {% endnested %} #}
+{% block modal %}
+<div class="modal{% if modal_type %} modal--{{ modal_type }}{% endif %}">
+    <div class="modal__backdrop"></div>
+    <div class="modal__content">
+        {{ content }}
+    </div>
+</div>
+{% endblock modal %}
