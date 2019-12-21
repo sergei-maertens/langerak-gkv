@@ -32,7 +32,9 @@
                             {% trans "my profile" %}
                         </a>
                         <a class="user-actions__action logout-url" href="#">
-                            {% trans "log out (username)" %}
+                            {% blocktrans with name=user.get_short_name trimmed %}
+                                Log out ({{ name }})
+                            {% endblocktrans %}
                         </a>
                     {% else %}
                         <a class="user-actions__action modal-trigger" href="#" data-modal="login">
