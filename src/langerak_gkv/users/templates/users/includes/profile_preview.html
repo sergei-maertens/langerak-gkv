@@ -1,0 +1,21 @@
+{% load i18n thumbnail formatting %}
+
+<a href="{{ user.get_absolute_url }}" title="{{ user.get_full_name }}" class="profile-preview">
+
+    <figure class="profile-preview__picture">
+        {% if user.picture %}
+            <img src="{{ user.picture|thumbnail_url:'avatar_portrait' }}">
+        {% else %}
+            <span class="profile-preview__placeholder"></span>
+        {% endif %}
+    </figure>
+
+    <span class="profile-preview__first-name">{{ user.first_name }}</span>
+    <span class="profile-preview__last-name">{{ user.last_name }}</span>
+    <span class="profile-preview__phone">{{ user.phone|phone }}</span>
+
+    <a href="mailto:{{ relation.email }}" class="profile-preview__email">
+        {% trans "Email me" %}
+    </a>
+
+</a>
