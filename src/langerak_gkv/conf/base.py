@@ -145,6 +145,7 @@ MIDDLEWARE = [
     "cms.middleware.page.CurrentPageMiddleware",
     "cms.middleware.toolbar.ToolbarMiddleware",
     "cms.middleware.language.LanguageCookieMiddleware",
+    "cms.middleware.utils.ApphookReloadMiddleware",
 ]
 
 ROOT_URLCONF = "langerak_gkv.urls"

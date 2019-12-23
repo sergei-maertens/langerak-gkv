@@ -1,5 +1,5 @@
-import urllib
 from datetime import date
+from urllib.parse import urlencode
 
 from django.contrib.auth.views import LoginView, LogoutView
 from django.views.generic import DetailView, ListView
@@ -26,7 +26,7 @@ class UserSearchMixin(FormMixin):
     def get_context_data(self, **kwargs):
         search_form = self.form or self.get_search_form()
         kwargs[self.form_context_name] = search_form
-        kwargs["search_form_qs"] = urllib.urlencode(search_form.data)
+        kwargs["search_form_qs"] = urlencode(search_form.data)
         return super(UserSearchMixin, self).get_context_data(**kwargs)
 
 
