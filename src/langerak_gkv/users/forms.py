@@ -147,10 +147,10 @@ class UserSearchForm(forms.ModelForm):
         # check the birthdate
         this_year = date.today().year
         min_age = self.cleaned_data.pop("min_age")
-        if min_age > 0:
+        if min_age and min_age > 0:
             q_and &= Q(birthdate__lte=date(this_year - min_age, 1, 1))
         max_age = self.cleaned_data.pop("max_age")
-        if max_age > 0:
+        if max_age and max_age > 0:
             q_and &= Q(birthdate__gte=date(this_year - max_age, 12, 31))
 
         # full name
