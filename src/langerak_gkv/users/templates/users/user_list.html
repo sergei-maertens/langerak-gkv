@@ -5,11 +5,9 @@
 <article class="profile-list">
     <section class="profile-list__profiles">
 
-        {% for i in '1234' %}
-            {% for profile in object_list %}
-                {% cycle '1' '2' '3' '4' as flavour silent %}
-                {% include "users/includes/profile_preview.html" with user=profile flavour=flavour only %}
-            {% endfor %}
+        {% for profile in object_list %}
+            {% cycle '1' '2' '3' '4' as flavour silent %}
+            {% include "users/includes/profile_preview.html" with user=profile flavour=flavour only %}
         {% endfor %}
 
         {% include "includes/pagination.html" with qs=search_form_qs %}
