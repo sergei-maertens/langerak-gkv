@@ -31,17 +31,10 @@
 {% block Select %}
 <div class="field">
     {% reuse "_label" bem_class="field__label" %}
+
     <select name="{{ html_name }}" id="{{ id }}" {{ widget.attrs|flatattrs }}>
     {% for choice in choices %}
-        {% if choice.is_group %}
-        <optgroup label="{{ choice.value }}">
-            {% for val, display in choice.display %}
-                {% reuse '_Select_Option' val=val value=value display=display %}
-            {% endfor %}
-        </optgroup>
-        {% else %}
-            {% reuse '_Select_Option' val=choice.value value=value display=choice.display %}
-        {% endif %}
+        {% reuse "_Select_Choice" choice=choice %}
     {% endfor %}
     </select>
 
