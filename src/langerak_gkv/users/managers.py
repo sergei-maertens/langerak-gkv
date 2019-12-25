@@ -11,14 +11,16 @@ class UsersQuerySet(models.QuerySet):
 class UserManager(BaseUserManager.from_queryset(UsersQuerySet)):
     use_for_related_fields = True
 
-    def _create_user(self, email, password, is_staff, is_superuser, **extra_fields):
+    def _create_user(
+        self, username: str, email, password, is_staff, is_superuser, **extra_fields
+    ):
         """
         Creates and saves a User with the given username, email and password.
         """
         now = timezone.now()
         email = self.normalize_email(email)
         user = self.model(
-            username=email,
+            username=username,
             email=email,
             is_staff=is_staff,
             is_active=True,
@@ -31,8 +33,10 @@ class UserManager(BaseUserManager.from_queryset(UsersQuerySet)):
         user.save(using=self._db)
         return user
 
-    def create_user(self, email=None, password=None, **extra_fields):
-        return self._create_user(email, password, False, False, **extra_fields)
+    def create_user(self, username: str, email=None, password=None, **extra_fields):
+        return self._create_user(
+            username, email, password, False, False, **extra_fields
+        )
 
-    def create_superuser(self, email, password, **extra_fields):
-        return self._create_user(email, password, True, True, **extra_fields)
+    def create_superuser(self, username: str, email, password, **extra_fields):
+        return self._create_user(username, email, password, True, True, **extra_fields)
