@@ -22,8 +22,6 @@ urlpatterns = [
     path("liturgies/", include("langerak_gkv.liturgies.urls")),
     path("search/", include("langerak_gkv.search.urls")),
     path("societies/", include("langerak_gkv.societies.urls")),
-    path("users/", include("langerak_gkv.users.urls")),
-    path("users/password/", include("password_reset.urls")),
     path("", include("langerak_gkv.homepage.urls")),
     # newsletter + hijack some urls
     surl(
