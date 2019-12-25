@@ -58,7 +58,7 @@ class Liturgy(models.Model):
         verbose_name_plural = _("liturgies")
         ordering = ["-date"]
 
-    def __unicode__(self):
+    def __str__(self):
         return u"{service} {date}".format(
             service=self.service.name, date=self.date.strftime("%d-%m-%Y")
         )
@@ -103,7 +103,7 @@ class Service(models.Model):
     name = models.CharField(_("service name"), max_length=50)
     time = models.TimeField(_("service time"))
 
-    def __unicode__(self):
+    def __str__(self):
         return self.name
 
 
@@ -143,7 +143,7 @@ class MailRecipient(models.Model):
     class Meta:
         ordering = ["function"]
 
-    def __unicode__(self):
+    def __str__(self):
         return self.email
 
     def save(self, *args, **kwargs):

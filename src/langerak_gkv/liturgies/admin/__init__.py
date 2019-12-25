@@ -57,7 +57,7 @@ class MailRecipientAdmin(admin.ModelAdmin):
 
 @admin.register(Liturgy)
 class LiturgyAdmin(ImportExportActionModelAdmin):
-    list_display = ("__unicode__", "date", "preacher", "link_emails")
+    list_display = ("__str__", "date", "preacher", "link_emails")
     list_editable = ("preacher",)
     list_filter = ("date", "service__time")
     inlines = [MailRecipientInline]
@@ -129,7 +129,7 @@ class LiturgyAdmin(ImportExportActionModelAdmin):
 
 @admin.register(Service)
 class ServiceAdmin(admin.ModelAdmin):
-    list_display = ("__unicode__", "name", "time")
+    list_display = ("__str__", "name", "time")
     list_editable = ("name", "time")
     list_filter = ("time",)
     search_fields = ("name", "time")

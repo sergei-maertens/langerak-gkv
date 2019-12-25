@@ -6,7 +6,13 @@
     </header>
 
     <section class="calendar-item__info">
-        {{ item.name }}
+        {% if item.liturgy_id %}
+            {{ item.start_date|date:"j F" }}
+            <br>
+            {{ item.liturgy.service }} / {{ item.liturgy.service.time|time:"H:i" }}
+        {% else %}
+            {{ item.name }}
+        {% endif %}
     </section>
 
 </article>
