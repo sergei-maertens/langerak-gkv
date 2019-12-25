@@ -1,3 +1,5 @@
+@import '../../lib/typography';
+
 $profile-list-preview-gutter: 2em;
 $profile-list-preview-margin-side: $profile-list-preview-gutter / 2;
 $profile-list-preview-width: 100% / 3;
@@ -9,7 +11,7 @@ $profile-list-preview-width: 100% / 3;
   flex-wrap: wrap;
 
   & &__profiles {
-    width: 75%;
+    width: 65%;
 
     display: flex;
     justify-content: space-around;
@@ -27,6 +29,11 @@ $profile-list-preview-width: 100% / 3;
   }
 
   & &__search {
+    @include body;
     width: 25%;
+
+    .field {
+      font-size: 1.4rem;
+    }
   }
 }

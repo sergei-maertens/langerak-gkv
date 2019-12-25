@@ -1,23 +1,32 @@
 {% load i18n sniplates %}
-<form action="{% url 'users:search' %}" method="get" class="block">
-{% load_widgets form='default.form' %}
-<fieldset>
-    {% form_field form.full_name %}
-    {% widget 'form:btn-submit' btn_text=_('Search') btn_class='btn-action' %}
-</fieldset>
+<form action="{% url 'users:search' %}" method="get" class="form">
+    {% load_widgets form='includes/forms/default.html' %}
 
-<fieldset>
-    <h4>{% trans "Advanced search" %}</h4>
-    {% form_field form.query %}
-    {% form_field form.sex %}
-    {% form_field form.min_age %}
-    {% form_field form.max_age %}
-    {% form_field form.first_name %}
-    {% form_field form.last_name %}
-    {% form_field form.address %}
-    {% form_field form.district_function %}
-    {% form_field form.member_type %}
+    <fieldset class="form__section">
+        {% form_field form.full_name %}
 
-    {% widget 'form:btn-submit' btn_text=_('Search') btn_class='btn-action' %}
-</fieldset>
+        <div class="form__submit-row">
+            {% widget 'form:submit' text=_("Search") %}
+        </div>
+    </fieldset>
+
+
+    <fieldset class="form__section">
+        <h4 class="form__section-title">{% trans "Advanced search" %}</h4>
+
+        {% form_field form.query %}
+        {% form_field form.sex %}
+        {% form_field form.min_age %}
+        {% form_field form.max_age %}
+        {% form_field form.first_name %}
+        {% form_field form.last_name %}
+        {% form_field form.address %}
+        {% form_field form.district_function %}
+        {% form_field form.member_type %}
+
+        <div class="form__submit-row">
+            {% widget 'form:submit' text=_("Search") %}
+        </div>
+    </fieldset>
+
 </form>

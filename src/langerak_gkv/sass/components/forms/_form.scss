@@ -1,3 +1,6 @@
+@import "../../lib/typography";
+
+
 .form {
 
   & &__submit-row {
@@ -8,4 +11,14 @@
     margin-top: 25px;
   }
 
+  & &__section {
+    border: solid 1px #eee;
+    margin-bottom: 2em;
+  }
+
+  & &__section-title {
+    @include page-title;
+    font-size: 2rem;
+    margin: 1rem 0;
+  }
 }
