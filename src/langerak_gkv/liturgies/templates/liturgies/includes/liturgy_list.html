@@ -4,8 +4,12 @@
 {% for liturgy in liturgies %}
 <article class="liturgy-preview">
     <header class="liturgy-preview__intro">
-        <h1 class="liturgy-preview__date">{{ liturgy.date|date }}</h1>
-        <span class="liturgy-preview__time">{{ liturgy.service.time|time:"H:i" }}</span>
+        <h1 class="liturgy-preview__date">
+            {{ liturgy.date|date }}
+            <span class="liturgy-preview__time">
+                {{ liturgy.service.time|time:"H:i" }}
+            </span>
+        </h1>
         {% if liturgy.preacher %}
             <span class="liturgy-preview__preacher">{{ liturgy.preacher }}</span>
         {% endif %}
@@ -21,7 +25,6 @@
                 {{ liturgy.liturgy|linebreaksbr|truncatewords:30 }}
             </p>
         {% endif %}
-
     </section>
 
     {% if liturgy.other_churches.all %}

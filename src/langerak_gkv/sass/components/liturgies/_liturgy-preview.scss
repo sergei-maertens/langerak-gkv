@@ -1,0 +1,92 @@
+@import "../../lib/colors";
+@import "../../lib/typography";
+
+.liturgy-preview {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  flex-wrap: wrap;
+
+  border: solid 1px #ececec;
+  padding: 1em;
+
+  & + & {
+    margin-top: 1em;
+  }
+
+  & &__intro {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 0.5rem;
+  }
+
+  & &__date {
+    @include subtitle;
+    font-size: 2rem;
+    color: $theme-green;
+
+    margin: 0;
+    border-bottom: solid 1px $theme-green;
+  }
+
+  & &__time {
+    @include subtitle;
+    font-size: 1.5rem;
+    font-weight: 200;
+    color: $font-color;
+    margin-left: 1em;
+  }
+
+  & &__preacher {
+    @include body;
+    font-size: 2rem;
+    text-align: right;
+  }
+
+  & &__body {
+    @include body;
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+    width: calc(100% - 200px - 1em);
+    padding: 1rem 0;
+
+    > * {
+      margin: 0;
+    }
+  }
+
+  & &__locations {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    width: 200px;
+    padding: 1rem 0;
+  }
+
+  & &__church {
+    @include body;
+    display: block;
+    background: $theme-purple;
+    padding: 0.5rem 1rem;
+    color: white;
+    font-size: 1.2rem;
+  }
+
+  & &__goto {
+    @include body;
+    color: $theme-green;
+    text-decoration: none;
+    font-size: 1.5rem;
+    text-align: right;
+
+    display: block;
+    width: 100%;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

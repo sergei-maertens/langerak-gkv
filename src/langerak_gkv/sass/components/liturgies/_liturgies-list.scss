@@ -1,0 +1,10 @@
+@import "../../lib/typography";
+
+
+.liturgies-list {
+  &__subtitle {
+    @include subtitle;
+    margin-top: 0;
+    text-align: right;
+  }
+}
