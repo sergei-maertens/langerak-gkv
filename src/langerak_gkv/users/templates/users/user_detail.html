@@ -18,7 +18,7 @@
 
         {% block profile_pic %}
             <figure class="profile-detail__profile-pic">
-                {% if profile.picture and False %}
+                {% if profile.picture %}
                     <img src="{% thumbnail profile.picture 400x400 box=profile.cropping crop upscale %}">
                 {% else %}
                     <div class="profile-pic-placeholder"></div>
