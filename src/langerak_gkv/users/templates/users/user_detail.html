@@ -111,6 +111,7 @@
 
     </section>
 
+    {% if profile.connections %}
     <section class="profile-detail__connections">
         <h4 class="profile-detail__relation-title">
             {% trans "1<sup>st</sup> degree connections" %}
@@ -120,6 +121,7 @@
             {% include "users/includes/profile_preview.html" with user=relation flavour=flavour only %}
         {% endfor %}
     </section>
+    {% endif %}
 </article>
 
 <aside class="profile-page__search">

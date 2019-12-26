@@ -55,6 +55,14 @@ $profile-detail-gutter: 1em;
     }
   }
 
+  & &__relation-title {
+    @include subtitle;
+    font-size: 1.5rem;
+    margin: 0 0 1em;
+    padding-bottom: 0.5em;
+    border-bottom: solid 2px $theme-green-yellow;
+  }
+
   & &__details {
     @include body;
     font-size: 1.2rem;
@@ -95,5 +103,16 @@ $profile-detail-gutter: 1em;
 
   & &__connections {
     width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+
+    .profile-detail__relation-title {
+      width: 100%;
+    }
+
+    > .profile-preview {
+      width: calc(20% - 1em);
+      margin: 0 0.5em 1em;
+    }
   }
 }
