@@ -1,0 +1,23 @@
+@import "../lib/colors";
+
+.key-value {
+  display: block;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  line-height: 1.3em;
+
+  &--extra-spacing {
+    margin-top: 1em;
+  }
+
+  & &__key {
+    width: 40%;
+    color: $font-color-light;
+  }
+
+  & &__value {
+    width: 60%;
+    font-weight: 400;
+  }
+}

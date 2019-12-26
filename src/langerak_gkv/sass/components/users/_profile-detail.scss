@@ -36,10 +36,11 @@ $profile-detail-gutter: 1em;
   & &__title {
     @include subtitle;
     margin: 0;
+    font-style: normal;
   }
 
   & &__pictures {
-    width: calc(45% - #{$profile-detail-gutter/2});
+    width: calc(40% - #{$profile-detail-gutter/2});
     background: $profile-detail-pane-background;
     padding: 1em;
   }
@@ -55,9 +56,41 @@ $profile-detail-gutter: 1em;
   }
 
   & &__details {
-    width: calc(55% - #{$profile-detail-gutter/2});
+    @include body;
+    font-size: 1.2rem;
+
+    width: calc(60% - #{$profile-detail-gutter/2});
     background: $profile-detail-pane-background;
     padding: 1em;
+
+    a {
+      color: $theme-green;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  & &__member-type {
+    float: right;
+    font-size: 1.2rem;
+    color: $font-color-light;
+  }
+
+  & &__first-name {
+    font-weight: 600;
+    font-size: 2rem;
+    margin: 0;
+    color: $theme-green;
+  }
+
+  & &__last-name {
+    display: block;
+    font-size: 1.5rem;
+    color: $theme-green;
+    margin-bottom: 2rem;
   }
 
   & &__connections {
