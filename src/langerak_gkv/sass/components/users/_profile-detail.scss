@@ -1,3 +1,66 @@
-.profile-detail {
+@import "../../lib/colors";
+@import "../../lib/typography";
 
+$profile-detail-pane-background: rgba($theme-green, 0.025);
+$profile-detail-gutter: 1em;
+
+.profile-detail {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  flex-wrap: wrap;
+
+  & &__header-bar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0.5rem 1.5rem;
+    background: $theme-green-yellow;
+    margin-bottom: $profile-detail-gutter;
+
+    color: $font-color;
+  }
+
+  & &__back-link {
+    @include body;
+    text-decoration: none;
+    color: $font-color;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  & &__title {
+    @include subtitle;
+    margin: 0;
+  }
+
+  & &__pictures {
+    width: calc(45% - #{$profile-detail-gutter/2});
+    background: $profile-detail-pane-background;
+    padding: 1em;
+  }
+
+  & &__profile-pic {
+    margin: 0;
+    padding: 0;
+
+    > img {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  & &__details {
+    width: calc(55% - #{$profile-detail-gutter/2});
+    background: $profile-detail-pane-background;
+    padding: 1em;
+  }
+
+  & &__connections {
+    width: 100%;
+  }
 }
