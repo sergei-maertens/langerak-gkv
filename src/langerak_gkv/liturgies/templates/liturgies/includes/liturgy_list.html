@@ -1,0 +1,44 @@
+{# Re-useable liturgy preview/include #}
+{% load i18n %}
+
+{% for liturgy in liturgies %}
+<article class="liturgy-preview">
+    <header class="liturgy-preview__intro">
+        <h1 class="liturgy-preview__date">{{ liturgy.date|date }}</h1>
+        <span class="liturgy-preview__time">{{ liturgy.service.time|time:"H:i" }}</span>
+        {% if liturgy.preacher %}
+            <span class="liturgy-preview__preacher">{{ liturgy.preacher }}</span>
+        {% endif %}
+    </header>
+
+    <section class="liturgy-preview__body">
+        {% if liturgy.service_theme %}
+            <p class="liturgy-preview__service-theme">{{ liturgy.service_theme }}</p>
+        {% endif %}
+
+        {% if liturgy.liturgy %}
+            <p class="liturgy-preview__content">
+                {{ liturgy.liturgy|linebreaksbr|truncatewords:30 }}
+            </p>
+        {% endif %}
+
+    </section>
+
+    {% if liturgy.other_churches.all %}
+        <section class="liturgy-preview__locations">
+            {% for church in liturgy.other_churches.all %}
+                <span class="liturgy-preview__church">{{ church }}</span>
+            {% endfor %}
+        </section>
+    {% endif %}
+
+    <a href="{{ liturgy.get_absolute_url }}" class="liturgy-preview__goto">
+        {% trans "Read more" %}
+    </a>
+
+</article>
+{% empty %}
+<article class="liturgy-preview">
+    {% trans "No activities this week!" %}
+</article>
+{% endfor %}

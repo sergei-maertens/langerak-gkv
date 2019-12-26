@@ -1,25 +1,28 @@
-{% extends "liturgies/base.html" %}{% load i18n %}
+{% extends "cms/base.html" %}
+{# originally extended from activities/base.html #}
+{% load i18n %}
 
-{% block body-class %}{{ block.super }} liturgies list{% endblock body-class %}
+{% block body-class %}{{ block.super }} liturgies-page{% endblock body-class %}
 
-{% block calendar-content %}
-<div class="fc fc-ltr fc-unthemed link-height activity-list" data-linkid="1">
-    <div class="fc-toolbar">
-        <div class="fc-center">
-            <h2>{% trans "Upcoming liturgies" %}</h2>
-        </div>
-    </div>
 
-    <div class="fc-day-header sub">
-        <strong>{% blocktrans count counter=paginator.count %}
-        One upcoming
+{% block content %}
+<h1 class="page-title">{% trans "Upcoming liturgies" %}</h1>
+
+<section class="liturgies-list liturgies-page__list">
+    <h2 class="liturgies-list__subtitle">
+        {% blocktrans count counter=paginator.count trimmed %}
+            One upcoming
         {% plural %}
-        {{ counter }} upcoming{% endblocktrans %}</strong>
-    </div>
+            {{ counter }} upcoming
+        {% endblocktrans %}
+    </h2>
 
-    {% include 'liturgies/_liturgy_list.html' %}
+    {% include 'liturgies/includes/liturgy_list.html' %}
 
-</div>
+    {% include 'includes/pagination.html' %}
+</section>
 
-{% include 'includes/pagination.html' %}
-{% endblock %}
+<aside class="activities-sidebar liturgies-page__sidebar">
+    TODO
+</aside>
+{% endblock content %}

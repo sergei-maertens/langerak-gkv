@@ -1,0 +1,24 @@
+.liturgies-page .page-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  flex-wrap: wrap;
+
+  .page-title {
+    width: 100%;
+  }
+
+  .liturgies-page__list {
+    width: 75%;
+    border: solid 1px red;
+  }
+
+  .pagination {
+    width: 100%;
+  }
+
+  .liturgies-page__sidebar {
+    width: 20%;
+    border: solid 1px red;
+  }
+}
