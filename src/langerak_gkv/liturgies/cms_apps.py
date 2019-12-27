@@ -8,6 +8,7 @@ from .menu import LiturgiesMenu
 
 class LiturgiesApp(CMSApp):
     name = _("Liturgies")
+    app_name = "liturgies"
 
     def get_menus(self, page=None, language=None, **kwargs):
         return [LiturgiesMenu]
