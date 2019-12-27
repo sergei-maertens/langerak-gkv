@@ -22,7 +22,6 @@
     {% include 'includes/pagination.html' %}
 </section>
 
-<aside class="activities-sidebar liturgies-page__sidebar">
-    TODO
-</aside>
+{% include "activities/includes/sidebar.html" with extra_class="liturgies-page__sidebar" only %}
+
 {% endblock content %}
