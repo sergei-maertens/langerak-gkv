@@ -7,8 +7,18 @@
   align-items: stretch;
   line-height: 1.3em;
 
-  &--extra-spacing {
+  &#{&}--extra-spacing {
     margin-top: 1em;
+  }
+
+  &#{&}--swap-ratio {
+    .key-value__key {
+      width: 60%;
+    }
+
+    .key-value__value {
+      width: 40%;
+    }
   }
 
   & &__key {
