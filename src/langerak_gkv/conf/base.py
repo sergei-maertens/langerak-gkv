@@ -332,7 +332,7 @@ HAYSTACK_CONNECTIONS = {
         # 'ENGINE': 'haystack.backends.elasticsearch_backend.ElasticsearchSearchEngine',
         "ENGINE": "langerak_gkv.search.backends.ConfigurableElasticSearchEngine",
         "URL": os.getenv("ELASTIC_SEARCH", "http://127.0.0.1:9200/"),
-        "INDEX_NAME": os.getenv("ELASTIC_INDEX", "koningskerk"),
+        "INDEX_NAME": os.getenv("ELASTIC_INDEX", "gklangerak"),
     }
 }
 
