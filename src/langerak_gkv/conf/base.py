@@ -1,5 +1,7 @@
 import os
 
+from django.urls import reverse_lazy
+
 from .cms import *  # noqa
 
 # Automatically figure out the BASE_DIR and PROJECT_DIR.
@@ -295,7 +297,7 @@ AUTHENTICATION_BACKENDS = [
     "langerak_gkv.users.backends.EmailModelBackend",
 ]
 LOGIN_URL = "users:login"
-LOGIN_REDIRECT_URL = "/"
+LOGIN_REDIRECT_URL = reverse_lazy("pages-root")
 
 #
 # GEO
