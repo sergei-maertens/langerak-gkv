@@ -21,13 +21,19 @@ $social-icon-size: 49px;
   font-size: 2rem;
   font-weight: bold;
 
-  &--lightblue {
+  &#{&}--lightblue {
     background: #66c9ec;
   }
-  &--darkblue {
+  &#{&}--darkblue {
     background: #0070bb;
   }
-  &--red {
+  &#{&}--red {
     background: #dd6f4e;
+  }
+  &#{&}--facebook {
+    background: url('../img/fb-logo-rond.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-indent: -9999pt;
   }
 }
