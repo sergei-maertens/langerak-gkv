@@ -811,11 +811,11 @@ msgstr "Volg link"
 
 #: src/langerak_gkv/templates/includes/header.html:25
 msgid "search field"
-msgstr "Zoekveld"
+msgstr "Zoeken"
 
 #: src/langerak_gkv/templates/includes/header.html:32
 msgid "my profile"
-msgstr "Mijn profiel"
+msgstr "profiel"
 
 #: src/langerak_gkv/templates/includes/header.html:35
 #, python-format
