@@ -19,9 +19,8 @@
 
     {% include 'liturgies/includes/liturgy_list.html' %}
 
-    {% include 'includes/pagination.html' %}
+    {% if object_list %}
+        {% include 'includes/pagination.html' %}
+    {% endif %}
 </section>
-
-{% include "activities/includes/sidebar.html" with extra_class="liturgies-page__sidebar" only %}
-
 {% endblock content %}
