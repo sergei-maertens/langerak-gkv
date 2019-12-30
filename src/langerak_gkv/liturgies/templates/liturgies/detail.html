@@ -47,12 +47,12 @@
 
         <div class="key-value key-value--swap-ratio">
             <span class="key-value__key">{% trans "Preacher" %}:</span>
-            <span class="key-value__value">{{ liturgy.preacher }}</span>
+            <span class="key-value__value">{{ liturgy.preacher|default:_("not yet known...") }}</span>
         </div>
 
         <div class="key-value key-value--swap-ratio">
             <span class="key-value__key">{% trans "Preach made by" %}:</span>
-            <span class="key-value__value">{{ liturgy.preach_author }}</span>
+            <span class="key-value__value">{{ liturgy.preach_author|default:_("not yet known...") }}</span>
         </div>
 
         {% for collection in liturgy.get_collections %}
@@ -68,7 +68,7 @@
 
     <h2 class="liturgy-detail__body-header">{% trans "Liturgy" %}</h2>
     <section class="liturgy-detail__body">
-        {{ liturgy.liturgy|linebreaksbr }}
+        {{ liturgy.liturgy|linebreaksbr|default:_("not yet know, please come back later!") }}
     </section>
 
     <section class="liturgy-detail__extras">

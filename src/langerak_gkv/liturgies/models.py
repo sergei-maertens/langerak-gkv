@@ -20,13 +20,13 @@ class Liturgy(models.Model):
     service = models.ForeignKey(
         "Service", verbose_name=_("service"), on_delete=models.CASCADE
     )
-    preacher = models.CharField(_("preacher"), max_length=100)
-    preach_author = models.CharField(_("preach author"), max_length=100)
+    preacher = models.CharField(_("preacher"), max_length=100, blank=True)
+    preach_author = models.CharField(_("preach author"), max_length=100, blank=True)
     main_section = models.CharField(_("main section"), max_length=50, blank=True)
     main_chapter = models.CharField(_("main chapter"), max_length=50, blank=True)
     main_verse = models.CharField(_("main verse"), max_length=50, blank=True)
     service_theme = models.CharField(_("service theme"), max_length=255, blank=True)
-    liturgy = models.TextField(pgettext_lazy("admin field", "liturgy"))
+    liturgy = models.TextField(pgettext_lazy("admin field", "liturgy"), blank=True)
     audiofile = models.FileField(
         _("audiofile"), upload_to="liturgies/audio", max_length=100, blank=True
     )
