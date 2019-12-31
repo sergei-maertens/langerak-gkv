@@ -1,11 +1,30 @@
+@import "../lib/colors";
 @import "../lib/typography";
 
 $menu-font-color: #ffffff !default;
-$menu-space-inbetween: 1.4em;
+$menu-space-inbetween: 1.5rem;
 
 .menu {
-  display: flex;
-  padding: 0 $menu-space-inbetween / 2;
+
+  & &__layer {
+    display: flex;
+    padding: 0 $menu-space-inbetween / 2;
+
+    &--sub {
+      background: lighten(#333, 10%);
+
+      .menu__item {
+        font-size: 1.2rem;
+        line-height: 2.6rem;
+        margin: 0;
+
+        &:hover {
+          text-decoration: underline;
+          border-bottom-color: transparent;
+        }
+      }
+    }
+  }
 
   & &__item {
     @include title;
@@ -13,13 +32,19 @@ $menu-space-inbetween: 1.4em;
     color: $menu-font-color;
     text-transform: uppercase;
     font-size: 1.6rem;
-    line-height: 4rem;
+    line-height: 2.5rem;
     text-decoration: none;
     padding: 0 $menu-space-inbetween / 2;
+    margin: 0.75rem 0;
+    border-bottom: solid 3px transparent;
 
     &:hover {
-      text-decoration: underline;
       color: darken($menu-font-color, 10%);
+      border-bottom-color: rgba($theme-green-yellow, 0.75);
+    }
+
+    &--active {
+      border-bottom-color: rgba($theme-green-yellow, 0.25);
     }
   }
 

@@ -3,8 +3,15 @@
 <header class="page-header">
 
     <nav class="menu">
-        <a href="{{ home_url }}" class="menu__item">{{ home_title }}</a>
-        {% show_menu 1 %}
+        <div class="menu__layer menu__layer--root">
+            <a href="{{ home_url }}" class="menu__item">{{ home_title }}</a>
+            {% show_menu 1 %}
+        </div>
+        {% if not request.path == home_url %}
+            <div class="menu__layer menu__layer--sub">
+                {% show_sub_menu 1 %}
+            </div>
+        {% endif %}
     </nav>
 
     <section class="header-content">
