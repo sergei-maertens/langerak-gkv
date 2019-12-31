@@ -12,8 +12,8 @@ $menu-space-inbetween: 1.4em;
     display: block;
     color: $menu-font-color;
     text-transform: uppercase;
-    font-size: 2rem;
-    line-height: 5rem;
+    font-size: 1.6rem;
+    line-height: 4rem;
     text-decoration: none;
     padding: 0 $menu-space-inbetween / 2;
 
@@ -24,7 +24,7 @@ $menu-space-inbetween: 1.4em;
   }
 
   & &__child &__item {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     line-height: 3rem;
     padding-left: 2rem;
   }

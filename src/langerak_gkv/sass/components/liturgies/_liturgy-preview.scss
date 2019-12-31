@@ -19,7 +19,7 @@
 
   &#{&}--empty {
     @include body;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     color: $font-color-light;
     font-style: italic;
   }
@@ -38,7 +38,7 @@
 
   & &__date {
     @include subtitle;
-    font-size: 2rem;
+    font-size: 1.6rem;
     color: $theme-green;
 
     margin: 0;
@@ -47,7 +47,7 @@
 
   & &__time {
     @include subtitle;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: 200;
     color: $font-color;
     margin-left: 1em;
@@ -55,13 +55,13 @@
 
   & &__preacher {
     @include body;
-    font-size: 2rem;
+    font-size: 1.6rem;
     text-align: right;
   }
 
   & &__body {
     @include body;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     line-height: 1.6rem;
     width: calc(100% - 200px - 1em);
     padding: 1rem 0;
@@ -86,20 +86,22 @@
     background: $theme-purple;
     padding: 0.5rem 1rem;
     color: white;
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 
   & &__goto {
     @include body;
-    color: $theme-green;
+    color: $font-color-light;
     text-decoration: none;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     text-align: right;
+    font-weight: 400;
 
     display: block;
     width: 100%;
 
     &:hover {
+      color: $theme-green;
       text-decoration: underline;
     }
   }

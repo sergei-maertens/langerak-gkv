@@ -1,16 +1,16 @@
 @import "../../lib/colors";
 
-$field-input-vertical-padding: 0.1em;
+$field-input-vertical-padding: 0.2em;
 $field-border-thickness-increase: 2px;
 
 .field {
   display: block;
 
   color: $font-color;
-  font-size: 1.6rem;
+  font-size: 1.2rem;
 
   & + & {
-    margin-top: 1em;
+    margin-top: 1.2em;
   }
 
   & &__label {

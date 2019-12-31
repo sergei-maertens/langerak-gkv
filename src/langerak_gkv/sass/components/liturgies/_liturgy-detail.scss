@@ -12,20 +12,20 @@
     width: calc(60% - 0.5rem);
     padding: 1rem;
     border-left: solid 4px rgba($theme-green, 0.5);
-    font-size: 1.3rem;
+    font-size: 1.1rem;
   }
 
   & &__meta {
     width: calc(40% - 0.5rem);
     padding: 1rem;
     border-left: solid 4px rgba($theme-green-yellow, 0.5);
-    font-size: 1.3rem;
+    font-size: 1.1rem;
   }
 
   & &__body-header {
     @include subtitle;
     color: $theme-green;
-    font-size: 2rem;
+    font-size: 1.6rem;
     width: 100%;
     border-bottom: solid 1px $theme-green;
     margin: 1em 0 0;
@@ -34,7 +34,7 @@
 
   & &__body {
     @include body;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     text-align: center;
 
     width: calc(75% - 0.5rem);
@@ -44,7 +44,7 @@
 
   & &__extras {
     @include body;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
 
     width: calc(25% - 0.5rem);
     padding: 1rem;

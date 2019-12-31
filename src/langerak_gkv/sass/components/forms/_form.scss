@@ -1,3 +1,4 @@
+@import "../../lib/colors";
 @import "../../lib/typography";
 
 
@@ -9,6 +10,21 @@
     align-items: center;
 
     margin-top: 25px;
+
+    a {
+      color: $font-color-light;
+      text-decoration: none;
+      font-size: 1.2rem;
+
+      &:hover {
+        text-decoration: underline;
+        color: $theme-green;
+      }
+
+      &:focus {
+        color: $theme-green;
+      }
+    }
   }
 
   & &__section {

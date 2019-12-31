@@ -1,6 +1,7 @@
 @import "../lib/measurements";
 
 $header-content-width: $body-content-width !default;
+$header-content-side-padding: 56px !default;
 
 .header-content {
   position: relative;
@@ -55,7 +56,7 @@ $header-content-width: $body-content-width !default;
     background: #ffffff;
     // Chrome leaves a weird line when sticking to 100% ...
     clip-path: polygon(0% 0%, calc(100% + 1px) calc(100% + 1px), 0% calc(100% + 1px));
-    padding: 30px 70px;
+    padding: 30px $header-content-side-padding;
 
     height: $strepen-skew-height;
   }
