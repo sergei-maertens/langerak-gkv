@@ -6,13 +6,13 @@
         {% if user.picture %}
             <img src="{{ user.picture|thumbnail_url:'avatar_portrait' }}">
         {% else %}
-            <span class="profile-preview__placeholder"></span>
+            <span class="profile-pic-placeholder profile-pic-placeholder--preview"></span>
         {% endif %}
     </figure>
 
-    <span class="profile-preview__first-name">{{ user.first_name }}</span>
-    <span class="profile-preview__last-name">{{ user.last_name }}</span>
-    <span class="profile-preview__phone">{{ user.phone|phone }}</span>
+    <span class="profile-preview__first-name">{{ user.first_name|default:'&nbsp;' }}</span>
+    <span class="profile-preview__last-name">{{ user.last_name|default:'&nbsp;' }}</span>
+    <span class="profile-preview__phone">{{ user.phone|phone|default:'&nbsp;' }}</span>
 
     <div class="profile-preview__links">
 
