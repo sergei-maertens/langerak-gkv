@@ -1,5 +1,6 @@
 @import "../lib/colors";
 @import "../lib/typography";
+@import "../lib/responsive";
 
 $menu-font-color: #ffffff !default;
 $menu-space-inbetween: 1.5rem;
@@ -52,5 +53,13 @@ $menu-space-inbetween: 1.5rem;
     font-size: 1.1rem;
     line-height: 3rem;
     padding-left: 2rem;
+  }
+}
+
+@include mobile-only {
+  .menu {
+    & &__layer {
+      display: block;
+    }
   }
 }
