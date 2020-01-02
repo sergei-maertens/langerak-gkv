@@ -1,0 +1,25 @@
+.cms-page {
+
+  &#{&}--stripes-bottom .page-content {
+
+    padding-bottom: 0;
+
+    &::after {
+      content: "";
+      display: block;
+      height: $strepen-skew-height;
+      opacity: 0.90;
+
+      margin-left: -$page-content-side-padding;
+      margin-right: -$page-content-side-padding;
+      position: relative;
+      margin-top: -$strepen-skew-height / 2;
+
+      background-image: url('../img/strepen.png');
+      background-size: $header-content-width auto;
+      background-repeat: repeat-y;
+      clip-path: polygon(0% 0%, 100% 100%, 0% $strepen-skew-height);
+    }
+  }
+
+}
