@@ -60,6 +60,11 @@ $menu-space-inbetween: 1.5rem;
   .menu {
     & &__layer {
       display: block;
+      padding-top: 0.75rem;
+    }
+
+    & &__item {
+      margin: 0.25rem 0;
     }
   }
 }

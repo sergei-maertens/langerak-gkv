@@ -1,4 +1,5 @@
 @import "../lib/measurements";
+@import "../lib/responsive";
 
 $header-content-width: $body-content-width !default;
 $header-content-side-padding: 56px !default;
@@ -31,7 +32,7 @@ $header-content-side-padding: 56px !default;
     right: 0;
 
     background-image: url('../img/strepen.png');
-    background-size: $header-content-width auto;
+    background-size: 100% auto;
     background-repeat: repeat-y;
     opacity: 60%;
   }
@@ -42,6 +43,8 @@ $header-content-side-padding: 56px !default;
   }
 
   & &__actions {
+    // TODO include proper search / profile triggers
+    @include hide-on-mobile(flex);
     display: flex;
     justify-content: flex-start;
     flex-direction: row-reverse;
@@ -59,5 +62,14 @@ $header-content-side-padding: 56px !default;
     padding: 30px $header-content-side-padding;
 
     height: $strepen-skew-height;
+
+    @include mobile-only {
+      height: 81px;
+      padding: 16px 0.5em 8px;
+
+      > .social-icon-list {
+        padding: 0;
+      }
+    }
   }
 }
