@@ -1,7 +1,18 @@
-@import "../lib/typography";
 @import "../lib/colors";
+@import "../lib/responsive";
+@import "../lib/typography";
 
 .user-actions {
+  @include hide-on-mobile(block);
+  &#{&}--visible {
+    display: block;
+  }
+
+  @include mobile-only {
+    text-align: right;
+    padding: 0.4em 0.8em;
+  }
+
   & &__action {
     @include body;
     font-weight: 200;
@@ -14,6 +25,12 @@
     &:hover {
       color: darken(white, 10%);
       border-bottom: solid 1px darken(white, 10%);
+    }
+
+    @include mobile-only {
+      font-size: 1.2rem;
+      margin-right: 0;
+      margin-left: 0.5rem;
     }
   }
 }

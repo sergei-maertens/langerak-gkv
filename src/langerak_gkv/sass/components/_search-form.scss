@@ -1,11 +1,22 @@
-@import "../lib/typography";
 @import "../lib/colors";
+@import "../lib/responsive";
+@import "../lib/typography";
 
 $search-icon-size: 2rem 2rem;
 
 .search-form {
+  @include hide-on-mobile(block);
 
   padding: 2.4em 30px 2.4em 0;
+
+  @include mobile-only {
+    padding: 1em;
+    text-align: center;
+  }
+
+  &#{&}--visible {
+    display: block;
+  }
 
   & &__search {
     @include body;
@@ -25,6 +36,10 @@ $search-icon-size: 2rem 2rem;
     &:focus {
       outline: none;
       box-shadow: 2px 2px 5px 0 $shadow-form-inputs;
+    }
+
+    @include mobile-only {
+      width: 100%;
     }
   }
 

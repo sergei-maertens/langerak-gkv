@@ -43,12 +43,14 @@ $header-content-side-padding: 56px !default;
   }
 
   & &__actions {
-    // TODO include proper search / profile triggers
-    @include hide-on-mobile(flex);
     display: flex;
     justify-content: flex-start;
     flex-direction: row-reverse;
     align-items: center;
+
+    @include mobile-only {
+      display: block;
+    }
   }
 
   & &__end {

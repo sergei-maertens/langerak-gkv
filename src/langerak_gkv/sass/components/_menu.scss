@@ -30,6 +30,24 @@ $menu-space-inbetween: 1.5rem;
     margin: 3px 0;
   }
 
+  & &__profile {
+    display: block;
+    width: 1.4rem;
+    height: 1.4rem;
+    margin: 0 0.5rem;
+    background-color: $menu-font-color;
+    mask-image: url('../img/profile-icon.svg');
+  }
+
+  & &__search {
+    display: block;
+    width: 1.1rem;
+    height: 1.1rem;
+    margin: 0;
+    background-color: $menu-font-color;
+    mask-image: url('../img/zoek.svg');
+  }
+
   // Shared
 
   & &__layer {
