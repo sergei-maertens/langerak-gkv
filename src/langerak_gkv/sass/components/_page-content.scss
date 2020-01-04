@@ -1,4 +1,5 @@
 @import "../lib/colors";
+@import "../lib/responsive";
 
 $border-height: 500px;
 $page-content-side-padding: 56px !default;
@@ -6,6 +7,10 @@ $page-content-side-padding: 56px !default;
 .page-content {
   padding: 0 $page-content-side-padding 2em;
   position: relative;
+
+  @include mobile-only {
+    padding: 0 15px;
+  }
 
   & &__border {
     display: block;
