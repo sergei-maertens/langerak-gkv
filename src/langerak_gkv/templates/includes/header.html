@@ -3,6 +3,15 @@
 <header class="page-header">
 
     <nav class="menu">
+
+        <div class="menu__icons">
+            <span class="menu__hamberder">
+                <span class="menu__hamberder-row"></span>
+                <span class="menu__hamberder-row"></span>
+                <span class="menu__hamberder-row"></span>
+            </span>
+        </div>
+
         <div class="menu__layer menu__layer--root">
             <a href="{{ home_url }}" class="menu__item">{{ home_title }}</a>
             {% show_menu 1 %}

@@ -116,7 +116,7 @@ $breakpoint-desktop: 1200px !default;
   }
 }
 
-@mixin hide-on-desktop($display: block) {
+@mixin hide-on-desktop($display: block, $only: false) {
   display: $display;
 
   @include desktop($only) {
