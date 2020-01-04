@@ -1,3 +1,4 @@
+@import "../lib/responsive";
 @import "../lib/typography";
 
 $calendar-item-icon-size: 4rem;
@@ -7,6 +8,8 @@ $calendar-item-icon-size: 4rem;
   justify-content: space-between;
   align-items: center;
   padding: 1em;
+
+
 
   & &__date {
     background-image: url('../img/kalender.svg');
@@ -47,6 +50,10 @@ $calendar-item-icon-size: 4rem;
 
     &:hover {
       text-decoration: underline;
+    }
+
+    @include mobile-only {
+      width: 100px;
     }
   }
 
