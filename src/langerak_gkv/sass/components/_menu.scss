@@ -59,6 +59,10 @@ $menu-space-inbetween: 1.5rem;
     }
   }
 
+  &#{&}--opened &__layer {
+    @include show-on-mobile(block);
+  }
+
   & &__item {
     @include title;
     display: block;
