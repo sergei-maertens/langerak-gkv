@@ -4,6 +4,8 @@
 
 {% block content %}
 <article class="profile-list">
+    <span class="profile-list__search-icon"></span>
+
     <section class="profile-list__profiles">
 
         {% for profile in object_list %}
@@ -16,6 +18,7 @@
     </section>
 
     <aside class="profile-list__search">
+        <span class="profile-list__search-close">x</span>
         {% include "users/user_search_form.html" with form=search_form|default:form %}
     </aside>
 </article>

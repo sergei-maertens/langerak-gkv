@@ -12,6 +12,17 @@ $profile-list-preview-width: 100% / 3;
   flex-wrap: wrap;
   position: relative;
 
+  & &__search-icon {
+    @include show-on-mobile;
+    width: 2rem;
+    height: 2rem;
+    background-image: url('../img/zoek.svg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    right: 15px;
+  }
+
   & &__profiles {
     width: 65%;
 
@@ -22,7 +33,7 @@ $profile-list-preview-width: 100% / 3;
 
     @include mobile-only {
       width: 100%;
-      padding-top: 2rem;
+      padding-top: 3rem;
     }
 
     > * {
@@ -44,7 +55,7 @@ $profile-list-preview-width: 100% / 3;
 
     width: 25%;
     @include mobile-only {
-      width: 0;
+      width: 0vw;
       display: block;
       background: white;
 
@@ -52,7 +63,7 @@ $profile-list-preview-width: 100% / 3;
       z-index: 1;
       right: 0;
       margin-right: -15px;
-      margin-top: 1rem;
+      border-top: solid 1px #eee;
     }
 
     transition: width 0.5s ease;
@@ -64,9 +75,25 @@ $profile-list-preview-width: 100% / 3;
     &--opened {
       @include mobile-only {
         width: 95vw;
-        padding: 0.5rem;
+        padding: 2rem 0.5rem 0.5rem 0.5rem;
         box-shadow: 0 2px 3px 0 $shadow-form-inputs;
       }
+
+      > .profile-list__search-close {
+        @include show-on-mobile;
+      }
     }
+  }
+
+  & &__search-close {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 1em;
+    line-height: 0.75em;
+    font-size: 2rem;
+    text-align: center;
+    color: $font-color;
   }
 }

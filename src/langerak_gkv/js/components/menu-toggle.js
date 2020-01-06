@@ -11,6 +11,10 @@ const toggle = (control, target, modifier) => {
 const init = () => {
     toggle('menu__profile', 'user-actions', 'visible');
     toggle('menu__search', 'search-form', 'visible');
+
+    // profile search
+    toggle('profile-list__search-icon', 'profile-list__search', 'opened');
+    toggle('profile-list__search-close', 'profile-list__search', 'opened');
 };
 
 init();
