@@ -1,0 +1,34 @@
+@import "../lib/colors";
+@import "../lib/typography";
+@import "../lib/responsive";
+
+.pagination {
+  display: flex;
+
+  &__page {
+    @include body;
+    font-size: 1.2rem;
+
+    display: block;
+    padding: 0.25rem 0.5rem;
+    background-color: $theme-purple;
+    color: white;
+    text-decoration: none;
+
+    &:hover {
+      box-shadow: 2px 2px 5px 0 $shadow-form-inputs;
+      background-color: $theme-green-yellow;
+      color: $font-color;
+    }
+
+    &#{&}--current {
+      background-color: $theme-green-yellow;
+      color: $font-color;
+    }
+
+    & + & {
+      margin-left: 0.5rem;
+    }
+  }
+
+}
