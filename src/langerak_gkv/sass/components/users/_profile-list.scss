@@ -10,6 +10,7 @@ $profile-list-preview-width: 100% / 3;
   justify-content: space-between;
   align-items: flex-start;
   flex-wrap: wrap;
+  position: relative;
 
   & &__profiles {
     width: 65%;
@@ -40,11 +41,32 @@ $profile-list-preview-width: 100% / 3;
 
   & &__search {
     @include body;
-    @include hide-on-mobile;
+
     width: 25%;
+    @include mobile-only {
+      width: 0;
+      display: block;
+      background: white;
+
+      position: absolute;
+      z-index: 1;
+      right: 0;
+      margin-right: -15px;
+      margin-top: 1rem;
+    }
+
+    transition: width 0.5s ease;
 
     .field {
       font-size: 1.1rem;
+    }
+
+    &--opened {
+      @include mobile-only {
+        width: 95vw;
+        padding: 0.5rem;
+        box-shadow: 0 2px 3px 0 $shadow-form-inputs;
+      }
     }
   }
 }
