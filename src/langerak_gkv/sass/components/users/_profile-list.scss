@@ -1,4 +1,5 @@
 @import '../../lib/typography';
+@import '../../lib/responsive';
 
 $profile-list-preview-gutter: 2em;
 $profile-list-preview-margin-side: $profile-list-preview-gutter / 2;
@@ -18,9 +19,18 @@ $profile-list-preview-width: 100% / 3;
     align-items: flex-start;
     flex-wrap: wrap;
 
+    @include mobile-only {
+      width: 100%;
+      padding-top: 2rem;
+    }
+
     > * {
       width: calc( #{$profile-list-preview-width} - #{$profile-list-preview-gutter} ) ;
       margin: 0 $profile-list-preview-margin-side $profile-list-preview-gutter;
+
+      @include mobile-only {
+        width: 100%;
+      }
     }
 
     .pagination {
@@ -30,6 +40,7 @@ $profile-list-preview-width: 100% / 3;
 
   & &__search {
     @include body;
+    @include hide-on-mobile;
     width: 25%;
 
     .field {

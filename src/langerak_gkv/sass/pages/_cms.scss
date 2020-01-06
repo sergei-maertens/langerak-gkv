@@ -1,3 +1,5 @@
+@import '../lib/responsive';
+
 .cms-page {
 
   &#{&}--stripes-bottom .page-content {
@@ -16,9 +18,17 @@
       margin-top: -$strepen-skew-height / 2;
 
       background-image: url('../img/strepen.png');
-      background-size: $header-content-width auto;
-      background-repeat: repeat-y;
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
       clip-path: polygon(0% 0%, 100% 100%, 0% $strepen-skew-height);
+
+      @include mobile-only {
+        margin-left: -15px;
+        margin-right: -15px;
+        height: 80px;
+        margin-top: 0;
+        clip-path: polygon(0% 0%, 100% 100%, 0% 80px);
+      }
     }
   }
 

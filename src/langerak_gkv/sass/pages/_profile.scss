@@ -1,3 +1,5 @@
+@import "../lib/responsive";
+
 .profile-page .page-content {
   display: flex;
   justify-content: space-between;
@@ -9,6 +11,7 @@
 
   .profile-page__search {
     @include body;
+    @include hide-on-mobile;
     width: 25%;
 
     .field {
