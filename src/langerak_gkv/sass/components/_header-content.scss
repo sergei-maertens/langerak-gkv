@@ -21,6 +21,10 @@ $header-content-side-padding: 56px !default;
       object-fit: cover;
       width: 100%;
       height: 100%;
+
+      @include mobile-only {
+        width: auto;
+      }
     }
   }
 
@@ -32,8 +36,8 @@ $header-content-side-padding: 56px !default;
     right: 0;
 
     background-image: url('../img/strepen.png');
-    background-size: 100% auto;
-    background-repeat: repeat-y;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
     opacity: 60%;
   }
 
@@ -65,9 +69,14 @@ $header-content-side-padding: 56px !default;
 
     height: $strepen-skew-height;
 
+    @include laptop {
+      margin-top: - $strepen-skew-height / 2;
+    }
+
     @include mobile-only {
       height: 80px;
       padding: 15px 0.5em 8px;
+      clip-path: polygon(0% 0%, 100% 100%, 0% 100%);
 
       > .social-icon-list {
         padding: 0;

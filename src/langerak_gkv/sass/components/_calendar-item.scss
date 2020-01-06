@@ -9,7 +9,12 @@ $calendar-item-icon-size: 4rem;
   align-items: center;
   padding: 1em;
 
-
+  @include mobile-only {
+    &:nth-child(4),
+    &:nth-child(5) {
+      display: none;
+    }
+  }
 
   & &__date {
     background-image: url('../img/kalender.svg');
