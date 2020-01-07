@@ -286,6 +286,19 @@ AXES_LOGIN_FAILURE_LIMIT = 3  # Default: 3
 AXES_LOCK_OUT_AT_FAILURE = True  # Default: True
 AXES_USE_USER_AGENT = False  # Default: False
 
+IPWARE_META_PRECEDENCE_ORDER = (
+    "HTTP_X_REAL_IP",
+    "HTTP_X_FORWARDED_FOR",
+    "X_FORWARDED_FOR",  # <client>, <proxy1>, <proxy2>
+    "HTTP_CLIENT_IP",
+    "HTTP_X_FORWARDED",
+    "HTTP_X_CLUSTER_CLIENT_IP",
+    "HTTP_FORWARDED_FOR",
+    "HTTP_FORWARDED",
+    "HTTP_VIA",
+    "REMOTE_ADDR",
+)
+
 #
 # Auth
 #
