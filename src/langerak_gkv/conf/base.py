@@ -350,45 +350,45 @@ HAYSTACK_CONNECTIONS = {
 }
 
 ELASTICSEARCH_INDEX_SETTINGS = {
-    u"settings": {
-        u"analysis": {
-            u"filter": {
-                u"haystack_edgengram": {
-                    u"max_gram": 30,  # Default: 15. Make this larger to ensure long words are properly found
-                    u"type": u"edgeNGram",
-                    u"min_gram": 2,  # Default: 2. Keep this small to ensure we get results for partial words
+    "settings": {
+        "analysis": {
+            "filter": {
+                "haystack_edgengram": {
+                    "max_gram": 30,  # Default: 15. Make this larger to ensure long words are properly found
+                    "type": "edgeNGram",
+                    "min_gram": 2,  # Default: 2. Keep this small to ensure we get results for partial words
                 },
-                u"haystack_ngram": {
-                    u"max_gram": 15,
-                    u"type": u"nGram",
-                    u"min_gram": 2,  # Default: 3
+                "haystack_ngram": {
+                    "max_gram": 15,
+                    "type": "nGram",
+                    "min_gram": 2,  # Default: 3
                 },
             },
-            u"tokenizer": {
-                u"haystack_edgengram_tokenizer": {
-                    u"max_gram": 15,
-                    u"type": u"edgeNGram",
+            "tokenizer": {
+                "haystack_edgengram_tokenizer": {
+                    "max_gram": 15,
+                    "type": "edgeNGram",
                     # u'side': u'front',
-                    u"min_gram": 2,
+                    "min_gram": 2,
                 },
-                u"haystack_ngram_tokenizer": {
-                    u"max_gram": 15,
-                    u"type": u"nGram",
-                    u"min_gram": 2,
+                "haystack_ngram_tokenizer": {
+                    "max_gram": 15,
+                    "type": "nGram",
+                    "min_gram": 2,
                 },
             },
-            u"analyzer": {
-                u"edgengram_analyzer": {
-                    u"filter": [u"lowercase", u"haystack_edgengram"],
-                    u"type": u"custom",
+            "analyzer": {
+                "edgengram_analyzer": {
+                    "filter": ["lowercase", "haystack_edgengram"],
+                    "type": "custom",
                     # Required for searching numbers:
                     # http://stackoverflow.com/questions/13636419/elasticsearch-edgengrams-and-numbers
-                    u"tokenizer": u"standard",
+                    "tokenizer": "standard",
                 },
-                u"ngram_analyzer": {
-                    u"filter": [u"haystack_ngram"],
-                    u"type": u"custom",
-                    u"tokenizer": u"lowercase",
+                "ngram_analyzer": {
+                    "filter": ["haystack_ngram"],
+                    "type": "custom",
+                    "tokenizer": "lowercase",
                 },
             },
         }

@@ -12,5 +12,4 @@
 - import_tasks: secrets.yml
 - import_tasks: media.yml
 - import_tasks: containers.yml
-# Should spin up container
-# - import_tasks: cronjobs.yml
+- import_tasks: cronjobs.yml
