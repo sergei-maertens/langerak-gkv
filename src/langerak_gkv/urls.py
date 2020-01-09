@@ -18,7 +18,6 @@ urlpatterns = [
     path("api/v1/", include("langerak_gkv.api.urls")),
     path("admin/rosetta/", include("rosetta.urls")),
     path("admin/", admin.site.urls),
-    path("activities/", include("langerak_gkv.activities.urls")),
     path("search/", include("langerak_gkv.search.urls")),
     path("societies/", include("langerak_gkv.societies.urls")),
     path("", include("langerak_gkv.homepage.urls")),
