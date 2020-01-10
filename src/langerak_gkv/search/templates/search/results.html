@@ -1,29 +1,22 @@
-{% extends "homepage/home.html" %}{% load i18n %}
+{% extends "cms/base.html" %}
+{% load i18n %}
 
 {% block extra_title %} &bull; {% trans "Search results" %}{% endblock %}
 
 {% block body-class %}{{ block.super }} search{% endblock body-class %}
 
-{% block home-body %}
-<section class="home-wrapper">
-    {% for result in page.object_list %}
-        {% with type=result.content_type object=result.object %}
-            {% if type == 'cms.title' %}
-                {% include 'search/cms_item.html' with object=object item_type='cms-page' result=result %}
-            {% elif type == 'activities.activity' %}
-                {% include 'search/activity_item.html' with object=object %}
-            {% elif type == 'liturgies.liturgy' %}
-                {% include 'search/liturgy_item.html' with object=object %}
-            {% else %}
-                {% include 'search/base_item.html' with object=object %}
-            {% endif %}
-        {% endwith %}
-    {% empty %}
-        {% trans "Sorry, no items match your search criteria." %}
-    {% endfor %}
-</section>
+{% block content %}
+
+    <section class="search-results">
+        {% for result in page.object_list %}
+            {% include "search/includes/result.html" with result=result only %}
+        {% empty %}
+            {% trans "Sorry, no items match your search criteria." %}
+        {% endfor %}
+    </section>
 
     {% with extra_query='&q='|add:request.GET.q %}
         {% include 'includes/pagination.html' with page_obj=page %}
     {% endwith %}
+
 {% endblock %}

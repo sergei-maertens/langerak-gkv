@@ -1,0 +1,28 @@
+{% load sniplates %}
+
+{# Titles #}
+
+{% block activities.activity_title %}{{ result.object.name }}{% endblock %}
+{% block cms.title_title %}{{ result.title }}{% endblock %}
+{% block liturgies.liturgy_title %}{{ result.object.date|date:"l j F" }}, {{ result.object.service.name }}{% endblock %}
+
+{# URLs #}
+
+{% block activities.activity_url %}{{ result.object.get_absolute_url }}{% endblock %}
+{% block cms.title_url %}{{ result.url }}{% endblock %}
+{% block liturgies.liturgy_url %}{{ object.get_absolute_url }}{% endblock %}
+
+{# Content preview #}
+
+{% block activities.activity_description %}
+    {{ result.object.description }}
+{% endblock %}
+
+{% block cms.title_description %}
+    {{ result.text|striptags|truncatewords:"50" }}
+{% endblock %}
+
+{% block liturgies.liturgy_description %}
+    {{ object.liturgy|linebreaks|truncatewords:50 }}
+{% endblock %}
+
