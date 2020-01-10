@@ -4,16 +4,6 @@ from django.contrib import admin
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.urls import include, path
 
-from surlex.dj import surl
-
-from langerak_gkv.mailing.views import (
-    ActionRedirectView,
-    RedirectUnsubscribeRequestView,
-)
-
-admin.autodiscover()
-
-
 urlpatterns = [
     path("api/v1/", include("langerak_gkv.api.urls")),
     path("admin/rosetta/", include("rosetta.urls")),
@@ -21,19 +11,6 @@ urlpatterns = [
     path("search/", include("langerak_gkv.search.urls")),
     path("societies/", include("langerak_gkv.societies.urls")),
     path("", include("langerak_gkv.homepage.urls")),
-    # newsletter + hijack some urls
-    surl(
-        "^newsletter/<newsletter_slug:s>/<action=subscribe|update|unsubscribe>/"
-        "activation-completed/$",
-        ActionRedirectView.as_view(),
-        name="newsletter_action_activated",
-    ),
-    surl(
-        "^newsletter/<newsletter_slug:s>/unsubscribe/confirm/$",
-        RedirectUnsubscribeRequestView.as_view(confirm=True),
-        name="newsletter_unsubscribe_confirm",
-    ),
-    path("newsletter/", include("newsletter.urls")),
 ] + staticfiles_urlpatterns()
 
 

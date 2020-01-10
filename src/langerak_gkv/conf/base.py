@@ -178,7 +178,6 @@ INSTALLED_APPS = [
     "rest_framework",
     "rosetta",
     "haystack",
-    "newsletter",
     "import_export",
     "image_cropping",
     "password_reset",
