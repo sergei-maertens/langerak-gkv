@@ -280,6 +280,7 @@ EMAIL_BACKEND = "django_yubin.smtp_queue.EmailBackend"
 #
 # Django-axes
 #
+AXES_ENABLED = False
 AXES_CACHE = "dummy"
 AXES_LOGIN_FAILURE_LIMIT = 3  # Default: 3
 AXES_LOCK_OUT_AT_FAILURE = True  # Default: True
