@@ -10,7 +10,7 @@
 
 {% block activities.activity_url %}{{ result.object.get_absolute_url }}{% endblock %}
 {% block cms.title_url %}{{ result.url }}{% endblock %}
-{% block liturgies.liturgy_url %}{{ object.get_absolute_url }}{% endblock %}
+{% block liturgies.liturgy_url %}{{ result.object.get_absolute_url }}{% endblock %}
 
 {# Content preview #}
 
@@ -23,6 +23,6 @@
 {% endblock %}
 
 {% block liturgies.liturgy_description %}
-    {{ object.liturgy|linebreaks|truncatewords:50 }}
+    {{ result.object.liturgy|linebreaks|truncatewords:50 }}
 {% endblock %}
 
