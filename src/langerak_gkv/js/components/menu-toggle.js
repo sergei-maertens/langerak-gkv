@@ -1,5 +1,8 @@
 const toggle = (control, target, modifier) => {
     const controlNode = document.querySelector(`.${control}`);
+    if (!controlNode) {
+        return;
+    }
     const targetNode = document.querySelector(`.${target}`);
     const toggleClass = `${target}--${modifier}`;
 

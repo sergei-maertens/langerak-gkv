@@ -3,6 +3,7 @@ from django.contrib import admin, messages
 from django.template.defaultfilters import date, time
 from django.template.loader import render_to_string
 from django.urls import reverse
+from django.utils.html import format_html
 from django.utils.safestring import mark_safe
 from django.utils.translation import ugettext_lazy as _
 
@@ -118,11 +119,10 @@ class LiturgyAdmin(ImportExportActionModelAdmin):
         form = LiturgyMailForm(liturgies=[obj], initial=initial, data=data)
         form.save()
 
-    def link_emails(self, obj):
+    def link_emails(self, obj) -> str:
         url = reverse("admin:liturgies_mailrecipient_changelist")
-        return u'<a href="{}?liturgy={}">{}</a>'.format(
-            url, obj.pk, _("view email recipients")
-        )
+        template = '<a href="{}?liturgy={}">{}</a>'
+        return format_html(template, url, obj.pk, _("view email recipients"))
 
     link_emails.allow_tags = True
 
