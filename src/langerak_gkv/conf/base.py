@@ -181,6 +181,7 @@ INSTALLED_APPS = [
     "import_export",
     "image_cropping",
     "password_reset",
+    "django_bleach",
     # cms
     "cms",
     "treebeard",

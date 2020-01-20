@@ -13,6 +13,7 @@ Django<2.2
 
 django-autoslug
 django-axes
+django-bleach
 django-choices
 django-sniplates
 django-ical

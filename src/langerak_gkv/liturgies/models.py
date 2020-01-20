@@ -1,13 +1,12 @@
 from django.conf import settings
 from django.db import models
 from django.urls import reverse
-from django.utils.encoding import python_2_unicode_compatible
 from django.utils.translation import pgettext_lazy, ugettext_lazy as _
 
+from djangocms_text_ckeditor.fields import HTMLField
 from djchoices import ChoiceItem, DjangoChoices
 
 
-@python_2_unicode_compatible
 class Church(models.Model):
     name = models.CharField(_("name"), max_length=100)
 
@@ -26,7 +25,7 @@ class Liturgy(models.Model):
     main_chapter = models.CharField(_("main chapter"), max_length=50, blank=True)
     main_verse = models.CharField(_("main verse"), max_length=50, blank=True)
     service_theme = models.CharField(_("service theme"), max_length=255, blank=True)
-    liturgy = models.TextField(pgettext_lazy("admin field", "liturgy"), blank=True)
+    liturgy = HTMLField(pgettext_lazy("admin field", "liturgy"), blank=True)
     download = models.FileField(
         _("download"),
         upload_to="liturgies/downloads",

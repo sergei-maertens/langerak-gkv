@@ -1,5 +1,5 @@
 {% extends "cms/base.html" %}
-{% load i18n %}
+{% load i18n bleach_tags %}
 
 {% block body-class %}{{ block.super }} liturgies-page{% endblock body-class %}
 
@@ -76,7 +76,7 @@
 
     <h2 class="liturgy-detail__body-header">{% trans "Liturgy" %}</h2>
     <section class="liturgy-detail__body">
-        {{ liturgy.liturgy|linebreaksbr|default:_("not yet know, please come back later!") }}
+        {{ liturgy.liturgy|bleach|default:_("not yet know, please come back later!") }}
     </section>
 
     <section class="liturgy-detail__extras">
