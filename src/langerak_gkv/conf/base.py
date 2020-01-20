@@ -97,8 +97,6 @@ STATICFILES_DIRS = (
     os.path.join(DJANGO_PROJECT_DIR, "static"),
     # 3rd party NPM deps
     ("normalize.css", os.path.join(BASE_DIR, "node_modules", "normalize.css")),
-    ("fullcalendar", os.path.join(BASE_DIR, "node_modules", "fullcalendar", "dist")),
-    ("momentjs", os.path.join(BASE_DIR, "node_modules", "moment", "min")),
 )
 
 # List of finder classes that know how to find static files in
