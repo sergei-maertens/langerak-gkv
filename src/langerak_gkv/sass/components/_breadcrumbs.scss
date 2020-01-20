@@ -11,6 +11,11 @@ $breadcrumbs-color: $theme-green !default;
   text-transform: lowercase;
   line-height: 2.5rem;
 
+  & &__breadcrumb {
+    color: $breadcrumbs-color;
+    text-decoration: none;
+  }
+
   & &__breadcrumb:after {
     content: " /";
   }
