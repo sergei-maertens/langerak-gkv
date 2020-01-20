@@ -27,6 +27,12 @@ class Liturgy(models.Model):
     main_verse = models.CharField(_("main verse"), max_length=50, blank=True)
     service_theme = models.CharField(_("service theme"), max_length=255, blank=True)
     liturgy = models.TextField(pgettext_lazy("admin field", "liturgy"), blank=True)
+    download = models.FileField(
+        _("download"),
+        upload_to="liturgies/downloads",
+        blank=True,
+        help_text=_("Downloadable attachment, for example a Word file."),
+    )
     audiofile = models.FileField(
         _("audiofile"), upload_to="liturgies/audio", max_length=100, blank=True
     )
