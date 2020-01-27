@@ -7,12 +7,10 @@ from django.views.generic import (
     MonthArchiveView,
 )
 
-from langerak_gkv.activities.views import ActivitiesTodayMixin
-
 from .models import Liturgy
 
 
-class LiturgyListView(ActivitiesTodayMixin, ListView):
+class LiturgyListView(ListView):
     model = Liturgy
     template_name = "liturgies/list.html"
     context_object_name = "liturgies"
@@ -23,13 +21,13 @@ class LiturgyListView(ActivitiesTodayMixin, ListView):
         return qs.filter(date__gte=date.today()).order_by("date", "service__time")
 
 
-class LiturgyArchiveView(ActivitiesTodayMixin, ArchiveIndexView):
+class LiturgyArchiveView(ArchiveIndexView):
     model = Liturgy
     date_field = "date"
     date_list_period = "month"
 
 
-class LiturgyMonthArchiveView(ActivitiesTodayMixin, MonthArchiveView):
+class LiturgyMonthArchiveView(MonthArchiveView):
     queryset = Liturgy.objects.select_related("service").all()
     date_field = "date"
     month_format = "%m"
@@ -37,7 +35,7 @@ class LiturgyMonthArchiveView(ActivitiesTodayMixin, MonthArchiveView):
     allow_future = True
 
 
-class LiturgyDateDetailView(ActivitiesTodayMixin, DateDetailView):
+class LiturgyDateDetailView(DateDetailView):
     queryset = Liturgy.objects.select_related("service").all()
     template_name = "liturgies/detail.html"
     allow_future = True

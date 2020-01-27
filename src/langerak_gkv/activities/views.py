@@ -1,6 +1,4 @@
-from __future__ import absolute_import, unicode_literals
-
-from datetime import date, datetime, time
+from datetime import datetime, time
 
 from django.db.models import Q
 from django.utils import timezone
@@ -21,25 +19,11 @@ from langerak_gkv.utils.view_mixins import PermissionRequiredMixin
 from .models import Activity
 
 
-class ActivitiesTodayMixin(object):
-    def get_context_data(self, **kwargs):
-        context = super(ActivitiesTodayMixin, self).get_context_data(**kwargs)
-        today = date.today()
-        context["activities_today"] = Activity.objects.filter(
-            Q(start_date=today) | Q(start_date__lt=today, end_date__gte=today)
-        )
-        today = date.today()
-        context.update(
-            {"today": today, "this_week": today.strftime("%W"), "this_year": today.year}
-        )
-        return context
-
-
-class ActivityCalendarView(ActivitiesTodayMixin, TemplateView):
+class ActivityCalendarView(TemplateView):
     template_name = "activities/base.html"
 
 
-class ActivityDetailView(ActivitiesTodayMixin, DetailView):
+class ActivityDetailView(DetailView):
     model = Activity
     context_object_name = "activity"
 
@@ -49,7 +33,7 @@ class ActivityDetailView(ActivitiesTodayMixin, DetailView):
         return context
 
 
-class ActivityWeekArchiveView(ActivitiesTodayMixin, WeekArchiveView):
+class ActivityWeekArchiveView(WeekArchiveView):
     model = Activity
     date_field = "start_date"
     context_object_name = "activities"
@@ -57,7 +41,7 @@ class ActivityWeekArchiveView(ActivitiesTodayMixin, WeekArchiveView):
     allow_empty = True
 
 
-class ActivityDayArchiveView(ActivitiesTodayMixin, DayArchiveView):
+class ActivityDayArchiveView(DayArchiveView):
     model = Activity
     date_field = "start_date"
     context_object_name = "activities"
@@ -66,7 +50,7 @@ class ActivityDayArchiveView(ActivitiesTodayMixin, DayArchiveView):
     month_format = "%m"
 
 
-class ActivitySearchView(ActivitiesTodayMixin, ListView):
+class ActivitySearchView(ListView):
     model = Activity
     context_object_name = "activities"
     template_name = "activities/searchresults.html"
@@ -91,7 +75,7 @@ class ActivitySearchView(ActivitiesTodayMixin, ListView):
         return context
 
 
-class ActivityCreateView(PermissionRequiredMixin, ActivitiesTodayMixin, CreateView):
+class ActivityCreateView(PermissionRequiredMixin, CreateView):
     model = Activity
     permissions = "activities.add_activity"
     fields = (

@@ -61,6 +61,7 @@ function scss() {
         .pipe(gulpif(sourcemap, sourcemaps.init()))
         .pipe(sass({
             outputStyle: isProduction ? 'compressed' : 'expanded',
+            includePaths: 'node_modules/',
         }).on("error", sass.logError))
         .pipe(postcss(plugins))
         .pipe(gulpif(sourcemap, sourcemaps.write('./')))
