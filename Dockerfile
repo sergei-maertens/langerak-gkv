@@ -42,6 +42,7 @@ COPY ./src /app/src
 ENV DJANGO_SETTINGS_MODULE=langerak_gkv.conf.production
 
 ARG SECRET_KEY=dummy
+ARG DOCKER_BUILD=1
 
 # Run collectstatic, so the result is already included in the image
 RUN python src/manage.py collectstatic --noinput
