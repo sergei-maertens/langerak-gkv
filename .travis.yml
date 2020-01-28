@@ -6,6 +6,9 @@ env:
   global:
     - DJANGO_SETTINGS_MODULE=langerak_gkv.conf.travis
     - SECRET_KEY=travis
+    - DB_NAME=postgres
+    - DB_USER=postgres
+    - DB_PASSWORD=postgres
 
 jobs:
   include:
