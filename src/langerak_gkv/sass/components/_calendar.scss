@@ -1,4 +1,5 @@
 @import "../lib/responsive";
+@import "../lib/typography";
 
 .calendar {
   display: flex;
@@ -6,4 +7,18 @@
   align-items: flex-end;
   justify-content: center;
   padding: 0 30px;
+
+  &__goto {
+    @include body;
+    color: rgba(white, 0.85);
+    text-decoration: none;
+    font-size: 1.1rem;
+
+    transition: all 0.1s ease;
+
+    &:hover {
+      text-decoration: underline;
+      color: white;
+    }
+  }
 }
