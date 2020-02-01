@@ -405,6 +405,24 @@ IMPORT_EXPORT_USE_TRANSACTIONS = True
 # IMAGE_CROPPING_JQUERY_URL = None  # we embed it ourselves
 IMAGE_CROPPING_SIZE_WARNING = True
 
+#
+# BLEACH HTML sanitizer
+#
+BLEACH_ALLOWED_TAGS = [
+    'a',
+    'abbr',
+    'acronym',
+    'b',
+    'br',
+    'blockquote',
+    'code',
+    'em',
+    'i',
+    'li',
+    'ol',
+    'strong',
+    'ul',
+]
 
 #
 # Tests

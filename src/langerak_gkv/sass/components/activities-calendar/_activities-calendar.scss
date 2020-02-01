@@ -1,0 +1,12 @@
+@import "../../lib/colors";
+@import "../../lib/typography";
+
+.activities-calendar {
+  &__ical {
+    @include body;
+    display: block;
+    padding: 1em 0;
+    color: $theme-green;
+    text-align: right;
+  }
+}

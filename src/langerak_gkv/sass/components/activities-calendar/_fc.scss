@@ -1,6 +1,95 @@
 @import "../../lib/colors";
+@import "../../lib/ellipsis";
 @import "../../lib/typography";
 
-.fc {
+// overrides of the full-calendar styling
 
+.fc {
+  @include body;
+
+  &-toolbar {
+    background: $theme-green-yellow;
+
+    &.fc-header-toolbar {
+      margin-bottom: 0.5em;
+    }
+  }
+
+  &-toolbar h2 {
+    @include title;
+    font-size: 1.5rem;
+    color: $font-color;
+  }
+
+  &-day-header {
+    @include ellipsis;
+    background: $theme-green;
+    color: white;
+    font-weight: 200;
+    padding: 0.5em 3px !important;
+  }
+
+  &-button {
+    border-radius: unset;
+  }
+
+  &-button-primary {
+    background-color: $theme-green-yellow;
+    border: none;
+    transition: all 0.2s ease;
+
+    &:hover {
+      background-color: $theme-purple;
+    }
+
+    &:focus {
+      background-color: darken($theme-green-yellow, 10%);
+      box-shadow: none;
+      color: $font-color;
+    }
+  }
+
+  &-today {
+    background: rgba($theme-green-yellow, 0.5) !important;
+  }
+
+  &-day-top#{&}-today {
+    background: none !important;
+  }
+}
+
+.fc-dayGrid-view {
+  .fc-day-number {
+    padding: 0.5em;
+    color: $font-color;
+  }
+}
+
+.fc-event {
+  background: none;
+  color: $theme-green;
+  border: none;
+
+  display: flex;
+  align-items: center;
+
+  &:before {
+    content: "\2022";
+    margin: 0 4px;
+  }
+
+  &:hover {
+    color: $theme-green;
+  }
+
+  .fc-time {
+    font-weight: 200;
+    font-size: 1rem;
+    margin-right: 0.3em;
+  }
+
+  .fc-title {
+    font-weight: 600;
+    font-size: 1rem;
+  }
 }

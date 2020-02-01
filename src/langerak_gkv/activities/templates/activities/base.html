@@ -11,7 +11,8 @@
         {% else %}
             {% url 'activities:ical-feed' as feed_url %}
         {% endif %}
-        <a href="{{ feed_url }}">{% trans "iCal feed" %}</a>
+
+        <a href="{{ feed_url }}" class="activities-calendar__ical">{% trans "iCal feed" %}</a>
     {% endblock %}
 
     {% url 'activities:add' as url_add %}
