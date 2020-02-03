@@ -409,19 +409,19 @@ IMAGE_CROPPING_SIZE_WARNING = True
 # BLEACH HTML sanitizer
 #
 BLEACH_ALLOWED_TAGS = [
-    'a',
-    'abbr',
-    'acronym',
-    'b',
-    'br',
-    'blockquote',
-    'code',
-    'em',
-    'i',
-    'li',
-    'ol',
-    'strong',
-    'ul',
+    "a",
+    "abbr",
+    "acronym",
+    "b",
+    "br",
+    "blockquote",
+    "code",
+    "em",
+    "i",
+    "li",
+    "ol",
+    "strong",
+    "ul",
 ]
 
 #
