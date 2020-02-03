@@ -38,7 +38,7 @@ $header-content-side-padding: 56px !default;
     background-image: url('../img/strepen.png');
     background-size: 100% 100%;
     background-repeat: no-repeat;
-    opacity: 60%;
+    opacity: 0.6;
   }
 
   & &__foreground {
@@ -58,14 +58,11 @@ $header-content-side-padding: 56px !default;
   }
 
   & &__end {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
 
-    // background: url('../img/header-triangle.svg');
-    // background: #ffffff;
-    // Chrome leaves a weird line when sticking to 100% ...
-    // clip-path: polygon(0% 0%, calc(100% + 1px) calc(100% + 1px), 0% calc(100% + 1px));
     padding: 30px $header-content-side-padding;
 
     height: $strepen-skew-height;
@@ -77,11 +74,37 @@ $header-content-side-padding: 56px !default;
     @include mobile-only {
       height: 80px;
       padding: 15px 0.5em 8px;
-      clip-path: polygon(0% 0%, 100% 100%, 0% 100%);
 
       > .social-icon-list {
         padding: 0;
       }
+    }
+  }
+
+  & &__end-background {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: $strepen-skew-height + 1px;
+
+    @include mobile-only {
+      height: 80px + 1px;
+    }
+  }
+
+  & &__end-content {
+    position: absolute;
+    top: 30px;
+    left: $header-content-side-padding;
+    right: $header-content-side-padding;
+
+    @include mobile-only {
+      top: 15px;
+      left: 0.5em;
+      right: 0.5em;
     }
   }
 }

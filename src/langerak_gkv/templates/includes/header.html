@@ -80,22 +80,22 @@
 
             <div class="header-content__end">
 
-                <div class="header-content__end-background">
-                    <svg height="100%" width="100%" viewBox="0 0 100 100">
-                        <polygon points="0,0 100 100 0,100" style="fill:white" />
-                    </svg>
-                </div>
+                <svg class="header-content__end-background" viewbox="0 0 100 100" preserveAspectRatio="none">
+                    <polygon points="0,0 100 100 0,100" style="fill: white" />
+                </svg>
 
-                <div class="social-icon-list">
-                    <a href="https://www.facebook.com/gklangerak" class="social-icon social-icon--facebook" target="_blank" rel="nofollow noopener">Facebook</a>
-                    {% comment %}
-                    <span class="social-icon social-icon--darkblue">+</span>
-                    <span class="social-icon social-icon--red">+</span>
-                    <span class="social-icon social-icon--lightblue">+</span>
-                    {% endcomment %}
-                </div>
+                <div class="header-content__end-content">
+                    <div class="social-icon-list">
+                        <a href="https://www.facebook.com/gklangerak" class="social-icon social-icon--facebook" target="_blank" rel="nofollow noopener">Facebook</a>
+                        {% comment %}
+                        <span class="social-icon social-icon--darkblue">+</span>
+                        <span class="social-icon social-icon--red">+</span>
+                        <span class="social-icon social-icon--lightblue">+</span>
+                        {% endcomment %}
+                    </div>
 
-                {% include "includes/breadcrumbs.html" %}
+                    {% include "includes/breadcrumbs.html" %}
+                </div>
             </div>
         </div>
 
