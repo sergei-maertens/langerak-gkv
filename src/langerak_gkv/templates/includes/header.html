@@ -1,4 +1,4 @@
-{% load cms_tags menu_tags i18n langerak %}
+{% load cms_tags menu_tags i18n %}
 
 <header class="page-header">
 
@@ -73,7 +73,6 @@
                     {% include "includes/calendar-item.html" with item=item only %}
                 {% endfor %}
 
-                {% ensure_apphook 'langerak_gkv.activities.cms_apps.ActivitiesApp' %}
                 <a href="{% url 'activities:calendar' %}" class="calendar__goto">
                     {% trans "To calendar" %}
                 </a>

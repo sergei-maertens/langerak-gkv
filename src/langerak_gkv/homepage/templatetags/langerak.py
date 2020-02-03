@@ -3,7 +3,6 @@ import logging
 from django import template
 from django.template.defaultfilters import stringfilter
 from django.urls import NoReverseMatch, reverse
-from django.utils.module_loading import import_string
 
 from langerak_gkv.activities.models import Activity
 
@@ -47,15 +46,3 @@ def get_activities():
 @register.simple_tag
 def get_pod_form(request):
     return PrayerOnDemandForm(request=request)
-
-
-@register.simple_tag
-def ensure_apphook(cms_app: str) -> str:
-    """
-    Ensure an apphook is installed.
-    """
-    from langerak_gkv.apphooks import ensure_apphook_installed
-
-    apphook_cls = import_string(cms_app)
-    ensure_apphook_installed(apphook_cls)
-    return ""

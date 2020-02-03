@@ -193,6 +193,7 @@ INSTALLED_APPS = [
     "sekizai",
     # Project applications.
     "langerak_gkv.activities",
+    "langerak_gkv.core",
     "langerak_gkv.homepage",
     "langerak_gkv.liturgies",
     "langerak_gkv.mailing",

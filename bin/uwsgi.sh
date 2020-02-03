@@ -18,6 +18,9 @@ done
 >&2 echo "Apply database migrations"
 python src/manage.py migrate
 
+>&2 echo "Ensure apphooks are installed"
+python src/manage.py ensure_apphooks
+
 # Start server
 >&2 echo "Starting server"
 uwsgi \
