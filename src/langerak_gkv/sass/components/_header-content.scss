@@ -81,20 +81,6 @@ $header-content-side-padding: 56px !default;
     }
   }
 
-  & &__end-background {
-    position: absolute;
-    bottom: -1px;
-    left: 0;
-    right: 0;
-    top: 0;
-    width: 100%;
-    height: $strepen-skew-height + 1px;
-
-    @include mobile-only {
-      height: 80px + 1px;
-    }
-  }
-
   & &__end-content {
     position: absolute;
     top: 30px;

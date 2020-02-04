@@ -1,0 +1,15 @@
+{% load sniplates %}
+
+{% block _skew-overlay %}
+<svg class="skew-overlay skew-overlay--{{ modifier }}" viewbox="0 0 100 100" preserveAspectRatio="none">
+    <polygon points="{{ content }}" class="skew-overlay__triangle" />
+</svg>
+{% endblock %}
+
+{% block skew-overlay--top %}
+    {% nested_widget ':_skew-overlay' modifier='top' %}0,0 100 0 100,100{% endnested %}
+{% endblock %}
+
+{% block skew-overlay--bottom %}
+    {% nested_widget ':_skew-overlay' modifier='bottom' %}0,0 100 100 0,100{% endnested %}
+{% endblock %}

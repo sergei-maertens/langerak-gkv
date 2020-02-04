@@ -1,4 +1,4 @@
-{% load cms_tags menu_tags i18n %}
+{% load cms_tags menu_tags i18n sniplates %}
 
 <header class="page-header">
 
@@ -80,9 +80,8 @@
 
             <div class="header-content__end">
 
-                <svg class="header-content__end-background" viewbox="0 0 100 100" preserveAspectRatio="none">
-                    <polygon points="0,0 100 100 0,100" style="fill: white" />
-                </svg>
+                {% load_widgets skew='includes/skew-overlay.html' %}
+                {% widget 'skew:skew-overlay--bottom' %}
 
                 <div class="header-content__end-content">
                     <div class="social-icon-list">

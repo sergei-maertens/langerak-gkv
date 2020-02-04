@@ -1,8 +1,11 @@
-{% extends "cms/base.html" %}{% load i18n static thumbnail langerak koningskerk_tags cms_tags users %}
+{% extends "cms/base.html" %}
+{% load i18n static thumbnail langerak koningskerk_tags cms_tags users sniplates %}
 
 {% block body-class %}{{ block.super }} home{% endblock body-class %}
 
 {% block content %}
+
+{% load_widgets skew='includes/skew-overlay.html' %}
 
 <section class="homepage">
 
@@ -17,9 +20,13 @@
 
     {# Top row - without images #}
     <section class="homepage__row homepage__row--middle">
+        {% widget 'skew:skew-overlay--top' %}
+
         {% placeholder slot21 %}
         {% placeholder slot22 %}
         {% placeholder slot23 %}
+
+        {% widget 'skew:skew-overlay--bottom' %}
     </section>
 
     {# Top row - with images #}

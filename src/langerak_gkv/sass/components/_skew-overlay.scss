@@ -1,0 +1,27 @@
+@import "../lib/measurements";
+@import "../lib/responsive";
+
+.skew-overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+
+  width: 100% !important;
+  height: $strepen-skew-height + 1px;
+
+  @include mobile-only {
+    height: $strepen-skew-height--mobile;
+  }
+
+  &#{&}--top {
+    top: 0;
+  }
+
+  &#{&}--bottom {
+    bottom: -1px;
+  }
+
+  & &__triangle {
+    fill: white;
+  }
+}

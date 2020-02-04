@@ -22,6 +22,7 @@ $homepage-row-padding: 30px;
     }
 
     &--middle {
+      position: relative;
 
       // See _page-content for the side padding. we reset here because the
       // background need to span the full width
@@ -37,12 +38,6 @@ $homepage-row-padding: 30px;
       // Set up the clipped path
       padding-top: $homepage-middle-row-skew-height;
       padding-bottom: $homepage-middle-row-skew-height;
-      clip-path: polygon(
-        0% 0%,
-        100% $homepage-middle-row-skew-height,
-        100% 100%,
-        0% calc(100% - #{$homepage-middle-row-skew-height})
-      );
 
       @include mobile-only {
         margin-left: -15px;
@@ -56,12 +51,6 @@ $homepage-row-padding: 30px;
         $mobile-skew-height: 80px;
         padding-top: $mobile-skew-height;
         padding-bottom: $mobile-skew-height;
-        clip-path: polygon(
-          0% 0%,
-          100% $mobile-skew-height,
-          100% 100%,
-          0% calc(100% - #{$mobile-skew-height})
-        );
       }
     }
 
