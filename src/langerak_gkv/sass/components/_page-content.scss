@@ -1,8 +1,8 @@
 @import "../lib/colors";
 @import "../lib/responsive";
+@import "../lib/measurements";
 
 $border-height: 500px;
-$page-content-side-padding: 56px !default;
 
 .page-content {
   padding: 0 $page-content-side-padding 2em;

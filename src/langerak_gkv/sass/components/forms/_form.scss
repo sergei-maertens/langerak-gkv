@@ -4,6 +4,11 @@
 
 .form {
 
+  &#{&}--on-top {
+    position: relative;
+    z-index: 10;
+  }
+
   & &__submit-row {
     display: flex;
     justify-content: space-between;

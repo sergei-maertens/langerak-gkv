@@ -1,6 +1,5 @@
 {% extends "cms/base.html" %}
-
-{% block body-class %} {{ block.super }} cms-page--stripes-bottom {% endblock body-class %}
+{% load sniplates %}
 
 {% block content %}
 <article class="profile-list">
@@ -22,4 +21,11 @@
         {% include "users/user_search_form.html" with form=search_form|default:form %}
     </aside>
 </article>
+{% endblock %}
+
+{% block stripes-bottom %}
+{% load_widgets skew='includes/skew-overlay.html' %}
+<div class="skew-overlay-container">
+    {% widget 'skew:skew-overlay--top' %}
+</div>
 {% endblock %}
