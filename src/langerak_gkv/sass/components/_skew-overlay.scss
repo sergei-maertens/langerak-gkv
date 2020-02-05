@@ -30,7 +30,7 @@
 .skew-overlay-container {
   position: relative;
   background-image: url('../img/strepen.png');
-  background-size: 100% 100%;
+  background-size: cover;
   background-repeat: no-repeat;
   height: $strepen-skew-height;
   margin-top: -$strepen-skew-height / 2;
