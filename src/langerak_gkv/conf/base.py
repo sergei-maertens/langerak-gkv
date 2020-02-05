@@ -420,6 +420,7 @@ BLEACH_ALLOWED_TAGS = [
     "i",
     "li",
     "ol",
+    "p",
     "strong",
     "ul",
 ]
