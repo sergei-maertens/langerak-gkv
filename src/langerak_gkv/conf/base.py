@@ -123,8 +123,7 @@ TEMPLATES = [
                 "django.contrib.messages.context_processors.messages",
                 "cms.context_processors.cms_settings",
                 "sekizai.context_processors.sekizai",
-                "langerak_gkv.homepage.context_processors.sidebar",
-                "langerak_gkv.homepage.context_processors.home",
+                "langerak_gkv.core.context_processors.globals",
                 "langerak_gkv.users.context_processors.login",
             ]
         },
