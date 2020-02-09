@@ -18,6 +18,13 @@ docker build \
 echo "Image built"
 
 if [[ $PUSH ]]; then
+
+    if [[ $DOCKER_USERNAME ]]; then
+        set +x
+        echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+        set -x
+    fi
+
     docker push ${CONTAINER_REPO}:$tag
     echo "Image pushed"
 fi
