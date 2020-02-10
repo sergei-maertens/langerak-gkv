@@ -10,23 +10,6 @@ from filer.fields.image import FilerImageField
 _IMG_SIZE = settings.THUMBNAIL_ALIASES[""]["homepage"]["size"]
 
 
-class PrayerOnDemand(models.Model):
-    name = models.CharField(_("name"), max_length=100)
-    email = models.EmailField(_("email"))
-    body = models.TextField(_("What should we pray for?"))
-    replied = models.BooleanField(_("replied"), default=False)
-
-    created = models.DateTimeField(auto_now_add=True)
-    modified = models.DateTimeField(auto_now=True)
-
-    class Meta:
-        verbose_name = _("prayer on demand")
-        verbose_name_plural = _("prayer on demands")
-
-    def __str__(self):
-        return self.name
-
-
 class HomepagePageLink(CMSPlugin):
     title = models.CharField(_("title"), max_length=50)
     image = FilerImageField(

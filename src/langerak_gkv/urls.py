@@ -9,7 +9,6 @@ urlpatterns = [
     path("admin/rosetta/", include("rosetta.urls")),
     path("admin/", admin.site.urls),
     path("societies/", include("langerak_gkv.societies.urls")),
-    path("", include("langerak_gkv.homepage.urls")),
 ] + staticfiles_urlpatterns()
 
 

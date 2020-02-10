@@ -327,7 +327,6 @@ LEAFLET_CONFIG = {
 # EMAIL addresses
 #
 DEFAULT_FROM_EMAIL = os.getenv("DEFAULT_FROM_EMAIL")
-EMAIL_POD = "pod@langerak.gkv.nl"
 EMAIL_ORGANIST = "organist@langerak.gkv.nl"
 EMAIL_BEAMIST = "beamist@langerak.gkv.nl"
 EMAIL_KOSTER = "koster@langerak.gkv.nl"
