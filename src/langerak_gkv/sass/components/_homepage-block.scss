@@ -13,6 +13,7 @@
   text-align: center;
   text-decoration: none;
   padding: 1em;
+  cursor: pointer;
 
   > img {
     max-width: 100%;
@@ -34,5 +35,19 @@
     @include body;
     @include block-color($font-color);
     font-size: 1.3rem;
+
+    a {
+      color: $theme-green;
+      text-decoration: underline;
+
+      &:visited {
+        color: lighten($theme-green, 20%);
+      }
+
+      &:hover,
+      &:focus {
+        color: darken($theme-green, 20%);
+      }
+    }
   }
 }
