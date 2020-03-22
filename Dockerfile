@@ -24,7 +24,7 @@ COPY ./gulpfile.js ./webpack.config.js ./.babelrc /app/
 
 COPY src/langerak_gkv/js/ /app/src/langerak_gkv/js/
 COPY src/langerak_gkv/sass/ /app/src/langerak_gkv/sass/
-RUN npm run build
+RUN npm run build --production
 
 # Stage 3 - Build docker image suitable for execution and deployment
 FROM python:3.6-stretch AS production
@@ -38,8 +38,6 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 COPY --from=build /usr/local/lib/python3.6 /usr/local/lib/python3.6
 COPY --from=build /usr/local/bin/uwsgi /usr/local/bin/uwsgi
 COPY --from=frontend-build /app/node_modules/normalize.css /app/node_modules/normalize.css
-COPY --from=frontend-build /app/src/langerak_gkv/static/css /app/src/langerak_gkv/static/css
-COPY --from=frontend-build /app/src/langerak_gkv/static/js /app/src/langerak_gkv/static/js
 
 # Stage 3.2 - Copy source code
 WORKDIR /app
@@ -47,6 +45,9 @@ COPY ./bin/uwsgi.sh /uwsgi.sh
 RUN mkdir /app/log
 
 COPY ./src /app/src
+
+COPY --from=frontend-build /app/src/langerak_gkv/static/css /app/src/langerak_gkv/static/css
+COPY --from=frontend-build /app/src/langerak_gkv/static/js /app/src/langerak_gkv/static/js
 
 ENV DJANGO_SETTINGS_MODULE=langerak_gkv.conf.production
 
