@@ -15,7 +15,7 @@ class Menu {
 
 const init = () => {
     const menuNodes = document.querySelectorAll('.menu');
-    menuNodes.forEach(node => new Menu(node));
+    Array.from(menuNodes).forEach(node => new Menu(node));
 };
 
 

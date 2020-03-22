@@ -9,7 +9,7 @@ const CALENDAR_CLASS = 'activities-calendar';
 
 const init = () => {
     const nodes = document.querySelectorAll(`.${CALENDAR_CLASS}`);
-    nodes.forEach(node => {
+    Array.from(nodes).forEach(node => {
         const { feed } = node.dataset;
         const calendar = new Calendar(node, {
             plugins: [ dayGridPlugin, timeGridPlugin ],

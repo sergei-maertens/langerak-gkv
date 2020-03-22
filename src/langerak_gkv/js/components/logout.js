@@ -8,7 +8,7 @@ const logOut = (event) => {
 
 const init = () => {
     const logoutLinks = document.querySelectorAll('.logout-url');
-    logoutLinks.forEach(link => link.addEventListener('click', logOut));
+    Array.from(logoutLinks).forEach(link => link.addEventListener('click', logOut));
 };
 
 
