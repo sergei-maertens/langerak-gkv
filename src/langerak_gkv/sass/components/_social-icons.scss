@@ -21,6 +21,10 @@ $social-icon-size: 49px;
   font-size: 2rem;
   font-weight: bold;
 
+  // ensure this is on top of the user-actions layer
+  position: relative;
+  z-index: 10;
+
   &#{&}--lightblue {
     background: #66c9ec;
   }

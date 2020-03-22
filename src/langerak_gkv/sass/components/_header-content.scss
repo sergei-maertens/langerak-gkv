@@ -52,6 +52,9 @@ $header-content-side-padding: 56px !default;
     flex-direction: row-reverse;
     align-items: center;
 
+    position: relative;
+    z-index: 1;  // layer on top of the social icons
+
     @include mobile-only {
       display: block;
     }
