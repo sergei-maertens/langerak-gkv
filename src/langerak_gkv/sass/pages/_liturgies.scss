@@ -1,3 +1,5 @@
+@import "../lib/responsive";
+
 .liturgies-page .page-content {
   display: flex;
   justify-content: space-between;
@@ -11,6 +13,10 @@
   .liturgies-page__list,
   .liturgies-page__detail {
     width: 75%;
+
+    @include mobile-only {
+      width: 100%;
+    }
   }
 
   .pagination {

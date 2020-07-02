@@ -77,10 +77,6 @@ $header-content-side-padding: 56px !default;
     @include mobile-only {
       height: 80px;
       padding: 15px 0.5em 8px;
-
-      > .social-icon-list {
-        padding: 0;
-      }
     }
   }
 
@@ -94,6 +90,14 @@ $header-content-side-padding: 56px !default;
       top: 15px;
       left: 0.5em;
       right: 0.5em;
+
+      > .social-icon-list {
+        padding: 0;
+      }
+
+      > .breadcrumbs {
+        font-size: 1.2rem;
+      }
     }
   }
 }
