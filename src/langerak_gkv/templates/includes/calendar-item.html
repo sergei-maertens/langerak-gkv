@@ -1,3 +1,4 @@
+{% load i18n %}
 <article class="calendar-item">
 
     <header class="calendar-item__date">
@@ -7,9 +8,13 @@
 
     <a class="calendar-item__info" href="{{ item.get_absolute_url }}">
         {% if item.liturgy_id %}
+            <span class="calendar-item__title">{% trans "Liturgy" %}</span>
+            <br>
             {{ item.liturgy.service.time|time:"H:i" }} uur
         {% else %}
-            {{ item.name }}
+            <span class="calendar-item__title">{{ item.name }}</span>
+            <br>
+            {{ item.start_time|time:"H:i" }} uur
         {% endif %}
     </a>
 
