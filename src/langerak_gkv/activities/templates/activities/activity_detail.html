@@ -1,71 +1,84 @@
-{% extends "activities/base.html" %}{% load i18n cms_tags thumbnail %}
+{% extends "cms/base.html" %}
+{% load i18n cms_tags thumbnail %}
 
+{% block body-class %}{{ block.super }} activities-page{% endblock body-class %}
 
-{% block body-class %}{{ block.super }} detail{% endblock body-class %}
+{% block content %}
 
+<h1 class="page-title">
+    {{ activity.name }}
+    <span class="page-title__subtitle">
+        {{ activity.type.name }}
 
-{% block calendar-content %}
-<div class="fc fc-ltr fc-unthemed link-height" data-linkid="1">
-    <div class="fc-toolbar">
-        <div class="fc-center">
-            <h2>{{ activity.name }} <small>{{ activity.type.name }}</small></h2>
-        </div>
-    </div>
+        &mdash;
 
-    <h3 class="fc-day-header sub">
-        <strong>
+        <time datetime="{{ activity.start.isoformat }}">
         {% filter capfirst %}
-            {{ activity.date|date:"l j F" }}
+            {{ activity.start_date|date:"l j F" }}
             {% if activity.start_time %}
-                {% trans "at" %} {{ activity.start_time|time:"H.i" }}
+                {% trans "at" %} {{ activity.start_time|time:"H:i" }}
             {% endif %}
             {% if activity.end_time %}
-                {% trans "until" %} {{ activity.end_time|time:"H.i" }}
+                {% trans "until" %} {{ activity.end_time|time:"H:i" }}
             {% endif %}
         {% endfilter %}
-        </strong>
-    </h3>
+        </time>
+    </span>
+</h1>
 
-    <article id="activity-detail" class="page-block">
+{% spaceless %}
+<section class="activities-page__info">
 
-        <header>
-            <div class="row gutter-small">
-                {% if activity.image %}
-                <figure class="col-md-6">
-                    <img src="{{ activity.image|thumbnail_url:'activity_detail' }}">
-                </figure>
-                {% endif %}
+    {% if activity.location %}
+    <div class="activity-info">
+        <span class="activity-info__label">
+            {% trans "Location" %}
+            <span class="activity-info__icon material-icons">location_on</span>
+        </span>
+        <span class="activity-info__value">{{ activity.location }}</span>
+    </div>
+    {% endif %}
 
-                <div class="col-md-6">
-                    {% if activity.fb_event_id %}
-                    <span class="social facebook pull-right">
-                        <a href="https://facebook.com/events/{{ activity.fb_event_id }}/">
-                            <i class="fa fa-facebook"></i>
-                        </a>
-                    </span>
-                    {% endif %}
+    {% if activity.url %}
+    <div class="activity-info">
+        <span class="activity-info__label">
+            {% trans "More info" %}
+            <span class="activity-info__icon material-icons">link</span>
+        </span>
+        <span class="activity-info__value">
+            {{ activity.url|urlize }}
+        </span>
+    </div>
+    {% endif %}
 
-                    {% if activity.location %}
-                        <h4>{% trans "Location" %}</h4>
-                        <p>{{ activity.location }}</p>
-                    {% endif %}
+    {% if activity.fb_event_id %}
+    <div class="activity-info">
+        <span class="activity-info__label">
+            {% trans "Facebook event" %}
+            <span class="activity-info__icon material-icons">facebook</span>
+        </span>
+        <span class="activity-info__value">
+            <a href="https://facebook.com/events/{{ activity.fb_event_id }}/"
+               target="_blank" rel="nofollow noopener">
+                https://facebook.com/events/{{ activity.fb_event_id }}/
+            </a>
+        </span>
+    </div>
+    {% endif %}
 
-                    <h4>{% trans "Introduction" %}</h4>
-                    {{ activity.description|linebreaksbr }}
+</section>
+{% endspaceless %}
 
+{% if activity.image %}
+<figure class="activities-page__image">
+    <img src="{{ activity.image|thumbnail_url:'activity_detail' }}">
+</figure>
+{% endif %}
 
-                    {% if activity.url %}
-                        <p>
-                        {% blocktrans with url=activity.url %}Visit <a href="{{ url }}">{{ url }}</a>.{% endblocktrans %}
-                        </p>
-                    {% endif %}
-                </div>
-            </div>
-        </header>
+<section class="activities-page__summary">
+    {{ activity.description|linebreaksbr }}
+</section>
 
+{% render_placeholder activity.content %}
 
-        {% render_placeholder activity.content %}
-
-    </article>
-</div>
 {% endblock %}

@@ -3,7 +3,7 @@
 
 
 {% block content %}
-    <div class="activities-calendar"data-feed="{% url 'api:activities:list' %}"></div>
+    <div class="activities-calendar" data-feed="{% url 'api:activities:list' %}"></div>
 
     {% block ical %}
         {% if activity_pk %}
@@ -21,41 +21,3 @@
     {% endif %}
 
 {% endblock %}
-
-{% comment %}
-{% block content %}
-<form action="{% url 'activities:search' %}"
-        class="page-block clearfix" id="calendar-search">{% spaceless %}
-    <span class="pull-left">
-        {% block calendar-modes %}
-        {% url 'activities:calendar' as url_calendar %}
-        <a href="{{ url_calendar }}" id="month-view" data-toggle="popover" data-placement="top" data-trigger="hover"
-            data-content="{% trans "Calendar view" %}"
-            class="calendar-mode{% if request.path == url_calendar or request.current_page.application_urls == 'ActivitiesApp' %} active{% endif %}">
-            <i class="fa fa-calendar"></i>
-        </a>
-        <a href="{% url 'activities:week-archive' year=this_year week=this_week %}"
-            data-toggle="popover" data-content="{% trans "Week view" %}" data-placement="top" data-trigger="hover"
-            id="week-view" class="calendar-mode{% if week %} active{% endif %}">
-            <i class="fa fa-calendar-o"></i>
-        </a>
-        <a href="{% url 'activities:day-archive' year=today.year month=today.month day=today.day %}"
-            data-toggle="popover" data-content="{% trans "Day view" %}" data-placement="top" data-trigger="hover"
-            id="day-view" class="calendar-mode{% if activity or liturgy or day %} active{% endif %}">
-            <i class="fa fa-calendar-check-o"></i>
-        </a>
-        {% endblock %}
-    </span>
-
-    <div class="form-group pull-right">
-        <div class="input-group">
-            <input type="text" placeholder="{% trans "Find in calendar" %}"
-                name="q" class="form-control">
-            <span class="input-group-addon">
-                <button type="submit" class="fa fa-search fa-flip-horizontal"></button>
-            </span>
-        </div>
-    </div>
-{% endspaceless %}</form>
-
-{% endcomment %}

@@ -20,6 +20,10 @@ $border-height: 500px;
     width: 5px;
     height: $border-height;
     background: $theme-green-yellow;
+
+    @include mobile-only {
+      display: none;
+    }
   }
 }
 
