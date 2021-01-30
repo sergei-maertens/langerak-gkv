@@ -4,92 +4,268 @@
 #
 #    pip-compile --no-index requirements/base.in
 #
-backports.csv==1.0.7      # via tablib
-bleach==3.1.0             # via django-bleach
-cairocffi==1.1.0          # via cairosvg, weasyprint
+backports.csv==1.0.7
+    # via tablib
+bleach==3.1.0
+    # via django-bleach
+cairocffi==1.1.0
+    # via
+    #   cairosvg
+    #   weasyprint
 cairosvg==2.4.1
-certifi==2019.6.16        # via requests
-cffi==1.12.3              # via cairocffi, weasyprint
-chardet==3.0.4            # via requests
-click==7.0                # via pip-tools
-cssselect2==0.2.2         # via cairosvg, weasyprint
-cssselect==1.1.0          # via pyquery
-defusedxml==0.6.0         # via cairosvg, odfpy
-diff-match-patch==20181111  # via django-import-export
-django-appconf==1.0.3     # via django-axes, django-image-cropping
+    # via
+    #   -r requirements/base.in
+    #   weasyprint
+certifi==2019.6.16
+    # via requests
+cffi==1.12.3
+    # via
+    #   cairocffi
+    #   weasyprint
+chardet==3.0.4
+    # via requests
+click==7.0
+    # via pip-tools
+cssselect2==0.2.2
+    # via
+    #   cairosvg
+    #   weasyprint
+cssselect==1.1.0
+    # via pyquery
+defusedxml==0.6.0
+    # via
+    #   cairosvg
+    #   odfpy
+diff-match-patch==20181111
+    # via django-import-export
+django-appconf==1.0.3
+    # via
+    #   django-axes
+    #   django-image-cropping
 django-autoslug==1.9.6
+    # via -r requirements/base.in
 django-axes==5.0.13
+    # via -r requirements/base.in
 django-bleach==0.6.1
+    # via -r requirements/base.in
 django-choices==1.7.0
-django-classy-tags==0.9.0  # via django-cms, django-sekizai
+    # via -r requirements/base.in
+django-classy-tags==0.9.0
+    # via
+    #   django-cms
+    #   django-sekizai
 django-cms==3.7.1
+    # via
+    #   -r requirements/base.in
+    #   djangocms-attributes-field
+    #   djangocms-column
+    #   djangocms-file
+    #   djangocms-link
+    #   djangocms-oembed
+    #   djangocms-picture
+    #   djangocms-text-ckeditor
+    #   djangocms-video
 django-filer==1.5.0
-django-formtools==2.1     # via django-cms
+    # via
+    #   -r requirements/base.in
+    #   djangocms-file
+    #   djangocms-link
+    #   djangocms-picture
+    #   djangocms-video
+django-formtools==2.1
+    # via django-cms
 django-haystack==2.8.1
+    # via -r requirements/base.in
 django-ical==1.6.2
+    # via -r requirements/base.in
 django-image-cropping==1.2.0
+    # via -r requirements/base.in
 django-import-export==1.2.0
-django-ipware==2.1.0      # via django-axes
-django-js-asset==1.2.2    # via django-mptt
+    # via -r requirements/base.in
+django-ipware==2.1.0
+    # via django-axes
+django-js-asset==1.2.2
+    # via django-mptt
 django-leaflet==0.24.0
-django-mptt==0.10.0       # via django-filer
+    # via -r requirements/base.in
+django-mptt==0.10.0
+    # via django-filer
 django-password-reset==2.0
-django-polymorphic==2.0.3  # via django-filer
-django-recurrence==1.10.1  # via django-ical
+    # via -r requirements/base.in
+django-polymorphic==2.0.3
+    # via django-filer
+django-recurrence==1.10.1
+    # via django-ical
 django-rosetta==0.9.3
+    # via -r requirements/base.in
 django-sekizai==1.0.0
+    # via
+    #   -r requirements/base.in
+    #   django-cms
 django-sniplates==0.6.0
-django-treebeard==4.3     # via django-cms
+    # via -r requirements/base.in
+django-treebeard==4.3
+    # via django-cms
 django-yubin==1.4.0
+    # via -r requirements/base.in
 django==2.1.15
-djangocms-admin-style==1.4.0  # via django-cms
-djangocms-attributes-field==1.1.0  # via djangocms-file, djangocms-link, djangocms-picture, djangocms-video
+    # via
+    #   -r requirements/base.in
+    #   django-appconf
+    #   django-axes
+    #   django-bleach
+    #   django-choices
+    #   django-classy-tags
+    #   django-cms
+    #   django-filer
+    #   django-formtools
+    #   django-haystack
+    #   django-ical
+    #   django-import-export
+    #   django-leaflet
+    #   django-mptt
+    #   django-password-reset
+    #   django-polymorphic
+    #   django-recurrence
+    #   django-rosetta
+    #   django-sekizai
+    #   django-sniplates
+    #   django-treebeard
+    #   djangocms-column
+    #   djangocms-oembed
+    #   easy-thumbnails
+djangocms-admin-style==1.4.0
+    # via django-cms
+djangocms-attributes-field==1.1.0
+    # via
+    #   djangocms-file
+    #   djangocms-link
+    #   djangocms-picture
+    #   djangocms-video
 djangocms-column==1.9.0
+    # via -r requirements/base.in
 djangocms-file==2.3.0
+    # via -r requirements/base.in
 djangocms-link==2.5.0
+    # via -r requirements/base.in
 djangocms-oembed==0.5
+    # via -r requirements/base.in
 djangocms-picture==2.3.0
+    # via -r requirements/base.in
 djangocms-table==1.2
+    # via -r requirements/base.in
 djangocms-text-ckeditor==3.8.0
+    # via -r requirements/base.in
 djangocms-video==2.1.1
+    # via -r requirements/base.in
 djangorestframework==3.10.3
+    # via -r requirements/base.in
 easy-thumbnails==2.6
+    # via
+    #   -r requirements/base.in
+    #   django-filer
+    #   djangocms-picture
 elasticsearch==2.4.1
-et-xmlfile==1.0.1         # via openpyxl
+    # via -r requirements/base.in
+et-xmlfile==1.0.1
+    # via openpyxl
 html2text==2019.9.26
-html5lib==1.0.1           # via djangocms-text-ckeditor, weasyprint
-icalendar==4.0.3          # via django-ical
-idna==2.8                 # via requests
-jdcal==1.4.1              # via openpyxl
-lockfile==0.12.2          # via django-yubin
-lxml==4.4.1               # via pyquery
-micawber==0.5.0           # via djangocms-oembed
-odfpy==1.4.0              # via tablib
-openpyxl==2.6.3           # via tablib
-pillow==6.1.0
-pip-tools==4.3.0
-polib==1.1.0              # via django-rosetta
+    # via -r requirements/base.in
+html5lib==1.0.1
+    # via
+    #   djangocms-text-ckeditor
+    #   weasyprint
+icalendar==4.0.3
+    # via django-ical
+idna==2.8
+    # via requests
+jdcal==1.4.1
+    # via openpyxl
+lockfile==0.12.2
+    # via django-yubin
+lxml==4.6.2
+    # via pyquery
+micawber==0.5.0
+    # via djangocms-oembed
+odfpy==1.4.0
+    # via tablib
+openpyxl==2.6.3
+    # via tablib
+pillow==8.1.0
+    # via
+    #   -r requirements/base.in
+    #   cairosvg
+    #   djangocms-text-ckeditor
+    #   easy-thumbnails
+pip-tools==5.5.0
+    # via -r requirements/base.in
+polib==1.1.0
+    # via django-rosetta
 psycopg2==2.7.7
-pycparser==2.19           # via cffi
-pyphen==0.9.5             # via weasyprint
-pyquery==1.4.0            # via djangocms-oembed
-python-dateutil==2.8.0    # via django-recurrence, icalendar
+    # via -r requirements/base.in
+pycparser==2.19
+    # via cffi
+pyphen==0.9.5
+    # via weasyprint
+pyquery==1.4.0
+    # via djangocms-oembed
+python-dateutil==2.8.0
+    # via
+    #   django-recurrence
+    #   icalendar
 python-dotenv==0.10.3
-pytz==2019.2              # via django, django-recurrence, django-yubin, icalendar
-pyyaml==5.1.2             # via tablib
-pyzmail36==1.0.4          # via django-yubin
+    # via -r requirements/base.in
+pytz==2019.2
+    # via
+    #   django
+    #   django-recurrence
+    #   django-yubin
+    #   icalendar
+pyyaml==5.1.2
+    # via tablib
+pyzmail36==1.0.4
+    # via django-yubin
 raven==6.10.0
+    # via -r requirements/base.in
 requests==2.22.0
-six==1.12.0               # via bleach, django-appconf, django-image-cropping, django-rosetta, html5lib, pip-tools, python-dateutil
-tablib==0.13.0            # via django-import-export
-tinycss2==1.0.2           # via cairosvg, cssselect2, weasyprint
-unidecode==1.0.23         # via django-filer
-urllib3==1.25.3           # via elasticsearch, requests
+    # via
+    #   -r requirements/base.in
+    #   django-rosetta
+six==1.12.0
+    # via
+    #   bleach
+    #   django-appconf
+    #   django-image-cropping
+    #   django-rosetta
+    #   html5lib
+    #   python-dateutil
+tablib==0.13.0
+    # via django-import-export
+tinycss2==1.0.2
+    # via
+    #   cairosvg
+    #   cssselect2
+    #   weasyprint
+unidecode==1.0.23
+    # via django-filer
+urllib3==1.25.3
+    # via
+    #   elasticsearch
+    #   requests
 uwsgi==2.0.18
+    # via -r requirements/base.in
 weasyprint==48
-webencodings==0.5.1       # via bleach, html5lib, tinycss2
-xlrd==1.2.0               # via tablib
-xlwt==1.3.0               # via tablib
+    # via -r requirements/base.in
+webencodings==0.5.1
+    # via
+    #   bleach
+    #   html5lib
+    #   tinycss2
+xlrd==1.2.0
+    # via tablib
+xlwt==1.3.0
+    # via tablib
 
 # The following packages are considered to be unsafe in a requirements file:
-# setuptools==45.1.0        # via cairocffi, pyzmail36, tinycss2, weasyprint
+# pip
+# setuptools
