@@ -13,6 +13,7 @@ services:
 
   web:
     image: regexit/kerkwebsite:latest
+    build: .
     volumes:
       - .env:/app/.env
       - /var/run/postgresql:/var/run/postgresql
