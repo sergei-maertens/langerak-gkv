@@ -1,8 +1,34 @@
 {% load menu_tags %}
 
+{% spaceless %}
 {% for child in children %}
-<a href="{{ child.attr.redirect_url|default:child.get_absolute_url }}"
-   class="menu__item {% if child.selected %}menu__item--active{% endif %}">
-   {{ child.get_menu_title }}
-</a>
+<div class="menu__item {% if child.selected %}menu__item--active{% endif %}{% if child.is_leaf_node %}menu__item--leaf{% endif %}">
+
+    <a href="{{ child.attr.redirect_url|default:child.get_absolute_url }}"
+       class="menu__item-link">
+        {{ child.get_menu_title }}
+
+        {% if not child.is_leaf_node %}
+        <span class="menu__nested-toggle">
+            <span class="material-icons">keyboard_arrow_down</span>
+        </span>
+        <span class="menu__nested-toggle menu__nested-toggle--desktop">
+            <span class="material-icons">keyboard_arrow_down</span>
+        </span>
+        {% endif %}
+    </a>
+
+    {% if not child.is_leaf_node %}
+        <nav class="menu__nested-menu">
+            {% for nested in child.children %}
+                <a href="{{ nested.attr.redirect_url|default:nested.get_absolute_url }}"
+                   class="menu__nested-item">
+                    {{ nested.get_menu_title }}
+                </a>
+            {% endfor %}
+        </nav>
+    {% endif %}
+
+</div>
 {% endfor %}
+{% endspaceless %}

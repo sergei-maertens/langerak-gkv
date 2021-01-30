@@ -5,6 +5,8 @@
 $menu-font-color: #ffffff !default;
 $menu-space-inbetween: 1.5rem;
 
+$menu-item-font-size: 1.4rem;
+
 .menu {
 
   // Mobile / tablet only
@@ -58,14 +60,17 @@ $menu-space-inbetween: 1.5rem;
       background: lighten(#333, 10%);
 
       .menu__item {
-        font-size: 1.2rem;
-        line-height: 2.6rem;
         margin: 0;
 
         &:hover {
           text-decoration: underline;
           border-bottom-color: transparent;
         }
+      }
+
+      .menu__item-link {
+        font-size: .75 * $menu-item-font-size;
+        line-height: 1.625 * $menu-item-font-size;
       }
     }
 
@@ -82,13 +87,8 @@ $menu-space-inbetween: 1.5rem;
   }
 
   & &__item {
-    @include title;
+    position: relative;
     display: block;
-    color: $menu-font-color;
-    text-transform: uppercase;
-    font-size: 1.6rem;
-    line-height: 2.5rem;
-    text-decoration: none;
     padding: 0 $menu-space-inbetween / 2;
     margin: 0.75rem 0;
     border-bottom: solid 3px transparent;
@@ -97,13 +97,90 @@ $menu-space-inbetween: 1.5rem;
       margin: 0.25rem 0;
     }
 
-    &:hover {
-      color: darken($menu-font-color, 10%);
-      border-bottom-color: rgba($theme-green-yellow, 0.75);
+    @include laptop {
+      &--leaf:hover {
+        border-bottom-color: rgba($theme-green-yellow, 0.75);
+
+        .menu__item-link {
+          color: darken($menu-font-color, 10%);
+        }
+      }
     }
 
     &--active {
       border-bottom-color: rgba($theme-green-yellow, 0.25);
+    }
+  }
+
+  & &__item-link {
+    @include title;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    color: $menu-font-color;
+    text-transform: uppercase;
+    font-size: $menu-item-font-size;
+    line-height: 1.5625 * $menu-item-font-size;
+    text-decoration: none;
+
+    .menu__nested-toggle {
+      line-height: 1rem;
+      padding: 3px;
+
+      @include laptop {
+        display: none;
+      }
+
+      .material-icons {
+        font-size: 2rem;
+        color: darken($menu-font-color, 40%);
+      }
+
+      &--desktop {
+        display: none;
+        position: relative;
+        left: $menu-space-inbetween / 2;
+
+        @include laptop {
+          display: inline;
+        }
+      }
+    }
+  }
+
+  & &__nested-menu {
+    padding-left: $menu-space-inbetween;
+    // hide by default
+    display: none;
+
+    &--opened {
+      display: block;
+
+      @include laptop {
+        position: absolute;
+        top: 3rem;
+        z-index: 10;
+        background: #333;
+        padding: 0 $menu-space-inbetween / 2 $menu-space-inbetween / 2;
+        border-bottom-left-radius: 2px;
+        border-bottom-right-radius: 2px;
+        border: solid 1px darken(#333, 2%);
+        border-top: none;
+      }
+    }
+  }
+
+  & &__nested-item {
+    @include title;
+    display: block;
+    font-size: .75 * $menu-item-font-size;
+    color: $menu-font-color;
+    text-decoration: none;
+    padding: .2rem 0;
+
+    &:hover {
+      text-decoration: underline;
     }
   }
 
