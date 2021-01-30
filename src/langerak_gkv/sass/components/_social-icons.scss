@@ -1,0 +1,43 @@
+@import "../lib/typography";
+
+$social-icon-size: 49px;
+
+.social-icon-list {
+  display: flex;
+  padding: 20px 0;
+}
+
+.social-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: $social-icon-size;
+  height: $social-icon-size;
+  border-radius: 50%;
+  margin: 4px;
+
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+
+  // ensure this is on top of the user-actions layer
+  position: relative;
+  z-index: 10;
+
+  &#{&}--lightblue {
+    background: #66c9ec;
+  }
+  &#{&}--darkblue {
+    background: #0070bb;
+  }
+  &#{&}--red {
+    background: #dd6f4e;
+  }
+  &#{&}--facebook {
+    background: url('../img/fb-logo-rond.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-indent: -9999pt;
+  }
+}

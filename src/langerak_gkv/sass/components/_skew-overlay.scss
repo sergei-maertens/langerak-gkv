@@ -1,0 +1,50 @@
+@import "../lib/measurements";
+@import "../lib/responsive";
+
+.skew-overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+
+  width: 100% !important;
+  height: $strepen-skew-height + 1px;
+
+  @include mobile-only {
+    height: $strepen-skew-height--mobile;
+  }
+
+  &#{&}--top {
+    top: 0;
+  }
+
+  &#{&}--bottom {
+    bottom: -1px;
+  }
+
+  & &__triangle {
+    fill: white;
+  }
+}
+
+// TODO: use clip-path on Chome/FF, fall back to no margin-top on Edge/IE;
+.skew-overlay-container {
+  position: relative;
+  background-image: url('../img/strepen.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: $strepen-skew-height;
+  margin-top: -$strepen-skew-height / 2;
+  margin-bottom: -2em;
+
+  @at-root .page-content & {
+    margin-left: -$page-content-side-padding;
+    margin-right: -$page-content-side-padding;
+  }
+
+  @include mobile-only {
+    height: $strepen-skew-height--mobile;
+    margin-left: -15px;
+    margin-right: -15px;
+    margin-top: 0;
+  }
+}

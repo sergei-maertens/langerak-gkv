@@ -1,107 +1,87 @@
-{% extends "liturgies/base.html" %}{% load i18n %}
+{% extends "cms/base.html" %}
+{% load i18n bleach_tags %}
 
-{% block body-class %}{{ block.super }} detail{% endblock body-class %}
+{% block body-class %}{{ block.super }} liturgies-page{% endblock body-class %}
 
-{% block calendar-content %}
-<div class="fc fc-ltr fc-unthemed link-height" data-linkid="1">
-    <div class="fc-toolbar">
-        <div class="fc-left">
-            <button type="button" class="fc-button fc-prev-button" disabled>
-                <span class="fc-icon fa fa-play fa-flip-horizontal"></span>
-                &nbsp;{% trans "Previous" %}
-            </button>
-        </div>
-        <div class="fc-right">
-            <button type="button" class="fc-button fc-next-button" disabled>
-                {% trans "Next" %}&nbsp;
-                <span class="fc-icon fa fa-play"></span>
-            </button>
-        </div>
-        <div class="fc-center">
-            <h2>{{ liturgy.service.name }}</h2>
-        </div>
-    </div>
+{% block content %}
+<h1 class="page-title">
+    {% blocktrans with day=liturgy.date|date:"l j F Y" time=liturgy.service.time|time:"H.i" trimmed asvar title %}
+        {{ day }} at {{ time }} hours
+    {% endblocktrans %}
+    {{ title|capfirst }}
+</h1>
 
-    <h3 class="fc-day-header sub">
-        <strong>
-        {% filter capfirst %}{{ liturgy.date|date:"l j F Y" }} {% trans "at" %} {{ liturgy.service.time|time:"H.i" }} {% trans "hour" %}
-        {% endfilter %}
-        </strong>
-    </h3>
+<article class="liturgy-detail liturgies-page__detail">
 
-    <section id="liturgy-detail">
+    <section class="liturgy-detail__preach">
 
-        <div class="row gutter-small">
-            <div class="col-md-5">
-                <article class="page-block link-height" data-linkid="2">
-                    <div class="row">
-                        <div class="col-xs-4">{% trans "Preacher" %}:</div>
-                        <div class="col-xs-8">{{ liturgy.preacher }}</div>
-                    </div>
-                    {% for collection in liturgy.get_collections %}
-                        <div class="row">
-                            <div class="col-xs-4">
-                                {% blocktrans with i=forloop.counter %}Collection {{ i }}{% endblocktrans %}:
-                            </div>
-                            <div class="col-xs-8">{{ collection }}</div>
-                        </div>
-                    {% endfor %}
-                </article>
-            </div>
-
-            <div class="col-md-7">
-                <article class="page-block link-height" data-linkid="2">
-                    <div class="row">
-                        <div class="col-xs-4">{% trans "Preach made by" %}:</div>
-                        <div class="col-xs-8">{{ liturgy.preach_author }}</div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-4">{% trans "Main section" %}:</div>
-                        <div class="col-xs-8">
-                            {{ liturgy.main_section }}
-                            {{ liturgy.main_chapter }}{% if liturgy.main_verse %}:{{ liturgy.main_verse }}{% endif %}
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-4">{% trans "Service theme" %}:</div>
-                        <div class="col-xs-8">{{ liturgy.service_theme }}</div>
-                    </div>
-                </article>
-            </div>
+        <div class="key-value">
+            <span class="key-value__key">{% trans "Main section" %}</span>
+            <span class="key-value__value">
+                {{ liturgy.main_section }}
+                {{ liturgy.main_chapter }}{% if liturgy.main_verse %}:{{ liturgy.main_verse }}{% endif %}
+            </span>
         </div>
 
-        <article class="page-block">
-            {{ liturgy.liturgy|linebreaks }}
-        </article>
-
-        <div class="row gutter-small">
-            <div class="col-md-7">
-                <article class="link-height page-block" data-linkid="3">
-                    {{ liturgy.extra_information|linebreaksbr }}
-                </article>
-            </div>
-
-            <div class="col-md-5">
-                <article class="link-height page-block" data-linkid="3">
-                    {% if liturgy.audiofile %}
-                        <a href="{{ liturgy.audiofile.url }}">
-                            {% trans "This service is available as audio download" %}
-                            <i class="fa fa-file-audio-o"></i>
-                        </a>
-                    {% else %}
-                        {% trans "No audio file available" %}
-                    {% endif %}
-                </article>
-            </div>
+        <div class="key-value">
+            <span class="key-value__key">{% trans "Service theme" %}</span>
+            <span class="key-value__value">{{ liturgy.service_theme|default:"-" }}</span>
         </div>
+
+        <div class="key-value">
+            <span class="key-value__key">{% trans "Audio download" %}</span>
+            <span class="key-value__value">
+                {% if liturgy.audiofile %}
+                    <a href="{{ liturgy.audiofile.url }}" class="liturgy-detail__audio-link">
+                        {% trans "This service is available as audio download" %}
+                    </a>
+                {% else %}
+                    <span class="liturgy-detail__no-audio-link">{% trans "No audio file available" %}</span>
+                {% endif %}
+            </span>
+        </div>
+
     </section>
-</div>
 
+    <section class="liturgy-detail__meta">
 
+        <div class="key-value key-value--swap-ratio">
+            <span class="key-value__key">{% trans "Preacher" %}</span>
+            <span class="key-value__value">{{ liturgy.preacher|default:_("not yet known...") }}</span>
+        </div>
+
+        {% for collection in liturgy.get_collections %}
+            <div class="key-value key-value--swap-ratio">
+                <span class="key-value__key">
+                    {% blocktrans with i=forloop.counter %}Collection {{ i }}{% endblocktrans %}:
+                </span>
+                <span class="key-value__value">{{ collection }}</span>
+            </div>
+        {% endfor %}
+
+        <div class="key-value">
+            <span class="key-value__key">{% trans "Download" %}</span>
+            <span class="key-value__value">
+                {% if liturgy.download %}
+                    <a href="{{ liturgy.download.url }}" class="liturgy-detail__audio-link">
+                        {% trans "Download" %}
+                    </a>
+                {% else %}
+                    <span class="liturgy-detail__no-audio-link">{% trans "No download available" %}</span>
+                {% endif %}
+            </span>
+        </div>
+
+    </section>
+
+    <h2 class="liturgy-detail__body-header">{% trans "Liturgy" %}</h2>
+    <section class="liturgy-detail__body">
+        {{ liturgy.liturgy|bleach|default:_("not yet know, please come back later!") }}
+    </section>
+
+    <section class="liturgy-detail__extras">
+        {{ liturgy.extra_information|linebreaksbr }}
+    </section>
+
+</article>
 {% endblock %}
-
-
-
-{# Visible for visitors: 'informatie' 'liturgie' #}
-{#  -datum -naam dienst -tijdstip dienst (Morgen, Avond)  #}
-{# -predikant -(tijdens de dienst)/extra info? -collecte  #}

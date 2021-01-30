@@ -1,0 +1,32 @@
+@import "../lib/colors";
+@import "../lib/typography";
+
+.page-footer {
+  @include body;
+  min-height: 100px;
+  padding: 2rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  background: $theme-green;
+  color: white;
+
+  & &__attributions {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  & &__attribution {
+    a {
+      color: white;
+      text-decoration: none;
+      font-weight: 400;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

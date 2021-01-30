@@ -1,0 +1,103 @@
+{% load cms_tags menu_tags i18n sniplates %}
+
+<header class="page-header">
+
+    <nav class="menu">
+
+        <div class="menu__icons">
+            <span class="menu__search"></span>
+            <span class="menu__profile"></span>
+            <span class="menu__hamberder">
+                <span class="menu__hamberder-row"></span>
+                <span class="menu__hamberder-row"></span>
+                <span class="menu__hamberder-row"></span>
+            </span>
+        </div>
+
+        <div class="menu__layer menu__layer--root">
+            <a href="{{ home_url }}" class="menu__item">{{ home_title }}</a>
+            {% show_menu 1 %}
+        </div>
+        {% if not request.path == home_url %}
+            <div class="menu__layer menu__layer--sub">
+                {% show_sub_menu 1 %}
+            </div>
+        {% endif %}
+    </nav>
+
+    <section class="header-content">
+
+        <div class="header-content__background">
+            {% placeholder "header image" inherit %}
+            <div class="header-content__background-image"></div>
+        </div>
+
+        <div class="header-content__foreground">
+
+            <aside class="header-content__actions">
+
+                <form action="{% url 'search:search' %}" class="search-form" method="get" autocomplete="off">
+                    <input
+                        name="q"
+                        class="search-form__search"
+                        placeholder="{% trans 'search field' %}"
+                        {% if request.GET.q %}value="{{ request.GET.q }}"{% endif %}>
+                </form>
+
+                <nav class="user-actions">
+                    {% if user.is_authenticated %}
+                        <a class="user-actions__action" href="{% url 'users:profile' pk=user.pk %}">
+                            {% trans "my profile" %}
+                        </a>
+                        <a class="user-actions__action logout-url" href="#">
+                            {% blocktrans with name=user.get_short_name trimmed %}
+                                Log out ({{ name }})
+                            {% endblocktrans %}
+                        </a>
+                    {% else %}
+                        <a class="user-actions__action modal-trigger" href="#" data-modal="login">
+                            {% trans "Login" %}
+                        </a>
+                    {% endif %}
+
+                    <form action="{% url 'users:logout' %}" method="post" style="display: none;" class="logout-form">
+                        {% csrf_token %}
+                        <input type="hidden" name="next" value="/">
+                    </form>
+                </nav>
+
+            </aside>
+
+            <aside class="calendar">
+                {% for item in upcoming_activities %}
+                    {% include "includes/calendar-item.html" with item=item only %}
+                {% endfor %}
+
+                <a href="{% url 'activities:calendar' %}" class="calendar__goto">
+                    {% trans "To calendar" %}
+                </a>
+            </aside>
+
+            <div class="header-content__end">
+
+                {% load_widgets skew='includes/skew-overlay.html' %}
+                {% widget 'skew:skew-overlay--bottom' %}
+
+                <div class="header-content__end-content">
+                    <div class="social-icon-list">
+                        <a href="https://www.facebook.com/gklangerak" class="social-icon social-icon--facebook" target="_blank" rel="nofollow noopener">Facebook</a>
+                        {% comment %}
+                        <span class="social-icon social-icon--darkblue">+</span>
+                        <span class="social-icon social-icon--red">+</span>
+                        <span class="social-icon social-icon--lightblue">+</span>
+                        {% endcomment %}
+                    </div>
+
+                    {% include "includes/breadcrumbs.html" %}
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+</header>

@@ -12,7 +12,7 @@ class SplitMenuNodesModifier(Modifier):
             return nodes
         if not post_cut:
             return nodes
-        left, right = nodes[:len(nodes) / 2], nodes[len(nodes) / 2:]
+        left, right = nodes[: len(nodes) / 2], nodes[len(nodes) / 2 :]
         for node in left:
             node.left = True
         for node in right:

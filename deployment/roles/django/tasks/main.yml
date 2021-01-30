@@ -1,13 +1,15 @@
 ---
 # Main tasks file to distribute the subtasks
 
-- import_tasks: install_os_packages.yml
-- import_tasks: checkout_code.yml
-- import_tasks: dependencies.yml
-- import_tasks: db.yml
+- name: Ensure project_home dir exists
+  file:
+    path: "{{ project_home }}"
+    state: directory
+    mode: 0750
+    owner: "{{ user }}"
+    group: "{{ user }}"
+
 - import_tasks: secrets.yml
-- import_tasks: migrate.yml
-- import_tasks: frontend.yml
 - import_tasks: media.yml
-- import_tasks: collectstatic.yml
+- import_tasks: containers.yml
 - import_tasks: cronjobs.yml

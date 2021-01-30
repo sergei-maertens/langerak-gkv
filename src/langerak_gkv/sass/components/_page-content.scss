@@ -1,0 +1,28 @@
+@import "../lib/colors";
+@import "../lib/responsive";
+@import "../lib/measurements";
+
+$border-height: 500px;
+
+.page-content {
+  padding: 0 $page-content-side-padding 2em;
+  position: relative;
+
+  @include mobile-only {
+    padding: 20px 0.5em 0;
+  }
+
+  & &__border {
+    display: block;
+    position: absolute;
+    top: calc(50% - #{$border-height / 2});
+    left: 0;
+    width: 5px;
+    height: $border-height;
+    background: $theme-green-yellow;
+  }
+}
+
+.page-content img {
+  max-width: 100%;
+}

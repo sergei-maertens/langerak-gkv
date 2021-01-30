@@ -1,134 +1,140 @@
-{% extends "users/base.html" %}{% load i18n thumbnail formatting staticfiles leaflet_tags %}
+{% extends "cms/base.html" %}
+{% load i18n thumbnail formatting staticfiles leaflet_tags %}
 
-{% block main-content %}
-    <div class="text-center page-header">
-        {# TODO: remember search querystring? #}
-        <a class="abs-left" href="{% url 'users:list' %}">
-            <i class="fa fa-play fa-rotate-180"></i>&nbsp;&nbsp;{% trans "Back to overview" %}
+{% block body-class %}profile-page{% endblock %}
+
+{% block content %}
+
+<article class="profile-page__profile profile-detail">
+
+    <nav class="profile-detail__header-bar">
+        <a class="profile-detail__back-link" href="{% url 'users:list' %}">
+            {% trans "Back to overview" %}
         </a>
-        <span class="title"><strong>{% trans "Profile" %}</strong></span>
-    </div>
+        <h2 class="profile-detail__title">{% trans "Profile" %}</h2>
+    </nav>
 
-    <div class="row gutter-small">
-        {# Images #}
-        <aside class="col-md-5">
-            <div class="avatars block link-height" data-linkid="1">
-                {% block profile_pic %}
-                    <figure>
-                        {% if profile.picture %}
-                            <img src="{% thumbnail profile.picture 400x400 box=profile.cropping crop upscale %}">
-                        {% else %}
-                            <i class="fa fa-user"></i>
-                        {% endif %}
-                    </figure>
-                {% endblock %}
+    <section class="profile-detail__pictures">
 
-                {% if profile.partner %}
-                <div class="section">
-                    <strong>{% trans "Partner of" %}:</strong>
-                    <div class="row small">
-                        {% with profile=profile.partner %} {% include "users/user_avatar.html" %} {% endwith %}
-                    </div>
-                </div>
+        {% block profile_pic %}
+            <figure class="profile-detail__profile-pic">
+                {% if profile.picture %}
+                    <img src="{% thumbnail profile.picture 400x400 box=profile.cropping crop upscale %}">
+                {% else %}
+                    <div class="profile-pic-placeholder"></div>
                 {% endif %}
+            </figure>
+        {% endblock %}
 
-                {% if profile.children %}
-                <div class="section">
-                    <strong>{% trans "Children" %}:</strong>
-                    <div class="row small">
-                        {% for profile in profile.children %}
-                            {% include "users/user_avatar.html" %}
-                        {% endfor %}
-                    </div>
-                </div>
-                {% endif %}
-            </div>
-        </aside>
-
-        {# Profile content #}
-        <div class="col-md-7">
-            <div class="block link-height" data-linkid="1">
-                <span class="pull-right">{{ profile.get_member_type_display }}</span>
-                <h2 class="name">
-                    {{ profile.first_name }}
-                    <br>
-                    <span class="surname">{{ profile.last_name }}</span>
-                </h2>
-
-                <div class="row">
-                    <span class="col-md-4">{% trans "Date of birth" %}</span>
-                    <span class="col-md-4"><strong>{{ profile.birthdate }}</strong></span>
-                </div>
-
-
-                <div class="row margin-top">
-                    <span class="col-md-4">{% trans "Address" %}</span>
-                    <span class="col-md-4"><strong>{{ profile.address }}</strong></span>
-                </div>
-
-                <div class="row">
-                    <span class="col-md-4">{% trans "Postal code" %}</span>
-                    <span class="col-md-4"><strong>{{ profile.postal_code }}</strong></span>
-                </div>
-
-                <div class="row">
-                    <span class="col-md-4">{% trans "Location" %}</span>
-                    <span class="col-md-4"><strong>{{ profile.city }}</strong></span>
-                </div>
-
-
-                <div class="row margin-top">
-                    <span class="col-md-4">{% trans "Telephone" %}</span>
-                    <span class="col-md-4"><strong>{{ profile.phone|phone }}</strong></span>
-                </div>
-
-                {% block mobile %}
-                <div class="row">
-                    <span class="col-md-4">{% trans "Mobile phone" %}</span>
-                    <span class="col-md-4"><strong>{{ profile.mobile|phone }}</strong></span>
-                </div>
-                {% endblock %}
-
-                {% block email %}
-                <div class="row">
-                    <span class="col-md-4">{% trans "Email" %}</span>
-                    <span class="col-md-4 email"><strong>{{ profile.email|urlize }}</strong></span>
-                </div>
-                {% endblock %}
-
-
-                <div class="row margin-top">
-                    <span class="col-md-4">{% trans "District function" %}</span>
-                    <span class="col-md-4"><strong>{{ profile.district_function|default:'-' }}</strong></span>
-                </div>
-
-                {% block about_me %}
-                <div class="row margin-top">
-                    <span class="col-md-4">{% trans "About me" %}</span>
-                    <span class="col-md-4"><strong>{{ profile.about_me }}</strong></span>
-                </div>
-                {% endblock %}
-
-                {% leaflet_map "user-map" %}
+        {% if profile.partner %}
+        <div class="profile-detail__relations">
+            <h4 class="profile-detail__relation-title">{% trans "Partner of" %}:</h4>
+            <div class="profile-detail__relation-avatars">
+                {% with profile=profile.partner %} {% include "users/user_avatar.html" %} {% endwith %}
             </div>
         </div>
-    </div>
+        {% endif %}
 
-    <div class="page-divider">
-        <span class="title">{% trans "1<sup>st</sup> degree connections" %}</span>
-    </div>
+        {% if profile.children %}
+        <div class="profile-detail__relations">
+            <h4 class="profile-detail__relation-title">{% trans "Children" %}:</h4>
+            <div class="profile-detail__relation-avatars">
+                {% for profile in profile.children %}
+                    {% include "users/user_avatar.html" %}
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
 
-    <div class="row gutter-small">
+    </section>
+
+    <section class="profile-detail__details">
+
+        <span class="profile-detail__member-type">{{ profile.get_member_type_display }}</span>
+
+        <h3 class="profile-detail__first-name">{{ profile.first_name }}</h3>
+
+        <span class="profile-detail__last-name">{{ profile.last_name }}</span>
+
+        <div class="key-value">
+            <span class="key-value__key">{% trans "Date of birth" %}</span>
+            <span class="key-value__value">{{ profile.birthdate }}</span>
+        </div>
+
+        <div class="key-value key-value--extra-spacing">
+            <span class="key-value__key">{% trans "Address" %}</span>
+            <span class="key-value__value">{{ profile.address }}</span>
+        </div>
+        <div class="key-value">
+            <span class="key-value__key">{% trans "Postal code" %}</span>
+            <span class="key-value__value">{{ profile.postal_code }}</span>
+        </div>
+        <div class="key-value">
+            <span class="key-value__key">{% trans "Location" %}</span>
+            <span class="key-value__value">{{ profile.city }}</span>
+        </div>
+
+        <div class="key-value key-value--extra-spacing">
+            <span class="key-value__key">{% trans "Telephone" %}</span>
+            <span class="key-value__value">{{ profile.phone|phone }}</span>
+        </div>
+        {% block mobile %}
+        <div class="key-value">
+            <span class="key-value__key">{% trans "Mobile phone" %}</span>
+            <span class="key-value__value">{{ profile.mobile|phone }}</span>
+        </div>
+        {% endblock %}
+        {% block email %}
+        <div class="key-value">
+            <span class="key-value__key">{% trans "Email" %}</span>
+            <span class="key-value__value email">{{ profile.email|urlize }}</span>
+        </div>
+        {% endblock %}
+
+        <div class="key-value key-value--extra-spacing">
+            <span class="key-value__key">{% trans "District function" %}</span>
+            <span class="key-value__value">{{ profile.district_function|default:'-' }}</span>
+        </div>
+
+        {% block about_me %}
+        <div class="key-value key-value--extra-spacing">
+            <span class="key-value__key">{% trans "About me" %}</span>
+            <span class="key-value__value">{{ profile.about_me|default:'-' }}</span>
+        </div>
+        {% endblock %}
+
+
+        <div class="profile-detail__map">
+            {# {% leaflet_map "user-map" %} #}
+        </div>
+
+    </section>
+
+    {% if profile.connections %}
+    <section class="profile-detail__connections">
+        <h4 class="profile-detail__relation-title">
+            {% trans "1<sup>st</sup> degree connections" %}
+        </h4>
         {% for relation in profile.connections %}
-            {% include "users/user_preview.html" %}
+            {% cycle '1' '2' '3' '4' as flavour silent %}
+            {% include "users/includes/profile_preview.html" with user=relation flavour=flavour only %}
         {% endfor %}
-    </div>
-{% endblock %}
+    </section>
+    {% endif %}
+</article>
+
+<aside class="profile-page__search">
+    {% include "users/user_search_form.html" with form=search_form|default:form %}
+</aside>
+
+{% endblock content %}
 
 
+{% comment %}
 {% block extra_js %}
 {{ block.super }}
 <script src="//maps.googleapis.com/maps/api/js"></script>
 <script>var address = '{{ profile.get_location_string }}';</script>
 <script src="{% static "users/js/map.js" %}"></script>
 {% endblock %}
+{% endcomment %}

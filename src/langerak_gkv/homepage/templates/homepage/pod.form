@@ -1,3 +1,0 @@
-{% extends "default.form" %}
-
-{% block _label %}{% endblock %}

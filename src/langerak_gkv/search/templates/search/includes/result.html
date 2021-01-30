@@ -1,0 +1,18 @@
+{% load sniplates %}
+
+{% load_widgets search='search/includes/result_sniplates.html' %}
+
+<article class="search-result search-result--{{ result.content_type }}">
+
+    <span class="search-result__type-icon"></span>
+
+    <a class="search-result__link" href="{% widget 'search:'|add:result.content_type|add:'_url' %}">
+        <h1 class="search-result__title">
+            {% widget 'search:'|add:result.content_type|add:'_title' %}
+        </h1>
+    </a>
+
+    <div class="search-result__description">
+        {% widget 'search:'|add:result.content_type|add:'_description' %}
+    </div>
+</article>

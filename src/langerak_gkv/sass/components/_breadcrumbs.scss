@@ -1,0 +1,27 @@
+@import "../lib/colors";
+@import "../lib/typography";
+
+$breadcrumbs-color: $theme-green !default;
+
+.breadcrumbs {
+  @include body;
+  color: $breadcrumbs-color;
+  font-size: 1.4rem;
+  font-weight: 400;
+  text-transform: lowercase;
+  line-height: 2.5rem;
+
+  & &__breadcrumb {
+    color: $breadcrumbs-color;
+    text-decoration: none;
+  }
+
+  & &__breadcrumb:after {
+    content: " /";
+  }
+
+  & &__breadcrumb:last-child:after {
+    display: none;
+  }
+
+}

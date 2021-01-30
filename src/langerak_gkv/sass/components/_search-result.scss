@@ -1,0 +1,25 @@
+@import "../lib/colors";
+@import "../lib/typography";
+
+.search-result {
+  padding: 1rem 0;
+
+  & &__link {
+    display: block;
+    text-decoration: none;
+    color: $theme-green;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  & &__title {
+    @include title();
+  }
+
+  & &__description {
+    @include body;
+    font-size: 1.2rem;
+  }
+}

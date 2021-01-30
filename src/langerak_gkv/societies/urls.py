@@ -1,7 +1,7 @@
-from django.conf.urls import url
+from django.urls import path
 
 from .views import SocietyDetailView
 
-urlpatterns = [
-    url(r'^(?P<pk>\d+)/$', SocietyDetailView.as_view(), name='detail'),
-]
+app_name = "societies"
+
+urlpatterns = [path("<int:pk>/", SocietyDetailView.as_view(), name="detail")]

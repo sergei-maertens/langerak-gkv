@@ -1,0 +1,45 @@
+@import "../../lib/colors";
+@import "../../lib/typography";
+
+
+.form {
+
+  &#{&}--on-top {
+    position: relative;
+    z-index: 10;
+  }
+
+  & &__submit-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-top: 25px;
+
+    a {
+      color: $font-color-light;
+      text-decoration: none;
+      font-size: 1.2rem;
+
+      &:hover {
+        text-decoration: underline;
+        color: $theme-green;
+      }
+
+      &:focus {
+        color: $theme-green;
+      }
+    }
+  }
+
+  & &__section {
+    border: solid 1px #eee;
+    margin-bottom: 2em;
+  }
+
+  & &__section-title {
+    @include page-title;
+    font-size: 2rem;
+    margin: 1rem 0;
+  }
+}

@@ -1,8 +1,28 @@
-{% extends "master.html" %}{% load i18n static %}
+{% extends "cms/base.html" %}
+{% load i18n static cms_tags %}
 
-{% block body-class %}{{ block.super }} calendar{% endblock %}
 
+{% block content %}
+    <div class="activities-calendar"data-feed="{% url 'api:activities:list' %}"></div>
 
+    {% block ical %}
+        {% if activity_pk %}
+            {% url 'activities:ical-feed' pk=activity_pk as feed_url %}
+        {% else %}
+            {% url 'activities:ical-feed' as feed_url %}
+        {% endif %}
+
+        <a href="{{ feed_url }}" class="activities-calendar__ical">{% trans "iCal feed" %}</a>
+    {% endblock %}
+
+    {% url 'activities:add' as url_add %}
+    {% if perms.activities.add_activity and request.path != url_add %}
+        <a href="{{ url_add }}">{% trans "Add activity" %}</a>
+    {% endif %}
+
+{% endblock %}
+
+{% comment %}
 {% block content %}
 <form action="{% url 'activities:search' %}"
         class="page-block clearfix" id="calendar-search">{% spaceless %}
@@ -38,72 +58,4 @@
     </div>
 {% endspaceless %}</form>
 
-<div class="row">
-    <section class="col-md-10">
-        {% block calendar-content %}
-            <div class="link-height" id="calendar" data-linkid="1"></div>
-        {% endblock calendar-content %}
-    </section>
-
-    <div class="col-md-2">
-        <aside class="link-height" data-linkid="1">
-            <h3 class="fc-toolbar">{% filter capfirst %}{% now "D j b" %}{% endfilter %}</h3>
-
-            <div class="fc-day-header sub"><strong>
-            {% blocktrans count count=activities_today|length %}
-                1 activity
-                {% plural %}
-                {{ count }} activities
-            {% endblocktrans %}
-            </strong></div>
-
-            <div class="page-block">
-                {% for activity in activities_today %}
-                    <a class="activity detail link" href="{{ activity.get_absolute_url }}">
-                        {{ activity.name }} <span class="fa fa-play fa-lg"></span>
-                    </a>
-                {% endfor %}
-            </div>
-
-        </aside>
-    </div>
-</div>
-
-{% url 'activities:add' as url_add %}
-{% if perms.activities.add_activity and request.path != url_add %}
-    <a href="{{ url_add }}">{% trans "Add activity" %}</a>
-{% endif %}
-
-{% block ical %}
-    {% if activity_pk %}
-        {% url 'activities:ical-feed' pk=activity_pk as feed_url %}
-    {% else %}
-        {% url 'activities:ical-feed' as feed_url %}
-    {% endif %}
-    <a href="{{ feed_url }}" class="pull-right">{% trans "iCal feed" %}</a>
-{% endblock %}
-
-{% endblock %}
-
-
-{% block extra_css %}
-    {{ block.super }}
-    <link href="{% static 'fullcalendar/fullcalendar.min.css' %}" rel="stylesheet">
-{% endblock %}
-
-
-{% block extra_js %}
-    {{ block.super }}
-    <script src="{% static 'momentjs/moment-with-locales.min.js' %}"></script>
-    <script src="{% static 'fullcalendar/fullcalendar.min.js' %}"></script>
-    {% with 'fullcalendar/lang/'|add:LANGUAGE_CODE|add:'.js' as lang_file %}
-        <script src="{% static lang_file %}"></script>
-    {% endwith %}
-    <script>
-        var calendarConf = {
-            lang: '{{ LANGUAGE_CODE }}',
-            feedURL: '{% url "api:activities:list" %}'
-        };
-    </script>
-    <script src="{% static 'activities/activities.js' %}"></script>
-{% endblock %}
+{% endcomment %}

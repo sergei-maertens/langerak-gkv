@@ -1,8 +1,0 @@
-{% extends "search/base_item.html" %}
-{% load i18n thumbnail %}
-
-{% block item-image %}<i class="fa fa-calendar fa-5x"></i>{% endblock %}
-{% block item-class %}activity{% endblock %}
-{% block item-type %}{% trans "Calendar" %}{% endblock %}
-
-{% block item-title %}<h4><a href="{{ object.get_absolute_url }}">{{ object.name }}</a></h4>{% endblock %}

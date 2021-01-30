@@ -1,0 +1,46 @@
+@import "../lib/colors";
+@import "../lib/responsive";
+@import "../lib/typography";
+
+$search-icon-size: 2rem 2rem;
+
+.search-form {
+  @include hide-on-mobile(block);
+
+  padding: 2.4em 30px 2.4em 0;
+
+  @include mobile-only {
+    padding: 1em;
+    text-align: center;
+  }
+
+  &#{&}--visible {
+    display: block;
+  }
+
+  & &__search {
+    @include body;
+    font-weight: 200;
+    text-transform: uppercase;;
+    font-size: 1.4rem;
+    color: $font-color-light;
+    border: none;
+
+    padding: 0.75rem 2.5rem 0.75rem 1em;
+
+    background-image: url('../img/zoek.svg');
+    background-repeat: no-repeat;
+    background-size: $search-icon-size;
+    background-position: calc(100% - 0.5rem) 50%;
+
+    &:focus {
+      outline: none;
+      box-shadow: 2px 2px 5px 0 $shadow-form-inputs;
+    }
+
+    @include mobile-only {
+      width: 100%;
+    }
+  }
+
+}

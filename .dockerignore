@@ -1,0 +1,10 @@
+/media
+/static
+/node_modules
+/deployment
+/log
+/src/langerak_gkv/static/css
+/src/langerak_gkv/static/js
+.gitignore
+.dockerignore
+.vault_password.txt

@@ -1,1 +1,1 @@
-default_app_config = 'langerak_gkv.liturgies.apps.LiturgiesConfig'
+default_app_config = "langerak_gkv.liturgies.apps.LiturgiesConfig"

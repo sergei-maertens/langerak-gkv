@@ -1,10 +1,9 @@
-import urllib
 from datetime import date
+from urllib.parse import urlencode
 
+from django.contrib.auth.views import LoginView, LogoutView
 from django.views.generic import DetailView, ListView
 from django.views.generic.edit import FormMixin, UpdateView
-
-from class_based_auth_views.views import LoginView, LogoutView
 
 from langerak_gkv.utils.pdf import PDFTemplateResponseMixin
 from langerak_gkv.utils.view_mixins import LoginRequiredMixin
@@ -15,10 +14,8 @@ from .models import User
 
 class UserSearchMixin(FormMixin):
     form = None
-    form_context_name = 'form'
-    initial = {
-        'sex': None
-    }
+    form_context_name = "form"
+    initial = {"sex": None}
 
     def get_search_form(self):
         form = super(UserSearchMixin, self).get_form(UserSearchForm)
@@ -29,13 +26,13 @@ class UserSearchMixin(FormMixin):
     def get_context_data(self, **kwargs):
         search_form = self.form or self.get_search_form()
         kwargs[self.form_context_name] = search_form
-        kwargs['search_form_qs'] = urllib.urlencode(search_form.data)
+        kwargs["search_form_qs"] = urlencode(search_form.data)
         return super(UserSearchMixin, self).get_context_data(**kwargs)
 
 
 class UserListView(LoginRequiredMixin, UserSearchMixin, ListView):
     queryset = User.objects.only_real()
-    context_object_name = 'profiles'
+    context_object_name = "profiles"
     paginate_by = 15
 
 
@@ -63,39 +60,40 @@ class UserSearchPDFView(PDFTemplateResponseMixin, UserSearchView):
     """
     View to render PDF of user list.
     """
+
     paginate_by = None
-    template_name = 'users/user_list_pdf.html'
+    template_name = "users/user_list_pdf.html"
 
     def get_filename(self):
         """
         Returns the filename of the rendered PDF.
         """
-        return 'koningskerk-leden-{0.year}-{0.month}-{0.day}.pdf'.format(date.today())
+        return "koningskerk-leden-{0.year}-{0.month}-{0.day}.pdf".format(date.today())
 
 
 class UserProfileView(LoginRequiredMixin, UserSearchMixin, DetailView):
     queryset = User.objects.only_real()
-    context_object_name = 'profile'
+    context_object_name = "profile"
 
 
 class UpdateProfileView(LoginRequiredMixin, UserSearchMixin, UpdateView):
     queryset = User.objects.only_real()
     form_class = ProfileUpdateForm
-    form_context_name = 'search_form'
+    form_context_name = "search_form"
 
     def get_object(self):
         return User.objects.get(pk=self.request.user.pk)
 
     def get_context_data(self, **kwargs):
         context = super(UpdateProfileView, self).get_context_data(**kwargs)
-        context['profile'] = self.object
+        context["profile"] = self.object
         return context
 
 
 class LoginView(LoginView):
-    template_name = 'users/login.html'
+    template_name = "users/login.html"
     form_class = LoginForm
 
 
 class LogoutView(LogoutView):
-    template_name = 'users/logout.html'
+    template_name = "users/logout.html"

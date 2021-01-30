@@ -8,9 +8,9 @@ from .models import CharFieldPlugin, HomepagePageLink
 
 class HomepageLinkPlugin(CMSPluginBase):
     model = HomepagePageLink
-    name = _('Homepage link block')
-    raw_id_fields = ('page_link',)
-    render_template = 'homepage/cmsplugin/link.html'
+    name = _("Homepage link block")
+    raw_id_fields = ("page_link",)
+    render_template = "homepage/cmsplugin/link.html"
 
 
 plugin_pool.register_plugin(HomepageLinkPlugin)
@@ -18,7 +18,8 @@ plugin_pool.register_plugin(HomepageLinkPlugin)
 
 class CharFieldPlugin(CMSPluginBase):
     model = CharFieldPlugin
-    name = _('Simple text')
-    render_template = 'homepage/cmsplugin/charfield.html'
+    name = _("Simple text")
+    render_template = "homepage/cmsplugin/charfield.html"
+
 
 plugin_pool.register_plugin(CharFieldPlugin)

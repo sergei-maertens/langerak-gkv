@@ -1,36 +1,7 @@
-{% load i18n thumbnail koningskerk_tags %}
-<article class="link-block link-height" data-linkid="{{ linkid }}">
-    <header>
-        <figure>
-            <img src="{{ plugin.instance.image|thumbnail_url:'homepage' }}">
-        </figure>
-        <h2>{{ plugin.instance.title }}</h2>
-    </header>
+{% load thumbnail %}
 
-    <p class="description">
-        {{ plugin.instance.description|safe }}
-    </p>
-
-    <footer>
-        <ul class="list-inline">
-            {% if plugin.instance.enable_sharing %}
-            <li class="social facebook share">
-                <a href="#" data-href="{% absolute_url plugin.instance.page_link.get_absolute_url %}">
-                    <span class="fa fa-facebook"></span>
-                </a>
-            </li>
-            <li class="social twitter share">
-                <a href="#" data-href="{% absolute_url plugin.instance.page_link.get_absolute_url %}"><span class="fa fa-twitter"></span></a>
-            </li>
-            {% endif %}
-            {% if plugin.instance.page_link_id %}
-            <li>
-                <a href="{{ plugin.instance.page_link.get_absolute_url }}" class="btn btn-default read-more">
-                    {% trans "Read more" %}
-                    <span class="glyphicon glyphicon-play"></span>
-                </a>
-            </li>
-            {% endif %}
-        </ul>
-    </footer>
-</article>
+<div data-href="{{ instance.page_link.get_absolute_url|default:'#' }}" class="homepage-block{% if not instance.page_link_id %} homepage-block--no-link{% endif %}">
+    {% if has_image and instance.image %}<img src="{{ instance.image|thumbnail_url:'homepage' }}">{% endif %}
+    <h1 class="homepage-block__title">{{ instance.title }}</h1>
+    <div class="homepage-block__description">{{ instance.description }}</div>
+</div>

@@ -1,12 +1,10 @@
 import mimetypes
 import posixpath
-from urllib2 import urlparse
+from urllib.parse import urlparse
 
 from django.conf import settings
 from django.contrib.staticfiles import finders
-from django.contrib.staticfiles.storage import (
-    FileSystemStorage, staticfiles_storage
-)
+from django.contrib.staticfiles.storage import FileSystemStorage, staticfiles_storage
 from django.template.response import TemplateResponse
 from django.views.generic.base import TemplateResponseMixin, TemplateView
 
@@ -29,24 +27,33 @@ class UrlFetcher(object):
             static_url = urlparse.urljoin(base_url, settings.STATIC_URL)
             static_url = urlparse.urlsplit(static_url)
         self.static_url = static_url
-        self.local_storage = issubclass(staticfiles_storage.__class__, FileSystemStorage)
+        self.local_storage = issubclass(
+            staticfiles_storage.__class__, FileSystemStorage
+        )
 
     def __call__(self, url):
         orig_url = url
         url = urlparse.urlsplit(url)
-        same_base = (self.static_url.scheme, self.static_url.netloc) == (url.scheme, url.netloc)
-        if self.local_storage and same_base and url.path.startswith(self.static_url.path):
-            path = url.path.replace(self.static_url.path, '')
-            normalized_path = posixpath.normpath(urlparse.unquote(path)).lstrip('/')
+        same_base = (self.static_url.scheme, self.static_url.netloc) == (
+            url.scheme,
+            url.netloc,
+        )
+        if (
+            self.local_storage
+            and same_base
+            and url.path.startswith(self.static_url.path)
+        ):
+            path = url.path.replace(self.static_url.path, "")
+            normalized_path = posixpath.normpath(urlparse.unquote(path)).lstrip("/")
             absolute_path = finders.find(normalized_path)
             content_type, encoding = mimetypes.guess_type(absolute_path)
-            with open(absolute_path, 'r') as f:
+            with open(absolute_path, "r") as f:
                 output = f.read()
             return dict(
                 string=output,
                 mime_type=content_type,
                 encoding=encoding,
-                redirected_url=orig_url
+                redirected_url=orig_url,
             )
         return self.fallback(orig_url)
 
@@ -56,12 +63,12 @@ class PDFTemplateResponse(TemplateResponse):
     url_fetcher_class = UrlFetcher
 
     def __init__(self, filename=None, *args, **kwargs):
-        kwargs['content_type'] = "application/pdf"
+        kwargs["content_type"] = "application/pdf"
         super(PDFTemplateResponse, self).__init__(*args, **kwargs)
         if filename:
-            self['Content-Disposition'] = 'attachment; filename="%s"' % filename
+            self["Content-Disposition"] = 'attachment; filename="%s"' % filename
         else:
-            self['Content-Disposition'] = 'attachment'
+            self["Content-Disposition"] = "attachment"
 
     def get_url_fetcher(self, base_url):
         return self.url_fetcher_class(self._request, base_url=base_url)
@@ -93,7 +100,7 @@ class PDFTemplateResponseMixin(TemplateResponseMixin):
         """
         Returns a response, giving the filename parameter to PDFTemplateResponse.
         """
-        kwargs['filename'] = self.get_filename()
+        kwargs["filename"] = self.get_filename()
         return super(PDFTemplateResponseMixin, self).render_to_response(*args, **kwargs)
 
 

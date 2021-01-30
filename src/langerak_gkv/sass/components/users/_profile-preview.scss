@@ -1,0 +1,97 @@
+@import "../../lib/colors";
+@import "../../lib/typography";
+
+$profile-preview-transparency: 0.5 !default;
+
+@mixin profile-preview-btn() {
+  display: block;
+  background: $font-color;
+  padding: 0.5rem 1rem;
+
+  transition: all 0.2s ease;
+
+  &:hover {
+    color: $font-color;
+    background: darken(white, 10%);
+    box-shadow: 2px 2px 5px 0 $shadow-form-inputs;
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 2px 2px 5px 0 $shadow-form-inputs;
+  }
+}
+
+.profile-preview {
+  padding: 1em;
+
+  &#{&}--flavour1 {
+    background: rgba($theme-purple, $profile-preview-transparency);
+  }
+
+  &#{&}--flavour2 {
+    background: rgba($theme-green-yellow, $profile-preview-transparency);
+  }
+
+  &#{&}--flavour3 {
+    background: rgba($theme-green, $profile-preview-transparency);
+  }
+
+  &#{&}--flavour4 {
+    background: rgba($font-color-light, $profile-preview-transparency);
+  }
+
+  &__picture {
+    margin: 0;
+    padding: 0;
+
+    > img {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  & &__first-name {
+    @include body;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 600;
+    display: block;
+  }
+
+  & &__last-name {
+    @include body;
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    display: block;
+  }
+
+  & &__phone {
+    @include body;
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    display: block;
+  }
+
+  & &__links {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    padding-top: 1em;
+  }
+
+  & &__email {
+    @include body;
+    @include profile-preview-btn;
+
+    color: darken(white, 10%);
+    font-size: 1.2rem;
+    text-decoration: none;
+  }
+
+  & &__goto {
+    @include profile-preview-btn;
+    font-size: 0;
+    clip-path: polygon(0% 0%, 100% 50%, 0% 100%);
+  }
+}

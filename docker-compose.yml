@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+  es:
+    image: elasticsearch:2.4-alpine
+    volumes:
+      - es_data:/usr/share/elasticsearch/data
+    environment:
+      - discovery.type=single-node
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+
+  web:
+    image: regexit/kerkwebsite:latest
+    volumes:
+      - .env:/app/.env
+      - /var/run/postgresql:/var/run/postgresql
+    env_file:
+      - .env
+    environment:
+      - SECRET_KEY=dummy
+      - DB_HOST=/var/run/postgresql
+      - ALLOWED_HOSTS=*
+    ports:
+      - "8000:8000"
+
+volumes:
+  es_data:
+    driver: local

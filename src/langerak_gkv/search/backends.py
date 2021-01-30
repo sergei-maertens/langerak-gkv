@@ -1,7 +1,8 @@
 from django.conf import settings
 
 from haystack.backends.elasticsearch_backend import (
-    ElasticsearchSearchBackend, ElasticsearchSearchEngine
+    ElasticsearchSearchBackend,
+    ElasticsearchSearchEngine,
 )
 
 
@@ -53,12 +54,14 @@ class ConfigurableElasticBackend(ElasticsearchSearchBackend):
         }
     }
     """
+
     def __init__(self, connection_alias, **connection_options):
         super(ConfigurableElasticBackend, self).__init__(
-                                connection_alias, **connection_options)
-        user_settings = getattr(settings, 'ELASTICSEARCH_INDEX_SETTINGS', None)
+            connection_alias, **connection_options
+        )
+        user_settings = getattr(settings, "ELASTICSEARCH_INDEX_SETTINGS", None)
         if user_settings is not None:
-            setattr(self, 'DEFAULT_SETTINGS', user_settings)
+            setattr(self, "DEFAULT_SETTINGS", user_settings)
 
     def build_search_kwargs(self, query_string, **kwargs):
         """
@@ -68,16 +71,22 @@ class ConfigurableElasticBackend(ElasticsearchSearchBackend):
         :param kwargs:
         :return:
         """
-        search_kwargs = super(ConfigurableElasticBackend, self).build_search_kwargs(query_string, **kwargs)
-        search_kwargs.update({
-            # 'minimum_should_match': '80%',
-        })
+        search_kwargs = super(ConfigurableElasticBackend, self).build_search_kwargs(
+            query_string, **kwargs
+        )
+        search_kwargs.update(
+            {
+                # 'minimum_should_match': '80%',
+            }
+        )
 
         # When executing a query always ensure the analyzer is 'snowball'. Otherwise
         # 'edgengram_analyzer' seems to be used, which incorrectly splits up the words in our
         # query leading to odd & too many matches
         try:
-            search_kwargs['query']['filtered']['query']['query_string']['analyzer'] = 'default'
+            search_kwargs["query"]["filtered"]["query"]["query_string"][
+                "analyzer"
+            ] = "default"
         except KeyError:
             pass
         return search_kwargs

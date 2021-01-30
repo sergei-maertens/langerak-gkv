@@ -1,20 +1,31 @@
-{% extends "users/base.html" %}{% load i18n thumbnail formatting %}
+{% extends "cms/base.html" %}
+{% load sniplates %}
 
+{% block content %}
+<article class="profile-list">
+    <span class="profile-list__search-icon"></span>
 
-{% block main-content %}
-    <div class="row gutter-small profile-list">
-        {% for relation in profiles %}
-            {% include "users/user_preview.html" %}
+    <section class="profile-list__profiles">
+
+        {% for profile in object_list %}
+            {% cycle '1' '2' '3' '4' as flavour silent %}
+            {% include "users/includes/profile_preview.html" with user=profile flavour=flavour only %}
         {% endfor %}
-    </div>
 
-    <div class="pull-left">
-        <a href="{% url 'users:search-pdf' %}?{{ search_form_qs }}">
-            <i class="fa fa-file-pdf-o"></i>
-            {% trans "export to pdf" %}
-        </a>
-    </div>
+        {% include "includes/pagination.html" with qs=search_form_qs %}
 
-    {% include "includes/pagination.html" with qs=search_form_qs %}
+    </section>
 
-{% endblock main-content %}
+    <aside class="profile-list__search">
+        <span class="profile-list__search-close">x</span>
+        {% include "users/user_search_form.html" with form=search_form|default:form %}
+    </aside>
+</article>
+{% endblock %}
+
+{% block stripes-bottom %}
+{% load_widgets skew='includes/skew-overlay.html' %}
+<div class="skew-overlay-container">
+    {% widget 'skew:skew-overlay--top' %}
+</div>
+{% endblock %}

@@ -1,5 +1,5 @@
-from django.conf.urls import include, url
+from django.urls import include, path
 
-urlpatterns = [
-    url(r'^activities/', include('langerak_gkv.activities.api.urls', namespace='activities')),
-]
+app_name = "api"
+
+urlpatterns = [path("activities/", include("langerak_gkv.activities.api.urls"))]

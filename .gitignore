@@ -29,10 +29,13 @@ local.py
 /langerak.sublime-project
 
 # dependencies
-src/langerak_gkv/static/vendor/
-node_modules
+/node_modules
 
 # testing
 .coverage
 /htmlcov
 /reports
+
+# Build artifacts
+src/langerak_gkv/static/css/
+src/langerak_gkv/static/js/

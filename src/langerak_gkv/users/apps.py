@@ -3,8 +3,8 @@ from django.utils.translation import ugettext_lazy as _
 
 
 class UsersConfig(AppConfig):
-    name = 'langerak_gkv.users'
-    verbose_name = _('users')
+    name = "langerak_gkv.users"
+    verbose_name = _("users")
 
     def ready(self):
         from . import signals  # noqa

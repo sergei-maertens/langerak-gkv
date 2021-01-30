@@ -1,0 +1,21 @@
+@mixin body() {
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: 300;  // light
+}
+
+@mixin page-title() {
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: 200;  // extra-light
+  font-style: italic;
+}
+
+@mixin title() {
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: 400;  // normal
+}
+
+@mixin subtitle() {
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: 600;  // extra-light
+  font-style: italic;
+}

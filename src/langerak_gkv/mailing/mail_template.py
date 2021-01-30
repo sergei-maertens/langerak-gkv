@@ -5,7 +5,9 @@ from __future__ import absolute_import, unicode_literals
 
 from django.core.exceptions import ValidationError
 from django.template import (  # TODO: should be able to specify engine
-    Context, Template, TemplateSyntaxError
+    Context,
+    Template,
+    TemplateSyntaxError,
 )
 from django.template.base import VariableNode
 from django.utils.translation import ugettext_lazy as _
@@ -13,7 +15,7 @@ from django.utils.translation import ugettext_lazy as _
 
 class MailTemplateValidator(object):
 
-    code = 'invalid'
+    code = "invalid"
 
     def __init__(self, template):
         self.template = template
@@ -37,11 +39,15 @@ class MailTemplateValidator(object):
 
             source = exc.django_template_source[0].source
             pz = exc.django_template_source[1]
-            highlighted_pz = ">>>>{0}<<<<".format(source[pz[0]:pz[1]])
-            source = '{0}{1}{2}'.format(source[:pz[0]], highlighted_pz, source[pz[1]:])
-            _error = _('TemplateSyntaxError: {0}').format(exc.args[0])
-            error = Template(error_tpl).render(Context({'error': _error, 'source': source}))
-            raise ValidationError(error, code='syntax_error')
+            highlighted_pz = ">>>>{0}<<<<".format(source[pz[0] : pz[1]])
+            source = "{0}{1}{2}".format(
+                source[: pz[0]], highlighted_pz, source[pz[1] :]
+            )
+            _error = _("TemplateSyntaxError: {0}").format(exc.args[0])
+            error = Template(error_tpl).render(
+                Context({"error": _error, "source": source})
+            )
+            raise ValidationError(error, code="syntax_error")
 
     def check_variables(self, template, field):
         variables_seen = set()
@@ -54,20 +60,20 @@ class MailTemplateValidator(object):
 
         missing_vars = required_vars - variables_seen
         if missing_vars:
-            message = _('These variables are required, but missing: {vars}').format(
+            message = _("These variables are required, but missing: {vars}").format(
                 vars=self._format_vars(missing_vars)
             )
             raise ValidationError({field: message}, code=self.code)
 
         unexpected_vars = variables_seen - required_vars - optional_vars
         if unexpected_vars:
-            message = _('These variables are present, but unexpected: {vars}').format(
+            message = _("These variables are present, but unexpected: {vars}").format(
                 vars=self._format_vars(unexpected_vars)
             )
             raise ValidationError({field: message}, code=self.code)
 
     def _format_vars(self, variables):
-        return ', '.join('{{{{ {} }}}}'.format(var) for var in variables)
+        return ", ".join("{{{{ {} }}}}".format(var) for var in variables)
 
 
 def validate_template(mail_template):
@@ -76,7 +82,7 @@ def validate_template(mail_template):
     """
     validator = MailTemplateValidator(mail_template)
     errors = []
-    for field in ['subject', 'body']:
+    for field in ["subject", "body"]:
         try:
             validator.validate(field)
         except ValidationError as error:

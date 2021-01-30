@@ -1,63 +1,44 @@
+html2text
 pip-tools
-psycopg2
+Pillow
+psycopg2<2.8  # fixed in django 2.2+
 python-dotenv
+raven
+requests
+uwsgi
+CairoSVG
+WeasyPrint
 
-Django<2.0
+Django<2.2
 
-Sphinx
-Pillow>=5.4.1
-django_compressor
+django-autoslug
 django-axes
+django-bleach
 django-choices
 django-sniplates
-easy-thumbnails
-django-class-based-auth-views
-django-image-cropping
-BeautifulSoup
-django-autoslug
-django-rosetta
-
 django-ical
-
-# news letter
-sorl-thumbnail
-django-newsletter==0.7
-
+django-image-cropping
 django-import-export
+django-leaflet
+django-rosetta
 django-password-reset
-
-# api/http
-requests
+django-yubin
 djangorestframework
+easy-thumbnails
 
 # cms
 django-sekizai
-django-cms<3.5
-djangocms-text-ckeditor>3.2
+django-cms
+djangocms-text-ckeditor
 django-filer
-cmsplugin-filer>=1.1.3
+djangocms-file
+djangocms-picture
 djangocms-link
 djangocms-column
 djangocms-oembed
-djangocms-grid
 djangocms-table
 djangocms-video
 
 # search
 elasticsearch<5.0
 django-haystack
-aldryn-search
-
-django-leaflet
-
-# mailing
-django-yubin
-html2text
-
-
-# PDF export
-CairoSVG<2.0
-WeasyPrint<43
-
-uwsgi
-raven

@@ -1,0 +1,61 @@
+{% extends "includes/forms/base.html" %}
+{% load sniplates i18n %}
+
+
+{% block TextInput %}
+<div class="field">
+    {% reuse "_label" bem_class="field__label" %}
+    {% reuse "input" input_type="text" bem_class="field__input" %}
+    {% reuse "_help_text" bem_class="field__help" %}
+</div>
+{% endblock TextInput %}
+
+{% block PasswordInput %}
+<div class="field">
+    {% reuse "_label" bem_class="field__label" %}
+    {% reuse "input" input_type="password" raw_value="" bem_class="field__input" %}
+    {% reuse "_help_text" bem_class="field__help" %}
+</div>
+{% endblock %}
+
+{% block NumberInput %}
+<div class="field">
+    {% reuse "_label" bem_class="field__label" %}
+    {% reuse "input" input_type="number" bem_class="field__input" %}
+    {% reuse "_help_text" bem_class="field__help" %}
+</div>
+{% endblock %}
+
+
+{# Select variations #}
+{% block Select %}
+<div class="field">
+    {% reuse "_label" bem_class="field__label" %}
+
+    <select name="{{ html_name }}" id="{{ id }}" {{ widget.attrs|flatattrs }}>
+    {% for choice in choices %}
+        {% reuse "_Select_Choice" choice=choice %}
+    {% endfor %}
+    </select>
+
+    {% reuse "_help_text" bem_class="field__help" %}
+</div>
+{% endblock %}
+
+{% block CheckboxSelectMultiple %}
+<div class="field">
+    {% reuse "_label" bem_class="field__label" %}
+    <ul id="{{ id }}" class="checkbox-select">
+    {% for val, display in choices %}
+        <li class="checkbox-select__option">
+            <input name="{{ html_name }}" type="checkbox" id="{{ id }}_{{ forloop.counter0 }}" value="{{ val }}" {% if val in value %}checked{% endif %}>
+            <span class="checkbox-select__checkbox"></span>
+            <label for="{{ id }}_{{ forloop.counter0 }}">
+                {{ display }}
+            </label>
+        </li>
+    {% endfor %}
+    </ul>
+    {% reuse "_help_text" bem_class="field__help" %}
+</div>
+{% endblock %}

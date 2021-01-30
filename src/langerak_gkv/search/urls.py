@@ -1,4 +1,4 @@
-from django.conf.urls import url
+from django.urls import path
 
 from haystack.forms import SearchForm as _SearchForm
 from haystack.query import SearchQuerySet
@@ -10,10 +10,17 @@ sqs = SearchQuerySet()
 class SearchForm(_SearchForm):
     def __init__(self, *args, **kwargs):
         super(SearchForm, self).__init__(*args, **kwargs)
-        self.fields['q'].required = True
+        self.fields["q"].required = True
 
+
+app_name = "search"
 
 urlpatterns = [
-    url(r'^$', SearchView(form_class=SearchForm, searchqueryset=sqs,
-                          template='search/results.html'), name='search'),
+    path(
+        "",
+        SearchView(
+            form_class=SearchForm, searchqueryset=sqs, template="search/results.html"
+        ),
+        name="search",
+    )
 ]

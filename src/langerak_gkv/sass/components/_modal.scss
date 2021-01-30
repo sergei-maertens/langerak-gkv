@@ -1,0 +1,74 @@
+@import "../lib/typography";
+@import "../lib/colors";
+
+$modal-backdrop-color: rgba(0, 0, 0, 0.5);
+
+@mixin cover-screen($z-index: 3) {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: $z-index;
+  width: 100vw;
+  height: 100vh;
+}
+
+.modal {
+  @include cover-screen;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &#{&}--inactive {
+    display: none;
+  }
+
+  & &__backdrop {
+    @include cover-screen(4);
+    background: $modal-backdrop-color;
+  }
+
+  & &__close {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    display: block;
+    width: 1em;
+    cursor: pointer;
+
+    line-height: 1em;
+    font-size: 2rem;
+    text-align: center;
+    color: $font-color;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  & &__title {
+    @include page-title;
+    margin: 0 0 1em;
+    font-size: 1.6rem;
+  }
+
+  & &__content {
+    @include body;
+
+    position: relative;
+    z-index: 5;
+
+    background: white;
+    box-shadow: 2px 2px 5px 0 $shadow-form-inputs;
+
+    min-width: 30vw;
+    min-height: 25vh;
+    max-width: 600px;
+    max-height: 75vh;
+
+    padding: 2em;
+  }
+}

@@ -1,0 +1,65 @@
+@import "../lib/responsive";
+@import "../lib/typography";
+
+$calendar-item-icon-size: 4rem;
+
+.calendar-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em;
+
+  @include mobile-only {
+    &:nth-child(4),
+    &:nth-child(5) {
+      display: none;
+    }
+  }
+
+  & &__date {
+    background-image: url('../img/kalender.svg');
+    background-repeat: no-repeat;
+    background-size: $calendar-item-icon-size;
+
+    width: $calendar-item-icon-size;
+    height: $calendar-item-icon-size;
+    padding-top: 1.6rem;
+
+    text-align: center;
+  }
+
+  & &__date-day {
+    @include body;
+    display: block;
+    color: white;
+    font-weight: 600;
+  }
+
+  & &__date-month {
+    @include body;
+    font-weight: 300;
+    display: block;
+    color: white;
+    font-size: 0.8rem;
+  }
+
+  & &__info {
+    @include body;
+    width: 250px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0.4em 0em 0.4em 1rem;
+    color: white;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    @include mobile-only {
+      width: 100px;
+    }
+  }
+
+}

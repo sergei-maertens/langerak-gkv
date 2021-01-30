@@ -14,5 +14,5 @@ class SocietyDetailView(DetailView):
         return super(SocietyDetailView, self).get_queryset(**kwargs)
 
     def dispatch(self, request, *args, **kwargs):
-        messages.warning(request, _('This page is only visible for content editors'))
+        messages.warning(request, _("This page is only visible for content editors"))
         return super(SocietyDetailView, self).dispatch(request, *args, **kwargs)

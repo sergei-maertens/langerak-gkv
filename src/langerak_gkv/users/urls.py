@@ -1,17 +1,24 @@
-from django.conf.urls import url
+from django.urls import include, path
 
 from .views import (
-    LoginView, LogoutView, UpdateProfileView, UserListView, UserProfileView,
-    UserSearchPDFView, UserSearchView
+    LoginView,
+    LogoutView,
+    UpdateProfileView,
+    UserListView,
+    UserProfileView,
+    UserSearchPDFView,
+    UserSearchView,
 )
 
-urlpatterns = [
-    url(r'^$', UserListView.as_view(), name='list'),
-    url(r'^search/$', UserSearchView.as_view(), name='search'),
-    url(r'^search/pdf/$', UserSearchPDFView.as_view(), name='search-pdf'),
-    url(r'^me/$', UpdateProfileView.as_view(), name='profile-edit'),
-    url(r'^(?P<pk>\d+)/$', UserProfileView.as_view(), name='profile'),
+app_name = "users"
 
-    url(r'^login/$', LoginView.as_view(), name='login'),
-    url(r'^logout/$', LogoutView.as_view(), name='logout'),
+urlpatterns = [
+    path("", UserListView.as_view(), name="list"),
+    path("password/", include("password_reset.urls")),
+    path("search/", UserSearchView.as_view(), name="search"),
+    path("search/pdf/", UserSearchPDFView.as_view(), name="search-pdf"),
+    path("me/", UpdateProfileView.as_view(), name="profile-edit"),
+    path("<int:pk>/", UserProfileView.as_view(), name="profile"),
+    path("login/", LoginView.as_view(), name="login"),
+    path("logout/", LogoutView.as_view(), name="logout"),
 ]

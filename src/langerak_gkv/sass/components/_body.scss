@@ -1,0 +1,36 @@
+@import '../lib/responsive';
+
+$body-background: #d1d1d1 !default;
+$body-content-width: 1280px !default;
+$body-content-default-background: white !default;
+
+body {
+  background: $body-background;
+  min-height: 100vh;
+  position: relative;
+
+  &, & * {
+    box-sizing: border-box;
+  }
+
+  .page-header,
+  main,
+  .page-footer {
+    width: $body-content-width;
+    margin: 0 auto;
+  }
+
+  main {
+    background: $body-content-default-background;
+  }
+}
+
+@include mobile-only {
+  body {
+    .page-header,
+    main,
+    .page-footer {
+      width: auto;
+    }
+  }
+}

@@ -1,0 +1,42 @@
+@import "../../lib/colors";
+
+$field-input-vertical-padding: 0.2em;
+$field-border-thickness-increase: 2px;
+
+.field {
+  display: block;
+
+  color: $font-color;
+  font-size: 1.2rem;
+
+  & + & {
+    margin-top: 1.2em;
+  }
+
+  & &__label {
+    display: block;
+  }
+
+  & &__input {
+    display: block;
+    width: 100%;
+    color: $theme-green;
+
+    border: none;
+    border-bottom: solid 2px $theme-green;
+
+    margin-top: 0.2em;
+    padding: $field-input-vertical-padding 0.3em;
+
+    &:focus {
+      outline: none;
+      box-shadow: 2px 1px 3px 0 #CCCCCC;
+      border-bottom-width: 2px + $field-border-thickness-increase;
+      padding-bottom: calc($field-input-vertical-padding - $field-border-thickness-increase);
+    }
+  }
+
+  & &__help {
+    display: block;
+  }
+}

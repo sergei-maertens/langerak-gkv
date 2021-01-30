@@ -1,0 +1,16 @@
+<article class="calendar-item">
+
+    <header class="calendar-item__date">
+        <span class="calendar-item__date-day">{{ item.start_date|date:"d" }}</span>
+        <span class="calendar-item__date-month">{{ item.start_date|date:"b" }}</span>
+    </header>
+
+    <a class="calendar-item__info" href="{{ item.get_absolute_url }}">
+        {% if item.liturgy_id %}
+            {{ item.liturgy.service.time|time:"H:i" }} uur
+        {% else %}
+            {{ item.name }}
+        {% endif %}
+    </a>
+
+</article>

@@ -1,1 +1,1 @@
-default_app_config = 'langerak_gkv.users.apps.UsersConfig'
+default_app_config = "langerak_gkv.users.apps.UsersConfig"

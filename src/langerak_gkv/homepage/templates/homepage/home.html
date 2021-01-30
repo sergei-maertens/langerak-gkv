@@ -1,76 +1,43 @@
-{% extends "cms/base.html" %}{% load i18n static thumbnail koningskerk_tags cms_tags users %}
+{% extends "cms/base.html" %}
+{% load i18n static thumbnail koningskerk_tags cms_tags users sniplates %}
 
 {% block body-class %}{{ block.super }} home{% endblock body-class %}
 
 {% block content %}
-<div class="row">
 
-    <div class="col-md-8">
+{% load_widgets skew='includes/skew-overlay.html' %}
 
-        {% block home-body %}
+<section class="homepage">
 
-        <section class="activities">
-            <div class="row">
+    {# Top row - with images #}
+    <section class="homepage__row homepage__row--top">
+        {% with True as has_image %}
+            {% placeholder slot11 %}
+            {% placeholder slot12 %}
+            {% placeholder slot13 %}
+        {% endwith %}
+    </section>
 
-                <div class="col-md-6">
-                    {% with linkid='1' %}
-                        {% placeholder slot1 or %}
-                            {% with activity=activities|pop %}
-                                {% include "homepage/includes/activity.html" %}
-                            {% endwith %}
-                        {% endplaceholder %}
-                    {% endwith %}
-                </div>
+    {# Top row - without images #}
+    <section class="homepage__row homepage__row--middle">
+        {% widget 'skew:skew-overlay--top' %}
 
-                <div class="col-md-6">
-                    {% with linkid='1' %}
-                        {% placeholder slot2 or %}
-                            {% with activity=activities|pop %}
-                                {% include "homepage/includes/activity.html" %}
-                            {% endwith %}
-                        {% endplaceholder %}
-                    {% endwith %}
-                </div>
+        {% placeholder slot21 %}
+        {% placeholder slot22 %}
+        {% placeholder slot23 %}
 
-            </div>
+        {% widget 'skew:skew-overlay--bottom' %}
+    </section>
 
-            <div class="row">
+    {# Top row - with images #}
+    <section class="homepage__row homepage__row--bottom">
+        {% with True as has_image %}
+            {% placeholder slot31 %}
+            {% placeholder slot32 %}
+            {% placeholder slot33 %}
+        {% endwith %}
+    </section>
 
-                <div class="col-md-6">
-                    {% with linkid='2' %}
-                        {% placeholder slot3 or %}
-                            {% with activity=activities|pop %}
-                                {% include "homepage/includes/activity.html" %}
-                            {% endwith %}
-                        {% endplaceholder %}
-                    {% endwith %}
-                </div>
+</section>
 
-                <div class="col-md-6">
-                    {% with linkid='2' %}
-                        {% placeholder slot4 or %}
-                            {% with activity=activities|pop %}
-                                {% include "homepage/includes/activity.html" %}
-                            {% endwith %}
-                        {% endplaceholder %}
-                    {% endwith %}
-                </div>
-
-            </div>
-        </section>
-
-        <section class="news">
-            {% placeholder misc %}
-        </section>
-
-        {% endblock %}
-
-    </div>
-
-
-    <aside class="col-md-4">
-        {% include "homepage/includes/sidebar.html" %}
-    </aside>
-
-</div>
 {% endblock %}
