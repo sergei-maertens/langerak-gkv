@@ -12,4 +12,14 @@
 {% placeholder page_content or %}
     {% trans "Put your content here" %}
 {% endplaceholder %}
+
+<aside class="page-stats">
+    {% page_attribute "changed_date" as last_changed %}
+
+    {% blocktrans with changed=last_changed|date:"Y-m-d H:i" changed_since=last_changed|timesince trimmed%}
+    Last changed: <time datetime="{{ changed }}" title="{{ changed }}">{{ changed_since }}</time> ago
+    {% endblocktrans %}
+</aside>
+
+
 {% endblock %}
