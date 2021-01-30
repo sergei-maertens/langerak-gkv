@@ -46,19 +46,17 @@ $calendar-item-icon-size: 4rem;
   & &__info {
     @include body;
     width: 250px;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
+    display: block;
+    // justify-content: flex-start;
+    // align-items: center;
     padding: 0.4em 0em 0.4em 1rem;
     color: white;
     text-decoration: none;
 
     &:hover {
-      text-decoration: underline;
-    }
-
-    @include mobile-only {
-      width: 100px;
+      .calendar-item__title {
+        text-decoration: underline;
+      }
     }
   }
 

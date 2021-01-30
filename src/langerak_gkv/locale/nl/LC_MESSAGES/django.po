@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-12-30 19:01+0100\n"
+"POT-Creation-Date: 2021-01-30 17:47+0100\n"
 "PO-Revision-Date: 2016-10-16 19:42+0020\n"
 "Last-Translator: Sergei Maertens <sergeimaertens@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,8 +26,7 @@ msgstr "Activiteiten"
 #: src/langerak_gkv/activities/models.py:34
 #: src/langerak_gkv/activities/models.py:113
 #: src/langerak_gkv/activities/models.py:124
-#: src/langerak_gkv/homepage/models.py:14
-#: src/langerak_gkv/liturgies/models.py:12
+#: src/langerak_gkv/liturgies/models.py:11
 #: src/langerak_gkv/societies/models.py:13 src/langerak_gkv/users/models.py:262
 #: src/langerak_gkv/users/models.py:273 src/langerak_gkv/users/models.py:293
 msgid "name"
@@ -162,46 +161,13 @@ msgstr "afbeelding"
 msgid "Save"
 msgstr "Bewaren"
 
-#: src/langerak_gkv/activities/templates/activities/base.html:13
-msgid "Calendar view"
-msgstr "Kalenderweergave"
-
-#: src/langerak_gkv/activities/templates/activities/base.html:18
-msgid "Week view"
-msgstr "Weekweergave"
-
-#: src/langerak_gkv/activities/templates/activities/base.html:23
-msgid "Day view"
-msgstr "Dagweergave"
-
-#: src/langerak_gkv/activities/templates/activities/base.html:32
-msgid "Find in calendar"
-msgstr "Zoek in de kalender"
-
-#: src/langerak_gkv/activities/templates/activities/base.html:53
-#, python-format
-msgid ""
-"\n"
-"                1 activity\n"
-"                "
-msgid_plural ""
-"\n"
-"                %(count)s activities\n"
-"            "
-msgstr[0] ""
-"\n"
-"1 activiteit"
-msgstr[1] ""
-"\n"
-"%(count)s activiteiten"
-
-#: src/langerak_gkv/activities/templates/activities/base.html:74
-msgid "Add activity"
-msgstr "activiteit toevoegen"
-
-#: src/langerak_gkv/activities/templates/activities/base.html:83
+#: src/langerak_gkv/activities/templates/activities/base.html:15
 msgid "iCal feed"
 msgstr "iCal feed"
+
+#: src/langerak_gkv/activities/templates/activities/base.html:20
+msgid "Add activity"
+msgstr "activiteit toevoegen"
 
 #: src/langerak_gkv/activities/templates/activities/searchresults.html:9
 #, python-format
@@ -273,59 +239,39 @@ msgstr "Homepagina linkblok"
 msgid "Simple text"
 msgstr "Eenvoudige tekst"
 
-#: src/langerak_gkv/homepage/models.py:15 src/langerak_gkv/mailing/models.py:22
-msgid "email"
-msgstr "e-mail"
-
-#: src/langerak_gkv/homepage/models.py:16
-msgid "What should we pray for?"
-msgstr "Waarvoor moeten we bidden?"
-
-#: src/langerak_gkv/homepage/models.py:17
-msgid "replied"
-msgstr "beantwoord"
-
-#: src/langerak_gkv/homepage/models.py:23
-msgid "prayer on demand"
-msgstr "prayer on demand"
-
-#: src/langerak_gkv/homepage/models.py:24
-msgid "prayer on demands"
-msgstr "prayer on demands"
-
-#: src/langerak_gkv/homepage/models.py:31
+#: src/langerak_gkv/homepage/models.py:14
 msgid "title"
 msgstr "titel"
 
-#: src/langerak_gkv/homepage/models.py:33
+#: src/langerak_gkv/homepage/models.py:16
 msgid "image"
 msgstr "afbeelding"
 
-#: src/langerak_gkv/homepage/models.py:36
+#: src/langerak_gkv/homepage/models.py:19
 msgid "Block image - note that only rows 1 and 3 display images. "
 msgstr ""
-"Blokafbeelding - merk op dat enkel op de eerste en derde rij "
-"afbeeldingen getoond worden."
+"Blokafbeelding - merk op dat enkel op de eerste en derde rij afbeeldingen "
+"getoond worden."
 
-#: src/langerak_gkv/homepage/models.py:42 src/langerak_gkv/users/models.py:275
+#: src/langerak_gkv/homepage/models.py:25 src/langerak_gkv/users/models.py:275
 msgid "description"
 msgstr "beschrijving"
 
-#: src/langerak_gkv/homepage/models.py:42
+#: src/langerak_gkv/homepage/models.py:25
 msgid "Displayed below the title"
 msgstr "Word afgebeeld onder de titel"
 
-#: src/langerak_gkv/homepage/models.py:44
+#: src/langerak_gkv/homepage/models.py:27
 #: src/langerak_gkv/societies/models.py:33
 msgid "page"
 msgstr "pagina"
 
-#: src/langerak_gkv/homepage/models.py:44
+#: src/langerak_gkv/homepage/models.py:27
 #: src/langerak_gkv/societies/models.py:33
 msgid "Page to link to"
 msgstr "Pagina om naar te verwijzen"
 
-#: src/langerak_gkv/homepage/models.py:52
+#: src/langerak_gkv/homepage/models.py:35
 msgid "text"
 msgstr "tekst"
 
@@ -335,15 +281,6 @@ msgstr "tekst"
 #: src/langerak_gkv/societies/templates/societies/cmsplugin/society.html:11
 msgid "Read more"
 msgstr "Lees meer"
-
-#: src/langerak_gkv/homepage/templates/homepage/includes/pod.html:7
-#: src/langerak_gkv/homepage/views.py:43
-msgid "Prayer on demand"
-msgstr "Prayer on demand"
-
-#: src/langerak_gkv/homepage/templates/homepage/includes/pod.html:8
-msgid "Fill the form and our prayer group will pray for you."
-msgstr "Vul het formulier in en onze gebedsgroep zal bidden voor je."
 
 #: src/langerak_gkv/homepage/templates/homepage/includes/sidebar.html:4
 #: src/langerak_gkv/homepage/templates/homepage/includes/sidebar.html:15
@@ -370,24 +307,13 @@ msgstr "Geen aankomende activiteiten"
 msgid "Upcoming birthdays"
 msgstr "Aankomende verjaardagen"
 
-#: src/langerak_gkv/homepage/views.py:26
-msgid "Your request was received, we will pray for you."
-msgstr "Je verzoek is ontvangen, we zullen voor je bidden."
-
-#: src/langerak_gkv/homepage/views.py:40
-#, python-brace-format
-msgid "A new 'Prayer on Demand' was submitted. You can view this at {uri}"
-msgstr ""
-"Er werd een nieuwe 'Prayer on Demand' toegevoegd. Je kan deze bekijken op "
-"{uri}"
-
-#: src/langerak_gkv/liturgies/admin/__init__.py:81
+#: src/langerak_gkv/liturgies/admin/__init__.py:82
 #: src/langerak_gkv/liturgies/admin/views.py:52
 msgid "The email has been put on the queue and will be send shortly"
 msgstr ""
 "De e-mail werd op de wachtlijst geplaatst en zal binnenkort verstuurd worden"
 
-#: src/langerak_gkv/liturgies/admin/__init__.py:124
+#: src/langerak_gkv/liturgies/admin/__init__.py:125
 msgid "view email recipients"
 msgstr "bekijk e-mail ontvangers"
 
@@ -404,7 +330,7 @@ msgstr ""
 "Kon de tijd %s niet parsen. Let er op dat het 'service__time' veld als tekst "
 "geformatteeerd is."
 
-#: src/langerak_gkv/liturgies/apps.py:7 src/langerak_gkv/liturgies/models.py:58
+#: src/langerak_gkv/liturgies/apps.py:7 src/langerak_gkv/liturgies/models.py:63
 msgid "liturgies"
 msgstr "kerkdiensten"
 
@@ -417,135 +343,145 @@ msgstr "Kerkdiensten"
 msgid "liturgies menu"
 msgstr "kerdienstenmenu"
 
-#: src/langerak_gkv/liturgies/models.py:19
+#: src/langerak_gkv/liturgies/models.py:18
 msgid "date"
 msgstr "datum"
 
-#: src/langerak_gkv/liturgies/models.py:21
+#: src/langerak_gkv/liturgies/models.py:20
 msgid "service"
 msgstr "dienst"
 
-#: src/langerak_gkv/liturgies/models.py:23
+#: src/langerak_gkv/liturgies/models.py:22
 msgid "preacher"
 msgstr "predikant"
 
-#: src/langerak_gkv/liturgies/models.py:24
+#: src/langerak_gkv/liturgies/models.py:23
 msgid "preach author"
 msgstr "auteur preek"
 
-#: src/langerak_gkv/liturgies/models.py:25
+#: src/langerak_gkv/liturgies/models.py:24
 msgid "main section"
 msgstr "hoofdgedeelte"
 
-#: src/langerak_gkv/liturgies/models.py:26
+#: src/langerak_gkv/liturgies/models.py:25
 msgid "main chapter"
 msgstr "hoofd-hoofdstuk"
 
-#: src/langerak_gkv/liturgies/models.py:27
+#: src/langerak_gkv/liturgies/models.py:26
 msgid "main verse"
 msgstr "hoofdvers"
 
-#: src/langerak_gkv/liturgies/models.py:28
+#: src/langerak_gkv/liturgies/models.py:27
 msgid "service theme"
 msgstr "theme dienst"
 
-#: src/langerak_gkv/liturgies/models.py:29
+#: src/langerak_gkv/liturgies/models.py:28
 msgctxt "admin field"
 msgid "liturgy"
 msgstr "liturgie"
 
-#: src/langerak_gkv/liturgies/models.py:31
+#: src/langerak_gkv/liturgies/models.py:30
+#, fuzzy
+#| msgid "Audio download"
+msgid "download"
+msgstr "Audiodownload"
+
+#: src/langerak_gkv/liturgies/models.py:33
+msgid "Downloadable attachment, for example a Word file."
+msgstr ""
+
+#: src/langerak_gkv/liturgies/models.py:36
 msgid "audiofile"
 msgstr "mp3-bestand"
 
-#: src/langerak_gkv/liturgies/models.py:34
+#: src/langerak_gkv/liturgies/models.py:39
 msgid "beamist"
 msgstr "beamist"
 
-#: src/langerak_gkv/liturgies/models.py:37
+#: src/langerak_gkv/liturgies/models.py:42
 msgid "organist"
 msgstr "organist"
 
-#: src/langerak_gkv/liturgies/models.py:40
+#: src/langerak_gkv/liturgies/models.py:45
 msgid "collection goal 1"
 msgstr "collecte 1"
 
-#: src/langerak_gkv/liturgies/models.py:43
+#: src/langerak_gkv/liturgies/models.py:48
 msgid "collection goal 2"
 msgstr "collecte 2"
 
-#: src/langerak_gkv/liturgies/models.py:46
+#: src/langerak_gkv/liturgies/models.py:51
 msgid "collection goal 3"
 msgstr "collecte 3"
 
-#: src/langerak_gkv/liturgies/models.py:48
+#: src/langerak_gkv/liturgies/models.py:53
 msgid "extra information"
 msgstr "extra informatie"
 
-#: src/langerak_gkv/liturgies/models.py:51
+#: src/langerak_gkv/liturgies/models.py:56
 msgid "other churches"
 msgstr "andere kerken"
 
-#: src/langerak_gkv/liturgies/models.py:54
+#: src/langerak_gkv/liturgies/models.py:59
 msgid "remarks (internal)"
 msgstr "opmerkingen (intern)"
 
-#: src/langerak_gkv/liturgies/models.py:57
-#: src/langerak_gkv/liturgies/models.py:125
+#: src/langerak_gkv/liturgies/models.py:62
+#: src/langerak_gkv/liturgies/models.py:130
 #: src/langerak_gkv/liturgies/signals.py:17
 msgid "liturgy"
 msgstr "kerkdienst"
 
-#: src/langerak_gkv/liturgies/models.py:96
+#: src/langerak_gkv/liturgies/models.py:101
 #: src/langerak_gkv/liturgies/tests/test_liturgy_model.py:18
 #: src/langerak_gkv/liturgies/tests/test_liturgy_model.py:19
 msgid "morning"
 msgstr "ochtend"
 
-#: src/langerak_gkv/liturgies/models.py:98
+#: src/langerak_gkv/liturgies/models.py:103
 #: src/langerak_gkv/liturgies/tests/test_liturgy_model.py:20
 msgid "afternoon"
 msgstr "namiddag"
 
-#: src/langerak_gkv/liturgies/models.py:99
+#: src/langerak_gkv/liturgies/models.py:104
 #: src/langerak_gkv/liturgies/tests/test_liturgy_model.py:21
 msgid "evening"
 msgstr "avond"
 
-#: src/langerak_gkv/liturgies/models.py:103
+#: src/langerak_gkv/liturgies/models.py:108
 msgid "service name"
 msgstr "naam dienst"
 
-#: src/langerak_gkv/liturgies/models.py:104
+#: src/langerak_gkv/liturgies/models.py:109
 msgid "service time"
 msgstr "tijd dienst"
 
-#: src/langerak_gkv/liturgies/models.py:112
+#: src/langerak_gkv/liturgies/models.py:117
 #, python-format
 msgid "preacher (%s)"
 msgstr "predikant (%s)"
 
-#: src/langerak_gkv/liturgies/models.py:113
+#: src/langerak_gkv/liturgies/models.py:118
 #, python-format
 msgid "koster (%s)"
 msgstr "koster (%s)"
 
-#: src/langerak_gkv/liturgies/models.py:114
+#: src/langerak_gkv/liturgies/models.py:119
 #, python-format
 msgid "beamist (%s)"
 msgstr "beamist (%s)"
 
-#: src/langerak_gkv/liturgies/models.py:115
+#: src/langerak_gkv/liturgies/models.py:120
 #, python-format
 msgid "organist (%s)"
 msgstr "organist (%s)"
 
-#: src/langerak_gkv/liturgies/models.py:117
+#: src/langerak_gkv/liturgies/models.py:122
 #, python-format
 msgid "bible group (%s)"
 msgstr "bijbelleesgroep (%s)"
 
-#: src/langerak_gkv/liturgies/models.py:121
+#: src/langerak_gkv/liturgies/models.py:126
 #, python-format
 msgid "preach creation (%s)"
 msgstr "preekvoorziening (%s)"
@@ -609,27 +545,35 @@ msgid "Preacher"
 msgstr "Predikant"
 
 #: src/langerak_gkv/liturgies/templates/liturgies/detail.html:50
-#: src/langerak_gkv/liturgies/templates/liturgies/detail.html:55
 msgid "not yet known..."
 msgstr "nog onbekend..."
 
-#: src/langerak_gkv/liturgies/templates/liturgies/detail.html:54
-msgid "Preach made by"
-msgstr "Preek gemaakt door"
-
-#: src/langerak_gkv/liturgies/templates/liturgies/detail.html:61
+#: src/langerak_gkv/liturgies/templates/liturgies/detail.html:56
 #, python-format
 msgid "Collection %(i)s"
 msgstr "Collecte %(i)s"
 
-#: src/langerak_gkv/liturgies/templates/liturgies/detail.html:69
+#: src/langerak_gkv/liturgies/templates/liturgies/detail.html:63
+#: src/langerak_gkv/liturgies/templates/liturgies/detail.html:67
+#, fuzzy
+#| msgid "Audio download"
+msgid "Download"
+msgstr "Audiodownload"
+
+#: src/langerak_gkv/liturgies/templates/liturgies/detail.html:70
+#, fuzzy
+#| msgid "No audio file available"
+msgid "No download available"
+msgstr "Geen audiobestand beschikbaar"
+
+#: src/langerak_gkv/liturgies/templates/liturgies/detail.html:77
 #: src/langerak_gkv/liturgies/templates/liturgies/mail.html:25
 #: src/langerak_gkv/mailing/models.py:31
-#: src/langerak_gkv/search/templates/search/liturgy_item.html:6
+#: src/langerak_gkv/templates/includes/calendar-item.html:11
 msgid "Liturgy"
 msgstr "Kerkdienst"
 
-#: src/langerak_gkv/liturgies/templates/liturgies/detail.html:71
+#: src/langerak_gkv/liturgies/templates/liturgies/detail.html:79
 msgid "not yet know, please come back later!"
 msgstr "nog niet bekend, kom later nog eens terug!"
 
@@ -701,6 +645,10 @@ msgstr "Deze variabelen zijn verplicht, maar ontbreken: {vars}"
 msgid "These variables are present, but unexpected: {vars}"
 msgstr "Deze variabelen zijn onverwatch aanwezig: {vars}"
 
+#: src/langerak_gkv/mailing/models.py:22
+msgid "email"
+msgstr "e-mail"
+
 #: src/langerak_gkv/mailing/models.py:23
 msgid "emails"
 msgstr "e-mails"
@@ -729,38 +677,17 @@ msgstr "E-mail sjabloon"
 msgid "mail templates"
 msgstr "E-mail sjablonen"
 
-#: src/langerak_gkv/mailing/views.py:10
-#, python-brace-format
-msgid "You have successfully subscribed to \"{newsletter}\""
-msgstr "Je bent succesvol ingeschreven op '{newsletter}'"
+#: src/langerak_gkv/search/cms_apps.py:8
+#: src/langerak_gkv/users/templates/users/user_search_form.html:9
+#: src/langerak_gkv/users/templates/users/user_search_form.html:28
+msgid "Search"
+msgstr "Zoek"
 
-#: src/langerak_gkv/mailing/views.py:11
-#, python-brace-format
-msgid "You have successfully updated your subscription to \"{newsletter}\""
-msgstr "Je hebt succesvol je abonnement op '{newsletter}' bijgewerkt"
-
-#: src/langerak_gkv/mailing/views.py:12
-#, python-brace-format
-msgid "You have successfully unsubscribed from \"{newsletter}\""
-msgstr "Je bent succesvol uitgeschreven van '{newsletter}'"
-
-#: src/langerak_gkv/search/templates/search/activity_item.html:6
-msgid "Calendar"
-msgstr "Kalender"
-
-#: src/langerak_gkv/search/templates/search/base_item.html:14
-msgid "Other"
-msgstr "Overige"
-
-#: src/langerak_gkv/search/templates/search/cms_item.html:6
-msgid "Page"
-msgstr "Pagina"
-
-#: src/langerak_gkv/search/templates/search/results.html:3
+#: src/langerak_gkv/search/templates/search/results.html:4
 msgid "Search results"
 msgstr "Zoekresultaten"
 
-#: src/langerak_gkv/search/templates/search/results.html:22
+#: src/langerak_gkv/search/templates/search/results.html:14
 msgid "Sorry, no items match your search criteria."
 msgstr "Sorry, er zijn geen zoekresultaten gevonden."
 
@@ -809,131 +736,34 @@ msgstr "Verzend"
 msgid "Follow link"
 msgstr "Volg link"
 
-#: src/langerak_gkv/templates/includes/header.html:25
+#: src/langerak_gkv/templates/includes/header.html:45
 msgid "search field"
 msgstr "Zoeken"
 
-#: src/langerak_gkv/templates/includes/header.html:32
+#: src/langerak_gkv/templates/includes/header.html:52
 msgid "my profile"
 msgstr "profiel"
 
-#: src/langerak_gkv/templates/includes/header.html:35
+#: src/langerak_gkv/templates/includes/header.html:55
 #, python-format
 msgid "Log out (%(name)s)"
 msgstr "Uitloggen (%(name)s)"
 
-#: src/langerak_gkv/templates/includes/header.html:41
+#: src/langerak_gkv/templates/includes/header.html:61
 #: src/langerak_gkv/templates/includes/modals/login.html:8
 #: src/langerak_gkv/templates/includes/modals/login.html:18
 #: src/langerak_gkv/users/templates/users/login.html:17
 msgid "Login"
 msgstr "Inloggen"
 
+#: src/langerak_gkv/templates/includes/header.html:79
+msgid "To calendar"
+msgstr "Ga naar de kalender"
+
 #: src/langerak_gkv/templates/includes/modals/login.html:17
 #: src/langerak_gkv/users/templates/users/login.html:19
 msgid "Forgot password?"
 msgstr "Wachtwoord vergeten?"
-
-#: src/langerak_gkv/templates/newsletter/subscription_activate.html:4
-msgid "Activate newsletter subscription"
-msgstr "Activeer nieuwsbriefinschrijving"
-
-#: src/langerak_gkv/templates/newsletter/subscription_activate.html:10
-#, python-format
-msgid ""
-"\n"
-"        Activate your subscription for the '%(name)s' newsletter\n"
-"        "
-msgstr ""
-"\n"
-"Activeer je abonnement voor de '%(name)s' nieuwsbrief"
-
-#: src/langerak_gkv/templates/newsletter/subscription_activate.html:14
-#, python-format
-msgid ""
-"\n"
-"        Confirm your cancellation for the '%(name)s' newsletter\n"
-"        "
-msgstr ""
-"\n"
-"Bevestig je uitschrijving op de '%(name)s' nieuwsbrief"
-
-#: src/langerak_gkv/templates/newsletter/subscription_activate.html:18
-#, python-format
-msgid ""
-"\n"
-"        Update your subscription for the '%(name)s' newsletter\n"
-"        "
-msgstr ""
-"\n"
-"Update je abonnement voor de '%(name)s' nieuwsbrief"
-
-#: src/langerak_gkv/templates/newsletter/subscription_activate.html:34
-msgid "Confirm"
-msgstr "Bevestigen"
-
-#: src/langerak_gkv/templates/newsletter/subscription_subscribe.html:4
-#: src/langerak_gkv/templates/newsletter/subscription_subscribe_user.html:4
-msgid "Newsletter subscribe"
-msgstr "Abonneren op nieuwsbrief"
-
-#: src/langerak_gkv/templates/newsletter/subscription_subscribe.html:10
-#: src/langerak_gkv/templates/newsletter/subscription_subscribe_user.html:10
-#, python-format
-msgid "Subscribe to '%(name)s'"
-msgstr "Abonneren op '%(name)s'"
-
-#: src/langerak_gkv/templates/newsletter/subscription_subscribe.html:15
-#: src/langerak_gkv/templates/newsletter/subscription_unsubscribe.html:14
-msgid ""
-"Due to a technical error we were not able to submit your confirmation email. "
-"This could be because your email address is invalid."
-msgstr ""
-"Door een technisch probleem konden we je bevestigingsemail niet versturen. "
-"Dit kan gebeuren als je e-mailadres ongeldig is."
-
-#: src/langerak_gkv/templates/newsletter/subscription_subscribe.html:29
-msgid "Activate"
-msgstr "Activeren"
-
-#: src/langerak_gkv/templates/newsletter/subscription_subscribe_user.html:13
-msgid "Do you want to subscribe to this newsletter?"
-msgstr "Wil je je abonneren op deze nieuwsbrief?"
-
-#: src/langerak_gkv/templates/newsletter/subscription_subscribe_user.html:19
-msgid "Subscribe"
-msgstr "Abonneren"
-
-#: src/langerak_gkv/templates/newsletter/subscription_unsubscribe.html:4
-#: src/langerak_gkv/templates/newsletter/subscription_unsubscribe_email_sent.html:4
-#: src/langerak_gkv/templates/newsletter/subscription_unsubscribe_user.html:4
-msgid "Newsletter unsubscribe"
-msgstr "Uitschrijven van nieuwsbrief"
-
-#: src/langerak_gkv/templates/newsletter/subscription_unsubscribe.html:9
-#: src/langerak_gkv/templates/newsletter/subscription_unsubscribe_email_sent.html:9
-#: src/langerak_gkv/templates/newsletter/subscription_unsubscribe_user.html:9
-#, python-format
-msgid "Unsubscribe from '%(name)s'"
-msgstr "Uitschrijven van '%(name)s'"
-
-#: src/langerak_gkv/templates/newsletter/subscription_unsubscribe.html:28
-#: src/langerak_gkv/templates/newsletter/subscription_unsubscribe_user.html:18
-msgid "Unsubscribe"
-msgstr "Uitschrijven"
-
-#: src/langerak_gkv/templates/newsletter/subscription_unsubscribe_email_sent.html:12
-msgid ""
-"Your unsubscription request has successfully been received. An email has "
-"been sent to you with a link you need to follow in order to confirm your "
-"unsubscription."
-msgstr ""
-"Je verzoek tot uitschrijving is ontvangen. Er werd een e-mail verstuurd met "
-"een link om je uitschrijving te bevestigen."
-
-#: src/langerak_gkv/templates/newsletter/subscription_unsubscribe_user.html:12
-msgid "Do you want to unsubscribe from this newsletter?"
-msgstr "Wil je uitschrijven van deze nieuwsbrief?"
 
 #: src/langerak_gkv/templates/password_reset/recovery_done.html:3
 msgid "New password set"
@@ -1409,11 +1239,6 @@ msgstr "1<sup>ste</sup> graads connecties"
 msgid "save"
 msgstr "bewaren"
 
-#: src/langerak_gkv/users/templates/users/user_search_form.html:9
-#: src/langerak_gkv/users/templates/users/user_search_form.html:28
-msgid "Search"
-msgstr "Zoek"
-
 #: src/langerak_gkv/users/templates/users/user_search_form.html:15
 msgid "Advanced search"
 msgstr "Geavanceerd zoeken"
@@ -1441,3 +1266,156 @@ msgstr "urlconf menu-item"
 #: src/langerak_gkv/utils/models.py:16
 msgid "urlconf menu entries"
 msgstr "urlconf menu-items"
+
+#~ msgid "Calendar view"
+#~ msgstr "Kalenderweergave"
+
+#~ msgid "Week view"
+#~ msgstr "Weekweergave"
+
+#~ msgid "Day view"
+#~ msgstr "Dagweergave"
+
+#~ msgid "Find in calendar"
+#~ msgstr "Zoek in de kalender"
+
+#, python-format
+#~ msgid ""
+#~ "\n"
+#~ "                1 activity\n"
+#~ "                "
+#~ msgid_plural ""
+#~ "\n"
+#~ "                %(count)s activities\n"
+#~ "            "
+#~ msgstr[0] ""
+#~ "\n"
+#~ "1 activiteit"
+#~ msgstr[1] ""
+#~ "\n"
+#~ "%(count)s activiteiten"
+
+#~ msgid "What should we pray for?"
+#~ msgstr "Waarvoor moeten we bidden?"
+
+#~ msgid "replied"
+#~ msgstr "beantwoord"
+
+#~ msgid "prayer on demand"
+#~ msgstr "prayer on demand"
+
+#~ msgid "prayer on demands"
+#~ msgstr "prayer on demands"
+
+#~ msgid "Prayer on demand"
+#~ msgstr "Prayer on demand"
+
+#~ msgid "Fill the form and our prayer group will pray for you."
+#~ msgstr "Vul het formulier in en onze gebedsgroep zal bidden voor je."
+
+#~ msgid "Your request was received, we will pray for you."
+#~ msgstr "Je verzoek is ontvangen, we zullen voor je bidden."
+
+#, python-brace-format
+#~ msgid "A new 'Prayer on Demand' was submitted. You can view this at {uri}"
+#~ msgstr ""
+#~ "Er werd een nieuwe 'Prayer on Demand' toegevoegd. Je kan deze bekijken op "
+#~ "{uri}"
+
+#~ msgid "Preach made by"
+#~ msgstr "Preek gemaakt door"
+
+#, python-brace-format
+#~ msgid "You have successfully subscribed to \"{newsletter}\""
+#~ msgstr "Je bent succesvol ingeschreven op '{newsletter}'"
+
+#, python-brace-format
+#~ msgid "You have successfully updated your subscription to \"{newsletter}\""
+#~ msgstr "Je hebt succesvol je abonnement op '{newsletter}' bijgewerkt"
+
+#, python-brace-format
+#~ msgid "You have successfully unsubscribed from \"{newsletter}\""
+#~ msgstr "Je bent succesvol uitgeschreven van '{newsletter}'"
+
+#~ msgid "Other"
+#~ msgstr "Overige"
+
+#~ msgid "Page"
+#~ msgstr "Pagina"
+
+#~ msgid "Activate newsletter subscription"
+#~ msgstr "Activeer nieuwsbriefinschrijving"
+
+#, python-format
+#~ msgid ""
+#~ "\n"
+#~ "        Activate your subscription for the '%(name)s' newsletter\n"
+#~ "        "
+#~ msgstr ""
+#~ "\n"
+#~ "Activeer je abonnement voor de '%(name)s' nieuwsbrief"
+
+#, python-format
+#~ msgid ""
+#~ "\n"
+#~ "        Confirm your cancellation for the '%(name)s' newsletter\n"
+#~ "        "
+#~ msgstr ""
+#~ "\n"
+#~ "Bevestig je uitschrijving op de '%(name)s' nieuwsbrief"
+
+#, python-format
+#~ msgid ""
+#~ "\n"
+#~ "        Update your subscription for the '%(name)s' newsletter\n"
+#~ "        "
+#~ msgstr ""
+#~ "\n"
+#~ "Update je abonnement voor de '%(name)s' nieuwsbrief"
+
+#~ msgid "Confirm"
+#~ msgstr "Bevestigen"
+
+#~ msgid "Newsletter subscribe"
+#~ msgstr "Abonneren op nieuwsbrief"
+
+#, python-format
+#~ msgid "Subscribe to '%(name)s'"
+#~ msgstr "Abonneren op '%(name)s'"
+
+#~ msgid ""
+#~ "Due to a technical error we were not able to submit your confirmation "
+#~ "email. This could be because your email address is invalid."
+#~ msgstr ""
+#~ "Door een technisch probleem konden we je bevestigingsemail niet "
+#~ "versturen. Dit kan gebeuren als je e-mailadres ongeldig is."
+
+#~ msgid "Activate"
+#~ msgstr "Activeren"
+
+#~ msgid "Do you want to subscribe to this newsletter?"
+#~ msgstr "Wil je je abonneren op deze nieuwsbrief?"
+
+#~ msgid "Subscribe"
+#~ msgstr "Abonneren"
+
+#~ msgid "Newsletter unsubscribe"
+#~ msgstr "Uitschrijven van nieuwsbrief"
+
+#, python-format
+#~ msgid "Unsubscribe from '%(name)s'"
+#~ msgstr "Uitschrijven van '%(name)s'"
+
+#~ msgid "Unsubscribe"
+#~ msgstr "Uitschrijven"
+
+#~ msgid ""
+#~ "Your unsubscription request has successfully been received. An email has "
+#~ "been sent to you with a link you need to follow in order to confirm your "
+#~ "unsubscription."
+#~ msgstr ""
+#~ "Je verzoek tot uitschrijving is ontvangen. Er werd een e-mail verstuurd "
+#~ "met een link om je uitschrijving te bevestigen."
+
+#~ msgid "Do you want to unsubscribe from this newsletter?"
+#~ msgstr "Wil je uitschrijven van deze nieuwsbrief?"
