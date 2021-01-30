@@ -33,6 +33,7 @@ FROM python:3.6-stretch AS production
 # install all the dependencies for GeoDjango
 RUN apt-get update && apt-get install -y --no-install-recommends \
         postgresql-client \
+        gettext \
     && rm -rf /var/lib/apt/lists/*
 
 COPY --from=build /usr/local/lib/python3.6 /usr/local/lib/python3.6
