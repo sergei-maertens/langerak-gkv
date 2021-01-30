@@ -126,7 +126,7 @@ $menu-item-font-size: 1.4rem;
 
     .menu__nested-toggle {
       line-height: 1rem;
-      padding: 3px;
+      padding: 1px 3px;
 
       @include laptop {
         display: none;
