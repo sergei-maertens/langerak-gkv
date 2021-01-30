@@ -5,6 +5,8 @@
 $menu-font-color: #ffffff !default;
 $menu-space-inbetween: 1.5rem;
 
+$menu-item-font-size: 1.4rem;
+
 .menu {
 
   // Mobile / tablet only
@@ -67,8 +69,8 @@ $menu-space-inbetween: 1.5rem;
       }
 
       .menu__item-link {
-        font-size: 1.2rem;
-        line-height: 2.6rem;
+        font-size: .75 * $menu-item-font-size;
+        line-height: 1.625 * $menu-item-font-size;
       }
     }
 
@@ -118,8 +120,8 @@ $menu-space-inbetween: 1.5rem;
 
     color: $menu-font-color;
     text-transform: uppercase;
-    font-size: 1.6rem;
-    line-height: 2.5rem;
+    font-size: $menu-item-font-size;
+    line-height: 1.5625 * $menu-item-font-size;
     text-decoration: none;
 
     .menu__nested-toggle {
@@ -172,7 +174,7 @@ $menu-space-inbetween: 1.5rem;
   & &__nested-item {
     @include title;
     display: block;
-    font-size: 1.2rem;
+    font-size: .75 * $menu-item-font-size;
     color: $menu-font-color;
     text-decoration: none;
     padding: .2rem 0;
