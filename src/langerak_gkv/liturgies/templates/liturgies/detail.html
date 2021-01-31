@@ -28,19 +28,6 @@
             <span class="key-value__value">{{ liturgy.service_theme|default:"-" }}</span>
         </div>
 
-        <div class="key-value">
-            <span class="key-value__key">{% trans "Audio download" %}</span>
-            <span class="key-value__value">
-                {% if liturgy.audiofile %}
-                    <a href="{{ liturgy.audiofile.url }}" class="liturgy-detail__audio-link">
-                        {% trans "This service is available as audio download" %}
-                    </a>
-                {% else %}
-                    <span class="liturgy-detail__no-audio-link">{% trans "No audio file available" %}</span>
-                {% endif %}
-            </span>
-        </div>
-
     </section>
 
     <section class="liturgy-detail__meta">

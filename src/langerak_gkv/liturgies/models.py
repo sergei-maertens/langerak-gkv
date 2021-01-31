@@ -33,7 +33,15 @@ class Liturgy(models.Model):
         help_text=_("Downloadable attachment, for example a Word file."),
     )
     audiofile = models.FileField(
-        _("audiofile"), upload_to="liturgies/audio", max_length=100, blank=True
+        _("audiofile"),
+        upload_to="liturgies/audio",
+        max_length=100,
+        blank=True,
+        editable=False,
+        help_text=_(
+            "Audio downloads are no longer available as of Jan. 31st - this field has "
+            "been disabled."
+        ),
     )
     beamist = models.CharField(
         _("beamist"), max_length=50, blank=True
