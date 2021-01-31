@@ -22,7 +22,7 @@
 
         {% if liturgy.liturgy %}
             <div class="liturgy-preview__content">
-                {{ liturgy.liturgy|linebreaksbr|truncatewords:30 }}
+                {{ liturgy.liturgy|truncatewords_html:30 }}
             </div>
         {% endif %}
     </section>
