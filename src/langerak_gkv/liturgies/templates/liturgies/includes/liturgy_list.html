@@ -1,5 +1,5 @@
 {# Re-useable liturgy preview/include #}
-{% load i18n %}
+{% load i18n bleach_tags %}
 
 {% for liturgy in liturgies %}
 <article class="liturgy-preview">
@@ -22,7 +22,7 @@
 
         {% if liturgy.liturgy %}
             <div class="liturgy-preview__content">
-                {{ liturgy.liturgy|truncatewords_html:30 }}
+                {{ liturgy.liturgy|bleach|truncatewords_html:30 }}
             </div>
         {% endif %}
     </section>
