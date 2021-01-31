@@ -26,11 +26,10 @@ class Liturgy(models.Model):
     bible_readings = models.TextField(_("Bible readings"), blank=True)
     service_theme = models.CharField(_("service theme"), max_length=255, blank=True)
     liturgy = HTMLField(pgettext_lazy("admin field", "liturgy"), blank=True)
-    download = models.FileField(
+    download = models.URLField(
         _("download"),
-        upload_to="liturgies/downloads",
         blank=True,
-        help_text=_("Downloadable attachment, for example a Word file."),
+        help_text=_("Download link"),
     )
     audiofile = models.FileField(
         _("audiofile"),

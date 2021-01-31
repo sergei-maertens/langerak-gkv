@@ -29,5 +29,15 @@
   & &__value {
     width: 60%;
     font-weight: 400;
+
+    &--icon {
+      display: flex;
+      align-items: center;
+
+      .material-icons {
+        font-size: 1.2rem;
+        margin-right: 0.5rem;
+      }
+    }
   }
 }

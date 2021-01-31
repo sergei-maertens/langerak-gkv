@@ -30,9 +30,10 @@
         {% if liturgy.download %}
         <div class="key-value key-value--extra-spacing">
             <span class="key-value__key">{% trans "Download" %}</span>
-            <span class="key-value__value">
-                <a href="{{ liturgy.download.url }}" class="liturgy-detail__audio-link">
-                    {{ liturgy.download_file_name }}
+            <span class="key-value__value key-value__value--icon">
+                <span class="material-icons">launch</span>
+                <a href="{{ liturgy.download }}" class="liturgy-detail__download-link">
+                    {% trans "Download" %}
                 </a>
             </span>
         </div>
@@ -86,10 +87,6 @@
     <h2 class="liturgy-detail__body-header">{% trans "Liturgy" %}</h2>
     <section class="liturgy-detail__body">
         {{ liturgy.liturgy|bleach|default:_("not yet know, please come back later!") }}
-    </section>
-
-    <section class="liturgy-detail__extras">
-        {{ liturgy.extra_information|linebreaksbr }}
     </section>
 
 </article>
