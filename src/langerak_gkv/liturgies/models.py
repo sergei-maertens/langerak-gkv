@@ -1,3 +1,5 @@
+import os
+
 from django.conf import settings
 from django.db import models
 from django.urls import reverse
@@ -110,6 +112,12 @@ class Liturgy(models.Model):
         elif service_time.hour < 17:
             return _("afternoon")
         return _("evening")
+
+    @property
+    def download_file_name(self) -> str:
+        if not self.download:
+            return ""
+        return os.path.basename(self.download.name)
 
 
 class Service(models.Model):
