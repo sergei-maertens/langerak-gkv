@@ -1,5 +1,5 @@
 {% extends "cms/base.html" %}
-{% load i18n bleach_tags %}
+{% load i18n bleach_tags solo_tags %}
 
 {% block body-class %}{{ block.super }} liturgies-page{% endblock body-class %}
 
@@ -16,30 +16,53 @@
     <section class="liturgy-detail__preach">
 
         <div class="key-value">
-            <span class="key-value__key">{% trans "Main section" %}</span>
+            <span class="key-value__key">{% trans "Bible readings" %}</span>
             <span class="key-value__value">
-                {{ liturgy.main_section }}
-                {{ liturgy.main_chapter }}{% if liturgy.main_verse %}:{{ liturgy.main_verse }}{% endif %}
+                {{ liturgy.bible_readings|linebreaksbr }}
             </span>
         </div>
 
-        <div class="key-value">
+        <div class="key-value key-value--extra-spacing">
             <span class="key-value__key">{% trans "Service theme" %}</span>
             <span class="key-value__value">{{ liturgy.service_theme|default:"-" }}</span>
         </div>
 
-        <div class="key-value">
-            <span class="key-value__key">{% trans "Audio download" %}</span>
-            <span class="key-value__value">
-                {% if liturgy.audiofile %}
-                    <a href="{{ liturgy.audiofile.url }}" class="liturgy-detail__audio-link">
-                        {% trans "This service is available as audio download" %}
-                    </a>
-                {% else %}
-                    <span class="liturgy-detail__no-audio-link">{% trans "No audio file available" %}</span>
-                {% endif %}
+        {% if liturgy.download %}
+        <div class="key-value key-value--extra-spacing">
+            <span class="key-value__key">{% trans "Download" %}</span>
+            <span class="key-value__value key-value__value--icon">
+                <span class="material-icons">launch</span>
+                <a href="{{ liturgy.download }}" class="liturgy-detail__download-link">
+                    {% trans "Download" %}
+                </a>
             </span>
         </div>
+        {% endif %}
+
+        {% get_solo 'core.SiteConfig' as site_config %}
+        {% if site_config.kerkdienst_gemist or site_config.youtube_channel %}
+        <div class="key-value key-value--extra-spacing">
+            <span class="key-value__key">Meebeleven via</span>
+            <span class="key-value__value">
+                <ul class="liturgy-detail__link-list">
+                    {% if site_config.kerkdienst_gemist %}
+                    <li>
+                        <a href="{{ site_config.kerkdienst_gemist }}" target="_blank" rel="noopener nofollower">
+                            kerkdienstgemist
+                        </a>
+                    </li>
+                    {% endif %}
+                    {% if site_config.kerkdienst_gemist %}
+                    <li>
+                        <a href="{{ site_config.youtube_channel }}" target="_blank" rel="noopener nofollower">
+                            Youtubekanaal Gereformeerde Kerk Langerak
+                        </a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </span>
+        </div>
+        {% endif %}
 
     </section>
 
@@ -51,7 +74,7 @@
         </div>
 
         {% for collection in liturgy.get_collections %}
-            <div class="key-value key-value--swap-ratio">
+            <div class="key-value key-value--extra-spacing key-value--swap-ratio">
                 <span class="key-value__key">
                     {% blocktrans with i=forloop.counter %}Collection {{ i }}{% endblocktrans %}:
                 </span>
@@ -59,28 +82,11 @@
             </div>
         {% endfor %}
 
-        <div class="key-value">
-            <span class="key-value__key">{% trans "Download" %}</span>
-            <span class="key-value__value">
-                {% if liturgy.download %}
-                    <a href="{{ liturgy.download.url }}" class="liturgy-detail__audio-link">
-                        {% trans "Download" %}
-                    </a>
-                {% else %}
-                    <span class="liturgy-detail__no-audio-link">{% trans "No download available" %}</span>
-                {% endif %}
-            </span>
-        </div>
-
     </section>
 
     <h2 class="liturgy-detail__body-header">{% trans "Liturgy" %}</h2>
     <section class="liturgy-detail__body">
         {{ liturgy.liturgy|bleach|default:_("not yet know, please come back later!") }}
-    </section>
-
-    <section class="liturgy-detail__extras">
-        {{ liturgy.extra_information|linebreaksbr }}
     </section>
 
 </article>

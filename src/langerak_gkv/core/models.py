@@ -21,3 +21,12 @@ class SiteConfig(SingletonModel):
             "Typically looks like 'UA-XXXXX-Y'. Supplying this installs Google Analytics."
         ),
     )
+
+    kerkdienst_gemist = models.URLField(
+        _("'kerkdienst gemist' link"),
+        blank=True,
+    )
+    youtube_channel = models.URLField(
+        _("youtube kanaal"),
+        blank=True,
+    )

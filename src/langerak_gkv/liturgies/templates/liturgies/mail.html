@@ -28,14 +28,6 @@
                 <h3 style="margin-bottom: 0;">{% trans "Service theme" %}</h3>
                 <p style="margin-top: 0;">{{ liturgy.service_theme|default:_('(empty)') }}</p>
 
-                {% comment %}
-                <h3 style="margin-bottom: 0;">{% trans "Collections" %}</h3>
-                <p style="margin-top: 0;">{{ liturgy.get_collections|join:', '|default:_('(none)') }}</p>
-
-                <h3 style="margin-bottom: 0;">{% trans "Main section" %}</h3>
-                <p style="margin-top: 0;">{{ liturgy.main_section|default:_('(empty)') }}</p>
-                {% endcomment %}
-
                 <h3 style="margin-bottom: 0;">{% trans "Remarks" %}</h3>
                 <p style="margin-top: 0;">{{ liturgy.internal_remarks|default:_('(empty)')|linebreaksbr }}</p>
 
