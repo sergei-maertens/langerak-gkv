@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-30 17:47+0100\n"
+"POT-Creation-Date: 2021-01-31 15:22+0100\n"
 "PO-Revision-Date: 2016-10-16 19:42+0020\n"
 "Last-Translator: Sergei Maertens <sergeimaertens@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,7 +26,7 @@ msgstr "Activiteiten"
 #: src/langerak_gkv/activities/models.py:34
 #: src/langerak_gkv/activities/models.py:113
 #: src/langerak_gkv/activities/models.py:124
-#: src/langerak_gkv/liturgies/models.py:11
+#: src/langerak_gkv/liturgies/models.py:13
 #: src/langerak_gkv/societies/models.py:13 src/langerak_gkv/users/models.py:262
 #: src/langerak_gkv/users/models.py:273 src/langerak_gkv/users/models.py:293
 msgid "name"
@@ -131,27 +131,27 @@ msgstr "Week %(week)s"
 msgid "No activities this week!"
 msgstr "Er zijn geen activiteiten in deze week!"
 
-#: src/langerak_gkv/activities/templates/activities/activity_detail.html:20
+#: src/langerak_gkv/activities/templates/activities/activity_detail.html:19
 msgid "at"
 msgstr "om"
 
-#: src/langerak_gkv/activities/templates/activities/activity_detail.html:23
+#: src/langerak_gkv/activities/templates/activities/activity_detail.html:22
 msgid "until"
 msgstr "tot"
 
-#: src/langerak_gkv/activities/templates/activities/activity_detail.html:49
+#: src/langerak_gkv/activities/templates/activities/activity_detail.html:35
 #: src/langerak_gkv/users/templates/users/user_detail.html:73
 msgid "Location"
 msgstr "Locatie"
 
-#: src/langerak_gkv/activities/templates/activities/activity_detail.html:53
-msgid "Introduction"
-msgstr "Inleiding"
+#: src/langerak_gkv/activities/templates/activities/activity_detail.html:45
+msgid "More info"
+msgstr ""
 
-#: src/langerak_gkv/activities/templates/activities/activity_detail.html:59
-#, python-format
-msgid "Visit <a href=\"%(url)s\">%(url)s</a>."
-msgstr "Bezoek <a href=\"%(url)s\">%(url)s</a>."
+#: src/langerak_gkv/activities/templates/activities/activity_detail.html:57
+#, fuzzy
+msgid "Facebook event"
+msgstr "Facebook-evenement"
 
 #: src/langerak_gkv/activities/templates/activities/activity_form.html:52
 msgid "Image"
@@ -230,6 +230,28 @@ msgstr "Lees-meer groen"
 #: src/langerak_gkv/conf/cms.py:69
 msgid "Read-more purple"
 msgstr "Lees-meer paars"
+
+#: src/langerak_gkv/core/models.py:9
+msgid "Google Tag Manager code"
+msgstr "Google Tag Manager code"
+
+#: src/langerak_gkv/core/models.py:13
+msgid ""
+"Typically looks like 'GTM-XXXX'. Supplying this installs Google Tag Manager."
+msgstr ""
+"Heeft typisch het formaat 'GTM-XXX'. Google Tag Manager wordt geïnstalleerd als je "
+"dit invult."
+
+#: src/langerak_gkv/core/models.py:17
+msgid "Google Analytics code"
+msgstr "Google Analytics code"
+
+#: src/langerak_gkv/core/models.py:21
+msgid ""
+"Typically looks like 'UA-XXXXX-Y'. Supplying this installs Google Analytics."
+msgstr ""
+"Heeft typische het formaat 'UA-XXXXX-Y'. Google Analytics wordt geïnstalleerd als je "
+"dit invult."
 
 #: src/langerak_gkv/homepage/cms_plugins.py:11
 msgid "Homepage link block"
@@ -321,7 +343,7 @@ msgstr "bekijk e-mail ontvangers"
 msgid "Compose and send e-mail"
 msgstr "Opstellen en versturen van e-mail"
 
-#: src/langerak_gkv/liturgies/admin/resources.py:44
+#: src/langerak_gkv/liturgies/admin/resources.py:42
 #, python-format
 msgid ""
 "Could not parse time %s. Make sure that the `service__time` field is "
@@ -330,7 +352,7 @@ msgstr ""
 "Kon de tijd %s niet parsen. Let er op dat het 'service__time' veld als tekst "
 "geformatteeerd is."
 
-#: src/langerak_gkv/liturgies/apps.py:7 src/langerak_gkv/liturgies/models.py:63
+#: src/langerak_gkv/liturgies/apps.py:7 src/langerak_gkv/liturgies/models.py:71
 msgid "liturgies"
 msgstr "kerkdiensten"
 
@@ -343,33 +365,26 @@ msgstr "Kerkdiensten"
 msgid "liturgies menu"
 msgstr "kerdienstenmenu"
 
-#: src/langerak_gkv/liturgies/models.py:18
+#: src/langerak_gkv/liturgies/models.py:20
 msgid "date"
 msgstr "datum"
 
-#: src/langerak_gkv/liturgies/models.py:20
+#: src/langerak_gkv/liturgies/models.py:22
 msgid "service"
 msgstr "dienst"
 
-#: src/langerak_gkv/liturgies/models.py:22
+#: src/langerak_gkv/liturgies/models.py:24
 msgid "preacher"
 msgstr "predikant"
 
-#: src/langerak_gkv/liturgies/models.py:23
+#: src/langerak_gkv/liturgies/models.py:25
 msgid "preach author"
 msgstr "auteur preek"
 
-#: src/langerak_gkv/liturgies/models.py:24
-msgid "main section"
-msgstr "hoofdgedeelte"
-
-#: src/langerak_gkv/liturgies/models.py:25
-msgid "main chapter"
-msgstr "hoofd-hoofdstuk"
-
 #: src/langerak_gkv/liturgies/models.py:26
-msgid "main verse"
-msgstr "hoofdvers"
+#: src/langerak_gkv/liturgies/templates/liturgies/detail.html:19
+msgid "Bible readings"
+msgstr "Bijbel lezing"
 
 #: src/langerak_gkv/liturgies/models.py:27
 msgid "service theme"
@@ -394,94 +409,100 @@ msgstr ""
 msgid "audiofile"
 msgstr "mp3-bestand"
 
-#: src/langerak_gkv/liturgies/models.py:39
+#: src/langerak_gkv/liturgies/models.py:42
+msgid ""
+"Audio downloads are no longer available as of Jan. 31st - this field has "
+"been disabled."
+msgstr ""
+
+#: src/langerak_gkv/liturgies/models.py:47
 msgid "beamist"
 msgstr "beamist"
 
-#: src/langerak_gkv/liturgies/models.py:42
+#: src/langerak_gkv/liturgies/models.py:50
 msgid "organist"
 msgstr "organist"
 
-#: src/langerak_gkv/liturgies/models.py:45
+#: src/langerak_gkv/liturgies/models.py:53
 msgid "collection goal 1"
 msgstr "collecte 1"
 
-#: src/langerak_gkv/liturgies/models.py:48
+#: src/langerak_gkv/liturgies/models.py:56
 msgid "collection goal 2"
 msgstr "collecte 2"
 
-#: src/langerak_gkv/liturgies/models.py:51
+#: src/langerak_gkv/liturgies/models.py:59
 msgid "collection goal 3"
 msgstr "collecte 3"
 
-#: src/langerak_gkv/liturgies/models.py:53
+#: src/langerak_gkv/liturgies/models.py:61
 msgid "extra information"
 msgstr "extra informatie"
 
-#: src/langerak_gkv/liturgies/models.py:56
+#: src/langerak_gkv/liturgies/models.py:64
 msgid "other churches"
 msgstr "andere kerken"
 
-#: src/langerak_gkv/liturgies/models.py:59
+#: src/langerak_gkv/liturgies/models.py:67
 msgid "remarks (internal)"
 msgstr "opmerkingen (intern)"
 
-#: src/langerak_gkv/liturgies/models.py:62
-#: src/langerak_gkv/liturgies/models.py:130
+#: src/langerak_gkv/liturgies/models.py:70
+#: src/langerak_gkv/liturgies/models.py:144
 #: src/langerak_gkv/liturgies/signals.py:17
 msgid "liturgy"
 msgstr "kerkdienst"
 
-#: src/langerak_gkv/liturgies/models.py:101
+#: src/langerak_gkv/liturgies/models.py:109
 #: src/langerak_gkv/liturgies/tests/test_liturgy_model.py:18
 #: src/langerak_gkv/liturgies/tests/test_liturgy_model.py:19
 msgid "morning"
 msgstr "ochtend"
 
-#: src/langerak_gkv/liturgies/models.py:103
+#: src/langerak_gkv/liturgies/models.py:111
 #: src/langerak_gkv/liturgies/tests/test_liturgy_model.py:20
 msgid "afternoon"
 msgstr "namiddag"
 
-#: src/langerak_gkv/liturgies/models.py:104
+#: src/langerak_gkv/liturgies/models.py:112
 #: src/langerak_gkv/liturgies/tests/test_liturgy_model.py:21
 msgid "evening"
 msgstr "avond"
 
-#: src/langerak_gkv/liturgies/models.py:108
+#: src/langerak_gkv/liturgies/models.py:122
 msgid "service name"
 msgstr "naam dienst"
 
-#: src/langerak_gkv/liturgies/models.py:109
+#: src/langerak_gkv/liturgies/models.py:123
 msgid "service time"
 msgstr "tijd dienst"
 
-#: src/langerak_gkv/liturgies/models.py:117
+#: src/langerak_gkv/liturgies/models.py:131
 #, python-format
 msgid "preacher (%s)"
 msgstr "predikant (%s)"
 
-#: src/langerak_gkv/liturgies/models.py:118
+#: src/langerak_gkv/liturgies/models.py:132
 #, python-format
 msgid "koster (%s)"
 msgstr "koster (%s)"
 
-#: src/langerak_gkv/liturgies/models.py:119
+#: src/langerak_gkv/liturgies/models.py:133
 #, python-format
 msgid "beamist (%s)"
 msgstr "beamist (%s)"
 
-#: src/langerak_gkv/liturgies/models.py:120
+#: src/langerak_gkv/liturgies/models.py:134
 #, python-format
 msgid "organist (%s)"
 msgstr "organist (%s)"
 
-#: src/langerak_gkv/liturgies/models.py:122
+#: src/langerak_gkv/liturgies/models.py:136
 #, python-format
 msgid "bible group (%s)"
 msgstr "bijbelleesgroep (%s)"
 
-#: src/langerak_gkv/liturgies/models.py:126
+#: src/langerak_gkv/liturgies/models.py:140
 #, python-format
 msgid "preach creation (%s)"
 msgstr "preekvoorziening (%s)"
@@ -518,62 +539,38 @@ msgstr "Kerkdienstenarchief"
 msgid "%(day)s at %(time)s hours"
 msgstr "%(day)s om %(time)s uur"
 
-#: src/langerak_gkv/liturgies/templates/liturgies/detail.html:19
-msgid "Main section"
-msgstr "Hoofdgedeelte"
-
-#: src/langerak_gkv/liturgies/templates/liturgies/detail.html:27
+#: src/langerak_gkv/liturgies/templates/liturgies/detail.html:26
 #: src/langerak_gkv/liturgies/templates/liturgies/mail.html:28
 msgid "Service theme"
 msgstr "Thema"
 
 #: src/langerak_gkv/liturgies/templates/liturgies/detail.html:32
-msgid "Audio download"
-msgstr "Audiodownload"
+#, fuzzy
+msgid "Download"
+msgstr "Download"
 
-#: src/langerak_gkv/liturgies/templates/liturgies/detail.html:36
-msgid "This service is available as audio download"
-msgstr "Deze dienst is beschikbaar als audiodownload"
-
-#: src/langerak_gkv/liturgies/templates/liturgies/detail.html:39
-msgid "No audio file available"
-msgstr "Geen audiobestand beschikbaar"
-
-#: src/langerak_gkv/liturgies/templates/liturgies/detail.html:49
+#: src/langerak_gkv/liturgies/templates/liturgies/detail.html:46
 #: src/langerak_gkv/liturgies/templates/liturgies/mail.html:22
 msgid "Preacher"
 msgstr "Predikant"
 
-#: src/langerak_gkv/liturgies/templates/liturgies/detail.html:50
+#: src/langerak_gkv/liturgies/templates/liturgies/detail.html:47
 msgid "not yet known..."
 msgstr "nog onbekend..."
 
-#: src/langerak_gkv/liturgies/templates/liturgies/detail.html:56
+#: src/langerak_gkv/liturgies/templates/liturgies/detail.html:53
 #, python-format
 msgid "Collection %(i)s"
 msgstr "Collecte %(i)s"
 
-#: src/langerak_gkv/liturgies/templates/liturgies/detail.html:63
-#: src/langerak_gkv/liturgies/templates/liturgies/detail.html:67
-#, fuzzy
-#| msgid "Audio download"
-msgid "Download"
-msgstr "Audiodownload"
-
-#: src/langerak_gkv/liturgies/templates/liturgies/detail.html:70
-#, fuzzy
-#| msgid "No audio file available"
-msgid "No download available"
-msgstr "Geen audiobestand beschikbaar"
-
-#: src/langerak_gkv/liturgies/templates/liturgies/detail.html:77
+#: src/langerak_gkv/liturgies/templates/liturgies/detail.html:61
 #: src/langerak_gkv/liturgies/templates/liturgies/mail.html:25
 #: src/langerak_gkv/mailing/models.py:31
 #: src/langerak_gkv/templates/includes/calendar-item.html:11
 msgid "Liturgy"
 msgstr "Kerkdienst"
 
-#: src/langerak_gkv/liturgies/templates/liturgies/detail.html:79
+#: src/langerak_gkv/liturgies/templates/liturgies/detail.html:63
 msgid "not yet know, please come back later!"
 msgstr "nog niet bekend, kom later nog eens terug!"
 
@@ -608,21 +605,21 @@ msgstr "Dienst"
 
 #: src/langerak_gkv/liturgies/templates/liturgies/mail.html:26
 #: src/langerak_gkv/liturgies/templates/liturgies/mail.html:29
-#: src/langerak_gkv/liturgies/templates/liturgies/mail.html:41
-#: src/langerak_gkv/liturgies/templates/liturgies/mail.html:44
-#: src/langerak_gkv/liturgies/templates/liturgies/mail.html:47
+#: src/langerak_gkv/liturgies/templates/liturgies/mail.html:32
+#: src/langerak_gkv/liturgies/templates/liturgies/mail.html:35
+#: src/langerak_gkv/liturgies/templates/liturgies/mail.html:38
 msgid "(empty)"
 msgstr "(leeg)"
 
-#: src/langerak_gkv/liturgies/templates/liturgies/mail.html:40
+#: src/langerak_gkv/liturgies/templates/liturgies/mail.html:31
 msgid "Remarks"
 msgstr "Opmerkingen"
 
-#: src/langerak_gkv/liturgies/templates/liturgies/mail.html:43
+#: src/langerak_gkv/liturgies/templates/liturgies/mail.html:34
 msgid "Organist"
 msgstr "Organist"
 
-#: src/langerak_gkv/liturgies/templates/liturgies/mail.html:46
+#: src/langerak_gkv/liturgies/templates/liturgies/mail.html:37
 msgid "Beamist"
 msgstr "Beamist"
 
@@ -727,6 +724,15 @@ msgstr "GKLangerak administratiepaneel"
 #: src/langerak_gkv/templates/cms/base.html:13
 msgid "Put your content here"
 msgstr "Voer hier je content in"
+
+#: src/langerak_gkv/templates/cms/base.html:19
+#, python-format
+msgid ""
+"Last changed: <time datetime=\"%(changed)s\" title=\"%(changed)s\">"
+"%(changed_since)s</time> ago"
+msgstr ""
+"Laatst bijgewerkt: <time datetime=\"%(changed)s\" title=\"%(changed)s\">"
+"%(changed_since)s</time> geleden"
 
 #: src/langerak_gkv/templates/includes/forms/base.html:56
 msgid "Submit"
@@ -1266,6 +1272,39 @@ msgstr "urlconf menu-item"
 #: src/langerak_gkv/utils/models.py:16
 msgid "urlconf menu entries"
 msgstr "urlconf menu-items"
+
+#~ msgid "Introduction"
+#~ msgstr "Inleiding"
+
+#, python-format
+#~ msgid "Visit <a href=\"%(url)s\">%(url)s</a>."
+#~ msgstr "Bezoek <a href=\"%(url)s\">%(url)s</a>."
+
+#~ msgid "main section"
+#~ msgstr "hoofdgedeelte"
+
+#~ msgid "main chapter"
+#~ msgstr "hoofd-hoofdstuk"
+
+#~ msgid "main verse"
+#~ msgstr "hoofdvers"
+
+#~ msgid "Main section"
+#~ msgstr "Hoofdgedeelte"
+
+#~ msgid "Audio download"
+#~ msgstr "Audiodownload"
+
+#~ msgid "This service is available as audio download"
+#~ msgstr "Deze dienst is beschikbaar als audiodownload"
+
+#~ msgid "No audio file available"
+#~ msgstr "Geen audiobestand beschikbaar"
+
+#, fuzzy
+#~| msgid "No audio file available"
+#~ msgid "No download available"
+#~ msgstr "Geen audiobestand beschikbaar"
 
 #~ msgid "Calendar view"
 #~ msgstr "Kalenderweergave"
