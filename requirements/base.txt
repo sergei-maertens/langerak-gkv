@@ -30,8 +30,6 @@ cssselect2==0.2.2
     # via
     #   cairosvg
     #   weasyprint
-cssselect==1.1.0
-    # via pyquery
 defusedxml==0.6.0
     # via
     #   cairosvg
@@ -54,14 +52,12 @@ django-classy-tags==0.9.0
     # via
     #   django-cms
     #   django-sekizai
-django-cms==3.7.1
+django-cms==3.8.0
     # via
     #   -r requirements/base.in
     #   djangocms-attributes-field
-    #   djangocms-column
     #   djangocms-file
     #   djangocms-link
-    #   djangocms-oembed
     #   djangocms-picture
     #   djangocms-text-ckeditor
     #   djangocms-video
@@ -110,7 +106,7 @@ django-treebeard==4.3
     # via django-cms
 django-yubin==1.4.0
     # via -r requirements/base.in
-django==2.1.15
+django==2.2.17
     # via
     #   -r requirements/base.in
     #   django-appconf
@@ -133,8 +129,6 @@ django==2.1.15
     #   django-sekizai
     #   django-sniplates
     #   django-treebeard
-    #   djangocms-column
-    #   djangocms-oembed
     #   easy-thumbnails
 djangocms-admin-style==1.4.0
     # via django-cms
@@ -144,17 +138,11 @@ djangocms-attributes-field==1.1.0
     #   djangocms-link
     #   djangocms-picture
     #   djangocms-video
-djangocms-column==1.9.0
-    # via -r requirements/base.in
 djangocms-file==2.3.0
     # via -r requirements/base.in
 djangocms-link==2.5.0
     # via -r requirements/base.in
-djangocms-oembed==0.5
-    # via -r requirements/base.in
 djangocms-picture==2.3.0
-    # via -r requirements/base.in
-djangocms-table==1.2
     # via -r requirements/base.in
 djangocms-text-ckeditor==3.8.0
     # via -r requirements/base.in
@@ -185,10 +173,6 @@ jdcal==1.4.1
     # via openpyxl
 lockfile==0.12.2
     # via django-yubin
-lxml==4.6.2
-    # via pyquery
-micawber==0.5.0
-    # via djangocms-oembed
 odfpy==1.4.0
     # via tablib
 openpyxl==2.6.3
@@ -209,8 +193,6 @@ pycparser==2.19
     # via cffi
 pyphen==0.9.5
     # via weasyprint
-pyquery==1.4.0
-    # via djangocms-oembed
 python-dateutil==2.8.0
     # via
     #   django-recurrence
@@ -241,6 +223,8 @@ six==1.12.0
     #   django-rosetta
     #   html5lib
     #   python-dateutil
+sqlparse==0.4.1
+    # via django
 tablib==0.13.0
     # via django-import-export
 tinycss2==1.0.2

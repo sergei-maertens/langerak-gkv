@@ -21,6 +21,9 @@ python src/manage.py migrate
 >&2 echo "Ensure apphooks are installed"
 python src/manage.py ensure_apphooks
 
+>&2 echo "Deal with possible CMS upgrades"
+python src/manage.py cms fix-tree
+
 # Start server
 >&2 echo "Starting server"
 uwsgi \
