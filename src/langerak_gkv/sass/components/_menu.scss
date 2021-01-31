@@ -3,7 +3,7 @@
 @import "../lib/responsive";
 
 $menu-font-color: #ffffff !default;
-$menu-space-inbetween: 1.5rem;
+$menu-space-inbetween: 1.3rem;
 
 $menu-item-font-size: 1.4rem;
 
@@ -126,7 +126,6 @@ $menu-item-font-size: 1.4rem;
 
     .menu__nested-toggle {
       line-height: 1rem;
-      padding: 1px 3px;
 
       @include laptop {
         display: none;
@@ -140,7 +139,7 @@ $menu-item-font-size: 1.4rem;
       &--desktop {
         display: none;
         position: relative;
-        left: $menu-space-inbetween / 2;
+        left: $menu-space-inbetween / 4;
 
         @include laptop {
           display: inline;
