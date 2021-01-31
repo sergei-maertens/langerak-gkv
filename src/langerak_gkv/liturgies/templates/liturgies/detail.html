@@ -16,10 +16,9 @@
     <section class="liturgy-detail__preach">
 
         <div class="key-value">
-            <span class="key-value__key">{% trans "Main section" %}</span>
+            <span class="key-value__key">{% trans "Bible readings" %}</span>
             <span class="key-value__value">
-                {{ liturgy.main_section }}
-                {{ liturgy.main_chapter }}{% if liturgy.main_verse %}:{{ liturgy.main_verse }}{% endif %}
+                {{ liturgy.bible_readings|linebreaksbr }}
             </span>
         </div>
 

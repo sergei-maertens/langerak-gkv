@@ -23,9 +23,7 @@ class Liturgy(models.Model):
     )
     preacher = models.CharField(_("preacher"), max_length=100, blank=True)
     preach_author = models.CharField(_("preach author"), max_length=100, blank=True)
-    main_section = models.CharField(_("main section"), max_length=50, blank=True)
-    main_chapter = models.CharField(_("main chapter"), max_length=50, blank=True)
-    main_verse = models.CharField(_("main verse"), max_length=50, blank=True)
+    bible_readings = models.TextField(_("Bible readings"), blank=True)
     service_theme = models.CharField(_("service theme"), max_length=255, blank=True)
     liturgy = HTMLField(pgettext_lazy("admin field", "liturgy"), blank=True)
     download = models.FileField(
