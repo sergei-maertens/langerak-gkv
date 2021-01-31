@@ -66,4 +66,14 @@
     margin: 0;
     list-style: circle;
   }
+
+  @include mobile-only {
+    display: block;
+
+    & &__preach,
+    & &__meta {
+      border-left: none;
+      width: 100%;
+    }
+  }
 }
