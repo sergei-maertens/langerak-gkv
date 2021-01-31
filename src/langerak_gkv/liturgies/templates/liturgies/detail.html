@@ -1,5 +1,5 @@
 {% extends "cms/base.html" %}
-{% load i18n bleach_tags %}
+{% load i18n bleach_tags solo_tags %}
 
 {% block body-class %}{{ block.super }} liturgies-page{% endblock body-class %}
 
@@ -22,18 +22,43 @@
             </span>
         </div>
 
-        <div class="key-value">
+        <div class="key-value key-value--extra-spacing">
             <span class="key-value__key">{% trans "Service theme" %}</span>
             <span class="key-value__value">{{ liturgy.service_theme|default:"-" }}</span>
         </div>
 
         {% if liturgy.download %}
-        <div class="key-value">
+        <div class="key-value key-value--extra-spacing">
             <span class="key-value__key">{% trans "Download" %}</span>
             <span class="key-value__value">
                 <a href="{{ liturgy.download.url }}" class="liturgy-detail__audio-link">
                     {{ liturgy.download_file_name }}
                 </a>
+            </span>
+        </div>
+        {% endif %}
+
+        {% get_solo 'core.SiteConfig' as site_config %}
+        {% if site_config.kerkdienst_gemist or site_config.youtube_channel %}
+        <div class="key-value key-value--extra-spacing">
+            <span class="key-value__key">Meebeleven via</span>
+            <span class="key-value__value">
+                <ul class="liturgy-detail__link-list">
+                    {% if site_config.kerkdienst_gemist %}
+                    <li>
+                        <a href="{{ site_config.kerkdienst_gemist }}" target="_blank" rel="noopener nofollower">
+                            kerkdienstgemist
+                        </a>
+                    </li>
+                    {% endif %}
+                    {% if site_config.kerkdienst_gemist %}
+                    <li>
+                        <a href="{{ site_config.youtube_channel }}" target="_blank" rel="noopener nofollower">
+                            Youtubekanaal Gereformeerde Kerk Langerak
+                        </a>
+                    </li>
+                    {% endif %}
+                </ul>
             </span>
         </div>
         {% endif %}
@@ -48,7 +73,7 @@
         </div>
 
         {% for collection in liturgy.get_collections %}
-            <div class="key-value key-value--swap-ratio">
+            <div class="key-value key-value--extra-spacing key-value--swap-ratio">
                 <span class="key-value__key">
                     {% blocktrans with i=forloop.counter %}Collection {{ i }}{% endblocktrans %}:
                 </span>
