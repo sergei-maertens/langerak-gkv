@@ -119,6 +119,11 @@ class User(AbstractBaseUser, PermissionsMixin):
     class Meta:
         verbose_name = _("user")
         verbose_name_plural = _("users")
+        constraints = (
+            models.UniqueConstraint(
+                fields=("email",), name="unique_email", condition=~models.Q(email="")
+            ),
+        )
 
     def __str__(self):
         full_name = self.get_full_name().strip()
