@@ -15,9 +15,8 @@ class UserResource(resources.ModelResource):
         model = User
         import_id_fields = ("username",)
         fields = (
-            "external_code",
-            "email",
             "username",
+            "email",
             "first_name",
             "last_name",
             "is_active",
@@ -28,8 +27,10 @@ class UserResource(resources.ModelResource):
             "phone",
             "mobile",
             "birthdate",
+            "external_code",
             "district",
         )
+        export_order = fields
 
     def before_import_row(self, row, **kwargs):
         if not row["email"]:
