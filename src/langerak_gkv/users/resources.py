@@ -4,11 +4,24 @@ from import_export.widgets import ForeignKeyWidget
 from .models import District, Family, User
 
 
+class GetOrCreateForeignKeyWidget(ForeignKeyWidget):
+    def clean(self, value, row=None, *args, **kwargs):
+        try:
+            value = super().clean(value, row=row, *args, **kwargs)
+        except self.model.DoesNotExist:
+            value = self.model._default_manager.create(**{self.field: value})
+        return value
+
+
 class UserResource(resources.ModelResource):
+    phone = fields.Field(
+        attribute="phone",
+        saves_null_values=False,
+    )
     district = fields.Field(
         column_name="wijk",
         attribute="district",
-        widget=ForeignKeyWidget(District, "name"),
+        widget=GetOrCreateForeignKeyWidget(District, "name"),
     )
 
     class Meta:
