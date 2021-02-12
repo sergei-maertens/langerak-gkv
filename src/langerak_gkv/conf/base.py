@@ -202,13 +202,13 @@ INSTALLED_APPS = [
     "langerak_gkv.utils",
 ]
 
+#
+# LOGGING
+#
+LOG_STDOUT = os.getenv("LOG_STDOUT", "").lower() in ["yes", "true", "1"]
+
 LOGGING_DIR = os.path.join(BASE_DIR, "log")
 
-# A sample logging configuration. The only tangible logging
-# performed by this configuration is to send an email to
-# the site admins on every HTTP 500 error when DEBUG=False.
-# See http://docs.djangoproject.com/en/dev/topics/logging for
-# more details on how to customize your logging configuration.
 LOGGING = {
     "version": 1,
     "disable_existing_loggers": False,
@@ -253,7 +253,16 @@ LOGGING = {
         },
     },
     "loggers": {
-        "langerak_gkv": {"handlers": ["project"], "level": "INFO", "propagate": True},
+        "langerak_gkv": {
+            "handlers": ["project"] if not LOG_STDOUT else ["console"],
+            "level": "INFO",
+            "propagate": True,
+        },
+        "django.request": {
+            "handlers": ["django"] if not LOG_STDOUT else ["console"],
+            "level": "ERROR",
+            "propagate": True,
+        },
         "django.request": {
             "handlers": ["mail_admins"],
             "level": "ERROR",

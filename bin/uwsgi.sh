@@ -4,8 +4,9 @@ set -e
 
 # Wait for the database (container)
 # See: https://docs.docker.com/compose/startup-order/
-PGHOST=${DB_HOST:-db}
-PGPORT=${DB_PORT:-5432}
+export PGHOST=${DB_HOST:-db}
+export PGPORT=${DB_PORT:-5432}
+export PGUSER=${DB_USER:-postgres}
 
 until pg_isready ; do
   >&2 echo "Waiting for database connection..."

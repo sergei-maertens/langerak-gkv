@@ -68,7 +68,8 @@ ARG DOCKER_BUILD=1
 
 # Run collectstatic, so the result is already included in the image
 RUN python src/manage.py collectstatic --noinput \
-    && python src/manage.py compilemessages
+    && python src/manage.py compilemessages \
+    && chmod ugo+rwx -R /app/log
 
 EXPOSE 8000
 CMD ["/uwsgi.sh"]
