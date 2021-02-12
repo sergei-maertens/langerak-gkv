@@ -6,8 +6,6 @@ python-dotenv
 raven
 requests
 uwsgi
-CairoSVG
-WeasyPrint
 
 Django~=2.2.0
 
