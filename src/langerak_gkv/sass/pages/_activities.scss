@@ -1,0 +1,44 @@
+@import "../lib/responsive";
+@import "../lib/typography";
+
+.activities-page .page-content {
+  min-height: 50vh;
+
+  .activities-page__info:not(:empty) {
+    margin-bottom: 1rem;
+
+    @include desktop {
+      max-width: 50%;
+    }
+  }
+
+  .activities-page__image {
+    max-width: 100%;
+
+    @include laptop {
+      max-width: 400px;
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+
+    @include desktop {
+      max-width: 46%;
+    }
+  }
+
+  .activities-page__summary {
+    @include body;
+
+    @include desktop {
+      max-width: 50%;
+    }
+  }
+
+  @include mobile-only {
+    .activities-page__info,
+    .activities-page__summary {
+      padding: .5rem;
+    }
+  }
+}

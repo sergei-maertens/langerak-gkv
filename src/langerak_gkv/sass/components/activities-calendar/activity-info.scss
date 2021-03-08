@@ -1,0 +1,41 @@
+@import "../../lib/colors";
+@import "../../lib/responsive";
+@import "../../lib/typography";
+
+.activity-info {
+  @include body;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: .2rem 0;
+
+  @include mobile-only {
+    display: block;
+  }
+
+  &__icon {
+    width: 2rem;
+  }
+
+  &__label {
+    font-weight: 600;
+    width: 12rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include mobile-only {
+      flex-flow: row-reverse;
+      justify-content: flex-end;
+    }
+  }
+
+  &__value{
+    margin-left: 1rem;
+
+    @include mobile-only {
+      margin-left: 0;
+    }
+  }
+}

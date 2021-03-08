@@ -1,3 +1,5 @@
+import os
+
 from django.conf import settings
 from django.db import models
 from django.urls import reverse
@@ -21,19 +23,24 @@ class Liturgy(models.Model):
     )
     preacher = models.CharField(_("preacher"), max_length=100, blank=True)
     preach_author = models.CharField(_("preach author"), max_length=100, blank=True)
-    main_section = models.CharField(_("main section"), max_length=50, blank=True)
-    main_chapter = models.CharField(_("main chapter"), max_length=50, blank=True)
-    main_verse = models.CharField(_("main verse"), max_length=50, blank=True)
+    bible_readings = models.TextField(_("Bible readings"), blank=True)
     service_theme = models.CharField(_("service theme"), max_length=255, blank=True)
     liturgy = HTMLField(pgettext_lazy("admin field", "liturgy"), blank=True)
-    download = models.FileField(
+    download = models.URLField(
         _("download"),
-        upload_to="liturgies/downloads",
         blank=True,
-        help_text=_("Downloadable attachment, for example a Word file."),
+        help_text=_("Download link"),
     )
     audiofile = models.FileField(
-        _("audiofile"), upload_to="liturgies/audio", max_length=100, blank=True
+        _("audiofile"),
+        upload_to="liturgies/audio",
+        max_length=100,
+        blank=True,
+        editable=False,
+        help_text=_(
+            "Audio downloads are no longer available as of Jan. 31st - this field has "
+            "been disabled."
+        ),
     )
     beamist = models.CharField(
         _("beamist"), max_length=50, blank=True
@@ -102,6 +109,12 @@ class Liturgy(models.Model):
         elif service_time.hour < 17:
             return _("afternoon")
         return _("evening")
+
+    @property
+    def download_file_name(self) -> str:
+        if not self.download:
+            return ""
+        return os.path.basename(self.download.name)
 
 
 class Service(models.Model):

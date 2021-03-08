@@ -1,15 +1,13 @@
 html2text
 pip-tools
 Pillow
-psycopg2<2.8  # fixed in django 2.2+
+psycopg2
 python-dotenv
 raven
 requests
 uwsgi
-CairoSVG
-WeasyPrint
 
-Django<2.2
+Django~=2.2.0
 
 django-autoslug
 django-axes
@@ -21,6 +19,7 @@ django-image-cropping
 django-import-export
 django-leaflet
 django-rosetta
+django-solo
 django-password-reset
 django-yubin
 djangorestframework
@@ -34,9 +33,6 @@ django-filer
 djangocms-file
 djangocms-picture
 djangocms-link
-djangocms-column
-djangocms-oembed
-djangocms-table
 djangocms-video
 
 # search

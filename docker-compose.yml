@@ -12,7 +12,8 @@ services:
       - "9300:9300"
 
   web:
-    image: regexit/kerkwebsite:latest
+    image: regexit/kerkwebsite:${TAG:-latest}
+    build: .
     volumes:
       - .env:/app/.env
       - /var/run/postgresql:/var/run/postgresql

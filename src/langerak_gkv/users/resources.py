@@ -1,20 +1,35 @@
-from datetime import date
+from import_export import fields, resources
+from import_export.widgets import ForeignKeyWidget
 
-from import_export import resources
+from .models import District, Family, User
 
-from .constants import Sex
-from .models import Family, User
+
+class GetOrCreateForeignKeyWidget(ForeignKeyWidget):
+    def clean(self, value, row=None, *args, **kwargs):
+        try:
+            value = super().clean(value, row=row, *args, **kwargs)
+        except self.model.DoesNotExist:
+            value = self.model._default_manager.create(**{self.field: value})
+        return value
 
 
 class UserResource(resources.ModelResource):
+    phone = fields.Field(
+        attribute="phone",
+        saves_null_values=False,
+    )
+    district = fields.Field(
+        column_name="wijk",
+        attribute="district",
+        widget=GetOrCreateForeignKeyWidget(District, "name"),
+    )
+
     class Meta:
         model = User
-        import_id_fields = ("external_code",)
+        import_id_fields = ("username",)
         fields = (
-            "id",
-            "external_code",
-            "email",
             "username",
+            "email",
             "first_name",
             "last_name",
             "is_active",
@@ -25,53 +40,24 @@ class UserResource(resources.ModelResource):
             "phone",
             "mobile",
             "birthdate",
+            "external_code",
+            "district",
         )
+        export_order = fields
 
-    def before_import(self, dataset, dry_run, **kwargs):
-        header_index = dataset.headers.index
-        day, month, year = (
-            header_index("datum"),
-            header_index("mnd"),
-            header_index("jaar"),
-        )
+    def before_import_row(self, row, **kwargs):
+        if not row["email"]:
+            row["email"] = "{}@koningskerk.nu".format(row["external_code"])
 
-        if not any(dataset[0]):
-            del dataset[0]
-
-        def birthdate(row):
+        if not row["username"] and row["email"]:
+            # check if we can find the user
             try:
-                bd = date(int(row[year]), int(row[month]), int(row[day]))
-                return "{0:%Y-%m-%d}".format(bd)
-            except ValueError:
-                return None
+                username = User.objects.get(email=row["email"]).username
+                row["username"] = username
+            except User.DoesNotExist:
+                row["username"] = row["email"]
 
-        dataset.append_col(birthdate, header="birthdate")
-
-        sex = header_index("voorvoegsel")
-
-        def get_sex(row):
-            if row[sex] == "dhr.":
-                return Sex.male
-            elif row[sex] == "mevr.":
-                return Sex.female
-            return ""
-
-        dataset.append_col(get_sex, header="sex")
-
-    def import_obj(self, obj, data, dry_run):
-        super(UserResource, self).import_obj(obj, data, dry_run)
-        if not obj.email:
-            obj.email = "{}@koningskerk.nu".format(data["external_code"])
-
-    def before_save_instance(self, instance, dry_run):
-        if (
-            self.get_queryset()
-            .filter(email=instance.email)
-            .exclude(pk=instance.pk)
-            .exists()
-        ):
-            instance.email = "{}@koningskerk.nu".format(instance.external_code)
-
+    def before_save_instance(self, instance, using_transactions, dry_run):
         # find the family
         kwargs = {"address": instance.address, "postal_code": instance.postal_code}
         defaults = {"city": instance.city, "name": instance.last_name}

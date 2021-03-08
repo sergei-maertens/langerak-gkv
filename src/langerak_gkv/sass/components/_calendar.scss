@@ -15,6 +15,7 @@
 
   @include mobile-only {
     max-width: 100%;
+    align-items: flex-start;
   }
 
   &__goto {
@@ -28,6 +29,10 @@
     &:hover {
       text-decoration: underline;
       color: white;
+    }
+
+    @include mobile-only {
+      align-self: flex-end;
     }
   }
 }

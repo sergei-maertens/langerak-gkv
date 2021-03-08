@@ -1,4 +1,5 @@
 @import "../lib/colors";
+@import "../lib/responsive";
 
 .key-value {
   display: block;
@@ -29,5 +30,38 @@
   & &__value {
     width: 60%;
     font-weight: 400;
+
+    &--icon {
+      display: flex;
+      align-items: center;
+
+      .material-icons {
+        font-size: 1.2rem;
+        margin-right: 0.5rem;
+      }
+    }
+  }
+
+  @include mobile-only {
+    &, &#{&}--swap-ratio {
+      display: block;
+
+      & &__key {
+        display: block;
+        width: 100% !important;
+        line-height: 1.5em;
+      }
+
+      & &__value {
+        display: block;
+        width: 100% !important;
+
+        &--icon {
+          display: flex;
+        }
+      }
+
+    }
+
   }
 }

@@ -5,7 +5,7 @@
   remote_user: root
 
   vars:
-    image: regexit/kerkwebsite:latest
+    image: "regexit/kerkwebsite:{{ image_tag|default('latest') }}"
     nginx_file_dirs:
       - "{{ storage_path }}"
 
