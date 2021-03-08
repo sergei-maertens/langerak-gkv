@@ -14,3 +14,7 @@ LOGGING["loggers"].update(
         "django": {"handlers": ["django"], "level": "WARNING", "propagate": True},
     }
 )
+
+# The file storage engine to use when collecting static files with the
+# collectstatic management command.
+STATICFILES_STORAGE = "django.contrib.staticfiles.storage.ManifestStaticFilesStorage"
