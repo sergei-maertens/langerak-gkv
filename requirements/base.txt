@@ -21,20 +21,20 @@ django-appconf==1.0.3
     #   django-axes
     #   django-image-cropping
 django-autoslug==1.9.6
-    # via -r requirements/base.in
+    # via -r base.in
 django-axes==5.0.13
-    # via -r requirements/base.in
+    # via -r base.in
 django-bleach==0.6.1
-    # via -r requirements/base.in
+    # via -r base.in
 django-choices==1.7.0
-    # via -r requirements/base.in
+    # via -r base.in
 django-classy-tags==0.9.0
     # via
     #   django-cms
     #   django-sekizai
 django-cms==3.8.0
     # via
-    #   -r requirements/base.in
+    #   -r base.in
     #   djangocms-attributes-field
     #   djangocms-file
     #   djangocms-link
@@ -43,7 +43,7 @@ django-cms==3.8.0
     #   djangocms-video
 django-filer==1.5.0
     # via
-    #   -r requirements/base.in
+    #   -r base.in
     #   djangocms-file
     #   djangocms-link
     #   djangocms-picture
@@ -51,44 +51,44 @@ django-filer==1.5.0
 django-formtools==2.1
     # via django-cms
 django-haystack==2.8.1
-    # via -r requirements/base.in
+    # via -r base.in
 django-ical==1.6.2
-    # via -r requirements/base.in
+    # via -r base.in
 django-image-cropping==1.2.0
-    # via -r requirements/base.in
+    # via -r base.in
 django-import-export==2.5.0
-    # via -r requirements/base.in
+    # via -r base.in
 django-ipware==2.1.0
     # via django-axes
 django-js-asset==1.2.2
     # via django-mptt
 django-leaflet==0.24.0
-    # via -r requirements/base.in
+    # via -r base.in
 django-mptt==0.10.0
     # via django-filer
 django-password-reset==2.0
-    # via -r requirements/base.in
+    # via -r base.in
 django-polymorphic==2.0.3
     # via django-filer
 django-recurrence==1.10.1
     # via django-ical
 django-rosetta==0.9.3
-    # via -r requirements/base.in
+    # via -r base.in
 django-sekizai==1.0.0
     # via
-    #   -r requirements/base.in
+    #   -r base.in
     #   django-cms
 django-sniplates==0.6.0
-    # via -r requirements/base.in
+    # via -r base.in
 django-solo==1.1.5
-    # via -r requirements/base.in
+    # via -r base.in
 django-treebeard==4.3
     # via django-cms
 django-yubin==1.4.0
-    # via -r requirements/base.in
-django==2.2.17
+    # via -r base.in
+django==2.2.18
     # via
-    #   -r requirements/base.in
+    #   -r base.in
     #   django-appconf
     #   django-axes
     #   django-bleach
@@ -119,28 +119,28 @@ djangocms-attributes-field==1.1.0
     #   djangocms-picture
     #   djangocms-video
 djangocms-file==2.3.0
-    # via -r requirements/base.in
+    # via -r base.in
 djangocms-link==2.5.0
-    # via -r requirements/base.in
+    # via -r base.in
 djangocms-picture==2.3.0
-    # via -r requirements/base.in
+    # via -r base.in
 djangocms-text-ckeditor==3.8.0
-    # via -r requirements/base.in
+    # via -r base.in
 djangocms-video==2.1.1
-    # via -r requirements/base.in
+    # via -r base.in
 djangorestframework==3.10.3
-    # via -r requirements/base.in
+    # via -r base.in
 easy-thumbnails==2.6
     # via
-    #   -r requirements/base.in
+    #   -r base.in
     #   django-filer
     #   djangocms-picture
 elasticsearch==2.4.1
-    # via -r requirements/base.in
+    # via -r base.in
 et-xmlfile==1.0.1
     # via openpyxl
 html2text==2019.9.26
-    # via -r requirements/base.in
+    # via -r base.in
 html5lib==1.0.1
     # via djangocms-text-ckeditor
 icalendar==4.0.3
@@ -159,21 +159,21 @@ openpyxl==2.6.3
     # via tablib
 pillow==8.1.0
     # via
-    #   -r requirements/base.in
+    #   -r base.in
     #   djangocms-text-ckeditor
     #   easy-thumbnails
 pip-tools==5.5.0
-    # via -r requirements/base.in
+    # via -r base.in
 polib==1.1.0
     # via django-rosetta
 psycopg2==2.8.6
-    # via -r requirements/base.in
+    # via -r base.in
 python-dateutil==2.8.0
     # via
     #   django-recurrence
     #   icalendar
 python-dotenv==0.10.3
-    # via -r requirements/base.in
+    # via -r base.in
 pytz==2019.2
     # via
     #   django
@@ -185,10 +185,10 @@ pyyaml==5.1.2
 pyzmail36==1.0.4
     # via django-yubin
 raven==6.10.0
-    # via -r requirements/base.in
+    # via -r base.in
 requests==2.22.0
     # via
-    #   -r requirements/base.in
+    #   -r base.in
     #   django-rosetta
 six==1.12.0
     # via
@@ -209,7 +209,7 @@ urllib3==1.25.3
     #   elasticsearch
     #   requests
 uwsgi==2.0.18
-    # via -r requirements/base.in
+    # via -r base.in
 webencodings==0.5.1
     # via
     #   bleach
