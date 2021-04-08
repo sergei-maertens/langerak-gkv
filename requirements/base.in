@@ -7,7 +7,7 @@ raven
 requests
 uwsgi
 
-Django~=2.2.0
+Django~=2.2.20
 
 django-autoslug
 django-axes
