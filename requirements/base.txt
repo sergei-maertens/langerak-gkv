@@ -4,7 +4,7 @@
 #
 #    ./bin/compile_dependencies.sh
 #
-bleach==3.1.0
+bleach==3.3.0
     # via django-bleach
 certifi==2019.6.16
     # via requests
@@ -84,7 +84,7 @@ django-treebeard==4.3
     # via django-cms
 django-yubin==1.4.0
     # via -r requirements/base.in
-django==2.2.17
+django==2.2.20
     # via
     #   -r requirements/base.in
     #   django-appconf
@@ -107,6 +107,7 @@ django==2.2.17
     #   django-sekizai
     #   django-sniplates
     #   django-treebeard
+    #   djangorestframework
     #   easy-thumbnails
 djangocms-admin-style==1.4.0
     # via django-cms
@@ -126,7 +127,7 @@ djangocms-text-ckeditor==3.8.0
     # via -r requirements/base.in
 djangocms-video==2.1.1
     # via -r requirements/base.in
-djangorestframework==3.10.3
+djangorestframework==3.12.4
     # via -r requirements/base.in
 easy-thumbnails==2.6
     # via
@@ -155,7 +156,9 @@ odfpy==1.4.0
     # via tablib
 openpyxl==2.6.3
     # via tablib
-pillow==8.1.0
+packaging==20.9
+    # via bleach
+pillow==8.2.0
     # via
     #   -r requirements/base.in
     #   djangocms-text-ckeditor
@@ -164,6 +167,8 @@ polib==1.1.0
     # via django-rosetta
 psycopg2==2.8.6
     # via -r requirements/base.in
+pyparsing==2.4.7
+    # via packaging
 python-dateutil==2.8.0
     # via
     #   django-recurrence
@@ -176,7 +181,7 @@ pytz==2019.2
     #   django-recurrence
     #   django-yubin
     #   icalendar
-pyyaml==5.1.2
+pyyaml==5.4.1
     # via tablib
 pyzmail36==1.0.4
     # via django-yubin

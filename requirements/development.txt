@@ -1,6 +1,0 @@
--r test.txt
-
-django-extensions
-django-debug-toolbar
-isort
-black
