@@ -17,7 +17,8 @@ local.py
 /env/
 /media/
 /static/
-/log
+/log/*
+!/log/.gitkeep
 .env
 .vault_password.txt
 
