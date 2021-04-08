@@ -7,3 +7,6 @@ django-webtest==1.9.4
 coverage
 coveralls
 codecov
+
+black
+isort

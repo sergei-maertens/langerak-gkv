@@ -5,6 +5,3 @@ pip-tools
 
 django-extensions
 django-debug-toolbar
-
-isort
-black
