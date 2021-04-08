@@ -1,5 +1,4 @@
 html2text
-pip-tools
 Pillow
 psycopg2
 python-dotenv
