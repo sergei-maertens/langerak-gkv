@@ -1,0 +1,9 @@
+-c base.txt
+
+factory-boy==2.9.2
+WebTest==2.0.32
+django-webtest==1.9.4
+
+coverage
+coveralls
+codecov

@@ -1,0 +1,7 @@
+-c base.txt
+-c ci.txt
+
+django-extensions
+django-debug-toolbar
+isort
+black
