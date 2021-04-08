@@ -1,1 +1,0 @@
-from .travis import *  # noqa
