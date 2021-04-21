@@ -1,8 +1,9 @@
 html2text
 Pillow
 psycopg2
+python-decouple
 python-dotenv
-raven
+sentry-sdk
 requests
 uwsgi
 
