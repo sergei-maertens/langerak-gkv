@@ -7,7 +7,9 @@
 bleach==3.3.0
     # via django-bleach
 certifi==2019.6.16
-    # via requests
+    # via
+    #   requests
+    #   sentry-sdk
 chardet==3.0.4
     # via requests
 defusedxml==0.6.0
@@ -173,6 +175,8 @@ python-dateutil==2.8.0
     # via
     #   django-recurrence
     #   icalendar
+python-decouple==3.4
+    # via -r requirements/base.in
 python-dotenv==0.10.3
     # via -r requirements/base.in
 pytz==2019.2
@@ -185,12 +189,12 @@ pyyaml==5.4.1
     # via tablib
 pyzmail36==1.0.4
     # via django-yubin
-raven==6.10.0
-    # via -r requirements/base.in
 requests==2.22.0
     # via
     #   -r requirements/base.in
     #   django-rosetta
+sentry-sdk==1.0.0
+    # via -r requirements/base.in
 six==1.12.0
     # via
     #   bleach
@@ -209,6 +213,7 @@ urllib3==1.25.3
     # via
     #   elasticsearch
     #   requests
+    #   sentry-sdk
 uwsgi==2.0.18
     # via -r requirements/base.in
 webencodings==0.5.1

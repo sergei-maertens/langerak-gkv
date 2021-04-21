@@ -2,7 +2,10 @@ import os
 
 from django.urls import reverse_lazy
 
+import sentry_sdk
+
 from .cms import *  # noqa
+from .utils import config, get_current_version, get_sentry_integrations
 
 # Automatically figure out the BASE_DIR and PROJECT_DIR.
 DJANGO_PROJECT_DIR = os.path.abspath(
@@ -19,9 +22,9 @@ BASE_DIR = os.path.abspath(
 DEBUG = False
 
 # Make this unique, and don't share it with anybody.
-SECRET_KEY = os.getenv("SECRET_KEY")
+SECRET_KEY = config("SECRET_KEY")
 
-ADMINS = (("Sergei Maertens", "sergeimaertens@gmail.com"),)
+ADMINS = (("Sergei Maertens", "info@regex-it.nl"),)
 MANAGERS = ADMINS
 
 LANGUAGES = (("nl", "Nederlands"),)
@@ -29,18 +32,16 @@ LANGUAGE_CODE = "nl"
 
 LOCALE_PATHS = (os.path.join(DJANGO_PROJECT_DIR, "locale"),)
 
-# Hosts/domain names that are valid for this site; required if DEBUG is False
-# See https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts
-ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "").split(",")
+ALLOWED_HOSTS = config("ALLOWED_HOSTS", default="", split=True)
 
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": os.getenv("DB_NAME"),
-        "USER": os.getenv("DB_USER"),
-        "PASSWORD": os.getenv("DB_PASSWORD", ""),
-        "HOST": os.getenv("DB_HOST", "localhost"),
-        "PORT": os.getenv("DB_PORT", 5432),
+        "NAME": config("DB_NAME", "kerkwebsite"),
+        "USER": config("DB_USER", "kerkwebsite"),
+        "PASSWORD": config("DB_PASSWORD", ""),
+        "HOST": config("DB_HOST", "localhost"),
+        "PORT": config("DB_PORT", 5432),
     }
 }
 
@@ -55,7 +56,7 @@ CACHES = {
 # In a Windows environment this must be set to your system time zone.
 TIME_ZONE = "Europe/Amsterdam"
 
-SITE_ID = int(os.getenv("SITE_ID", "1"))
+SITE_ID = config("SITE_ID", default=1)
 
 # If you set this to False, Django will make some optimizations so as not
 # to load the internationalization machinery.
@@ -205,7 +206,7 @@ INSTALLED_APPS = [
 #
 # LOGGING
 #
-LOG_STDOUT = os.getenv("LOG_STDOUT", "").lower() in ["yes", "true", "1"]
+LOG_STDOUT = config("LOG_STDOUT", "").lower() in ["yes", "true", "1"]
 
 LOGGING_DIR = os.path.join(BASE_DIR, "log")
 
@@ -282,9 +283,17 @@ LOGGING = {
 X_FRAME_OPTIONS = "SAMEORIGIN"
 
 #
-# Mailing
+# Sending EMAIL
 #
 EMAIL_BACKEND = "django_yubin.smtp_queue.EmailBackend"
+EMAIL_HOST = config("EMAIL_HOST", default="localhost")
+EMAIL_PORT = config(
+    "EMAIL_PORT", default=25
+)  # disabled on Google Cloud, use 487 instead
+EMAIL_HOST_USER = config("EMAIL_HOST_USER", default="")
+EMAIL_HOST_PASSWORD = config("EMAIL_HOST_PASSWORD", default="")
+EMAIL_USE_TLS = config("EMAIL_USE_TLS", default=False)
+EMAIL_TIMEOUT = 10
 
 #
 # Django-axes
@@ -324,7 +333,7 @@ LOGIN_REDIRECT_URL = reverse_lazy("pages-root")
 #
 # GEO
 #
-GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
+GOOGLE_API_KEY = config("GOOGLE_API_KEY", default="")
 LEAFLET_CONFIG = {
     "DEFAULT_CENTER": (51.93, 4.876),
     "DEFAULT_ZOOM": 9,
@@ -336,13 +345,17 @@ LEAFLET_CONFIG = {
 #
 # EMAIL addresses
 #
-DEFAULT_FROM_EMAIL = os.getenv("DEFAULT_FROM_EMAIL")
-EMAIL_ORGANIST = "organist@langerak.gkv.nl"
-EMAIL_BEAMIST = "beamist@langerak.gkv.nl"
-EMAIL_KOSTER = "koster@langerak.gkv.nl"
-EMAIL_PREACHER = "predikant@langerak.gkv.nl"
-EMAIL_BIBLE_GROUP = "bijbelleesgroep@langerak.gkv.nl"
-EMAIL_PREACH_CREATION = "preekvoorziening@langerak.gkv.nl"
+DEFAULT_FROM_EMAIL = config("DEFAULT_FROM_EMAIL", default="noreply@example.com")
+EMAIL_ORGANIST = config("EMAIL_ORGANIST", default="organist@langerak.gkv.nl")
+EMAIL_BEAMIST = config("EMAIL_BEAMIST", default="beamist@langerak.gkv.nl")
+EMAIL_KOSTER = config("EMAIL_KOSTER", default="koster@langerak.gkv.nl")
+EMAIL_PREACHER = config("EMAIL_PREACHER", default="predikant@langerak.gkv.nl")
+EMAIL_BIBLE_GROUP = config(
+    "EMAIL_BIBLE_GROUP", default="bijbelleesgroep@langerak.gkv.nl"
+)
+EMAIL_PREACH_CREATION = config(
+    "EMAIL_PREACH_CREATION", default="preekvoorziening@langerak.gkv.nl"
+)
 
 
 #
@@ -352,8 +365,8 @@ HAYSTACK_CONNECTIONS = {
     "default": {
         # 'ENGINE': 'haystack.backends.elasticsearch_backend.ElasticsearchSearchEngine',
         "ENGINE": "langerak_gkv.search.backends.ConfigurableElasticSearchEngine",
-        "URL": os.getenv("ELASTIC_SEARCH", "http://127.0.0.1:9200/"),
-        "INDEX_NAME": os.getenv("ELASTIC_INDEX", "gklangerak"),
+        "URL": config("ELASTIC_SEARCH", "http://127.0.0.1:9200/"),
+        "INDEX_NAME": config("ELASTIC_INDEX", "gklangerak"),
     }
 }
 
@@ -439,21 +452,18 @@ BLEACH_ALLOWED_TAGS = [
 #
 TEST_RUNNER = "django.test.runner.DiscoverRunner"
 
-# Raven
-SENTRY_DSN = os.getenv("SENTRY_DSN")
+#
+# SENTRY - error monitoring
+#
+SENTRY_DSN = config("SENTRY_DSN", None)
+RELEASE = get_current_version()
 
 if SENTRY_DSN:
-    import raven
+    SENTRY_CONFIG = {
+        "dsn": SENTRY_DSN,
+        "release": RELEASE,
+    }
 
-    INSTALLED_APPS = INSTALLED_APPS + ["raven.contrib.django.raven_compat"]
-
-    RAVEN_CONFIG = {"dsn": SENTRY_DSN, "release": raven.fetch_git_sha(BASE_DIR)}
-    LOGGING["handlers"].update(
-        {
-            "sentry": {
-                "level": "WARNING",
-                "class": "raven.handlers.logging.SentryHandler",
-                "dsn": RAVEN_CONFIG["dsn"],
-            }
-        }
+    sentry_sdk.init(
+        **SENTRY_CONFIG, integrations=get_sentry_integrations(), send_default_pii=True
     )

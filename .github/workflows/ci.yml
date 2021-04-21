@@ -104,6 +104,8 @@ jobs:
         env:
           RELEASE_VERSION: ${{ steps.vars.outputs.tag }}
         run: docker build . --tag $IMAGE_NAME:$RELEASE_VERSION
+        env:
+          SECRET_KEY: dummy
 
       - name: Log into registry
         if: github.event_name == 'push'  # exclude PRs
