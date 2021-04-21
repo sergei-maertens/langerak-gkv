@@ -283,9 +283,17 @@ LOGGING = {
 X_FRAME_OPTIONS = "SAMEORIGIN"
 
 #
-# Mailing
+# Sending EMAIL
 #
 EMAIL_BACKEND = "django_yubin.smtp_queue.EmailBackend"
+EMAIL_HOST = config("EMAIL_HOST", default="localhost")
+EMAIL_PORT = config(
+    "EMAIL_PORT", default=25
+)  # disabled on Google Cloud, use 487 instead
+EMAIL_HOST_USER = config("EMAIL_HOST_USER", default="")
+EMAIL_HOST_PASSWORD = config("EMAIL_HOST_PASSWORD", default="")
+EMAIL_USE_TLS = config("EMAIL_USE_TLS", default=False)
+EMAIL_TIMEOUT = 10
 
 #
 # Django-axes
@@ -337,13 +345,17 @@ LEAFLET_CONFIG = {
 #
 # EMAIL addresses
 #
-DEFAULT_FROM_EMAIL = os.getenv("DEFAULT_FROM_EMAIL")
-EMAIL_ORGANIST = "organist@langerak.gkv.nl"
-EMAIL_BEAMIST = "beamist@langerak.gkv.nl"
-EMAIL_KOSTER = "koster@langerak.gkv.nl"
-EMAIL_PREACHER = "predikant@langerak.gkv.nl"
-EMAIL_BIBLE_GROUP = "bijbelleesgroep@langerak.gkv.nl"
-EMAIL_PREACH_CREATION = "preekvoorziening@langerak.gkv.nl"
+DEFAULT_FROM_EMAIL = config("DEFAULT_FROM_EMAIL", default="noreply@example.com")
+EMAIL_ORGANIST = config("EMAIL_ORGANIST", default="organist@langerak.gkv.nl")
+EMAIL_BEAMIST = config("EMAIL_BEAMIST", default="beamist@langerak.gkv.nl")
+EMAIL_KOSTER = config("EMAIL_KOSTER", default="koster@langerak.gkv.nl")
+EMAIL_PREACHER = config("EMAIL_PREACHER", default="predikant@langerak.gkv.nl")
+EMAIL_BIBLE_GROUP = config(
+    "EMAIL_BIBLE_GROUP", default="bijbelleesgroep@langerak.gkv.nl"
+)
+EMAIL_PREACH_CREATION = config(
+    "EMAIL_PREACH_CREATION", default="preekvoorziening@langerak.gkv.nl"
+)
 
 
 #
