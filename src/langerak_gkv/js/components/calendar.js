@@ -24,6 +24,16 @@ const init = () => {
             columnHeaderFormat: {
                 weekday: 'long',
             },
+
+            views: {
+                dayGridMonth: {
+                    eventTimeFormat: {
+                        hour: '2-digit',
+                        minute: '2-digit',
+                        omitZeroMinute: false,
+                    },
+                },
+            },
         });
         calendar.render();
     });
