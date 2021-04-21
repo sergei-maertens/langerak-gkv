@@ -16,7 +16,7 @@ def create_or_update_activity(sender, instance, created, **kwargs):
     if created:
         act_type, __ = ActivityType.objects.get_or_create(name=_("liturgy"))
         Activity.objects.create(
-            name=instance.service.name,
+            name=_("Liturgy"),
             start_date=instance.date,
             end_date=instance.date,
             start_time=instance.service.time,
@@ -26,7 +26,6 @@ def create_or_update_activity(sender, instance, created, **kwargs):
     else:
         activities = instance.activity_set.all()
         activities.update(
-            name=instance.service.name,
             start_date=instance.date,
             end_date=instance.date,
             start_time=instance.service.time,

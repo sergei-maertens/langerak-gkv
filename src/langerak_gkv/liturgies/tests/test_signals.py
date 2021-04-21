@@ -35,12 +35,17 @@ class SignalTests(TestCase):
         self.assertEqual(activity.start_date, date(2015, 2, 22))
         self.assertEqual(activity.end_date, date(2015, 2, 22))
 
+        # change activity name
+        activity.name = "changed"
+        activity.save()
+
         liturgy.service.time = time(14, 0)
         liturgy.service.save()
 
         # refresh
-        activity = activity.__class__.objects.get(pk=activity.pk)
+        activity.refresh_from_db()
         self.assertEqual(activity.start_time, time(14, 0))
+        self.assertEqual(activity.name, "changed")
 
     def test_activity_deleted(self):
         """
