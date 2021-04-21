@@ -37,8 +37,8 @@ ALLOWED_HOSTS = config("ALLOWED_HOSTS", default="", split=True)
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": config("DB_NAME"),
-        "USER": config("DB_USER"),
+        "NAME": config("DB_NAME", "kerkwebsite"),
+        "USER": config("DB_USER", "kerkwebsite"),
         "PASSWORD": config("DB_PASSWORD", ""),
         "HOST": config("DB_HOST", "localhost"),
         "PORT": config("DB_PORT", 5432),
