@@ -12,7 +12,6 @@ on:
 
 env:
   IMAGE_NAME: regexit/kerkwebsite
-  DOCKER_BUILDKIT: '1'
 
 jobs:
   tests:
@@ -101,11 +100,9 @@ jobs:
           echo ::set-output name=tag::${VERSION}
 
       - name: Build the Docker image
-        env:
-          RELEASE_VERSION: ${{ steps.vars.outputs.tag }}
         run: docker build . --tag $IMAGE_NAME:$RELEASE_VERSION
         env:
-          SECRET_KEY: dummy
+          RELEASE_VERSION: ${{ steps.vars.outputs.tag }}
 
       - name: Log into registry
         if: github.event_name == 'push'  # exclude PRs
