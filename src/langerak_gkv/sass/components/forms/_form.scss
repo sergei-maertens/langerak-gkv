@@ -3,6 +3,7 @@
 
 
 .form {
+  @include body;
 
   &#{&}--on-top {
     position: relative;
