@@ -9,6 +9,10 @@
     z-index: 10;
   }
 
+  &--last {
+    padding-bottom: 25px;
+  }
+
   & &__submit-row {
     display: flex;
     justify-content: space-between;
