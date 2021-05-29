@@ -3,10 +3,15 @@
 
 
 .form {
+  @include body;
 
   &#{&}--on-top {
     position: relative;
     z-index: 10;
+  }
+
+  &--last {
+    padding-bottom: 25px;
   }
 
   & &__submit-row {

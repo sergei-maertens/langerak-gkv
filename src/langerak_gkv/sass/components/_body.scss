@@ -23,6 +23,16 @@ body {
   main {
     background: $body-content-default-background;
   }
+
+  // ensure main grows if there's very little content on the page
+  @include laptop {
+    display: flex;
+    flex-direction: column;
+
+    & > main {
+      flex-grow: 1;
+    }
+  }
 }
 
 @include mobile-only {

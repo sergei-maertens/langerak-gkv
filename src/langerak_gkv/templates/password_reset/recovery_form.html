@@ -4,12 +4,22 @@
 {% block title %}{% trans "Password recovery" %}{% endblock %}
 
 {% block content %}
-    <form method="post" action="{{ url }}" class="col-xs-12 col-md-6 pw-reset">
-    {% csrf_token %}
+    {% load_widgets form='includes/forms/default.html' %}
 
-    {% load_widgets form='default.form' %}
-    {{ form.non_field_errors }}
-    {% for field in form %}{% form_field field %}{% endfor %}
-    {% widget 'form:btn-submit' btn_text=_('Recover my password') %}
+    <form method="post" action="{{ url }}" class="form form--last">
+        {% csrf_token %}
+
+        {{ form.non_field_errors }}
+
+        {% for field in form %}
+            {% form_field field %}
+        {% endfor %}
+
+        <div class="form__submit-row">
+            {% widget 'form:submit' text=_("Recover my password") %}
+        </div>
+
     </form>
+
+
 {% endblock %}

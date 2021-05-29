@@ -14,7 +14,7 @@
         {% form_field login_form.password %}
 
         <div class="form__submit-row">
-            <a href="{% url 'users:password_reset_recover' %}">{% trans 'Forgot password?' %}</a>
+            <a href="{% url 'password_reset_recover' %}">{% trans 'Forgot password?' %}</a>
             {% widget 'form:submit' text=_("Login") %}
         </div>
 
