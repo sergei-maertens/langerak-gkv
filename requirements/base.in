@@ -7,7 +7,7 @@ sentry-sdk
 requests
 uwsgi
 
-Django~=2.2.0
+Django~=2.2.21
 
 django-autoslug
 django-axes
