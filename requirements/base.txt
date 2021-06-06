@@ -189,7 +189,7 @@ pyyaml==5.4.1
     # via tablib
 pyzmail36==1.0.4
     # via django-yubin
-requests==2.22.0
+requests==2.25.1
     # via
     #   -r requirements/base.in
     #   django-rosetta
@@ -209,7 +209,7 @@ tablib[html,ods,xls,xlsx,yaml]==3.0.0
     # via django-import-export
 unidecode==1.0.23
     # via django-filer
-urllib3==1.25.11
+urllib3==1.26.5
     # via
     #   elasticsearch
     #   requests
