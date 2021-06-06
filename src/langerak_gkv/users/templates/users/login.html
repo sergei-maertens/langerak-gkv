@@ -3,20 +3,29 @@
 {% block body-class %}profile{% endblock %}
 
 {% block content %}
-<div class="row">
-<form action="." method="post" class="col-xs-12 col-md-6" id="form-login">{% csrf_token %}
-{% load_widgets form='default.form' %}
+    {% load_widgets form='includes/forms/default.html' %}
 
-<p>{% trans "Enter your e-mail address and password or username and password to login." %}</p>
+    <h1 class="page-title">{% trans "Login" %}</h1>
 
-{{ form.non_field_errors }}
+    <div class="cmsplugin-text">
+        <p>{% trans "Enter your e-mail address and password or username and password to login." %}</p>
+        <br>
+    </div>
 
-<input type="hidden" name="next" value="{{ request.REQUEST.next }}">
-{% for field in form %}{% form_field field %}{% endfor %}
+    <form action="." method="post" class="form" id="form-login">
+        {% csrf_token %}
 
-{% widget 'form:btn-submit' btn_text=_('Login') %}
+        {{ form.non_field_errors }}
 
-<a href="{% url 'password_reset_recover' %}">{% trans "Forgot password?" %}</a>
-</form>
-</div>
+        <input type="hidden" name="next" value="{{ request.REQUEST.next }}">
+        {% for field in form %}
+            {% form_field field %}
+        {% endfor %}
+
+        <div class="form__submit-row">
+            {% widget 'form:submit' text=_("Login") %}
+            <a href="{% url 'password_reset_recover' %}">{% trans "Forgot password?" %}</a>
+        </div>
+
+    </form>
 {% endblock %}
