@@ -883,7 +883,7 @@ msgstr ""
 
 #: src/langerak_gkv/users/admin.py:22
 msgid "Personal info"
-msgstr "Persoonlijek informatie"
+msgstr "Persoonlijke informatie"
 
 #: src/langerak_gkv/users/admin.py:39
 msgid "Family and location"
