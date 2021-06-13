@@ -27,7 +27,14 @@ class ActivityManager(models.Manager):
         """
         Fetch the queryset for at most n upcoming activities
         """
-        return self._upcoming(**filters).order_by("start_date", "end_date")[:n]
+        return (
+            self._upcoming(**filters).order_by(
+                "start_date",
+                models.F("start_time").asc(nulls_first=True),
+                "end_date",
+                models.F("end_time").asc(nulls_last=True),
+            )
+        )[:n]
 
 
 class Activity(models.Model):
