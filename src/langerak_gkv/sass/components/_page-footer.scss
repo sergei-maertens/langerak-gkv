@@ -1,5 +1,6 @@
 @import "../lib/colors";
 @import "../lib/typography";
+@import '../lib/responsive';
 
 .page-footer {
   @include body;
@@ -7,25 +8,35 @@
   padding: 2rem;
 
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
 
   background: $theme-green;
   color: white;
 
-  & &__attributions {
-    display: flex;
-    justify-content: space-around;
+  &__column {
+    width: 100%;
+    flex-grow: 1;
+    margin: 0 0.5rem;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
   }
+}
 
-  & &__attribution {
-    a {
-      color: white;
-      text-decoration: none;
-      font-weight: 400;
+@include mobile-only {
+  .page-footer {
+    display: block;
+    padding: 1rem;
 
-      &:hover {
-        text-decoration: underline;
+    &__column {
+      margin: 0;
+
+      & + & {
+        margin-top: 1rem;
       }
     }
   }
