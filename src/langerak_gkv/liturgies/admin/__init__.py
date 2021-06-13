@@ -61,9 +61,14 @@ class LiturgyAdmin(ImportExportActionModelAdmin):
     list_display = ("__str__", "date", "preacher", "link_emails")
     list_editable = ("preacher",)
     list_filter = ("date", "service__time")
+    ordering = ("-date",)
     inlines = [MailRecipientInline]
     resource_class = LiturgyResource
     filter_horizontal = ("other_churches",)
+
+    def get_queryset(self, request):
+        qs = super().get_queryset(request)
+        return qs.order_by("service__time")
 
     def response_change(self, request, obj):
         """
