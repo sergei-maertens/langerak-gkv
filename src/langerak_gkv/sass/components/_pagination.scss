@@ -4,6 +4,7 @@
 
 .pagination {
   display: flex;
+  flex-wrap: wrap;
 
   &__page {
     @include body;
@@ -14,6 +15,9 @@
     background-color: $theme-purple;
     color: white;
     text-decoration: none;
+    margin-bottom: 0.25rem;
+    min-width: 2.35rem;
+    text-align: center;
 
     &:hover {
       box-shadow: 2px 2px 5px 0 $shadow-form-inputs;
@@ -26,8 +30,8 @@
       color: $font-color;
     }
 
-    & + & {
-      margin-left: 0.5rem;
+    &:not(:last-child) {
+      margin-right: 0.5rem;
     }
   }
 
