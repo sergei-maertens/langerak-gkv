@@ -25,6 +25,17 @@
       margin-right: 0;
     }
   }
+
+  // cms generated links don't have classnames
+  a {
+    color: white;
+    text-decoration: underline;
+
+    &:hover,
+    &:focus {
+      font-weight: bold;
+    }
+  }
 }
 
 @include mobile-only {
