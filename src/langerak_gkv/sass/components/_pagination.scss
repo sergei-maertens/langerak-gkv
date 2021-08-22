@@ -35,4 +35,23 @@
     }
   }
 
+  &__separator {
+    @include body;
+    font-size: 1.2rem;
+
+    display: block;
+    padding: 0.25rem 0.5rem;
+    min-width: 2.35rem;
+    color: $theme-purple;
+
+    &:after {
+      content: "…";
+    }
+  }
+
+  // only display one instead of for every non-shown page
+  &__separator + &__separator {
+    display: none;
+  }
+
 }

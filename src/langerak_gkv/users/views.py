@@ -24,7 +24,10 @@ class UserSearchMixin(FormMixin):
     def get_context_data(self, **kwargs):
         search_form = self.form or self.get_search_form()
         kwargs[self.form_context_name] = search_form
-        kwargs["search_form_qs"] = urlencode(search_form.data)
+        query_data = search_form.data.copy()
+        if "page" in query_data:
+            del query_data["page"]
+        kwargs["search_form_qs"] = urlencode(query_data)
         return super(UserSearchMixin, self).get_context_data(**kwargs)
 
 

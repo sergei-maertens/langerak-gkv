@@ -1,9 +1,19 @@
 {% if paginator.num_pages > 1 %}
 <nav class="pagination">
     {% for page in paginator.page_range %}
-        <a class="pagination__page {% if page == page_obj.number %}pagination__page--current{% endif %}" href="?{% if qs %}{{ qs }}&amp;{% endif %}page={{ page }}{{ extra_query }}">
-            {{ page }}
-        </a>
+        {% if page == page_obj.number or page == 1 or page == paginator.num_pages %}
+            <a class="pagination__page {% if page == page_obj.number %}pagination__page--current{% endif %}" href="?{% if qs %}{{ qs }}&amp;{% endif %}page={{ page }}{{ extra_query }}">
+                {{ page }}
+            </a>
+
+        {% elif page == page_obj.number|add:-1 or page == page_obj.number|add:1 %}
+            <a class="pagination__page {% if page == page_obj.number %}pagination__page--current{% endif %}" href="?{% if qs %}{{ qs }}&amp;{% endif %}page={{ page }}{{ extra_query }}">
+                {{ page }}
+            </a>
+        {% else %}
+            <span class="pagination__separator"></span>
+        {% endif %}
+
     {% endfor %}
 </nav>
 {% endif %}
