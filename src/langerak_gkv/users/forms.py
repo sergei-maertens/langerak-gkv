@@ -137,7 +137,6 @@ class UserSearchForm(forms.ModelForm):
             "last_name",
             "address",
             "district_function",
-            "member_type",
         )
 
     def as_filters(self):

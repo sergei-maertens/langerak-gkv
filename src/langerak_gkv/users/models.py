@@ -9,7 +9,7 @@ from django.utils.translation import ugettext_lazy as _
 
 from image_cropping import ImageRatioField
 
-from .constants import MemberType, Sex
+from .constants import Sex
 from .managers import UserManager
 
 
@@ -77,9 +77,6 @@ class User(AbstractBaseUser, PermissionsMixin):
     about_me = models.TextField(blank=True, help_text=_("Short 'about me' text"))
 
     # district/family information, from district we find the people with district functions
-    member_type = models.CharField(
-        _("member type"), max_length=20, choices=MemberType.choices, blank=True
-    )
     district = models.ForeignKey(
         "users.District",
         verbose_name=_("district"),

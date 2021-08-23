@@ -31,7 +31,6 @@ class UserAdmin(ImportExportMixin, _UserAdmin):
                     "picture",
                     "cropping",
                     "about_me",
-                    "member_type",
                 )
             },
         ),
