@@ -27,7 +27,7 @@ pytz==2019.2
     # via
     #   -c requirements/base.txt
     #   django
-sqlparse==0.4.1
+sqlparse==0.4.2
     # via
     #   -c requirements/base.txt
     #   django
