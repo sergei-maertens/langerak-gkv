@@ -155,7 +155,7 @@ $menu-mobile-icon-factor: 1.5;
   }
 
   & &__nested-menu {
-    padding-left: $menu-space-inbetween;
+    // padding-left: $menu-space-inbetween;
     // hide by default
     display: none;
 
@@ -170,7 +170,8 @@ $menu-mobile-icon-factor: 1.5;
         min-width: 100%;
         max-width: 20rem;;
         background: #333;
-        padding: 0 $menu-space-inbetween-half $menu-space-inbetween-half;
+        padding: 0;
+        margin-left: -$menu-space-inbetween-half;
         border-bottom-left-radius: 2px;
         border-bottom-right-radius: 2px;
         border: solid 1px darken(#333, 2%);
@@ -185,10 +186,14 @@ $menu-mobile-icon-factor: 1.5;
     font-size: .75 * $menu-item-font-size;
     color: $menu-font-color;
     text-decoration: none;
-    padding: .2rem 0;
+    padding: .3rem $menu-space-inbetween-half;
 
     &:hover {
       text-decoration: underline;
+    }
+
+    &:nth-child(even) {
+      background: lighten(#333, 5%);
     }
   }
 
