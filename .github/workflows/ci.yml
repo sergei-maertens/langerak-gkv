@@ -4,7 +4,7 @@ name: Run CI
 on:
   push:
     branches:
-      - master
+      - main
     tags:
       - '*'
   pull_request:
@@ -46,7 +46,9 @@ jobs:
           node-version: '12'
 
       - name: Install dependencies
-        run: pip install -r requirements/base.txt -r requirements/ci.txt
+        run: |
+          pip install -U pip 'setuptools<58.0'
+          pip install -r requirements/base.txt -r requirements/ci.txt
 
       - name: Build frontend
         run: |

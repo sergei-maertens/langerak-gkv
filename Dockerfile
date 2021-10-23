@@ -9,7 +9,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 WORKDIR /app
 
 COPY ./requirements /app/requirements
-RUN pip install pip setuptools -U \
+RUN pip install -U pip 'setuptools<58.0' \
     && pip install -r requirements/production.txt
 
 # Stage 2 - build frontend
