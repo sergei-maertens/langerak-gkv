@@ -41,7 +41,6 @@
     "browserslist": "^4.16.6",
     "chai": "^4.2.0",
     "cssnano": "^5.0.5",
-    "eyeglass": "^2.4.1",
     "gulp": "^4.0.2",
     "gulp-file": "^0.4.0",
     "gulp-hub": "^4.2.0",
