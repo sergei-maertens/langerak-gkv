@@ -64,6 +64,7 @@ $menu-mobile-icon-factor: 1.5;
 
     &--sub {
       background: lighten(#333, 10%);
+      flex-wrap: wrap;
 
       .menu__item {
         margin: 0;
