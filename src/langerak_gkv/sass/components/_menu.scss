@@ -5,11 +5,13 @@
 @import "../lib/responsive";
 
 $menu-font-color: #ffffff !default;
+
 $menu-space-inbetween: 1.3rem;
+$menu-space-inbetween-half: math.div($menu-space-inbetween , 2);
 
 $menu-item-font-size: 1.4rem;
 
-$menu-space-inbetween-half: math.div($menu-space-inbetween , 2);
+$menu-mobile-icon-factor: 1.5;
 
 .menu {
 
@@ -29,17 +31,17 @@ $menu-space-inbetween-half: math.div($menu-space-inbetween , 2);
 
   & &__hamberder-row {
     display: block;
-    width: 1rem;
-    height: 3px;
-    border-radius: 1px;
+    width: $menu-mobile-icon-factor * 1rem;
+    height: 4px;
+    border-radius: 2px;
     background: $menu-font-color;
-    margin: 3px 0;
+    margin: 4px 0;
   }
 
   & &__profile {
     display: block;
-    width: 1.4rem;
-    height: 1.4rem;
+    width: $menu-mobile-icon-factor * 1.4rem;
+    height: $menu-mobile-icon-factor * 1.4rem;
     margin: 0 0.5rem;
     background-color: $menu-font-color;
     mask-image: url('../img/profile-icon.svg');
@@ -47,8 +49,8 @@ $menu-space-inbetween-half: math.div($menu-space-inbetween , 2);
 
   & &__search {
     display: block;
-    width: 1.1rem;
-    height: 1.1rem;
+    width: $menu-mobile-icon-factor * 1.1rem;
+    height: $menu-mobile-icon-factor * 1.1rem;
     margin: 0;
     background-color: $menu-font-color;
     mask-image: url('../img/zoek.svg');
