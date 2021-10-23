@@ -1,3 +1,5 @@
+@use "sass:math";
+
 @import "../../lib/colors";
 @import "../../lib/typography";
 
@@ -40,7 +42,7 @@ $profile-detail-gutter: 1em;
   }
 
   & &__pictures {
-    width: calc(40% - #{$profile-detail-gutter/2});
+    width: calc(40% - #{math.div($profile-detail-gutter, 2)});
     background: $profile-detail-pane-background;
     padding: 1em;
   }
@@ -67,7 +69,7 @@ $profile-detail-gutter: 1em;
     @include body;
     font-size: 1.2rem;
 
-    width: calc(60% - #{$profile-detail-gutter/2});
+    width: calc(60% - #{math.div($profile-detail-gutter, 2)});
     background: $profile-detail-pane-background;
     padding: 1em;
 

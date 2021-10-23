@@ -1,9 +1,11 @@
+@use "sass:math";
+
 @import '../../lib/typography';
 @import '../../lib/responsive';
 
 $profile-list-preview-gutter: 2em;
-$profile-list-preview-margin-side: $profile-list-preview-gutter / 2;
-$profile-list-preview-width: 100% / 3;
+$profile-list-preview-margin-side: math.div($profile-list-preview-gutter, 2);
+$profile-list-preview-width: math.div(100%, 3);
 
 .profile-list {
   display: flex;

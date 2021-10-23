@@ -1,3 +1,5 @@
+@use "sass:math";
+
 @import "../lib/measurements";
 @import "../lib/responsive";
 
@@ -71,7 +73,7 @@ $header-content-side-padding: 56px !default;
     height: $strepen-skew-height;
 
     @include laptop {
-      margin-top: - $strepen-skew-height / 2;
+      margin-top: -#{math.div($strepen-skew-height, 2)};
     }
 
     @include mobile-only {

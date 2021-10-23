@@ -1,3 +1,5 @@
+@use "sass:math";
+
 @import "../lib/colors";
 @import "../lib/responsive";
 @import "../lib/measurements";
@@ -15,7 +17,7 @@ $border-height: 500px;
   & &__border {
     display: block;
     position: absolute;
-    top: calc(50% - #{$border-height / 2});
+    top: calc(50% - #{math.div($border-height, 2)});
     left: 0;
     width: 5px;
     height: $border-height;
