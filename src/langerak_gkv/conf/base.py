@@ -367,6 +367,12 @@ HAYSTACK_CONNECTIONS = {
         "ENGINE": "langerak_gkv.search.backends.ConfigurableElasticSearchEngine",
         "URL": config("ELASTIC_SEARCH", "http://127.0.0.1:9200/"),
         "INDEX_NAME": config("ELASTIC_INDEX", "gklangerak"),
+        "KWARGS": {
+            # "use_ssl": True,
+            # "verify_certs": True,
+            # "ca_certs": "/path/to/CA_certs",
+            "http_auth": (config("ELASTIC_USER"), config("ELASTIC_PASSWORD")),
+        },
     }
 }
 
@@ -376,7 +382,7 @@ ELASTICSEARCH_INDEX_SETTINGS = {
             "filter": {
                 "haystack_edgengram": {
                     "max_gram": 30,  # Default: 15. Make this larger to ensure long words are properly found
-                    "type": "edgeNGram",
+                    "type": "edge_ngram",
                     "min_gram": 2,  # Default: 2. Keep this small to ensure we get results for partial words
                 },
                 "haystack_ngram": {
@@ -388,13 +394,13 @@ ELASTICSEARCH_INDEX_SETTINGS = {
             "tokenizer": {
                 "haystack_edgengram_tokenizer": {
                     "max_gram": 15,
-                    "type": "edgeNGram",
+                    "type": "edge_ngram",
                     # u'side': u'front',
                     "min_gram": 2,
                 },
                 "haystack_ngram_tokenizer": {
                     "max_gram": 15,
-                    "type": "nGram",
+                    "type": "ngram",
                     "min_gram": 2,
                 },
             },
