@@ -1,12 +1,12 @@
 from django.conf import settings
 
-from haystack.backends.elasticsearch_backend import (
-    ElasticsearchSearchBackend,
-    ElasticsearchSearchEngine,
+from haystack.backends.elasticsearch7_backend import (
+    Elasticsearch7SearchBackend,
+    Elasticsearch7SearchEngine,
 )
 
 
-class ConfigurableElasticBackend(ElasticsearchSearchBackend):
+class ConfigurableElasticBackend(Elasticsearch7SearchBackend):
     """
     Allows you to tweak the ElasticSearch backend settings.
 
@@ -92,5 +92,5 @@ class ConfigurableElasticBackend(ElasticsearchSearchBackend):
         return search_kwargs
 
 
-class ConfigurableElasticSearchEngine(ElasticsearchSearchEngine):
+class ConfigurableElasticSearchEngine(Elasticsearch7SearchEngine):
     backend = ConfigurableElasticBackend
