@@ -8,6 +8,7 @@ bleach==3.3.0
     # via django-bleach
 certifi==2019.6.16
     # via
+    #   elasticsearch
     #   requests
     #   sentry-sdk
 chardet==3.0.4
@@ -50,7 +51,7 @@ django-filer==1.5.0
     #   djangocms-video
 django-formtools==2.1
     # via django-cms
-django-haystack==2.8.1
+django-haystack==3.1.1
     # via -r requirements/base.in
 django-ical==1.6.2
     # via -r requirements/base.in
@@ -136,7 +137,7 @@ easy-thumbnails==2.6
     #   -r requirements/base.in
     #   django-filer
     #   djangocms-picture
-elasticsearch==2.4.1
+elasticsearch==7.15.2
     # via -r requirements/base.in
 et-xmlfile==1.0.1
     # via openpyxl
