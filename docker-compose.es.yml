@@ -27,7 +27,7 @@ services:
       - xpack.security.http.ssl.enabled=true
       - xpack.security.http.ssl.verification_mode=certificate
       - xpack.security.http.ssl.key=/usr/share/elasticsearch/config/certs/privkey.pem
-      - xpack.security.http.ssl.certificate=/usr/share/elasticsearch/config/certs/cert.pem
+      - xpack.security.http.ssl.certificate=/usr/share/elasticsearch/config/certs/fullchain.pem
       - KEYSTORE_PASSWORD=${ELASTIC_KEYSTORE_PASSWORD}
     ports:
       - "9200:9200"

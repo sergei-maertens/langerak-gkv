@@ -368,9 +368,8 @@ HAYSTACK_CONNECTIONS = {
         "URL": config("ELASTIC_SEARCH", "http://127.0.0.1:9200/"),
         "INDEX_NAME": config("ELASTIC_INDEX", "gklangerak"),
         "KWARGS": {
-            # "use_ssl": True,
-            # "verify_certs": True,
-            # "ca_certs": "/path/to/CA_certs",
+            "use_ssl": True,
+            "verify_certs": True,
             "http_auth": (config("ELASTIC_USER"), config("ELASTIC_PASSWORD")),
         },
     }
