@@ -6,7 +6,7 @@
 #
 bleach==3.3.0
     # via django-bleach
-certifi==2019.6.16
+certifi==2021.10.8
     # via
     #   elasticsearch
     #   requests
