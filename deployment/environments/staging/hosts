@@ -1,2 +1,5 @@
 [web]
 gklangerak.regex-it.nl python_interpreter=/usr/bin/python image_tag=latest
+
+[es_nodes]
+elastic.regex-it.nl python_interpreter=/usr/bin/python
