@@ -1,7 +1,7 @@
 ---
 
 - name: Deploy with Docker
-  hosts: all
+  hosts: web
   remote_user: root
 
   vars:
