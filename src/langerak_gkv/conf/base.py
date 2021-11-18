@@ -367,13 +367,16 @@ HAYSTACK_CONNECTIONS = {
         "ENGINE": "langerak_gkv.search.backends.ConfigurableElasticSearchEngine",
         "URL": config("ELASTIC_SEARCH", "http://127.0.0.1:9200/"),
         "INDEX_NAME": config("ELASTIC_INDEX", "gklangerak"),
-        "KWARGS": {
-            "use_ssl": True,
-            "verify_certs": True,
-            "http_auth": (config("ELASTIC_USER"), config("ELASTIC_PASSWORD")),
-        },
     }
 }
+
+if "ES_SECURED" in os.environ:
+    HAYSTACK_CONNECTIONS["default"]["KWARGS"] = {
+        "use_ssl": True,
+        "verify_certs": True,
+        "http_auth": (config("ELASTIC_USER"), config("ELASTIC_PASSWORD")),
+    }
+
 
 ELASTICSEARCH_INDEX_SETTINGS = {
     "settings": {
