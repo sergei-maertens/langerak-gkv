@@ -1,0 +1,41 @@
+---
+
+version: '3.7'
+
+services:
+  es:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.15.2
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    volumes:
+      - es_data:/usr/share/elasticsearch/data
+      - es_config:/usr/share/elasticsearch/config
+    environment:
+      - cluster.name=regexit
+      - node.name=es01
+      - node.roles=master,data
+      - discovery.type=single-node
+      - bootstrap.memory_lock=true
+      - ingest.geoip.downloader.enabled=false
+      - xpack.security.enabled=true
+      # - xpack.security.transport.ssl.verification_mode=certificate
+      # - xpack.security.transport.ssl.key=/etc/elasticsearch/config/certs/elastic01.mycompany.com/privkey1.pem
+      # - xpack.security.transport.ssl.certificate=/etc/elasticsearch/config/certs/elastic01.mycompany.com/cert1.pem
+      # - xpack.security.transport.ssl.certificate_authorities=/etc/elasticsearch/config/certs/elastic01.mycompany.com/fullchain1.pem
+      - xpack.security.http.ssl.enabled=true
+      - xpack.security.http.ssl.verification_mode=certificate
+      - xpack.security.http.ssl.key=/usr/share/elasticsearch/config/certs/privkey.pem
+      - xpack.security.http.ssl.certificate=/usr/share/elasticsearch/config/certs/fullchain.pem
+      - KEYSTORE_PASSWORD=${ELASTIC_KEYSTORE_PASSWORD}
+    ports:
+      - "9200:9200"
+      # - "9300:9300"
+
+volumes:
+  es_data:
+    driver: local
+  es_config:
+    driver: local
+

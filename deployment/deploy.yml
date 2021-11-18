@@ -13,6 +13,5 @@
     - role: users
     - role: geerlingguy.docker
     - role: database
-    - role: elasticsearch
     - role: django
     - role: nginx

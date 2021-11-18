@@ -36,5 +36,5 @@ djangocms-link
 djangocms-video
 
 # search
-elasticsearch<5.0
+elasticsearch
 django-haystack
