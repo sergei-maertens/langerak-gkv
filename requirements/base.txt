@@ -167,7 +167,7 @@ openpyxl==2.6.3
     # via tablib
 packaging==20.9
     # via bleach
-pillow==8.4.0
+pillow==9.0.1
     # via
     #   -r requirements/base.in
     #   djangocms-text-ckeditor
