@@ -7,8 +7,8 @@
 {% block aside %} {% with search_form as form %} {{ block.super }} {% endwith %} {% endblock %}
 
 
-{% block main-content %}
-<form action="." class="form-horizontal" method="post" enctype="multipart/form-data">{% csrf_token %}
+{% block profile-content %}
+<form action="." class="form" method="post" enctype="multipart/form-data">{% csrf_token %}
     {{ block.super }}
 </form>
 {% endblock %}
@@ -16,18 +16,25 @@
 
 {% block profile_pic %}
     {{ form.picture }}
-    {{ form.cropping }}
+
+    {% if form.picture.value %}
+        <div class="field">
+            <label class="field__label" style="margin-bottom: 0.5rem;">{% trans "Set size" %}</label>
+            {{ form.cropping }}
+        </div>
+    {% endif %}
+
 {% endblock %}
 
 
 {% block mobile %}
-{% load_widgets form='users/profile.form' %}
+{% load_widgets form='includes/forms/default.html' %}
 {% form_field form.mobile %}
 {% endblock %}
 
 
 {% block email %}
-{% load_widgets form='users/profile.form' %}
+{% load_widgets form='includes/forms/default.html' %}
 {% form_field form.email %}
 <br>
 {% form_field form.username %}
@@ -35,11 +42,9 @@
 
 
 {% block about_me %}
-{% load_widgets form='users/profile.form' %}
+{% load_widgets form='includes/forms/default.html' %}
 {% form_field form.about_me %}
 
-<div class="clearfix">
-    {% trans "save" as save %}
-    {% widget 'form:btn-submit' btn_class='btn-action pull-right' btn_text=save %}
-</div>
+{% trans "save" as save %}
+{% widget 'form:submit' text=save %}
 {% endblock %}
