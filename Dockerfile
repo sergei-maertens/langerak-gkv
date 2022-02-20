@@ -1,5 +1,5 @@
 # Stage 1 - Compile needed python dependencies
-FROM python:3.6-slim-buster AS build
+FROM python:3.9-slim-bullseye AS build
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
         build-essential \
@@ -28,7 +28,7 @@ COPY src/langerak_gkv/sass/ /app/src/langerak_gkv/sass/
 RUN npm run build --production
 
 # Stage 3 - Build docker image suitable for execution and deployment
-FROM python:3.6-slim-buster AS production
+FROM python:3.9-slim-bullseye AS production
 
 # Stage 3.1 - Set up the needed production dependencies
 # install all the dependencies for GeoDjango
@@ -40,7 +40,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         gettext \
     && rm -rf /var/lib/apt/lists/*
 
-COPY --from=build /usr/local/lib/python3.6 /usr/local/lib/python3.6
+COPY --from=build /usr/local/lib/python3.9 /usr/local/lib/python3.9
 COPY --from=build /usr/local/bin/uwsgi /usr/local/bin/uwsgi
 COPY --from=frontend-build /app/node_modules/normalize.css /app/node_modules/normalize.css
 
