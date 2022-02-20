@@ -35,6 +35,16 @@ $profile-detail-gutter: 1em;
     }
   }
 
+  & &__edit-link {
+    @include body;
+    display: block;
+    flex-basis: 100%;
+    text-align: right;
+    margin-bottom: 1em;
+    padding-right: 1rem;
+    color: $font-color;
+  }
+
   & &__title {
     @include subtitle;
     margin: 0;

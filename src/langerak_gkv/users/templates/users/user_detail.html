@@ -9,10 +9,15 @@
 
     <nav class="profile-detail__header-bar">
         <a class="profile-detail__back-link" href="{% url 'users:list' %}">
-            {% trans "Back to overview" %}
+            &lt; {% trans "Back to overview" %}
         </a>
         <h2 class="profile-detail__title">{% trans "Profile" %}</h2>
     </nav>
+
+    {% url 'users:profile-edit' as edit_url %}
+    {% if profile == request.user and request.path != edit_url %}
+        <a class="profile-detail__edit-link" href="{{ edit_url }}">{% trans "Update profile" %}</a>
+    {% endif %}
 
     <section class="profile-detail__pictures">
 
