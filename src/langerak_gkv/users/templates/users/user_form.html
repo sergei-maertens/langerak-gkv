@@ -7,8 +7,8 @@
 {% block aside %} {% with search_form as form %} {{ block.super }} {% endwith %} {% endblock %}
 
 
-{% block main-content %}
-<form action="." class="form-horizontal" method="post" enctype="multipart/form-data">{% csrf_token %}
+{% block profile-content %}
+<form action="." class="form" method="post" enctype="multipart/form-data">{% csrf_token %}
     {{ block.super }}
 </form>
 {% endblock %}
