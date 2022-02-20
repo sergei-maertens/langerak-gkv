@@ -21,13 +21,13 @@
 
 
 {% block mobile %}
-{% load_widgets form='users/profile.form' %}
+{% load_widgets form='includes/forms/default.html' %}
 {% form_field form.mobile %}
 {% endblock %}
 
 
 {% block email %}
-{% load_widgets form='users/profile.form' %}
+{% load_widgets form='includes/forms/default.html' %}
 {% form_field form.email %}
 <br>
 {% form_field form.username %}
@@ -35,11 +35,9 @@
 
 
 {% block about_me %}
-{% load_widgets form='users/profile.form' %}
+{% load_widgets form='includes/forms/default.html' %}
 {% form_field form.about_me %}
 
-<div class="clearfix">
-    {% trans "save" as save %}
-    {% widget 'form:btn-submit' btn_class='btn-action pull-right' btn_text=save %}
-</div>
+{% trans "save" as save %}
+{% widget 'form:submit' text=save %}
 {% endblock %}

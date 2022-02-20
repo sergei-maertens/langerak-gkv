@@ -18,6 +18,14 @@
 </div>
 {% endblock %}
 
+{% block EmailInput %}
+<div class="field">
+    {% reuse "_label" bem_class="field__label" %}
+    {% reuse "input" input_type="email" bem_class="field__input" %}
+    {% reuse "_help_text" bem_class="field__help" %}
+</div>
+{% endblock EmailInput %}
+
 {% block NumberInput %}
 <div class="field">
     {% reuse "_label" bem_class="field__label" %}
@@ -26,6 +34,20 @@
 </div>
 {% endblock %}
 
+{% block Textarea %}
+<div class="field">
+    {% reuse "_label" bem_class="field__label" %}
+    <textarea name="{{ html_name }}" id="{{ id }}"
+        class="field__input field__input--{{ errors|yesno:"invalid,valid" }}{{ css_classes }}"
+        {{ widget.attrs|flatattrs }}
+        {{ required|yesno:"required," }}
+        {% if placeholder %}placeholder="{{ placeholder }}"{% endif %}
+        {{ autofocus|yesno:"autofocus," }}
+    >{{ value|default:"" }}</textarea>
+    {# {% reuse "_errors" %} #}
+    {% reuse "_help_text" bem_class="field__help" %}
+</div>
+{% endblock %}
 
 {# Select variations #}
 {% block Select %}
