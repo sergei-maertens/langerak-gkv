@@ -87,7 +87,7 @@ django-treebeard==4.3
     # via django-cms
 django-yubin==1.4.0
     # via -r requirements/base.in
-django==2.2.24
+django==2.2.27
     # via
     #   -r requirements/base.in
     #   django-appconf
