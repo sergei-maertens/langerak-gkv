@@ -3,6 +3,7 @@ import os
 from django.urls import reverse_lazy
 
 import sentry_sdk
+from easy_thumbnails.conf import Settings as thumbnail_settings
 
 from .cms import *  # noqa
 from .utils import config, get_current_version, get_sentry_integrations
@@ -454,6 +455,13 @@ BLEACH_ALLOWED_TAGS = [
     "strong",
     "ul",
 ]
+
+#
+# EASY THUMBNAILS / IMAGE CROPPING
+#
+THUMBNAIL_PROCESSORS = (
+    "image_cropping.thumbnail_processors.crop_corners",
+) + thumbnail_settings.THUMBNAIL_PROCESSORS
 
 #
 # Tests
