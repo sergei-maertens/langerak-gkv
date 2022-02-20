@@ -16,7 +16,14 @@
 
 {% block profile_pic %}
     {{ form.picture }}
-    {{ form.cropping }}
+
+    {% if form.picture.value %}
+        <div class="field">
+            <label class="field__label" style="margin-bottom: 0.5rem;">{% trans "Set size" %}</label>
+            {{ form.cropping }}
+        </div>
+    {% endif %}
+
 {% endblock %}
 
 

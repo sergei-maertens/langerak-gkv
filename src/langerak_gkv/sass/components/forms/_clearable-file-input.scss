@@ -1,0 +1,26 @@
+.clearable-file-input {
+
+  &:not(:last-child) {
+    margin-bottom: 1rem;
+  }
+
+  & &__current {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  & &__upload {
+    &:not(:last-child) {
+      margin-bottom: 0.5rem;
+    }
+
+    .field__input {
+      border-bottom: none;
+      padding-left: 0;
+    }
+  }
+
+  & &__clear {
+    font-size: 1.2rem;
+  }
+}

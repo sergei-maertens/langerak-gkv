@@ -5,10 +5,11 @@ from django.contrib.auth.forms import AuthenticationForm, ReadOnlyPasswordHashFi
 from django.db.models import Q
 from django.utils.translation import ugettext_lazy as _
 
-from image_cropping import ImageCropWidget
+from image_cropping import ImageCropWidget as AdminImageCropWidget
 
 from .constants import Sex
 from .models import User
+from .widgets import ImageCropWidget
 
 
 class UserCreationForm(forms.ModelForm):
@@ -64,7 +65,7 @@ class UserChangeForm(forms.ModelForm):
     class Meta:
         model = User
         fields = "__all__"
-        widgets = {"picture": ImageCropWidget}
+        widgets = {"picture": AdminImageCropWidget}
 
     def __init__(self, *args, **kwargs):
         super(UserChangeForm, self).__init__(*args, **kwargs)
