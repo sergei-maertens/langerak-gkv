@@ -94,11 +94,15 @@ class UserChangeForm(forms.ModelForm):
 class ProfileUpdateForm(forms.ModelForm):
     class Meta:
         model = User
-        fields = ("email", "username", "mobile", "picture", "cropping", "about_me")
+        fields = (
+            "email",
+            "username",
+            "mobile",
+            "picture",
+            "cropping",
+            "about_me",
+        )
         widgets = {"picture": ImageCropWidget}
-
-    def __init__(self, *args, **kwargs):
-        super(ProfileUpdateForm, self).__init__(*args, **kwargs)
 
     def clean_username(self):
         username = self.cleaned_data.get("username")

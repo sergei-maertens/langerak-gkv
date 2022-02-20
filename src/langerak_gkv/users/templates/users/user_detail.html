@@ -21,15 +21,15 @@
 
     <section class="profile-detail__pictures">
 
-        {% block profile_pic %}
-            <figure class="profile-detail__profile-pic">
+        <figure class="profile-detail__profile-pic">
+            {% block profile_pic %}
                 {% if profile.picture %}
                     <img src="{% thumbnail profile.picture 400x400 box=profile.cropping crop upscale %}">
                 {% else %}
                     <div class="profile-pic-placeholder"></div>
                 {% endif %}
-            </figure>
-        {% endblock %}
+            {% endblock %}
+        </figure>
 
         {% if profile.partner %}
         <div class="profile-detail__relations">
