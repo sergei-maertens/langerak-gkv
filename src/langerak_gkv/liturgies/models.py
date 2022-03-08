@@ -71,7 +71,7 @@ class Liturgy(models.Model):
         ordering = ["-date"]
 
     def __str__(self):
-        return u"{service} {date}".format(
+        return "{service} {date}".format(
             service=self.service.name, date=self.date.strftime("%d-%m-%Y")
         )
 

@@ -69,8 +69,8 @@ class Activity(models.Model):
     objects = ActivityManager()
 
     class Meta:
-        verbose_name = _(u"activity")
-        verbose_name_plural = _(u"activities")
+        verbose_name = _("activity")
+        verbose_name_plural = _("activities")
         ordering = ["start_date", "start_time", "end_date", "end_time"]
 
     def __str__(self):
@@ -120,8 +120,8 @@ class IntendedPublic(models.Model):
     name = models.CharField(_("name"), max_length=100)
 
     class Meta:
-        verbose_name = _(u"intended public")
-        verbose_name_plural = _(u"intended public")
+        verbose_name = _("intended public")
+        verbose_name_plural = _("intended public")
 
     def __str__(self):
         return self.name

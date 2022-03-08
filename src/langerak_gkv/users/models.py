@@ -141,7 +141,7 @@ class User(AbstractBaseUser, PermissionsMixin):
         return self.first_name or self.username
 
     def get_postal_code(self):
-        """ Format the postal code: 3118BJ becomes 3118 BJ """
+        """Format the postal code: 3118BJ becomes 3118 BJ"""
         if not self.postal_code:
             return None
         bits = self.postal_code.split(" ")
@@ -176,7 +176,7 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     @cached_property
     def connections(self):  # TODO: unittest
-        """ Return the first degree connections, excluding partner/children """
+        """Return the first degree connections, excluding partner/children"""
         relations = self.related_users.filter(
             relation_type__is_partner=False, relation_type__is_child_parent=False
         )
@@ -217,7 +217,7 @@ class UserRelation(models.Model):
         return "{user2} ({user2_relation} of {user1})".format(**self.get_textual_repr())
 
     def get_textual_repr(self):
-        """ Does the logic in checking the sexes and displaying the correct relation """
+        """Does the logic in checking the sexes and displaying the correct relation"""
         s1_attr = "name_%s" % self.user1.sex
         s2_attr = "name_%s" % self.user2.sex
 
@@ -289,7 +289,7 @@ class DistrictFunction(models.Model):
 
 
 class Family(models.Model):
-    """ A family groups members living together in the same physical house. """
+    """A family groups members living together in the same physical house."""
 
     name = models.CharField(
         _("name"), max_length=255, help_text=_("Last name of the householder.")

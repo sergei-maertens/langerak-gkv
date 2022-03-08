@@ -21,7 +21,7 @@ class SocietyAdmin(PlaceholderAdminMixin, admin.ModelAdmin):
 
     def edit_url(self, obj):
         url = obj.get_absolute_url()
-        return u'<a href="{}">{}</a>'.format(url, _("edit content"))
+        return '<a href="{}">{}</a>'.format(url, _("edit content"))
 
     edit_url.short_description = _("edit content")
     edit_url.allow_tags = True

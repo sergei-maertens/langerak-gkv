@@ -17,7 +17,7 @@ class URLConfMenuEntry(models.Model):
 
     def __unicode__(self):
         if self.namespace:
-            return u"{}:{}".format(self.namespace, self.name)
+            return "{}:{}".format(self.namespace, self.name)
         return self.name
 
     def clean(self):

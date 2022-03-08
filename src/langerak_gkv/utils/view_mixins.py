@@ -4,7 +4,7 @@ from django.utils.decorators import method_decorator
 
 
 class LoginRequiredMixin(object):
-    """ Mixin that ensures the user must be logged in for the view """
+    """Mixin that ensures the user must be logged in for the view"""
 
     @method_decorator(login_required)
     def dispatch(self, request, *args, **kwargs):

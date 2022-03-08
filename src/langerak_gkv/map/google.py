@@ -26,12 +26,12 @@ def geolocation(address):
     :param address: A string representing the address.
     :return: Parsed JSON response object.
     """
-    logger.debug(u"Geo-locating address")
+    logger.debug("Geo-locating address")
 
     qs = {"key": settings.GOOGLE_API_KEY, "sensor": "false", "address": address}
     logger.debug(qs)
     response = requests.get(
-        u"https://maps.googleapis.com/maps/api/geocode/json?{0}".format(urlencode(qs))
+        "https://maps.googleapis.com/maps/api/geocode/json?{0}".format(urlencode(qs))
     )
     logger.debug(response)
 
@@ -100,6 +100,6 @@ def geolocation(address):
 
     location = result["results"][0]["geometry"]["location"]
     logger.debug(
-        u"Geolocation success: {0} / {1}".format(location["lat"], location["lng"])
+        "Geolocation success: {0} / {1}".format(location["lat"], location["lng"])
     )
     return (location["lat"], location["lng"])

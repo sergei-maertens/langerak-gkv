@@ -38,7 +38,7 @@ class UserListView(LoginRequiredMixin, UserSearchMixin, ListView):
 
 
 class UserSearchView(UserListView):
-    """ Same as usual list view, except that it deals with the search form """
+    """Same as usual list view, except that it deals with the search form"""
 
     def get_queryset(self):
         qs = super(UserSearchView, self).get_queryset()

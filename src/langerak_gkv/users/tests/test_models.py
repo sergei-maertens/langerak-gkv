@@ -38,7 +38,7 @@ class UserRelationTests(TestCase):
         self.assertEqual(rel_type.reverse.reverse_name_male, "changed this")
 
     def test_symmetrical_relation(self):
-        """ Test that a symmetrical relation is created if one end is created """
+        """Test that a symmetrical relation is created if one end is created"""
         relation1 = UserRelationFactory.create(user1=self.users[0], user2=self.users[1])
         self.assertEqual(UserRelation.objects.count(), 2)
 
@@ -49,7 +49,7 @@ class UserRelationTests(TestCase):
         self.assertEqual(relation2.relation_type.reverse, relation1.relation_type)
 
     def test_symmetrical_relation_updated(self):
-        """ Test that updating one end syncs the other end """
+        """Test that updating one end syncs the other end"""
         rel1 = UserRelationFactory.create(user1=self.users[0], user2=self.users[1])
         # rel2 is automatically created
 
@@ -65,7 +65,7 @@ class UserRelationTests(TestCase):
 
 class AdminTests(WebTest):
     def test_admin(self):
-        """ Test that the symmetrical relation is created when adding relations through the admin """
+        """Test that the symmetrical relation is created when adding relations through the admin"""
         superuser = UserFactory.create(is_superuser=True, is_staff=True)
 
         relation_type = RelationTypeFactory.create()
