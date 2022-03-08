@@ -119,7 +119,7 @@ class ProfileUpdateForm(forms.ModelForm):
 
 
 class LoginForm(AuthenticationForm):
-    username = forms.CharField(max_length=254, label=_("Email or username"))
+    username = forms.CharField(max_length=254, label=_("Username"))
 
 
 class UserSearchForm(forms.ModelForm):
@@ -145,7 +145,7 @@ class UserSearchForm(forms.ModelForm):
         )
 
     def as_filters(self):
-        """Convert the form data to a dict suitable for ``QuerySet.filter`` """
+        """Convert the form data to a dict suitable for ``QuerySet.filter``"""
         q_and, q_or = Q(), Q()
 
         # check the birthdate
