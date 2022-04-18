@@ -35,6 +35,8 @@ factory-boy==2.9.2
     # via -r requirements/test-tools.in
 faker==8.0.0
     # via factory-boy
+freezegun==1.2.1
+    # via -r requirements/test-tools.in
 idna==2.8
     # via
     #   -c requirements/base.txt
@@ -51,6 +53,7 @@ python-dateutil==2.8.0
     # via
     #   -c requirements/base.txt
     #   faker
+    #   freezegun
 requests==2.25.1
     # via
     #   -c requirements/base.txt
