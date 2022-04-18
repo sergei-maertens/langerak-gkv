@@ -16,7 +16,7 @@
 
     <div class="profile-preview__links">
 
-        <a href="mailto:{{ relation.email }}" class="profile-preview__email">
+        <a href="{% if user.email %}mailto:{{ user.email }}{% endif %}" class="profile-preview__email {% if not user.email %}profile-preview__email--disabled{% endif %}">
             {% trans "Email me" %}
         </a>
 

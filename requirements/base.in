@@ -13,6 +13,7 @@ django-autoslug
 django-axes
 django-bleach
 django-choices
+django-filter
 django-sniplates
 django-ical
 django-image-cropping

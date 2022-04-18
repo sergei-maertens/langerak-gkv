@@ -107,6 +107,12 @@ $profile-detail-gutter: 1em;
     margin-bottom: 2rem;
   }
 
+  & &__email {
+    &--disabled {
+      pointer-events: none;
+    }
+  }
+
   & &__connections {
     width: 100%;
     display: flex;

@@ -100,8 +100,8 @@
         {% endblock %}
 
         <div class="key-value key-value--extra-spacing">
-            <span class="key-value__key">{% trans "District function" %}</span>
-            <span class="key-value__value">{{ profile.district_function|default:'-' }}</span>
+            <span class="key-value__key">{% trans "District" %}</span>
+            <span class="key-value__value">{{ profile.district|default:'-' }}</span>
         </div>
 
         {% block about_me %}
@@ -136,7 +136,7 @@
 {% endif %}
 
 <aside class="profile-page__search">
-    {% include "users/user_search_form.html" with form=search_form|default:form %}
+    {% include "users/user_search_form.html" with filter=search_filter %}
 </aside>
 
 {% endblock content %}

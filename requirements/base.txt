@@ -29,6 +29,7 @@ django==2.2.28
     #   django-classy-tags
     #   django-cms
     #   django-filer
+    #   django-filter
     #   django-formtools
     #   django-haystack
     #   django-ical
@@ -76,6 +77,8 @@ django-filer==1.5.0
     #   djangocms-link
     #   djangocms-picture
     #   djangocms-video
+django-filter==21.1
+    # via -r requirements/base.in
 django-formtools==2.1
     # via django-cms
 django-haystack==3.1.1

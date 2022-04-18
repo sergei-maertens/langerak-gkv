@@ -1,13 +1,9 @@
-from datetime import date
-
 from django import forms
 from django.contrib.auth.forms import AuthenticationForm, ReadOnlyPasswordHashField
-from django.db.models import Q
 from django.utils.translation import ugettext_lazy as _
 
 from image_cropping import ImageCropWidget as AdminImageCropWidget
 
-from .constants import Sex
 from .models import User
 from .widgets import ImageCropWidget
 
@@ -120,82 +116,3 @@ class ProfileUpdateForm(forms.ModelForm):
 
 class LoginForm(AuthenticationForm):
     username = forms.CharField(max_length=254, label=_("Username"))
-
-
-class UserSearchForm(forms.ModelForm):
-    full_name = forms.CharField(label=_("Name"), required=False)
-    query = forms.CharField(label=_("Search terms"), required=False)
-
-    min_age = forms.IntegerField(label=_("Minimum age"), required=False)
-    max_age = forms.IntegerField(label=_("Maximum age"), required=False)
-    sex = forms.MultipleChoiceField(
-        label=_("Gender"),
-        required=False,
-        choices=Sex.choices,
-        widget=forms.CheckboxSelectMultiple,
-    )
-
-    class Meta:
-        model = User
-        fields = (
-            "first_name",
-            "last_name",
-            "address",
-            "district",
-            "district_function",
-        )
-
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-
-        self.fields["district"].queryset = self.fields["district"].queryset.order_by(
-            "name"
-        )
-
-    def as_filters(self):
-        """Convert the form data to a dict suitable for ``QuerySet.filter``"""
-        q_and, q_or = Q(), Q()
-
-        # check the birthdate
-        this_year = date.today().year
-        min_age = self.cleaned_data.pop("min_age")
-        if min_age and min_age > 0:
-            q_and &= Q(birthdate__lte=date(this_year - min_age, 1, 1))
-        max_age = self.cleaned_data.pop("max_age")
-        if max_age and max_age > 0:
-            q_and &= Q(birthdate__gte=date(this_year - max_age, 12, 31))
-
-        # full name
-        full_name = self.cleaned_data.pop("full_name")
-        if full_name:
-            bits = full_name.split()
-            for bit in bits:
-                q_or |= Q(first_name__icontains=bit) | Q(last_name__icontains=bit)
-
-        query = self.cleaned_data.get("query")
-        if query:
-            bits = query.split()
-            for bit in bits:
-                q_or |= (
-                    Q(first_name__icontains=bit)
-                    | Q(last_name__icontains=bit)
-                    | Q(about_me__icontains=bit)
-                )
-
-        gender = self.cleaned_data.pop("sex")
-        if gender:
-            q_and &= Q(sex__in=gender)
-
-        for field, value in self.cleaned_data.items():
-            if not value:
-                continue  # no value set (None or empty string or zero)
-            if field == "query":
-                continue
-            flter = "{}__iexact".format(field)
-            if field in ("district", "district_function"):
-                flter = field
-            q_and &= Q(**{flter: value})
-
-        if not len(q_and):
-            return q_or
-        return Q(q_or, q_and)

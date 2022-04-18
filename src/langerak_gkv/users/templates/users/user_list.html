@@ -18,7 +18,7 @@
 
     <aside class="profile-list__search">
         <span class="profile-list__search-close">x</span>
-        {% include "users/user_search_form.html" with form=search_form|default:form %}
+        {% include "users/user_search_form.html" with filter=search_filter|default:filter %}
     </aside>
 </article>
 {% endblock %}

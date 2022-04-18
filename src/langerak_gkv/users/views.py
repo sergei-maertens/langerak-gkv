@@ -1,38 +1,42 @@
 from urllib.parse import urlencode
 
 from django.contrib.auth.views import LoginView, LogoutView
+from django.db.models.functions import Lower
 from django.views.generic import DetailView, ListView
-from django.views.generic.edit import FormMixin, UpdateView
+from django.views.generic.edit import UpdateView
 
 from langerak_gkv.utils.view_mixins import LoginRequiredMixin
 
-from .forms import LoginForm, ProfileUpdateForm, UserSearchForm
+from .filters import UserSearchFilter
+from .forms import LoginForm, ProfileUpdateForm
 from .models import User
 
 
-class UserSearchMixin(FormMixin):
-    form = None
-    form_context_name = "form"
+class UserSearchMixin:
+    search_filter = None
+    filter_context_name = "filter"
     initial = {"sex": None}
 
-    def get_search_form(self):
-        form = super(UserSearchMixin, self).get_form(UserSearchForm)
-        form.data = self.request.GET
-        form.is_bound = True
-        return form
+    def get_search_filter(self):
+        f = UserSearchFilter(self.request.GET, queryset=self.queryset.all())
+        return f
 
     def get_context_data(self, **kwargs):
-        search_form = self.form or self.get_search_form()
-        kwargs[self.form_context_name] = search_form
-        query_data = search_form.data.copy()
+        search_filter = self.search_filter or self.get_search_filter()
+        kwargs[self.filter_context_name] = search_filter
+
+        query_data = search_filter.form.data.copy()
         if "page" in query_data:
             del query_data["page"]
         kwargs["search_form_qs"] = urlencode(query_data)
+
         return super(UserSearchMixin, self).get_context_data(**kwargs)
 
 
 class UserListView(LoginRequiredMixin, UserSearchMixin, ListView):
-    queryset = User.objects.only_real()
+    queryset = User.objects.only_real().order_by(
+        Lower("first_name").asc(), Lower("last_name").asc()
+    )
     context_object_name = "profiles"
     paginate_by = 15
 
@@ -42,15 +46,14 @@ class UserSearchView(UserListView):
 
     def get_queryset(self):
         qs = super(UserSearchView, self).get_queryset()
-        if not self.form.is_valid():
+        if not self.search_filter.form.is_valid():
             return qs
-        return qs.filter(self.form.as_filters())
+        return self.search_filter.qs
 
     def get(self, request, *args, **kwargs):
-        self.form = self.get_search_form()
-        if not self.form.is_valid():
+        self.search_filter = self.get_search_filter()
+        if not self.search_filter.form.is_valid():
             self.object_list = self.get_queryset().none()
-            return self.form_invalid(self.form)
         return super(UserSearchView, self).get(request, *args, **kwargs)
 
     def post(self, request, *args, **kwargs):
@@ -60,12 +63,13 @@ class UserSearchView(UserListView):
 class UserProfileView(LoginRequiredMixin, UserSearchMixin, DetailView):
     queryset = User.objects.only_real()
     context_object_name = "profile"
+    filter_context_name = "search_filter"
 
 
 class UpdateProfileView(LoginRequiredMixin, UserSearchMixin, UpdateView):
     queryset = User.objects.only_real()
     form_class = ProfileUpdateForm
-    form_context_name = "search_form"
+    filter_context_name = "search_filter"
 
     def get_object(self):
         return User.objects.get(pk=self.request.user.pk)
