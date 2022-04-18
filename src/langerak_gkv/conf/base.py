@@ -16,6 +16,8 @@ BASE_DIR = os.path.abspath(
     os.path.join(DJANGO_PROJECT_DIR, os.path.pardir, os.path.pardir)
 )
 
+IS_HTTPS = config("IS_HTTPS", default=True)
+
 #
 # Standard Django settings.
 #
@@ -275,12 +277,14 @@ LOGGING = {
 
 #
 # Additional Django settings
-# Enable these when using HTTPS
 #
 
-# SESSION_COOKIE_SECURE = True
-# SESSION_COOKIE_HTTPONLY = True
-# CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = IS_HTTPS
+SESSION_COOKIE_HTTPONLY = True
+
+CSRF_COOKIE_SECURE = IS_HTTPS
+CSRF_COOKIE_HTTPONLY = True
+
 X_FRAME_OPTIONS = "SAMEORIGIN"
 
 #

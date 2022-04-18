@@ -1,10 +1,9 @@
-from __future__ import absolute_import
-
 import os
 
 os.environ["DB_NAME"] = "koningskerk"
 os.environ["DB_USER"] = "postgres"
 os.environ["ALLOWED_HOSTS"] = ""
+os.environ.setdefault("IS_HTTPS", "0")
 
 from .base import *  # noqa, isort:skip
 

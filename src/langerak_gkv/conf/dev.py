@@ -3,6 +3,7 @@ import os
 os.environ.setdefault("SECRET_KEY", "development-secret-key")
 os.environ.setdefault("ALLOWED_HOSTS", "localhost,127.0.0.1")
 
+os.environ.setdefault("IS_HTTPS", "0")
 os.environ.setdefault("DB_NAME", "langerak_gkv")
 os.environ.setdefault("DB_USER", "langerak_gkv")
 os.environ.setdefault("DB_PASSWORD", "langerak_gkv")
