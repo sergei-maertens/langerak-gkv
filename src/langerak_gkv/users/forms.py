@@ -123,6 +123,7 @@ class LoginForm(AuthenticationForm):
 
 
 class UserSearchForm(forms.ModelForm):
+    # TODO: replace this with django-filters
     full_name = forms.CharField(label=_("Name"), required=False)
     query = forms.CharField(label=_("Search terms"), required=False)
 
