@@ -57,7 +57,7 @@
                             {% endblocktrans %}
                         </a>
                     {% else %}
-                        <a class="user-actions__action modal-trigger" href="#" data-modal="login">
+                        <a class="user-actions__action modal-trigger" href="#" data-modal="login" data-modal-load="{% url 'users:login-modal-form' %}">
                             {% trans "Login" %}
                         </a>
                     {% endif %}

@@ -7,18 +7,7 @@
 
     <h1 class="modal__title">{% trans "Login" %}</h1>
 
-    <form action="{% url 'users:login' %}" method="post" class="form" autocomplete="off">
-        {% csrf_token %}
-
-        {% form_field login_form.username %}
-        {% form_field login_form.password %}
-
-        <div class="form__submit-row">
-            <a href="{% url 'password_reset_recover' %}">{% trans 'Forgot password?' %}</a>
-            {% widget 'form:submit' text=_("Login") %}
-        </div>
-
-    </form>
+    {# actual form loaded via AJAX, to work around the CMS page cache and CSRF token issues. See #83 #}
 
 {% endnested %}
 {% endif %}
