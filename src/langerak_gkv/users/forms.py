@@ -141,7 +141,15 @@ class UserSearchForm(forms.ModelForm):
             "first_name",
             "last_name",
             "address",
+            "district",
             "district_function",
+        )
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+        self.fields["district"].queryset = self.fields["district"].queryset.order_by(
+            "name"
         )
 
     def as_filters(self):
@@ -184,7 +192,7 @@ class UserSearchForm(forms.ModelForm):
             if field == "query":
                 continue
             flter = "{}__iexact".format(field)
-            if field == "district_function":
+            if field in ("district", "district_function"):
                 flter = field
             q_and &= Q(**{flter: value})
 
