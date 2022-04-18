@@ -84,7 +84,7 @@ class UserAdmin(ImportExportMixin, _UserAdmin):
         "exclude_in_queries",
     )
     list_select_related = ("district",)
-    search_fields = ("first_name", "last_name", "email", "username")
+    search_fields = ("first_name", "last_name__icontains", "email", "username")
     ordering = ("email",)
 
     inlines = [UserRelationInline]
