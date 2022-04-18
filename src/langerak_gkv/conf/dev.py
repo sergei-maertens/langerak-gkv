@@ -50,7 +50,7 @@ DEBUG_TOOLBAR_CONFIG = {"INTERCEPT_REDIRECTS": False, "JQUERY_URL": None}
 
 INSTALLED_APPS += ["django_extensions"]
 
-CMS_PAGE_CACHE = False
+CMS_PAGE_CACHE = config("CMS_PAGE_CACHE", default=True)
 
 # Override settings with local settings.
 try:
