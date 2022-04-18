@@ -87,6 +87,12 @@ $profile-preview-transparency: 0.5 !default;
     color: darken(white, 10%);
     font-size: 1.2rem;
     text-decoration: none;
+
+    &--disabled {
+      pointer-events: none;
+      opacity: 0.5;
+      background: lighten($font-color, 20%);
+    }
   }
 
   & &__goto {
