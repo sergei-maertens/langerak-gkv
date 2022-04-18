@@ -100,8 +100,8 @@
         {% endblock %}
 
         <div class="key-value key-value--extra-spacing">
-            <span class="key-value__key">{% trans "District function" %}</span>
-            <span class="key-value__value">{{ profile.district_function|default:'-' }}</span>
+            <span class="key-value__key">{% trans "District" %}</span>
+            <span class="key-value__value">{{ profile.district|default:'-' }}</span>
         </div>
 
         {% block about_me %}
