@@ -1,6 +1,7 @@
 from urllib.parse import urlencode
 
 from django.contrib.auth.views import LoginView, LogoutView
+from django.db.models.functions import Lower
 from django.views.generic import DetailView, ListView
 from django.views.generic.edit import UpdateView
 
@@ -33,7 +34,9 @@ class UserSearchMixin:
 
 
 class UserListView(LoginRequiredMixin, UserSearchMixin, ListView):
-    queryset = User.objects.only_real()
+    queryset = User.objects.only_real().order_by(
+        Lower("first_name").asc(), Lower("last_name").asc()
+    )
     context_object_name = "profiles"
     paginate_by = 15
 
