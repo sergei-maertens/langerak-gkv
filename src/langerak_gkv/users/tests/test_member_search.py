@@ -52,3 +52,31 @@ class UserSearchTests(TestCase):
             query = {"max_age": 27}
 
             self.assertSearchResults(query, [user2])
+
+    def test_filter_by_full_name_and_query(self):
+        user1 = UserFactory.create(first_name="Damon", last_name="Hill")
+        user2 = UserFactory.create(first_name="Lewis", last_name="Hamilton")
+        user3 = UserFactory.create(
+            first_name="Sebastian", last_name="Vettel", about_me="German"
+        )
+
+        with self.subTest("full name variations"):
+            variations = ["lewis", "hamilton", "lewis ham", "lewis hamilton"]
+            for variation in variations:
+                with self.subTest(variation=variation):
+                    query = {"full_name": variation}
+
+                    self.assertSearchResults(query, [user2])
+
+        with self.subTest("query variations, name"):
+            variations = ["dam", "Hill", "damo hil"]
+            for variation in variations:
+                with self.subTest(variation=variation):
+                    query = {"query": variation}
+
+                    self.assertSearchResults(query, [user1])
+
+        with self.subTest("query variations, about_me"):
+            query = {"query": "germ"}
+
+            self.assertSearchResults(query, [user3])
