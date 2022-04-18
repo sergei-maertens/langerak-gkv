@@ -45,9 +45,9 @@ class UserSearchFilter(django_filters.FilterSet):
     )
     address = django_filters.CharFilter(
         field_name="address",
-        lookup_expr="exact",
+        lookup_expr="icontains",
         label=capfirst(_("street")),
-        help_text=_("Street name and number."),
+        help_text=_("Street name and number or parts of the address."),
     )
     district = django_filters.ModelChoiceFilter(
         field_name="district",

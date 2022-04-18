@@ -80,3 +80,10 @@ class UserSearchTests(TestCase):
             query = {"query": "germ"}
 
             self.assertSearchResults(query, [user3])
+
+    def test_partial_matches_street_name(self):
+        user = UserFactory.create(address="Dorpsplein 69")
+
+        query = {"address": "dorpsplein"}
+
+        self.assertSearchResults(query, [user])
