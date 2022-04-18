@@ -4,8 +4,6 @@
 {{ form.media }}
 {% endblock extrahead %}
 
-{% block aside %} {% with search_form as form %} {{ block.super }} {% endwith %} {% endblock %}
-
 
 {% block profile-content %}
 <form action="." class="form" method="post" enctype="multipart/form-data">{% csrf_token %}

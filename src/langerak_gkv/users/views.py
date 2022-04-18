@@ -60,6 +60,7 @@ class UserSearchView(UserListView):
 class UserProfileView(LoginRequiredMixin, UserSearchMixin, DetailView):
     queryset = User.objects.only_real()
     context_object_name = "profile"
+    filter_context_name = "search_filter"
 
 
 class UpdateProfileView(LoginRequiredMixin, UserSearchMixin, UpdateView):

@@ -136,7 +136,7 @@
 {% endif %}
 
 <aside class="profile-page__search">
-    {% include "users/user_search_form.html" with form=search_form|default:form %}
+    {% include "users/user_search_form.html" with filter=search_filter %}
 </aside>
 
 {% endblock content %}

@@ -18,4 +18,8 @@ class UserSearchTests(TestCase):
         response = UserSearchView.as_view()(request)
 
         self.assertEqual(response.status_code, 200)
-        self.assertQuerysetEqual(response.context_data["profiles"], [user2])
+        self.assertQuerysetEqual(
+            response.context_data["profiles"],
+            [user2],
+            transform=lambda x: x,
+        )
