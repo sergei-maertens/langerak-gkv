@@ -3,7 +3,7 @@
     {% load_widgets form='includes/forms/default.html' %}
 
     <fieldset class="form__section">
-        {% form_field form.full_name %}
+        {% form_field filter.form.full_name %}
 
         <div class="form__submit-row">
             {% widget 'form:submit' text=_("Search") %}
@@ -14,15 +14,15 @@
     <fieldset class="form__section">
         <h4 class="form__section-title">{% trans "Advanced search" %}</h4>
 
-        {% form_field form.query %}
-        {% form_field form.sex %}
-        {% form_field form.min_age %}
-        {% form_field form.max_age %}
-        {% form_field form.first_name %}
-        {% form_field form.last_name %}
-        {% form_field form.address %}
-        {% form_field form.district %}
-        {% form_field form.district_function %}
+        {% form_field filter.form.query %}
+        {% form_field filter.form.sex %}
+        {% form_field filter.form.min_age %}
+        {% form_field filter.form.max_age %}
+        {% form_field filter.form.first_name %}
+        {% form_field filter.form.last_name %}
+        {% form_field filter.form.address %}
+        {% form_field filter.form.district %}
+        {% form_field filter.form.district_function %}
 
         <div class="form__submit-row">
             {% widget 'form:submit' text=_("Search") %}
