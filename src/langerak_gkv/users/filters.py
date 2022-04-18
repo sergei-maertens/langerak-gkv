@@ -8,7 +8,7 @@ from django.utils.translation import gettext_lazy as _
 import django_filters
 
 from .constants import Sex
-from .models import District, DistrictFunction, User
+from .models import District, User
 
 
 class IntegerFilter(django_filters.NumberFilter):
@@ -54,12 +54,6 @@ class UserSearchFilter(django_filters.FilterSet):
         lookup_expr="exact",
         queryset=District.objects.order_by("name"),
         label=capfirst(_("district")),
-    )
-    district_function = django_filters.ModelChoiceFilter(
-        field_name="district_function",
-        lookup_expr="exact",
-        queryset=DistrictFunction.objects.order_by("name"),
-        label=capfirst(_("district function")),
     )
 
     class Meta:
