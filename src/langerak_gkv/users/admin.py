@@ -36,7 +36,7 @@ class UserAdmin(ImportExportMixin, _UserAdmin):
         ),
         (
             _("Family and location"),
-            {"fields": (("district", "district_function"), "family")},
+            {"fields": ("district",)},
         ),
         (
             _("Permissions"),
