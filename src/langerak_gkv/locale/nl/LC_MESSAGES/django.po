@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-20 21:08+0100\n"
-"PO-Revision-Date: 2021-06-06 13:26+0020\n"
-"Last-Translator: b'  <info@regex-it.nl>'\n"
+"POT-Creation-Date: 2022-04-18 16:27+0200\n"
+"PO-Revision-Date: 2022-04-18 16:29+0020\n"
+"Last-Translator: b'Sergei Maertens <info@regex-it.nl>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -27,8 +27,9 @@ msgstr "Activiteiten"
 #: src/langerak_gkv/activities/models.py:120
 #: src/langerak_gkv/activities/models.py:131
 #: src/langerak_gkv/liturgies/models.py:13
-#: src/langerak_gkv/societies/models.py:13 src/langerak_gkv/users/models.py:264
-#: src/langerak_gkv/users/models.py:275 src/langerak_gkv/users/models.py:295
+#: src/langerak_gkv/societies/models.py:13
+#: src/langerak_gkv/users/models.py:264 src/langerak_gkv/users/models.py:275
+#: src/langerak_gkv/users/models.py:295
 msgid "name"
 msgstr "naam"
 
@@ -58,7 +59,8 @@ msgstr "korte beschrijving/intro"
 
 #: src/langerak_gkv/activities/models.py:60
 msgid "If checked, this activity can appear on the homepage."
-msgstr "Indien aangevinkt, dan kan deze activiteit op de homepage verschijnen."
+msgstr ""
+"Indien aangevinkt, dan kan deze activiteit op de homepage verschijnen."
 
 #: src/langerak_gkv/activities/models.py:63
 msgid "external url"
@@ -356,10 +358,11 @@ msgid ""
 "Could not parse time %s. Make sure that the `service__time` field is "
 "formatted as text."
 msgstr ""
-"Kon de tijd %s niet parsen. Let er op dat het 'service__time' veld als tekst "
-"geformatteeerd is."
+"Kon de tijd %s niet parsen. Let er op dat het 'service__time' veld als tekst"
+" geformatteeerd is."
 
-#: src/langerak_gkv/liturgies/apps.py:7 src/langerak_gkv/liturgies/models.py:70
+#: src/langerak_gkv/liturgies/apps.py:7
+#: src/langerak_gkv/liturgies/models.py:70
 msgid "liturgies"
 msgstr "kerkdiensten"
 
@@ -736,11 +739,11 @@ msgstr "Voer hier je content in"
 #: src/langerak_gkv/templates/cms/base.html:19
 #, python-format
 msgid ""
-"Last changed: <time datetime=\"%(changed)s\" title=\"%(changed)s\">"
-"%(changed_since)s</time> ago"
+"Last changed: <time datetime=\"%(changed)s\" "
+"title=\"%(changed)s\">%(changed_since)s</time> ago"
 msgstr ""
-"Laatst bijgewerkt: <time datetime=\"%(changed)s\" title=\"%(changed)s\">"
-"%(changed_since)s</time> geleden"
+"Laatst bijgewerkt: <time datetime=\"%(changed)s\" "
+"title=\"%(changed)s\">%(changed_since)s</time> geleden"
 
 #: src/langerak_gkv/templates/includes/forms/base.html:56
 msgid "Submit"
@@ -808,7 +811,8 @@ msgstr ""
 
 #: src/langerak_gkv/templates/password_reset/recovery_email.txt:5
 msgid "You can set your new password by following this link:"
-msgstr "Je kan je nieuwe wachtwoord instellen door de volgende link te volgen:"
+msgstr ""
+"Je kan je nieuwe wachtwoord instellen door de volgende link te volgen:"
 
 #: src/langerak_gkv/templates/password_reset/recovery_email.txt:9
 msgid ""
@@ -838,17 +842,18 @@ msgstr "Herstel mijn wachtwoord"
 #: src/langerak_gkv/templates/password_reset/reset.html:12
 #, python-format
 msgid ""
-"Sorry, this password reset link is invalid. You can still <a href="
-"\"%(recovery_url)s\">request a new one</a>."
+"Sorry, this password reset link is invalid. You can still <a "
+"href=\"%(recovery_url)s\">request a new one</a>."
 msgstr ""
-"Sorry, deze wachtwoordresetlink is ongeldig. Je kan wel <a href="
-"\"%(recovery_url)s\">een nieuwe aanvragen</a>."
+"Sorry, deze wachtwoordresetlink is ongeldig. Je kan wel <a "
+"href=\"%(recovery_url)s\">een nieuwe aanvragen</a>."
 
 #: src/langerak_gkv/templates/password_reset/reset.html:19
 #, python-format
 msgid "Hi, <strong>%(username)s</strong>. Please choose your new password."
 msgstr ""
-"Hallo, <strong>%(username)s</strong>. Gelieve je nieuwe wachtwoord te kiezen."
+"Hallo, <strong>%(username)s</strong>. Gelieve je nieuwe wachtwoord te "
+"kiezen."
 
 #: src/langerak_gkv/templates/password_reset/reset.html:28
 msgid "Set new password"
@@ -906,69 +911,88 @@ msgstr "man"
 msgid "female"
 msgstr "vrouw"
 
-#: src/langerak_gkv/users/forms.py:22
+#: src/langerak_gkv/users/filters.py:20
+msgid "Name"
+msgstr "Naam"
+
+#: src/langerak_gkv/users/filters.py:23
+msgid "Search terms"
+msgstr "Zoektermen"
+
+#: src/langerak_gkv/users/filters.py:27
+msgid "Minimum age"
+msgstr "Minimumleeftijd"
+
+#: src/langerak_gkv/users/filters.py:30
+msgid "Maximum age"
+msgstr "Maximumleeftijd"
+
+#: src/langerak_gkv/users/filters.py:33
+msgid "Gender"
+msgstr "Geslacht"
+
+#: src/langerak_gkv/users/filters.py:41 src/langerak_gkv/users/models.py:30
+msgid "first name"
+msgstr "voornaam"
+
+#: src/langerak_gkv/users/filters.py:44 src/langerak_gkv/users/models.py:31
+msgid "last name"
+msgstr "achternaam"
+
+#: src/langerak_gkv/users/filters.py:49 src/langerak_gkv/users/models.py:53
+#: src/langerak_gkv/users/models.py:299
+msgid "street"
+msgstr "straat"
+
+#: src/langerak_gkv/users/filters.py:50
+#| msgid "Street name and number."
+msgid "Street name and number or parts of the address."
+msgstr "Straatnaam en nummer of een deel hiervan"
+
+#: src/langerak_gkv/users/filters.py:56 src/langerak_gkv/users/models.py:82
+#: src/langerak_gkv/users/models.py:267
+msgid "district"
+msgstr "wijk"
+
+#: src/langerak_gkv/users/forms.py:18
 msgid "The two password fields didn't match."
 msgstr "De twee wachtwoorden kwamen niet overeen."
 
-#: src/langerak_gkv/users/forms.py:23 src/langerak_gkv/users/forms.py:57
+#: src/langerak_gkv/users/forms.py:19 src/langerak_gkv/users/forms.py:53
 msgid "Password"
 msgstr "Wachtwoord"
 
-#: src/langerak_gkv/users/forms.py:25
+#: src/langerak_gkv/users/forms.py:21
 msgid "Password confirmation"
 msgstr "Wachtwoord bevestiging"
 
-#: src/langerak_gkv/users/forms.py:27
+#: src/langerak_gkv/users/forms.py:23
 msgid "Enter the same password as above, for verification."
 msgstr "Voer hetzelfde wachtwoord in als hierboven, ter controle."
 
-#: src/langerak_gkv/users/forms.py:30
+#: src/langerak_gkv/users/forms.py:26 src/langerak_gkv/users/forms.py:118
 msgid "Username"
 msgstr "Gebruikersnaam"
 
-#: src/langerak_gkv/users/forms.py:30
+#: src/langerak_gkv/users/forms.py:26
 msgid "Used for login."
 msgstr "Om in te loggen."
 
-#: src/langerak_gkv/users/forms.py:55
+#: src/langerak_gkv/users/forms.py:51
 #: src/langerak_gkv/users/templates/users/user_detail.html:97
 msgid "Email"
 msgstr "E-mail"
 
-#: src/langerak_gkv/users/forms.py:59
+#: src/langerak_gkv/users/forms.py:55
 msgid ""
 "Raw passwords are not stored, so there is no way to see this user's "
-"password, but you can change the password using <a href=\"../password/"
-"\">this form</a>."
+"password, but you can change the password using <a "
+"href=\"../password/\">this form</a>."
 msgstr ""
 
-#: src/langerak_gkv/users/forms.py:90 src/langerak_gkv/users/forms.py:116
+#: src/langerak_gkv/users/forms.py:86 src/langerak_gkv/users/forms.py:112
 msgid "This username is taken, choose a different username."
 msgstr "Deze gebruikersnaam is al in gebruik, kies een andere gebruikersnaam."
-
-#: src/langerak_gkv/users/forms.py:122
-msgid "Email or username"
-msgstr "E-mailadres of gebruikersnaam"
-
-#: src/langerak_gkv/users/forms.py:126
-msgid "Name"
-msgstr "Naam"
-
-#: src/langerak_gkv/users/forms.py:127
-msgid "Search terms"
-msgstr "Zoektermen"
-
-#: src/langerak_gkv/users/forms.py:129
-msgid "Minimum age"
-msgstr "Minimumleeftijd"
-
-#: src/langerak_gkv/users/forms.py:130
-msgid "Maximum age"
-msgstr "Maximumleeftijd"
-
-#: src/langerak_gkv/users/forms.py:132
-msgid "Gender"
-msgstr "Geslacht"
 
 #: src/langerak_gkv/users/models.py:27
 msgid "email address"
@@ -977,14 +1001,6 @@ msgstr "e-mailadres"
 #: src/langerak_gkv/users/models.py:28
 msgid "username"
 msgstr "gebruikersnaam"
-
-#: src/langerak_gkv/users/models.py:30
-msgid "first name"
-msgstr "voornaam"
-
-#: src/langerak_gkv/users/models.py:31
-msgid "last name"
-msgstr "familienaam"
 
 #: src/langerak_gkv/users/models.py:34
 msgid "staff status"
@@ -1011,10 +1027,6 @@ msgstr "registratiedatum"
 #: src/langerak_gkv/users/models.py:50
 msgid "sex"
 msgstr "geslacht"
-
-#: src/langerak_gkv/users/models.py:53 src/langerak_gkv/users/models.py:299
-msgid "street"
-msgstr "straat"
 
 #: src/langerak_gkv/users/models.py:53 src/langerak_gkv/users/models.py:299
 msgid "Street name and number."
@@ -1059,10 +1071,6 @@ msgstr "Profielfoto"
 #: src/langerak_gkv/users/models.py:77
 msgid "Short 'about me' text"
 msgstr "Korte 'over mij' tekst"
-
-#: src/langerak_gkv/users/models.py:82 src/langerak_gkv/users/models.py:267
-msgid "district"
-msgstr "wijk"
 
 #: src/langerak_gkv/users/models.py:92 src/langerak_gkv/users/models.py:284
 msgid "district function"
@@ -1147,7 +1155,7 @@ msgstr "wijkindelingen"
 
 #: src/langerak_gkv/users/models.py:295
 msgid "Last name of the householder."
-msgstr "Familienaam van het gezinshoofd."
+msgstr "Achternaam van het gezinshoofd."
 
 #: src/langerak_gkv/users/models.py:306
 msgid "families"
@@ -1234,8 +1242,9 @@ msgid "Mobile phone"
 msgstr "Mobiel"
 
 #: src/langerak_gkv/users/templates/users/user_detail.html:103
-msgid "District function"
-msgstr "Wijkindeling"
+#| msgid "district"
+msgid "District"
+msgstr "Wijk"
 
 #: src/langerak_gkv/users/templates/users/user_detail.html:109
 msgid "About me"
@@ -1245,11 +1254,11 @@ msgstr "Over mij"
 msgid "1<sup>st</sup> degree connections"
 msgstr "1<sup>ste</sup> graads connecties"
 
-#: src/langerak_gkv/users/templates/users/user_form.html:22
+#: src/langerak_gkv/users/templates/users/user_form.html:20
 msgid "Set size"
 msgstr "Formaat aanpassen"
 
-#: src/langerak_gkv/users/templates/users/user_form.html:48
+#: src/langerak_gkv/users/templates/users/user_form.html:46
 msgid "save"
 msgstr "bewaren"
 
@@ -1280,3 +1289,9 @@ msgstr "urlconf menu-item"
 #: src/langerak_gkv/utils/models.py:16
 msgid "urlconf menu entries"
 msgstr "urlconf menu-items"
+
+#~ msgid "Email or username"
+#~ msgstr "E-mailadres of gebruikersnaam"
+
+#~ msgid "District function"
+#~ msgstr "Wijkindeling"
