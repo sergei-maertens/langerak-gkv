@@ -117,6 +117,10 @@ $menu-mobile-icon-factor: 1.5;
     &--active {
       border-bottom-color: rgba($theme-green-yellow, 0.25);
     }
+
+    &--mobile-only {
+      @include show-on-mobile;
+    }
   }
 
   & &__item-link {

@@ -1,8 +1,8 @@
 
 class Modal {
-    constructor(node, triggerNode) {
+    constructor(node, triggerNodes) {
         this.node = node;
-        this.triggerNode = triggerNode;
+        this.triggerNodes = triggerNodes;
         this.setupEvents();
 
         this._contentLoaded = false;
@@ -23,14 +23,15 @@ class Modal {
 
         Array.from(triggerNodes).forEach(node => {
             if (node.dataset.modal) {
-                triggersByType[node.dataset.modal] = node;
+                if (!triggersByType[node.dataset.modal]) triggersByType[node.dataset.modal] = [];
+                triggersByType[node.dataset.modal].push(node);
             }
         });
 
         // initialize the instances
         for (const modalType of Object.keys(nodesByType)) {
             // can't activate a modal if there's no trigger
-            if (!triggersByType[modalType]) {
+            if (!triggersByType[modalType].length) {
                 continue;
             }
             new this(nodesByType[modalType], triggersByType[modalType]);
@@ -39,21 +40,23 @@ class Modal {
 
     setupEvents() {
         // open modal
-        this.triggerNode.addEventListener('click', event => {
-            event.preventDefault();
+        this.triggerNodes.forEach(triggerNode => {
+            triggerNode.addEventListener('click', event => {
+                event.preventDefault();
 
-            this.node.classList.remove('modal--inactive');
-            const dataLoadUrl = this.triggerNode.dataset.modalLoad;
-            if (!dataLoadUrl || this._contentLoaded) return;
+                this.node.classList.remove('modal--inactive');
+                const dataLoadUrl = triggerNode.dataset.modalLoad;
+                if (!dataLoadUrl || this._contentLoaded) return;
 
-            const contentContainer = this.node.querySelector('.modal__content');
+                const contentContainer = this.node.querySelector('.modal__content');
 
-            window.fetch(dataLoadUrl)
-                .then(response => response.text())
-                .then(html => {
-                    contentContainer.insertAdjacentHTML('beforeend', html);
-                    this._contentLoaded = true;
-                });
+                window.fetch(dataLoadUrl)
+                    .then(response => response.text())
+                    .then(html => {
+                        contentContainer.insertAdjacentHTML('beforeend', html);
+                        this._contentLoaded = true;
+                    });
+            });
         });
 
         this.node.querySelector('.modal__close').addEventListener('click', () => {
