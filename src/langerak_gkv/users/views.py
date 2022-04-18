@@ -2,8 +2,9 @@ from urllib.parse import urlencode
 
 from django.contrib.auth.views import LoginView, LogoutView
 from django.db.models.functions import Lower
-from django.views.generic import DetailView, ListView
-from django.views.generic.edit import UpdateView
+from django.views.generic import DetailView, ListView, UpdateView, View
+from django.views.generic.base import TemplateResponseMixin
+from django.views.generic.edit import FormMixin
 
 from langerak_gkv.utils.view_mixins import LoginRequiredMixin
 
@@ -78,6 +79,14 @@ class UpdateProfileView(LoginRequiredMixin, UserSearchMixin, UpdateView):
         context = super(UpdateProfileView, self).get_context_data(**kwargs)
         context["profile"] = self.object
         return context
+
+
+class LoginModalView(TemplateResponseMixin, FormMixin, View):
+    template_name = "users/includes/login_form.html"
+    form_class = LoginForm
+
+    def get(self, request, *args, **kwargs):
+        return self.render_to_response(self.get_context_data())
 
 
 class LoginView(LoginView):

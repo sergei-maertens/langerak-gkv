@@ -4,6 +4,8 @@ class Modal {
         this.node = node;
         this.triggerNode = triggerNode;
         this.setupEvents();
+
+        this._contentLoaded = false;
     }
 
     static initialize() {
@@ -39,7 +41,19 @@ class Modal {
         // open modal
         this.triggerNode.addEventListener('click', event => {
             event.preventDefault();
+
             this.node.classList.remove('modal--inactive');
+            const dataLoadUrl = this.triggerNode.dataset.modalLoad;
+            if (!dataLoadUrl || this._contentLoaded) return;
+
+            const contentContainer = this.node.querySelector('.modal__content');
+
+            window.fetch(dataLoadUrl)
+                .then(response => response.text())
+                .then(html => {
+                    contentContainer.insertAdjacentHTML('beforeend', html);
+                    this._contentLoaded = true;
+                });
         });
 
         this.node.querySelector('.modal__close').addEventListener('click', () => {
