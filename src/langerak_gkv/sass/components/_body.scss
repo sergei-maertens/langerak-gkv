@@ -31,6 +31,10 @@ body {
       flex-grow: 1;
     }
   }
+
+  a {
+    color: var(--theme-color--green);
+  }
 }
 
 @include mobile-only {
