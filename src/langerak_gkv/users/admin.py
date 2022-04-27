@@ -119,7 +119,7 @@ class RelationTypeAdmin(admin.ModelAdmin):
 
 class FamilyAdmin(admin.ModelAdmin):
     list_display = ("name", "address", "postal_code", "city")
-    search_fields = ("name",)
+    search_fields = ("name", "postal_code", "address")
 
 
 admin.site.register(User, UserAdmin)
