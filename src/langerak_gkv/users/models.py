@@ -304,7 +304,7 @@ class Family(models.Model):
     class Meta:
         verbose_name = _("family")
         verbose_name_plural = _("families")
-        unique_together = ("address", "postal_code")
+        unique_together = ("name", "address", "postal_code")
 
     def __str__(self):
         return _("Fam. {name}").format(name=self.name)
