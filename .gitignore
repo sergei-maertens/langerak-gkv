@@ -41,3 +41,4 @@ local.py
 # Build artifacts
 src/langerak_gkv/static/css/
 src/langerak_gkv/static/js/
+src/langerak_gkv/static/bundles/

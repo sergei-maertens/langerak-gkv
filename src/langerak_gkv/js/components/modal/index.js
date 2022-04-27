@@ -31,7 +31,7 @@ class Modal {
         // initialize the instances
         for (const modalType of Object.keys(nodesByType)) {
             // can't activate a modal if there's no trigger
-            if (!triggersByType[modalType].length) {
+            if (!triggersByType[modalType] || !triggersByType[modalType].length) {
                 continue;
             }
             new this(nodesByType[modalType], triggersByType[modalType]);

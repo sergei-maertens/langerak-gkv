@@ -8,8 +8,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "gulp build",
-    "start": "gulp watch"
+    "build": "NODE_ENV=production webpack",
+    "start": "webpack -w"
   },
   "repository": {
     "type": "git",
@@ -35,27 +35,19 @@
   "devDependencies": {
     "@babel/core": "^7.7.4",
     "@babel/preset-env": "^7.7.4",
-    "autoprefixer": "^10.2.6",
+    "autoprefixer": "^10.4.5",
     "babel-loader": "^8.0.6",
     "browserslist": "^4.16.6",
-    "chai": "^4.2.0",
-    "cssnano": "^5.0.5",
-    "gulp": "^4.0.2",
-    "gulp-dart-sass": "^1.0.2",
-    "gulp-file": "^0.4.0",
-    "gulp-hub": "^4.2.0",
-    "gulp-if": "^3.0.0",
-    "gulp-jshint": "^2.1.0",
-    "gulp-jshint-jslint-file-reporter": "^0.1.0",
-    "gulp-postcss": "^9.0.0",
-    "gulp-sourcemaps": "^2.6.5",
-    "jshint": "^2.13.4",
-    "jshint-stylish": "^2.2.1",
+    "css-loader": "^6.7.1",
+    "cssnano": "^5.1.7",
+    "mini-css-extract-plugin": "^2.6.0",
     "postcss": "^8.3.0",
+    "postcss-loader": "^6.2.1",
     "postcss-selector-lint": "^1.0.0",
     "sass": "^1.50.0",
+    "sass-loader": "^12.6.0",
     "webpack": "^5.59.1",
-    "webpack-dev-server": "^4.7.4",
-    "webpack-stream": "^7.0.0"
+    "webpack-cli": "^4.9.2",
+    "yargs": "^17.4.1"
   }
 }
