@@ -4,6 +4,7 @@
   --color-fg--light: #727272;
   --color-bg: #d1d1d1;
   --color-content-bg: #ffffff;
+  --color-input-bg: #ffffff;
 
   // theme colors
   --theme-color--green: #43b792;
@@ -28,6 +29,9 @@
   --menu-item-color-border--hover: #{rgba(#e3db5a, 0.75)};
   --menu-item-color-border--active: #{rgba(#e3db5a, 0.25)};
 
+  // forms
+  --form-section-border-color: #eee;
+
   // profile previews
   --profile-preview-bg--flavour1: #{rgba(#a164a0, 0.5)};
   --profile-preview-bg--flavour2: #{rgba(#e3db5a, 0.5)};
@@ -45,6 +49,9 @@
     --color-content-bg: #454545;
     --color-fg: #DCDCDC;
     --color-fg--light: #ffffff;
+    --color-input-bg: #{darken(#454545, 5%)};
+
+    --form-section-border-color: #333;
 
     --color-bg-button--profile-preview: #121212;
     --color-bg-button--profile-preview-focus: #{darken(#ffffff, 10%)};

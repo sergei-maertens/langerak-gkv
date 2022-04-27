@@ -21,6 +21,7 @@ $field-border-thickness-increase: 2px;
     display: block;
     width: 100%;
     color: $theme-green;
+    background: var(--color-input-bg);
 
     border: none;
     border-bottom: solid 2px $theme-green;

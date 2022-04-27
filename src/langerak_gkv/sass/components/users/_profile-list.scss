@@ -59,13 +59,13 @@ $profile-list-preview-width: math.div(100%, 3);
     @include mobile-only {
       width: 0vw;
       display: block;
-      background: white;
+      background: var(--color-content-bg);
 
       position: absolute;
       z-index: 1;
       right: 0;
       margin-right: -15px;
-      border-top: solid 1px #eee;
+      border-top: solid 1px var(--form-section-border-color);
     }
 
     transition: width 0.5s ease;
