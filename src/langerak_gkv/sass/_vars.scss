@@ -30,3 +30,11 @@
   --menu-item-color-border--hover: #{rgba(#e3db5a, 0.75)};
   --menu-item-color-border--active: #{rgba(#e3db5a, 0.25)};
 }
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #1c1c1c;
+    --color-content-bg: #454545;
+    --color-fg--light: #ffffff;
+  }
+}
