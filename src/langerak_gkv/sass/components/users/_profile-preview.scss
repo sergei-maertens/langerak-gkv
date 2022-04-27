@@ -19,26 +19,29 @@ $profile-preview-transparency: 0.5 !default;
   &:focus {
     outline: none;
     box-shadow: 2px 2px 5px 0 $shadow-form-inputs;
+    background: var(--color-bg-button--profile-preview-focus);
+    color: var(--color-fg-button--profile-preview-focus);
   }
 }
 
 .profile-preview {
   padding: 1em;
+  color: var(--color-fg);
 
   &#{&}--flavour1 {
-    background: rgba($theme-purple, $profile-preview-transparency);
+    background: var(--profile-preview-bg--flavour1);
   }
 
   &#{&}--flavour2 {
-    background: rgba($theme-green-yellow, $profile-preview-transparency);
+    background: var(--profile-preview-bg--flavour2);
   }
 
   &#{&}--flavour3 {
-    background: rgba($theme-green, $profile-preview-transparency);
+    background: var(--profile-preview-bg--flavour3);
   }
 
   &#{&}--flavour4 {
-    background: rgba($font-color-light, $profile-preview-transparency);
+    background: var(--profile-preview-bg--flavour4);
   }
 
   &__picture {
