@@ -38,12 +38,13 @@
   }
 
   & &__section {
-    border: solid 1px #eee;
+    border: solid 1px var(--form-section-border-color);
     margin-bottom: 2em;
   }
 
   & &__section-title {
     @include page-title;
+    color: var(--color-fg);
     font-size: 2rem;
     margin: 1rem 0;
   }

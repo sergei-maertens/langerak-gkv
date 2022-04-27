@@ -5,40 +5,43 @@ $profile-preview-transparency: 0.5 !default;
 
 @mixin profile-preview-btn() {
   display: block;
-  background: $font-color;
+  background: var(--color-bg-button--profile-preview);
   padding: 0.5rem 1rem;
 
   transition: all 0.2s ease;
 
   &:hover {
-    color: $font-color;
-    background: darken(white, 10%);
+    color: var(--color-fg);
+    background: var(--color-bg-button--profile-preview-hover);
     box-shadow: 2px 2px 5px 0 $shadow-form-inputs;
   }
 
   &:focus {
     outline: none;
     box-shadow: 2px 2px 5px 0 $shadow-form-inputs;
+    background: var(--color-bg-button--profile-preview-focus);
+    color: var(--color-fg-button--profile-preview-focus);
   }
 }
 
 .profile-preview {
   padding: 1em;
+  color: var(--color-fg);
 
   &#{&}--flavour1 {
-    background: rgba($theme-purple, $profile-preview-transparency);
+    background: var(--profile-preview-bg--flavour1);
   }
 
   &#{&}--flavour2 {
-    background: rgba($theme-green-yellow, $profile-preview-transparency);
+    background: var(--profile-preview-bg--flavour2);
   }
 
   &#{&}--flavour3 {
-    background: rgba($theme-green, $profile-preview-transparency);
+    background: var(--profile-preview-bg--flavour3);
   }
 
   &#{&}--flavour4 {
-    background: rgba($font-color-light, $profile-preview-transparency);
+    background: var(--profile-preview-bg--flavour4);
   }
 
   &__picture {
@@ -91,7 +94,7 @@ $profile-preview-transparency: 0.5 !default;
     &--disabled {
       pointer-events: none;
       opacity: 0.5;
-      background: lighten($font-color, 20%);
+      background: var(--color-bg--disabled);
     }
   }
 

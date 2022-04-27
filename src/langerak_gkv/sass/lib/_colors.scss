@@ -1,8 +1,8 @@
-$font-color: #333333;
-$font-color-light: #727272;
+$font-color: var(--color-fg);
+$font-color-light: var(--color-fg--light);
 
-$theme-green: #43b792;
-$theme-green-yellow: #e3db5a;
-$theme-purple: #a164a0;
+$theme-green: var(--theme-color--green);
+$theme-green-yellow: var(--theme-color--green-yellow);
+$theme-purple: var(--theme-color--purple);
 
-$shadow-form-inputs: #333333;
+$shadow-form-inputs: var(--color-form-input-shadow);

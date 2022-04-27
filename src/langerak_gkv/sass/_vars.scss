@@ -1,0 +1,60 @@
+// define CSS vars for theming
+:root {
+  --color-fg: #333333;
+  --color-fg--light: #727272;
+  --color-bg: #d1d1d1;
+  --color-content-bg: #ffffff;
+  --color-input-bg: #ffffff;
+
+  // theme colors
+  --theme-color--green: #43b792;
+  --theme-color--green-lighter: #{lighten(#43b792, 20%)};
+  --theme-color--green-darker: #{darken(#43b792, 20%)};
+
+  --theme-color--green-yellow: #e3db5a;
+  --theme-color--green-yellow-darker: #{darken(#e3db5a, 10%)};
+
+  --theme-color--purple: #a164a0;
+
+  // forms
+  --color-form-input-shadow: #333333;
+
+  // interactive elements
+  --color-bg--disabled: #{lighten(#333333, 20%)};
+
+  // menu
+  --menu-color-fg: #ffffff;
+  --menu-color-fg--hover: #{darken(#ffffff, 10%)};
+  --menu-icon-color: #{darken(#ffffff, 40%)};
+  --menu-item-color-border--hover: #{rgba(#e3db5a, 0.75)};
+  --menu-item-color-border--active: #{rgba(#e3db5a, 0.25)};
+
+  // forms
+  --form-section-border-color: #eee;
+
+  // profile previews
+  --profile-preview-bg--flavour1: #{rgba(#a164a0, 0.5)};
+  --profile-preview-bg--flavour2: #{rgba(#e3db5a, 0.5)};
+  --profile-preview-bg--flavour3: #{rgba(#43b792, 0.5)};
+  --profile-preview-bg--flavour4: #{rgba(#727272, 0.5)};
+  --color-bg-button--profile-preview: #333333;
+  --color-bg-button--profile-preview-hover: #{darken(#ffffff, 10%)};
+  --color-bg-button--profile-preview-focus: #{darken(#ffffff, 10%)};
+  --color-fg-button--profile-preview-focus: var(--color-fg-light);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #1c1c1c;
+    --color-content-bg: #454545;
+    --color-fg: #DCDCDC;
+    --color-fg--light: #ffffff;
+    --color-input-bg: #{darken(#454545, 5%)};
+
+    --form-section-border-color: #333;
+
+    --color-bg-button--profile-preview: #121212;
+    --color-bg-button--profile-preview-focus: #{darken(#ffffff, 10%)};
+    --color-fg-button--profile-preview-focus: #333333;
+  }
+}

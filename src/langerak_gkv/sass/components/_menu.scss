@@ -4,8 +4,6 @@
 @import "../lib/typography";
 @import "../lib/responsive";
 
-$menu-font-color: #ffffff !default;
-
 $menu-space-inbetween: 1.3rem;
 $menu-space-inbetween-half: math.div($menu-space-inbetween , 2);
 
@@ -34,7 +32,7 @@ $menu-mobile-icon-factor: 1.5;
     width: $menu-mobile-icon-factor * 1rem;
     height: 4px;
     border-radius: 2px;
-    background: $menu-font-color;
+    background: var(--menu-color-fg);
     margin: 4px 0;
   }
 
@@ -43,7 +41,7 @@ $menu-mobile-icon-factor: 1.5;
     width: $menu-mobile-icon-factor * 1.4rem;
     height: $menu-mobile-icon-factor * 1.4rem;
     margin: 0 0.5rem;
-    background-color: $menu-font-color;
+    background-color: var(--menu-color-fg);
     mask-image: url('../img/profile-icon.svg');
   }
 
@@ -52,7 +50,7 @@ $menu-mobile-icon-factor: 1.5;
     width: $menu-mobile-icon-factor * 1.1rem;
     height: $menu-mobile-icon-factor * 1.1rem;
     margin: 0;
-    background-color: $menu-font-color;
+    background-color: var(--menu-color-fg);
     mask-image: url('../img/zoek.svg');
   }
 
@@ -106,16 +104,16 @@ $menu-mobile-icon-factor: 1.5;
 
     @include laptop {
       &--leaf:hover {
-        border-bottom-color: rgba($theme-green-yellow, 0.75);
+        border-bottom-color: var(--menu-item-color-border--hover);
 
         .menu__item-link {
-          color: darken($menu-font-color, 10%);
+          color: var(--menu-color-fg--hover);
         }
       }
     }
 
     &--active {
-      border-bottom-color: rgba($theme-green-yellow, 0.25);
+      border-bottom-color: var(--menu-item-color-border--active);
     }
 
     &--mobile-only {
@@ -129,7 +127,7 @@ $menu-mobile-icon-factor: 1.5;
     justify-content: space-between;
     align-items: center;
 
-    color: $menu-font-color;
+    color: var(--menu-color-fg);
     text-transform: uppercase;
     font-size: $menu-item-font-size;
     line-height: 1.5625 * $menu-item-font-size;
@@ -144,7 +142,7 @@ $menu-mobile-icon-factor: 1.5;
 
       .material-icons {
         font-size: 2rem;
-        color: darken($menu-font-color, 40%);
+        color: var(--menu-icon-color);
       }
 
       &--desktop {
@@ -189,7 +187,7 @@ $menu-mobile-icon-factor: 1.5;
     @include title;
     display: block;
     font-size: .75 * $menu-item-font-size;
-    color: $menu-font-color;
+    color: var(--menu-color-fg);
     text-decoration: none;
     padding: .3rem $menu-space-inbetween-half;
 
