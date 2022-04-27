@@ -5,14 +5,14 @@ $profile-preview-transparency: 0.5 !default;
 
 @mixin profile-preview-btn() {
   display: block;
-  background: $font-color;
+  background: var(--color-bg-button--profile-preview);
   padding: 0.5rem 1rem;
 
   transition: all 0.2s ease;
 
   &:hover {
-    color: $font-color;
-    background: darken(white, 10%);
+    color: var(--color-fg);
+    background: var(--color-bg-button--profile-preview-hover);
     box-shadow: 2px 2px 5px 0 $shadow-form-inputs;
   }
 
@@ -91,7 +91,7 @@ $profile-preview-transparency: 0.5 !default;
     &--disabled {
       pointer-events: none;
       opacity: 0.5;
-      background: lighten($font-color, 20%);
+      background: var(--color-bg--disabled);
     }
   }
 

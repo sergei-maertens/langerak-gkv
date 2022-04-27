@@ -41,12 +41,12 @@
       text-decoration: underline;
 
       &:visited {
-        color: lighten($theme-green, 20%);
+        color: var(--theme-color--green-lighter);
       }
 
       &:hover,
       &:focus {
-        color: darken($theme-green, 20%);
+        color: var(--theme-color--green-darker);
       }
     }
   }

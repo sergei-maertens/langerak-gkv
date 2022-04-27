@@ -1,11 +1,9 @@
 @import '../lib/responsive';
 
-$body-background: #d1d1d1 !default;
 $body-content-width: 1280px !default;
-$body-content-default-background: white !default;
 
 body {
-  background: $body-background;
+  background: var(--color-bg);
   min-height: 100vh;
   position: relative;
 
@@ -21,7 +19,7 @@ body {
   }
 
   main {
-    background: $body-content-default-background;
+    background: var(--color-content-bg);
   }
 
   // ensure main grows if there's very little content on the page

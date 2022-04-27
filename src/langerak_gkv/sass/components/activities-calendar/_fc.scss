@@ -43,7 +43,7 @@
     }
 
     &:focus {
-      background-color: darken($theme-green-yellow, 10%);
+      background-color: var(--theme-color--green-yellow-darker);
       box-shadow: none;
       color: $font-color;
     }
