@@ -1,15 +1,12 @@
 {% extends "admin/base.html" %}
-{% load i18n staticfiles %}
+{% load i18n %}
 
 {% block title %}{{ title }} | {% trans 'GKLangerak site admin' %}{% endblock %}
 
 {% block branding %}
 {% spaceless %}
 <h1 id="site-name">
-    <a href="/">
-        {# <img src="{% static "logo/logo.png" %}" alt="logo" width="100px"> #}
-        GKLangerak
-    </a>
+    <a href="/">GKLangerak</a>
 </h1>
 {% endspaceless %}
 {% endblock %}

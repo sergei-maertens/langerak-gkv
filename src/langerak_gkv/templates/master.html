@@ -1,4 +1,4 @@
-{% load staticfiles i18n sekizai_tags cms_tags menu_tags leaflet_tags %}<!DOCTYPE html>
+{% load static i18n sekizai_tags cms_tags menu_tags leaflet_tags %}<!DOCTYPE html>
 <html lang="nl">
     <head>
         <meta charset="utf-8">
@@ -14,7 +14,7 @@
 
         {# Load stylesheets #}
         <link href="{% static 'normalize.css/normalize.css' %}" media="screen, projection" rel="stylesheet" `/>
-        <link href="{% static 'css/screen.css' %}" media="screen, projection" rel="stylesheet" `/>
+        <link href="{% static 'bundles/screen-css.css' %}" media="screen, projection" rel="stylesheet" `/>
         {% leaflet_css %}
         {% block extra_css %}{% endblock %}
 
@@ -47,7 +47,7 @@
             {% include "includes/modals/login.html" %}
         {% endblock modals %}
 
-        <script src="{% static 'js/main.js' %}"></script>
+        <script src="{% static 'bundles/main.js' %}"></script>
         {% block extra_js %}{% endblock %}
         {% render_block "js" %} {# sekizai/django-cms #}
     </body>
