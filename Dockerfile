@@ -20,8 +20,7 @@ WORKDIR /app
 COPY ./*.json /app/
 RUN npm ci
 
-COPY ./build/ /app/build/
-COPY ./gulpfile.js ./webpack.config.js ./.babelrc /app/
+COPY ./webpack.config.js ./.babelrc /app/
 
 COPY src/langerak_gkv/js/ /app/src/langerak_gkv/js/
 COPY src/langerak_gkv/sass/ /app/src/langerak_gkv/sass/
@@ -51,8 +50,7 @@ RUN mkdir /app/log
 
 COPY ./src /app/src
 
-COPY --from=frontend-build /app/src/langerak_gkv/static/css /app/src/langerak_gkv/static/css
-COPY --from=frontend-build /app/src/langerak_gkv/static/js /app/src/langerak_gkv/static/js
+COPY --from=frontend-build /app/src/langerak_gkv/static/bundles /app/src/langerak_gkv/static/bundles
 
 RUN groupadd -g 1000 app-user \
     && useradd -M -u 1000 -g 1000 app-user \
