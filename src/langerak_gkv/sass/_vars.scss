@@ -41,6 +41,9 @@
   --color-bg-button--profile-preview-hover: #{darken(#ffffff, 10%)};
   --color-bg-button--profile-preview-focus: #{darken(#ffffff, 10%)};
   --color-fg-button--profile-preview-focus: var(--color-fg-light);
+
+  // calendar items in header
+  --calendar-item-color-fg: #ffffff;
 }
 
 @media (prefers-color-scheme: dark) {

@@ -35,7 +35,6 @@ CMS_PERMISSION = True
 CMS_TEMPLATES = (
     ("cms/default.html", _("Default")),
     ("homepage/home.html", _("Homepage")),
-    ("cms/right_sidebar.html", _("Content left, sidebar right")),
     ("cms/3_columns.html", _("3 Columns (responsive)")),
 )
 
