@@ -11,7 +11,7 @@ $profile-preview-transparency: 0.5 !default;
   transition: all 0.2s ease;
 
   &:hover {
-    color: var(--color-fg);
+    color: var(--color-fg-button--profile-preview-hover);
     background: var(--color-bg-button--profile-preview-hover);
     box-shadow: 2px 2px 5px 0 $shadow-form-inputs;
   }

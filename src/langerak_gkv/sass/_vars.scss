@@ -39,6 +39,7 @@
   --profile-preview-bg--flavour4: #{rgba(#727272, 0.5)};
   --color-bg-button--profile-preview: #333333;
   --color-bg-button--profile-preview-hover: #{darken(#ffffff, 10%)};
+  --color-fg-button--profile-preview-hover: var(--color-fg);
   --color-bg-button--profile-preview-focus: #{darken(#ffffff, 10%)};
   --color-fg-button--profile-preview-focus: var(--color-fg-light);
 
@@ -57,6 +58,7 @@
     --form-section-border-color: #333;
 
     --color-bg-button--profile-preview: #121212;
+    --color-fg-button--profile-preview-hover: #121212;
     --color-bg-button--profile-preview-focus: #{darken(#ffffff, 10%)};
     --color-fg-button--profile-preview-focus: #333333;
   }
