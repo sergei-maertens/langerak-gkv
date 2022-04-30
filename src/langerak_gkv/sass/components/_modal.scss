@@ -42,7 +42,7 @@ $modal-backdrop-color: rgba(0, 0, 0, 0.5);
     line-height: 1em;
     font-size: 2rem;
     text-align: center;
-    color: $font-color;
+    color: var(--color-fg);
 
     &:hover {
       transform: scale(1.1);
@@ -61,7 +61,7 @@ $modal-backdrop-color: rgba(0, 0, 0, 0.5);
     position: relative;
     z-index: 5;
 
-    background: white;
+    background: var(--color-content-bg);
     box-shadow: 2px 2px 5px 0 $shadow-form-inputs;
 
     min-width: 30vw;
