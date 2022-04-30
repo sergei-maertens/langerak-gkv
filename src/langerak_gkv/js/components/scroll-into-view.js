@@ -5,9 +5,6 @@ const scrollIntoView = () => {
     const node = document.querySelector(SELECTOR);
     if (!node) return;
     node.scrollIntoView({behavior: 'smooth'});
-    if (node.classList.contains('scroll-into-view--focus')) {
-        node.focus();
-    }
 };
 
 document.addEventListener('DOMContentLoaded', scrollIntoView);
