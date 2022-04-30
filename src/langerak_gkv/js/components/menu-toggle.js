@@ -17,7 +17,7 @@ const init = () => {
     toggle('menu__search', 'search-form', 'visible');
 
     // profile search
-    toggle('profile-list__search-icon', 'profile-list__search', 'opened');
+    toggle('profile-list__search-icon', 'profile-list__search', 'opened', scrollIntoView);
     toggle('profile-list__search-close', 'profile-list__search', 'opened');
 };
 
@@ -27,6 +27,10 @@ const openLoginModal = (targetNode) => {
 
     const loginLink = targetNode.querySelector('[data-modal="login"]');
     loginLink && loginLink.click();
+};
+
+const scrollIntoView = (targetNode) => {
+    targetNode.scrollIntoView({'behavior': 'smooth'});
 };
 
 init();
