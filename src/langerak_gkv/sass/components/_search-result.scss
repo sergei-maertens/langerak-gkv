@@ -1,6 +1,10 @@
 @import "../lib/colors";
 @import "../lib/typography";
 
+.search-results {
+  color: var(--color-fg);
+}
+
 .search-result {
   padding: 1rem 0;
 

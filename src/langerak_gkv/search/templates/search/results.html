@@ -7,7 +7,7 @@
 
 {% block content %}
 
-    <section class="search-results">
+    <section class="search-results {% if page.object_list %}scroll-into-view scroll-into-view--focus{% endif %}" tabindex="-1">
         {% for result in page.object_list %}
             {% include "search/includes/result.html" with result=result only %}
         {% empty %}
