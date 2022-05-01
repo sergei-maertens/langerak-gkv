@@ -20,7 +20,7 @@ WORKDIR /app
 COPY ./*.json /app/
 RUN npm ci
 
-COPY ./webpack.config.js ./.babelrc /app/
+COPY ./*.js ./.babelrc /app/
 
 COPY src/langerak_gkv/js/ /app/src/langerak_gkv/js/
 COPY src/langerak_gkv/sass/ /app/src/langerak_gkv/sass/

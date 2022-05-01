@@ -42,7 +42,7 @@ $menu-mobile-icon-factor: 1.5;
     height: $menu-mobile-icon-factor * 1.4rem;
     margin: 0 0.5rem;
     background-color: var(--menu-color-fg);
-    mask-image: url('../img/profile-icon.svg');
+    mask: url('../img/profile-icon.svg');
   }
 
   & &__search {
@@ -51,7 +51,7 @@ $menu-mobile-icon-factor: 1.5;
     height: $menu-mobile-icon-factor * 1.1rem;
     margin: 0;
     background-color: var(--menu-color-fg);
-    mask-image: url('../img/zoek.svg');
+    mask: url('../img/zoek.svg');
   }
 
   // Shared
