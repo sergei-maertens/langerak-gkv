@@ -22,7 +22,7 @@ django-leaflet
 django-rosetta
 django-solo
 django-password-reset
-django-yubin
+django-yubin<2.0.0
 djangorestframework
 easy-thumbnails
 
