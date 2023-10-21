@@ -1,6 +1,5 @@
-from django.utils.translation import ugettext_lazy as _
-
-from djchoices import ChoiceItem, DjangoChoices
+from django.db.models import TextChoices
+from django.utils.translation import gettext_lazy as _
 
 #
 # Easy thumbnails
@@ -56,16 +55,16 @@ CMS_PLACEHOLDER_CONF = {
 DJANGOCMS_PICTURE_ALIGN = (("header", _("header top image")),)
 
 
-class FilerStyles(DjangoChoices):
-    default = ChoiceItem(" ", _("Default"))
-    orange = ChoiceItem("orange", _("Orange"))
-    blue = ChoiceItem("blue", _("Blue"))
-    green = ChoiceItem("green", _("Green"))
-    purple = ChoiceItem("purple", _("Purple"))
-    orange_rm = ChoiceItem("orange read-more", _("Read-more orange"))
-    blue_rm = ChoiceItem("blue read-more", _("Read-more blue"))
-    green_rm = ChoiceItem("green read-more", _("Read-more green"))
-    purple_rm = ChoiceItem("purple read-more", _("Read-more purple"))
+class FilerStyles(TextChoices):
+    default = " ", _("Default")
+    orange = "orange", _("Orange")
+    blue = "blue", _("Blue")
+    green = "green", _("Green")
+    purple = "purple", _("Purple")
+    orange_rm = "orange read-more", _("Read-more orange")
+    blue_rm = "blue read-more", _("Read-more blue")
+    green_rm = "green read-more", _("Read-more green")
+    purple_rm = "purple read-more", _("Read-more purple")
 
 
 FILER_LINK_STYLES = FilerStyles.choices

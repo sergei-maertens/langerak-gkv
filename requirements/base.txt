@@ -4,6 +4,8 @@
 #
 #    ./bin/compile_dependencies.sh
 #
+asgiref==3.7.2
+    # via django
 bleach==3.3.0
     # via django-bleach
 certifi==2023.7.22
@@ -19,7 +21,7 @@ defusedxml==0.6.0
     # via odfpy
 diff-match-patch==20181111
     # via django-import-export
-django==2.2.28
+django==3.2.22
     # via
     #   -r requirements/base.in
     #   django-appconf
@@ -35,7 +37,6 @@ django==2.2.28
     #   django-ical
     #   django-import-export
     #   django-leaflet
-    #   django-mptt
     #   django-password-reset
     #   django-polymorphic
     #   django-recurrence
@@ -49,7 +50,7 @@ django-appconf==1.0.3
     # via
     #   django-axes
     #   django-image-cropping
-django-autoslug==1.9.6
+django-autoslug==1.9.9
     # via -r requirements/base.in
 django-axes==5.0.13
     # via -r requirements/base.in
@@ -57,7 +58,7 @@ django-bleach==0.6.1
     # via -r requirements/base.in
 django-choices==1.7.0
     # via -r requirements/base.in
-django-classy-tags==0.9.0
+django-classy-tags==4.1.0
     # via
     #   django-cms
     #   django-sekizai
@@ -70,7 +71,7 @@ django-cms==3.9.0
     #   djangocms-picture
     #   djangocms-text-ckeditor
     #   djangocms-video
-django-filer==2.2.6
+django-filer==3.1.0
     # via
     #   -r requirements/base.in
     #   djangocms-file
@@ -79,7 +80,7 @@ django-filer==2.2.6
     #   djangocms-video
 django-filter==21.1
     # via -r requirements/base.in
-django-formtools==2.1
+django-formtools==2.4.1
     # via django-cms
 django-haystack==3.2.1
     # via -r requirements/base.in
@@ -91,25 +92,21 @@ django-import-export==2.5.0
     # via -r requirements/base.in
 django-ipware==2.1.0
     # via django-axes
-django-js-asset==1.2.2
-    # via django-mptt
-django-leaflet==0.24.0
+django-leaflet==0.29.0
     # via -r requirements/base.in
-django-mptt==0.10.0
-    # via django-filer
 django-password-reset==2.0
     # via -r requirements/base.in
-django-polymorphic==2.0.3
+django-polymorphic==3.1.0
     # via django-filer
 django-recurrence==1.10.1
     # via django-ical
 django-rosetta==0.9.3
     # via -r requirements/base.in
-django-sekizai==1.1.0
+django-sekizai==4.1.0
     # via
     #   -r requirements/base.in
     #   django-cms
-django-sniplates==0.6.0
+django-sniplates==0.7.2
     # via -r requirements/base.in
 django-solo==1.1.5
     # via -r requirements/base.in
@@ -119,7 +116,7 @@ django-yubin==1.7.1
     # via -r requirements/base.in
 djangocms-admin-style==1.4.0
     # via django-cms
-djangocms-attributes-field==1.1.0
+djangocms-attributes-field==3.0.0
     # via
     #   djangocms-file
     #   djangocms-link
@@ -217,7 +214,6 @@ six==1.16.0
     #   bleach
     #   django-appconf
     #   django-rosetta
-    #   django-sekizai
     #   html5lib
     #   mail-parser
     #   python-dateutil
@@ -231,8 +227,8 @@ tinycss2==1.1.1
     # via
     #   cssselect2
     #   svglib
-unidecode==1.0.23
-    # via django-filer
+typing-extensions==4.8.0
+    # via asgiref
 urllib3==1.26.18
     # via
     #   elasticsearch
