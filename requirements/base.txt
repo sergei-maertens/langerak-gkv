@@ -6,28 +6,26 @@
 #
 asgiref==3.7.2
     # via django
-bleach==3.3.0
+bleach[css]==5.0.1
     # via django-bleach
 certifi==2023.7.22
     # via
     #   elasticsearch
     #   requests
     #   sentry-sdk
-chardet==3.0.4
+charset-normalizer==3.3.0
     # via requests
-cssselect2==0.4.1
+cssselect2==0.7.0
     # via svglib
-defusedxml==0.6.0
+defusedxml==0.7.1
     # via odfpy
-diff-match-patch==20181111
+diff-match-patch==20230430
     # via django-import-export
-django==3.2.22
+django==4.2.6
     # via
     #   -r requirements/base.in
     #   django-appconf
-    #   django-axes
     #   django-bleach
-    #   django-choices
     #   django-classy-tags
     #   django-cms
     #   django-filer
@@ -43,20 +41,16 @@ django==3.2.22
     #   django-rosetta
     #   django-sekizai
     #   django-sniplates
+    #   django-solo
     #   django-treebeard
+    #   djangocms-admin-style
     #   djangorestframework
     #   easy-thumbnails
-django-appconf==1.0.3
-    # via
-    #   django-axes
-    #   django-image-cropping
+django-appconf==1.0.5
+    # via django-image-cropping
 django-autoslug==1.9.9
     # via -r requirements/base.in
-django-axes==5.0.13
-    # via -r requirements/base.in
-django-bleach==0.6.1
-    # via -r requirements/base.in
-django-choices==1.7.0
+django-bleach==3.1.0
     # via -r requirements/base.in
 django-classy-tags==4.1.0
     # via
@@ -78,29 +72,27 @@ django-filer==3.1.0
     #   djangocms-link
     #   djangocms-picture
     #   djangocms-video
-django-filter==21.1
+django-filter==23.3
     # via -r requirements/base.in
 django-formtools==2.4.1
     # via django-cms
 django-haystack==3.2.1
     # via -r requirements/base.in
-django-ical==1.6.2
+django-ical==1.9.2
     # via -r requirements/base.in
 django-image-cropping==1.7
     # via -r requirements/base.in
-django-import-export==2.5.0
+django-import-export==3.3.1
     # via -r requirements/base.in
-django-ipware==2.1.0
-    # via django-axes
 django-leaflet==0.29.0
     # via -r requirements/base.in
 django-password-reset==2.0
     # via -r requirements/base.in
 django-polymorphic==3.1.0
     # via django-filer
-django-recurrence==1.10.1
+django-recurrence==1.11.1
     # via django-ical
-django-rosetta==0.9.3
+django-rosetta==0.9.9
     # via -r requirements/base.in
 django-sekizai==4.1.0
     # via
@@ -108,13 +100,13 @@ django-sekizai==4.1.0
     #   django-cms
 django-sniplates==0.7.2
     # via -r requirements/base.in
-django-solo==1.1.5
+django-solo==2.1.0
     # via -r requirements/base.in
-django-treebeard==4.3
+django-treebeard==4.7
     # via django-cms
 django-yubin==1.7.1
     # via -r requirements/base.in
-djangocms-admin-style==1.4.0
+djangocms-admin-style==3.2.6
     # via django-cms
 djangocms-attributes-field==3.0.0
     # via
@@ -132,42 +124,39 @@ djangocms-text-ckeditor==5.1.4
     # via -r requirements/base.in
 djangocms-video==3.0.0
     # via -r requirements/base.in
-djangorestframework==3.12.4
+djangorestframework==3.14.0
     # via -r requirements/base.in
-easy-thumbnails[svg]==2.8.1
+easy-thumbnails[svg]==2.8.5
     # via
     #   -r requirements/base.in
     #   django-filer
     #   djangocms-picture
-elasticsearch==7.15.2
+elasticsearch==7.17.9
     # via -r requirements/base.in
-et-xmlfile==1.0.1
+et-xmlfile==1.1.0
     # via openpyxl
-html2text==2019.9.26
+html2text==2020.1.16
     # via -r requirements/base.in
-html5lib==1.0.1
+html5lib==1.1
     # via djangocms-text-ckeditor
-icalendar==4.0.3
+icalendar==5.0.10
     # via django-ical
-idna==2.8
+idna==3.4
     # via requests
-jdcal==1.4.1
-    # via openpyxl
 lockfile==0.12.2
     # via django-yubin
-lxml==4.8.0
+lxml==4.9.3
     # via svglib
 mail-parser==3.15.0
     # via django-yubin
 markuppy==1.14
     # via tablib
-odfpy==1.4.0
+odfpy==1.4.1
     # via tablib
-openpyxl==2.6.3
+openpyxl==3.1.2
     # via tablib
-packaging==20.9
+packaging==23.2
     # via
-    #   bleach
     #   django-cms
     #   djangocms-text-ckeditor
 pillow==10.1.0
@@ -176,57 +165,52 @@ pillow==10.1.0
     #   djangocms-text-ckeditor
     #   easy-thumbnails
     #   reportlab
-polib==1.1.0
+polib==1.2.0
     # via django-rosetta
 psycopg2==2.9.9
     # via -r requirements/base.in
-pyparsing==2.4.7
-    # via packaging
-python-dateutil==2.8.0
+python-dateutil==2.8.2
     # via
     #   django-recurrence
     #   icalendar
-python-decouple==3.4
+python-decouple==3.8
     # via -r requirements/base.in
-python-dotenv==0.10.3
+python-dotenv==1.0.0
     # via -r requirements/base.in
-pytz==2019.2
+pytz==2023.3.post1
     # via
-    #   django
-    #   django-recurrence
     #   django-yubin
+    #   djangorestframework
     #   icalendar
-pyyaml==5.4.1
+pyyaml==6.0.1
     # via tablib
-reportlab==3.6.7
+reportlab==4.0.6
     # via
     #   easy-thumbnails
     #   svglib
-requests==2.25.1
+requests==2.31.0
     # via
     #   -r requirements/base.in
     #   django-rosetta
 sentry-sdk==1.32.0
     # via -r requirements/base.in
-simplejson==3.17.6
+simplejson==3.19.2
     # via mail-parser
 six==1.16.0
     # via
     #   bleach
-    #   django-appconf
-    #   django-rosetta
     #   html5lib
     #   mail-parser
     #   python-dateutil
-sqlparse==0.4.2
+sqlparse==0.4.4
     # via django
-svglib==1.1.0
+svglib==1.5.1
     # via easy-thumbnails
-tablib[html,ods,xls,xlsx,yaml]==3.0.0
+tablib[html,ods,xls,xlsx,yaml]==3.5.0
     # via django-import-export
 tinycss2==1.1.1
     # via
-    #   cssselect2
+    #   bleach
     #   svglib
 typing-extensions==4.8.0
     # via asgiref
@@ -240,10 +224,9 @@ uwsgi==2.0.22
 webencodings==0.5.1
     # via
     #   bleach
-    #   cssselect2
     #   html5lib
     #   tinycss2
-xlrd==1.2.0
+xlrd==2.0.1
     # via tablib
 xlwt==1.3.0
     # via tablib

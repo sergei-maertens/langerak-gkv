@@ -137,7 +137,6 @@ TEMPLATES = [
 
 MIDDLEWARE = [
     "django.middleware.common.CommonMiddleware",
-    "axes.middleware.AxesMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.locale.LocaleMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -172,7 +171,6 @@ INSTALLED_APPS = [
     # order matters, needed for cms migrations
     "langerak_gkv.users",
     # External applications.
-    "axes",
     "django_yubin",
     "easy_thumbnails",
     "leaflet",
@@ -302,36 +300,10 @@ EMAIL_USE_TLS = config("EMAIL_USE_TLS", default=False)
 EMAIL_TIMEOUT = 10
 
 #
-# Django-axes
-#
-AXES_ENABLED = False
-AXES_CACHE = "dummy"
-AXES_LOGIN_FAILURE_LIMIT = 3  # Default: 3
-AXES_LOCK_OUT_AT_FAILURE = True  # Default: True
-AXES_USE_USER_AGENT = False  # Default: False
-
-IPWARE_META_PRECEDENCE_ORDER = (
-    "HTTP_X_REAL_IP",
-    "HTTP_X_FORWARDED_FOR",
-    "X_FORWARDED_FOR",  # <client>, <proxy1>, <proxy2>
-    "HTTP_CLIENT_IP",
-    "HTTP_X_FORWARDED",
-    "HTTP_X_CLUSTER_CLIENT_IP",
-    "HTTP_FORWARDED_FOR",
-    "HTTP_FORWARDED",
-    "HTTP_VIA",
-    "REMOTE_ADDR",
-)
-
-#
 # Auth
 #
 
 AUTH_USER_MODEL = "users.User"
-AUTHENTICATION_BACKENDS = [
-    "axes.backends.AxesBackend",
-    "django.contrib.auth.backends.ModelBackend",
-]
 LOGIN_URL = "users:login"
 LOGIN_REDIRECT_URL = reverse_lazy("pages-root")
 
