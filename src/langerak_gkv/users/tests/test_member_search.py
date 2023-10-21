@@ -10,7 +10,6 @@ from .factories import UserFactory
 
 
 class UserSearchTests(DeletePageUsersMixin, TestCase):
-
     factory = RequestFactory()
 
     @classmethod

@@ -9,7 +9,6 @@ from .models import Liturgy, Service
 
 @receiver(post_save, sender=Liturgy, dispatch_uid="sync_liturgy_activity")
 def create_or_update_activity(sender, instance, created, **kwargs):
-
     if kwargs.get("raw"):
         return
 

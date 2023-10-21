@@ -8,7 +8,6 @@ import filer.fields.image
 
 
 class Migration(migrations.Migration):
-
     dependencies = [("homepage", "0003_auto_20191201_1638")]
 
     operations = [

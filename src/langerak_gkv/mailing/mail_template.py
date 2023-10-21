@@ -14,7 +14,6 @@ from django.utils.translation import gettext_lazy as _
 
 
 class MailTemplateValidator(object):
-
     code = "invalid"
 
     def __init__(self, template):

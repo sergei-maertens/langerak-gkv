@@ -2,7 +2,6 @@ from .google import geolocation
 
 
 class GeoLocateMixin(object):
-
     geo_field = "geom"
     adress_fields = ["address", "postal_code", "city"]
 

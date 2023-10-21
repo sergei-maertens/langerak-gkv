@@ -8,7 +8,6 @@ import filer.fields.image
 
 
 class Migration(migrations.Migration):
-
     dependencies = [("homepage", "0002_remove_homepagepagelink_enable_sharing")]
 
     operations = [

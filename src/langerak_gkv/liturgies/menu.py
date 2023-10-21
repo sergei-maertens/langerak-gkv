@@ -8,7 +8,6 @@ from langerak_gkv.utils.models import URLConfMenuEntry
 
 
 class LiturgiesMenu(CMSAttachMenu):
-
     name = _("liturgies menu")
 
     def get_nodes(self, request):

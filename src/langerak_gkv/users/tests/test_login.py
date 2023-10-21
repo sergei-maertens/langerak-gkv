@@ -4,7 +4,6 @@ from ..views import LoginModalView
 
 
 class UserSearchTests(TestCase):
-
     factory = RequestFactory()
 
     def test_fetch_login_form_modal_content(self):
