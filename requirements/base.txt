@@ -62,7 +62,7 @@ django-classy-tags==4.1.0
     # via
     #   django-cms
     #   django-sekizai
-django-cms==3.9.0
+django-cms==3.11.4
     # via
     #   -r requirements/base.in
     #   djangocms-attributes-field
@@ -168,6 +168,7 @@ openpyxl==2.6.3
 packaging==20.9
     # via
     #   bleach
+    #   django-cms
     #   djangocms-text-ckeditor
 pillow==10.1.0
     # via

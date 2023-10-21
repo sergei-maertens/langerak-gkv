@@ -28,7 +28,7 @@ easy-thumbnails
 
 # cms
 django-sekizai
-django-cms
+django-cms~=3.11.0
 djangocms-text-ckeditor
 django-filer
 djangocms-file
