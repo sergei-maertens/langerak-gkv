@@ -8,39 +8,18 @@ beautifulsoup4==4.9.3
     # via webtest
 black==22.1.0
     # via -r requirements/test-tools.in
-certifi==2021.10.8
-    # via
-    #   -c requirements/base.txt
-    #   requests
-chardet==3.0.4
-    # via
-    #   -c requirements/base.txt
-    #   requests
 click==8.0.4
     # via black
-codecov==2.1.11
-    # via -r requirements/test-tools.in
 coverage==5.5
-    # via
-    #   -r requirements/test-tools.in
-    #   codecov
-    #   coveralls
-coveralls==3.0.1
     # via -r requirements/test-tools.in
 django-webtest==1.9.4
     # via -r requirements/test-tools.in
-docopt==0.6.2
-    # via coveralls
 factory-boy==2.9.2
     # via -r requirements/test-tools.in
 faker==8.0.0
     # via factory-boy
 freezegun==1.2.1
     # via -r requirements/test-tools.in
-idna==2.8
-    # via
-    #   -c requirements/base.txt
-    #   requests
 isort==5.8.0
     # via -r requirements/test-tools.in
 mypy-extensions==0.4.3
@@ -54,11 +33,6 @@ python-dateutil==2.8.0
     #   -c requirements/base.txt
     #   faker
     #   freezegun
-requests==2.25.1
-    # via
-    #   -c requirements/base.txt
-    #   codecov
-    #   coveralls
 six==1.16.0
     # via
     #   -c requirements/base.txt
@@ -72,10 +46,6 @@ tomli==2.0.1
     # via black
 typing-extensions==4.1.1
     # via black
-urllib3==1.26.7
-    # via
-    #   -c requirements/base.txt
-    #   requests
 waitress==2.1.1
     # via webtest
 webob==1.8.7
