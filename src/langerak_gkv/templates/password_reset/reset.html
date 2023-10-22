@@ -6,17 +6,17 @@
 
 	<h1 class="page-title">{% trans "Reset your password" %}</h1>
 
-    {% if invalid %}
+    {% if not validlink %}
     	<div class="cmsplugin-text">
-        {% url "password_reset_recover" as recovery_url %}
+        {% url "user_passwords:password_reset" as recovery_url %}
             <p>{% blocktrans %}Sorry, this password reset link is invalid. You can still <a href="{{ recovery_url }}">request a new one</a>.{% endblocktrans %}</p>
         </div>
 	{% else %}
 
-        <form method="post" action="{% url "password_reset_reset" token %}" class="form form--last">
+        <form method="post" action="." class="form form--last">
 			{% csrf_token %}
 
-            <p>{% blocktrans trimmed %}
+            <p>{% blocktrans trimmed with username=form.user.get_username %}
                 Hi, <strong>{{ username }}</strong>. Please choose your new password.
             {% endblocktrans %}</p>
 

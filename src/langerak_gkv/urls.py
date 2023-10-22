@@ -4,12 +4,14 @@ from django.contrib import admin
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.urls import include, path
 
+from langerak_gkv.users.password_reset_urls import urlpatterns as password_urlpatterns
+
 urlpatterns = [
     path("api/v1/", include("langerak_gkv.api.urls")),
     path("admin/rosetta/", include("rosetta.urls")),
     path("admin/", admin.site.urls),
     path("societies/", include("langerak_gkv.societies.urls")),
-    path("password/", include("password_reset.urls")),
+    path("password/", include((password_urlpatterns, "user_passwords"))),
 ] + staticfiles_urlpatterns()
 
 

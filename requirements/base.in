@@ -19,7 +19,6 @@ django-import-export
 django-leaflet
 django-rosetta
 django-solo
-django-password-reset
 django-yubin
 djangorestframework
 easy-thumbnails
