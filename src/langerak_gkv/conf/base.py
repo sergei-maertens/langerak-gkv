@@ -47,6 +47,7 @@ DATABASES = {
         "PORT": config("DB_PORT", 5432),
     }
 }
+DEFAULT_AUTO_FIELD = "django.db.models.AutoField"
 
 CACHES = {
     "default": {"BACKEND": "django.core.cache.backends.locmem.LocMemCache"},
@@ -136,7 +137,6 @@ TEMPLATES = [
 
 MIDDLEWARE = [
     "django.middleware.common.CommonMiddleware",
-    "axes.middleware.AxesMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.locale.LocaleMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -171,17 +171,14 @@ INSTALLED_APPS = [
     # order matters, needed for cms migrations
     "langerak_gkv.users",
     # External applications.
-    "axes",
     "django_yubin",
     "easy_thumbnails",
-    "leaflet",
     "sniplates",
     "rest_framework",
     "rosetta",
     "haystack",
     "import_export",
     "image_cropping",
-    "password_reset",
     "django_bleach",
     "solo",
     # cms
@@ -290,7 +287,7 @@ X_FRAME_OPTIONS = "SAMEORIGIN"
 #
 # Sending EMAIL
 #
-EMAIL_BACKEND = "django_yubin.smtp_queue.EmailBackend"
+EMAIL_BACKEND = "django_yubin.backends.QueuedEmailBackend"
 EMAIL_HOST = config("EMAIL_HOST", default="localhost")
 EMAIL_PORT = config(
     "EMAIL_PORT", default=25
@@ -301,50 +298,12 @@ EMAIL_USE_TLS = config("EMAIL_USE_TLS", default=False)
 EMAIL_TIMEOUT = 10
 
 #
-# Django-axes
-#
-AXES_ENABLED = False
-AXES_CACHE = "dummy"
-AXES_LOGIN_FAILURE_LIMIT = 3  # Default: 3
-AXES_LOCK_OUT_AT_FAILURE = True  # Default: True
-AXES_USE_USER_AGENT = False  # Default: False
-
-IPWARE_META_PRECEDENCE_ORDER = (
-    "HTTP_X_REAL_IP",
-    "HTTP_X_FORWARDED_FOR",
-    "X_FORWARDED_FOR",  # <client>, <proxy1>, <proxy2>
-    "HTTP_CLIENT_IP",
-    "HTTP_X_FORWARDED",
-    "HTTP_X_CLUSTER_CLIENT_IP",
-    "HTTP_FORWARDED_FOR",
-    "HTTP_FORWARDED",
-    "HTTP_VIA",
-    "REMOTE_ADDR",
-)
-
-#
 # Auth
 #
 
 AUTH_USER_MODEL = "users.User"
-AUTHENTICATION_BACKENDS = [
-    "axes.backends.AxesBackend",
-    "django.contrib.auth.backends.ModelBackend",
-]
 LOGIN_URL = "users:login"
 LOGIN_REDIRECT_URL = reverse_lazy("pages-root")
-
-#
-# GEO
-#
-GOOGLE_API_KEY = config("GOOGLE_API_KEY", default="")
-LEAFLET_CONFIG = {
-    "DEFAULT_CENTER": (51.93, 4.876),
-    "DEFAULT_ZOOM": 9,
-    # 'TILES': [(_('Streets'), 'http://openmapsurfer.uni-hd.de/tiles/roads/x={x}&y={y}&z={z}', {
-    #     'minZoom': 0, 'maxZoom': 20, 'attribution': '',
-    # })]
-}
 
 #
 # EMAIL addresses
@@ -486,3 +445,25 @@ if SENTRY_DSN:
     sentry_sdk.init(
         **SENTRY_CONFIG, integrations=get_sentry_integrations(), send_default_pii=True
     )
+
+#
+# CELERY - async task queue
+#
+CELERY_BROKER_URL = os.getenv("CELERY_BROKER_URL", "redis://localhost:6379/0")
+CELERY_RESULT_BACKEND = os.getenv("CELERY_RESULT_BACKEND", "redis://localhost:6379/0")
+
+# Add (by default) 5 (soft), 15 (hard) minute timeouts to all Celery tasks.
+CELERY_TASK_TIME_LIMIT = config("CELERY_TASK_HARD_TIME_LIMIT", default=15 * 60)  # hard
+CELERY_TASK_SOFT_TIME_LIMIT = config(
+    "CELERY_TASK_SOFT_TIME_LIMIT", default=5 * 60
+)  # soft
+
+# Only ACK when the task has been executed. This prevents tasks from getting lost, with
+# the drawback that tasks should be idempotent (if they execute partially, the mutations
+# executed will be executed again!)
+CELERY_TASK_ACKS_LATE = True
+
+# ensure that no tasks are scheduled to a worker that may be running a very long-running
+# operation, leading to idle workers and backed-up workers. The `-O fair` option
+# *should* have the same effect...
+CELERY_WORKER_PREFETCH_MULTIPLIER = 1

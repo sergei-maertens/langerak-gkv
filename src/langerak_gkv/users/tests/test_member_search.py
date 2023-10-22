@@ -5,11 +5,11 @@ from django.test import RequestFactory, TestCase
 from freezegun import freeze_time
 
 from ..views import UserSearchView
+from .compat import DeletePageUsersMixin
 from .factories import UserFactory
 
 
-class UserSearchTests(TestCase):
-
+class UserSearchTests(DeletePageUsersMixin, TestCase):
     factory = RequestFactory()
 
     @classmethod

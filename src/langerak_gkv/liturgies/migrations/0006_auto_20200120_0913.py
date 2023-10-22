@@ -12,7 +12,6 @@ def convert_to_html(apps, _):
 
 
 class Migration(migrations.Migration):
-
     dependencies = [("liturgies", "0005_auto_20200120_0910")]
 
     operations = [migrations.RunPython(convert_to_html, migrations.RunPython.noop)]

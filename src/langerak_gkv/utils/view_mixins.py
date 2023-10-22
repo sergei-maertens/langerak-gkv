@@ -12,7 +12,6 @@ class LoginRequiredMixin(object):
 
 
 class PermissionRequiredMixin(LoginRequiredMixin):
-
     permission = None
 
     def dispatch(self, request, *args, **kwargs):

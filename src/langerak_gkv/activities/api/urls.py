@@ -1,7 +1,9 @@
-from django.conf.urls import url
+from django.urls import path
 
 from .views import ActivityListApiView
 
 app_name = "activities"
 
-urlpatterns = [url(r"^activity/$", ActivityListApiView.as_view(), name="list")]
+urlpatterns = [
+    path("activity/", ActivityListApiView.as_view(), name="list"),
+]

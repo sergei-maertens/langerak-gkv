@@ -1,8 +1,7 @@
-from django.utils.translation import ugettext_lazy as _
+from django.db import models
+from django.utils.translation import gettext_lazy as _
 
-from djchoices import ChoiceItem, DjangoChoices
 
-
-class Sex(DjangoChoices):
-    male = ChoiceItem("male", _("male"))
-    female = ChoiceItem("female", _("female"))
+class Sex(models.TextChoices):
+    male = "male", _("male")
+    female = "female", _("female")

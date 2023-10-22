@@ -18,9 +18,11 @@ class MailingTests(WebTest):
 
     def test_admin_edit_email(self):
         url = reverse("admin:liturgies_liturgy_change", args=[self.liturgies[0].pk])
-        changeform = self.app.get(url, user=self.superuser)
-        changeform.form["mailrecipient_set-0-user"] = self.user1.pk
+        change_page = self.app.get(url, user=self.superuser)
+        form = change_page.forms["liturgy_form"]
 
-        response = changeform.form.submit().follow()
+        form["mailrecipient_set-0-user"] = self.user1.pk
+        response = form.submit().follow()
+
         self.assertEqual(response.status_code, 200)
         self.assertEqual(len(mail.outbox), 1)

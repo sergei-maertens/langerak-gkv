@@ -11,7 +11,6 @@ def set_username_from_email(apps, _):
 
 
 class Migration(migrations.Migration):
-
     dependencies = [("users", "0001_initial")]
 
     operations = [

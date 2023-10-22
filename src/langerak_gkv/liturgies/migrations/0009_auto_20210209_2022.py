@@ -2,11 +2,8 @@
 
 from django.db import migrations, models
 
-import djchoices.choices
-
 
 class Migration(migrations.Migration):
-
     dependencies = [
         ("liturgies", "0008_auto_20210131_1554"),
     ]
@@ -29,18 +26,6 @@ class Migration(migrations.Migration):
                     ),
                 ],
                 max_length=50,
-                validators=[
-                    djchoices.choices.ChoicesValidator(
-                        {
-                            "0preacher": "preacher (predikant@langerak.gkv.nl)",
-                            "1organist": "organist (organist@langerak.gkv.nl)",
-                            "2beamist": "beamist (beamist@langerak.gkv.nl)",
-                            "biblegroup": "bible group (bijbelleesgroep@langerak.gkv.nl)",
-                            "koster": "koster (koster@langerak.gkv.nl)",
-                            "preach_creation": "preach creation (preekvoorziening@langerak.gkv.nl)",
-                        }
-                    )
-                ],
             ),
         ),
     ]

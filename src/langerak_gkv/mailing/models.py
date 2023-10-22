@@ -1,15 +1,12 @@
 from django.db import models
 from django.template import Context, Template
-from django.utils.encoding import python_2_unicode_compatible
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from djangocms_text_ckeditor.fields import HTMLField
-from djchoices import ChoiceItem, DjangoChoices
 
 from .mail_template import Variable, validate_template
 
 
-@python_2_unicode_compatible
 class Mail(models.Model):
     to = models.TextField()
     cc = models.TextField(blank=True)
@@ -27,11 +24,10 @@ class Mail(models.Model):
         return self.subject
 
 
-class Templates(DjangoChoices):
-    liturgy = ChoiceItem("liturgy", _("Liturgy"))
+class Templates(models.TextChoices):
+    liturgy = "liturgy", _("Liturgy")
 
 
-@python_2_unicode_compatible
 class MailTemplate(models.Model):
     template_type = models.CharField(
         _("type"), max_length=50, choices=Templates.choices, unique=True

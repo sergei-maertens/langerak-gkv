@@ -10,11 +10,10 @@ from django.template import (  # TODO: should be able to specify engine
     TemplateSyntaxError,
 )
 from django.template.base import VariableNode
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 
 class MailTemplateValidator(object):
-
     code = "invalid"
 
     def __init__(self, template):

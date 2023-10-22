@@ -1,6 +1,6 @@
 from django.db.models.signals import post_save
 from django.dispatch import receiver
-from django.utils.translation import ugettext as _
+from django.utils.translation import gettext as _
 
 from langerak_gkv.activities.models import Activity, ActivityType
 
@@ -9,7 +9,6 @@ from .models import Liturgy, Service
 
 @receiver(post_save, sender=Liturgy, dispatch_uid="sync_liturgy_activity")
 def create_or_update_activity(sender, instance, created, **kwargs):
-
     if kwargs.get("raw"):
         return
 

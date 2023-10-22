@@ -1,7 +1,7 @@
 import logging
 
 from decouple import Csv, config as _config, undefined
-from sentry_sdk.integrations import DidNotEnable, django  # , redis
+from sentry_sdk.integrations import DidNotEnable, django, redis
 
 logger = logging.getLogger(__name__)
 
@@ -31,7 +31,7 @@ def get_sentry_integrations() -> list:
     """
     default = [
         django.DjangoIntegration(),
-        # redis.RedisIntegration(),
+        redis.RedisIntegration(),
     ]
     extra = []
 

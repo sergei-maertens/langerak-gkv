@@ -1,15 +1,14 @@
-from __future__ import unicode_literals
-
 from django.test import TestCase
 from django.urls import reverse
 
 from django_webtest import WebTest
 
 from ..models import RelationType, UserRelation
+from .compat import DeletePageUsersMixin
 from .factories import RelationTypeFactory, UserFactory, UserRelationFactory
 
 
-class UserRelationTests(TestCase):
+class UserRelationTests(DeletePageUsersMixin, TestCase):
     def setUp(self):
         self.users = UserFactory.create_batch(2)
 
@@ -63,7 +62,7 @@ class UserRelationTests(TestCase):
         self.assertEqual(rel2.relation_type, new_type.reverse)
 
 
-class AdminTests(WebTest):
+class AdminTests(DeletePageUsersMixin, WebTest):
     def test_admin(self):
         """Test that the symmetrical relation is created when adding relations through the admin"""
         superuser = UserFactory.create(is_superuser=True, is_staff=True)

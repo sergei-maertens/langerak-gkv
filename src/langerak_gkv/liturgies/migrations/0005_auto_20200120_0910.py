@@ -6,7 +6,6 @@ import djangocms_text_ckeditor.fields
 
 
 class Migration(migrations.Migration):
-
     dependencies = [("liturgies", "0004_liturgy_download")]
 
     operations = [

@@ -7,28 +7,24 @@ sentry-sdk
 requests
 uwsgi
 
-Django~=2.2.0
+Django~=4.2.0
 
 django-autoslug
-django-axes
 django-bleach
-django-choices
 django-filter
 django-sniplates
 django-ical
 django-image-cropping
 django-import-export
-django-leaflet
 django-rosetta
 django-solo
-django-password-reset
 django-yubin
 djangorestframework
 easy-thumbnails
 
 # cms
 django-sekizai
-django-cms
+django-cms~=3.11.0
 djangocms-text-ckeditor
 django-filer
 djangocms-file
@@ -37,5 +33,8 @@ djangocms-link
 djangocms-video
 
 # search
-elasticsearch
+elasticsearch<8
 django-haystack
+
+# task queue
+celery[redis]

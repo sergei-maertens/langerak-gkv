@@ -1,11 +1,10 @@
-from django.conf.urls import url
 from django.contrib import admin, messages
 from django.template.defaultfilters import date, time
 from django.template.loader import render_to_string
-from django.urls import reverse
+from django.urls import path, reverse
 from django.utils.html import format_html
 from django.utils.safestring import mark_safe
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from import_export.admin import ImportExportActionModelAdmin
 
@@ -47,8 +46,8 @@ class MailRecipientAdmin(admin.ModelAdmin):
         """
         urls = super(MailRecipientAdmin, self).get_urls()
         action_urls = [
-            url(
-                r"^send_mail/$",
+            path(
+                "send_mail/",
                 self.admin_site.admin_view(LiturgyEmailView.as_view()),
                 name="send_liturgy_email",
             )
