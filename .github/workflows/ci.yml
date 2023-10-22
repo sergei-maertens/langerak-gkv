@@ -20,7 +20,7 @@ jobs:
 
     services:
       postgres:
-        image: postgres:12
+        image: postgres:14
         env:
           POSTGRES_HOST_AUTH_METHOD: trust
         ports:
@@ -46,7 +46,7 @@ jobs:
       - uses: maykinmedia/setup-django-backend@v1.1
         with:
           apt-packages: 'libxml2-dev libxmlsec1-dev libxmlsec1-openssl'
-          python-version: '3.9'
+          python-version: '3.11'
           setup-node: 'yes'
           optimize-postgres: 'no'
 
@@ -94,7 +94,7 @@ jobs:
           # Use Docker `latest` tag convention
           [ "$VERSION" == "main" ] && VERSION=latest
 
-          echo ::set-output name=tag::${VERSION}
+          echo "tag=${VERSION}" >> $GITHUB_OUTPUT
 
       - name: Build the Docker image
         run: docker build . --tag $IMAGE_NAME:$RELEASE_VERSION
@@ -107,6 +107,6 @@ jobs:
 
       - name: Push the Docker image
         if: github.event_name == 'push'  # exclude PRs
+        run: docker push $IMAGE_NAME:$RELEASE_VERSION
         env:
           RELEASE_VERSION: ${{ steps.vars.outputs.tag }}
-        run: docker push $IMAGE_NAME:$RELEASE_VERSION
