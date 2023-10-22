@@ -180,7 +180,6 @@ INSTALLED_APPS = [
     "haystack",
     "import_export",
     "image_cropping",
-    "password_reset",
     "django_bleach",
     "solo",
     # cms
