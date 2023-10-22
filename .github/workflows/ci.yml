@@ -94,7 +94,7 @@ jobs:
           # Use Docker `latest` tag convention
           [ "$VERSION" == "main" ] && VERSION=latest
 
-          echo ::set-output name=tag::${VERSION}
+          echo "tag=${VERSION}" >> $GITHUB_OUTPUT
 
       - name: Build the Docker image
         run: docker build . --tag $IMAGE_NAME:$RELEASE_VERSION
@@ -107,6 +107,6 @@ jobs:
 
       - name: Push the Docker image
         if: github.event_name == 'push'  # exclude PRs
+        run: docker push $IMAGE_NAME:$RELEASE_VERSION
         env:
           RELEASE_VERSION: ${{ steps.vars.outputs.tag }}
-        run: docker push $IMAGE_NAME:$RELEASE_VERSION
