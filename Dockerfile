@@ -46,6 +46,9 @@ COPY --from=frontend-build /app/node_modules/normalize.css /app/node_modules/nor
 # Stage 3.2 - Copy source code
 WORKDIR /app
 COPY ./bin/uwsgi.sh /uwsgi.sh
+COPY ./bin/celery_worker.sh /celery_worker.sh
+COPY ./bin/celery_beat.sh /celery_beat.sh
+COPY ./bin/celery_flower.sh /celery_flower.sh
 RUN mkdir /app/log
 
 COPY ./src /app/src
