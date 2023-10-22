@@ -135,7 +135,6 @@ django==4.2.6
     #   django-haystack
     #   django-ical
     #   django-import-export
-    #   django-leaflet
     #   django-polymorphic
     #   django-recurrence
     #   django-rosetta
@@ -220,11 +219,6 @@ django-image-cropping==1.7
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
 django-import-export==3.3.1
-    # via
-    #   -c requirements/base.txt
-    #   -c requirements/ci.txt
-    #   -r requirements/ci.txt
-django-leaflet==0.29.0
     # via
     #   -c requirements/base.txt
     #   -c requirements/ci.txt

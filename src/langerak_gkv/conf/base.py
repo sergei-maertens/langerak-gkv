@@ -173,7 +173,6 @@ INSTALLED_APPS = [
     # External applications.
     "django_yubin",
     "easy_thumbnails",
-    "leaflet",
     "sniplates",
     "rest_framework",
     "rosetta",
@@ -305,18 +304,6 @@ EMAIL_TIMEOUT = 10
 AUTH_USER_MODEL = "users.User"
 LOGIN_URL = "users:login"
 LOGIN_REDIRECT_URL = reverse_lazy("pages-root")
-
-#
-# GEO
-#
-GOOGLE_API_KEY = config("GOOGLE_API_KEY", default="")
-LEAFLET_CONFIG = {
-    "DEFAULT_CENTER": (51.93, 4.876),
-    "DEFAULT_ZOOM": 9,
-    # 'TILES': [(_('Streets'), 'http://openmapsurfer.uni-hd.de/tiles/roads/x={x}&y={y}&z={z}', {
-    #     'minZoom': 0, 'maxZoom': 20, 'attribution': '',
-    # })]
-}
 
 #
 # EMAIL addresses

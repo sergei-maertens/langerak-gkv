@@ -1,5 +1,5 @@
 {% extends "cms/base.html" %}
-{% load i18n thumbnail formatting staticfiles leaflet_tags %}
+{% load i18n thumbnail formatting staticfiles %}
 
 {% block body-class %}profile-page{% endblock %}
 
@@ -113,7 +113,7 @@
 
 
         <div class="profile-detail__map">
-            {# {% leaflet_map "user-map" %} #}
+            {# TODO: bring this back? #}
         </div>
 
     </section>
@@ -140,13 +140,3 @@
 </aside>
 
 {% endblock content %}
-
-
-{% comment %}
-{% block extra_js %}
-{{ block.super }}
-<script src="//maps.googleapis.com/maps/api/js"></script>
-<script>var address = '{{ profile.get_location_string }}';</script>
-<script src="{% static "users/js/map.js" %}"></script>
-{% endblock %}
-{% endcomment %}
