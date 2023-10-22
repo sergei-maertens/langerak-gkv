@@ -1,6 +1,13 @@
-version: '3'
+version: '3.8'
 
 services:
+  db:
+    image: postgres:${PG_VERSION:-14}
+    environment:
+      - POSTGRES_HOST_AUTH_METHOD=trust
+    volumes:
+      - db:/var/lib/postgresql/data
+
   es:
     image: docker.elastic.co/elasticsearch/elasticsearch:7.15.2
     volumes:
@@ -11,21 +18,40 @@ services:
       - "9200:9200"
       - "9300:9300"
 
+  redis:
+    image: redis:6
+    ports:
+      - 6379:6379
+
   web:
     image: regexit/kerkwebsite:${TAG:-latest}
     build: .
-    volumes:
+    volumes: &web_volumes
       - .env:/app/.env
-      - /var/run/postgresql:/var/run/postgresql
+      - media:/app/media
     env_file:
       - .env
-    environment:
+    environment: &web_env
       - SECRET_KEY=dummy
-      - DB_HOST=/var/run/postgresql
       - ALLOWED_HOSTS=*
+      - DB_NAME=postgres
+      - DB_USER=postgres
+      - DB_HOST=db
+      - CACHE_DEFAULT=redis:6379/0
+      - CELERY_BROKER_URL=redis://redis:6379/0
+      - CELERY_RESULT_BACKEND=redis://redis:6379/0
+      # Needed for Celery Flower to match the TIME_ZONE configured in the
+      # settings used by workers and beat containers.
+      - TZ=Europe/Amsterdam
     ports:
       - "8000:8000"
+    depends_on:
+      - db
+      - redis
+      - es
 
 volumes:
+  db:
+  media:
   es_data:
     driver: local

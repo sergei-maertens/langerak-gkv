@@ -20,7 +20,7 @@ jobs:
 
     services:
       postgres:
-        image: postgres:12
+        image: postgres:14
         env:
           POSTGRES_HOST_AUTH_METHOD: trust
         ports:
@@ -46,7 +46,7 @@ jobs:
       - uses: maykinmedia/setup-django-backend@v1.1
         with:
           apt-packages: 'libxml2-dev libxmlsec1-dev libxmlsec1-openssl'
-          python-version: '3.9'
+          python-version: '3.11'
           setup-node: 'yes'
           optimize-postgres: 'no'
 
