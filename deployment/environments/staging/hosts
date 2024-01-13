@@ -1,5 +1,9 @@
 [web]
-gklangerak.regex-it.nl python_interpreter=/usr/bin/python image_tag=latest
+gklangerak.regex-it.nl python_interpreter=/usr/bin/python3
+
+[web:vars]
+target=staging
+image_tag=latest
 
 [es_nodes]
-elastic.regex-it.nl python_interpreter=/usr/bin/python
+elastic.regex-it.nl python_interpreter=/usr/bin/python3

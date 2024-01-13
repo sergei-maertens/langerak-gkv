@@ -1,0 +1,138 @@
+---
+
+- name: Deploy application
+  hosts: web
+  remote_user: root
+
+  vars_files:
+    - vars/certbot.yml
+
+  vars:
+    provision: false # set to true when deploying to new server
+
+    #################
+    # generic stuff #
+    #################
+    application_user: rkl
+    storage_path: "/mnt/bigstorage/{{ application_user }}/{{ target }}/media"
+
+    #################
+    # certbot       #
+    #################
+    certbot_certs:
+      - domains: "{{ allowed_hosts }}"
+
+    ######################
+    # django with docker #
+    ######################
+
+    # Outgoing e-mail configuration
+    django_app_docker_mail: true
+
+    django_app_docker_mail_host: 172.17.0.1  # docker0 interface
+    django_app_docker_mail_port: '25'
+    django_app_docker_mail_use_tls: 'no'
+    django_app_docker_mail_default_from: "{{ from_email }}"
+
+    # Application
+    django_app_docker_name_prefix: rkl-{{ target }}
+    django_app_docker_package_name: langerak_gkv
+    django_app_docker_https: true
+    django_app_docker_domain: "{{ allowed_hosts[0] }}"
+    django_app_docker_allowed_hosts: "{{ ['localhost', '127.0.0.1'] + allowed_hosts }}"
+    django_app_docker_secret_key: "{{ secret_key }}"
+    django_app_docker_sentry_dsn: "{{ sentry_dsn }}"
+
+    # DB
+    django_app_docker_db_host: /var/run/postgresql/
+    django_app_docker_db_name: "{{ django_db.name }}"
+    django_app_docker_db_username: "{{ django_db.user }}"
+    django_app_docker_db_password: "{{ django_db.password }}"
+
+    # Application version
+    django_app_docker_image_name: regexit/kerkwebsite
+    django_app_docker_version: "{{ image_tag|default('latest') }}"
+    django_app_docker_image_always_pull: true
+    django_app_docker_container_user: rkl  # check
+
+    django_app_docker_volumes:
+      - name: "{{ django_app_docker_name_prefix }}-media"
+        mount: "/app/media"
+        mode: "rw"
+        owner: "{{ application_user }}"
+        group: "{{ application_user }}"
+        recurse: false
+        hostPath: "{{ storage_path }}"
+      - name: "{{ django_app_docker_name_prefix }}-log"
+        mount: "/app/log"
+        mode: "rw"
+        owner: "{{ application_user }}"
+        group: "{{ application_user }}"
+        recurse: false
+
+    django_app_docker_extra_env:
+      ENVIRONMENT: "{{ target }}"
+      ELASTIC_SEARCH: "{{ es.url }}"
+      ELASTIC_INDEX: "{{ es.index }}"
+      ES_SECURED: "1"
+      ELASTIC_USER: "{{ es.user }}"
+      ELASTIC_PASSWORD: "{{ es.password }}"
+
+      # probably obsolete, but the code still has references
+      EMAIL_ORGANIST: "{{ emails.organist }}"
+      EMAIL_BEAMIST: "{{ emails.beamist }}"
+      EMAIL_KOSTER: "{{ emails.koster }}"
+      EMAIL_PREACHER: "{{ emails.preacher }}"
+      EMAIL_BIBLE_GROUP: "{{ emails.bible_group }}"
+      EMAIL_PREACH_CREATION: "{{ emails.preach_creation }}"
+
+    # Celery - required for django-yubin mail sending
+    django_app_docker_use_celery: true
+    django_app_docker_celery_workers_default_replicas: 1
+
+    #################
+    # nginx         #
+    #################
+
+    django_app_nginx_domain: "{{ allowed_hosts[0] }}"
+    django_app_nginx_ssl: true
+    django_app_nginx_ssl_ciphers: 'ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:DHE-RSA-AES128-GCM-SHA256:DHE-RSA-AES256-GCM-SHA384:DHE-RSA-CHACHA20-POLY1305'
+    django_app_nginx_extra_directives:
+      - 'client_max_body_size 512M'
+
+  collections:
+    - maykinmedia.commonground
+
+  pre_tasks:
+    - import_role:
+        name: database
+      when: provision
+
+  roles:
+
+    - name: Deploy django app docker containers
+      role: maykinmedia.commonground.django_app_docker
+
+    - name: Install Let's Encrypt Certificates
+      role: geerlingguy.certbot
+
+    - role: maykinmedia.commonground.django_app_nginx
+
+    - name: Configure Nginx
+      role: nginxinc.nginx_config
+      vars:
+        nginx_config_http_template_enable: true
+        nginx_config_http_template:
+          - template_file: templates/app.conf.j2
+            deployment_location: "/etc/nginx/sites-enabled/{{ django_app_docker_name_prefix }}.conf"
+            backup: false
+
+  post_tasks:
+    # Run the commands/cronjobs as root user, using the existing web container
+    - name: Cron - update elastic search index
+      cron:
+        name: "[{{ application_user }} - {{ target }}] update elastic search index"
+        minute: 10,30,50
+        job: >
+          docker exec {{ django_app_docker_name_prefix }}-0 python src/manage.py update_index
+      remote_user: root
