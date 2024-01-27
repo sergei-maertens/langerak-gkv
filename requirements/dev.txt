@@ -112,7 +112,7 @@ diff-match-patch==20230430
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
     #   django-import-export
-django==4.2.6
+django==4.2.9
     # via
     #   -c requirements/base.txt
     #   -c requirements/ci.txt
@@ -260,7 +260,7 @@ django-webtest==1.9.11
     # via
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
-django-yubin==2.0.1
+django-yubin==2.0.3
     # via
     #   -c requirements/base.txt
     #   -c requirements/ci.txt
@@ -424,7 +424,7 @@ pathspec==0.11.2
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
     #   black
-pillow==10.1.0
+pillow==10.2.0
     # via
     #   -c requirements/base.txt
     #   -c requirements/ci.txt

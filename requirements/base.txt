@@ -43,7 +43,7 @@ defusedxml==0.7.1
     # via odfpy
 diff-match-patch==20230430
     # via django-import-export
-django==4.2.6
+django==4.2.9
     # via
     #   -r requirements/base.in
     #   django-appconf
@@ -120,7 +120,7 @@ django-solo==2.1.0
     # via -r requirements/base.in
 django-treebeard==4.7
     # via django-cms
-django-yubin==2.0.1
+django-yubin==2.0.3
     # via -r requirements/base.in
 djangocms-admin-style==3.2.6
     # via django-cms
@@ -175,7 +175,7 @@ packaging==23.2
     # via
     #   django-cms
     #   djangocms-text-ckeditor
-pillow==10.1.0
+pillow==10.2.0
     # via
     #   -r requirements/base.in
     #   djangocms-text-ckeditor
