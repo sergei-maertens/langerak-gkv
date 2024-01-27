@@ -300,7 +300,7 @@ djangocms-text-ckeditor==5.1.4
     #   -c requirements/base.txt
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
-djangocms-video==3.0.0
+djangocms-video==3.1.0
     # via
     #   -c requirements/base.txt
     #   -c requirements/ci.txt
