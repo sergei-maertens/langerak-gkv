@@ -54,14 +54,15 @@ COPY ./src /app/src
 
 COPY --from=frontend-build /app/src/langerak_gkv/static/bundles /app/src/langerak_gkv/static/bundles
 
-RUN groupadd -g 1000 app-user \
-    && useradd -M -u 1000 -g 1000 app-user \
+ARG USERID=1005
+RUN groupadd -g $USERID app-user \
+    && useradd -M -u $USERID -g $USERID app-user \
     && chown -R app-user /app
 
 # drop privileges
 USER app-user
 
-ENV DJANGO_SETTINGS_MODULE=langerak_gkv.conf.production
+ENV DJANGO_SETTINGS_MODULE=langerak_gkv.conf.docker
 
 ARG SECRET_KEY=dummy
 
