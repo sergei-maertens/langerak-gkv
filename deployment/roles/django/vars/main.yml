@@ -1,6 +1,0 @@
----
-
-project_home: "/home/{{ user }}/{{ env }}"
-storage_path: "/mnt/bigstorage/{{ user }}/{{ env }}/media"
-
-docker_network: "{{ user }}-{{ env }}"

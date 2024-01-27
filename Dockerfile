@@ -40,28 +40,27 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 COPY --from=build /usr/local/lib/python3.11 /usr/local/lib/python3.11
 COPY --from=build /usr/local/bin/uwsgi /usr/local/bin/uwsgi
+COPY --from=build /usr/local/bin/celery /usr/local/bin/celery
 COPY --from=frontend-build /app/node_modules/normalize.css /app/node_modules/normalize.css
 
 # Stage 3.2 - Copy source code
 WORKDIR /app
-COPY ./bin/uwsgi.sh /uwsgi.sh
-COPY ./bin/celery_worker.sh /celery_worker.sh
-COPY ./bin/celery_beat.sh /celery_beat.sh
-COPY ./bin/celery_flower.sh /celery_flower.sh
+COPY ./bin/uwsgi.sh ./bin/celery_worker.sh ./bin/celery_beat.sh ./bin/celery_flower.sh /
 RUN mkdir /app/log
 
 COPY ./src /app/src
 
 COPY --from=frontend-build /app/src/langerak_gkv/static/bundles /app/src/langerak_gkv/static/bundles
 
-RUN groupadd -g 1000 app-user \
-    && useradd -M -u 1000 -g 1000 app-user \
+ARG USERID=1005
+RUN groupadd -g $USERID app-user \
+    && useradd -M -u $USERID -g $USERID app-user \
     && chown -R app-user /app
 
 # drop privileges
 USER app-user
 
-ENV DJANGO_SETTINGS_MODULE=langerak_gkv.conf.production
+ENV DJANGO_SETTINGS_MODULE=langerak_gkv.conf.docker
 
 ARG SECRET_KEY=dummy
 

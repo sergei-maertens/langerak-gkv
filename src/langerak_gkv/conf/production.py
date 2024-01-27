@@ -1,3 +1,7 @@
+import os
+
+os.environ.setdefault("LOG_STDOUT", "yes")
+
 from .base import *  # noqa
 
 DEBUG = False

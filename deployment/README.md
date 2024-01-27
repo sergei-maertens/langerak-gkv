@@ -1,17 +1,22 @@
 # Ansible
 
-Ansible playbook(s) for deployment of the koningskerk.nu domain.
+Ansible playbook(s) to deploy the application.
 
-Contains the setup for PostgreSQL, nginx and Django.
+The host must be docker-enabled and correctly provisioned.
 
 ## Requirements
 
 ```bash
-pip install ansible==2.4.6.0
+pip install ansible~=8.5.0
+ansible-galaxy role install -r requirements.yml
+ansible-galaxy collection install -r requirements.yml
 ```
 
-You need ``root`` access to the server and access with the application user
-``konkerk`` over SSH via public key.
+Host:
+
+* SSH access, as root user for Docker
+* PostgreSQL database (standard install), 14 or higher
+* Docker engine - the application is deployed as docker containers
 
 ## Usage
 

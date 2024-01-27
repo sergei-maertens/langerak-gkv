@@ -1,2 +1,12 @@
-- src: geerlingguy.docker
-- src: geerlingguy.certbot
+---
+
+collections:
+  - name: git@github.com:maykinmedia/commonground-ansible.git
+    type: git
+    version: 1.1.4
+
+roles:
+  - name: geerlingguy.certbot
+    version: 5.1.0
+  - name: nginxinc.nginx_config
+    version: 0.7.0
