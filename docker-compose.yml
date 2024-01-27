@@ -24,8 +24,8 @@ services:
       - 6379:6379
 
   web:
-    image: regexit/kerkwebsite:${TAG:-latest}
-    build: .
+    image: &image regexit/kerkwebsite:${TAG:-latest}
+    build: &web_build .
     volumes: &web_volumes
       - .env:/app/.env
       - media:/app/media
@@ -49,6 +49,18 @@ services:
       - db
       - redis
       - es
+
+  celery:
+    image: *image
+    build: *web_build
+    volumes: *web_volumes
+    env_file:
+      - .env
+    environment: *web_env
+    command: /celery_worker.sh
+    depends_on:
+      - db
+      - redis
 
 volumes:
   db:
