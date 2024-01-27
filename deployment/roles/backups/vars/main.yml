@@ -1,8 +1,0 @@
----
-
-backups_dir: "{{ ansible_env.HOME }}/backups/{{ env }}"
-
-mysql_dump_privs: "SELECT,LOCK TABLES,SHOW VIEW,EVENT,TRIGGER"
-
-db_folders:
-  - postgres

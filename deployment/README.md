@@ -21,5 +21,5 @@ Host:
 ## Usage
 
 ```bash
-ansible-playbook -i environments/production/hosts full-deploy.yml
+ansible-playbook -i environments/production/hosts deploy-app.yml
 ```

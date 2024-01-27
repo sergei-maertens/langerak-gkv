@@ -1,7 +1,0 @@
----
-
-- name: Install the generic file backup script
-  copy:
-    src: incremental_backup.sh
-    dest: "{{ backups_dir }}/incremental_backup.sh"
-    mode: 0700
