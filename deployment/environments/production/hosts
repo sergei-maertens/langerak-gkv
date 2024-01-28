@@ -3,7 +3,7 @@ gklangerak.nl python_interpreter=/usr/bin/python3
 
 [web:vars]
 target=prod
-image_tag=2.5.0
+image_tag=2.5.1
 
 [es_nodes]
 elastic.regex-it.nl python_interpreter=/usr/bin/python3
