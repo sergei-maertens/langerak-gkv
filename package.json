@@ -1,6 +1,6 @@
 {
   "name": "langerak_gkv",
-  "version": "2.5.0",
+  "version": "2.5.1",
   "private": true,
   "description": "Frontend assets for CMS website",
   "main": "src/langerak_gkv/index.js",
