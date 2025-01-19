@@ -12,7 +12,7 @@ celery==5.2.7
     # via
     #   -r requirements/base.in
     #   django-yubin
-certifi==2023.7.22
+certifi==2024.12.14
     # via
     #   elasticsearch
     #   requests
@@ -37,7 +37,7 @@ defusedxml==0.7.1
     # via odfpy
 diff-match-patch==20230430
     # via django-import-export
-django==4.2.9
+django==4.2.18
     # via
     #   -r requirements/base.in
     #   django-bleach
@@ -67,7 +67,7 @@ django-classy-tags==4.1.0
     # via
     #   django-cms
     #   django-sekizai
-django-cms==3.11.4
+django-cms==3.11.9
     # via
     #   -r requirements/base.in
     #   djangocms-attributes-field
@@ -76,7 +76,7 @@ django-cms==3.11.4
     #   djangocms-picture
     #   djangocms-text-ckeditor
     #   djangocms-video
-django-filer==3.1.0
+django-filer==3.3.1
     # via
     #   -r requirements/base.in
     #   djangocms-file
@@ -129,7 +129,7 @@ djangocms-text-ckeditor==5.1.4
     # via -r requirements/base.in
 djangocms-video==3.1.0
     # via -r requirements/base.in
-djangorestframework==3.14.0
+djangorestframework==3.15.2
     # via -r requirements/base.in
 easy-thumbnails==2.8.5
     # via
@@ -144,7 +144,7 @@ html5lib==1.1
     # via djangocms-text-ckeditor
 icalendar==5.0.10
     # via django-ical
-idna==3.4
+idna==3.10
     # via requests
 kombu==5.3.2
     # via celery
@@ -163,7 +163,7 @@ packaging==23.2
     #   django-cms
     #   django-haystack
     #   djangocms-text-ckeditor
-pillow==10.2.0
+pillow==11.1.0
     # via
     #   -r requirements/base.in
     #   djangocms-text-ckeditor
@@ -187,7 +187,6 @@ pytz==2023.3.post1
     # via
     #   celery
     #   django-yubin
-    #   djangorestframework
     #   icalendar
 pyyaml==6.0.1
     # via tablib
@@ -197,9 +196,9 @@ reportlab==4.0.6
     # via
     #   easy-thumbnails
     #   svglib
-requests==2.31.0
+requests==2.32.3
     # via django-rosetta
-sentry-sdk==1.32.0
+sentry-sdk==2.20.0
     # via -r requirements/base.in
 simplejson==3.19.2
     # via mail-parser
@@ -209,7 +208,7 @@ six==1.16.0
     #   html5lib
     #   mail-parser
     #   python-dateutil
-sqlparse==0.4.4
+sqlparse==0.5.3
     # via django
 svglib==1.5.1
     # via easy-thumbnails
@@ -220,7 +219,7 @@ tinycss2==1.1.1
     #   bleach
     #   cssselect2
     #   svglib
-urllib3==1.26.18
+urllib3==1.26.20
     # via
     #   elasticsearch
     #   requests

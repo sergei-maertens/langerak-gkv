@@ -34,7 +34,7 @@ celery==5.2.7
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
     #   django-yubin
-certifi==2023.7.22
+certifi==2024.12.14
     # via
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
@@ -89,7 +89,7 @@ diff-match-patch==20230430
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
     #   django-import-export
-django==4.2.9
+django==4.2.18
     # via
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
@@ -128,7 +128,7 @@ django-classy-tags==4.1.0
     #   -r requirements/ci.txt
     #   django-cms
     #   django-sekizai
-django-cms==3.11.4
+django-cms==3.11.9
     # via
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
@@ -142,7 +142,7 @@ django-debug-toolbar==4.2.0
     # via -r requirements/dev.in
 django-extensions==3.2.3
     # via -r requirements/dev.in
-django-filer==3.1.0
+django-filer==3.3.1
     # via
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
@@ -244,7 +244,7 @@ djangocms-video==3.1.0
     # via
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
-djangorestframework==3.14.0
+djangorestframework==3.15.2
     # via
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
@@ -286,7 +286,7 @@ icalendar==5.0.10
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
     #   django-ical
-idna==3.4
+idna==3.10
     # via
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
@@ -343,7 +343,7 @@ pathspec==0.11.2
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
     #   black
-pillow==10.2.0
+pillow==11.1.0
     # via
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
@@ -391,7 +391,6 @@ pytz==2023.3.post1
     #   -r requirements/ci.txt
     #   celery
     #   django-yubin
-    #   djangorestframework
     #   icalendar
 pyyaml==6.0.1
     # via
@@ -408,12 +407,12 @@ reportlab==4.0.6
     #   -r requirements/ci.txt
     #   easy-thumbnails
     #   svglib
-requests==2.31.0
+requests==2.32.3
     # via
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
     #   django-rosetta
-sentry-sdk==1.32.0
+sentry-sdk==2.20.0
     # via
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
@@ -435,7 +434,7 @@ soupsieve==2.5
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
     #   beautifulsoup4
-sqlparse==0.4.4
+sqlparse==0.5.3
     # via
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
@@ -458,7 +457,7 @@ tinycss2==1.1.1
     #   bleach
     #   cssselect2
     #   svglib
-urllib3==1.26.18
+urllib3==1.26.20
     # via
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
@@ -476,7 +475,7 @@ vine==5.0.0
     #   amqp
     #   celery
     #   kombu
-waitress==2.1.2
+waitress==3.0.2
     # via
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
@@ -494,7 +493,7 @@ webencodings==0.5.1
     #   cssselect2
     #   html5lib
     #   tinycss2
-webob==1.8.7
+webob==1.8.9
     # via
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt

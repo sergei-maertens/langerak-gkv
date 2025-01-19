@@ -29,7 +29,7 @@ celery==5.2.7
     #   -c requirements/base.txt
     #   -r requirements/base.txt
     #   django-yubin
-certifi==2023.7.22
+certifi==2024.12.14
     # via
     #   -c requirements/base.txt
     #   -r requirements/base.txt
@@ -82,7 +82,7 @@ diff-match-patch==20230430
     #   -c requirements/base.txt
     #   -r requirements/base.txt
     #   django-import-export
-django==4.2.9
+django==4.2.18
     # via
     #   -c requirements/base.txt
     #   -r requirements/base.txt
@@ -119,7 +119,7 @@ django-classy-tags==4.1.0
     #   -r requirements/base.txt
     #   django-cms
     #   django-sekizai
-django-cms==3.11.4
+django-cms==3.11.9
     # via
     #   -c requirements/base.txt
     #   -r requirements/base.txt
@@ -129,7 +129,7 @@ django-cms==3.11.4
     #   djangocms-picture
     #   djangocms-text-ckeditor
     #   djangocms-video
-django-filer==3.1.0
+django-filer==3.3.1
     # via
     #   -c requirements/base.txt
     #   -r requirements/base.txt
@@ -229,7 +229,7 @@ djangocms-video==3.1.0
     # via
     #   -c requirements/base.txt
     #   -r requirements/base.txt
-djangorestframework==3.14.0
+djangorestframework==3.15.2
     # via
     #   -c requirements/base.txt
     #   -r requirements/base.txt
@@ -264,7 +264,7 @@ icalendar==5.0.10
     #   -c requirements/base.txt
     #   -r requirements/base.txt
     #   django-ical
-idna==3.4
+idna==3.10
     # via
     #   -c requirements/base.txt
     #   -r requirements/base.txt
@@ -313,7 +313,7 @@ packaging==23.2
     #   djangocms-text-ckeditor
 pathspec==0.11.2
     # via black
-pillow==10.2.0
+pillow==11.1.0
     # via
     #   -c requirements/base.txt
     #   -r requirements/base.txt
@@ -358,7 +358,6 @@ pytz==2023.3.post1
     #   -r requirements/base.txt
     #   celery
     #   django-yubin
-    #   djangorestframework
     #   icalendar
 pyyaml==6.0.1
     # via
@@ -375,12 +374,12 @@ reportlab==4.0.6
     #   -r requirements/base.txt
     #   easy-thumbnails
     #   svglib
-requests==2.31.0
+requests==2.32.3
     # via
     #   -c requirements/base.txt
     #   -r requirements/base.txt
     #   django-rosetta
-sentry-sdk==1.32.0
+sentry-sdk==2.20.0
     # via
     #   -c requirements/base.txt
     #   -r requirements/base.txt
@@ -399,7 +398,7 @@ six==1.16.0
     #   python-dateutil
 soupsieve==2.5
     # via beautifulsoup4
-sqlparse==0.4.4
+sqlparse==0.5.3
     # via
     #   -c requirements/base.txt
     #   -r requirements/base.txt
@@ -421,7 +420,7 @@ tinycss2==1.1.1
     #   bleach
     #   cssselect2
     #   svglib
-urllib3==1.26.18
+urllib3==1.26.20
     # via
     #   -c requirements/base.txt
     #   -r requirements/base.txt
@@ -439,7 +438,7 @@ vine==5.0.0
     #   amqp
     #   celery
     #   kombu
-waitress==2.1.2
+waitress==3.0.2
     # via webtest
 wcwidth==0.2.8
     # via
@@ -454,7 +453,7 @@ webencodings==0.5.1
     #   cssselect2
     #   html5lib
     #   tinycss2
-webob==1.8.7
+webob==1.8.9
     # via webtest
 webtest==3.0.0
     # via
