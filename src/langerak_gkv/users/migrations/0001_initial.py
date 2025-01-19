@@ -146,7 +146,7 @@ class Migration(migrations.Migration):
                         blank=True,
                         help_text="Profile picture",
                         null=True,
-                        upload_to=langerak_gkv.users.models.get_image_path,
+                        upload_to="dummy",
                         verbose_name="picture",
                     ),
                 ),
