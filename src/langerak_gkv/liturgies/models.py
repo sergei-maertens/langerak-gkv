@@ -1,6 +1,5 @@
 import os
 
-from django.conf import settings
 from django.db import models
 from django.urls import reverse
 from django.utils.translation import gettext_lazy as _, pgettext_lazy
@@ -129,55 +128,3 @@ class Service(models.Model):
 
     def __str__(self):
         return self.name
-
-
-class MailRecipient(models.Model):
-    class Functions(models.TextChoices):
-        preacher = "0preacher", _("preacher (%s)") % settings.EMAIL_PREACHER
-        koster = "koster", _("koster (%s)") % settings.EMAIL_KOSTER
-        beamist = "2beamist", _("beamist (%s)") % settings.EMAIL_BEAMIST
-        organist = "1organist", _("organist (%s)") % settings.EMAIL_ORGANIST
-        bible_goup = "biblegroup", _("bible group (%s)" % settings.EMAIL_BIBLE_GROUP)
-        preach_creation = (
-            "preach_creation",
-            _("preach creation (%s)" % settings.EMAIL_PREACH_CREATION),
-        )
-
-    liturgy = models.ForeignKey(
-        "Liturgy", verbose_name=_("liturgy"), on_delete=models.CASCADE
-    )
-    user = models.ForeignKey(
-        settings.AUTH_USER_MODEL,
-        max_length=100,
-        blank=True,
-        null=True,
-        on_delete=models.CASCADE,
-    )
-    email = models.EmailField(max_length=254, blank=True)
-    function = models.CharField(choices=Functions.choices, max_length=50, blank=True)
-    is_sent = models.BooleanField(default=False)
-
-    class Meta:
-        ordering = ["function"]
-
-    def __str__(self):
-        return self.email
-
-    def save(self, *args, **kwargs):
-        if not self.pk and not self.email:
-            self.email = self.get_email()
-        super(MailRecipient, self).save(*args, **kwargs)
-
-    def get_email(self):
-        if self.email:
-            return self.email
-        if self.user and self.user.email:
-            return self.user.email
-
-        value_to_attr = dict(zip(self.Functions.values, self.Functions.names))
-        attr = value_to_attr.get(self.function)
-        if attr is not None:
-            email = getattr(settings, "EMAIL_%s" % attr.upper(), None)
-            if email is not None:
-                return email
-        raise ValueError("Could not determine e-mail address")

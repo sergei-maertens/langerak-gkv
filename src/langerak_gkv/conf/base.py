@@ -309,16 +309,6 @@ LOGIN_REDIRECT_URL = reverse_lazy("pages-root")
 # EMAIL addresses
 #
 DEFAULT_FROM_EMAIL = config("DEFAULT_FROM_EMAIL", default="noreply@example.com")
-EMAIL_ORGANIST = config("EMAIL_ORGANIST", default="organist@langerak.gkv.nl")
-EMAIL_BEAMIST = config("EMAIL_BEAMIST", default="beamist@langerak.gkv.nl")
-EMAIL_KOSTER = config("EMAIL_KOSTER", default="koster@langerak.gkv.nl")
-EMAIL_PREACHER = config("EMAIL_PREACHER", default="predikant@langerak.gkv.nl")
-EMAIL_BIBLE_GROUP = config(
-    "EMAIL_BIBLE_GROUP", default="bijbelleesgroep@langerak.gkv.nl"
-)
-EMAIL_PREACH_CREATION = config(
-    "EMAIL_PREACH_CREATION", default="preekvoorziening@langerak.gkv.nl"
-)
 
 
 #

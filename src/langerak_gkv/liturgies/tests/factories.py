@@ -3,8 +3,6 @@ from datetime import date, time, timedelta
 import factory
 import factory.fuzzy
 
-from langerak_gkv.users.tests.factories import UserFactory
-
 
 class ServiceFactory(factory.django.DjangoModelFactory):
     name = factory.Iterator(["Morning", "Noon"])
@@ -22,11 +20,3 @@ class LiturgyFactory(factory.django.DjangoModelFactory):
 
     class Meta:
         model = "liturgies.Liturgy"
-
-
-class MailRecipientFactory(factory.django.DjangoModelFactory):
-    liturgy = factory.SubFactory(LiturgyFactory)
-    user = factory.SubFactory(UserFactory)
-
-    class Meta:
-        model = "liturgies.MailRecipient"
