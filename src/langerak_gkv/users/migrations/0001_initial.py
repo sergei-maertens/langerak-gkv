@@ -5,10 +5,6 @@ import django.utils.timezone
 from django.conf import settings
 from django.db import migrations, models
 
-import image_cropping.fields
-
-import langerak_gkv.users.models
-
 
 class Migration(migrations.Migration):
     initial = True
@@ -152,17 +148,7 @@ class Migration(migrations.Migration):
                 ),
                 (
                     "cropping",
-                    image_cropping.fields.ImageRatioField(
-                        "picture",
-                        "400x400",
-                        adapt_rotation=False,
-                        allow_fullsize=False,
-                        free_crop=False,
-                        help_text=None,
-                        hide_image_field=False,
-                        size_warning=True,
-                        verbose_name="cropping",
-                    ),
+                    models.CharField(max_length=255),
                 ),
                 (
                     "about_me",

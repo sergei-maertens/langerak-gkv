@@ -12,7 +12,6 @@ django-bleach
 django-filter
 django-sniplates
 django-ical
-django-image-cropping
 django-import-export
 django-rosetta
 django-solo

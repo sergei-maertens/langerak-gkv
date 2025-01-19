@@ -40,7 +40,6 @@ diff-match-patch==20230430
 django==4.2.9
     # via
     #   -r requirements/base.in
-    #   django-appconf
     #   django-bleach
     #   django-classy-tags
     #   django-cms
@@ -60,8 +59,6 @@ django==4.2.9
     #   djangocms-admin-style
     #   djangorestframework
     #   easy-thumbnails
-django-appconf==1.0.5
-    # via django-image-cropping
 django-autoslug==1.9.9
     # via -r requirements/base.in
 django-bleach==3.1.0
@@ -93,8 +90,6 @@ django-formtools==2.4.1
 django-haystack==3.2.1
     # via -r requirements/base.in
 django-ical==1.9.2
-    # via -r requirements/base.in
-django-image-cropping==1.7
     # via -r requirements/base.in
 django-import-export==3.3.1
     # via -r requirements/base.in

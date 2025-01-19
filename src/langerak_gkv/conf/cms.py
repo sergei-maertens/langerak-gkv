@@ -19,7 +19,6 @@ THUMBNAIL_ALIASES = {
 }
 
 THUMBNAIL_PROCESSORS = (
-    "image_cropping.thumbnail_processors.crop_corners",
     "easy_thumbnails.processors.colorspace",
     "easy_thumbnails.processors.autocrop",
     "filer.thumbnail_processors.scale_and_crop_with_subject_location",

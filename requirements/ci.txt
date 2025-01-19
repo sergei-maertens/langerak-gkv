@@ -86,7 +86,6 @@ django==4.2.9
     # via
     #   -c requirements/base.txt
     #   -r requirements/base.txt
-    #   django-appconf
     #   django-bleach
     #   django-classy-tags
     #   django-cms
@@ -106,11 +105,6 @@ django==4.2.9
     #   djangocms-admin-style
     #   djangorestframework
     #   easy-thumbnails
-django-appconf==1.0.5
-    # via
-    #   -c requirements/base.txt
-    #   -r requirements/base.txt
-    #   django-image-cropping
 django-autoslug==1.9.9
     # via
     #   -c requirements/base.txt
@@ -157,10 +151,6 @@ django-haystack==3.2.1
     #   -c requirements/base.txt
     #   -r requirements/base.txt
 django-ical==1.9.2
-    # via
-    #   -c requirements/base.txt
-    #   -r requirements/base.txt
-django-image-cropping==1.7
     # via
     #   -c requirements/base.txt
     #   -r requirements/base.txt

@@ -3,7 +3,6 @@ import os
 from django.urls import reverse_lazy
 
 import sentry_sdk
-from easy_thumbnails.conf import Settings as thumbnail_settings
 
 from .cms import *  # noqa
 from .utils import config, get_current_version, get_sentry_integrations
@@ -177,7 +176,6 @@ INSTALLED_APPS = [
     "rosetta",
     "haystack",
     "import_export",
-    "image_cropping",
     "django_bleach",
     "solo",
     # cms
@@ -382,12 +380,6 @@ ELASTICSEARCH_INDEX_SETTINGS = {
 IMPORT_EXPORT_USE_TRANSACTIONS = True
 
 #
-# IMAGE CROPPING
-#
-# IMAGE_CROPPING_JQUERY_URL = None  # we embed it ourselves
-IMAGE_CROPPING_SIZE_WARNING = True
-
-#
 # BLEACH HTML sanitizer
 #
 BLEACH_ALLOWED_TAGS = [
@@ -406,13 +398,6 @@ BLEACH_ALLOWED_TAGS = [
     "strong",
     "ul",
 ]
-
-#
-# EASY THUMBNAILS / IMAGE CROPPING
-#
-THUMBNAIL_PROCESSORS = (
-    "image_cropping.thumbnail_processors.crop_corners",
-) + thumbnail_settings.THUMBNAIL_PROCESSORS
 
 #
 # Tests

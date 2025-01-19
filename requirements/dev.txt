@@ -93,7 +93,6 @@ django==4.2.9
     # via
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
-    #   django-appconf
     #   django-bleach
     #   django-classy-tags
     #   django-cms
@@ -115,11 +114,6 @@ django==4.2.9
     #   djangocms-admin-style
     #   djangorestframework
     #   easy-thumbnails
-django-appconf==1.0.5
-    # via
-    #   -c requirements/ci.txt
-    #   -r requirements/ci.txt
-    #   django-image-cropping
 django-autoslug==1.9.9
     # via
     #   -c requirements/ci.txt
@@ -170,10 +164,6 @@ django-haystack==3.2.1
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
 django-ical==1.9.2
-    # via
-    #   -c requirements/ci.txt
-    #   -r requirements/ci.txt
-django-image-cropping==1.7
     # via
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
