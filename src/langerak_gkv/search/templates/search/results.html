@@ -15,7 +15,8 @@
         {% endfor %}
     </section>
 
-    {% with extra_query='&q='|add:request.GET.q %}
+    {% firstof request.GET.q '' as search_query %}
+    {% with extra_query='&q='|add:search_query %}
         {% include 'includes/pagination.html' with page_obj=page %}
     {% endwith %}
 
