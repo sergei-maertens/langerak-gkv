@@ -13,3 +13,7 @@ src/manage.py cms delete-orphaned-plugins
 **Set default church**
 
 Check new checkbox field.
+
+**Remove "leden" page**
+
+Delete the app hook.

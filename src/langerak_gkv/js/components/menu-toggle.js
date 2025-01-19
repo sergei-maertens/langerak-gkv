@@ -13,20 +13,7 @@ const toggle = (control, target, modifier, callback) => {
 };
 
 const init = () => {
-    toggle('menu__profile', 'user-actions', 'visible', openLoginModal);
     toggle('menu__search', 'search-form', 'visible');
-
-    // profile search
-    toggle('profile-list__search-icon', 'profile-list__search', 'opened', scrollIntoView);
-    toggle('profile-list__search-close', 'profile-list__search', 'opened');
-};
-
-const openLoginModal = (targetNode) => {
-    const isVisible = targetNode.classList.contains('user-actions--visible');
-    if (!isVisible) return;
-
-    const loginLink = targetNode.querySelector('[data-modal="login"]');
-    loginLink && loginLink.click();
 };
 
 const scrollIntoView = (targetNode) => {

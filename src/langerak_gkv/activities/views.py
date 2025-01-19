@@ -1,5 +1,6 @@
 from datetime import datetime, time
 
+from django.contrib.auth.mixins import PermissionRequiredMixin
 from django.db.models import Q
 from django.utils import timezone
 from django.utils.http import urlencode
@@ -13,8 +14,6 @@ from django.views.generic import (
 )
 
 from django_ical.views import ICalFeed
-
-from langerak_gkv.utils.view_mixins import PermissionRequiredMixin
 
 from .models import Activity
 
@@ -77,7 +76,7 @@ class ActivitySearchView(ListView):
 
 class ActivityCreateView(PermissionRequiredMixin, CreateView):
     model = Activity
-    permissions = "activities.add_activity"
+    permission_required = "activities.add_activity"
     fields = (
         "name",
         "type",
