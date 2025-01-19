@@ -9,7 +9,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 WORKDIR /app
 
 COPY ./requirements /app/requirements
-RUN pip install -r requirements/production.txt
+RUN pip install uv==0.5.21 && uv pip install --system -r requirements/production.txt
 
 # Stage 2 - build frontend
 FROM mhart/alpine-node:16 AS frontend-build

@@ -1,7 +1,5 @@
--c base.txt
 -c ci.txt
-
-pip-tools
+-r ci.txt
 
 django-extensions
 django-debug-toolbar
