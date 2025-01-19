@@ -1,5 +1,5 @@
 [web]
-gklangerak.nl python_interpreter=/usr/bin/python3
+ngklangerak.nl python_interpreter=/usr/bin/python3
 
 [web:vars]
 target=prod

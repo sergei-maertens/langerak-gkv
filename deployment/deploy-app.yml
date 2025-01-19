@@ -78,14 +78,6 @@
       ELASTIC_USER: "{{ es.user }}"
       ELASTIC_PASSWORD: "{{ es.password }}"
 
-      # probably obsolete, but the code still has references
-      EMAIL_ORGANIST: "{{ emails.organist }}"
-      EMAIL_BEAMIST: "{{ emails.beamist }}"
-      EMAIL_KOSTER: "{{ emails.koster }}"
-      EMAIL_PREACHER: "{{ emails.preacher }}"
-      EMAIL_BIBLE_GROUP: "{{ emails.bible_group }}"
-      EMAIL_PREACH_CREATION: "{{ emails.preach_creation }}"
-
     # Celery - required for django-yubin mail sending
     django_app_docker_use_celery: true
     django_app_docker_celery_workers_default_replicas: 1
