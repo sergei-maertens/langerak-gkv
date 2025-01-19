@@ -19,7 +19,7 @@ from .views import LiturgyEmailView
 
 @admin.register(Church)
 class ChurchAdmin(admin.ModelAdmin):
-    list_display = ["name"]
+    list_display = ["name", "auto_selected"]
 
 
 class MailRecipientInline(admin.TabularInline):

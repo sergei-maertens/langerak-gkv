@@ -10,9 +10,7 @@ from .factories import LiturgyFactory
 
 class MailingTests(WebTest):
     def setUp(self):
-        self.liturgies = LiturgyFactory.create_batch(
-            2, preach_author="Jos den Homeros", liturgy="abcdefha;sljf"
-        )
+        self.liturgies = LiturgyFactory.create_batch(2, liturgy="abcdefha;sljf")
         self.user1 = UserFactory.create()
         self.superuser = UserFactory.create(is_staff=True, is_superuser=True)
 

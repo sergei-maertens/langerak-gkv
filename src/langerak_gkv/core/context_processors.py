@@ -19,4 +19,5 @@ def globals(request: HttpRequest) -> Dict[str, Any]:
             "is_homepage": current_page.is_home,
         }
 
-    return {"upcoming_activities": Activity.objects.upcoming(n=3), **home_context}
+    qs = Activity.objects.upcoming(n=3).select_related("liturgy", "liturgy__service")
+    return {"upcoming_activities": qs, **home_context}

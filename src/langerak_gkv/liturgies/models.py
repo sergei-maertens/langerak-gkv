@@ -10,9 +10,22 @@ from djangocms_text_ckeditor.fields import HTMLField
 
 class Church(models.Model):
     name = models.CharField(_("name"), max_length=100)
+    auto_selected = models.BooleanField(
+        _("automatically selected"),
+        default=False,
+        help_text=_("If checked, liturgies will by default be related to this church."),
+    )
+
+    class Meta:
+        verbose_name = _("church")
+        verbose_name_plural = _("churches")
 
     def __str__(self):
         return self.name
+
+
+def get_default_churches():
+    return Church.objects.filter(auto_selected=True)
 
 
 class Liturgy(models.Model):
@@ -21,7 +34,6 @@ class Liturgy(models.Model):
         "Service", verbose_name=_("service"), on_delete=models.CASCADE
     )
     preacher = models.CharField(_("preacher"), max_length=100, blank=True)
-    preach_author = models.CharField(_("preach author"), max_length=100, blank=True)
     bible_readings = models.TextField(_("Bible readings"), blank=True)
     service_theme = models.CharField(_("service theme"), max_length=255, blank=True)
     liturgy = HTMLField(pgettext_lazy("admin field", "liturgy"), blank=True)
@@ -41,12 +53,6 @@ class Liturgy(models.Model):
             "been disabled."
         ),
     )
-    beamist = models.CharField(
-        _("beamist"), max_length=50, blank=True
-    )  # search on function: beamists
-    organist = models.CharField(
-        _("organist"), max_length=50, blank=True
-    )  # searches on function: organists
     collection_goal1 = models.CharField(
         _("collection goal 1"), max_length=50, blank=True
     )
@@ -59,10 +65,11 @@ class Liturgy(models.Model):
     extra_information = models.TextField(_("extra information"), blank=True)
 
     other_churches = models.ManyToManyField(
-        "Church", verbose_name=_("other churches"), blank=True
+        "Church",
+        verbose_name=_("other churches"),
+        blank=True,
+        default=get_default_churches,
     )
-
-    internal_remarks = models.TextField(_("remarks (internal)"), blank=True)
 
     class Meta:
         verbose_name = _("liturgy")

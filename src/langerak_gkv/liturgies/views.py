@@ -17,8 +17,13 @@ class LiturgyListView(ListView):
     paginate_by = 10
 
     def get_queryset(self):
-        qs = super(LiturgyListView, self).get_queryset()
-        return qs.filter(date__gte=date.today()).order_by("date", "service__time")
+        qs = super().get_queryset()
+        return (
+            qs.filter(date__gte=date.today())
+            .prefetch_related("other_churches")
+            .select_related("service")
+            .order_by("date", "service__time")
+        )
 
 
 class LiturgyArchiveView(ArchiveIndexView):
