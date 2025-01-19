@@ -9,7 +9,6 @@ from .widgets import ImageCropWidget
 
 
 class UserCreationForm(forms.ModelForm):
-
     """
     A form that creates a user, with no privileges, from the given username and
     password.

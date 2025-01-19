@@ -3,6 +3,7 @@ Yikes
 
 https://github.com/django-cms/django-cms/issues/7225
 """
+
 from cms.models import PageUser
 
 from ..models import User

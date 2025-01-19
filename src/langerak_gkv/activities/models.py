@@ -17,7 +17,7 @@ class ActivityManager(models.Manager):
         date = timezone.now().date()
         return self.get_queryset().filter(
             Q(start_date__gte=date) | Q(end_date__gte=date, start_date__lt=date),
-            **filters
+            **filters,
         )
 
     def homepage(self):
