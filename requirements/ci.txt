@@ -146,7 +146,7 @@ django-formtools==2.4.1
     #   -c requirements/base.txt
     #   -r requirements/base.txt
     #   django-cms
-django-haystack==3.2.1
+django-haystack==3.3.0
     # via
     #   -c requirements/base.txt
     #   -r requirements/base.txt
@@ -309,6 +309,7 @@ packaging==23.2
     #   -r requirements/base.txt
     #   black
     #   django-cms
+    #   django-haystack
     #   djangocms-text-ckeditor
 pathspec==0.11.2
     # via black
