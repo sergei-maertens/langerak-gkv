@@ -21,6 +21,7 @@
     #################
     certbot_certs:
       - domains: "{{ allowed_hosts }}"
+      - domains: "{{ redirect_hosts }}"
 
     ######################
     # django with docker #

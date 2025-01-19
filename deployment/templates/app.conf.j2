@@ -24,6 +24,31 @@ server {
 }
 {% endif %}
 
+{% if redirect_hosts %}
+# Redirect from the other DNS names to the one canonical domain.
+server {
+    server_tokens off;
+    listen 443 http2 ssl;
+    server_name{% for host in redirect_hosts %} {{ host }}{% endfor %};
+
+    ssl_protocols {{ django_app_nginx_ssl_protocols }};
+    ssl_session_timeout 1d;
+    ssl_session_cache shared:SSL:50m;
+    ssl_session_tickets off;
+
+    ssl_ciphers {{ django_app_nginx_ssl_ciphers }};
+    ssl_prefer_server_ciphers {{ django_app_nginx_ssl_prefer_server_ciphers }};
+    ssl_stapling on;
+    ssl_stapling_verify on;
+    ssl_certificate /etc/letsencrypt/live/{{ redirect_hosts[0] }}/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/{{ redirect_hosts[0] }}/privkey.pem;
+
+    add_header Strict-Transport-Security "{{ django_app_nginx_ssl_hsts }}" always;
+
+    return 301 https://{{ django_app_nginx_domain }}$request_uri;
+}
+{% endif %}
+
 server {
     server_tokens off;
     listen {% if django_app_nginx_ssl %}443 http2 ssl{% else %}80{% endif %};
