@@ -1,8 +1,0 @@
-{% load thumbnail %}
-<a href="{{ profile.get_absolute_url }}" class="col-md-4 relation" title="{{ profile.get_full_name }}">
-    {% if profile.picture %}
-        <img src="{{ profile.picture|thumbnail_url:'small' }}">
-    {% else %}
-        <i class="fa fa-user"></i>
-    {% endif %}
-</a>

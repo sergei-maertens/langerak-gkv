@@ -129,7 +129,6 @@ TEMPLATES = [
                 "cms.context_processors.cms_settings",
                 "sekizai.context_processors.sekizai",
                 "langerak_gkv.core.context_processors.globals",
-                "langerak_gkv.users.context_processors.login",
             ]
         },
     }

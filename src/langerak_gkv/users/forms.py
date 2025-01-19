@@ -1,11 +1,10 @@
 from django import forms
-from django.contrib.auth.forms import AuthenticationForm, ReadOnlyPasswordHashField
+from django.contrib.auth.forms import ReadOnlyPasswordHashField
 from django.utils.translation import gettext_lazy as _
 
 from image_cropping import ImageCropWidget as AdminImageCropWidget
 
 from .models import User
-from .widgets import ImageCropWidget
 
 
 class UserCreationForm(forms.ModelForm):
@@ -85,33 +84,3 @@ class UserChangeForm(forms.ModelForm):
                     _("This username is taken, choose a different username.")
                 )
         return username
-
-
-class ProfileUpdateForm(forms.ModelForm):
-    class Meta:
-        model = User
-        fields = (
-            "email",
-            "username",
-            "mobile",
-            "picture",
-            "cropping",
-            "about_me",
-        )
-        widgets = {"picture": ImageCropWidget}
-
-    def clean_username(self):
-        username = self.cleaned_data.get("username")
-        if username:
-            duplicates = User._default_manager.filter(username=username).exclude(
-                pk=self.instance.pk
-            )
-            if duplicates.exists():
-                raise forms.ValidationError(
-                    _("This username is taken, choose a different username.")
-                )
-        return username
-
-
-class LoginForm(AuthenticationForm):
-    username = forms.CharField(max_length=254, label=_("Username"))
