@@ -264,10 +264,6 @@ faker==19.11.0
     # via factory-boy
 freezegun==1.2.2
     # via -r requirements/test-tools.in
-html2text==2020.1.16
-    # via
-    #   -c requirements/base.txt
-    #   -r requirements/base.txt
 html5lib==1.1
     # via
     #   -c requirements/base.txt

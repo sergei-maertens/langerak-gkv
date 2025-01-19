@@ -286,10 +286,6 @@ freezegun==1.2.2
     # via
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
-html2text==2020.1.16
-    # via
-    #   -c requirements/ci.txt
-    #   -r requirements/ci.txt
 html5lib==1.1
     # via
     #   -c requirements/ci.txt

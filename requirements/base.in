@@ -1,10 +1,8 @@
-html2text
 Pillow
 psycopg2
 python-decouple
 python-dotenv
 sentry-sdk
-requests
 uwsgi
 
 Django~=4.2.0

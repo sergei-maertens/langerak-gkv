@@ -145,8 +145,6 @@ elasticsearch==7.17.9
     # via -r requirements/base.in
 et-xmlfile==1.1.0
     # via openpyxl
-html2text==2020.1.16
-    # via -r requirements/base.in
 html5lib==1.1
     # via djangocms-text-ckeditor
 icalendar==5.0.10
@@ -204,9 +202,7 @@ reportlab==4.0.6
     #   easy-thumbnails
     #   svglib
 requests==2.31.0
-    # via
-    #   -r requirements/base.in
-    #   django-rosetta
+    # via django-rosetta
 sentry-sdk==1.32.0
     # via -r requirements/base.in
 simplejson==3.19.2
