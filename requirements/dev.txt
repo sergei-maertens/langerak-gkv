@@ -216,7 +216,7 @@ djangocms-admin-style==3.2.6
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
     #   django-cms
-djangocms-attributes-field==3.0.0
+djangocms-attributes-field==4.0.0
     # via
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt

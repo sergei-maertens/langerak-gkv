@@ -113,7 +113,7 @@ django-yubin==2.0.3
     # via -r requirements/base.in
 djangocms-admin-style==3.2.6
     # via django-cms
-djangocms-attributes-field==3.0.0
+djangocms-attributes-field==4.0.0
     # via
     #   djangocms-file
     #   djangocms-link
