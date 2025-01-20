@@ -194,9 +194,7 @@ INSTALLED_APPS = [
     "langerak_gkv.core",
     "langerak_gkv.homepage",
     "langerak_gkv.liturgies",
-    "langerak_gkv.mailing",
     "langerak_gkv.search",
-    "langerak_gkv.societies",
     "langerak_gkv.utils",
 ]
 
