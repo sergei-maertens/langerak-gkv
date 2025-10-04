@@ -128,7 +128,7 @@ django-classy-tags==4.1.0
     #   -r requirements/ci.txt
     #   django-cms
     #   django-sekizai
-django-cms==3.11.10
+django-cms==4.1.9
     # via
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
@@ -415,6 +415,11 @@ sentry-sdk==2.20.0
     # via
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
+setuptools==80.10.1
+    # via
+    #   -c requirements/ci.txt
+    #   -r requirements/ci.txt
+    #   django-cms
 simplejson==3.19.2
     # via
     #   -c requirements/ci.txt

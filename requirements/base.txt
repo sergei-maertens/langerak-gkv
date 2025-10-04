@@ -67,7 +67,7 @@ django-classy-tags==4.1.0
     # via
     #   django-cms
     #   django-sekizai
-django-cms==3.11.10
+django-cms==4.1.9
     # via
     #   -r requirements/base.in
     #   djangocms-attributes-field
@@ -199,6 +199,8 @@ requests==2.32.5
     # via django-rosetta
 sentry-sdk==2.20.0
     # via -r requirements/base.in
+setuptools==80.10.1
+    # via django-cms
 simplejson==3.19.2
     # via mail-parser
 six==1.16.0
