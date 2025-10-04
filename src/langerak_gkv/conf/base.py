@@ -179,8 +179,11 @@ INSTALLED_APPS = [
     "django_bleach",
     "solo",
     # cms
-    "cms",
     "treebeard",
+    "cms",
+    "djangocms_4_migration",
+    "djangocms_versioning",
+    "djangocms_alias",
     "djangocms_text_ckeditor",
     "filer",
     "djangocms_file",
