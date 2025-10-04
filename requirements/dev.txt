@@ -104,6 +104,7 @@ django==4.2.25
     #   django-haystack
     #   django-ical
     #   django-import-export
+    #   django-parler
     #   django-polymorphic
     #   django-recurrence
     #   django-rosetta
@@ -112,6 +113,8 @@ django==4.2.25
     #   django-solo
     #   django-treebeard
     #   djangocms-admin-style
+    #   djangocms-alias
+    #   djangocms-versioning
     #   djangorestframework
     #   easy-thumbnails
 django-autoslug==1.9.9
@@ -128,15 +131,17 @@ django-classy-tags==4.1.0
     #   -r requirements/ci.txt
     #   django-cms
     #   django-sekizai
-django-cms==3.11.10
+django-cms==4.1.9
     # via
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
+    #   djangocms-alias
     #   djangocms-attributes-field
     #   djangocms-file
     #   djangocms-link
     #   djangocms-picture
     #   djangocms-text-ckeditor
+    #   djangocms-versioning
     #   djangocms-video
 django-debug-toolbar==4.2.0
     # via -r requirements/dev.in
@@ -158,6 +163,11 @@ django-formtools==2.4.1
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
     #   django-cms
+django-fsm==2.8.2
+    # via
+    #   -c requirements/ci.txt
+    #   -r requirements/ci.txt
+    #   djangocms-versioning
 django-haystack==3.3.0
     # via
     #   -c requirements/ci.txt
@@ -170,6 +180,11 @@ django-import-export==3.3.1
     # via
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
+django-parler==2.3
+    # via
+    #   -c requirements/ci.txt
+    #   -r requirements/ci.txt
+    #   djangocms-alias
 django-polymorphic==3.1.0
     # via
     #   -c requirements/ci.txt
@@ -215,6 +230,10 @@ djangocms-admin-style==3.2.6
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
     #   django-cms
+djangocms-alias==2.0.5
+    # via
+    #   -c requirements/ci.txt
+    #   -r requirements/ci.txt
 djangocms-attributes-field==4.0.0
     # via
     #   -c requirements/ci.txt
@@ -236,6 +255,10 @@ djangocms-picture==4.1.1
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
 djangocms-text-ckeditor==5.1.7
+    # via
+    #   -c requirements/ci.txt
+    #   -r requirements/ci.txt
+djangocms-versioning==2.4.0
     # via
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
@@ -337,6 +360,7 @@ packaging==23.2
     #   django-cms
     #   django-haystack
     #   djangocms-text-ckeditor
+    #   djangocms-versioning
 pathspec==0.11.2
     # via
     #   -c requirements/ci.txt
@@ -415,6 +439,11 @@ sentry-sdk==2.20.0
     # via
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
+setuptools==80.9.0
+    # via
+    #   -c requirements/ci.txt
+    #   -r requirements/ci.txt
+    #   django-cms
 simplejson==3.19.2
     # via
     #   -c requirements/ci.txt

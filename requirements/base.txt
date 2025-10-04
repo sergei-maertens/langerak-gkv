@@ -49,6 +49,7 @@ django==4.2.25
     #   django-haystack
     #   django-ical
     #   django-import-export
+    #   django-parler
     #   django-polymorphic
     #   django-recurrence
     #   django-rosetta
@@ -57,6 +58,8 @@ django==4.2.25
     #   django-solo
     #   django-treebeard
     #   djangocms-admin-style
+    #   djangocms-alias
+    #   djangocms-versioning
     #   djangorestframework
     #   easy-thumbnails
 django-autoslug==1.9.9
@@ -67,14 +70,16 @@ django-classy-tags==4.1.0
     # via
     #   django-cms
     #   django-sekizai
-django-cms==3.11.10
+django-cms==4.1.9
     # via
     #   -r requirements/base.in
+    #   djangocms-alias
     #   djangocms-attributes-field
     #   djangocms-file
     #   djangocms-link
     #   djangocms-picture
     #   djangocms-text-ckeditor
+    #   djangocms-versioning
     #   djangocms-video
 django-filer==3.3.2
     # via
@@ -86,12 +91,16 @@ django-filter==23.3
     # via -r requirements/base.in
 django-formtools==2.4.1
     # via django-cms
+django-fsm==2.8.2
+    # via djangocms-versioning
 django-haystack==3.3.0
     # via -r requirements/base.in
 django-ical==1.9.2
     # via -r requirements/base.in
 django-import-export==3.3.1
     # via -r requirements/base.in
+django-parler==2.3
+    # via djangocms-alias
 django-polymorphic==3.1.0
     # via django-filer
 django-recurrence==1.11.1
@@ -112,6 +121,8 @@ django-yubin==2.0.3
     # via -r requirements/base.in
 djangocms-admin-style==3.2.6
     # via django-cms
+djangocms-alias==2.0.5
+    # via -r requirements/base.in
 djangocms-attributes-field==4.0.0
     # via
     #   djangocms-file
@@ -125,6 +136,8 @@ djangocms-link==5.1.0
 djangocms-picture==4.1.1
     # via -r requirements/base.in
 djangocms-text-ckeditor==5.1.7
+    # via -r requirements/base.in
+djangocms-versioning==2.4.0
     # via -r requirements/base.in
 djangocms-video==3.1.0
     # via -r requirements/base.in
@@ -162,6 +175,7 @@ packaging==23.2
     #   django-cms
     #   django-haystack
     #   djangocms-text-ckeditor
+    #   djangocms-versioning
 pillow==11.3.0
     # via
     #   -r requirements/base.in
@@ -199,6 +213,8 @@ requests==2.32.5
     # via django-rosetta
 sentry-sdk==2.20.0
     # via -r requirements/base.in
+setuptools==80.9.0
+    # via django-cms
 simplejson==3.19.2
     # via mail-parser
 six==1.16.0
