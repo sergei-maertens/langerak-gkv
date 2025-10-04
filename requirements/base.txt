@@ -37,7 +37,7 @@ defusedxml==0.7.1
     # via odfpy
 diff-match-patch==20230430
     # via django-import-export
-django==4.2.21
+django==4.2.25
     # via
     #   -r requirements/base.in
     #   django-bleach
@@ -136,7 +136,7 @@ easy-thumbnails==2.8.5
     #   -r requirements/base.in
     #   django-filer
     #   djangocms-picture
-elasticsearch==7.17.9
+elasticsearch==7.17.12
     # via -r requirements/base.in
 et-xmlfile==1.1.0
     # via openpyxl
@@ -163,7 +163,7 @@ packaging==23.2
     #   django-cms
     #   django-haystack
     #   djangocms-text-ckeditor
-pillow==11.1.0
+pillow==11.3.0
     # via
     #   -r requirements/base.in
     #   djangocms-text-ckeditor
@@ -196,7 +196,7 @@ reportlab==4.0.6
     # via
     #   easy-thumbnails
     #   svglib
-requests==2.32.3
+requests==2.32.5
     # via django-rosetta
 sentry-sdk==2.20.0
     # via -r requirements/base.in

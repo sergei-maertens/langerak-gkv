@@ -89,7 +89,7 @@ diff-match-patch==20230430
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
     #   django-import-export
-django==4.2.21
+django==4.2.25
     # via
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
@@ -254,7 +254,7 @@ easy-thumbnails==2.8.5
     #   -r requirements/ci.txt
     #   django-filer
     #   djangocms-picture
-elasticsearch==7.17.9
+elasticsearch==7.17.12
     # via
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
@@ -343,7 +343,7 @@ pathspec==0.11.2
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
     #   black
-pillow==11.1.0
+pillow==11.3.0
     # via
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
@@ -407,7 +407,7 @@ reportlab==4.0.6
     #   -r requirements/ci.txt
     #   easy-thumbnails
     #   svglib
-requests==2.32.3
+requests==2.32.5
     # via
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
