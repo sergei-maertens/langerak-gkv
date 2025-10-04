@@ -20,6 +20,7 @@ djangorestframework
 easy-thumbnails
 
 # cms
+git+https://github.com/django-cms/djangocms-4-migration
 django-sekizai
 django-cms~=4.1.0
 djangocms-alias~=2.0

@@ -119,6 +119,8 @@ django-treebeard==4.7
     # via django-cms
 django-yubin==2.0.3
     # via -r requirements/base.in
+djangocms-4-migration @ git+https://github.com/django-cms/djangocms-4-migration@7d89ae1638fd2b4e9f0559e9b98019f599c9061d
+    # via -r requirements/base.in
 djangocms-admin-style==3.2.6
     # via django-cms
 djangocms-alias==2.0.5
