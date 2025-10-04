@@ -183,6 +183,7 @@ INSTALLED_APPS = [
     "cms",
     "djangocms_4_migration",
     "djangocms_versioning",
+    "parler",
     "djangocms_alias",
     "djangocms_text_ckeditor",
     "filer",
