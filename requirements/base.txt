@@ -76,11 +76,10 @@ django-cms==3.11.10
     #   djangocms-picture
     #   djangocms-text-ckeditor
     #   djangocms-video
-django-filer==3.3.1
+django-filer==3.3.2
     # via
     #   -r requirements/base.in
     #   djangocms-file
-    #   djangocms-link
     #   djangocms-picture
     #   djangocms-video
 django-filter==23.3
@@ -121,11 +120,11 @@ djangocms-attributes-field==4.0.0
     #   djangocms-video
 djangocms-file==3.0.1
     # via -r requirements/base.in
-djangocms-link==3.1.1
+djangocms-link==5.1.0
     # via -r requirements/base.in
 djangocms-picture==4.1.1
     # via -r requirements/base.in
-djangocms-text-ckeditor==5.1.4
+djangocms-text-ckeditor==5.1.7
     # via -r requirements/base.in
 djangocms-video==3.1.0
     # via -r requirements/base.in
