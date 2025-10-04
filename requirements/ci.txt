@@ -119,7 +119,7 @@ django-classy-tags==4.1.0
     #   -r requirements/base.txt
     #   django-cms
     #   django-sekizai
-django-cms==3.11.9
+django-cms==3.11.10
     # via
     #   -c requirements/base.txt
     #   -r requirements/base.txt

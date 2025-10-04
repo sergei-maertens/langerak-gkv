@@ -128,7 +128,7 @@ django-classy-tags==4.1.0
     #   -r requirements/ci.txt
     #   django-cms
     #   django-sekizai
-django-cms==3.11.9
+django-cms==3.11.10
     # via
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
