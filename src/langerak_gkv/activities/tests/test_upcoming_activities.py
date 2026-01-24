@@ -24,7 +24,7 @@ class UpcomingActivitiesTests(TestCase):
 
         upcoming = Activity.objects.upcoming(n=3)
 
-        self.assertQuerysetEqual(
+        self.assertQuerySetEqual(
             upcoming,
             [time(10, 0), time(12, 0), time(14, 0)],
             transform=lambda a: a.start_time,
@@ -37,7 +37,7 @@ class UpcomingActivitiesTests(TestCase):
 
         upcoming = Activity.objects.upcoming()
 
-        self.assertQuerysetEqual(
+        self.assertQuerySetEqual(
             upcoming,
             [None, time(10, 0)],
             transform=lambda a: a.start_time,
