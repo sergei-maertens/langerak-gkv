@@ -89,7 +89,7 @@ diff-match-patch==20230430
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
     #   django-import-export
-django==4.2.25
+django==4.2.27
     # via
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
@@ -253,7 +253,7 @@ easy-thumbnails==2.8.5
     #   -r requirements/ci.txt
     #   django-filer
     #   djangocms-picture
-elasticsearch==7.17.12
+elasticsearch==7.17.13
     # via
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
@@ -461,7 +461,7 @@ tinycss2==1.1.1
     #   bleach
     #   cssselect2
     #   svglib
-urllib3==1.26.20
+urllib3==2.6.3
     # via
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt

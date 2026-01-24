@@ -82,7 +82,7 @@ diff-match-patch==20230430
     #   -c requirements/base.txt
     #   -r requirements/base.txt
     #   django-import-export
-django==4.2.25
+django==4.2.27
     # via
     #   -c requirements/base.txt
     #   -r requirements/base.txt
@@ -238,7 +238,7 @@ easy-thumbnails==2.8.5
     #   -r requirements/base.txt
     #   django-filer
     #   djangocms-picture
-elasticsearch==7.17.12
+elasticsearch==7.17.13
     # via
     #   -c requirements/base.txt
     #   -r requirements/base.txt
@@ -424,7 +424,7 @@ tinycss2==1.1.1
     #   bleach
     #   cssselect2
     #   svglib
-urllib3==1.26.20
+urllib3==2.6.3
     # via
     #   -c requirements/base.txt
     #   -r requirements/base.txt

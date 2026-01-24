@@ -37,7 +37,7 @@ defusedxml==0.7.1
     # via odfpy
 diff-match-patch==20230430
     # via django-import-export
-django==4.2.25
+django==4.2.27
     # via
     #   -r requirements/base.in
     #   django-bleach
@@ -135,7 +135,7 @@ easy-thumbnails==2.8.5
     #   -r requirements/base.in
     #   django-filer
     #   djangocms-picture
-elasticsearch==7.17.12
+elasticsearch==7.17.13
     # via -r requirements/base.in
 et-xmlfile==1.1.0
     # via openpyxl
@@ -220,7 +220,7 @@ tinycss2==1.1.1
     #   bleach
     #   cssselect2
     #   svglib
-urllib3==1.26.20
+urllib3==2.6.3
     # via
     #   elasticsearch
     #   requests
