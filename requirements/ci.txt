@@ -12,7 +12,7 @@ asgiref==3.11.0
     #   django
 beautifulsoup4==4.12.2
     # via webtest
-billiard==3.6.4.0
+billiard==4.2.4
     # via
     #   -c requirements/base.txt
     #   -r requirements/base.txt
@@ -24,7 +24,7 @@ bleach==5.0.1
     #   -c requirements/base.txt
     #   -r requirements/base.txt
     #   django-bleach
-celery==5.2.7
+celery==5.6.2
     # via
     #   -c requirements/base.txt
     #   -r requirements/base.txt
@@ -260,7 +260,7 @@ idna==3.10
     #   requests
 isort==5.12.0
     # via -r requirements/test-tools.in
-kombu==5.3.2
+kombu==5.6.2
     # via
     #   -c requirements/base.txt
     #   -r requirements/base.txt
@@ -285,6 +285,7 @@ packaging==23.2
     #   django-cms
     #   django-haystack
     #   djangocms-text-ckeditor
+    #   kombu
 pathspec==0.11.2
     # via black
 pillow==12.1.0
@@ -314,6 +315,7 @@ python-dateutil==2.8.2
     # via
     #   -c requirements/base.txt
     #   -r requirements/base.txt
+    #   celery
     #   django-recurrence
     #   faker
     #   freezegun
@@ -330,7 +332,6 @@ pytz==2023.3.post1
     # via
     #   -c requirements/base.txt
     #   -r requirements/base.txt
-    #   celery
     #   django-yubin
     #   icalendar
 redis==5.0.1
@@ -400,6 +401,16 @@ typing-extensions==4.15.0
     #   -c requirements/base.txt
     #   -r requirements/base.txt
     #   psycopg
+tzdata==2025.3
+    # via
+    #   -c requirements/base.txt
+    #   -r requirements/base.txt
+    #   kombu
+tzlocal==5.3.1
+    # via
+    #   -c requirements/base.txt
+    #   -r requirements/base.txt
+    #   celery
 urllib3==2.6.3
     # via
     #   -c requirements/base.txt
@@ -411,7 +422,7 @@ uwsgi==2.0.31
     # via
     #   -c requirements/base.txt
     #   -r requirements/base.txt
-vine==5.0.0
+vine==5.1.0
     # via
     #   -c requirements/base.txt
     #   -r requirements/base.txt
