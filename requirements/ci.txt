@@ -119,7 +119,7 @@ django-classy-tags==4.1.0
     #   -r requirements/base.txt
     #   django-cms
     #   django-sekizai
-django-cms==3.11.10
+django-cms==4.1.9
     # via
     #   -c requirements/base.txt
     #   -r requirements/base.txt
@@ -129,12 +129,11 @@ django-cms==3.11.10
     #   djangocms-picture
     #   djangocms-text-ckeditor
     #   djangocms-video
-django-filer==3.3.1
+django-filer==3.3.2
     # via
     #   -c requirements/base.txt
     #   -r requirements/base.txt
     #   djangocms-file
-    #   djangocms-link
     #   djangocms-picture
     #   djangocms-video
 django-filter==23.3
@@ -213,7 +212,7 @@ djangocms-file==3.0.1
     # via
     #   -c requirements/base.txt
     #   -r requirements/base.txt
-djangocms-link==3.1.1
+djangocms-link==5.1.0
     # via
     #   -c requirements/base.txt
     #   -r requirements/base.txt
@@ -221,7 +220,7 @@ djangocms-picture==4.1.1
     # via
     #   -c requirements/base.txt
     #   -r requirements/base.txt
-djangocms-text-ckeditor==5.1.4
+djangocms-text-ckeditor==5.1.7
     # via
     #   -c requirements/base.txt
     #   -r requirements/base.txt
@@ -383,6 +382,11 @@ sentry-sdk==2.20.0
     # via
     #   -c requirements/base.txt
     #   -r requirements/base.txt
+setuptools==80.10.1
+    # via
+    #   -c requirements/base.txt
+    #   -r requirements/base.txt
+    #   django-cms
 simplejson==3.19.2
     # via
     #   -c requirements/base.txt
