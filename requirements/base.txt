@@ -82,7 +82,7 @@ django-filer==3.4.3
     #   djangocms-video
 django-filter==25.2
     # via -r requirements/base.in
-django-formtools==2.4.1
+django-formtools==2.5.1
     # via django-cms
 django-haystack==3.3.0
     # via -r requirements/base.in

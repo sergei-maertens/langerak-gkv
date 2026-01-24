@@ -148,7 +148,7 @@ django-filter==25.2
     # via
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
-django-formtools==2.4.1
+django-formtools==2.5.1
     # via
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
