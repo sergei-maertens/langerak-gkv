@@ -1,4 +1,4 @@
-@import "../lib/responsive";
+@use "../lib/responsive";
 
 .liturgies-page .page-content {
   display: flex;
@@ -14,7 +14,7 @@
   .liturgies-page__detail {
     width: 75%;
 
-    @include mobile-only {
+    @include responsive.mobile-only {
       width: 100%;
     }
   }

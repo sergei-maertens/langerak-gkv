@@ -1,9 +1,10 @@
 @use "sass:math";
 
-@import "../lib/measurements";
-@import "../lib/responsive";
+@use "../lib/measurements";
+@use "../lib/responsive";
+@use "./body";
 
-$header-content-width: $body-content-width !default;
+$header-content-width: body.$body-content-width !default;
 $header-content-side-padding: 56px !default;
 
 .header-content {
@@ -24,7 +25,7 @@ $header-content-side-padding: 56px !default;
       width: 100%;
       height: 100%;
 
-      @include mobile-only {
+      @include responsive.mobile-only {
         width: auto;
       }
     }
@@ -57,7 +58,7 @@ $header-content-side-padding: 56px !default;
     position: relative;
     z-index: 1;  // layer on top of the social icons
 
-    @include mobile-only {
+    @include responsive.mobile-only {
       display: block;
     }
   }
@@ -70,13 +71,13 @@ $header-content-side-padding: 56px !default;
 
     padding: 30px $header-content-side-padding;
 
-    height: $strepen-skew-height;
+    height: measurements.$strepen-skew-height;
 
-    @include laptop {
-      margin-top: -#{math.div($strepen-skew-height, 2)};
+    @include responsive.laptop {
+      margin-top: -#{math.div(measurements.$strepen-skew-height, 2)};
     }
 
-    @include mobile-only {
+    @include responsive.mobile-only {
       height: 80px;
       padding: 15px 0.5em 8px;
     }
@@ -88,7 +89,7 @@ $header-content-side-padding: 56px !default;
     left: $header-content-side-padding;
     right: $header-content-side-padding;
 
-    @include mobile-only {
+    @include responsive.mobile-only {
       top: 15px;
       left: 0.5em;
       right: 0.5em;

@@ -1,12 +1,12 @@
-@import "../../lib/colors";
-@import "../../lib/typography";
+@use "../../lib/colors";
+@use "../../lib/typography";
 
 .activities-calendar {
   &__ical {
-    @include body;
+    @include typography.body;
     display: block;
     padding: 1em 0;
-    color: $theme-green;
+    color: colors.$theme-green;
     text-align: right;
   }
 }

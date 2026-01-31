@@ -1,5 +1,5 @@
-@import "../lib/colors";
-@import "../lib/typography";
+@use "../lib/colors";
+@use "../lib/typography";
 
 .search-results {
   color: var(--color-fg);
@@ -11,7 +11,7 @@
   & &__link {
     display: block;
     text-decoration: none;
-    color: $theme-green;
+    color: colors.$theme-green;
 
     &:hover {
       text-decoration: underline;
@@ -19,11 +19,11 @@
   }
 
   & &__title {
-    @include title();
+    @include typography.title;
   }
 
   & &__description {
-    @include body;
+    @include typography.body;
     font-size: 1.2rem;
   }
 }

@@ -1,9 +1,9 @@
-@import "../../lib/colors";
-@import "../../lib/typography";
+@use "../../lib/colors";
+@use "../../lib/typography";
 
 
 .form {
-  @include body;
+  @include typography.body;
 
   &#{&}--on-top {
     position: relative;
@@ -22,17 +22,17 @@
     margin-top: 25px;
 
     a {
-      color: $font-color-light;
+      color: colors.$font-color-light;
       text-decoration: none;
       font-size: 1.2rem;
 
       &:hover {
         text-decoration: underline;
-        color: $theme-green;
+        color: colors.$theme-green;
       }
 
       &:focus {
-        color: $theme-green;
+        color: colors.$theme-green;
       }
     }
   }
@@ -43,7 +43,7 @@
   }
 
   & &__section-title {
-    @include page-title;
+    @include typography.page-title;
     color: var(--color-fg);
     font-size: 2rem;
     margin: 1rem 0;

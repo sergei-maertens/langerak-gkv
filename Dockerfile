@@ -12,18 +12,17 @@ COPY ./requirements /app/requirements
 RUN pip install uv==0.5.21 && uv pip install --system -r requirements/production.txt
 
 # Stage 2 - build frontend
-FROM mhart/alpine-node:16 AS frontend-build
+FROM node:24-trixie-slim AS frontend-build
 
 WORKDIR /app
 
+COPY ./build.mjs /app/
 COPY ./*.json /app/
 RUN npm ci
 
-COPY ./*.js ./.babelrc /app/
-
 COPY src/langerak_gkv/js/ /app/src/langerak_gkv/js/
 COPY src/langerak_gkv/sass/ /app/src/langerak_gkv/sass/
-RUN npm run build --production
+RUN npm run build
 
 # Stage 3 - Build docker image suitable for execution and deployment
 FROM python:3.11-slim-bookworm AS production

@@ -1,8 +1,9 @@
-@import "../../lib/colors";
-@import "../../lib/typography";
+@use "../../lib/colors";
+@use "../../lib/typography";
+@use "../../lib/responsive";
 
 .liturgy-detail {
-  @include body;
+  @include typography.body;
 
   display: flex;
   justify-content: space-between;
@@ -11,40 +12,40 @@
   & &__preach {
     width: calc(60% - 0.5rem);
     padding: 1rem;
-    border-left: solid 4px rgba($theme-green, 0.5);
+    border-left: solid 4px rgba(colors.$theme-green, 0.5);
     font-size: 1.1rem;
   }
 
   & &__meta {
     width: calc(40% - 0.5rem);
     padding: 1rem;
-    border-left: solid 4px rgba($theme-green-yellow, 0.5);
+    border-left: solid 4px rgba(colors.$theme-green-yellow, 0.5);
     font-size: 1.1rem;
   }
 
   & &__body-header {
-    @include subtitle;
-    color: $theme-green;
+    @include typography.subtitle;
+    color: colors.$theme-green;
     font-size: 1.6rem;
     width: 100%;
-    border-bottom: solid 1px $theme-green;
+    border-bottom: solid 1px colors.$theme-green;
     margin: 1em 0 0;
     padding-bottom: 0.5rem;
   }
 
   & &__body {
-    @include body;
+    @include typography.body;
     font-size: 1.2rem;
     text-align: left;
 
     width: 100%;
     padding: 1rem;
-    background: rgba($theme-purple, 0.025);
+    background: rgba(colors.$theme-purple, 0.025);
   }
 
   & &__download-link {
-    @include body;
-    color: $theme-green;
+    @include typography.body;
+    color: colors.$theme-green;
     text-decoration: none;
     font-weight: 200;
 
@@ -54,8 +55,8 @@
   }
 
   & &__no-audio-link {
-    @include body;
-    color: $font-color-light;
+    @include typography.body;
+    color: colors.$font-color-light;
     font-weight: 200;
     font-style: italic;
   }
@@ -67,7 +68,7 @@
     list-style: circle;
   }
 
-  @include mobile-only {
+  @include responsive.mobile-only {
     display: block;
 
     & &__preach,

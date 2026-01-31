@@ -1,9 +1,9 @@
-@import "../lib/colors";
-@import "../lib/typography";
+@use "../lib/colors";
+@use "../lib/typography";
 
 .page-stats {
-  @include body;
+  @include typography.body;
   padding-top: 2rem;
   text-align: right;
-  color: $font-color-light;
+  color: colors.$font-color-light;
 }

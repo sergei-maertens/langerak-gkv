@@ -1,16 +1,16 @@
-@import "../../lib/colors";
-@import "../../lib/responsive";
-@import "../../lib/typography";
+@use "../../lib/colors";
+@use "../../lib/responsive";
+@use "../../lib/typography";
 
 .activity-info {
-  @include body;
+  @include typography.body;
 
   display: flex;
   justify-content: flex-start;
   align-items: center;
   padding: .2rem 0;
 
-  @include mobile-only {
+  @include responsive.mobile-only {
     display: block;
   }
 
@@ -25,7 +25,7 @@
     justify-content: space-between;
     align-items: center;
 
-    @include mobile-only {
+    @include responsive.mobile-only {
       flex-flow: row-reverse;
       justify-content: flex-end;
     }
@@ -34,7 +34,7 @@
   &__value{
     margin-left: 1rem;
 
-    @include mobile-only {
+    @include responsive.mobile-only {
       margin-left: 0;
     }
   }
