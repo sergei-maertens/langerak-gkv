@@ -122,7 +122,6 @@ django-cms==5.0.5
     #   djangocms-file
     #   djangocms-link
     #   djangocms-picture
-    #   djangocms-text-ckeditor
     #   djangocms-video
 django-filer==3.4.3
     # via
@@ -152,7 +151,7 @@ django-import-export==4.4.0
     # via
     #   -c requirements/base.txt
     #   -r requirements/base.txt
-django-polymorphic==4.10.4
+django-polymorphic==4.10.5
     # via
     #   -c requirements/base.txt
     #   -r requirements/base.txt
@@ -215,7 +214,7 @@ djangocms-picture==4.1.1
     # via
     #   -c requirements/base.txt
     #   -r requirements/base.txt
-djangocms-text-ckeditor==5.1.7
+djangocms-text==0.9.3
     # via
     #   -c requirements/base.txt
     #   -r requirements/base.txt
@@ -243,11 +242,6 @@ faker==19.11.0
     # via factory-boy
 freezegun==1.2.2
     # via -r requirements/test-tools.in
-html5lib==1.1
-    # via
-    #   -c requirements/base.txt
-    #   -r requirements/base.txt
-    #   djangocms-text-ckeditor
 icalendar==5.0.10
     # via
     #   -c requirements/base.txt
@@ -269,6 +263,7 @@ lxml==4.9.3
     # via
     #   -c requirements/base.txt
     #   -r requirements/base.txt
+    #   djangocms-text
     #   svglib
 mail-parser==3.15.0
     # via
@@ -277,6 +272,11 @@ mail-parser==3.15.0
     #   django-yubin
 mypy-extensions==1.0.0
     # via black
+nh3==0.3.2
+    # via
+    #   -c requirements/base.txt
+    #   -r requirements/base.txt
+    #   djangocms-text
 packaging==23.2
     # via
     #   -c requirements/base.txt
@@ -284,7 +284,7 @@ packaging==23.2
     #   black
     #   django-cms
     #   django-haystack
-    #   djangocms-text-ckeditor
+    #   djangocms-text
     #   kombu
 pathspec==0.11.2
     # via black
@@ -292,7 +292,7 @@ pillow==12.1.0
     # via
     #   -c requirements/base.txt
     #   -r requirements/base.txt
-    #   djangocms-text-ckeditor
+    #   djangocms-text
     #   easy-thumbnails
     #   reportlab
 platformdirs==3.11.0
@@ -368,7 +368,6 @@ six==1.16.0
     #   -c requirements/base.txt
     #   -r requirements/base.txt
     #   bleach
-    #   html5lib
     #   mail-parser
     #   python-dateutil
 soupsieve==2.5
@@ -442,7 +441,6 @@ webencodings==0.5.1
     #   -r requirements/base.txt
     #   bleach
     #   cssselect2
-    #   html5lib
     #   tinycss2
 webob==1.8.9
     # via webtest
