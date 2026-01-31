@@ -1,4 +1,4 @@
-@import "../../lib/colors";
+@use "../../lib/colors";
 
 $field-input-vertical-padding: 0.2em;
 $field-border-thickness-increase: 2px;
@@ -6,7 +6,7 @@ $field-border-thickness-increase: 2px;
 .field {
   display: block;
 
-  color: $font-color;
+  color: colors.$font-color;
   font-size: 1.2rem;
 
   & + & {
@@ -20,11 +20,11 @@ $field-border-thickness-increase: 2px;
   & &__input {
     display: block;
     width: 100%;
-    color: $theme-green;
+    color: colors.$theme-green;
     background: var(--color-input-bg);
 
     border: none;
-    border-bottom: solid 2px $theme-green;
+    border-bottom: solid 2px colors.$theme-green;
 
     margin-top: 0.2em;
     padding: $field-input-vertical-padding 0.3em;

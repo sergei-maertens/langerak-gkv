@@ -1,18 +1,18 @@
-@import "../lib/colors";
-@import "../lib/typography";
-@import "../lib/responsive";
+@use "../lib/colors";
+@use "../lib/typography";
+@use "../lib/responsive";
 
 .pagination {
   display: flex;
   flex-wrap: wrap;
 
   &__page {
-    @include body;
+    @include typography.body;
     font-size: 1.2rem;
 
     display: block;
     padding: 0.25rem 0.5rem;
-    background-color: $theme-purple;
+    background-color: colors.$theme-purple;
     color: white;
     text-decoration: none;
     margin-bottom: 0.25rem;
@@ -20,14 +20,14 @@
     text-align: center;
 
     &:hover {
-      box-shadow: 2px 2px 5px 0 $shadow-form-inputs;
-      background-color: $theme-green-yellow;
-      color: $font-color;
+      box-shadow: 2px 2px 5px 0 colors.$shadow-form-inputs;
+      background-color: colors.$theme-green-yellow;
+      color: colors.$font-color;
     }
 
     &#{&}--current {
-      background-color: $theme-green-yellow;
-      color: $font-color;
+      background-color: colors.$theme-green-yellow;
+      color: colors.$font-color;
     }
 
     &:not(:last-child) {
@@ -36,13 +36,13 @@
   }
 
   &__separator {
-    @include body;
+    @include typography.body;
     font-size: 1.2rem;
 
     display: block;
     padding: 0.25rem 0.5rem;
     min-width: 2.35rem;
-    color: $theme-purple;
+    color: colors.$theme-purple;
 
     &:after {
       content: "…";

@@ -1,17 +1,17 @@
 @use "sass:math";
 
-@import "../lib/colors";
-@import "../lib/responsive";
-@import "../lib/measurements";
+@use "../lib/colors";
+@use "../lib/responsive";
+@use "../lib/measurements";
 
 $border-height: 500px;
 
 .page-content {
-  padding: 0 $page-content-side-padding 2em;
+  padding: 0 measurements.$page-content-side-padding 2em;
   position: relative;
   z-index: 1;
 
-  @include mobile-only {
+  @include responsive.mobile-only {
     padding: 20px 0.5em 0;
   }
 
@@ -22,9 +22,9 @@ $border-height: 500px;
     left: 0;
     width: 5px;
     height: $border-height;
-    background: $theme-green-yellow;
+    background: colors.$theme-green-yellow;
 
-    @include mobile-only {
+    @include responsive.mobile-only {
       display: none;
     }
   }

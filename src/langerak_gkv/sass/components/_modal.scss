@@ -1,5 +1,5 @@
-@import "../lib/typography";
-@import "../lib/colors";
+@use "../lib/typography";
+@use "../lib/colors";
 
 $modal-backdrop-color: rgba(0, 0, 0, 0.5);
 
@@ -50,19 +50,19 @@ $modal-backdrop-color: rgba(0, 0, 0, 0.5);
   }
 
   & &__title {
-    @include page-title;
+    @include typography.page-title;
     margin: 0 0 1em;
     font-size: 1.6rem;
   }
 
   & &__content {
-    @include body;
+    @include typography.body;
 
     position: relative;
     z-index: 5;
 
     background: var(--color-content-bg);
-    box-shadow: 2px 2px 5px 0 $shadow-form-inputs;
+    box-shadow: 2px 2px 5px 0 colors.$shadow-form-inputs;
 
     min-width: 30vw;
     min-height: 25vh;

@@ -1,5 +1,5 @@
-@import "../lib/responsive";
-@import "../lib/typography";
+@use "../lib/responsive";
+@use "../lib/typography";
 
 .calendar {
   display: flex;
@@ -13,13 +13,13 @@
   max-width: 50%;
   margin-left: auto;
 
-  @include mobile-only {
+  @include responsive.mobile-only {
     max-width: 100%;
     align-items: flex-start;
   }
 
   &__goto {
-    @include body;
+    @include typography.body;
     color: rgba(white, 0.85);
     text-decoration: none;
     font-size: 1.1rem;
@@ -31,7 +31,7 @@
       color: white;
     }
 
-    @include mobile-only {
+    @include responsive.mobile-only {
       align-self: flex-end;
     }
   }

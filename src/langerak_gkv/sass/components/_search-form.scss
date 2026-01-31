@@ -1,15 +1,15 @@
-@import "../lib/colors";
-@import "../lib/responsive";
-@import "../lib/typography";
+@use "../lib/colors";
+@use "../lib/responsive";
+@use "../lib/typography";
 
 $search-icon-size: 2rem 2rem;
 
 .search-form {
-  @include hide-on-mobile(block);
+  @include responsive.hide-on-mobile(block);
 
   padding: 2.4em 30px 2.4em 0;
 
-  @include mobile-only {
+  @include responsive.mobile-only {
     padding: 1em;
     text-align: center;
   }
@@ -19,11 +19,11 @@ $search-icon-size: 2rem 2rem;
   }
 
   & &__search {
-    @include body;
+    @include typography.body;
     font-weight: 200;
     text-transform: uppercase;;
     font-size: 1.4rem;
-    color: $font-color-light;
+    color: colors.$font-color-light;
     background-color: var(--color-input-bg);
     border: none;
 
@@ -36,10 +36,10 @@ $search-icon-size: 2rem 2rem;
 
     &:focus {
       outline: none;
-      box-shadow: 2px 2px 5px 0 $shadow-form-inputs;
+      box-shadow: 2px 2px 5px 0 colors.$shadow-form-inputs;
     }
 
-    @include mobile-only {
+    @include responsive.mobile-only {
       width: 100%;
     }
   }

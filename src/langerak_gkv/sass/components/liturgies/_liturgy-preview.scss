@@ -1,6 +1,6 @@
-@import "../../lib/colors";
-@import "../../lib/responsive";
-@import "../../lib/typography";
+@use "../../lib/colors";
+@use "../../lib/responsive";
+@use "../../lib/typography";
 
 .liturgy-preview {
   display: flex;
@@ -9,19 +9,19 @@
   flex-wrap: wrap;
 
   border: solid 1px rgba(#eee, 0.4);
-  border-left: solid 4px rgba($theme-green, 0.5);
+  border-left: solid 4px rgba(colors.$theme-green, 0.5);
   padding: 1em;
   transition: all 0.2s ease;
 
   &:hover {
-    border-left-color: $theme-green;
-    box-shadow: 2px 2px 4px 0 rgba($shadow-form-inputs, 0.25);
+    border-left-color: colors.$theme-green;
+    box-shadow: 2px 2px 4px 0 rgba(colors.$shadow-form-inputs, 0.25);
   }
 
   &#{&}--empty {
-    @include body;
+    @include typography.body;
     font-size: 1.2rem;
-    color: $font-color-light;
+    color: colors.$font-color-light;
     font-style: italic;
   }
 
@@ -38,30 +38,30 @@
   }
 
   & &__date {
-    @include subtitle;
+    @include typography.subtitle;
     font-size: 1.6rem;
-    color: $theme-green;
+    color: colors.$theme-green;
 
     margin: 0;
-    border-bottom: solid 1px $theme-green;
+    border-bottom: solid 1px colors.$theme-green;
   }
 
   & &__time {
-    @include subtitle;
+    @include typography.subtitle;
     font-size: 1.2rem;
     font-weight: 200;
-    color: $font-color;
+    color: colors.$font-color;
     margin-left: 1em;
   }
 
   & &__preacher {
-    @include body;
+    @include typography.body;
     font-size: 1.6rem;
     text-align: right;
   }
 
   & &__body {
-    @include body;
+    @include typography.body;
     font-size: 1.2rem;
     line-height: 1.6rem;
     width: calc(100% - 200px - 1em);
@@ -82,17 +82,17 @@
   }
 
   & &__church {
-    @include body;
+    @include typography.body;
     display: block;
-    background: $theme-purple;
+    background: colors.$theme-purple;
     padding: 0.5rem 1rem;
     color: white;
     font-size: 1rem;
   }
 
   & &__goto {
-    @include body;
-    color: $font-color-light;
+    @include typography.body;
+    color: colors.$font-color-light;
     text-decoration: none;
     font-size: 1.2rem;
     text-align: right;
@@ -102,13 +102,13 @@
     width: 100%;
 
     &:hover {
-      color: $theme-green;
+      color: colors.$theme-green;
       text-decoration: underline;
     }
   }
 }
 
-@include mobile-only {
+@include responsive.mobile-only {
   .liturgy-preview {
     display: block;
     border: none;

@@ -1,8 +1,8 @@
-@import "../lib/colors";
-@import "../lib/typography";
+@use "../lib/colors";
+@use "../lib/typography";
 
-@mixin block-color($default: $theme-green, $alt: white) {
-  color: $theme-green;
+@mixin block-color($default: colors.$theme-green, $alt: white) {
+  color: colors.$theme-green;
 
   @at-root .homepage__row--middle & {
     color: $alt;
@@ -24,7 +24,7 @@
   }
 
   & &__title {
-    @include subtitle;
+    @include typography.subtitle;
     @include block-color;
     text-transform: uppercase;
     font-style: normal;
@@ -32,12 +32,12 @@
   }
 
   & &__description {
-    @include body;
-    @include block-color($font-color);
+    @include typography.body;
+    @include block-color(colors.$font-color);
     font-size: 1.3rem;
 
     a {
-      color: $theme-green;
+      color: colors.$theme-green;
       text-decoration: underline;
 
       &:visited {

@@ -1,7 +1,7 @@
-@import "../lib/typography";
+@use "../lib/typography";
 
 .cmsplugin-text {
-  @include body;
+  @include typography.body;
 
   p {
     margin-block-start: 0;
@@ -13,6 +13,6 @@
   }
 
   h2 {
-    @include subtitle;
+    @include typography.subtitle;
   }
 }

@@ -1,5 +1,5 @@
-@import "../lib/colors";
-@import "../lib/responsive";
+@use "../lib/colors";
+@use "../lib/responsive";
 
 .key-value {
   display: block;
@@ -24,7 +24,7 @@
 
   & &__key {
     width: 40%;
-    color: $font-color-light;
+    color: colors.$font-color-light;
   }
 
   & &__value {
@@ -42,7 +42,7 @@
     }
   }
 
-  @include mobile-only {
+  @include responsive.mobile-only {
     &, &#{&}--swap-ratio {
       display: block;
 

@@ -1,5 +1,5 @@
-@import "../lib/responsive";
-@import "../lib/typography";
+@use "../lib/responsive";
+@use "../lib/typography";
 
 $calendar-item-icon-size: 4rem;
 
@@ -9,7 +9,7 @@ $calendar-item-icon-size: 4rem;
   align-items: center;
   padding: 1em;
 
-  @include mobile-only {
+  @include responsive.mobile-only {
     &:nth-child(4),
     &:nth-child(5) {
       display: none;
@@ -29,14 +29,14 @@ $calendar-item-icon-size: 4rem;
   }
 
   & &__date-day {
-    @include body;
+    @include typography.body;
     display: block;
     color: var(--calendar-item-color-fg);
     font-weight: 600;
   }
 
   & &__date-month {
-    @include body;
+    @include typography.body;
     font-weight: 300;
     display: block;
     color: var(--calendar-item-color-fg);
@@ -44,7 +44,7 @@ $calendar-item-icon-size: 4rem;
   }
 
   & &__info {
-    @include body;
+    @include typography.body;
     width: 250px;
     display: block;
     // justify-content: flex-start;

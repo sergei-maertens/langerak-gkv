@@ -1,4 +1,4 @@
-@import '../lib/responsive';
+@use '../lib/responsive';
 
 $body-content-width: 1280px !default;
 
@@ -23,7 +23,7 @@ body {
   }
 
   // ensure main grows if there's very little content on the page
-  @include laptop {
+  @include responsive.laptop {
     display: flex;
     flex-direction: column;
 
@@ -37,7 +37,7 @@ body {
   }
 }
 
-@include mobile-only {
+@include responsive.mobile-only {
   body {
     .page-header,
     main,

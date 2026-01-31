@@ -1,8 +1,9 @@
+@use "sass:color";
 @use "sass:math";
 
-@import "../lib/colors";
-@import "../lib/typography";
-@import "../lib/responsive";
+@use "../lib/colors";
+@use "../lib/typography";
+@use "../lib/responsive";
 
 $menu-space-inbetween: 1.3rem;
 $menu-space-inbetween-half: math.div($menu-space-inbetween , 2);
@@ -15,7 +16,7 @@ $menu-mobile-icon-factor: 1.5;
 
   // Mobile / tablet only
   & &__icons {
-    @include hide-on-laptop(flex);
+    @include responsive.hide-on-laptop(flex);
     padding: 3px $menu-space-inbetween-half;
     justify-content: flex-end;
     align-items: center;
@@ -57,11 +58,11 @@ $menu-mobile-icon-factor: 1.5;
   // Shared
 
   & &__layer {
-    @include hide-on-mobile(flex);
+    @include responsive.hide-on-mobile(flex);
     padding: 0 $menu-space-inbetween-half;
 
     &--sub {
-      background: lighten(#333, 10%);
+      background: color.adjust(#333, $lightness: 10%);
       flex-wrap: wrap;
 
       .menu__item {
@@ -80,7 +81,7 @@ $menu-mobile-icon-factor: 1.5;
     }
 
     &#{&}--menu-opened {
-      @include mobile-only {
+      @include responsive.mobile-only {
         display: block;
         padding-top: 0.75rem;
       }
@@ -88,7 +89,7 @@ $menu-mobile-icon-factor: 1.5;
   }
 
   &#{&}--opened &__layer {
-    @include show-on-mobile(block);
+    @include responsive.show-on-mobile(block);
   }
 
   & &__item {
@@ -98,11 +99,11 @@ $menu-mobile-icon-factor: 1.5;
     margin: 0.75rem 0;
     border-bottom: solid 3px transparent;
 
-    @include mobile-only {
+    @include responsive.mobile-only {
       margin: 0.25rem 0;
     }
 
-    @include laptop {
+    @include responsive.laptop {
       &--leaf:hover {
         border-bottom-color: var(--menu-item-color-border--hover);
 
@@ -117,12 +118,12 @@ $menu-mobile-icon-factor: 1.5;
     }
 
     &--mobile-only {
-      @include show-on-mobile;
+      @include responsive.show-on-mobile;
     }
   }
 
   & &__item-link {
-    @include title;
+    @include typography.title;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -136,7 +137,7 @@ $menu-mobile-icon-factor: 1.5;
     .menu__nested-toggle {
       line-height: 1rem;
 
-      @include laptop {
+      @include responsive.laptop {
         display: none;
       }
 
@@ -150,7 +151,7 @@ $menu-mobile-icon-factor: 1.5;
         position: relative;
         left: math.div($menu-space-inbetween, 4);
 
-        @include laptop {
+        @include responsive.laptop {
           display: inline;
         }
       }
@@ -165,7 +166,7 @@ $menu-mobile-icon-factor: 1.5;
     &--opened {
       display: block;
 
-      @include laptop {
+      @include responsive.laptop {
         position: absolute;
         top: 3rem;
         z-index: 10;
@@ -177,14 +178,14 @@ $menu-mobile-icon-factor: 1.5;
         margin-left: -$menu-space-inbetween-half;
         border-bottom-left-radius: 2px;
         border-bottom-right-radius: 2px;
-        border: solid 1px darken(#333, 2%);
+        border: solid 1px color.adjust(#333, $lightness: -2%);
         border-top: none;
       }
     }
   }
 
   & &__nested-item {
-    @include title;
+    @include typography.title;
     display: block;
     font-size: .75 * $menu-item-font-size;
     color: var(--menu-color-fg);
@@ -196,7 +197,7 @@ $menu-mobile-icon-factor: 1.5;
     }
 
     &:nth-child(even) {
-      background: lighten(#333, 5%);
+      background: color.adjust(#333, $lightness: 5%);
     }
   }
 
