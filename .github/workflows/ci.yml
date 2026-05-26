@@ -33,14 +33,6 @@ jobs:
         ports:
           - 6379:6379
 
-      elasticsearch:
-        image: docker.elastic.co/elasticsearch/elasticsearch:7.15.2
-        env:
-           discovery.type: single-node
-        ports:
-          - 9200:9200
-          - 9300:9300
-
     steps:
       - uses: actions/checkout@v4
       - uses: maykinmedia/setup-django-backend@v1.1
@@ -49,15 +41,6 @@ jobs:
           python-version: '3.11'
           setup-node: 'yes'
           optimize-postgres: 'no'
-
-      - name: Wait for ES to become available
-        run: |
-          es_status=red
-          until [[ $es_status = green ]]; do
-              >&2 echo "Waiting for ES to become available. Current status: $es_status"
-              sleep 1
-              es_status=$(curl -s -X GET http://localhost:9200/_cluster/health\?pretty\=true | jq -r .status)
-          done
 
       - name: Run tests
         run: |
