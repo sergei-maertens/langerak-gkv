@@ -38,8 +38,8 @@ server {
 
     ssl_ciphers {{ django_app_nginx_ssl_ciphers }};
     ssl_prefer_server_ciphers {{ django_app_nginx_ssl_prefer_server_ciphers }};
-    ssl_stapling on;
-    ssl_stapling_verify on;
+    # ssl_stapling on;
+    # ssl_stapling_verify on;
     ssl_certificate /etc/letsencrypt/live/{{ redirect_hosts[0] }}/fullchain.pem;
     ssl_certificate_key /etc/letsencrypt/live/{{ redirect_hosts[0] }}/privkey.pem;
 
@@ -99,8 +99,8 @@ server {
 {% endif %}
 
     # OCSP stapling
-    ssl_stapling on;
-    ssl_stapling_verify on;
+    # ssl_stapling on;
+    # ssl_stapling_verify on;
 
     add_header Referrer-Policy "same-origin";
     add_header Strict-Transport-Security "{{ django_app_nginx_ssl_hsts }}" always;
